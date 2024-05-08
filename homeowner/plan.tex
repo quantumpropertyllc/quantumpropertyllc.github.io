@@ -1,0 +1,190 @@
+\documentclass[11pt]{article}
+\usepackage{array, latexsym, graphicx}
+\usepackage{times}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+\urlstyle{same}
+\textwidth 15 cm
+\textheight 22 cm
+\voffset=-0.5 cm
+\hoffset=-1.5 cm
+\begin{document}
+
+\title{Retirement Plan}
+\author{Yongge Wang\\
+UNC Charlotte, USA\\
+yonwang@uncc.edu}
+\author{}
+\date{}
+
+%\maketitle
+
+\noindent
+{\bf 401(k) and 457(b)}
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{|c|c|c|} \hline
+{\bf Date} & {\bf 401(k)} & {\bf 457(b)}\\ \hline
+02/08/2010 & \$114,131.61 & \$19,298.19\\ \hline
+01/21/2011 & \$142,920.32 & \$39,247.66\\ \hline
+11/14/2013 & \$224,349.59 & \$105,118.37\\ \hline
+12/11/2017 & \$351,936.36& \$208,528.02\\ \hline
+7/23/2018 & \$382,171.81& \$231,870.07\\ \hline
+2/15/2020 & \$467,050.84 & \$301,199.65\\ \hline
+5/10/2021 & \$584,099.59 & \$399,789.80\\ \hline
+4/20/2022 & \$609,311.51& \$407,790.89\\ \hline
+2/14/2023 & \$616,154.81 & \$418,927.61 \\ \hline
+1/19/2024 & \$693,955.66& \$472,312.91 \\ \hline
+Account info & yonwang2002 & *1 \\ \hline
+\end{tabular}
+\caption{page: \url{https://ncplans.retirepru.com}}
+\label{401k}
+\end{center}
+\end{table}
+
+\noindent
+{\bf UNCC Retirement Plan}
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|} \hline
+{\bf Date} & Balance & Employer & Employee\\ \hline
+2/08/2010&\$104,333.68& \$50,357.52 & \$44,116.82\\ \hline
+1/21/2011&\$131.717.62&\$56,948.86 & \$49,898.79\\ \hline
+11/14/2013&\$209,562.21&\$77,585.28 & \$68,000.92\\ \hline
+12/11/2017&\$350,379.81&\$109,844.12 & \$96,297.90\\ \hline
+7/23/2018&\$377,818.46&\$117,072.96& \$102,639.03\\ \hline
+2/15/2020&\$448,313.85&\$238,662.55 & \$209,216.35\\ \hline
+5/10/2021&\$552,393.93&\$293,967.83 & \$257,704.26\\ \hline
+4/20/2022&\$575,845.91&\$268,543.09 & \$306,326.67 \\ \hline
+2/14/2023&\$582,424.63 &\$309,836.88 & \$271,625.16\\ \hline
+1/19/2024 &\$638,292.48&\$339,570.82 & \$297,696.90\\ \hline
+Account info & yonwang &Tf*!1&\\ \hline
+\end{tabular}
+\caption{page: \url{http://www.tiaa-cref.org/}}
+\label{tiaa}
+\end{center}
+\end{table}
+
+
+\noindent
+{\bf Life Insurance}
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|} \hline
+{\bf Insurance Name}&{\bf Company}&{\bf Account}&{\bf Amount}&{\bf Be-Summary}\\ \hline
+Group Term Life & ING 1-877-464-5111 && \$100,000 & unknown \\ \hline
+Cancer & Allstate 904-992-1776 & 86573142 && \\ \hline
+AD\&D Insurance& UNUM 800-257-0930 &LHNCV000760&\$200,000& UK\\ \hline
+American United Life& 800-336-3085 ext 107&&\$200,000& \\ \hline
+\end{tabular}
+\caption{Related Insurance}
+\label{insurance}
+\end{center}
+\end{table}
+
+
+
+\section{Other bank information}
+\begin{itemize}
+\item \url{https://www.ncsecu.org/0010191354/*02/}
+\item \url{http://home.ingdirect.com/36348554/}
+\item \url{http://www.cibc.com/}
+\end{itemize}
+
+\clearpage
+
+Let $A$ be a set with $k$ letters and 
+$x = x_1x_2x_3…x_n$ be a string with length $n$ over $A$. 
+A rare subchain $y$ of $x$ with length $m$ needs to fulfill the following properties
+\begin{itemize}
+\item $y$ is a substring of $x$
+\item we can express $y$ with nonconsecutive letters in $x$ (for example,  ``os'' 
+is a rare subchain of ``proposed'' because ``os'' is a substring of ``propOSed'' and we can express ``os'' 
+with nonconsecutive letters in ``prOpoSed'')
+\item there is no sub string $y'$ of $x$ with a lengh greater than $m$ that can be expressed with nonconsecutive letters in $x$ (``os'' is a rare subchain of ``proposed'' because there is no other substring of ``proposed'' with length greater than 2 that can be expressed by non-consecutive letters)
+\end{itemize}
+Given a positive integer $r$,  how many strings $x$ over $A$  has a rare subchain of length $r$.
+
+Solution:  Let $y$ be a string over $A^r$ that we want it to be the rare subchain.  It is clear that there are $k^r$ such kind of strings.  If we could 
+compute the number  $\alpha$ of strings $x$ such that $y$ is a rare subchain of $x$, then we know that there 
+are $\alpha k^r$ strings $x$ over $A$ such that it has a rare subchain of length $r$. To compute the number $\alpha$, we distinguish 
+the following cases:
+\begin{enumerate}
+\item $y$ starts at the first position of $x$, that is, $x=yz$ for some string of $z\in A^{n-r}$: In this case, we only need to 
+calculate the number $\beta_1$ of strings that does not have $y$ as a rare subchain.  Then we know that the nubmer of strings 
+that has $y$ as a rare sunbchain is $\alpha_1=k^{n-r}-\beta_1$. $\beta_1$ is of the sum of the following two cases:
+\begin{enumerate}
+\item there is an $x_0\in A$ such that $yx_0$ is a substring of $x$ and 
+$yx_0$ can be expressed with nonconsecutive letters in $x$: 
+there are $k$ candidates for $x_0$.   For each $x_0$,  this happens if 
+$x_0$ appears in one of the positions $r+2, \cdots, n$.  That is, for each $x_0$, we have a total of 
+$k^{n-r-1}-(k-1)^{n-r-1}$ such kind of $x$.  Here the number $(k-1)^{n-r-1}$
+is the number of strings that do not contain $x_0$ in the positions $r+2, \cdots, n$.
+\item $y$ is not expressed as a string of nonconsecutive letters in $x$ and and $yx_0$  is not expressed as
+ a string of nonconsecutive letters in $x$ where $yx_0$ is a substring of $x$ (where $x_0$ is not the same
+as the last letter of $y$): 
+In this case,  there are $k-1$ candidates for $x_0$.  Furthermore, $x_0$ and 
+the last letter of $y$ should not appear in the positons of $r+2, \cdots, n$.  In a summary, there 
+is a total of $(k-1)(k-2)^{n-r-1}$ such kind of $x$.
+In a summary,  there is a total of $(k-1)(k-2)^{n-r-1}$ such kind of $x$
+\end{enumerate}
+In a summary, we have $\beta_1=k^{n-r-1}-(k-1)^{n-r-1} +(k-1)(k-2)^{n-r-1}$. 
+That is, $\alpha_1=k^{n-r}-k^{n-r-1}+(k-1)^{n-r-1}-(k-1)(k-2)^{n-r-1}$.
+\item $y$ starts at the second position of $x$, that is, $x=z_1yz$ for some string of $z\in A^{n-r-1}$ and for $z_1\in A$
+
+\item ...
+\item $y$ starts at the position $n-r+1$ of $x$, that is, $x=zy$ for some string of $z\in A^{n-r}$: 
+\end{enumerate}
+Then $\alpha$ is the sum of these these numbers $\alpha+\alpha_1+\cdots+\alpha_{n-r+1}$.
+
+
+
+\clearpage
+\noindent
+for a prime $p$ and an integer $m\in [2,p+1]$,  consider the set $G(p,m)$ of polynomials 
+$$f(x)=x+c_2x^2+\cdots+c_mx^m$$
+where $c_2,\cdots, c_m\in Z/pZ$.  Define $f*g(x)=f(g(x))$.  Questons:
+\begin{enumerate}
+\item check that $G(p,m)$ is a group
+\item find a representative of each conjugacy class of $G(p,m)$
+\item find the number of conjugacy classes of $G(p,m)$
+\end{enumerate}
+
+{\bf Answer}:
+For $m=2$,  let $f_1(x)=x+c_2x^2$ and $f_2(x)=x+c_2'x^2$. Then $f_1(f_2(x))=x+(c_2+c_2')x^2$.
+That is, for each $f(x)=x+c_2x^2$, we have $f^{-1}(x)=x+(p-c_2)x^2$. For any given $f(x)=x+c_2x^2$, $g(x)=x+c_2'x^2$,
+and $h(x)=x+c_2''x^2$. Thus 
+$$f=h*g*h^{-1}\mbox{ if and only if }c_2=c_2'+p$$
+That is,
+$$f(x)\equiv g(x)\mbox{ if and only if }c_2=c_2'+p$$
+\begin{enumerate}
+\item done
+\item For $f(x)=x+c_2x^2$, the conjugacy class is $\{x+c_2x^2, x+(p-c_2)x^2\}$
+\item There are $\frac{p+1}{2}$ conjugacy classes: $[x],[x+x^2], \cdots, [x+\frac{p-1}{2}x^2]$
+\end{enumerate}
+
+For $m=2$.  Let $f(x)=x+c_2x^2+c_3x^3$ and $g(x)=x+c_2'x^2+c_3'x^3$. Then
+$f*g(x)=x+(c_2+c_2')x^2+(c_3+c_3'+2c_2c_2')x^3$.  In order for $f=g^{-1}$, we need
+$c_2+c_2'=p$ and $c_3+c_3'+2c_2c_2'=p$.  The analysis could continue.
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

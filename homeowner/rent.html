@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent Cost Calculation<</title>
+</head>
+<body>
+
+  <h2>Calculating minimum rent for a house</h2>
+  <h3>Please enter the following information</h3>
+
+  <form id="mortgageForm">
+    <label for="housePrice">House Price:</label>
+    <input type="number" id="housePrice" value="450000"><br>
+
+    <label for="downpayment">Downpayment:</label>
+    <input type="number" id="downpayment" value="90000"><br>
+
+    <label for="annualInsurance">Annual Insurance:</label>
+    <input type="number" id="annualInsurance" value="1200"><br>
+
+    <label for="annualPropertyTax">Annual Property Tax:</label>
+    <input type="number" id="annualPropertyTax" value="4000"><br>
+
+    <label for="mortgageRate">Mortgage Rate (%):</label>
+    <input type="number" id="mortgageRate" value="7.55"><br>
+
+    <label for="tbillRate">4 Month T-Bill Rate (%):</label>
+    <input type="number" id="tbillRate" value="5.28"><br>
+
+    <button type="button" onclick="calculate()">Calculate</button>
+  </form>
+
+  <h2>Results:</h2>
+  <div id="results"></div>
+
+  <script>
+    function calculate() {
+      const housePrice = parseFloat(document.getElementById('housePrice').value);
+      const downpayment = parseFloat(document.getElementById('downpayment').value);
+      const annualInsurance = parseFloat(document.getElementById('annualInsurance').value);
+      const annualPropertyTax = parseFloat(document.getElementById('annualPropertyTax').value);
+      const mortgageRate = parseFloat(document.getElementById('mortgageRate').value) / 100;
+      const tbillRate = parseFloat(document.getElementById('tbillRate').value) / 100;
+
+      const loanAmount = housePrice - downpayment;
+      const monthlyInterestRate = mortgageRate / 12;
+      const loanTermInMonths = 30 * 12; // Assuming a 30-year mortgage
+
+      const monthlyPayment = loanAmount * monthlyInterestRate;
+      const totalExpenses = monthlyPayment + (annualInsurance + annualPropertyTax) / 12;
+
+      const tbillIncome = (downpayment * tbillRate) / 12;
+
+      const breakEvenRent = totalExpenses + tbillIncome;
+
+      document.getElementById('results').innerHTML = `
+        <p>The minimal rent: $${totalExpenses.toFixed(2)}</p>
+        <p>The minimal rent so that you will get a return at least as the return that you will get if you put
+your downpayment in the  4 weeks T-Bill: $${breakEvenRent.toFixed(2)}</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
