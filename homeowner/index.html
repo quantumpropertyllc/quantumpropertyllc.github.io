@@ -2,354 +2,238 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>夏洛特华人 DIY 资料库</title>
-
   <style>
     :root {
-      --bg: #f2f2f7;
-      --card: #ffffff;
-      --text: #1c1c1e;
-      --sub: #8e8e93;
-      --primary: #34c759; 
-      --accent: #007aff; 
-      --border: rgba(0,0,0,0.05);
-      --tag-bg: #e1f5fe;
-      --tag-text: #0288d1;
+      --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --sub: #8e8e93;
+      --primary: #34c759; --accent: #007aff; --border: rgba(0,0,0,0.08);
+      --tag-bg: rgba(0,122,255,0.1); --tag-text: #007aff;
+      --header-grad: linear-gradient(135deg, #2ecc71, #007aff);
     }
-
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #000000;
-        --card: #1c1c1e;
-        --text: #ffffff;
-        --sub: #8e8e93;
-        --primary: #32d74b;
-        --accent: #0a84ff;
-        --border: rgba(255,255,255,0.1);
-        --tag-bg: #012a45;
-        --tag-text: #4fc3f7;
+        --bg: #000000; --card: #1c1c1e; --text: #ffffff; --sub: #8e8e93;
+        --primary: #32d74b; --accent: #0a84ff; --border: rgba(255,255,255,0.1);
+        --tag-bg: rgba(10,132,255,0.2); --tag-text: #4fc3f7;
       }
     }
-
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    
     body { 
-      margin: 0; 
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif; 
-      background: var(--bg); 
-      color: var(--text); 
-      line-height: 1.5;
+      margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif; 
+      background: var(--bg); color: var(--text); line-height: 1.5; padding-bottom: 40px;
     }
-
     header { 
-      padding: 40px 20px 25px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: white;
-      text-align: left;
-      border-radius: 0 0 24px 24px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 50px 20px 30px; background: var(--header-grad); color: white;
+      border-radius: 0 0 30px 30px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
-    header h1 { margin: 0; font-size: 1.6rem; font-weight: 800; }
-    header p { margin: 5px 0 0; font-size: 0.85rem; opacity: 0.9; }
-
-    .container { padding: 0 16px; max-width: 600px; margin: auto; }
-
-    .search-wrapper {
-      position: sticky;
-      top: 10px;
-      z-index: 100;
-      margin-bottom: 24px;
-    }
+    header h1 { margin: 0; font-size: 1.8rem; font-weight: 800; }
+    header p { margin: 8px 0 0; font-size: 0.9rem; opacity: 0.85; }
+    .container { padding: 0 16px; max-width: 700px; margin: auto; }
+    .search-wrapper { position: sticky; top: 10px; z-index: 100; margin-bottom: 24px; }
     .controls { 
-      display: flex; 
-      gap: 10px; 
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(15px);
-      padding: 10px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      border: 1px solid var(--border);
+      display: flex; gap: 10px; padding: 8px; border-radius: 18px;
+      background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1); border: 1px solid var(--border);
     }
-    .controls input, .controls select { 
-      padding: 12px; 
-      border-radius: 10px; 
-      border: none; 
-      background: var(--bg); 
-      color: var(--text); 
-      font-size: 0.9rem;
-      outline: none;
-    }
-    .controls input { flex: 2; }
+    @media (prefers-color-scheme: dark) { .controls { background: rgba(28, 28, 30, 0.7); } }
+    .controls input, .controls select { padding: 12px; border-radius: 12px; border: none; background: var(--bg); color: var(--text); font-size: 1rem; outline: none; }
+    .controls input { flex: 2; border: 1px solid transparent; }
     .controls select { flex: 1.2; font-weight: 500; }
-
-    .section-title { 
-      margin: 30px 0 15px 4px; 
-      font-size: 1.2rem; 
-      font-weight: 700; 
-      color: var(--text);
-    }
-
-    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    
-    .card { 
-      background: var(--card); 
-      border-radius: 20px; 
-      padding: 18px; 
-      box-shadow: 0 2px 8px var(--border);
-    }
-
-    .card h3 { 
-      margin: 0 0 15px 0; 
-      font-size: 1.1rem; 
-      font-weight: 700;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
+    .section-title { font-size: 1.25rem; font-weight: 800; color: var(--text); margin: 32px 0 16px 4px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .card { background: var(--card); border-radius: 24px; padding: 22px; border: 1px solid var(--border); }
+    .card h3 { margin: 0 0 18px 0; font-size: 1.15rem; font-weight: 700; border-bottom: 1px solid var(--border); padding-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
     .info-list { list-style: none; padding: 0; margin: 0; }
-    .info-item {
-      padding: 12px 0;
-      border-bottom: 1px dashed var(--border);
-    }
+    .info-item { padding: 14px 0; border-bottom: 1px dashed var(--border); }
     .info-item:last-child { border-bottom: none; }
-    .info-label {
-      display: block;
-      font-size: 0.75rem;
-      color: var(--sub);
-      margin-bottom: 4px;
-      font-weight: 500;
-    }
-    .info-content {
-      font-size: 0.95rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-    }
-
+    .info-label { display: block; font-size: 0.8rem; color: var(--sub); margin-bottom: 6px; font-weight: 600; }
+    .info-content { font-size: 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
     a { color: var(--accent); text-decoration: none; }
     .phone-link {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(52, 199, 89, 0.1);
-      color: #248a3d;
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; background: rgba(52, 199, 89, 0.1); color: #248a3d;
+      padding: 4px 10px; border-radius: 8px; font-weight: 600; font-size: 0.9rem;
     }
-    @media (prefers-color-scheme: dark) {
-      .phone-link { background: rgba(50, 215, 75, 0.15); color: #32d74b; }
-    }
-    
-    .tag { 
-      background: var(--tag-bg); 
-      color: var(--tag-text); 
-      font-size: 0.7rem; 
-      padding: 2px 8px; 
-      border-radius: 6px; 
-    }
-
-    footer { 
-      text-align: center; 
-      margin: 60px 0 30px; 
-      color: var(--sub); 
-      font-size: 0.8rem; 
-      border-top: 1px solid var(--border);
-      padding-top: 20px;
-    }
+    @media (prefers-color-scheme: dark) { .phone-link { background: rgba(50, 215, 75, 0.15); color: #32d74b; } }
+    .tag { background: var(--tag-bg); color: var(--tag-text); font-size: 0.75rem; padding: 4px 10px; border-radius: 8px; font-weight: 600; }
+    footer { text-align: center; margin: 60px 0 20px; color: var(--sub); font-size: 0.85rem; padding: 0 20px; }
   </style>
 </head>
-
 <body>
 
 <header>
   <h1>DIY 资料库</h1>
-  <p>Charlotte Chinese Community · 全量数据完整版</p>
+  <p>Charlotte Chinese Community · 全量数据版</p>
 </header>
 
 <div class="container">
-
   <div class="search-wrapper">
     <div class="controls">
       <input id="searchInput" type="search" placeholder="搜索师傅、服务或电话..." />
       <select id="categoryFilter">
-        <option value="all">所有分类</option>
+        <option value="all">全部分类</option>
         <option value="home">🏠 房屋维护</option>
         <option value="service">🧰 专业服务</option>
       </select>
     </div>
   </div>
 
-  <div class="section-title">🏠 房屋维护</div>
-  <div class="grid">
-
-    <div class="card item" data-category="home">
-      <h3>草坪 / 树木 <span class="tag">常用</span></h3>
-      <div class="info-list">
-        <div class="info-item">
-          <span class="info-label">草坪维护 (Mowing)</span>
-          <div class="info-content">Gary <a href="tel:704-458-1850" class="phone-link">📞 704-458-1850</a></div>
-        </div>
-        <div class="info-item">
-          <span class="info-label">打洞 (Aeration)</span>
-          <div class="info-content">
-            <a href="https://www.greenyardaeration.com">Green Yard</a> 或 
-            Rod <a href="tel:704-488-0814" class="phone-link">📞 704-488-0814</a> 或 
-            Jose <a href="tel:704-497-4327" class="phone-link">📞 704-497-4327</a>
+  <div id="mainContent">
+    <div class="section-title">🏠 房屋维护</div>
+    <div class="grid">
+      <div class="card item" data-category="home">
+        <h3>草坪 / 树木 <span class="tag">常用</span></h3>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">草坪维护 (Mowing)</span>
+            <div class="info-content">Gary <a href="tel:7044581850" class="phone-link">📞 704-458-1850</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">打洞 (Aeration)</span>
+            <div class="info-content">
+              <a href="https://www.greenyardaeration.com">Green Yard</a> 或 
+              Rod <a href="tel:7044880814" class="phone-link">📞 704-488-0814</a> 或 
+              Jose <a href="tel:7044974327" class="phone-link">📞 704-497-4327</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">户外景观 (Exterior)</span>
+            <div class="info-content"><a href="http://www.MrOutdoorLiving.com">Mr. Outdoor Living</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">松针 (Pine Needles)</span>
+            <div class="info-content"><a href="https://www.jjpineneedles.com">JJ Pine Needles</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">砍树</span>
+            <div class="info-content"><a href="tel:9803224589" class="phone-link">📞 980-322-4589‬</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">树根移除</span>
+            <div class="info-content"><a href="https://cornerstonestumpremoval.com">Cornerstone</a></div>
           </div>
         </div>
-        <div class="info-item">
-          <span class="info-label">户外景观 (Exterior)</span>
-          <div class="info-content"><a href="http://www.MrOutdoorLiving.com">Mr. Outdoor Living</a></div>
+      </div>
+
+      <div class="card item" data-category="home">
+        <h3>窗户 / 车库门</h3>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">窗户与玻璃维修</span>
+            <div class="info-content">
+              <a href="https://glassdoctor.com">Glass Doctor</a> | 
+              <a href="https://dukevinylwindows.com">Duke Windows</a> <a href="tel:9803550756" class="phone-link">📞 980-355-0756</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">车库门 (Garage Doors)</span>
+            <div class="info-content"><a href="https://bggaragedoors.com">B&G Garage Door</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">各种玻璃</span>
+            <div class="info-content"><a href="https://www.binswangerglass.com/">Binswanger Glass</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">车库门 / 弹簧更换</span>
+            <div class="info-content">
+              <a href="tel:6172299263" class="phone-link">📞 617-229-9263</a> | 
+              <a href="https://quickfixgaragedoorservice.com">QuickFix</a> | 
+              <a href="https://www.tiptopgaragedoors.com">TipTop</a>
+            </div>
+          </div>
         </div>
-        <div class="info-item">
-          <span class="info-label">松针 (Pine Needles)</span>
-          <div class="info-content"><a href="https://www.jjpineneedles.com">JJ Pine Needles</a></div>
+      </div>
+
+      <div class="card item" data-category="home">
+        <h3>屋顶 / 油漆 / 墙面</h3>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">Popcorn removal (爆米花顶去除)</span>
+            <div class="info-content"><a href="https://www.artisttouchdrywall.com/">Artist Touch Drywall</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">油漆师傅 (Painting)</span>
+            <div class="info-content">
+              JCP <a href="tel:3365779960" class="phone-link">📞 336-577-9960</a> | 
+              Dennis <a href="tel:9807223681" class="phone-link">📞 980-722-3681</a> | 
+              Christian <a href="tel:7042322668" class="phone-link">📞 704-232-2668</a> | 
+              Molina <a href="tel:9723656178" class="phone-link">📞 972-365-6178</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">屋顶维修 (Repair)</span>
+            <div class="info-content">
+              Darryl <a href="tel:7048373967" class="phone-link">📞 704-837-3967</a> | 
+              Tony <a href="tel:9803294410" class="phone-link">📞 980-329-4410</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">新屋顶 (New Roof)</span>
+            <div class="info-content">
+              <a href="https://www.newroofclt.com">New Roof</a> | 
+              <a href="https://charlotteaceroofing.com/">ACE Roofing</a>
+            </div>
+          </div>
         </div>
-        <div class="info-item">
-          <span class="info-label">砍树</span>
-          <div class="info-content"><a href="tel:980-322-4589" class="phone-link">📞 980-322-4589‬</a></div>
-        </div>
-        <div class="info-item">
-          <span class="info-label">树根移除</span>
-          <div class="info-content"><a href="https://cornerstonestumpremoval.com">Cornerstone</a></div>
+      </div>
+
+      <div class="card item" data-category="home">
+        <h3>地板 / 地毯</h3>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">安装 (Floor/Carpet)</span>
+            <div class="info-content">
+              William <a href="tel:8018317690" class="phone-link">📞 801-831-7690</a> | 
+              Robert <a href="tel:7042888713" class="phone-link">📞 704-288-8713</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">清洗 (Clean)</span>
+            <div class="info-content">
+              ABC Care <a href="tel:7042015743" class="phone-link">📞 704-201-5743</a> | 
+              Luis <a href="tel:7047791322" class="phone-link">📞 704-779-1322</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">更多备注</span>
+            <div class="info-content">
+              Robert: robertwaynehicks@yahoo.com | 
+              <a href="https://www.reoflooringsolutions.com">R.E.O. solutions</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="card item" data-category="home">
-      <h3>窗户 / 车库门</h3>
-      <div class="info-list">
-        <div class="info-item">
-          <span class="info-label">窗户与玻璃维修</span>
-          <div class="info-content">
-            <a href="https://glassdoctor.com">Glass Doctor</a> | 
-            <a href="https://dukevinylwindows.com">Duke Windows</a> <a href="tel:980-355-0756" class="phone-link">📞 980-355-0756</a>
+    <div class="section-title">🧰 专业服务</div>
+    <div class="grid">
+      <div class="card item" data-category="service">
+        <h3>搬家 / 锁匠 / 专项</h3>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">搬家服务 (Moving)</span>
+            <div class="info-content">
+              <a href="https://ballantynemoving.com">Ballantyne</a> | 
+              <a href="https://helpinghandscharlottenc.com">Helping Hands</a> | 
+              <a href="https://www.nbmoving.com">New Beginnings</a>
+            </div>
           </div>
-        </div>
-        <div class="info-item">
-          <span class="info-label">车库门 (Garage Doors)</span>
-          <div class="info-content"><a href="https://bggaragedoors.com">B&G Garage Door</a></div>
-        </div>
-        <div class="info-item">
-          <span class="info-label">各种玻璃</span>
-          <div class="info-content"><a href="https://www.binswangerglass.com/">Binswanger Glass</a></div>
-        </div>
-        <div class="info-item">
-          <span class="info-label">车库门 / 弹簧更换</span>
-          <div class="info-content">
-            <a href="tel:617-229-9263" class="phone-link">📞 617-229-9263</a> | 
-            <a href="https://quickfixgaragedoorservice.com">QuickFix</a> | 
-            <a href="https://www.tiptopgaragedoors.com">TipTop</a>
+          <div class="info-item">
+            <span class="info-label">水分侵入分析 (Moisture analysis)</span>
+            <div class="info-content">Morgan <a href="tel:9807227412" class="phone-link">📞 980-722-7412</a></div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card item" data-category="home">
-      <h3>屋顶 / 油漆 / 墙面</h3>
-      <div class="info-list">
-        <div class="info-item">
-          <span class="info-label">Popcorn removal (爆米花顶去除)</span>
-          <div class="info-content"><a href="https://www.artisttouchdrywall.com/">Artist Touch Drywall</a></div>
-        </div>
-        <div class="info-item">
-          <span class="info-label">油漆师傅 (Painting)</span>
-          <div class="info-content">
-            JCP <a href="tel:336-577-9960" class="phone-link">📞 336-577-9960</a> | 
-            Dennis <a href="tel:980-722-3681" class="phone-link">📞 980-722-3681</a> | 
-            Christian <a href="tel:704-232-2668" class="phone-link">📞 232-2668</a> | 
-            Molina <a href="tel:972-365-6178" class="phone-link">📞 365-6178</a>
-          </div>
-        </div>
-        <div class="info-item">
-          <span class="info-label">屋顶维修 (Repair)</span>
-          <div class="info-content">
-            Darryl <a href="tel:704-837-3967" class="phone-link">📞 837-3967</a> | 
-            Tony <a href="tel:980-329-4410" class="phone-link">📞 329-4410</a>
-          </div>
-        </div>
-        <div class="info-item">
-          <span class="info-label">新屋顶 (New Roof)</span>
-          <div class="info-content">
-            <a href="https://www.newroofclt.com">New Roof</a> | 
-            <a href="https://charlotteaceroofing.com/">ACE Roofing</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card item" data-category="home">
-      <h3>地板 / 地毯</h3>
-      <div class="info-list">
-        <div class="info-item">
-          <span class="info-label">安装 (Floor/Carpet)</span>
-          <div class="info-content">
-            William <a href="tel:801-831-7690" class="phone-link">📞 801-831-7690</a> | 
-            Robert <a href="tel:704-288-8713" class="phone-link">📞 288-8713</a>
-          </div>
-        </div>
-        <div class="info-item">
-          <span class="info-label">清洗 (Clean)</span>
-          <div class="info-content">
-            ABC Care <a href="tel:704-201-5743" class="phone-link">📞 201-5743</a> | 
-            Luis <a href="tel:704-779-1322" class="phone-link">📞 779-1322</a>
-          </div>
-        </div>
-        <div class="info-item">
-          <span class="info-label">更多备注</span>
-          <div class="info-content">
-            Robert: robertwaynehicks@yahoo.com | 
-            <a href="https://www.reoflooringsolutions.com">R.E.O. solutions</a>
+          <div class="info-item">
+            <span class="info-label">紧急开锁</span>
+            <div class="info-content">Carissa <a href="tel:9802925625" class="phone-link">📞 980-292-5625</a></div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="section-title">🧰 专业服务</div>
-  <div class="grid">
-    <div class="card item" data-category="service">
-      <h3>搬家服务 (Moving)</h3>
-      <div class="info-list">
-        <div class="info-item">
-          <div class="info-content">
-            <a href="https://ballantynemoving.com">Ballantyne</a> | 
-            <a href="https://helpinghandscharlottenc.com">Helping Hands</a> | 
-            <a href="https://www.nbmoving.com">New Beginnings</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card item" data-category="service">
-      <h3>Handyman / 专项</h3>
-      <div class="info-list">
-        <div class="info-item">
-          <span class="info-label">水分侵入分析 (Moisture analysis)</span>
-          <div class="info-content">Morgan <a href="tel:980-722-7412" class="phone-link">📞 980-722-7412</a></div>
-        </div>
-        <div class="info-item">
-          <span class="info-label">紧急开锁</span>
-          <div class="info-content">Carissa <a href="tel:980-292-5625" class="phone-link">📞 980-292-5625</a></div>
-        </div>
-      </div>
-    </div>
-
-    
-
 </div>
 
 <footer>
-  <p>© 2026 夏洛特华人生活指南</p>
-  <p>Contact: bankofworld@gmail.com</p>
+  <p>© 2026 夏洛特华人生活指南<br>Contact: bankofworld@gmail.com</p>
 </footer>
 
 <script>
@@ -358,21 +242,17 @@ const categoryFilter = document.getElementById("categoryFilter");
 const items = document.querySelectorAll(".item");
 
 function filterItems() {
-  const keyword = searchInput.value.toLowerCase();
+  const keyword = searchInput.value.toLowerCase().trim();
   const category = categoryFilter.value;
-
   items.forEach(item => {
     const text = item.innerText.toLowerCase();
     const matchText = text.includes(keyword);
     const matchCategory = category === "all" || item.dataset.category === category;
-    item.style.display = matchText && matchCategory ? "" : "none";
+    item.style.display = (matchText && matchCategory) ? "" : "none";
   });
 }
-
 searchInput.addEventListener("input", filterItems);
 categoryFilter.addEventListener("change", filterItems);
 </script>
-
 </body>
 </html>
-
