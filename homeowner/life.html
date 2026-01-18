@@ -1,81 +1,252 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北卡生活 | NC Life </title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
-        header { background: #004a99; color: white; padding: 2rem; text-align: center; border-radius: 8px; margin-bottom: 20px; }
-        h2 { color: #004a99; border-bottom: 2px solid #004a99; padding-bottom: 5px; margin-top: 30px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .highlight { color: #d9534f; font-weight: bold; }
-        footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #666; }
-        .lang-en { font-size: 0.85em; color: #555; display: block; margin-top: 5px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>北卡生活 | NC Life</title>
+
+  <style>
+    :root {
+      --bg: #f2f2f7; /* iOS 系统背景色 */
+      --card: #ffffff;
+      --text: #1c1c1e;
+      --sub: #8e8e93;
+      --primary: #007aff; /* 经典 iOS 蓝色 */
+      --accent: #5856d6; /* 紫色调增加高级感 */
+      --border: rgba(0,0,0,0.05);
+      --tag-bg: #fff9db;
+      --tag-text: #f08c00;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --card: #1c1c1e;
+        --text: #ffffff;
+        --sub: #8e8e93;
+        --primary: #0a84ff;
+        --accent: #5e5ce6;
+        --border: rgba(255,255,255,0.1);
+        --tag-bg: #2c2401;
+        --tag-text: #ffd43b;
+      }
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    
+    body { 
+      margin: 0; 
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif; 
+      background: var(--bg); 
+      color: var(--text); 
+      line-height: 1.5;
+    }
+
+    /* 顶部导航条样式 */
+    header { 
+      padding: 40px 20px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      text-align: left;
+      border-radius: 0 0 24px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    header h1 { margin: 0; font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; }
+    header p { margin: 5px 0 0; font-size: 0.9rem; opacity: 0.8; }
+
+    .container { padding: 0 16px; max-width: 600px; margin: auto; }
+
+    /* 搜索框美化 */
+    .search-wrapper {
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+      margin-bottom: 24px;
+    }
+    .controls { 
+      display: flex; 
+      gap: 10px; 
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px); /* 毛玻璃效果 */
+      padding: 10px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+    }
+    .controls input, .controls select { 
+      padding: 12px; 
+      border-radius: 10px; 
+      border: none; 
+      background: var(--bg); 
+      color: var(--text); 
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .controls input { flex: 2; }
+    .controls select { flex: 1; font-weight: 500; }
+
+    .section-title { 
+      margin: 30px 0 15px 4px; 
+      font-size: 1.2rem; 
+      font-weight: 700; 
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* 卡片与网格 */
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    
+    .card { 
+      background: var(--card); 
+      border-radius: 20px; 
+      padding: 20px; 
+      box-shadow: 0 2px 8px var(--border);
+      transition: transform 0.2s ease;
+    }
+    .card:active { transform: scale(0.98); } /* 点击缩放反馈 */
+
+    .card h3 { 
+      margin: 0 0 15px 0; 
+      font-size: 1.1rem; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+    }
+
+    /* 链接样式改为按钮感 */
+    .link-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 手机端两列显示 */
+      gap: 10px;
+    }
+    .link-item {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      background: var(--bg);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .link-item:hover { background: var(--border); }
+    
+    .tag { 
+      background: var(--tag-bg); 
+      color: var(--tag-text); 
+      font-size: 0.7rem; 
+      padding: 3px 8px; 
+      border-radius: 6px; 
+      font-weight: 600;
+    }
+
+    footer { 
+      text-align: center; 
+      margin: 60px 0 30px; 
+      color: var(--sub); 
+      font-size: 0.8rem; 
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+    footer p { margin: 4px 0; }
+
+    /* 隐藏滚动条但保留功能 */
+    ::-webkit-scrollbar { display: none; }
+  </style>
 </head>
+
 <body>
 
 <header>
-    <h1>北卡生活</h1>
-    <p>NC Life </p>
+  <h1>北卡生活</h1>
+  <p>NC Life · 发现更美好的北卡</p>
 </header>
 
-<section class="card">
-    <p><strong>欢迎来到女王之城！</strong> </p>
-</section>
+<div class="container">
 
-<h2>1. 北美华人新闻 </h2>
-<div class="grid">
-   
-    <div class="card">
-        <h3> AI 精选 </h3>
-    <ul>
-		<li> <a href="https://www.wenxuecity.com/news/">文学城新闻</a> </li>
-		<li> <a href="https://huaren.us/">华人.us</a> </li>
-		<li> <a href="https://www.creaders.net/">万维读者</a> </li>
-		<li> <a href="https://www.worldjournal.com/">世界日报</a> </li>
-		<li> <a href="https://www.sinovision.net/home/">美国中文网</a> </li>
-		<li> <a href="https://www.youtube.com/channel/UC30KnUIy5oIj325JwiBTqxw">美国中文电视</a> </li>
-		<li> <a href="https://paper.uschinapress.cn/">侨报</a> </li>
-		<li> <a href="https://www.singtaousa.com/">星島日報</a> </li>
-		<li> <a href="https://cn.wsj.com/">华尔街日报中文版</a> </li>
-		<li> <a href="https://m.huanqiu.com/list/world">环球网</a> </li>
-		<li> <a href="https://www.zaobao.com.sg/realtime/world">联合早报</a> </li>
-		<li> <a href="https://m.cn.nytimes.com/">纽约时报中文网</a> </li>
-		<li> <a href="https://www.bbc.com/zhongwen/simp">BBC中文</a> </li>
-		
-</ul>
-
+  <div class="search-wrapper">
+    <div class="controls">
+      <input id="searchInput" type="search" placeholder="🔍 搜索名称或关键字..." />
+      <select id="categoryFilter">
+        <option value="all">全部分类</option>
+        <option value="news">新闻</option>
+        <option value="life">生活</option>
+      </select>
     </div>
-</div>
+  </div>
 
-<h2>2. 吃喝玩乐/购物 </h2>
-<div class="grid">
-    <div class="card">
-        <h3> AI 精选 </h3>
-        <ul>
-		<li> <a href="https://www.dealmoon.com/">北美省錢快報</a> </li>
-			<li> <a href="https://newmitbbs.com/">新未名空间</a> </li>
-		<li> <a href="https://6parknews.com/">留圆网</a> </li>
-		<li> <a href="https://www.backchina.com/">倍可亲</a> </li>
-		<li> <a href="https://www.1point3acres.com/bbs/">一亩三分地</a> </li>
-		<li> <a href="seattlechinaren.com">湾区华人资讯网</a> </li>
-		<li> <a href="https://www.yami.com/zh">亚米</a> </li>
-</ul>
-
+  <div class="section-title">📰 北美华人新闻</div>
+  <div class="grid">
+    <div class="card item" data-category="news">
+      <h3>AI 智能推荐 <span class="tag">HOT</span></h3>
+      <div class="link-list">
+        <a class="link-item" href="https://www.wenxuecity.com/news/">文学城</a>
+        <a class="link-item" href="https://huaren.us/">华人.us</a>
+        <a class="link-item" href="https://www.creaders.net/">万维读者</a>
+        <a class="link-item" href="https://www.worldjournal.com/">世界日报</a>
+        <a class="link-item" href="https://www.sinovision.net/home/">美国中文网</a>
+        <a class="link-item" href="https://cn.wsj.com/">华尔街日报</a>
+        <a class="link-item" href="https://m.cn.nytimes.com/">纽约时报</a>
+        <a class="link-item" href="https://www.bbc.com/zhongwen/simp">BBC 中文</a>
+      </div>
     </div>
-    
+  </div>
+
+  <div class="section-title">🛍️ 吃喝玩乐 / 购物</div>
+  <div class="grid">
+    <div class="card item" data-category="life">
+      <h3>生活服务精选 <span class="tag">ESSENTIAL</span></h3>
+      <div class="link-list">
+        <a class="link-item" href="https://www.dealmoon.com/">北美省钱快报</a>
+        <a class="link-item" href="https://newmitbbs.com/">新未名空间</a>
+        <a class="link-item" href="https://6parknews.com/">留园网</a>
+        <a class="link-item" href="https://www.backchina.com/">倍可亲</a>
+        <a class="link-item" href="https://www.1point3acres.com/bbs/">一亩三分地</a>
+        <a class="link-item" href="https://www.yami.com/zh">亚米网</a>
+      </div>
+    </div>
+  </div>
+
 </div>
-
-
-	
 
 <footer>
-    <p>© 2026 夏洛特华人生活指南 | 仅供信息参考，投资需谨慎。</p>
-    <p>Contact: bankofworld@gmail.com</p>
+  <p>© 2026 夏洛特华人生活指南</p>
+  <p>Bank of World · 专注华人社区服务</p>
+  <p>Contact: bankofworld@gmail.com</p>
 </footer>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+const items = document.querySelectorAll(".item");
+
+function filterItems() {
+  const keyword = searchInput.value.toLowerCase();
+  const category = categoryFilter.value;
+
+  items.forEach(item => {
+    // 同时搜索卡片标题和内部链接文字
+    const text = item.innerText.toLowerCase();
+    const matchText = text.includes(keyword);
+    const matchCategory = category === "all" || item.dataset.category === category;
+
+    if (matchText && matchCategory) {
+      item.style.display = "";
+      // 增加淡入效果
+      item.style.animation = "fadeIn 0.4s ease";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+
+searchInput.addEventListener("input", filterItems);
+categoryFilter.addEventListener("change", filterItems);
+</script>
 
 </body>
 </html>
