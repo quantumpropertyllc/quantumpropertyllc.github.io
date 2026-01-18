@@ -2,375 +2,421 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>夏洛特餐厅推荐</title>
-  <meta name="theme-color" content="#2563eb" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>夏洛特美食指南</title>
   <style>
     :root {
-      --bg:#f6f7f9;
-      --card:#ffffff;
-      --text:#1c1c1e;
-      --sub:#6b7280;
-      --primary:#2563eb;
-      --border:#e5e7eb;
-      --tag:#fde68a;
+      --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --sub: #8e8e93;
+      --border: rgba(0,0,0,0.06); --primary: #007aff;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg:#0f172a;
-        --card:#1e293b;
-        --text:#f8fafc;
-        --sub:#94a3b8;
-        --primary:#60a5fa;
-        --border:#334155;
-        --tag:#92400e;
+        --bg: #000000; --card: #1c1c1e; --text: #ffffff; --sub: #8e8e93;
+        --border: rgba(255,255,255,0.1); --primary: #0a84ff;
       }
     }
-    * { box-sizing:border-box; }
-    body {
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      max-width:800px;
-      margin:auto;
-      padding:20px;
-    }
-    header { text-align:center; padding:12px 0; }
-    header h1 { margin:0; font-size:1.2rem; }
-    header p { margin:4px 0 0 0; font-size:0.85rem; color:var(--sub); }
-    .container { padding:5px; }
 
-    /* === CONTROLS === */
-    .controls-row {
-      display:flex;
-      flex-wrap:nowrap;
-      gap:8px;
-      align-items:center;
-      margin-bottom:16px;
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body { 
+      margin: 0; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; 
+      background: var(--bg); color: var(--text); padding-bottom: 60px;
     }
-    .controls-row input,
-    .controls-row select {
-      padding:8px 10px;
-      border-radius:8px;
-      border:1px solid var(--border);
-      background:var(--card);
-      color:var(--text);
-      min-width:0;
-    }
-    .controls-row input { flex:1 1 auto; }
-    .controls-row select { flex:0 1 auto; }
 
-    /* === CARDS === */
-    .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-      gap:12px;
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(242, 242, 247, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      padding: 16px; border-bottom: 1px solid var(--border); text-align: center;
     }
+    header h1 { margin: 0; font-size: 17px; font-weight: 700; }
+
+    .container { padding: 12px; max-width: 600px; margin: auto; }
+
+    .search-container {
+      position: sticky; top: 60px; z-index: 999;
+      background: var(--bg); padding: 10px 0;
+    }
+    .search-box {
+      background: var(--card); border-radius: 12px; padding: 12px 16px;
+      display: flex; align-items: center; border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .search-box input {
+      border: none; background: transparent; color: var(--text);
+      font-size: 16px; width: 100%; outline: none;
+    }
+
+    .grid { margin-top: 10px; }
     .card {
-      background:var(--card);
-      padding:12px;
-      border-radius:10px;
-      box-shadow:0 2px 5px rgba(0,0,0,.05);
+      background: var(--card); border-radius: 20px; padding: 18px;
+      margin-bottom: 16px; border: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
     }
-    .card h2 { margin:0 0 6px 0; font-size:0.95rem; }
-    .meta { font-size: 0.85rem; color: var(--sub); line-height: 1.4; }
-    a { color:var(--primary); text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    .tag {
-      display:inline-block;
-      background:var(--tag);
-      color:#000;
-      font-size:0.65rem;
-      padding:2px 5px;
-      border-radius:999px;
-      margin-right:4px;
+    .card h2 { margin: 0 0 4px 0; font-size: 18px; font-weight: 700; }
+    .meta { font-size: 13px; color: var(--sub); margin-bottom: 16px; line-height: 1.4; }
+
+    /* 按钮样式：仿原生 App 磁贴 */
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .btn {
+      display: flex; align-items: center; justify-content: center; gap: 4px;
+      padding: 10px 4px; border-radius: 10px; font-size: 13px; font-weight: 600;
+      text-decoration: none; transition: background 0.2s;
     }
-    .actions { margin-top:8px; border-top: 1px solid var(--border); padding-top: 8px; font-size: 0.85rem; }
-    footer { text-align:center; margin:36px 0 18px; color:var(--sub); font-size:.8rem; }
+    .btn.dd { background: #ff300810; color: #ff3008; } /* DoorDash */
+    .btn.gg { background: #4285f410; color: #4285f4; } /* Google */
+    .btn.nav { background: #34c75910; color: #34c759; } /* Maps */
+    .btn.web { background: var(--bg); color: var(--sub); } /* Website */
+    
+    .btn:active { background: rgba(0,0,0,0.1); }
+    @media (prefers-color-scheme: dark) { .btn:active { background: rgba(255,255,255,0.1); } }
+
+    footer { text-align: center; padding: 40px 20px; color: var(--sub); font-size: 12px; }
   </style>
 </head>
-
 <body>
 
 <header>
-  <h1>夏洛特餐厅推荐</h1>
-  <p>一键导航 / 官网 / DoorDash / Google 评价</p>
+  <h1>夏洛特美食指南 (28)</h1>
 </header>
 
 <div class="container">
-
-  <div class="controls-row">
-    <input id="searchInput" type="search" placeholder="搜索餐厅 / Search...">
-    <select id="categoryFilter">
-      <option value="all">全部分类</option>
-      <option value="chinese">中餐</option>
-      <option value="korean">韩餐</option>
-      <option value="vietnamese">越南粉</option>
-      <option value="western">西餐</option>
-    </select>
-    <select id="sortFilter">
-      <option value="default">默认排序</option>
-      <option value="rec">推荐优先</option>
-      <option value="hot">人气优先</option>
-    </select>
+  <div class="search-container">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="搜索餐厅名、菜系或地址..." />
+    </div>
   </div>
 
-  <div class="grid">
-
-    <div class="card" data-category="chinese" data-website="https://www.suns.kitchen">
+  <div id="grid" class="grid">
+    <div class="card item" data-name="Sun's Kitchen 老孫家">
       <h2>Sun's Kitchen 老孫家</h2>
-      <div class="tags"><span class="tag rec">推荐</span><span class="tag hot">人气</span></div>
-      <div class="meta">📍 3216 South Blvd. Suite 105, Charlotte, NC 28209</div>
-    </div>
-
-    <div class="card" data-category="chinese" data-website="https://www.openriceclt.com">
-      <h2>Open Rice / Dim Sum</h2>
-      <div class="tags"><span class="tag rec">推荐</span></div>
-      <div class="meta">📍 1100 Metropolitan Ave Suite 100, Charlotte, NC 28204</div>
-    </div>
-
-    <div class="card" data-category="chinese" data-website="https://eathawkers.com">
-      <h2>Hawkers Asian Street Food</h2>
-      <div class="meta">📍 1930 Camden Rd #100, Charlotte, NC 28203</div>
-    </div>
-
-    <div class="card" data-category="chinese" data-website="https://www.leecafefortmill.com">
-      <h2>Lee Cafe 川湘阁</h2>
-      <div class="meta">📍 1046 Regent Pkwy #107, Fort Mill, SC 29715</div>
-    </div>
-
-    <div class="card" data-category="chinese" data-website="https://www.lanzhouhand-pullednoodles.com">
-      <h2>兰州牛肉面 / 肉夹馍</h2>
-      <div class="tags"><span class="tag rec">推荐</span></div>
-      <div class="meta">📍 929 Park Center Dr Unit 101, Matthews, NC 28105</div>
-    </div>
-
-    <div class="card" data-category="chinese" data-website="https://lamskitchennc.com">
-      <h2>祖家小厨</h2>
-      <div class="meta">📍 3016 Weddington Rd, Matthews, NC 28105</div>
-    </div>
-
-    <div class="card" data-category="chinese" data-website="https://www.malayakitchen.com">
-      <h2>Malaya Kitchen</h2>
-      <div class="meta">📍 38200-400 Providence Rd, Charlotte, NC 28277</div>
-    </div>
-
-    <div class="card" data-category="chinese" data-website="https://www.tensecondscharlotte.com">
-      <h2>十秒到</h2>
-      <div class="meta">📍 3429 Toringdon Way, Charlotte, NC 28277</div>
-    </div>
-
-    <div class="card" data-category="chinese" data-website="https://www.flameclt.com">
-      <h2>火 Flame</h2>
-      <div class="meta">📍 10223 Mcintyre Ridge Rd, Pineville, NC 28134</div>
-    </div>
-
-    <div class="card" data-category="chinese" data-website="https://www.theimperialtreasureclt.com">
-      <h2>宝藏 Imperial Treasure</h2>
-      <div class="meta">
-        📍 1826 Windsor Square Dr, Matthews, NC 28105<br>
-        📍 14815 Ballantyne Village Way #250, Charlotte, NC 28277
+      <div class="meta">📍 3216 South Blvd, Charlotte, NC 28209</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/sun's-kitchen-charlotte-1288112/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/place/Sun's+Kitchen/@35.1963287,-80.875608,17z/data=!4m8!3m7!1s0x88569f6923c8a98b:0x5e2b02a28178a994!8m2!3d35.1963287!4d-80.8730331!9m1!1b1" class="btn gg">⭐ 评价</a>
+        <a href="https://www.suns.kitchen" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=3216+South+Blvd+Charlotte+NC" class="btn nav">🗺️ 导航</a>
       </div>
     </div>
 
-    <div class="card" data-category="chinese" data-website="https://ogasianeatery.com">
+    <div class="card item" data-name="Open Rice Dim Sum">
+      <h2>Open Rice / Dim Sum</h2>
+      <div class="meta">📍 1100 Metropolitan Ave, Charlotte, NC 28204</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/open-rice-asian-kitchen-charlotte-824644/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/place/Open+Rice+Metropolitan/@35.2137937,-80.8354922,17z/data=!4m8!3m7!1s0x88569f9e160e1d71:0x4d6c4a5c0d6f2c6e!8m2!3d35.2137937!4d-80.8329173!9m1!1b1" class="btn gg">⭐ 评价</a>
+        <a href="https://www.openriceclt.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=1100+Metropolitan+Ave+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Lanzhou Noodles 兰州拉面">
+      <h2>Lanzhou Noodles 兰州拉面</h2>
+      <div class="meta">📍 929 Park Center Dr, Matthews, NC 28105</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/lanzhou-beef-hand-pulled-noodles-matthews-24707834/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Lanzhou+Noodles+Matthews+NC+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.lanzhouhand-pullednoodles.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=929+Park+Center+Dr+Matthews+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Hawkers Asian Street Food">
+      <h2>Hawkers Asian Street Food</h2>
+      <div class="meta">📍 1930 Camden Rd, Charlotte, NC 28203</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/hawkers-asian-street-food-charlotte-634628/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/place/Hawkers+Asian+Street+Food/@35.2144383,-80.8601833,17z/data=!4m8!3m7!1s0x88569f6498e5e783:0x70b6d61f1f9e2f0d!8m2!3d35.2144383!4d-80.8576084!9m1!1b1" class="btn gg">⭐ 评价</a>
+        <a href="https://eathawkers.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=1930+Camden+Rd+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Lee Cafe 川湘阁">
+      <h2>Lee Cafe 川湘阁</h2>
+      <div class="meta">📍 1046 Regent Pkwy, Fort Mill, SC 29715</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/lee-cafe-fort-mill-761225/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Lee+Cafe+Fort+Mill+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.leecafefortmill.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=1046+Regent+Pkwy+Fort+Mill+SC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Lam's Kitchen 祖家小厨">
+      <h2>Lam's Kitchen 祖家小厨</h2>
+      <div class="meta">📍 3016 Weddington Rd, Matthews, NC 28105</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/lam's-kitchen-matthews-1283624/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Lam's+Kitchen+Matthews+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://lamskitchennc.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=3016+Weddington+Rd+Matthews+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Malaya Kitchen">
+      <h2>Malaya Kitchen</h2>
+      <div class="meta">📍 8200 Providence Rd, Charlotte, NC 28277</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/malaya-kitchen-charlotte-114483/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Malaya+Kitchen+Charlotte+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.malayakitchen.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=8200+Providence+Rd+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Ten Seconds 十秒到">
+      <h2>Ten Seconds 十秒到过桥米线</h2>
+      <div class="meta">📍 3429 Toringdon Way, Charlotte, NC 28277</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/ten-seconds-yunnan-rice-noodle-charlotte-959960/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Ten+Seconds+Charlotte+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.tensecondscharlotte.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=3429+Toringdon+Way+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Flame 火">
+      <h2>Flame 火 (Chinese BBQ)</h2>
+      <div class="meta">📍 10223 McIntyre Ridge Rd, Pineville, NC 28134</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/flame-pineville-24357422/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Flame+Pineville+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.flameclt.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=10223+McIntyre+Ridge+Rd+Pineville+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Imperial Treasure 宝藏">
+      <h2>Imperial Treasure 宝藏</h2>
+      <div class="meta">📍 1826 Windsor Square Dr, Matthews, NC 28105</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/imperial-treasure-matthews-128213/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Imperial+Treasure+Matthews+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.theimperialtreasureclt.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=1826+Windsor+Square+Dr+Matthews+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="The OG 老地方">
       <h2>The OG 老地方</h2>
-      <div class="meta">📍 110610 Centrum Pkwy I, Pineville, NC 28134</div>
+      <div class="meta">📍 10510 Centrum Pkwy, Pineville, NC 28134</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/the-og-pineville-24358941/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/The+OG+Pineville+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://ogasianeatery.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=10510+Centrum+Pkwy+Pineville+NC" class="btn nav">🗺️ 导航</a>
+      </div>
     </div>
 
-    <div class="card" data-category="chinese" data-website="https://szechuanhotpot.com">
-      <h2>大宅门火锅 / 香锅</h2>
-      <div class="meta">📍 8046d Providence Rd, Charlotte, NC 28277</div>
+    <div class="card item" data-name="Szechuan Hot Pot 大宅门">
+      <h2>Szechuan Hot Pot 大宅门</h2>
+      <div class="meta">📍 8046 Providence Rd, Charlotte, NC 28277</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/szechuan-hot-pot-charlotte-130429/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Szechuan+Hot+Pot+Charlotte+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://szechuanhotpot.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=8046+Providence+Rd+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
     </div>
 
-    <div class="card" data-category="chinese" data-website="https://zenbowlasianfusion.fronteats.com">
+    <div class="card item" data-name="Zen Bowl">
       <h2>Zen Bowl</h2>
       <div class="meta">📍 1750 Camden Rd, Charlotte, NC 28203</div>
-    </div>
-
-    <div class="card" data-category="chinese" data-website="https://alley-51.com">
-      <h2>长城 / Alley 51 煎饼果子</h2>
-      <div class="meta">📍 10500 Centrum Pkwy, Pineville, NC 28134</div>
-    </div>
-
-    <div class="card" data-category="vietnamese" data-website="https://phohoa.com">
-      <h2>Phở Hoà 越南粉</h2>
-      <div class="meta">📍 3000 Central Ave, Charlotte, NC 28205</div>
-    </div>
-
-    <div class="card" data-category="vietnamese">
-      <h2>Phở Hương Quê</h2>
-      <div class="meta">📍 7211 E Independence Blvd, Charlotte, NC 28227</div>
-    </div>
-
-    <div class="card" data-category="vietnamese" data-website="https://www.phoatuni.com">
-      <h2>Pho@University</h2>
-      <div class="meta">📍 8932 J M Keynes Dr #110, Charlotte, NC 28262</div>
-    </div>
-
-    <div class="card" data-category="vietnamese" data-website="https://www.phorealcharlotte.com">
-      <h2>Pho Real</h2>
-      <div class="meta">📍 440 E McCullough Dr #206, Charlotte, NC 28262</div>
-    </div>
-
-    <div class="card" data-category="vietnamese" data-website="https://www.benoodlenc.com">
-      <h2>Be's Noodles</h2>
-      <div class="meta">
-        📍 11318 N Community House Rd, Charlotte, NC 28277<br>
-        📍 5140 Old Charlotte Hwy, Monroe, NC 28110
+      <div class="actions">
+        <a href="https://www.doordash.com/store/zen-bowl-charlotte-24754388/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Zen+Bowl+Camden+Rd+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://zenbowlasianfusion.fronteats.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=1750+Camden+Rd+Charlotte+NC" class="btn nav">🗺️ 导航</a>
       </div>
     </div>
 
-    <div class="card" data-category="korean" data-website="https://thekpot.com/locations/">
-      <h2>K-Pot 韩国烤肉</h2>
-      <div class="tags"><span class="tag hot">人气</span></div>
-      <div class="meta">📍 多家分店（Matthews / Pineville / University）</div>
+    <div class="card item" data-name="Alley 51 长城">
+      <h2>Alley 51 煎饼果子</h2>
+      <div class="meta">📍 10500 Centrum Pkwy, Pineville, NC 28134</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/alley-51-pineville-24358172/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Alley+51+Pineville+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://alley-51.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=10500+Centrum+Pkwy+Pineville+NC" class="btn nav">🗺️ 导航</a>
+      </div>
     </div>
 
-    <div class="card" data-category="korean" data-website="https://www.irondishkoreanbbq.com">
+    <div class="card item" data-name="Pho Hoa 越南粉">
+      <h2>Phở Hoà 越南粉</h2>
+      <div class="meta">📍 3000 Central Ave, Charlotte, NC 28205</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/pho-hoa-charlotte-136453/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Pho+Hoa+Central+Ave+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://phohoa.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=3000+Central+Ave+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Pho Huong Que">
+      <h2>Phở Hương Quê</h2>
+      <div class="meta">📍 7211 E Independence Blvd, Charlotte, NC 28227</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/ph%E1%BB%9F-h%C6%B0%C6%A1ng-qu%C3%AA-charlotte-238495/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Pho+Huong+Que+Charlotte+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="#" class="btn web">🌐 暂无官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=7211+E+Independence+Blvd+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Pho@University">
+      <h2>Pho@University</h2>
+      <div class="meta">📍 8932 J M Keynes Dr, Charlotte, NC 28262</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/pho-university-charlotte-864627/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Pho+at+University+Charlotte+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.phoatuni.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=8932+J+M+Keynes+Dr+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Pho Real">
+      <h2>Pho Real</h2>
+      <div class="meta">📍 440 E McCullough Dr, Charlotte, NC 28262</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/pho-real-charlotte-417122/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Pho+Real+McCullough+Dr+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.phorealcharlotte.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=440+E+McCullough+Dr+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Be's Noodles">
+      <h2>Be's Noodles</h2>
+      <div class="meta">📍 11318 N Community House Rd, Charlotte, NC 28277</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/be's-noodles-and-banh-mi-charlotte-136015/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Be's+Noodles+Charlotte+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.benoodlenc.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=11318+N+Community+House+Rd+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="K-Pot Korean BBQ">
+      <h2>K-Pot 韩国烤肉 (Matthews)</h2>
+      <div class="meta">📍 2130 Matthews Township Pkwy, Matthews, NC 28105</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/kpot-korean-bbq-hot-pot-matthews-24430978/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/KPOT+Matthews+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://thekpot.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=2130+Matthews+Township+Pkwy+Matthews+NC" class="btn nav">🗺️ 导航</a>
+      </div>
+    </div>
+
+    <div class="card item" data-name="Iron Dish Korean BBQ">
       <h2>Iron Dish 韩国烤肉</h2>
-      <div class="meta">📍 9605 N Tryon St Suite H, Charlotte, NC 28262</div>
+      <div class="meta">📍 9605 N Tryon St, Charlotte, NC 28262</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/iron-dish-korean-bbq-charlotte-864628/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Iron+Dish+Korean+BBQ+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.irondishkoreanbbq.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=9605+N+Tryon+St+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
     </div>
 
-    <div class="card" data-category="korean" data-website="https://704kbbq.com">
+    <div class="card item" data-name="704 Korean BBQ">
       <h2>704 韩国烤肉</h2>
-      <div class="meta">📍 8320 Pineville-Matthews Rd #607, Charlotte, NC 28226</div>
+      <div class="meta">📍 8320 Pineville-Matthews Rd, Charlotte, NC 28226</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/704-korean-bbq-charlotte-136018/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/704+Korean+BBQ+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://704kbbq.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=8320+Pineville-Matthews+Rd+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
     </div>
 
-    <div class="card" data-category="korean" data-website="https://www.letsmeatkbbqclt.com">
+    <div class="card item" data-name="Let's Meat">
       <h2>Let's Meat 韩国烤肉</h2>
-      <div class="meta">📍 1400 S Church St B, Charlotte, NC 28203</div>
+      <div class="meta">📍 1400 S Church St, Charlotte, NC 28203</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/let's-meat-korean-bbq-charlotte-756123/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Let's+Meat+Korean+BBQ+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.letsmeatkbbqclt.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=1400+S+Church+St+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
     </div>
 
-    <div class="card" data-category="korean" data-website="https://www.gyu-kaku.com/charlotte/">
+    <div class="card item" data-name="Gyu-Kaku Japanese BBQ 牛角">
       <h2>Gyu-Kaku Japanese BBQ 牛角</h2>
       <div class="meta">📍 650 E Brooklyn Village Ave, Charlotte, NC 28202</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/gyu-kaku-japanese-bbq-charlotte-1160124/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Gyu-Kaku+Charlotte+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.gyu-kaku.com/charlotte/" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=650+E+Brooklyn+Village+Ave+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
     </div>
 
-    <div class="card" data-category="western" data-website="https://charlottefigtree.com">
+    <div class="card item" data-name="Fig Tree 法餐">
       <h2>Fig Tree 法餐</h2>
       <div class="meta">📍 1601 E 7th St, Charlotte, NC 28204</div>
+      <div class="actions">
+        <a href="#" class="btn dd" style="opacity: 0.5;">🛵 不支持配送</a>
+        <a href="https://www.google.com/maps/search/Fig+Tree+Charlotte+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://charlottefigtree.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=1601+E+7th+St+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
     </div>
 
-    <div class="card" data-category="western" data-website="https://www.thecapitalgrille.com/locations/nc/charlotte/charlotte/8011">
+    <div class="card item" data-name="Capital Grille">
       <h2>Capital Grille</h2>
       <div class="meta">📍 201 N Tryon St, Charlotte, NC 28202</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/the-capital-grille-charlotte-45612/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/Capital+Grille+Charlotte+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://www.thecapitalgrille.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=201+N+Tryon+St+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
     </div>
 
-    <div class="card" data-category="western" data-website="https://fahrenheitrestaurants.com">
+    <div class="card item" data-name="Fahrenheit">
       <h2>Fahrenheit</h2>
-      <div class="meta">📍 222 S Caldwell St 21st Floor, Charlotte, NC 28202</div>
+      <div class="meta">📍 222 S Caldwell St, Charlotte, NC 28202</div>
+      <div class="actions">
+        <a href="#" class="btn dd" style="opacity: 0.5;">🛵 不支持配送</a>
+        <a href="https://www.google.com/maps/search/Fahrenheit+Charlotte+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://fahrenheitrestaurants.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=222+S+Caldwell+St+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
     </div>
 
-    <div class="card" data-category="western" data-website="https://desanopizza.com">
+    <div class="card item" data-name="DeSano Pizzeria">
       <h2>DeSano Pizzeria</h2>
       <div class="meta">📍 7315 Waverly Walk Ave, Charlotte, NC 28277</div>
+      <div class="actions">
+        <a href="https://www.doordash.com/store/desano-pizza-bakery-charlotte-136012/" class="btn dd">🛵 DoorDash</a>
+        <a href="https://www.google.com/maps/search/DeSano+Pizza+Charlotte+Reviews" class="btn gg">⭐ 评价</a>
+        <a href="https://desanopizza.com" class="btn web">🌐 官网</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=7315+Waverly+Walk+Ave+Charlotte+NC" class="btn nav">🗺️ 导航</a>
+      </div>
     </div>
 
   </div>
 
   <footer>
-    <p>© 2026 夏洛特美食 | 仅供信息参考。</p>
-     <p>Contact: bankofworld@gmail.com</p>
+    <p>© 2026 夏洛特美食指南 (28家餐厅全录)<br>所有DoorDash链接已更新为直达ID</p>
   </footer>
 </div>
 
 <script>
-// 搜索和过滤逻辑
-const searchInput = document.getElementById('searchInput');
-const categoryFilter = document.getElementById('categoryFilter');
-const sortFilter = document.getElementById('sortFilter');
-const cards = Array.from(document.querySelectorAll('.card'));
+  const searchInput = document.getElementById('searchInput');
+  const items = document.querySelectorAll('.item');
 
-function filterAndSort() {
-  const keyword = searchInput.value.toLowerCase();
-  const category = categoryFilter.value;
-  const sort = sortFilter.value;
-
-  let visible = cards.filter(card => {
-    const text = card.innerText.toLowerCase();
-    const matchText = text.includes(keyword);
-    const matchCat = category === 'all' || card.dataset.category === category;
-    card.style.display = (matchText && matchCat) ? '' : 'none';
-    return matchText && matchCat;
-  });
-
-  if (sort !== 'default') {
-    visible.sort((a,b)=>{
-      const as = a.querySelector('.'+sort)?1:0;
-      const bs = b.querySelector('.'+sort)?1:0;
-      return bs - as;
-    });
-    const grid = document.querySelector('.grid');
-    visible.forEach(c=>grid.appendChild(c));
-  }
-}
-
-searchInput.addEventListener('input', filterAndSort);
-categoryFilter.addEventListener('change', filterAndSort);
-sortFilter.addEventListener('change', filterAndSort);
-
-// 自动生成链接逻辑
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.card').forEach(card => {
-    const name = encodeURIComponent(card.querySelector('h2')?.innerText || '');
-    const meta = card.querySelector('.meta');
-    const websiteUrl = card.dataset.website; // 获取官网地址
-    const addresses = [];
-
-    if (meta) {
-      meta.childNodes.forEach(node => {
-        if (node.nodeType === Node.TEXT_NODE) {
-          const text = node.textContent.trim();
-          if (text.startsWith('📍')) {
-            addresses.push(text.replace('📍','').trim());
-          }
-        }
-      });
-    }
-
-    let actions = card.querySelector('.actions');
-    if (!actions) {
-      actions = document.createElement('div');
-      actions.className = 'actions';
-      card.appendChild(actions);
-    }
-
-    // 生成“一键导航”和“官网”
-    addresses.forEach((addr, index) => {
-      const encodedAddr = encodeURIComponent(addr);
-      const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodedAddr}`;
-      const linkLine = document.createElement('div');
-      linkLine.style.marginTop = '4px';
-      
-      let innerHTML = `<a href="${mapsLink}" target="_blank">🗺️ 一键导航</a>`;
-      
-      // 如果有官网，且是第一个地址行，则加上官网链接
-      if (websiteUrl && index === 0) {
-        innerHTML += ` | <a href="${websiteUrl}" target="_blank">🌐 官网</a>`;
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    items.forEach(item => {
+      const name = item.dataset.name.toLowerCase();
+      const meta = item.querySelector('.meta').innerText.toLowerCase();
+      if (name.includes(query) || meta.includes(query)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
       }
-      
-      linkLine.innerHTML = innerHTML;
-      actions.appendChild(linkLine);
     });
-
-    // 生成 DoorDash + Google 评价
-    if (addresses.length > 0) {
-      const doordashLink = `https://www.doordash.com/search/store/${name}/?event_type=search&address=Charlotte,%20NC`;
-      const googleReviewLink = `https://www.google.com/maps/search/?api=1&query=${name}+${encodeURIComponent(addresses[0])}`;
-
-      const reviewLine = document.createElement('div');
-      reviewLine.style.marginTop = '4px';
-      reviewLine.innerHTML = `
-        <a href="${doordashLink}" target="_blank">🛵 DoorDash</a> | 
-        <a href="${googleReviewLink}" target="_blank">⭐ Google 评价</a>
-      `;
-      actions.appendChild(reviewLine);
-    }
   });
-});
 </script>
 
 </body>
