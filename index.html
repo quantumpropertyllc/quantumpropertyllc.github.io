@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Property LLC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Quantum Property LLC</h1>
+    </header>
+
+    <nav>
+        <a href="#services">Our Services</a> | 
+        <a href="#maintenance">Property Maintenance</a> | 
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <section id="services">
+        <h2>Our Services</h2>
+	    <h3>Ready to Buy or Sell Your Home? We're Here to Help!</h3>
+        Whether you're buying or selling, our experienced real estate agents are dedicated to guiding you every step of the way. With personalized service, in-depth knowledge of the Charlotte, North Carolina market, and a focus on getting you the best deal, we're committed to making your real estate dreams a reality.
+	     <h3>Why Choose Us?</h3>
+        <ul>
+            <li><b>Sell Your Home</b>: Enjoy discounted commission rates.</li>
+            <li><b>Buy with Us</b>: We work hard to get the seller to cover the buyer's agent commission. If not, we offer a low 1.8% buyer’s agent commission—well below the industry standard of 2.5-3%.
+            </li>
+	<li><b>Rental Property Management</b>: Professional services to maximize your investment.</li>
+        <li><b>Commercial Property Management</b>: Expert management for commercial properties.</li>
+Let us help you navigate the Charlotte real estate market with confidence. Contact us today!
+        </ul>
+    </section>
+
+    <section id="maintenance">
+        <h2>Rental Property Assistance Information</h2>
+        <ul>
+            <li><a href="homeowner/index.html" target="_blank">Homeowner Cheat Sheet</a></li>
+            <li><a href="homeowner/rent.html" target="_blank">Rental price and mortgage estimation</a></li>
+        </ul>
+    </section>
+    
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <ul>
+      <li>Email: <a href="mailto:quantumpropertyllcnc@gmail.com">quantumpropertyllcnc@gmail.com</a></li>
+      <li>Phone (txt or call): (704)931-8886</li>
+      <li>Or fill the following form:
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" required></textarea>
+            </div>
+            <button type="button" class="submit-btn" onclick="sendEmail()">Send</button>
+        </form>
+    <script>
+        function sendEmail() {
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            const subject = 'Contact Form Submission';
+            const body = `Email: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
+            const mailtoLink = `mailto:quantumpropertyllcnc@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+      </li>
+      </ul>
+       </section>
+    
+    <footer>
+        <p>&copy; 2024 Quantum Property LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>
