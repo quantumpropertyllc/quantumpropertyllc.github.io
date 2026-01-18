@@ -1,102 +1,724 @@
-<!DOCTYPE html>
+there is <!DOCTYPE html>
+
 <html lang="zh-CN">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北卡杂项 ｜ Misc </title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
-        header { background: #004a99; color: white; padding: 2rem; text-align: center; border-radius: 8px; margin-bottom: 20px; }
-        h2 { color: #004a99; border-bottom: 2px solid #004a99; padding-bottom: 5px; margin-top: 30px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .highlight { color: #d9534f; font-weight: bold; }
-        footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #666; }
-        .lang-en { font-size: 0.85em; color: #555; display: block; margin-top: 5px; }
-    </style>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>北卡杂项 | Misc 全量版</title>
+
+
+
+  <style>
+
+    :root {
+
+      --bg: #f2f2f7;
+
+      --card: #ffffff;
+
+      --text: #1c1c1e;
+
+      --sub: #8e8e93;
+
+      --primary: #5856d6; 
+
+      --accent: #007aff; 
+
+      --border: rgba(0,0,0,0.05);
+
+      --tag-bg: #fff9c4;
+
+      --tag-text: #f57f17;
+
+      --nav-bg: #e1f5fe;
+
+      --nav-text: #0288d1;
+
+      --input-bg: #f2f2f7;
+
+    }
+
+
+
+    @media (prefers-color-scheme: dark) {
+
+      :root {
+
+        --bg: #000000;
+
+        --card: #1c1c1e;
+
+        --text: #ffffff;
+
+        --sub: #8e8e93;
+
+        --primary: #5e5ce6;
+
+        --accent: #0a84ff;
+
+        --border: rgba(255,255,255,0.1);
+
+        --tag-bg: #332b00;
+
+        --tag-text: #fbc02d;
+
+        --input-bg: #2c2c2e;
+
+      }
+
+    }
+
+
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+
+
+
+    header { 
+
+      padding: 40px 20px 25px;
+
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+
+      color: white;
+
+      border-radius: 0 0 24px 24px;
+
+      margin-bottom: 20px;
+
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    }
+
+    header h1 { margin: 0; font-size: 1.6rem; font-weight: 800; }
+
+    header p { margin: 5px 0 0; font-size: 0.85rem; opacity: 0.9; }
+
+
+
+    .container { padding: 0 16px; max-width: 600px; margin: auto; }
+
+
+
+    .search-wrapper { position: sticky; top: 10px; z-index: 100; margin-bottom: 24px; }
+
+    .controls { 
+
+      display: flex; gap: 10px; background: rgba(255, 255, 255, 0.8);
+
+      backdrop-filter: blur(15px); padding: 10px; border-radius: 16px;
+
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08); border: 1px solid var(--border);
+
+    }
+
+    .controls input, .controls select { padding: 12px; border-radius: 10px; border: none; background: var(--bg); color: var(--text); font-size: 0.9rem; outline: none; }
+
+    .controls input { flex: 2; }
+
+    .controls select { flex: 1.3; font-weight: 500; }
+
+
+
+    .section-title { margin: 30px 0 15px 4px; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+    .card { background: var(--card); border-radius: 20px; padding: 18px; box-shadow: 0 2px 8px var(--border); }
+
+    .card h3 { margin: 0 0 12px 0; font-size: 1.05rem; font-weight: 700; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+
+
+
+    /* 计算器特有样式 */
+
+    .calc-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+
+    .calc-group { display: flex; flex-direction: column; }
+
+    .calc-group label { font-size: 0.7rem; color: var(--sub); margin-bottom: 4px; }
+
+    .calc-group input { 
+
+      padding: 8px; border-radius: 8px; border: none; 
+
+      background: var(--input-bg); color: var(--text); font-size: 0.9rem; 
+
+    }
+
+    .calc-btn { 
+
+      grid-column: span 2; margin-top: 10px; padding: 12px; 
+
+      background: var(--primary); color: white; border: none; 
+
+      border-radius: 10px; font-weight: 600; cursor: pointer;
+
+    }
+
+    .calc-result { 
+
+      margin-top: 15px; padding: 12px; background: rgba(88, 86, 214, 0.1); 
+
+      border-radius: 12px; font-size: 0.85rem; border: 1px solid var(--border);
+
+    }
+
+    .calc-result b { color: var(--primary); font-size: 1rem; }
+
+
+
+    .info-list { list-style: none; padding: 0; margin: 0; }
+
+    .info-item { padding: 12px 0; border-bottom: 1px dashed var(--border); }
+
+    .info-item:last-child { border-bottom: none; }
+
+    .info-label { display: block; font-size: 0.75rem; color: var(--sub); margin-bottom: 4px; font-weight: 500; }
+
+    
+
+    a { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+    .btn-link { display: inline-block; background: rgba(0, 122, 255, 0.1); color: var(--accent); padding: 4px 10px; border-radius: 8px; font-size: 0.85rem; margin-right: 5px; margin-bottom: 5px; }
+
+    .nav-link { display: inline-block; background: var(--nav-bg); color: var(--nav-text); padding: 4px 10px; border-radius: 8px; font-size: 0.85rem; margin-bottom: 5px; font-weight: 600; }
+
+    
+
+    footer { text-align: center; margin: 60px 0 30px; color: var(--sub); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 20px; }
+
+  </style>
+
 </head>
+
+
+
 <body>
 
+
+
 <header>
-    <h1>北卡杂项</h1>
-    <p>Misc </p>
+
+  <h1>北卡杂项</h1>
+
+  <p>Charlotte & NC · 全量信息完整版 (2026)</p>
+
 </header>
 
-<section class="card">
-    <p><strong>欢迎来到女王之城！</strong> </p>
-</section>
 
-<h2>1. 房地产投资 (Real Estate Market) </h2>
-<div class="grid">
 
-	<div class="card">
-        <h3>热门区域 (Top Neighborhoods)</h3>
-        <ul>
-            <li><strong>Ballantyne (南边):</strong> 华人的首选，商业发达，治安优良。</li>
-            <li><strong>Marvin & Weddington:</strong> 顶级学区房，占地面积大，保值增值强。</li>
-            <li><strong>South End:</strong> 适合年轻人，公寓租赁市场极度活跃。</li>
-        </ul>
+<div class="container">
+
+
+
+  <div class="search-wrapper">
+
+    <div class="controls">
+
+      <input id="searchInput" type="search" placeholder="搜索关键词..." />
+
+      <select id="categoryFilter">
+
+        <option value="all">全部分类</option>
+
+        <option value="realestate">🏘️ 房产投资</option>
+
+        <option value="food">🍽️ 周边美食</option>
+
+        <option value="asianmarkets">🛒 亚洲商场</option>
+
+        <option value="farms">🍓 田园采摘</option>
+
+        <option value="finance">💰 金融股市</option>
+
+        <option value="community">🌐 社区人脉</option>
+
+        <option value="internet">💻 外出上网</option>
+
+      </select>
+
     </div>
-	
-    <div class="card">
-        <h3> 租客筛选 </h3>
-    <ul>
-		<li> <a href="https://portal-nc.tylertech.cloud/Portal/">北卡法庭记录</a></li>
-		<li><a href="https://mecksheriffweb.mecklenburgcountync.gov"> 夏村逮捕记录 </a></li>
-		<li> <a href="https://mcsop.permitium.com/sop/searchpage"> 夏村eviction记录 </a></li>
-		<li>  <a href="https://www.fastpeoplesearch.com"> 找人  </a>
-		<li> <a href="https://www.mysmartmove.com/SmartMove/login/landlord_new_application.page"> TransUnion 背景调查 </a>
-		<li> <a href="https://tenantbackgroundsearch.com"> 租客调查 </a>
-		<li> <a href="https://vt.ncsbe.gov/RegLkup"> 北卡选民 </a></li>
-		<li> <a href="https://voterrecords.com/"> 全美选民 </a> (<a href="https://voterrecords.com/address-search">用地址查</a>)
-		<li> Union County <a href="https://www.unionconcrod.org/">Deed</a>， <a href="https://property.spatialest.com/nc/union#/"> 地址查 </a>
-		<li> <a href="https://property.spatialest.com/nc/mecklenburg#/"> 夏村deed </a>
-</ul>
+
+  </div>
+
+
+
+  <div class="section-title">🏘️ 房产投资 (Real Estate)</div>
+
+  <div class="grid">
+
+    <div class="card item" data-category="realestate">
+
+      <h3>区域与环境</h3>
+
+      <div class="info-list">
+
+        <div class="info-item">
+
+          <strong>热门区域:</strong> Ballantyne (南边), Marvin & Weddington, South End (公寓)。
+
+        </div>
+
+        <div class="info-item">
+
+          <span class="info-label">环境维护</span>
+
+          <strong>驱蚊:</strong> 使用 BIFEN XTS (1oz/4gal), 每月喷一次。<br>
+
+          <strong>买木头:</strong> <a href="https://www.facebook.com/MountainIslandWoodCo/">Mountain Island Wood Co</a> | 
+
+          <a href="https://www.facebook.com/marketplace/item/522402829872732/">胡桃木资源</a>
+
+        </div>
+
+      </div>
 
     </div>
+
+
+
+    <div class="card item" data-category="realestate">
+
+      <h3>租客调查工具 (Tenant Screening)</h3>
+
+      <div class="info-list">
+
+        <div class="info-item">
+
+          <span class="info-label">官方记录查询</span>
+
+          <a href="https://portal-nc.tylertech.cloud/Portal/" class="btn-link">北卡法庭记录</a>
+
+          <a href="https://mecksheriffweb.mecklenburgcountync.gov" class="btn-link">夏村逮捕记录</a>
+
+          <a href="https://mcsop.permitium.com/sop/searchpage" class="btn-link">夏村 Eviction 记录</a>
+
+        </div>
+
+        <div class="info-item">
+
+          <span class="info-label">背景调查</span>
+
+          <a href="https://www.fastpeoplesearch.com">FastPeopleSearch</a> | 
+
+          <a href="https://www.mysmartmove.com/SmartMove/login/landlord_new_application.page">TransUnion</a> | 
+
+          <a href="https://tenantbackgroundsearch.com">租客调查网</a>
+
+        </div>
+
+        <div class="info-item">
+
+          <span class="info-label">选民与房产查询</span>
+
+          <a href="https://vt.ncsbe.gov/RegLkup">北卡选民</a> | <a href="https://voterrecords.com/">全美选民</a><br>
+
+          <a href="https://property.spatialest.com/nc/mecklenburg#/">夏村 Deed</a> | 
+
+          <a href="https://www.unionconcrod.org/">Union Deed</a> | 
+
+          <a href="https://property.spatialest.com/nc/union#/">Union 地址查</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="card item" data-category="realestate">
+
+      <h3>Rent Cost Calculation (Landlord)</h3>
+
+      <div class="calc-form">
+
+        <div class="calc-group">
+
+          <label>House Price</label>
+
+          <input type="number" id="housePrice" value="450000">
+
+        </div>
+
+        <div class="calc-group">
+
+          <label>Downpayment</label>
+
+          <input type="number" id="downpayment" value="90000">
+
+        </div>
+
+        <div class="calc-group">
+
+          <label>Annual Insurance</label>
+
+          <input type="number" id="annualInsurance" value="1200">
+
+        </div>
+
+        <div class="calc-group">
+
+          <label>Annual Property Tax</label>
+
+          <input type="number" id="annualPropertyTax" value="4000">
+
+        </div>
+
+        <div class="calc-group">
+
+          <label>Mortgage Rate (%)</label>
+
+          <input type="number" id="mortgageRate" value="7.55" step="0.01">
+
+        </div>
+
+        <div class="calc-group">
+
+          <label>4 Week T-Bill Rate (%)</label>
+
+          <input type="number" id="tbillRate" value="5.28" step="0.01">
+
+        </div>
+
+        <button type="button" class="calc-btn" onclick="runCalc()">Calculate Minimum Rent</button>
+
+      </div>
+
+      <div id="calcResults" class="calc-result" style="display:none;"></div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="section-title">🍽️ 周边美食 (Nearby Eats)</div>
+
+  <div class="grid">
+
+    <div class="card item" data-category="food">
+
+      <h3>亚特兰大 & RTP 推荐</h3>
+
+      <div class="info-list">
+
+        <div class="info-item">
+
+          <strong>东云阁 East Pearl</strong><br>
+
+          <a href="https://www.facebook.com/eastpearlseafood" class="btn-link">Facebook 网页</a>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=1810+Liddell+Ln+Duluth+GA+30096" class="nav-link">📍 1810 Liddell Ln</a>
+
+        </div>
+
+        <div class="info-item">
+
+          <strong>金冠 Royal China (Duluth)</strong><br>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=3960+Venture+Dr+Duluth+GA+30096" class="nav-link">📍 3960 Venture Dr</a>
+
+        </div>
+
+        <div class="info-item">
+
+          <span class="info-label">其他 RTP 精选</span>
+
+          <a href="https://www.hongkongdimsumindurham.com/">腾龙阁</a> | <a href="https://acaciatreenc.com">玖食</a> | <a href="https://www.chengdu7cary.com">成都7号</a> | <a href="https://www.toyarbbqhotpot.com">客串江湖</a> (<a href="https://www.google.com/maps/search/?api=1&query=4075+Davis+Dr+Morrisville+NC+27560" class="nav-link">📍 4075 Davis Dr</a>) | <a href="https://nanxiangexpress.com/menu/">南翔小笼包</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="section-title">🍓 田园采摘 (U-Pick Farms)</div>
+
+  <div class="grid">
+
+    <div class="card item" data-category="farms">
+
+      <h3>田园采摘</h3>
+
+      <div class="info-list">
+
+        <div class="info-item">
+
+          <strong>Big H Farm</strong><br>
+
+          <a href="https://bighfarm.com" class="btn-link">官方网站</a>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=1953+Dilling+Farm+Rd+Charlotte+NC+28214" class="nav-link">📍 1953 Dilling Farm Rd</a>
+
+        </div>
+
+        <div class="info-item">
+
+          <a href="https://www.lockmanvineyard.com/">Lockman Vineyard</a> | 
+
+          <a href="https://www.linebergersfarm.com/">Lineberger's farm</a> | 
+
+          <a href="http://grandadsapples.com">Grandad Apple</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="section-title">🛒 亚洲商场与厨具 (Asian Markets)</div>
+
+  <div class="grid">
+
+    <div class="card item" data-category="asianmarkets">
+
+      <h3>商场与国酒</h3>
+
+      <div class="info-list">
+
+        <div class="info-item">
+
+          <strong>Bottoms Up Wine & Spirits</strong> (买国酒)<br>
+
+          <a href="https://www.facebook.com/sc.bottomsup/" class="btn-link">Facebook 网页</a>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=2000+Highway+160+W+Fort+Mill+SC+29708" class="nav-link">📍 Fort Mill, SC</a>
+
+        </div>
+
+        <div class="info-item">
+
+          <strong>新亚洲超市 (New Asia)</strong><br>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=4400+Potter+Rd+Stallings+NC+28104" class="nav-link">📍 4400 Potter Rd</a><br>
+
+          <a href="https://asianmarketplz.com" class="btn-link">The Plaza 店网页</a>
+
+        </div>
+
+        <div class="info-item">
+
+          <strong>Super G Mart</strong><br>
+
+          <a href="https://www.supergmart.com" class="btn-link">官方主页</a><br>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=10500+Centrum+Pkwy+Pineville+NC+28134" class="nav-link">📍 Pineville 店</a>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=7323+E+Independence+Blvd+Charlotte+NC+28227" class="nav-link">📍 Independence 店</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="card item" data-category="asianmarkets">
+
+      <h3>厨房用具</h3>
+
+      <div class="info-list">
+
+        <div class="info-item"><a href="https://gonglue.us/fotile-range-hood">抽油烟机比较</a> | <a href="https://us.fotileglobal.com">方太官网</a></div>
+
+        <div class="info-item"><a href="https://matferbourgeatusa.com/product/black-steel-round-frying-pan-10/">Matfer 炒锅</a> | <a href="https://www.bk-cookware.com/black-steel">BK 炒锅</a></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="section-title">💻📶 外出上网 (Internet)</div>
+
+  <div class="grid">
+
+    <div class="card item" data-category="internet">
+
+      <h3>外出上网（翻墙）</h3>
+
+      <div class="info-list">
+
+        <div class="info-item">
+
+          <a href="https://www.airalo.com/">Airalo</a> | 
+
+          <a href="https://etravelsim.com">etravelSIM</a> | 
+
+          <a href="https://www.getnomad.app/">Nomad</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="section-title">💰 金融与社区</div>
+
+  <div class="grid">
+
+    <div class="card item" data-category="finance">
+
+      <h3>金融股市跟踪</h3>
+
+      <div class="info-list">
+
+        <div class="info-item">
+
+          跟议员买股票：<a href="https://www.quiverquant.com/politicians/">Quiver</a> | <a href="https://www.capitoltrades.com/">Capital Trades</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="card item" data-category="community">
+
+      <h3>社区与日期</h3>
+
+      <div class="info-list">
+
+        <div class="info-item">组织：NCCBA, AREAA Charlotte, 夏洛特华美协会 (CAS)</div>
+
+        <div class="info-item">1/21: 州长官邸庆祝 | 5/16: 龙舟节与文化节</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
 </div>
 
-	<h2>2. 金融与股市 (Stock Market & Finance)</h2>
-<div class="grid">
-    <div class="card">
-        <h3>跟随国会议员买股票 </h3>
-        <p>
-            <ol> 
-                <li><a href="https://www.quiverquant.com/politicians/">Quiver Logo </a> </li>
-                <li><a href="https://www.capitoltrades.com/"> Capital Trades</a></li>
-            </ol>
-                    
-        </p>
-    </div>
-    <div class="card">
-        <h3>专业咨询 (Local Advisors)</h3>
-        <p>夏洛特拥有多位优秀的华人理财师，提供普通话/粤语服务，协助进行税务规划与退休金管理。</p>
-    </div>
-</div>
-	
-<h2>3. 华人社区与人脉 (Community & Networking)</h2>
-<div class="grid">
-    <div class="card">
-        <h3>社团组织 (Organizations)</h3>
-        <ul>
-            <li><strong>NCCBA (北卡华人企业协会):</strong> 经常举办商业午餐会和投资讲座。</li>
-            <li><strong>AREAA Charlotte:</strong> 亚裔房地产协会，是获取最新房产资讯的重要渠道。</li>
-            <li><strong>夏洛特华美协会 (CAS):</strong> 组织年度亚洲节与文化活动。</li>
-        </ul>
-    </div>
-    <div class="card">
-        <h3>重要日期 (2026 Events)</h3>
-        <p>• 1月21日: 州长官邸农历新年庆祝活动 (NCCBA)<br>
-           • 5月16日: 夏洛特龙舟节与亚洲文化节 (Lake Norman)</p>
-    </div>
-</div>
 
-	
 
 <footer>
-    <p>© 2026 夏洛特华人生活指南 | 仅供信息参考，投资需谨慎。</p>
-    <p>Contact: bankofworld@gmail.com</p>
+
+  <p>© 2026 北卡华人生活杂项指南 | 仅供参考 | bankofworld@gmail.com</p>
+
 </footer>
 
+
+
+<script>
+
+// 原有的搜索过滤逻辑
+
+const searchInput = document.getElementById("searchInput");
+
+const categoryFilter = document.getElementById("categoryFilter");
+
+const items = document.querySelectorAll(".item");
+
+
+
+function filterItems() {
+
+  const k = searchInput.value.toLowerCase();
+
+  const c = categoryFilter.value;
+
+  items.forEach(i => {
+
+    const t = i.innerText.toLowerCase();
+
+    const matchSearch = t.includes(k);
+
+    const matchCategory = (c === "all" || i.dataset.category === c);
+
+    i.style.display = (matchSearch && matchCategory) ? "" : "none";
+
+  });
+
+}
+
+searchInput.addEventListener("input", filterItems);
+
+categoryFilter.addEventListener("change", filterItems);
+
+
+
+// 新增：房租计算器逻辑
+
+function runCalc() {
+
+  const housePrice = parseFloat(document.getElementById('housePrice').value);
+
+  const downpayment = parseFloat(document.getElementById('downpayment').value);
+
+  const annualInsurance = parseFloat(document.getElementById('annualInsurance').value);
+
+  const annualPropertyTax = parseFloat(document.getElementById('annualPropertyTax').value);
+
+  const mortgageRate = parseFloat(document.getElementById('mortgageRate').value) / 100;
+
+  const tbillRate = parseFloat(document.getElementById('tbillRate').value) / 100;
+
+
+
+  const loanAmount = housePrice - downpayment;
+
+  const monthlyInterestRate = mortgageRate / 12;
+
+  // 计算每月只付利息的支出（基于您的原始代码逻辑：loanAmount * monthlyInterestRate）
+
+  const monthlyPayment = loanAmount * monthlyInterestRate;
+
+  const totalExpenses = monthlyPayment + (annualInsurance + annualPropertyTax) / 12;
+
+
+
+  const tbillIncome = (downpayment * tbillRate) / 12;
+
+  const breakEvenRent = totalExpenses + tbillIncome;
+
+
+
+  const resultDiv = document.getElementById('calcResults');
+
+  resultDiv.style.display = 'block';
+
+  resultDiv.innerHTML = `
+
+    <div style="margin-bottom:8px;">持有成本 (仅利息+税费): <b>$${totalExpenses.toFixed(2)}</b></div>
+
+    <div>平衡租金 (对比 4周 T-Bill 收益): <b>$${breakEvenRent.toFixed(2)}</b></div>
+
+    <div style="font-size:0.7rem; color:var(--sub); margin-top:8px;">* 计算基于30年期贷款利息支出及首付机会成本</div>
+
+  `;
+
+}
+
+</script>
+
+
+
 </body>
+
 </html>
+
