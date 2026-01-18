@@ -1,257 +1,296 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>北卡房产投资分析工具</title>
-<style>
-:root{
-  --bg:#f2f2f7; --card:#fff; --text:#1c1c1e; --sub:#8e8e93;
-  --primary:#5856d6; --accent:#007aff; --border:rgba(0,0,0,0.05);
-  --input-bg:#f2f2f7; --nav-bg:#e1f5fe; --nav-text:#0288d1;
-  --highlight-rent:#d0f0c0; --highlight-roi:#c0e0ff;
-  --btn-link-bg:rgba(0,122,255,0.1);
-  --btn-link-text:#007aff;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#000; --card:#1c1c1e; --text:#fff; --sub:#8e8e93;
-    --primary:#5e5ce6; --accent:#0a84ff; --border:rgba(255,255,255,0.1);
-    --input-bg:#2c2c2e;
-    --highlight-rent:#274c1b; --highlight-roi:#1b364c;
-    --btn-link-bg:rgba(10,132,255,0.2); --btn-link-text:#0a84ff;
-  }
-}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.5;}
-.container{max-width:700px;margin:auto;padding:0 16px;}
-header{padding:40px 20px 25px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border-radius:0 0 24px 24px;margin-bottom:20px;}
-header h1{margin:0;font-size:1.6rem;font-weight:800;}
-header p{margin:5px 0 0;font-size:0.85rem;opacity:0.9;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>北卡房产投资分析 Pro</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --sub: #8e8e93;
+      --primary: #5856d6; --accent: #007aff; --border: rgba(0,0,0,0.1);
+      --input-bg: #f2f2f7; --success: #34c759; --warning: #ff9500;
+      --btn-link-bg: rgba(0,122,255,0.1); --btn-link-text: #007aff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000; --card: #1c1c1e; --text: #ffffff; --sub: #8e8e93;
+        --primary: #5e5ce6; --accent: #0a84ff; --border: rgba(255,255,255,0.1);
+        --input-bg: #2c2c2e; --btn-link-bg: rgba(10,132,255,0.2); --btn-link-text: #0a84ff;
+      }
+    }
 
-.section-title{margin:30px 0 15px 4px;font-size:1.2rem;font-weight:700;display:flex;align-items:center;justify-content:space-between;cursor:pointer;}
-.section-title span{font-size:0.9rem;color:var(--sub);}
-.grid{display:grid;gap:16px;}
-.card{background:var(--card);border-radius:20px;padding:18px;box-shadow:0 2px 8px var(--border);}
-.card h3{margin:0 0 12px;font-size:1.05rem;border-bottom:1px solid var(--border);padding-bottom:8px;}
-.info-list{list-style:none;padding:0;margin:0;}
-.info-item{padding:12px 0;border-bottom:1px dashed var(--border);}
-.info-item:last-child{border-bottom:none;}
-.info-label{display:block;font-size:0.75rem;color:var(--sub);margin-bottom:4px;font-weight:500;}
-a{color:var(--accent);text-decoration:none;font-weight:500;}
-.btn-link{display:inline-block;background:var(--btn-link-bg);color:var(--btn-link-text);padding:4px 10px;border-radius:8px;font-size:0.85rem;margin-right:5px;margin-bottom:5px;}
-.footer{margin-top:40px;}
-footer{text-align:center;margin:60px 0 30px;font-size:0.8rem;color:var(--sub);border-top:1px solid var(--border);padding-top:20px;}
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body { 
+      margin: 0; font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+      background: var(--bg); color: var(--text); padding-bottom: 50px;
+      padding-top: env(safe-area-inset-top);
+    }
+    .container { max-width: 800px; margin: auto; padding: 0 16px; }
 
-.calc-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
-.calc-group{display:flex;flex-direction:column;}
-.calc-group label{font-size:0.7rem;color:var(--sub);margin-bottom:4px;}
-.calc-group input{padding:8px;border-radius:8px;border:none;background:var(--input-bg);color:var(--text);}
-.calc-btn{grid-column:span 2;margin-top:10px;padding:12px;background:var(--primary);color:white;border:none;border-radius:10px;font-weight:600;cursor:pointer;}
+    header { 
+      padding: 30px 20px; background: linear-gradient(135deg, var(--primary), var(--accent)); 
+      color: #fff; border-radius: 0 0 24px 24px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    header h1 { margin: 0; font-size: 1.5rem; }
+    
+    .section-title { margin: 25px 0 10px 5px; font-size: 1rem; font-weight: 700; color: var(--sub); text-transform: uppercase; letter-spacing: 0.5px; }
 
-#propertyList{width:100%;border-collapse:collapse;margin-top:15px;}
-#propertyList th,#propertyList td{border:1px solid var(--border);padding:6px;text-align:center;font-size:0.85rem;cursor:pointer;}
-#propertyList th{background:var(--nav-bg);color:var(--nav-text);}
-#propertyList td b{color:var(--primary);}
-.btn-delete{cursor:pointer;color:red;}
-.collapsible-content{display:block;transition:max-height 0.3s ease;overflow:hidden;}
-.collapsed{max-height:0;padding:0;margin:0;border:none;}
-</style>
+    .card { background: var(--card); border-radius: 18px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 10px var(--border); }
+    
+    .calc-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .calc-group { display: flex; flex-direction: column; }
+    .calc-group label { font-size: 0.75rem; color: var(--sub); margin-bottom: 4px; font-weight: 600; }
+    .calc-group input { 
+      padding: 12px; border-radius: 10px; border: none; background: var(--input-bg); 
+      color: var(--text); font-size: 1rem; outline: none; border: 1px solid transparent;
+    }
+    .calc-btn { 
+      grid-column: span 2; padding: 15px; background: var(--primary); color: white; 
+      border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; margin-top: 10px;
+    }
+
+    .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    #propertyList { width: 100%; border-collapse: collapse; min-width: 600px; }
+    #propertyList th { background: var(--input-bg); padding: 12px 8px; font-size: 0.75rem; text-align: left; cursor: pointer; }
+    #propertyList td { padding: 12px 8px; font-size: 0.85rem; border-bottom: 1px solid var(--border); }
+    
+    .roi-badge { padding: 4px 8px; border-radius: 6px; font-weight: 700; background: var(--success); color: white; }
+    .btn-delete { color: #ff3b30; font-weight: 600; cursor: pointer; }
+
+    #chartArea { display: none; margin-top: 20px; text-align: center; }
+    canvas { max-width: 300px; margin: auto; }
+
+    /* 工具链接样式 */
+    .info-label { display: block; font-size: 0.75rem; color: var(--sub); margin-bottom: 6px; font-weight: 600; }
+    .btn-link { 
+      display: inline-block; background: var(--btn-link-bg); color: var(--btn-link-text); 
+      padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; margin-right: 6px; margin-bottom: 8px;
+      text-decoration: none; font-weight: 500;
+    }
+    .tool-group { margin-bottom: 15px; }
+
+    /* 税率表样式 */
+    .tax-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+    .tax-item { 
+      background: var(--input-bg); padding: 10px; border-radius: 10px; font-size: 0.8rem; 
+      cursor: pointer; border: 1px solid transparent; transition: 0.2s;
+    }
+    .tax-item:active { background: var(--btn-link-bg); border-color: var(--accent); }
+    .tax-item b { color: var(--primary); display: block; font-size: 0.9rem; }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>北卡房产投资分析工具</h1>
-  <p>多房源对比 & 投资 ROI 计算</p>
+  <h1>北卡房产投资分析 Pro</h1>
+  <p>计算 ROI & 尽职调查集成工具</p>
 </header>
 
 <div class="container">
-
-  <!-- 折叠信息块 -->
-  <div class="section-title" id="toggleInfo">🏘️ 房产投资 (Real Estate) <span>点击展开/收起</span></div>
-  <div class="grid collapsible-content" id="infoContent">
-    <div class="card item" data-category="realestate">
-      <h3>区域与环境</h3>
-      <div class="info-list">
-        <div class="info-item">
-          <strong>热门区域:</strong> Ballantyne (南边), Marvin & Weddington, South End (公寓)。
-        </div>
-        <div class="info-item">
-          <span class="info-label">环境维护</span>
-          <strong>驱蚊:</strong> 使用 BIFEN XTS (1oz/4gal), 每月喷一次。<br>
-          <strong>买木头:</strong> <a href="https://www.facebook.com/MountainIslandWoodCo/">Mountain Island Wood Co</a> | 
-          <a href="https://www.facebook.com/marketplace/item/522402829872732/">胡桃木资源</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card item" data-category="realestate">
-      <h3>租客调查工具 (Tenant Screening)</h3>
-      <div class="info-list">
-        <div class="info-item">
-          <span class="info-label">官方记录查询</span>
-          <a href="https://portal-nc.tylertech.cloud/Portal/" class="btn-link">北卡法庭记录</a>
-          <a href="https://mecksheriffweb.mecklenburgcountync.gov" class="btn-link">夏村逮捕记录</a>
-          <a href="https://mcsop.permitium.com/sop/searchpage" class="btn-link">夏村 Eviction 记录</a>
-        </div>
-        <div class="info-item">
-          <span class="info-label">背景调查</span>
-          <a href="https://www.fastpeoplesearch.com">FastPeopleSearch</a> | 
-          <a href="https://www.mysmartmove.com/SmartMove/login/landlord_new_application.page">TransUnion</a> | 
-          <a href="https://tenantbackgroundsearch.com">租客调查网</a>
-        </div>
-        <div class="info-item">
-          <span class="info-label">选民与房产查询</span>
-          <a href="https://vt.ncsbe.gov/RegLkup">北卡选民</a> | <a href="https://voterrecords.com/">全美选民</a><br>
-          <a href="https://property.spatialest.com/nc/mecklenburg#/">夏村 Deed</a> | 
-          <a href="https://www.unionconcrod.org/">Union Deed</a> | 
-          <a href="https://property.spatialest.com/nc/union#/">Union 地址查</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 房源分析工具 -->
+  
   <div class="card">
-    <h3>添加房源</h3>
     <div class="calc-form">
-      <div class="calc-group"><label>房源名称</label><input type="text" id="propName" placeholder="例：Ballantyne Condo"></div>
-      <div class="calc-group"><label>房价</label><input type="number" id="housePrice" value="450000"></div>
-      <div class="calc-group"><label>首付</label><input type="number" id="downpayment" value="90000"></div>
-      <div class="calc-group"><label>年保险</label><input type="number" id="annualInsurance" value="1200"></div>
-      <div class="calc-group"><label>年房产税</label><input type="number" id="annualPropertyTax" value="4000"></div>
-      <div class="calc-group"><label>贷款利率(%)</label><input type="number" id="mortgageRate" value="7.55" step="0.01"></div>
-      <div class="calc-group"><label>4周T-Bill利率(%)</label><input type="number" id="tbillRate" value="5.28" step="0.01"></div>
-      <button class="calc-btn" id="addPropertyBtn">添加房源</button>
+      <div class="calc-group" style="grid-column: span 2;"><label>房源名称</label><input type="text" id="propName" placeholder="例: Ballantyne Condo"></div>
+      <div class="calc-group"><label>房价 ($)</label><input type="number" inputmode="decimal" id="housePrice" value="500000" oninput="autoUpdateTax()"></div>
+      <div class="calc-group"><label>首付 ($)</label><input type="number" inputmode="decimal" id="downpayment" value="100000"></div>
+      <div class="calc-group"><label>贷款利率 (%)</label><input type="number" inputmode="decimal" id="mortgageRate" value="7.2" step="0.01"></div>
+      <div class="calc-group"><label>年房产税 ($)</label><input type="number" inputmode="decimal" id="annualTax" value="4500"></div>
+      <div class="calc-group"><label>年保险费 ($)</label><input type="number" inputmode="decimal" id="annualIns" value="1200"></div>
+      <div class="calc-group"><label>月 HOA ($)</label><input type="number" inputmode="decimal" id="monthlyHOA" value="50"></div>
+      <div class="calc-group"><label>预估月租金 ($)</label><input type="number" inputmode="decimal" id="expectedRent" value="3200"></div>
+      <div class="calc-group"><label>机会成本率 (%)</label><input type="number" inputmode="decimal" id="tbillRate" value="5.2"></div>
+      <button class="calc-btn" onclick="addProperty()">＋ 添加并分析房源</button>
     </div>
   </div>
 
+  <div class="section-title">北卡热门郡税率参考 (点击自动计算)</div>
   <div class="card">
-    <h3>房源对比表（点击表头排序）</h3>
-    <table id="propertyList">
-      <thead>
-        <tr>
-          <th data-key="name">名称</th>
-          <th data-key="monthlyMortgage">月供</th>
-          <th data-key="monthlyTaxInsurance">税+保险</th>
-          <th data-key="opportunityCost">首付机会成本</th>
-          <th data-key="breakEvenRent">最低平衡租金</th>
-          <th data-key="cashOnCashROI">Cash-on-Cash ROI (%)</th>
-          <th>操作</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <span class="info-label">点击下方区域自动预填“年房产税”（基于当前房价）</span>
+    <div class="tax-grid">
+      <div class="tax-item" onclick="applyTaxRate(0.0095, 'Mecklenburg')"><b>Mecklenburg (夏村)</b>约 0.95%</div>
+      <div class="tax-item" onclick="applyTaxRate(0.0065, 'Union')"><b>Union (Marvin/Wed)</b>约 0.65%</div>
+      <div class="tax-item" onclick="applyTaxRate(0.0102, 'Wake')"><b>Wake (Raleigh/Cary)</b>约 1.02%</div>
+      <div class="tax-item" onclick="applyTaxRate(0.0085, 'Durham')"><b>Durham</b>约 0.85%</div>
+      <div class="tax-item" onclick="applyTaxRate(0.0075, 'Cabarrus')"><b>Cabarrus (Concord)</b>约 0.75%</div>
+      <div class="tax-item" onclick="applyTaxRate(0.0090, 'Guilford')"><b>Guilford (Greensboro)</b>约 0.90%</div>
+    </div>
+    <p style="font-size: 0.65rem; color: var(--sub); margin-top: 10px;">* 以上税率仅为估算，具体包含市、郡及专项税，请以官方账单为准。</p>
+  </div>
+
+  <div id="chartArea" class="card">
+    <h3 id="chartTitle" style="margin-top:0; font-size:1rem;">支出结构分析</h3>
+    <canvas id="expenseChart"></canvas>
+  </div>
+
+  <div class="section-title">对比分析表</div>
+  <div class="card" style="padding:10px">
+    <div class="table-container">
+      <table id="propertyList">
+        <thead>
+          <tr>
+            <th onclick="sortTable('name')">名称 ↕️</th>
+            <th onclick="sortTable('totalOut')">月支 ↕️</th>
+            <th onclick="sortTable('beRent')">盈亏点 ↕️</th>
+            <th onclick="sortTable('cocROI')">Cash ROI ↕️</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-title">尽职调查工具包 (Due Diligence)</div>
+  <div class="card">
+    <div class="tool-group">
+      <span class="info-label">官方法律记录 (法庭、逮捕、驱逐)</span>
+      <a href="https://portal-nc.tylertech.cloud/Portal/" class="btn-link">北卡法庭记录</a>
+      <a href="https://mecksheriffweb.mecklenburgcountync.gov" class="btn-link">夏村逮捕记录</a>
+      <a href="https://mcsop.permitium.com/sop/searchpage" class="btn-link">夏村 Eviction 记录</a>
+    </div>
+
+    <div class="tool-group">
+      <span class="info-label">租客背调与信用调查</span>
+      <a href="https://www.fastpeoplesearch.com" class="btn-link">FastPeopleSearch</a>
+      <a href="https://www.mysmartmove.com/SmartMove/login/landlord_new_application.page" class="btn-link">TransUnion SmartMove</a>
+      <a href="https://tenantbackgroundsearch.com" class="btn-link">租客调查网</a>
+    </div>
+
+    <div class="tool-group">
+      <span class="info-label">产权 (Deed) 与选民核实</span>
+      <a href="https://vt.ncsbe.gov/RegLkup" class="btn-link">北卡选民</a>
+      <a href="https://voterrecords.com/" class="btn-link">全美选民</a>
+      <a href="https://property.spatialest.com/nc/mecklenburg#/" class="btn-link">夏村 Deed</a>
+      <a href="https://www.unionconcrod.org/" class="btn-link">Union Deed</a>
+      <a href="https://property.spatialest.com/nc/union#/" class="btn-link">Union 地址查</a>
+    </div>
   </div>
 
 </div>
 
-<footer>
-  © 2026 北卡房产投资指南 | 仅供参考 | bankofworld [at] gmail [dot] com
-</footer>
-
 <script>
-// 折叠逻辑
-const toggleInfo = document.getElementById('toggleInfo');
-const infoContent = document.getElementById('infoContent');
-toggleInfo.addEventListener('click',()=>{
-  infoContent.classList.toggle('collapsed');
-});
+let properties = JSON.parse(localStorage.getItem('nc_invest_props_pro_v2') || '[]');
+let expenseChart = null;
+let currentSelectedRate = null;
 
-// 投资工具逻辑
-const propName = document.getElementById('propName');
-const housePriceInput = document.getElementById('housePrice');
-const downpayment = document.getElementById('downpayment');
-const annualInsurance = document.getElementById('annualInsurance');
-const annualPropertyTax = document.getElementById('annualPropertyTax');
-const mortgageRate = document.getElementById('mortgageRate');
-const tbillRate = document.getElementById('tbillRate');
-const addPropertyBtn = document.getElementById('addPropertyBtn');
-const propertyListBody = document.querySelector('#propertyList tbody');
-let properties = JSON.parse(localStorage.getItem('properties')||'[]');
-let sortKey = null, sortAsc = true;
+function hapticFeedback() { if (window.navigator && window.navigator.vibrate) window.navigator.vibrate(10); }
 
-function calcProperty(p){
+// 郡税率应用逻辑
+function applyTaxRate(rate, countyName) {
+  hapticFeedback();
+  currentSelectedRate = rate;
+  const price = +document.getElementById('housePrice').value;
+  const calculatedTax = Math.round(price * rate);
+  document.getElementById('annualTax').value = calculatedTax;
+  
+  // 更新房源名称预览（可选）
+  const nameInput = document.getElementById('propName');
+  if(!nameInput.value || nameInput.value.includes("郡房源")) {
+    nameInput.value = countyName + "郡房源";
+  }
+}
+
+// 房价变动时同步更新税费（如果已选择了郡）
+function autoUpdateTax() {
+  if (currentSelectedRate) {
+    const price = +document.getElementById('housePrice').value;
+    document.getElementById('annualTax').value = Math.round(price * currentSelectedRate);
+  }
+}
+
+function calculateROI(p) {
   const loan = p.housePrice - p.downpayment;
-  const n = 30*12;
-  const r = p.mortgageRate/100/12;
-  const monthlyMortgage = loan*(r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
-  const monthlyTaxInsurance = (p.annualInsurance+p.annualPropertyTax)/12;
-  const opportunityCost = p.downpayment*p.tbillRate/100/12;
-  const breakEvenRent = monthlyMortgage + monthlyTaxInsurance + opportunityCost;
-  const annualRent = breakEvenRent*12;
-  const cashOnCashROI = ((annualRent - (monthlyMortgage+monthlyTaxInsurance)*12)/p.downpayment*100).toFixed(2);
-  return {...p,monthlyMortgage,monthlyTaxInsurance,opportunityCost,breakEvenRent,cashOnCashROI};
+  const r = p.mortgageRate / 100 / 12;
+  const n = 30 * 12;
+  const monthlyPI = (loan > 0 && r > 0) ? loan * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1) : 0;
+  const monthlyTaxIns = (p.annualTax + p.annualIns) / 12;
+  const maintenance = (p.housePrice * 0.008) / 12;
+  const totalOut = monthlyPI + monthlyTaxIns + maintenance + p.monthlyHOA;
+  const oppCost = p.downpayment * (p.tbillRate / 100) / 12;
+  const beRent = totalOut + oppCost;
+  const netCashFlow = (p.expectedRent - totalOut) * 12;
+  const cocROI = p.downpayment > 0 ? (netCashFlow / p.downpayment * 100).toFixed(2) : "N/A";
+  return { ...p, monthlyPI, monthlyTaxIns, maintenance, totalOut, oppCost, beRent, cocROI };
 }
 
-function renderTable(){
-  propertyListBody.innerHTML = '';
-  if(sortKey){
-    properties.sort((a,b)=>{
-      const va = calcProperty(a)[sortKey];
-      const vb = calcProperty(b)[sortKey];
-      return sortAsc? va-vb : vb-va;
-    });
-  }
-  let bestRent = Infinity, bestROI = -Infinity;
-  properties.forEach(p=>{
-    const c = calcProperty(p);
-    if(c.breakEvenRent < bestRent) bestRent = c.breakEvenRent;
-    if(+c.cashOnCashROI > bestROI) bestROI = +c.cashOnCashROI;
-  });
-  properties.forEach((p,index)=>{
-    const c = calcProperty(p);
-    const row = document.createElement('tr');
-    row.style.background = '';
-    if(c.breakEvenRent===bestRent) row.style.background= 'var(--highlight-rent)';
-    if(+c.cashOnCashROI===bestROI) row.style.background= 'var(--highlight-roi)';
-    row.innerHTML = `
-      <td>${c.name}</td>
-      <td>$${c.monthlyMortgage.toFixed(2)}</td>
-      <td>$${c.monthlyTaxInsurance.toFixed(2)}</td>
-      <td>$${c.opportunityCost.toFixed(2)}</td>
-      <td>$${c.breakEvenRent.toFixed(2)}</td>
-      <td>${c.cashOnCashROI}</td>
-      <td><span class="btn-delete" data-index="${index}">删除</span></td>
-    `;
-    propertyListBody.appendChild(row);
-  });
-  localStorage.setItem('properties',JSON.stringify(properties));
-}
-
-addPropertyBtn.addEventListener('click',()=>{
-  const newProp = {
-    name:propName.value||'未命名房源',
-    housePrice:+housePriceInput.value,
-    downpayment:+downpayment.value,
-    annualInsurance:+annualInsurance.value,
-    annualPropertyTax:+annualPropertyTax.value,
-    mortgageRate:+mortgageRate.value,
-    tbillRate:+tbillRate.value
+function addProperty() {
+  hapticFeedback();
+  const p = {
+    id: Date.now(),
+    name: document.getElementById('propName').value || '新房源',
+    housePrice: +document.getElementById('housePrice').value,
+    downpayment: +document.getElementById('downpayment').value,
+    mortgageRate: +document.getElementById('mortgageRate').value,
+    annualTax: +document.getElementById('annualTax').value,
+    annualIns: +document.getElementById('annualIns').value,
+    monthlyHOA: +document.getElementById('monthlyHOA').value,
+    expectedRent: +document.getElementById('expectedRent').value,
+    tbillRate: +document.getElementById('tbillRate').value
   };
-  properties.push(newProp);
-  propName.value=''; housePriceInput.value=450000; downpayment.value=90000;
-  renderTable();
-});
+  properties.push(p);
+  saveAndRender();
+  showChart(p.id);
+  // 重置郡选择
+  currentSelectedRate = null;
+}
 
-propertyListBody.addEventListener('click',e=>{
-  if(e.target.classList.contains('btn-delete')){
-    const idx = e.target.dataset.index;
-    properties.splice(idx,1);
-    renderTable();
-  }
-});
+function deleteProp(id) {
+  properties = properties.filter(p => p.id !== id);
+  saveAndRender();
+  document.getElementById('chartArea').style.display = 'none';
+}
 
-document.querySelectorAll('#propertyList th[data-key]').forEach(th=>{
-  th.addEventListener('click',()=>{
-    const key = th.dataset.key;
-    if(sortKey===key) sortAsc = !sortAsc;
-    else {sortKey=key; sortAsc=true;}
-    renderTable();
+function saveAndRender() {
+  localStorage.setItem('nc_invest_props_pro_v2', JSON.stringify(properties));
+  const body = document.getElementById('tableBody');
+  body.innerHTML = '';
+  properties.forEach(p => {
+    const c = calculateROI(p);
+    const tr = document.createElement('tr');
+    tr.onclick = () => showChart(p.id);
+    tr.innerHTML = `
+      <td><b>${c.name}</b></td>
+      <td>$${c.totalOut.toFixed(0)}</td>
+      <td style="color:var(--primary);font-weight:700">$${c.beRent.toFixed(0)}</td>
+      <td><span class="roi-badge">${c.cocROI}%</span></td>
+      <td><span class="btn-delete" onclick="event.stopPropagation(); deleteProp(${p.id})">删除</span></td>
+    `;
+    body.appendChild(tr);
   });
-});
+}
 
-renderTable();
+function showChart(id) {
+  const p = properties.find(x => x.id === id);
+  if(!p) return;
+  const c = calculateROI(p);
+  document.getElementById('chartArea').style.display = 'block';
+  document.getElementById('chartTitle').innerText = `${c.name} 月支出预览`;
+  const ctx = document.getElementById('expenseChart').getContext('2d');
+  if(expenseChart) expenseChart.destroy();
+  expenseChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['本息', '税保', 'HOA', '维护', '机会成本'],
+      datasets: [{
+        data: [c.monthlyPI, c.monthlyTaxIns, c.monthlyHOA, c.maintenance, c.oppCost],
+        backgroundColor: ['#5856d6', '#ff9500', '#ff3b30', '#34c759', '#8e8e93']
+      }]
+    },
+    options: { plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } } } }
+  });
+}
+
+function sortTable(key) {
+  properties.sort((a,b) => {
+    const valA = key === 'name' ? a[key] : parseFloat(calculateROI(a)[key]);
+    const valB = key === 'name' ? b[key] : parseFloat(calculateROI(b)[key]);
+    return valA > valB ? 1 : -1;
+  });
+  saveAndRender();
+}
+
+window.onload = saveAndRender;
 </script>
 
 </body>
