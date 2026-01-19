@@ -11,88 +11,102 @@
       --primary: #5856d6; --accent: #007aff; --border: rgba(0,0,0,0.1);
       --input-bg: #f2f2f7; --success: #34c759; --warning: #ff9500;
       --btn-link-bg: rgba(0,122,255,0.1); --btn-link-text: #007aff;
+      --disabled: #c7c7cc;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #000000; --card: #1c1c1e; --text: #ffffff; --sub: #8e8e93;
         --primary: #5e5ce6; --accent: #0a84ff; --border: rgba(255,255,255,0.1);
         --input-bg: #2c2c2e; --btn-link-bg: rgba(10,132,255,0.2); --btn-link-text: #0a84ff;
+        --disabled: #3a3a3c;
       }
     }
 
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
     body { 
       margin: 0; font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
-      background: var(--bg); color: var(--text); padding-bottom: 50px;
-      padding-top: env(safe-area-inset-top);
+      background: var(--bg); color: var(--text); padding-bottom: 30px;
     }
     .container { max-width: 800px; margin: auto; padding: 0 16px; }
 
-    header {
-      position: sticky; top: 0; z-index: 1000;
-      background: rgba(242, 242, 247, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      padding: 16px; border-bottom: 1px solid var(--border); text-align: center;
-    }
-    header h1 { margin: 0; font-size: 1rem; }
+    .main-title-section { padding-top: 20px; margin-bottom: 5px; }
+    .main-title-section h1 { margin: 0; font-size: 1.25rem; font-weight: 800; color: var(--text); }
+    .main-title-section p { margin: 4px 0 0 0; font-size: 0.85rem; color: var(--sub); }
     
-    .section-title { margin: 25px 0 10px 5px; font-size: 1rem; font-weight: 700; color: var(--sub); text-transform: uppercase; letter-spacing: 0.5px; }
+    .section-title { margin: 25px 0 10px 5px; font-size: 0.85rem; font-weight: 700; color: var(--sub); text-transform: uppercase; letter-spacing: 0.5px; }
 
-    .card { background: var(--card); border-radius: 18px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 10px var(--border); }
+    .card { background: var(--card); border-radius: 12px; padding: 16px; margin-bottom: 12px; box-shadow: 0 1px 4px var(--border); }
     
-    .calc-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .calc-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .calc-group { display: flex; flex-direction: column; }
     .calc-group label { font-size: 0.75rem; color: var(--sub); margin-bottom: 4px; font-weight: 600; }
     .calc-group input { 
-      padding: 12px; border-radius: 10px; border: none; background: var(--input-bg); 
+      padding: 10px; border-radius: 8px; border: none; background: var(--input-bg); 
       color: var(--text); font-size: 1rem; outline: none; border: 1px solid transparent;
     }
+
+    /* 重新设计的按钮样式 */
     .calc-btn { 
-      grid-column: span 2; padding: 15px; background: var(--primary); color: white; 
-      border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; margin-top: 10px;
+      grid-column: span 2; padding: 14px; background: var(--primary); color: white; 
+      border: none; border-radius: 10px; font-weight: 700; font-size: 1rem; margin-top: 10px;
+      cursor: pointer; transition: all 0.3s ease;
+    }
+    .calc-btn:disabled { 
+      background: var(--disabled); 
+      color: var(--sub); 
+      cursor: not-allowed;
+      transform: scale(1);
+    }
+    .calc-btn.added {
+      background: var(--success);
     }
 
     .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    #propertyList { width: 100%; border-collapse: collapse; min-width: 600px; }
+    #propertyList { width: 100%; border-collapse: collapse; min-width: 500px; }
     #propertyList th { background: var(--input-bg); padding: 12px 8px; font-size: 0.75rem; text-align: left; cursor: pointer; }
     #propertyList td { padding: 12px 8px; font-size: 0.85rem; border-bottom: 1px solid var(--border); }
     
-    .roi-badge { padding: 4px 8px; border-radius: 6px; font-weight: 700; background: var(--success); color: white; }
-    .btn-delete { color: #ff3b30; font-weight: 600; cursor: pointer; }
-
-    #chartArea { display: none; margin-top: 20px; text-align: center; }
-    canvas { max-width: 300px; margin: auto; }
-
-    /* 工具链接样式 */
-    .info-label { display: block; font-size: 0.75rem; color: var(--sub); margin-bottom: 6px; font-weight: 600; }
-    .btn-link { 
-      display: inline-block; background: var(--btn-link-bg); color: var(--btn-link-text); 
-      padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; margin-right: 6px; margin-bottom: 8px;
-      text-decoration: none; font-weight: 500;
+    @keyframes highlightRow {
+      0% { background-color: rgba(52, 199, 89, 0.2); }
+      100% { background-color: transparent; }
     }
-    .tool-group { margin-bottom: 15px; }
+    .new-row td { animation: highlightRow 2s ease-out; }
 
-    /* 税率表样式 */
+    .roi-badge { padding: 4px 8px; border-radius: 6px; font-weight: 700; background: var(--success); color: white; font-size: 0.8rem; }
+    .btn-delete { color: #ff3b30; font-weight: 600; cursor: pointer; font-size: 0.8rem; }
+
+    #chartArea { display: none; margin-top: 15px; text-align: center; }
+    canvas { max-width: 260px; margin: auto; }
+
     .tax-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
     .tax-item { 
       background: var(--input-bg); padding: 10px; border-radius: 10px; font-size: 0.8rem; 
       cursor: pointer; border: 1px solid transparent; transition: 0.2s;
     }
-    .tax-item:active { background: var(--btn-link-bg); border-color: var(--accent); }
     .tax-item b { color: var(--primary); display: block; font-size: 0.9rem; }
+    
+    .btn-link { 
+      display: inline-block; background: var(--btn-link-bg); color: var(--btn-link-text); 
+      padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; margin-right: 6px; margin-bottom: 8px;
+      text-decoration: none; font-weight: 500;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>北卡房产投资分析 Pro</h1>
-  <p>计算 ROI & 尽职调查集成工具</p>
-</header>
-
 <div class="container">
   
-  <div class="card">
+  <div class="main-title-section">
+    <h1>北卡房产投资分析 Pro</h1>
+    <p>ROI 计算器与尽职调查集成工具</p>
+  </div>
+
+  <div class="card" style="margin-top: 15px;">
     <div class="calc-form">
-      <div class="calc-group" style="grid-column: span 2;"><label>房源名称</label><input type="text" id="propName" placeholder="例: Ballantyne Condo"></div>
+      <div class="calc-group" style="grid-column: span 2;">
+        <label>房源名称 (修改名称以再次添加)</label>
+        <input type="text" id="propName" placeholder="例: Ballantyne Condo" oninput="handleNameInput()">
+      </div>
       <div class="calc-group"><label>房价 ($)</label><input type="number" inputmode="decimal" id="housePrice" value="500000" oninput="autoUpdateTax()"></div>
       <div class="calc-group"><label>首付 ($)</label><input type="number" inputmode="decimal" id="downpayment" value="100000"></div>
       <div class="calc-group"><label>贷款利率 (%)</label><input type="number" inputmode="decimal" id="mortgageRate" value="7.2" step="0.01"></div>
@@ -101,22 +115,18 @@
       <div class="calc-group"><label>月 HOA ($)</label><input type="number" inputmode="decimal" id="monthlyHOA" value="50"></div>
       <div class="calc-group"><label>预估月租金 ($)</label><input type="number" inputmode="decimal" id="expectedRent" value="3200"></div>
       <div class="calc-group"><label>机会成本率 (%)</label><input type="number" inputmode="decimal" id="tbillRate" value="5.2"></div>
-      <button class="calc-btn" onclick="addProperty()">＋ 添加并分析房源</button>
+      <button class="calc-btn" id="addBtn" onclick="addProperty()">＋ 添加并分析房源</button>
     </div>
   </div>
 
-  <div class="section-title">北卡热门郡税率参考 (点击自动计算)</div>
+  <div class="section-title">北卡热门郡税率参考</div>
   <div class="card">
-    <span class="info-label">点击下方区域自动预填“年房产税”（基于当前房价）</span>
     <div class="tax-grid">
       <div class="tax-item" onclick="applyTaxRate(0.0095, 'Mecklenburg')"><b>Mecklenburg (夏村)</b>约 0.95%</div>
-      <div class="tax-item" onclick="applyTaxRate(0.0065, 'Union')"><b>Union (Marvin/Wed)</b>约 0.65%</div>
-      <div class="tax-item" onclick="applyTaxRate(0.0102, 'Wake')"><b>Wake (Raleigh/Cary)</b>约 1.02%</div>
+      <div class="tax-item" onclick="applyTaxRate(0.0065, 'Union')"><b>Union (Marvin)</b>约 0.65%</div>
+      <div class="tax-item" onclick="applyTaxRate(0.0102, 'Wake')"><b>Wake (Raleigh)</b>约 1.02%</div>
       <div class="tax-item" onclick="applyTaxRate(0.0085, 'Durham')"><b>Durham</b>约 0.85%</div>
-      <div class="tax-item" onclick="applyTaxRate(0.0075, 'Cabarrus')"><b>Cabarrus (Concord)</b>约 0.75%</div>
-      <div class="tax-item" onclick="applyTaxRate(0.0090, 'Guilford')"><b>Guilford (Greensboro)</b>约 0.90%</div>
     </div>
-    <p style="font-size: 0.65rem; color: var(--sub); margin-top: 10px;">* 以上税率仅为估算，具体包含市、郡及专项税，请以官方账单为准。</p>
   </div>
 
   <div id="chartArea" class="card">
@@ -124,7 +134,7 @@
     <canvas id="expenseChart"></canvas>
   </div>
 
-  <div class="section-title">对比分析表</div>
+  <div class="section-title" id="tableAnchor">投资对比表</div>
   <div class="card" style="padding:10px">
     <div class="table-container">
       <table id="propertyList">
@@ -142,30 +152,11 @@
     </div>
   </div>
 
-  <div class="section-title">尽职调查工具包 (Due Diligence)</div>
+  <div class="section-title">尽职调查工具包</div>
   <div class="card">
-    <div class="tool-group">
-      <span class="info-label">官方法律记录 (法庭、逮捕、驱逐)</span>
-      <a href="https://portal-nc.tylertech.cloud/Portal/" class="btn-link">北卡法庭记录</a>
-      <a href="https://mecksheriffweb.mecklenburgcountync.gov" class="btn-link">夏村逮捕记录</a>
-      <a href="https://mcsop.permitium.com/sop/searchpage" class="btn-link">夏村 Eviction 记录</a>
-    </div>
-
-    <div class="tool-group">
-      <span class="info-label">租客背调与信用调查</span>
-      <a href="https://www.fastpeoplesearch.com" class="btn-link">FastPeopleSearch</a>
-      <a href="https://www.mysmartmove.com/SmartMove/login/landlord_new_application.page" class="btn-link">TransUnion SmartMove</a>
-      <a href="https://tenantbackgroundsearch.com" class="btn-link">租客调查网</a>
-    </div>
-
-    <div class="tool-group">
-      <span class="info-label">产权 (Deed) 与选民核实</span>
-      <a href="https://vt.ncsbe.gov/RegLkup" class="btn-link">北卡选民</a>
-      <a href="https://voterrecords.com/" class="btn-link">全美选民</a>
+      <a href="https://portal-nc.tylertech.cloud/Portal/" class="btn-link">北卡法庭</a>
+      <a href="https://mecksheriffweb.mecklenburgcountync.gov" class="btn-link">逮捕记录</a>
       <a href="https://property.spatialest.com/nc/mecklenburg#/" class="btn-link">夏村 Deed</a>
-      <a href="https://www.unionconcrod.org/" class="btn-link">Union Deed</a>
-      <a href="https://property.spatialest.com/nc/union#/" class="btn-link">Union 地址查</a>
-    </div>
   </div>
 
 </div>
@@ -173,30 +164,30 @@
 <script>
 let properties = JSON.parse(localStorage.getItem('nc_invest_props_pro_v2') || '[]');
 let expenseChart = null;
-let currentSelectedRate = null;
+let lastAddedName = "";
 
 function hapticFeedback() { if (window.navigator && window.navigator.vibrate) window.navigator.vibrate(10); }
 
-// 郡税率应用逻辑
-function applyTaxRate(rate, countyName) {
-  hapticFeedback();
-  currentSelectedRate = rate;
-  const price = +document.getElementById('housePrice').value;
-  const calculatedTax = Math.round(price * rate);
-  document.getElementById('annualTax').value = calculatedTax;
+// 核心逻辑：监听名称输入，解除按钮禁用
+function handleNameInput() {
+  const btn = document.getElementById('addBtn');
+  const currentName = document.getElementById('propName').value.trim();
   
-  // 更新房源名称预览（可选）
-  const nameInput = document.getElementById('propName');
-  if(!nameInput.value || nameInput.value.includes("郡房源")) {
-    nameInput.value = countyName + "郡房源";
+  if (currentName !== lastAddedName && currentName !== "") {
+    btn.disabled = false;
+    btn.innerText = "＋ 添加并分析房源";
+    btn.classList.remove('added');
   }
 }
 
-// 房价变动时同步更新税费（如果已选择了郡）
-function autoUpdateTax() {
-  if (currentSelectedRate) {
-    const price = +document.getElementById('housePrice').value;
-    document.getElementById('annualTax').value = Math.round(price * currentSelectedRate);
+function applyTaxRate(rate, countyName) {
+  hapticFeedback();
+  const price = +document.getElementById('housePrice').value;
+  document.getElementById('annualTax').value = Math.round(price * rate);
+  const nameInput = document.getElementById('propName');
+  if(!nameInput.value || nameInput.value.includes("郡房源")) {
+    nameInput.value = countyName + "郡房源";
+    handleNameInput(); // 触发按钮检测
   }
 }
 
@@ -216,10 +207,27 @@ function calculateROI(p) {
 }
 
 function addProperty() {
+  const btn = document.getElementById('addBtn');
+  const nameInput = document.getElementById('propName');
+  const currentName = nameInput.value.trim();
+  
+  if (!currentName) {
+    alert("请输入房源名称");
+    return;
+  }
+
   hapticFeedback();
+  const pId = Date.now();
+  
+  // 更新状态
+  lastAddedName = currentName;
+  btn.disabled = true;
+  btn.innerText = "✓ 已添加";
+  btn.classList.add('added');
+
   const p = {
-    id: Date.now(),
-    name: document.getElementById('propName').value || '新房源',
+    id: pId,
+    name: currentName,
     housePrice: +document.getElementById('housePrice').value,
     downpayment: +document.getElementById('downpayment').value,
     mortgageRate: +document.getElementById('mortgageRate').value,
@@ -229,11 +237,15 @@ function addProperty() {
     expectedRent: +document.getElementById('expectedRent').value,
     tbillRate: +document.getElementById('tbillRate').value
   };
+  
   properties.push(p);
-  saveAndRender();
-  showChart(p.id);
-  // 重置郡选择
-  currentSelectedRate = null;
+  saveAndRender(pId);
+  showChart(pId);
+  
+  // 平滑滚动到表格
+  setTimeout(() => {
+    document.getElementById('tableAnchor').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 200);
 }
 
 function deleteProp(id) {
@@ -242,13 +254,14 @@ function deleteProp(id) {
   document.getElementById('chartArea').style.display = 'none';
 }
 
-function saveAndRender() {
+function saveAndRender(newId = null) {
   localStorage.setItem('nc_invest_props_pro_v2', JSON.stringify(properties));
   const body = document.getElementById('tableBody');
   body.innerHTML = '';
   properties.forEach(p => {
     const c = calculateROI(p);
     const tr = document.createElement('tr');
+    if (p.id === newId) tr.classList.add('new-row');
     tr.onclick = () => showChart(p.id);
     tr.innerHTML = `
       <td><b>${c.name}</b></td>
