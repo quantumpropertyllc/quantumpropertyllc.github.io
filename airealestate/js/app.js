@@ -14,8 +14,55 @@ let layers = {
     rezoning: null,
     transit: null,
     cip: null,
-    crime: null
+    crime: null,
+    schools: null,
+    transitStations: null,
+    opportunityZones: null,
+    buildingPermits: null,
+    charlotte2040: null,
+    floodZones: null,
+    currentZoning: null,
+    walkability: null
 };
+
+// Bilingual State
+let currentLang = localStorage.getItem('app_lang') || 'en';
+
+window.toggleLanguage = function () {
+    currentLang = currentLang === 'en' ? 'zh' : 'en';
+    localStorage.setItem('app_lang', currentLang);
+    updateLanguageUI();
+}
+
+function updateLanguageUI() {
+    // 1. Update Switcher Icon
+    const btn = document.getElementById('lang-toggle');
+    if (btn) btn.textContent = currentLang === 'en' ? '🇺🇸' : '🇨🇳';
+
+    // 2. Update Static Text
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang][key]) {
+            // Handle input placeholders specially if needed, but for now mostly textContent
+            el.textContent = TRANSLATIONS[currentLang][key];
+        }
+    });
+
+    // 3. Update Dynamic Elements (Score Labels)
+    // Rerun calculations if a property is selected to update score text
+    const scoreLabel = document.getElementById('score-label');
+    if (scoreLabel && scoreLabel.textContent) {
+        // Simple re-trigger via existing selected coordinates if available wouldn't be easy without storage
+        // So we might just clear or let it update on next click.
+        // Or mapped manually:
+        if (currentLang === 'zh') {
+            if (scoreLabel.textContent === "Strong Buy") scoreLabel.textContent = "强烈推荐";
+            if (scoreLabel.textContent === "Good Opportunity") scoreLabel.textContent = "良机";
+            if (scoreLabel.textContent === "Neutral") scoreLabel.textContent = "中立";
+            if (scoreLabel.textContent === "High Risk") scoreLabel.textContent = "高风险";
+        }
+    }
+}
 
 function initMap() {
     // 1. Initialize Map
@@ -32,10 +79,20 @@ function initMap() {
     map.zoomControl.setPosition('bottomright');
 
     // 3. Load Initial Data
-    loadLayer('rezonings', 'rezoning', renderRezoningLayer);
-    loadLayer('transit_projects', 'transit', renderTransitLayer, false); // Default off
-    loadLayer('cip_projects', 'cip', renderCIPLayer, false); // Default off
-    loadLayer('cmpd_incidents', 'crime', renderCrimeHeatmap, false); // Default off
+    loadLayer('planning/rezonings', 'rezoning', renderRezoningLayer);
+    loadLayer('infrastructure/transit_projects', 'transit', renderTransitLayer, false); // Default off
+    loadLayer('infrastructure/cip_projects', 'cip', renderCIPLayer, false); // Default off
+    loadLayer('risk/cmpd_incidents', 'crime', renderCrimeHeatmap, false); // Default off
+
+    // 4. Load New Investment Layers
+    loadLayer('development/school_districts', 'schools', renderSchoolLayer, false);
+    loadLayer('infrastructure/transit_stations', 'transitStations', renderTransitStationsLayer, false);
+    loadLayer('planning/opportunity_zones', 'opportunityZones', renderOpportunityZonesLayer, false);
+    loadLayer('development/building_permits', 'buildingPermits', renderBuildingPermitsLayer, false);
+    loadLayer('planning/charlotte_2040_plan', 'charlotte2040', renderCharlotte2040Layer, false);
+    loadLayer('risk/flood_zones', 'floodZones', renderFloodZonesLayer, false);
+    loadLayer('planning/current_zoning', 'currentZoning', renderCurrentZoningLayer, false);
+    loadLayer('lifestyle/walkability', 'walkability', renderWalkabilityLayer, false);
 }
 
 async function loadLayer(fileName, layerKey, renderFunction, addToMap = true) {
@@ -43,6 +100,10 @@ async function loadLayer(fileName, layerKey, renderFunction, addToMap = true) {
         const response = await fetch(`data/${fileName}.json`);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
+
+        // Store raw data for score calculations
+        if (!window.geoData) window.geoData = {};
+        window.geoData[layerKey] = data;
 
         layers[layerKey] = renderFunction(data);
 
@@ -135,12 +196,183 @@ function renderCrimeHeatmap(geoJsonData) {
     return crimeLayerGroup;
 }
 
+function renderSchoolLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => {
+            const rating = feature.properties.rating || 5;
+            // Color code by rating: 9-10 = dark purple, 7-8 = medium purple, <7 = light purple
+            let fillColor;
+            if (rating >= 9) {
+                fillColor = '#7c3aed'; // Dark purple - top rated
+            } else if (rating >= 7) {
+                fillColor = '#a78bfa'; // Medium purple
+            } else {
+                fillColor = '#ddd6fe'; // Light purple - lower rated
+            }
+
+            return {
+                fillColor: fillColor,
+                weight: 2,
+                opacity: 1,
+                color: '#5b21b6',
+                dashArray: '5,5',
+                fillOpacity: 0.4
+            };
+        },
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'schools')
+    });
+}
+
+function renderTransitStationsLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        pointToLayer: (feature, latlng) => {
+            const isProposed = feature.properties.status === 'Proposed';
+            const icon = L.divIcon({
+                className: 'custom-transit-marker',
+                html: `<div class="${isProposed ? 'bg-indigo-300' : 'bg-indigo-600'} w-5 h-5 rounded-full border-2 border-white shadow-lg flex items-center justify-center">
+                        <span class="text-white text-xs font-bold">🚇</span>
+                       </div>`,
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            });
+
+            const marker = L.marker(latlng, { icon });
+
+            // Add 0.5 mile buffer circle (TOD zone)
+            const circle = L.circle(latlng, {
+                radius: 804.67, // 0.5 miles in meters
+                fillColor: '#818cf8',
+                color: '#4f46e5',
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.2,
+                dashArray: '5,5'
+            });
+
+            const layerGroup = L.layerGroup([circle, marker]);
+
+            // Attach click handler to marker
+            marker.on('click', (e) => {
+                zoomToFeature(e);
+                updateSidebar(feature.properties, 'transitStations', e.latlng);
+            });
+
+            return layerGroup;
+        }
+    });
+}
+
+function renderOpportunityZonesLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: '#f97316', // Orange
+            weight: 3,
+            opacity: 0.8,
+            color: '#ea580c',
+            dashArray: '10,5',
+            fillOpacity: 0.2
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'opportunityZones')
+    });
+}
+
+function renderBuildingPermitsLayer(geoJsonData) {
+    // Create a layer group to hold both heatmap and clickable markers
+    const permitsLayerGroup = L.layerGroup();
+
+    // 1. Create heatmap for visualization
+    const points = geoJsonData.features.map(feature => {
+        const [lng, lat] = feature.geometry.coordinates;
+        // Weight by valuation (higher value = more intensity)
+        const valuation = feature.properties.valuation || 100000;
+        const intensity = Math.min(valuation / 1000000, 3); // Cap at 3x intensity
+        return [lat, lng, intensity];
+    });
+
+    const heatmapLayer = L.heatLayer(points, {
+        radius: 30,
+        blur: 20,
+        maxZoom: 15,
+        gradient: { 0.2: 'lightblue', 0.5: 'cyan', 0.7: 'lime', 1: 'teal' }
+    });
+
+    // 2. Create invisible clickable markers for interaction
+    const markersLayer = L.geoJSON(geoJsonData, {
+        pointToLayer: (feature, latlng) => {
+            return L.circleMarker(latlng, {
+                radius: 8,
+                fillColor: 'transparent',
+                color: 'transparent',
+                weight: 0,
+                fillOpacity: 0
+            });
+        },
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'buildingPermits')
+    });
+
+    // Add both layers to the group
+    permitsLayerGroup.addLayer(heatmapLayer);
+    permitsLayerGroup.addLayer(markersLayer);
+
+    return permitsLayerGroup;
+}
+
+function renderCharlotte2040Layer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => {
+            const placeType = feature.properties.place_type;
+            let fillColor, opacity;
+
+            // Color code by place type
+            if (placeType.includes('Urban Place')) {
+                fillColor = '#ec4899'; // Pink - highest density
+                opacity = 0.4;
+            } else if (placeType.includes('Mixed-Use Activity Center')) {
+                fillColor = '#f97316'; // Orange - high density
+                opacity = 0.35;
+            } else if (placeType.includes('Transit Corridor')) {
+                fillColor = '#8b5cf6'; // Purple - transit focus
+                opacity = 0.3;
+            } else if (placeType.includes('Neighborhood Center')) {
+                fillColor = '#10b981'; // Green - medium density
+                opacity = 0.25;
+            } else {
+                fillColor = '#6b7280'; // Gray - suburban
+                opacity = 0.2;
+            }
+
+            return {
+                fillColor: fillColor,
+                weight: 2,
+                opacity: 0.8,
+                color: fillColor,
+                dashArray: '8,4',
+                fillOpacity: opacity
+            };
+        },
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'charlotte2040')
+    });
+}
+
+function renderFloodZonesLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: '#22d3ee', // Cyan
+            weight: 2,
+            opacity: 0.8,
+            color: '#0891b2',
+            fillOpacity: 0.5
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'floodZones')
+    });
+}
+
 function onEachFeature(feature, layer, type) {
     // Handle both click and tap events for iOS compatibility
     const handleInteraction = (e) => {
         console.log(`Feature clicked: ${type}`, feature.properties);
         zoomToFeature(e);
-        updateSidebar(feature.properties, type);
+        updateSidebar(feature.properties, type, e.latlng);
     };
 
     layer.on({
@@ -149,6 +381,146 @@ function onEachFeature(feature, layer, type) {
         click: handleInteraction,
         tap: handleInteraction  // iOS touch support
     });
+}
+
+// --- Investment Score Logic ---
+
+function calculateInvestmentScore(latlng) {
+    let score = 50; // Base score
+    let factors = [];
+    const lat = latlng.lat;
+    const lng = latlng.lng;
+
+    // 1. Proximity to Transit Stations (+15 per station within 0.5 mi)
+    if (window.geoData && window.geoData.transitStations) {
+        let transitBonus = 0;
+        window.geoData.transitStations.features.forEach(f => {
+            const [fLng, fLat] = f.geometry.coordinates;
+            const dist = getDistance([lat, lng], [fLat, fLng]);
+            if (dist <= 0.5) {
+                transitBonus += 15;
+            }
+        });
+        if (transitBonus > 0) {
+            score += Math.min(transitBonus, 30);
+            factors.push("🚇 Near Transit Station");
+        }
+    }
+
+    // 2. Opportunity Zone (+10)
+    if (window.geoData && window.geoData.opportunityZones) {
+        let inOZ = false;
+        window.geoData.opportunityZones.features.forEach(f => {
+            if (isPointInPolygon([lng, lat], f.geometry.coordinates[0])) {
+                inOZ = true;
+            }
+        });
+        if (inOZ) {
+            score += 10;
+            factors.push("💰 Opportunity Zone Status");
+        }
+    }
+
+    // 3. School Rating (+10 for rating > 7)
+    if (window.geoData && window.geoData.schools) {
+        window.geoData.schools.features.forEach(f => {
+            if (isPointInPolygon([lng, lat], f.geometry.coordinates[0])) {
+                const rating = f.properties.rating || 5;
+                if (rating >= 8) {
+                    score += 15;
+                    factors.push("🏫 Top-Rated School District");
+                } else if (rating >= 7) {
+                    score += 5;
+                    factors.push("✅ Good School District");
+                }
+            }
+        });
+    }
+
+    // 4. Flood Risk (-25 for High Risk)
+    if (window.geoData && window.geoData.floodZones) {
+        let inFlood = false;
+        window.geoData.floodZones.features.forEach(f => {
+            if (isPointInPolygon([lng, lat], f.geometry.coordinates[0])) {
+                inFlood = true;
+            }
+        });
+        if (inFlood) {
+            score -= 25;
+            factors.push("⚠️ High Flood Risk (AE Zone)");
+        }
+    }
+
+    // 5. 2040 Plan Growth Area (+10)
+    if (window.geoData && window.geoData.charlotte2040) {
+        window.geoData.charlotte2040.features.forEach(f => {
+            if (isPointInPolygon([lng, lat], f.geometry.coordinates[0])) {
+                if (f.properties.density === 'High' || f.properties.density === 'Very High') {
+                    score += 10;
+                    factors.push("🚀 2040 High-Density Zone");
+                }
+            }
+        });
+    }
+
+    // 6. Building Permit Momentum (+5 per $1M in last 0.25 miles, cap +25)
+    if (window.geoData && window.geoData.buildingPermits) {
+        let permitValuationTotal = 0;
+        let permitCount = 0;
+        window.geoData.buildingPermits.features.forEach(f => {
+            const [fLng, fLat] = f.geometry.coordinates;
+            const dist = getDistance([lat, lng], [fLat, fLng]);
+            if (dist <= 0.25) {
+                permitValuationTotal += (f.properties.valuation || 0);
+                permitCount++;
+            }
+        });
+
+        if (permitCount > 0) {
+            const valuationBonus = Math.min(Math.floor(permitValuationTotal / 1000000) * 5, 25);
+            if (valuationBonus > 0) {
+                score += valuationBonus;
+                factors.push(`🏗️ $${(permitValuationTotal / 1000000).toFixed(1)}M Development Momentum`);
+            } else if (permitCount >= 3) {
+                score += 10;
+                factors.push("🛠️ Active Infill Cluster");
+            }
+        }
+    }
+
+    // Clamp score
+    score = Math.max(0, Math.min(100, score));
+
+    return {
+        value: score,
+        factors: factors
+    };
+}
+
+// Helper: Point in Polygon (Ray Casting)
+function isPointInPolygon(point, vs) {
+    const x = point[0], y = point[1];
+    let inside = false;
+    for (let i = 0, j = vs.length - 1; i < vs.length; j = i++) {
+        const xi = vs[i][0], yi = vs[i][1];
+        const xj = vs[j][0], yj = vs[j][1];
+        const intersect = ((yi > y) !== (yj > y))
+            && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+        if (intersect) inside = !inside;
+    }
+    return inside;
+}
+
+// Helper: Distance in Miles
+function getDistance(p1, p2) {
+    const R = 3958.8; // Radius of Earth in miles
+    const dLat = (p2[0] - p1[0]) * Math.PI / 180;
+    const dLon = (p2[1] - p1[1]) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(p1[0] * Math.PI / 180) * Math.cos(p2[0] * Math.PI / 180) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
 }
 
 // --- Interaction ---
@@ -173,6 +545,8 @@ function resetHighlight(e, type) {
         layers.transit.resetStyle(layer);
     } else if (type === 'cip') {
         layers.cip.resetStyle(layer);
+    } else if (type === 'floodZones') {
+        layers.floodZones.resetStyle(layer);
     }
 }
 
@@ -189,7 +563,7 @@ function zoomToFeature(e) {
 
 // --- Sidebar Content ---
 
-function updateSidebar(props, type) {
+function updateSidebar(props, type, latlng) {
     const panel = document.getElementById('details-panel');
     const intro = document.getElementById('intro-text');
 
@@ -208,8 +582,8 @@ function updateSidebar(props, type) {
         desc = props.RezoningReason || props.REZONING_REASON || props.ProjName || "No description available.";
         details = {
             "Petitioner": props.Petitioner || props.PETITIONER,
-            "Existing Zoning": props.ExistingZoning || props.EXISTING_ZONING,
-            "Proposed Zoning": props.ProposedZoning || props.PROPOSED_ZONING
+            "Existing Zoning": props.ExistingZoning || props.EXISTING_ZONING || props.ExistZone || "N/A",
+            "Proposed Zoning": props.ProposedZoning || props.PROPOSED_ZONING || props.ReqZone || "N/A"
         };
     } else if (type === 'transit') {
         title = props.ProjectName || props.Station || "Transit Project";
@@ -222,12 +596,12 @@ function updateSidebar(props, type) {
             "Res. Units": props.ResidentialUnits
         };
     } else if (type === 'cip') {
-        title = props.ProjectName || "Capital Project";
-        status = "In Progress"; // Since we fetched from 'In-Progress' layer
-        desc = props.ProjectDesc || "No description.";
+        title = props.ProjectName || props.Project_Name || "Capital Project";
+        status = props.Status || props.Project_Phase || "In Progress";
+        desc = props.ProjectDesc || props.Location_Description || "No description.";
         details = {
-            "Department": props.Department,
-            "Cost": props.TotalBudget ? `$${props.TotalBudget}` : "N/A"
+            "Department": props.Department || "Planning",
+            "Cost": props.TotalBudget || props.Total_Project_Budget || "N/A"
         };
     } else if (type === 'crime') {
         title = `Incident ${props.INCIDENT_REPORT_ID || "N/A"}`;
@@ -249,6 +623,75 @@ function updateSidebar(props, type) {
             "Date Reported": dateReported,
             "Crime Type": props.HIGHEST_NIBRS_DESCRIPTION,
             "Location": props.LOCATION
+        };
+    } else if (type === 'schools') {
+        title = props.school_name || "School District";
+        const rating = props.rating || 0;
+        status = `Rating: ${rating}/10`;
+        desc = props.description || "School district information";
+        details = {
+            "School Type": props.school_type,
+            "Enrollment": props.enrollment ? props.enrollment.toLocaleString() : "N/A",
+            "Rating": `${rating}/10`,
+            "Investment Note": rating >= 9 ? "🎯 Premium district - attracts affluent families" : rating >= 7 ? "✅ Good district - stable investment" : "⚠️ Opportunity zone - buy before improvement"
+        };
+    } else if (type === 'search') {
+        title = props.name || "Searched Location";
+        status = "External Address";
+        desc = "This location was found via address search. See the Investment Score above for automated analysis.";
+        details = {}; // No specific details for a generic search result
+    } else if (type === 'transitStations') {
+        title = props.name || "Transit Station";
+        status = `${props.line} (${props.status})`;
+        desc = props.status === 'Proposed' ? 'Future station - buy before construction' : 'Active station - TOD zoning eligible';
+        details = {
+            "Line": props.line,
+            "Status": props.status,
+            "Opened": props.opened || "TBD",
+            "TOD Eligible": props.tod_eligible ? "✅ Yes - Properties within 0.5 mi can request higher density" : "No"
+        };
+    } else if (type === 'opportunityZones') {
+        title = props.name || "Opportunity Zone";
+        status = `Zone ${props.zone_id}`;
+        desc = props.description || "Federal Qualified Opportunity Zone";
+        details = {
+            "Zone ID": props.zone_id,
+            "Designated": props.designation_year,
+            "Tax Benefits": props.tax_benefits,
+            "Investment Advantage": "🎯 Capital gains deferral + potential elimination"
+        };
+    } else if (type === 'buildingPermits') {
+        const permitType = props.permit_type || "Construction";
+        title = `${permitType} Permit`;
+        const valuation = props.valuation || 0;
+        status = `$${valuation.toLocaleString()}`;
+        desc = props.description || props.project_name || "Building permit activity";
+        details = {
+            "Permit Type": permitType,
+            "Valuation": `$${valuation.toLocaleString()}`,
+            "Issue Date": props.issue_date || "Recent",
+            "Investment Signal": permitType.includes('Multi-family') ? "🎯 High density = development momentum" : permitType.includes('Commercial') ? "✅ Commercial activity = neighborhood services" : "🚧 Renovation = value add"
+        };
+    } else if (type === 'charlotte2040') {
+        title = props.place_type || "2040 Plan Area";
+        status = `Density: ${props.density}`;
+        desc = props.description || "Charlotte 2040 Comprehensive Plan designation";
+        details = {
+            "Place Type": props.place_type,
+            "Target Density": props.density,
+            "Future Transit": props.future_transit ? "✅ Yes - Transit corridor" : "No",
+            "Investment Note": props.investment_note || "Future development area"
+        };
+    } else if (type === 'floodZones') {
+        title = props.name || "Flood Zone";
+        status = props.zone || "Flood Risk Area";
+        desc = props.description || "Mecklenburg County Floodplain (FINS)";
+        details = {
+            "Creek Name": props.creek_name,
+            "Risk Level": props.risk_level,
+            "Zone": props.zone,
+            "Insurance Impact": props.insurance_impact,
+            "Investment Note": props.investment_note
         };
     }
 
@@ -296,6 +739,68 @@ function updateSidebar(props, type) {
 
     // Always open sidebar when clicking a feature
     document.getElementById('sidebar').classList.remove('-translate-x-full');
+
+    // Update Investment Score if coordinates are available
+    if (latlng) {
+        const scoreObj = calculateInvestmentScore(latlng);
+        const scoreVal = document.getElementById('score-value');
+        const scoreBar = document.getElementById('score-bar');
+        const scoreLabel = document.getElementById('score-label');
+        const scoreSummary = document.getElementById('score-summary');
+
+        scoreVal.textContent = scoreObj.value;
+        scoreBar.style.width = `${scoreObj.value}%`;
+
+        // Update color and label based on score
+        if (scoreObj.value >= 80) {
+            scoreLabel.textContent = "Strong Buy";
+            scoreLabel.className = "text-xs font-bold px-2 py-0.5 rounded-full uppercase bg-green-100 text-green-800";
+            scoreBar.className = "h-full bg-green-600 transition-all duration-1000";
+        } else if (scoreObj.value >= 60) {
+            scoreLabel.textContent = "Good Opportunity";
+            scoreLabel.className = "text-xs font-bold px-2 py-0.5 rounded-full uppercase bg-blue-100 text-blue-800";
+            scoreBar.className = "h-full bg-blue-600 transition-all duration-1000";
+        } else if (scoreObj.value >= 40) {
+            scoreLabel.textContent = "Neutral";
+            scoreLabel.className = "text-xs font-bold px-2 py-0.5 rounded-full uppercase bg-yellow-100 text-yellow-800";
+            scoreBar.className = "h-full bg-yellow-600 transition-all duration-1000";
+        } else {
+            scoreLabel.textContent = "High Risk";
+            scoreLabel.className = "text-xs font-bold px-2 py-0.5 rounded-full uppercase bg-red-100 text-red-800";
+            scoreBar.className = "h-full bg-red-600 transition-all duration-1000";
+        }
+
+        // Summary of factors
+        if (scoreObj.factors.length > 0) {
+            scoreSummary.innerHTML = `<strong>Factors:</strong> ${scoreObj.factors.join(", ")}`;
+        } else {
+            scoreSummary.textContent = "Standard investment profile. No significant positive or negative growth triggers detected at this location.";
+        }
+    }
+}
+
+// Sidebar Controls
+window.toggleSidebar = function () {
+    console.log("Toggling sidebar...");
+    const sidebar = document.getElementById('sidebar');
+    const isClosed = sidebar.classList.contains('-translate-x-full');
+    if (isClosed) {
+        sidebar.classList.remove('-translate-x-full');
+    } else {
+        sidebar.classList.add('-translate-x-full');
+    }
+}
+
+
+// Guide Controls
+window.toggleGuide = function () {
+    console.log("Toggling guide...");
+    const modal = document.getElementById('investment-guide-modal');
+    if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+    } else {
+        modal.classList.add('hidden');
+    }
 }
 
 function setupUI() {
@@ -303,8 +808,43 @@ function setupUI() {
     document.getElementById('close-sidebar').addEventListener('click', () => {
         document.getElementById('sidebar').classList.add('-translate-x-full');
     });
-    document.getElementById('open-sidebar').addEventListener('click', () => {
-        document.getElementById('sidebar').classList.remove('-translate-x-full');
+    document.getElementById('open-sidebar').addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent map clicks
+        window.toggleSidebar();
+    });
+
+    // Investment Guide Modal
+    const modal = document.getElementById('investment-guide-modal');
+    const openGuideBtn = document.getElementById('open-guide');
+    const closeGuideBtn = document.getElementById('close-guide');
+
+    if (openGuideBtn) {
+        openGuideBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            window.toggleGuide();
+        });
+    }
+
+    if (closeGuideBtn) {
+        closeGuideBtn.addEventListener('click', () => {
+            window.toggleGuide();
+        });
+    }
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+        }
+    });
+
+    // Info icon tooltips - prevent checkbox toggle
+    document.querySelectorAll('.info-icon').forEach(icon => {
+        icon.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            // Tooltip is shown via native 'title' attribute
+        });
     });
 
     // Layer Toggles
@@ -312,6 +852,138 @@ function setupUI() {
     setupLayerToggle('layer-transit', 'transit');
     setupLayerToggle('layer-cip', 'cip');
     setupLayerToggle('layer-crime', 'crime');
+    setupLayerToggle('layer-schools', 'schools');
+    setupLayerToggle('layer-transit-stations', 'transitStations');
+    setupLayerToggle('layer-opportunity-zones', 'opportunityZones');
+    setupLayerToggle('layer-building-permits', 'buildingPermits');
+    setupLayerToggle('layer-2040-plan', 'charlotte2040');
+    setupLayerToggle('layer-flood-zones', 'floodZones');
+
+    setupCalculator();
+    initSearch();
+    setupResetView();
+    setupResetView();
+    setupPresets();
+
+    // Initialize Language
+    updateLanguageUI();
+}
+
+function initSearch() {
+    const geocoder = L.Control.geocoder({
+        defaultMarkGeocode: false,
+        placeholder: "Search Charlotte addresses...",
+        collapsed: false,
+        container: 'geocoder-container'
+    })
+        .on('markgeocode', function (e) {
+            const latlng = e.geocode.center;
+            map.setView(latlng, 16);
+            updateSidebar({ name: e.geocode.name }, 'search', latlng);
+        })
+        .addTo(map);
+
+    // Style the geocoder container a bit more
+    const container = document.getElementById('geocoder-container');
+    const geocoderInput = container.querySelector('input');
+    if (geocoderInput) {
+        geocoderInput.className = "w-full px-4 py-2 text-sm border-none rounded-xl shadow-lg focus:ring-2 focus:ring-blue-500 overflow-hidden bg-white";
+    }
+}
+
+function setupResetView() {
+    const btn = document.getElementById('reset-view');
+    if (btn) {
+        btn.onclick = () => {
+            map.setView([35.2271, -80.8431], 12);
+        };
+    }
+}
+
+function setupCalculator() {
+    const priceInput = document.getElementById('calc-price');
+    const rentInput = document.getElementById('calc-rent');
+
+    if (priceInput && rentInput) {
+        priceInput.addEventListener('input', updateCalculations);
+        rentInput.addEventListener('input', updateCalculations);
+
+        // Settings listeners
+        const settingsToggle = document.getElementById('open-calc-settings');
+        const settingsPanel = document.getElementById('calc-settings');
+        const downpaymentInput = document.getElementById('setting-downpayment');
+        const interestInput = document.getElementById('setting-interest');
+        const fixedExpInput = document.getElementById('setting-fixed-exp');
+
+        // Load saved settings
+        if (localStorage.getItem('calc-downpayment')) downpaymentInput.value = localStorage.getItem('calc-downpayment');
+        if (localStorage.getItem('calc-interest')) interestInput.value = localStorage.getItem('calc-interest');
+        if (localStorage.getItem('calc-fixed-exp')) fixedExpInput.value = localStorage.getItem('calc-fixed-exp');
+
+        settingsToggle.addEventListener('click', () => {
+            settingsPanel.classList.toggle('hidden');
+        });
+
+        [downpaymentInput, interestInput, fixedExpInput].forEach(el => {
+            el.addEventListener('input', () => {
+                // Save settings
+                localStorage.setItem('calc-downpayment', downpaymentInput.value);
+                localStorage.setItem('calc-interest', interestInput.value);
+                localStorage.setItem('calc-fixed-exp', fixedExpInput.value);
+                updateCalculations();
+            });
+        });
+
+        updateCalculations();
+    }
+}
+
+function updateCalculations() {
+    const price = parseFloat(document.getElementById('calc-price').value) || 0;
+    const rent = parseFloat(document.getElementById('calc-rent').value) || 0;
+
+    const onePercentStatus = document.getElementById('calc-1percent-status');
+    const cocValue = document.getElementById('calc-coc');
+
+    if (price <= 0) return;
+
+    // 1% Rule
+    const ratio = (rent / price) * 100;
+    if (ratio >= 1.0) {
+        onePercentStatus.textContent = "Pass (Strong)";
+        onePercentStatus.className = "text-[10px] font-bold px-1.5 py-0.5 rounded uppercase bg-green-100 text-green-800";
+    } else if (ratio >= 0.7) {
+        onePercentStatus.textContent = "Pass (Average)";
+        onePercentStatus.className = "text-[10px] font-bold px-1.5 py-0.5 rounded uppercase bg-blue-100 text-blue-800";
+    } else {
+        onePercentStatus.textContent = "Fail (Soft)";
+        onePercentStatus.className = "text-[10px] font-bold px-1.5 py-0.5 rounded uppercase bg-yellow-100 text-yellow-800";
+    }
+
+    // Cash-on-Cash Estimation (Simplified for Charlotte)
+    // Dynamic Assumptions from settings
+    const downPercent = (parseFloat(document.getElementById('setting-downpayment').value) || 25) / 100;
+    const interestRate = (parseFloat(document.getElementById('setting-interest').value) || 6.5) / 100;
+    const fixedExpenses = parseFloat(document.getElementById('setting-fixed-exp').value) || 450;
+
+    const downPayment = price * downPercent;
+    const loanAmount = price * (1 - downPercent);
+    const monthlyInterest = (interestRate / 12);
+
+    let mortgage = 0;
+    if (monthlyInterest > 0) {
+        mortgage = loanAmount * (monthlyInterest * Math.pow(1 + monthlyInterest, 360)) / (Math.pow(1 + monthlyInterest, 360) - 1);
+    } else {
+        mortgage = loanAmount / 360;
+    }
+
+    const operationalExpenses = (rent * 0.10) + fixedExpenses; // 10% buffer + dynamic fixed
+    const monthlyCashFlow = rent - mortgage - operationalExpenses;
+    const annualCashFlow = monthlyCashFlow * 12;
+
+    const coc = (annualCashFlow / downPayment) * 100;
+    cocValue.textContent = `${coc.toFixed(1)}%`;
+    cocValue.className = coc >= 8 ? "text-sm font-black text-green-600" : (coc >= 4 ? "text-sm font-black text-blue-600" : "text-sm font-black text-gray-900");
 }
 
 function setupLayerToggle(id, layerKey) {
@@ -324,5 +996,48 @@ function setupLayerToggle(id, layerKey) {
         } else {
             if (layers[layerKey]) map.removeLayer(layers[layerKey]);
         }
+    });
+}
+
+function applyPreset(presetType) {
+    const presets = {
+        'growth': ['layer-rezoning', 'layer-2040-plan', 'layer-building-permits'],
+        'transit': ['layer-transit', 'layer-transit-stations'],
+        'lifestyle': ['layer-walkability', 'layer-transit-stations'],
+        'conservative': ['layer-schools'],
+        'reset': []
+    };
+
+    const targetLayers = presets[presetType] || [];
+
+    document.querySelectorAll('.form-checkbox').forEach(cb => {
+        if (cb.checked) {
+            cb.checked = false;
+            cb.dispatchEvent(new Event('change'));
+        }
+    });
+
+    targetLayers.forEach(id => {
+        const cb = document.getElementById(id);
+        if (cb) {
+            cb.checked = true;
+            cb.dispatchEvent(new Event('change'));
+        }
+    });
+}
+
+function setupPresets() {
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const type = btn.dataset.preset;
+            applyPreset(type);
+
+            document.querySelectorAll('.preset-btn').forEach(b => {
+                b.classList.remove('bg-blue-600', 'text-white');
+                b.classList.add('bg-white', 'text-gray-700');
+            });
+            btn.classList.add('bg-blue-600', 'text-white');
+            btn.classList.remove('bg-white', 'text-gray-700');
+        });
     });
 }
