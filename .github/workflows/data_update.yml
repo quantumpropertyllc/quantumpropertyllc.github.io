@@ -4,7 +4,7 @@ on:
   schedule:
     # This runs at 00:00 every Sunday
     - cron: '0 0 * * 0'
-  workflow_dispatch: # Allows manual run for testing
+  workflow_dispatch: # This adds a "Run workflow" button in GitHub for testing
 
 jobs:
   update-data:
@@ -24,14 +24,12 @@ jobs:
           pip install requests
 
       - name: Run update script
-* run: python update_data.py
+        run: python update_data.py
 
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # Ensure the specific nested directory exists
-          mkdir -p quantumpropertyllc.github.io/airealestate/data/
           git add quantumpropertyllc.github.io/airealestate/data/
           git commit -m "Weekly data update: $(date)" || echo "No changes to commit"
           git push
