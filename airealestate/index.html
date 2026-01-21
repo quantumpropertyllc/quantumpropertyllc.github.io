@@ -503,7 +503,7 @@
         </div>
 
         <!-- Bottom Left Controls: Language & Guide -->
-        <div class="absolute bottom-10 left-4 z-[1000] flex flex-col gap-3">
+        <div class="absolute bottom-24 left-4 z-[1000] flex flex-col gap-3">
             <button id="lang-toggle" onclick="toggleLanguage()"
                 class="bg-white px-3 py-2 rounded-full shadow-xl border border-gray-200 hover:bg-gray-50 flex items-center justify-center transition-transform active:scale-95 text-2xl"
                 title="Switch Language">
@@ -556,16 +556,19 @@
         <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
             <div
                 class="p-4 sm:p-6 border-b border-gray-200 bg-gradient-to-r from-blue-900 to-blue-800 text-white flex items-center justify-between">
-                <h2 class="text-xl sm:text-2xl font-bold" data-i18n="guide.title">Charlotte Real Estate Investment Guide
-                </h2>
                 <button id="close-guide" onclick="toggleGuide()"
-                    class="p-2 hover:bg-blue-700 rounded-lg transition-colors">
+                    class="p-2 hover:bg-blue-700 rounded-lg transition-colors order-first">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
+                <h2 class="text-xl sm:text-2xl font-bold flex-1 text-center" data-i18n="guide.title">Charlotte Real
+                    Estate Investment Guide
+                </h2>
+                <!-- Empty div for centering -->
+                <div class="w-10"></div>
             </div>
 
             <!-- Modal Content -->
@@ -608,7 +611,7 @@
                             dramatically increasing the land value. Properties adjacent to approved rezonings often see
                             spillover value increases.
                         </p>
-                        <p class="text-gray-700 text-sm italic">
+                        <p class="text-gray-700 text-sm italic" data-i18n="guide.rezoning.example">
                             <strong>Charlotte Example:</strong> The 2018 rezoning petition for the old Eastland Mall
                             site (2014-070) allowed mixed-use
                             development with 1,000+ residential units. Nearby single-family home values increased 25-30%
@@ -632,7 +635,7 @@
                             that professional developers have already done their research and are betting on an area.
                             High-value permits ($1M+) indicate significant neighborhood transformation.
                         </p>
-                        <p class="text-gray-700 text-sm italic">
+                        <p class="text-gray-700 text-sm italic" data-i18n="guide.permits.momentum">
                             <strong>Investment Momentum:</strong> Our score gives bonus points for areas with over $3M
                             in active development or 3+ infill projects within walking distance.
                         </p>
@@ -652,7 +655,7 @@
                             stations historically <strong>outperform the market average by 15-20%</strong>. Transit
                             creates permanent demand.
                         </p>
-                        <p class="text-gray-700 text-sm italic">
+                        <p class="text-gray-700 text-sm italic" data-i18n="guide.transit.example">
                             <strong>Charlotte Example:</strong> Single-family homes near the Scaleybark Station were
                             purchased for $180K-$220K in 2015-2017.
                             Many were rezoned and redeveloped into 4-unit townhomes selling for $350K+ each by 2020.
@@ -763,8 +766,9 @@
                         </div>
 
                         <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                            <h4 class="font-bold text-gray-900 mb-2">🚇 The Silver Line Effect</h4>
-                            <p class="text-gray-700 text-sm leading-relaxed">
+                            <h4 class="font-bold text-gray-900 mb-2" data-i18n="guide.silver.title">🚇 The Silver Line
+                                Effect</h4>
+                            <p class="text-gray-700 text-sm leading-relaxed" data-i18n="guide.silver.desc">
                                 The future CATS Silver Line (scheduled 2030s) will connect Matthews to Charlotte Douglas
                                 Airport.
                                 Properties along this corridor—especially in Plaza Midwood, NoDa, and University
@@ -786,18 +790,22 @@
                         </div>
 
                         <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                            <h4 class="font-bold text-gray-900 mb-2">💡 Opportunity Zones</h4>
-                            <p class="text-gray-700 text-sm leading-relaxed mb-2">
+                            <h4 class="font-bold text-gray-900 mb-2" data-i18n="guide.opp.title">💡 Opportunity Zones
+                            </h4>
+                            <p class="text-gray-700 text-sm leading-relaxed mb-2" data-i18n="guide.opp.desc">
                                 Federal Qualified Opportunity Zones in parts of West Charlotte and Beatties Ford
                                 corridor offer
                                 <strong>massive tax breaks</strong> for long-term investors.
                             </p>
                             <ul class="text-xs text-gray-600 list-disc pl-4 space-y-1">
-                                <li><strong>Tax Deferral:</strong> Defer payments on original capital gains until 2026.
+                                <li data-i18n="guide.opp.deferral"><strong>Tax Deferral:</strong> Defer payments on
+                                    original capital gains until 2026.
                                 </li>
-                                <li><strong>Basis Step-up:</strong> 10% reduction in original tax if held for 5+ years.
+                                <li data-i18n="guide.opp.stepup"><strong>Basis Step-up:</strong> 10% reduction in
+                                    original tax if held for 5+ years.
                                 </li>
-                                <li><strong>Permanent Exclusion:</strong> Pay $0 in capital gains tax on the
+                                <li data-i18n="guide.opp.exclusion"><strong>Permanent Exclusion:</strong> Pay $0 in
+                                    capital gains tax on the
                                     <em>new</em> investment if held for 10+ years.
                                 </li>
                             </ul>
@@ -858,7 +866,8 @@
                                     Diligence</p>
                                 <p class="text-gray-700 text-sm" data-i18n="guide.step5.desc">This tool reveals
                                     <em>where to look</em>, not what to
-                                    buy. Always verify zoning, run comps, and inspect properties.</p>
+                                    buy. Always verify zoning, run comps, and inspect properties.
+                                </p>
                             </div>
                         </div>
                     </div>
