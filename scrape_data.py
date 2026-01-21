@@ -6,6 +6,7 @@ import time
 
 # Configuration
 # The root folder where data will be stored
+# Inside scrape_data.py
 BASE_PATH = "quantumpropertyllc.github.io/airealestate/data"
 
 DATA_DIRS = {
