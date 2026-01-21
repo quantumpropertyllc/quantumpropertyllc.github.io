@@ -174,16 +174,15 @@ function renderCrimeHeatmap(geoJsonData) {
         gradient: { 0.4: 'blue', 0.65: 'lime', 1: 'red' }
     });
 
-    // 2. Create invisible clickable markers for interaction
+    // 2. Create visible clickable markers for interaction (Red Dots)
     const markersLayer = L.geoJSON(geoJsonData, {
         pointToLayer: (feature, latlng) => {
-            // Create invisible circle markers
             return L.circleMarker(latlng, {
-                radius: 8,
-                fillColor: 'transparent',
-                color: 'transparent',
-                weight: 0,
-                fillOpacity: 0
+                radius: 4,
+                fillColor: '#ef4444', // Red
+                color: '#991b1b', // Dark Red border
+                weight: 1,
+                fillOpacity: 0.8
             });
         },
         onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'crime')
@@ -365,6 +364,36 @@ function renderFloodZonesLayer(geoJsonData) {
         }),
         onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'floodZones')
     });
+}
+
+function renderCurrentZoningLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: '#4b5563', // Gray
+            weight: 1,
+            opacity: 0.8,
+            color: '#1f2937',
+            fillOpacity: 0.3
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'currentZoning')
+    });
+}
+
+function renderWalkabilityLayer(geoJsonData) {
+    // Create a heatmap for walkability
+    const points = geoJsonData.features.map(feature => {
+        const [lng, lat] = feature.geometry.coordinates;
+        return [lat, lng, 0.8];
+    });
+
+    const heatmapLayer = L.heatLayer(points, {
+        radius: 35,
+        blur: 25,
+        maxZoom: 15,
+        gradient: { 0.4: '#ecfccb', 0.7: '#a3e635', 1: '#4d7c0f' } // Lime gradient
+    });
+
+    return heatmapLayer;
 }
 
 function onEachFeature(feature, layer, type) {
@@ -693,6 +722,24 @@ function updateSidebar(props, type, latlng) {
             "Insurance Impact": props.insurance_impact,
             "Investment Note": props.investment_note
         };
+    } else if (type === 'currentZoning') {
+        title = props.ZoneDes || props.ZoneClass || "Current Zoning";
+        status = props.ZoneClass || "District";
+        desc = `Zoning district: ${props.ZoneDes}`;
+        details = {
+            "Class": props.ZoneClass,
+            "Designation": props.ZoneDes,
+            "Rezone Date": props.RezoneDate ? new Date(props.RezoneDate).toLocaleDateString() : "N/A",
+            "Consistent": props.Consistent || "N/A"
+        };
+    } else if (type === 'walkability') {
+        title = "Walkability Indicator";
+        status = "Active Heatmap";
+        desc = "This area shows concentration of walkable amenities.";
+        details = {
+            "Type": "Heatmap Point",
+            "Impact": "High walkability correlates with 10-15% rent premium"
+        };
     }
 
     // Render Logic
@@ -804,16 +851,34 @@ window.toggleGuide = function () {
 }
 
 function setupUI() {
-    // Sidebar Controls
-    // Note: Event listeners are now handled via onclick attributes in HTML for better reliability
+    // 1. Sidebar Controls
+    const openSidebarBtn = document.getElementById('open-sidebar');
+    const closeSidebarBtn = document.getElementById('close-sidebar');
 
-    // Previous clean up
-    document.getElementById('open-sidebar').addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent map clicks
-        window.toggleSidebar();
-    });
+    if (openSidebarBtn) {
+        openSidebarBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            window.toggleSidebar();
+        });
+    }
 
-    // Investment Guide Modal
+    if (closeSidebarBtn) {
+        closeSidebarBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            window.toggleSidebar();
+        });
+    }
+
+    // 2. Language Switcher
+    const langToggleBtn = document.getElementById('lang-toggle');
+    if (langToggleBtn) {
+        langToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            window.toggleLanguage();
+        });
+    }
+
+    // 3. Investment Guide Modal
     const modal = document.getElementById('investment-guide-modal');
     const openGuideBtn = document.getElementById('open-guide');
     const closeGuideBtn = document.getElementById('close-guide');
@@ -826,17 +891,20 @@ function setupUI() {
     }
 
     if (closeGuideBtn) {
-        closeGuideBtn.addEventListener('click', () => {
+        closeGuideBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             window.toggleGuide();
         });
     }
 
     // Close modal when clicking outside
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.add('hidden');
-        }
-    });
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    }
 
     // Info icon tooltips - prevent checkbox toggle
     document.querySelectorAll('.info-icon').forEach(icon => {
