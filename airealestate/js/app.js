@@ -44,7 +44,7 @@ function updateLanguageUI() {
         const key = el.getAttribute('data-i18n');
         if (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang][key]) {
             // Handle input placeholders specially if needed, but for now mostly textContent
-            el.textContent = TRANSLATIONS[currentLang][key];
+            el.innerHTML = TRANSLATIONS[currentLang][key];
         }
     });
 
@@ -805,9 +805,9 @@ window.toggleGuide = function () {
 
 function setupUI() {
     // Sidebar Controls
-    document.getElementById('close-sidebar').addEventListener('click', () => {
-        document.getElementById('sidebar').classList.add('-translate-x-full');
-    });
+    // Note: Event listeners are now handled via onclick attributes in HTML for better reliability
+
+    // Previous clean up
     document.getElementById('open-sidebar').addEventListener('click', (e) => {
         e.stopPropagation(); // Prevent map clicks
         window.toggleSidebar();
