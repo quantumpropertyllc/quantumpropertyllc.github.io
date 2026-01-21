@@ -2,11 +2,41 @@
 const CHARLOTTE_COORDS = [35.2271, -80.8431];
 const INITIAL_ZOOM = 12;
 
+// 0. Safety Wrapper & Diagnostics
+function showDiagnostic(msg) {
+    const statusEl = document.getElementById('js-status') || (() => {
+        const intro = document.getElementById('intro-text');
+        if (!intro) return null;
+        const el = document.createElement('div');
+        el.id = 'js-status';
+        el.className = 'mt-2 p-2 bg-blue-50 text-blue-800 text-[10px] rounded border border-blue-100 font-mono';
+        intro.appendChild(el);
+        return el;
+    })();
+    if (statusEl) statusEl.textContent = "Status: " + msg;
+    console.log("DIAGNOSTIC:", msg);
+}
+
+window.onerror = function (msg, url, line, col, error) {
+    showDiagnostic("Err: " + msg + " (L" + line + ")");
+    return false;
+};
+
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Charlotte Real Estate Dashboard initializing...');
-    initMap();
-    setupUI();
-    console.log('Dashboard initialized successfully');
+    showDiagnostic("Initializing...");
+    try {
+        initMap();
+        showDiagnostic("Map OK");
+    } catch (e) {
+        showDiagnostic("Map Err: " + e.message);
+    }
+
+    try {
+        setupUI();
+        showDiagnostic("Ready (v6)");
+    } catch (e) {
+        showDiagnostic("UI Err: " + e.message);
+    }
 });
 
 let map;
@@ -26,11 +56,18 @@ let layers = {
 };
 
 // Bilingual State
-let currentLang = localStorage.getItem('app_lang') || 'en';
+let currentLang = 'en';
+try {
+    currentLang = localStorage.getItem('app_lang') || 'en';
+} catch (e) {
+    console.warn('localStorage access failed:', e);
+}
 
 window.toggleLanguage = function () {
     currentLang = currentLang === 'en' ? 'zh' : 'en';
-    localStorage.setItem('app_lang', currentLang);
+    try {
+        localStorage.setItem('app_lang', currentLang);
+    } catch (e) { }
     updateLanguageUI();
 }
 
@@ -75,8 +112,8 @@ function initMap() {
         maxZoom: 20
     }).addTo(map);
 
-    // 3. Reposition zoom controls to bottom-right, above legend
-    map.zoomControl.setPosition('bottomright');
+    // 3. Reposition zoom controls to bottom-left, away from menu
+    map.zoomControl.setPosition('bottomleft');
 
     // 3. Load Initial Data
     loadLayer('planning/rezonings', 'rezoning', renderRezoningLayer);
@@ -851,90 +888,74 @@ window.toggleGuide = function () {
 }
 
 function setupUI() {
-    // 1. Sidebar Controls
-    const openSidebarBtn = document.getElementById('open-sidebar');
-    const closeSidebarBtn = document.getElementById('close-sidebar');
+    console.log("Setting up UI components...");
 
-    if (openSidebarBtn) {
-        openSidebarBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            window.toggleSidebar();
-        });
-    }
-
-    if (closeSidebarBtn) {
-        closeSidebarBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            window.toggleSidebar();
-        });
-    }
+    // 1. Sidebar Toggle Fix
+    try {
+        const openSidebarBtn = document.getElementById('open-sidebar');
+        const closeSidebarBtn = document.getElementById('close-sidebar');
+        if (openSidebarBtn) openSidebarBtn.addEventListener('click', (e) => { e.stopPropagation(); window.toggleSidebar(); });
+        if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', (e) => { e.stopPropagation(); window.toggleSidebar(); });
+        console.log("Sidebar listeners attached");
+    } catch (e) { console.error("Sidebar setup error:", e); }
 
     // 2. Language Switcher
-    const langToggleBtn = document.getElementById('lang-toggle');
-    if (langToggleBtn) {
-        langToggleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            window.toggleLanguage();
+    try {
+        const langToggleBtn = document.getElementById('lang-toggle');
+        if (langToggleBtn) langToggleBtn.addEventListener('click', (e) => { e.stopPropagation(); window.toggleLanguage(); });
+    } catch (e) { }
+
+    // 3. Investment Guide
+    try {
+        const modal = document.getElementById('investment-guide-modal');
+        const openGuideBtn = document.getElementById('open-guide');
+        const closeGuideBtn = document.getElementById('close-guide');
+        if (openGuideBtn) openGuideBtn.addEventListener('click', (e) => { e.stopPropagation(); window.toggleGuide(); });
+        if (closeGuideBtn) closeGuideBtn.addEventListener('click', (e) => { e.stopPropagation(); window.toggleGuide(); });
+        if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+    } catch (e) { }
+
+    // 4. Info Icons (The "i" buttons)
+    try {
+        const infoIcons = document.querySelectorAll('.info-icon');
+        console.log(`Found ${infoIcons.length} info icons`);
+        infoIcons.forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const text = icon.getAttribute('title');
+                console.log("Info click:", text);
+                if (text) alert(text);
+                return false;
+            });
+            // Also add touchstart for better mobile response
+            icon.addEventListener('touchstart', (e) => {
+                e.stopPropagation();
+            }, { passive: true });
         });
-    }
+    } catch (e) { console.error("Info icon setup error:", e); }
 
-    // 3. Investment Guide Modal
-    const modal = document.getElementById('investment-guide-modal');
-    const openGuideBtn = document.getElementById('open-guide');
-    const closeGuideBtn = document.getElementById('close-guide');
+    // 5. Layer Toggles
+    try {
+        const layerIds = [
+            ['layer-rezoning', 'rezoning'], ['layer-transit', 'transit'], ['layer-cip', 'cip'],
+            ['layer-crime', 'crime'], ['layer-schools', 'schools'], ['layer-transit-stations', 'transitStations'],
+            ['layer-opportunity-zones', 'opportunityZones'], ['layer-building-permits', 'buildingPermits'],
+            ['layer-2040-plan', 'charlotte2040'], ['layer-flood-zones', 'floodZones'],
+            ['layer-current-zoning', 'currentZoning'], ['layer-walkability', 'walkability']
+        ];
+        layerIds.forEach(([id, key]) => setupLayerToggle(id, key));
+        console.log("Layer toggle listeners attached");
+    } catch (e) { console.error("Layer toggle setup error:", e); }
 
-    if (openGuideBtn) {
-        openGuideBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            window.toggleGuide();
-        });
-    }
+    // 6. Components
+    try { setupCalculator(); } catch (e) { console.error("Calculator setup error:", e); }
+    try { initSearch(); } catch (e) { console.error("Search setup error:", e); }
+    try { setupResetView(); } catch (e) { console.error("Reset setup error:", e); }
+    try { setupPresets(); } catch (e) { console.error("Presets setup error:", e); }
 
-    if (closeGuideBtn) {
-        closeGuideBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            window.toggleGuide();
-        });
-    }
-
-    // Close modal when clicking outside
-    if (modal) {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.add('hidden');
-            }
-        });
-    }
-
-    // Info icon tooltips - prevent checkbox toggle
-    document.querySelectorAll('.info-icon').forEach(icon => {
-        icon.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            // Tooltip is shown via native 'title' attribute
-        });
-    });
-
-    // Layer Toggles
-    setupLayerToggle('layer-rezoning', 'rezoning');
-    setupLayerToggle('layer-transit', 'transit');
-    setupLayerToggle('layer-cip', 'cip');
-    setupLayerToggle('layer-crime', 'crime');
-    setupLayerToggle('layer-schools', 'schools');
-    setupLayerToggle('layer-transit-stations', 'transitStations');
-    setupLayerToggle('layer-opportunity-zones', 'opportunityZones');
-    setupLayerToggle('layer-building-permits', 'buildingPermits');
-    setupLayerToggle('layer-2040-plan', 'charlotte2040');
-    setupLayerToggle('layer-flood-zones', 'floodZones');
-
-    setupCalculator();
-    initSearch();
-    setupResetView();
-    setupResetView();
-    setupPresets();
-
-    // Initialize Language
-    updateLanguageUI();
+    // 7. Initial State
+    try { updateLanguageUI(); } catch (e) { }
 }
 
 function initSearch() {
@@ -1068,6 +1089,7 @@ function setupLayerToggle(id, layerKey) {
 }
 
 function applyPreset(presetType) {
+    console.log("Applying preset:", presetType);
     const presets = {
         'growth': ['layer-rezoning', 'layer-2040-plan', 'layer-building-permits'],
         'transit': ['layer-transit', 'layer-transit-stations'],
@@ -1078,26 +1100,37 @@ function applyPreset(presetType) {
 
     const targetLayers = presets[presetType] || [];
 
-    document.querySelectorAll('.form-checkbox').forEach(cb => {
+    // Clear all checkboxes - use a broader selector and ensure event dispatch
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
         if (cb.checked) {
             cb.checked = false;
-            cb.dispatchEvent(new Event('change'));
+            // Force change event to trigger layer removals
+            cb.dispatchEvent(new Event('change', { bubbles: true }));
         }
     });
 
-    targetLayers.forEach(id => {
-        const cb = document.getElementById(id);
-        if (cb) {
-            cb.checked = true;
-            cb.dispatchEvent(new Event('change'));
-        }
-    });
+    // Apply new preset layers with a slight delay to ensure cleanup finished
+    setTimeout(() => {
+        targetLayers.forEach(id => {
+            const cb = document.getElementById(id);
+            if (cb) {
+                cb.checked = true;
+                cb.dispatchEvent(new Event('change', { bubbles: true }));
+                console.log("Activated layer:", id);
+            } else {
+                console.warn("Preset layer ID not found:", id);
+            }
+        });
+    }, 50);
 }
 
 function setupPresets() {
     document.querySelectorAll('.preset-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+        const handle = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             const type = btn.dataset.preset;
+            console.log("Preset clicked:", type);
             applyPreset(type);
 
             document.querySelectorAll('.preset-btn').forEach(b => {
@@ -1106,6 +1139,9 @@ function setupPresets() {
             });
             btn.classList.add('bg-blue-600', 'text-white');
             btn.classList.remove('bg-white', 'text-gray-700');
-        });
+        };
+
+        btn.addEventListener('click', handle);
+        btn.addEventListener('touchstart', handle, { passive: false });
     });
 }

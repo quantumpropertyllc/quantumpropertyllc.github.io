@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
     <!-- Custom CSS -->
@@ -44,6 +44,27 @@
         /* Smooth sidebar animation */
         #sidebar {
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Adjust Leaflet zoom controls for iPhone visibility */
+        .leaflet-bottom.leaflet-left .leaflet-control-zoom {
+            margin-bottom: 96px !important;
+            margin-left: 80px !important;
+            border: none !important;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+        }
+
+        .leaflet-control-zoom-in,
+        .leaflet-control-zoom-out {
+            border-radius: 9999px !important;
+            margin-bottom: 4px !important;
+            background-color: white !important;
+            color: #1e3a8a !important;
+            width: 44px !important;
+            height: 44px !important;
+            line-height: 44px !important;
+            font-size: 20px !important;
+            border: 1px solid #e5e7eb !important;
         }
     </style>
 </head>
