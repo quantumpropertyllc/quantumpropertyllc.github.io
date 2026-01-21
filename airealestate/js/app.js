@@ -26,6 +26,9 @@ function initMap() {
         maxZoom: 20
     }).addTo(map);
 
+    // 3. Reposition zoom controls to bottom-right, above legend
+    map.zoomControl.setPosition('bottomright');
+
     // 3. Load Initial Data
     loadLayer('rezonings', 'rezoning', renderRezoningLayer);
     loadLayer('transit_projects', 'transit', renderTransitLayer, false); // Default off
@@ -92,20 +95,42 @@ function renderCIPLayer(geoJsonData) {
 }
 
 function renderCrimeHeatmap(geoJsonData) {
-    // Extract points from GeoJSON for Leaflet.heat
-    // Format: [lat, lng, intensity]
+    // Create a layer group to hold both heatmap and clickable markers
+    const crimeLayerGroup = L.layerGroup();
+
+    // 1. Create heatmap for visualization
     const points = geoJsonData.features.map(feature => {
-        // GeoJSON coordinates are [lng, lat]
         const [lng, lat] = feature.geometry.coordinates;
-        return [lat, lng, 0.5]; // 0.5 intensity per point
+        return [lat, lng, 0.5];
     });
 
-    return L.heatLayer(points, {
+    const heatmapLayer = L.heatLayer(points, {
         radius: 25,
         blur: 15,
         maxZoom: 15,
         gradient: { 0.4: 'blue', 0.65: 'lime', 1: 'red' }
     });
+
+    // 2. Create invisible clickable markers for interaction
+    const markersLayer = L.geoJSON(geoJsonData, {
+        pointToLayer: (feature, latlng) => {
+            // Create invisible circle markers
+            return L.circleMarker(latlng, {
+                radius: 8,
+                fillColor: 'transparent',
+                color: 'transparent',
+                weight: 0,
+                fillOpacity: 0
+            });
+        },
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'crime')
+    });
+
+    // Add both layers to the group
+    crimeLayerGroup.addLayer(heatmapLayer);
+    crimeLayerGroup.addLayer(markersLayer);
+
+    return crimeLayerGroup;
 }
 
 function onEachFeature(feature, layer, type) {
@@ -145,7 +170,14 @@ function resetHighlight(e, type) {
 }
 
 function zoomToFeature(e) {
-    map.fitBounds(e.target.getBounds());
+    const layer = e.target;
+    // Check if layer has bounds (polygons) or is a point
+    if (layer.getBounds) {
+        map.fitBounds(layer.getBounds());
+    } else if (layer.getLatLng) {
+        // For point features, zoom to the point
+        map.setView(layer.getLatLng(), 16);
+    }
 }
 
 // --- Sidebar Content ---
@@ -189,6 +221,27 @@ function updateSidebar(props, type) {
         details = {
             "Department": props.Department,
             "Cost": props.TotalBudget ? `$${props.TotalBudget}` : "N/A"
+        };
+    } else if (type === 'crime') {
+        title = `Incident ${props.INCIDENT_REPORT_ID || "N/A"}`;
+        status = props.HIGHEST_NIBRS_DESCRIPTION || "Unknown";
+        desc = `Location: ${props.LOCATION || "Unknown location"}`;
+
+        // Format date if available
+        let dateReported = "N/A";
+        if (props.DATE_REPORTED) {
+            const date = new Date(props.DATE_REPORTED);
+            dateReported = date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        }
+
+        details = {
+            "Date Reported": dateReported,
+            "Crime Type": props.HIGHEST_NIBRS_DESCRIPTION,
+            "Location": props.LOCATION
         };
     }
 
@@ -234,10 +287,8 @@ function updateSidebar(props, type) {
         container.appendChild(descDiv);
     }
 
-    // Open sidebar on mobile
-    if (window.innerWidth < 640) {
-        document.getElementById('sidebar').classList.remove('-translate-x-full');
-    }
+    // Always open sidebar when clicking a feature
+    document.getElementById('sidebar').classList.remove('-translate-x-full');
 }
 
 function setupUI() {
