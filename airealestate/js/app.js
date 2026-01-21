@@ -3,8 +3,10 @@ const CHARLOTTE_COORDS = [35.2271, -80.8431];
 const INITIAL_ZOOM = 12;
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Charlotte Real Estate Dashboard initializing...');
     initMap();
     setupUI();
+    console.log('Dashboard initialized successfully');
 });
 
 let map;
@@ -134,13 +136,18 @@ function renderCrimeHeatmap(geoJsonData) {
 }
 
 function onEachFeature(feature, layer, type) {
+    // Handle both click and tap events for iOS compatibility
+    const handleInteraction = (e) => {
+        console.log(`Feature clicked: ${type}`, feature.properties);
+        zoomToFeature(e);
+        updateSidebar(feature.properties, type);
+    };
+
     layer.on({
         mouseover: highlightFeature,
         mouseout: (e) => resetHighlight(e, type),
-        click: (e) => {
-            zoomToFeature(e);
-            updateSidebar(feature.properties, type);
-        }
+        click: handleInteraction,
+        tap: handleInteraction  // iOS touch support
     });
 }
 
@@ -258,11 +265,11 @@ function updateSidebar(props, type) {
         statusEl.classList.add('bg-red-100', 'text-red-800');
     }
 
-    document.getElementById('prop-notes').textContent = desc;
-
     // Dynamic Builder for Details - Mobile optimized
     const container = document.getElementById('details-container');
     container.innerHTML = ''; // Clear previous
+
+    console.log('Rendering details for type:', type, 'Details object:', details);
 
     for (const [key, value] of Object.entries(details)) {
         if (value) {
@@ -276,8 +283,8 @@ function updateSidebar(props, type) {
         }
     }
 
-    // Add description at the end
-    if (desc && desc !== "No description.") {
+    // Add description at the end (skip for crime since location is already in details)
+    if (desc && desc !== "No description." && type !== 'crime') {
         const descDiv = document.createElement('div');
         descDiv.className = 'pt-2';
         descDiv.innerHTML = `
