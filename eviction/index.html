@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Mecklenburg Eviction Guide</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1 data-i18n="title">Mecklenburg Eviction Guide</h1>
+        <button class="lang-toggle" onclick="toggleLanguage()" id="langBtn" data-i18n="lang">中文</button>
+    </header>
+
+    <nav>
+        <button onclick="showSection('home')" id="nav-home" class="active" data-i18n="home">Home</button>
+        <button onclick="showSection('process')" id="nav-process" data-i18n="process">Process</button>
+        <button onclick="showSection('laws')" id="nav-laws" data-i18n="laws">Laws</button>
+        <button onclick="showSection('draft')" id="nav-draft" data-i18n="draft">Draft Letter</button>
+    </nav>
+
+    <main id="app">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="card">
+                <h2 data-i18n="welcome_title">Landlord's Guide to Eviction</h2>
+                <p data-i18n="welcome_desc">This guide helps landlords in Mecklenburg County, NC understand the legal process of 'Summary Ejectment'. Follow the steps carefully to avoid legal issues.</p>
+            </div>
+            <div class="card" style="border-left: 4px solid #FF3B30;">
+                <span class="badge badge-warning">Warning</span>
+                <h3 data-i18n="warning_title">Legal Warning</h3>
+                <p data-i18n="warning_desc">'Self-help' evictions (changing locks, cutting utilities) are illegal in NC. You must follow the court process.</p>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="section">
+            <div class="card">
+                <h2 data-i18n="process">Eviction Process</h2>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step_1_title">Give Proper Notice</h3>
+                            <p data-i18n="step_1_desc">You must provide a written notice before filing in court.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step_2_title">File Summary Ejectment</h3>
+                            <p data-i18n="step_2_desc">File form AOC-CVM-201 at the Mecklenburg County Courthouse.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step_3_title">Service of Process</h3>
+                            <p data-i18n="step_3_desc">The Sheriff must serve the summons and complaint to the tenant.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step_4_title">Attend Hearing</h3>
+                            <p data-i18n="step_4_desc">Hearings are usually 7-30 days after filing. Bring your lease.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step_5_title">Writ of Possession</h3>
+                            <p data-i18n="step_5_desc">Wait 10 days for appeal period, then file for a Writ of Possession.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Laws Section -->
+        <section id="laws" class="section">
+            <div class="card">
+                <h2 data-i18n="law_title">Related Laws & Resources</h2>
+                <ul style="padding-left: 20px;">
+                    <li><a href="https://www.ncleg.gov/Laws/GeneralStatuteSections/Chapter42" target="_blank" data-i18n="law_ncgs">NC General Statutes Chapter 42</a></li>
+                    <li><a href="https://www.nccourts.gov/help-topics/lawsuits/small-claims" target="_blank" data-i18n="law_small_claims">NC Small Claims Court Rules</a></li>
+                    <li><a href="https://www.nccourts.gov/documents/forms" target="_blank" data-i18n="law_aoc_forms">Official NC Court Forms (AOC)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Draft Section -->
+        <section id="draft" class="section">
+            <div class="card">
+                <h2 data-i18n="draft_title">Draft a Notice Letter</h2>
+                <p data-i18n="draft_desc">Enter the details below to generate a professional notice.</p>
+                
+                <div class="input-group">
+                    <label data-i18n="landlord_name">Landlord Name</label>
+                    <input type="text" id="landlordName" placeholder="John Doe">
+                </div>
+                <div class="input-group">
+                    <label data-i18n="tenant_name">Tenant Name</label>
+                    <input type="text" id="tenantName" placeholder="Jane Smith">
+                </div>
+                <div class="input-group">
+                    <label data-i18n="address">Property Address</label>
+                    <input type="text" id="propertyAddress" placeholder="123 Queen St, Charlotte, NC">
+                </div>
+                <div class="input-group">
+                    <label data-i18n="reason">Reason for Eviction</label>
+                    <select id="evictionReason" onchange="toggleAmountOwed()">
+                        <option value="nonpayment" data-i18n="reason_nonpayment">Non-payment of Rent</option>
+                        <option value="holdover" data-i18n="reason_holdover">Holdover (Lease Expired)</option>
+                        <option value="violation" data-i18n="reason_violation">Lease Violation</option>
+                    </select>
+                </div>
+                <div class="input-group" id="amountGroup">
+                    <label data-i18n="amount_owed">Amount Owed ($)</label>
+                    <input type="number" id="amountOwed" placeholder="0.00">
+                </div>
+                
+                <button class="btn-primary" onclick="generateLetter()" data-i18n="generate_btn">Generate Letter</button>
+            </div>
+
+            <div id="letterPreview" class="letter-preview"></div>
+            <button id="printBtn" class="btn-primary" style="display:none; background: #34C759;" onclick="window.print()" data-i18n="print_btn">Print Letter</button>
+        </section>
+
+        <p class="legal-notice" data-i18n="legal_disclaimer">Disclaimer: This tool is for educational purposes only and does not constitute legal advice.</p>
+    </main>
+
+    <script src="js/translations.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/drafting.js"></script>
+</body>
+</html>
