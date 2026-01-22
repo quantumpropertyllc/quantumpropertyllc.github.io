@@ -103,7 +103,11 @@ function updateLanguageUI() {
 
 function initMap() {
     // 1. Initialize Map
-    map = L.map('map').setView(CHARLOTTE_COORDS, INITIAL_ZOOM);
+    // 1. Initialize Map with tap disabled for better mobile response
+    map = L.map('map', {
+        tap: true,
+        preferCanvas: true // Significant performance boost for thousands of markers
+    }).setView(CHARLOTTE_COORDS, INITIAL_ZOOM);
 
     // 2. Add Base Tile Layer
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
@@ -215,11 +219,12 @@ function renderCrimeHeatmap(geoJsonData) {
     const markersLayer = L.geoJSON(geoJsonData, {
         pointToLayer: (feature, latlng) => {
             return L.circleMarker(latlng, {
-                radius: 4,
+                radius: 6, // Visible dot size
                 fillColor: '#ef4444', // Red
-                color: '#991b1b', // Dark Red border
-                weight: 1,
-                fillOpacity: 0.8
+                color: '#ef4444',
+                weight: 12, // Large hit area around the dot
+                opacity: 0.1, // Subtle halo for hit area
+                fillOpacity: 0.9
             });
         },
         onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'crime')
@@ -444,8 +449,7 @@ function onEachFeature(feature, layer, type) {
     layer.on({
         mouseover: highlightFeature,
         mouseout: (e) => resetHighlight(e, type),
-        click: handleInteraction,
-        tap: handleInteraction  // iOS touch support
+        click: handleInteraction
     });
 }
 
@@ -632,6 +636,7 @@ function zoomToFeature(e) {
 function updateSidebar(props, type, latlng) {
     const panel = document.getElementById('details-panel');
     const intro = document.getElementById('intro-text');
+    const scrollContainer = document.getElementById('sidebar-content');
 
     panel.classList.remove('hidden');
     intro.classList.add('hidden');
@@ -860,6 +865,17 @@ function updateSidebar(props, type, latlng) {
         } else {
             scoreSummary.textContent = "Standard investment profile. No significant positive or negative growth triggers detected at this location.";
         }
+    }
+
+    // Auto-scroll to top of sidebar when new content is loaded - robust for iOS
+    if (scrollContainer) {
+        requestAnimationFrame(() => {
+            if (scrollContainer) {
+                scrollContainer.scrollTop = 0;
+                // Safari/iOS fallback
+                scrollContainer.scrollTo(0, 0);
+            }
+        });
     }
 }
 
