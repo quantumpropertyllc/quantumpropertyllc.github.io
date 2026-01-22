@@ -105,8 +105,8 @@ function initMap() {
     // 1. Initialize Map
     // 1. Initialize Map with tap disabled for better mobile response
     map = L.map('map', {
-        tap: true,
-        preferCanvas: true // Significant performance boost for thousands of markers
+        tap: false, // Legacy tap hack interferes with modern Safari
+        renderer: L.canvas({ tolerance: 10 }) // High tolerance for touch hit detection
     }).setView(CHARLOTTE_COORDS, INITIAL_ZOOM);
 
     // 2. Add Base Tile Layer
@@ -219,11 +219,10 @@ function renderCrimeHeatmap(geoJsonData) {
     const markersLayer = L.geoJSON(geoJsonData, {
         pointToLayer: (feature, latlng) => {
             return L.circleMarker(latlng, {
-                radius: 6, // Visible dot size
+                radius: 6,
                 fillColor: '#ef4444', // Red
-                color: '#ef4444',
-                weight: 12, // Large hit area around the dot
-                opacity: 0.1, // Subtle halo for hit area
+                color: '#991b1b', // Dark Red border
+                weight: 1,
                 fillOpacity: 0.9
             });
         },
