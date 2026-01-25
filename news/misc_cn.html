@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>北卡生活杂项 | NC Misc</title>
+  <title>北卡杂项 | NC Misc</title>
 
   <style>
     :root {
       --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --sub: #8e8e93;
       --primary: #5856d6; --accent: #007aff; --border: rgba(0,0,0,0.08);
       --nav-bg: rgba(2, 136, 209, 0.1); --nav-text: #0288d1;
-      --header-grad: linear-gradient(135deg, #5856d6, #007aff);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -22,285 +21,213 @@
     }
 
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    
     body { 
-      margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif; 
-      background: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 40px;
+      margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; 
+      background: var(--bg); color: var(--text); line-height: 1.4;
+      /* Adjust for iOS Notch */
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
     }
 
-    header { 
-      padding: 50px 20px 30px; background: var(--header-grad); color: white;
-      border-radius: 0 0 32px 32px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      text-align: center;
+    /* Small, Native-style Header */
+    .mini-header {
+      padding: 15px 20px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
     }
-    header h1 { margin: 0; font-size: 1.8rem; font-weight: 800; }
-    header p { margin: 8px 0 0; font-size: 0.9rem; opacity: 0.85; }
+    .mini-header h1 { margin: 0; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; }
+    .mini-header span { font-size: 0.8rem; color: var(--sub); font-weight: 500; }
 
-    .container { padding: 0 16px; max-width: 650px; margin: auto; }
+    .container { padding: 0 16px; max-width: 600px; margin: auto; }
 
-    .search-wrapper { position: sticky; top: 10px; z-index: 100; margin-bottom: 24px; }
+    /* Sticky Search Bar */
+    .search-wrapper { position: sticky; top: 0; z-index: 100; padding: 10px 0; background: var(--bg); }
     .controls { 
-      display: flex; gap: 10px; padding: 8px; border-radius: 20px;
-      background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1); border: 1px solid var(--border);
+      display: flex; gap: 8px; padding: 6px; border-radius: 14px;
+      background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid var(--border);
     }
-    @media (prefers-color-scheme: dark) { .controls { background: rgba(28, 28, 30, 0.8); } }
+    @media (prefers-color-scheme: dark) { .controls { background: rgba(44, 44, 46, 0.8); } }
+    
     .controls input, .controls select { 
-      padding: 12px; border-radius: 14px; border: none; background: var(--bg); 
-      color: var(--text); font-size: 0.95rem; outline: none;
+      padding: 10px; border-radius: 10px; border: none; background: var(--bg); 
+      color: var(--text); font-size: 0.9rem; outline: none;
     }
     .controls input { flex: 2; }
-    .controls select { flex: 1.3; font-weight: 500; cursor: pointer; }
+    .controls select { flex: 1.2; font-weight: 600; cursor: pointer; }
 
-    .section-group { margin-bottom: 30px; }
+    .section-group { margin-bottom: 25px; }
     .section-title { 
-      margin: 0 0 15px 4px; font-size: 1.2rem; font-weight: 800; 
-      display: flex; align-items: center; gap: 10px; color: var(--text);
+      margin: 20px 0 12px 4px; font-size: 1.1rem; font-weight: 700; 
+      color: var(--text); display: flex; align-items: center; gap: 8px;
     }
 
-    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
     .card { 
-      background: var(--card); border-radius: 24px; padding: 22px; 
-      box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid var(--border);
-      transition: transform 0.2s ease;
+      background: var(--card); border-radius: 18px; padding: 18px; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02); border: 1px solid var(--border);
     }
-    .card:active { transform: scale(0.98); }
 
     .info-list { list-style: none; padding: 0; margin: 0; }
-    .info-item { padding: 14px 0; border-bottom: 1px dashed var(--border); }
+    .info-item { padding: 10px 0; border-bottom: 0.5px solid var(--border); }
     .info-item:last-child { border-bottom: none; }
-    .info-label { display: block; font-size: 0.75rem; color: var(--sub); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; }
+    .info-label { display: block; font-size: 0.7rem; color: var(--sub); margin-bottom: 4px; font-weight: 600; text-transform: uppercase; }
 
-    /* Button-like link list from Page 2 */
-    .link-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-top: 10px;
-    }
+    /* Compact Link Grid */
+    .link-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 5px; }
     .link-item {
       display: flex; align-items: center; justify-content: center;
-      padding: 12px; background: var(--bg); border-radius: 12px;
+      padding: 12px 8px; background: var(--bg); border-radius: 12px;
       text-decoration: none; color: var(--text); font-size: 0.85rem;
-      font-weight: 500; transition: background 0.2s; text-align: center;
+      font-weight: 500; text-align: center;
     }
-    .link-item:hover { background: var(--border); }
 
-    a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
-    a:hover { opacity: 0.7; }
-
+    a { color: var(--accent); text-decoration: none; }
     .btn-link { 
-      display: inline-block; background: rgba(0, 122, 255, 0.08); color: var(--accent); 
-      padding: 5px 12px; border-radius: 10px; font-size: 0.85rem; margin-right: 6px; margin-bottom: 8px; font-weight: 600;
+      display: inline-block; background: rgba(0, 122, 255, 0.1); color: var(--accent); 
+      padding: 4px 10px; border-radius: 8px; font-size: 0.8rem; margin: 4px 4px 0 0; font-weight: 600;
     }
     .nav-link { 
       display: inline-block; background: var(--nav-bg); color: var(--nav-text); 
-      padding: 5px 12px; border-radius: 10px; font-size: 0.85rem; margin-bottom: 8px; font-weight: 700;
+      padding: 4px 10px; border-radius: 8px; font-size: 0.8rem; margin-top: 4px; font-weight: 700;
     }
     
-    #emptyState { display: none; text-align: center; padding: 40px; color: var(--sub); }
+    #emptyState { display: none; text-align: center; padding: 40px; color: var(--sub); font-size: 0.9rem; }
 
     footer { 
-      text-align: center; margin: 60px 0 30px; color: var(--sub); font-size: 0.85rem; 
-      border-top: 1px solid var(--border); padding: 30px 20px; line-height: 1.8;
+      text-align: center; margin-top: 40px; color: var(--sub); font-size: 0.75rem; 
+      padding: 20px; line-height: 1.6;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>北卡生活杂项</h1>
-  <p>NC Misc · 发现更美好的北卡</p>
-</header>
+<div class="mini-header">
+  <h1>北卡杂项</h1>
+  <span>NC MISC</span>
+</div>
 
 <div class="container">
 
   <div class="search-wrapper">
     <div class="controls">
-      <input id="searchInput" type="search" placeholder="输入店名、地址或关键词..." />
+      <input id="searchInput" type="search" placeholder="搜索名称或关键字..." />
       <select id="categoryFilter">
         <option value="all">全部分类</option>
-        <option value="news">📰 华人新闻</option>
-        <option value="life">🛍️ 生活购物</option>
-        <option value="food">🍽️ 周边美食</option>
-        <option value="asianmarkets">🛒 亚洲商场</option>
-        <option value="auto">🚗 汽车维修</option>
-        <option value="health">💪 健康身体</option>
-        <option value="farms">🍓 田园采摘</option>
-        <option value="finance">💰 金融股市</option>
-        <option value="community">🌐 社区人脉</option>
-        <option value="internet">💻 外出上网</option>
+        <option value="news">📰 新闻</option>
+        <option value="life">🛍️ 购物</option>
+        <option value="food">🍽️ 美食</option>
+        <option value="asianmarkets">🛒 超市</option>
+        <option value="auto">🚗 汽修</option>
+        <option value="health">💪 健康</option>
+        <option value="farms">🍓 农场</option>
+        <option value="finance">💰 金融</option>
       </select>
     </div>
   </div>
 
-  <div id="emptyState">未找到相关信息，请尝试其他关键词</div>
+  <div id="emptyState">未找到相关结果</div>
 
   <div id="contentList">
-    
     <div class="section-group" data-cat-group="news">
-      <div class="section-title">📰 北美华人新闻 (News)</div>
-      <div class="grid">
-        <div class="card item" data-category="news">
-          <div class="link-list">
-            <a class="link-item" href="https://www.wenxuecity.com/news/">文学城</a>
-            <a class="link-item" href="https://huaren.us/">华人.us</a>
-            <a class="link-item" href="https://www.creaders.net/">万维读者</a>
-            <a class="link-item" href="https://www.worldjournal.com/">世界日报</a>
-            <a class="link-item" href="https://www.sinovision.net/home/">美国中文网</a>
-            <a class="link-item" href="https://cn.wsj.com/">华尔街日报</a>
-            <a class="link-item" href="https://m.cn.nytimes.com/">纽约时报</a>
-            <a class="link-item" href="https://www.bbc.com/zhongwen/simp">BBC 中文</a>
-          </div>
+      <div class="section-title">📰 华人新闻</div>
+      <div class="card item" data-category="news">
+        <div class="link-list">
+          <a class="link-item" href="https://www.wenxuecity.com/news/">文学城</a>
+          <a class="link-item" href="https://huaren.us/">华人.us</a>
+          <a class="link-item" href="https://www.creaders.net/">万维读者</a>
+          <a class="link-item" href="https://www.worldjournal.com/">世界日报</a>
         </div>
       </div>
     </div>
 
     <div class="section-group" data-cat-group="life">
-      <div class="section-title">🛍️ 吃喝玩乐 / 购物 (Lifestyle)</div>
-      <div class="grid">
-        <div class="card item" data-category="life">
-          <div class="link-list">
-            <a class="link-item" href="https://www.dealmoon.com/">北美省钱快报</a>
-            <a class="link-item" href="https://newmitbbs.com/">新未名空间</a>
-            <a class="link-item" href="https://6parknews.com/">留园网</a>
-            <a class="link-item" href="https://www.backchina.com/">倍可亲</a>
-            <a class="link-item" href="https://www.1point3acres.com/bbs/">一亩三分地</a>
-            <a class="link-item" href="https://www.yami.com/zh">亚米网</a>
-          </div>
+      <div class="section-title">🛍️ 吃喝玩乐 / 购物</div>
+      <div class="card item" data-category="life">
+        <div class="link-list">
+          <a class="link-item" href="https://www.dealmoon.com/">北美省钱快报</a>
+          <a class="link-item" href="https://www.yami.com/zh">亚米网</a>
+          <a class="link-item" href="https://www.1point3acres.com/bbs/">一亩三分地</a>
+          <a class="link-item" href="https://newmitbbs.com/">新未名空间</a>
         </div>
       </div>
     </div>
 
     <div class="section-group" data-cat-group="food">
-      <div class="section-title">🍽️ 周边美食 (Nearby Eats)</div>
-      <div class="grid">
-        <div class="card item" data-category="food">
-          <div class="info-list">
-            <div class="info-item">
-              <strong>东云阁 East Pearl</strong><br>
-              <a href="https://www.facebook.com/eastpearlseafood" class="btn-link">Facebook 网页</a>
-              <a href="#" class="nav-link">📍 1810 Liddell Ln</a>
-            </div>
-            <div class="info-item">
-              <strong>金冠 Royal China (Duluth)</strong><br>
-              <a href="#" class="nav-link">📍 3960 Venture Dr</a>
-            </div>
-            <div class="info-item">
-              <span class="info-label">其他 RTP 精选</span>
-              <a href="https://www.hongkongdimsumindurham.com/">腾龙阁</a> | <a href="https://acaciatreenc.com">玖食</a> | <a href="https://www.chengdu7cary.com">成都7号</a> | <a href="https://www.toyarbbqhotpot.com">客串江湖</a> 
-              (<a href="#" class="nav-link">📍 4075 Davis Dr</a>) | <a href="https://nanxiangexpress.com/menu/">南翔小笼包</a>
-            </div>
+      <div class="section-title">🍽️ 周边美食</div>
+      <div class="card item" data-category="food">
+        <div class="info-list">
+          <div class="info-item">
+            <strong>东云阁 East Pearl</strong><br>
+            <a href="#" class="nav-link">📍 1810 Liddell Ln</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">RTP 精选</span>
+            <a href="https://acaciatreenc.com">玖食</a> | <a href="https://www.chengdu7cary.com">成都7号</a> | <a href="https://nanxiangexpress.com/menu/">南翔小笼</a>
           </div>
         </div>
       </div>
     </div>
 
     <div class="section-group" data-cat-group="asianmarkets">
-      <div class="section-title">🛒 亚洲商场与厨具 (Asian Markets)</div>
-      <div class="grid">
-        <div class="card item" data-category="asianmarkets">
-          <div class="info-list">
-            <div class="info-item">
-              <strong>Bottoms Up Wine & Spirits</strong> (买国酒)<br>
-              <a href="https://www.facebook.com/sc.bottomsup/" class="btn-link">Facebook 网页</a>
-              <a href="#" class="nav-link">📍 Fort Mill, SC</a>
-            </div>
-            <div class="info-item">
-              <strong>新亚洲超市 (New Asia)</strong><br>
-              <a href="#" class="nav-link">📍 4400 Potter Rd</a><br>
-              <a href="https://asianmarketplz.com" class="btn-link">The Plaza 店网页</a>
-            </div>
-            <div class="info-item">
-              <strong>Super G Mart</strong><br>
-              <a href="https://www.supergmart.com" class="btn-link">官方主页</a><br>
-              <a href="#" class="nav-link">📍 Pineville 店</a>
-              <a href="#" class="nav-link">📍 Independence 店</a>
-            </div>
+      <div class="section-title">🛒 亚洲超市与厨具</div>
+      <div class="card item" data-category="asianmarkets">
+        <div class="info-list">
+          <div class="info-item">
+            <strong>Super G Mart</strong><br>
+            <a href="#" class="nav-link">📍 Pineville 店</a> <a href="#" class="nav-link">📍 Independence 店</a>
+          </div>
+          <div class="info-item">
+            <strong>新亚洲超市</strong><br>
+            <a href="#" class="nav-link">📍 4400 Potter Rd</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">厨具</span>
+            <a href="https://us.fotileglobal.com">方太官网</a> | <a href="https://www.bk-cookware.com/black-steel">BK炒锅</a>
           </div>
         </div>
       </div>
     </div>
 
     <div class="section-group" data-cat-group="auto">
-      <div class="section-title">🚗 汽车维修与服务 (Auto)</div>
-      <div class="grid">
-        <div class="card item" data-category="auto">
-          <div class="info-list">
-            <div class="info-item"><span class="info-label">车身维修</span><a href="http://www.createAutoBody.com">Create Auto Body</a></div>
-            <div class="info-item"><span class="info-label">检查与保养</span><a href="https://www.pepboys.com/">Pep boys</a> | <a href="https://www.mrinspectionmatthews.com">Mr. Inspection</a></div>
-            <div class="info-item"><span class="info-label">保险推荐</span>Progressive, Traveler, Cincinnati Insurance</div>
-          </div>
+      <div class="section-title">🚗 汽车服务</div>
+      <div class="card item" data-category="auto">
+        <div class="info-list">
+          <div class="info-item"><span class="info-label">汽修</span><a href="http://www.createAutoBody.com">Create Auto Body</a> | <a href="https://www.pepboys.com/">Pep boys</a></div>
+          <div class="info-item"><span class="info-label">保险</span>Progressive, Traveler, Cincinnati</div>
         </div>
       </div>
     </div>
 
     <div class="section-group" data-cat-group="health">
-      <div class="section-title">💪 健康身体 (Health)</div>
-      <div class="grid">
-        <div class="card item" data-category="health">
-          <div class="info-list">
-            <div class="info-item"><span class="info-label">保险服务</span><a href="https://www.cinfin.com">Cincinnati Insurance</a></div>
-            <div class="info-item"><span class="info-label">牙科医生</span><a href="https://brightdentalcharlotte.com">Bright Dental</a> | <a href="https://capstonedentalnc.com">Capstone Dental</a></div>
-          </div>
+      <div class="section-title">💪 健康医疗</div>
+      <div class="card item" data-category="health">
+        <div class="info-list">
+          <div class="info-item"><span class="info-label">牙科</span><a href="https://brightdentalcharlotte.com">Bright Dental</a> | <a href="https://capstonedentalnc.com">Capstone</a></div>
         </div>
       </div>
     </div>
-
-    <div class="section-group" data-cat-group="farms">
-      <div class="section-title">🍓 田园采摘 (U-Pick)</div>
-      <div class="grid">
-        <div class="card item" data-category="farms">
-          <div class="info-list">
-            <div class="info-item"><strong>Big H Farm</strong><br><a href="https://bighfarm.com" class="btn-link">官方网站</a> <a href="#" class="nav-link">📍 1953 Dilling Farm Rd</a></div>
-            <div class="info-item"><span class="info-label">其他热门农场</span><a href="https://www.lockmanvineyard.com/">Lockman Vineyard</a> | <a href="https://www.linebergersfarm.com/">Lineberger's farm</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-group" data-cat-group="finance">
-      <div class="section-title">💰 金融与股市 (Finance)</div>
-      <div class="grid">
-        <div class="card item" data-category="finance">
-          <div class="info-list">
-            <div class="info-item"><span class="info-label">跟议员买股票</span><a href="https://www.quiverquant.com/politicians/">Quiver</a> | <a href="https://www.capitoltrades.com/">Capital Trades</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-group" data-cat-group="community">
-      <div class="section-title">🌐 社区人脉 (Community)</div>
-      <div class="grid">
-        <div class="card item" data-category="community">
-          <div class="info-list">
-            <div class="info-item"><strong>主要组织：</strong>NCCBA, AREAA Charlotte, 夏洛特华美协会 (CAS)</div>
-            <div class="info-item"><strong>重要活动：</strong> 5/16 龙舟节与文化节</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
-</div>
 
-<footer>
-  <p>© 2026 夏洛特华人生活指南 | Bank of World</p>
-  <p>专注华人社区服务 | 联系反馈: bankofworld@gmail.com</p>
-</footer>
+  <footer>
+    <p>© 2026 北卡华人生活指南<br>Bank of World · bankofworld@gmail.com</p>
+  </footer>
+</div>
 
 <script>
 const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
 const items = document.querySelectorAll(".item");
-const emptyState = document.getElementById("emptyState");
 const groups = document.querySelectorAll(".section-group");
+const emptyState = document.getElementById("emptyState");
 
 function filterItems() {
   const k = searchInput.value.toLowerCase().trim();
   const c = categoryFilter.value;
-  let hasAnyResult = false;
+  let visibleTotal = 0;
 
   items.forEach(item => {
     const text = item.innerText.toLowerCase();
@@ -309,18 +236,18 @@ function filterItems() {
     
     if (matchSearch && matchCategory) {
       item.style.display = "";
-      hasAnyResult = true;
+      visibleTotal++;
     } else {
       item.style.display = "none";
     }
   });
 
   groups.forEach(group => {
-    const visibleItemsInGroup = group.querySelectorAll('.item:not([style*="display: none"])');
-    group.style.display = visibleItemsInGroup.length > 0 ? "" : "none";
+    const visibleInGroup = group.querySelectorAll('.item:not([style*="display: none"])');
+    group.style.display = visibleInGroup.length > 0 ? "" : "none";
   });
 
-  emptyState.style.display = hasAnyResult ? "none" : "block";
+  emptyState.style.display = visibleTotal > 0 ? "none" : "block";
 }
 
 searchInput.addEventListener("input", filterItems);
