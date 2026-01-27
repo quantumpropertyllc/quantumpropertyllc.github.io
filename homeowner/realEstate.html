@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>NC Real Estate Investment Pro</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --sub: #8e8e93;
+      --primary: #5856d6; --accent: #007aff; --border: rgba(0,0,0,0.1);
+      --input-bg: #f2f2f7; --success: #34c759; --warning: #ff9500;
+      --btn-link-bg: rgba(0,122,255,0.1); --btn-link-text: #007aff;
+      --disabled: #c7c7cc;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000; --card: #1c1c1e; --text: #ffffff; --sub: #8e8e93;
+        --primary: #5e5ce6; --accent: #0a84ff; --border: rgba(255,255,255,0.1);
+        --input-bg: #2c2c2e; --btn-link-bg: rgba(10,132,255,0.2); --btn-link-text: #0a84ff;
+        --disabled: #3a3a3c;
+      }
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body { 
+      margin: 0; font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+      background: var(--bg); color: var(--text); padding-bottom: 30px;
+    }
+    .container { max-width: 800px; margin: auto; padding: 0 16px; }
+
+    .main-title-section { padding-top: 20px; margin-bottom: 5px; }
+    .main-title-section h1 { margin: 0; font-size: 1.25rem; font-weight: 800; color: var(--text); }
+    .main-title-section p { margin: 4px 0 0 0; font-size: 0.85rem; color: var(--sub); }
+    
+    .section-title { margin: 25px 0 10px 5px; font-size: 0.85rem; font-weight: 700; color: var(--sub); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .card { background: var(--card); border-radius: 12px; padding: 16px; margin-bottom: 12px; box-shadow: 0 1px 4px var(--border); }
+    
+    .calc-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .calc-group { display: flex; flex-direction: column; }
+    .calc-group label { font-size: 0.75rem; color: var(--sub); margin-bottom: 4px; font-weight: 600; }
+    .calc-group input { 
+      padding: 10px; border-radius: 8px; border: none; background: var(--input-bg); 
+      color: var(--text); font-size: 1rem; outline: none; border: 1px solid transparent;
+    }
+
+    .calc-btn { 
+      grid-column: span 2; padding: 14px; background: var(--primary); color: white; 
+      border: none; border-radius: 10px; font-weight: 700; font-size: 1rem; margin-top: 10px;
+      cursor: pointer; transition: all 0.3s ease;
+    }
+    .calc-btn:disabled { 
+      background: var(--disabled); 
+      color: var(--sub); 
+      cursor: not-allowed;
+      transform: scale(1);
+    }
+    .calc-btn.added {
+      background: var(--success);
+    }
+
+    .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    #propertyList { width: 100%; border-collapse: collapse; min-width: 500px; }
+    #propertyList th { background: var(--input-bg); padding: 12px 8px; font-size: 0.75rem; text-align: left; cursor: pointer; }
+    #propertyList td { padding: 12px 8px; font-size: 0.85rem; border-bottom: 1px solid var(--border); }
+    
+    @keyframes highlightRow {
+      0% { background-color: rgba(52, 199, 89, 0.2); }
+      100% { background-color: transparent; }
+    }
+    .new-row td { animation: highlightRow 2s ease-out; }
+
+    .roi-badge { padding: 4px 8px; border-radius: 6px; font-weight: 700; background: var(--success); color: white; font-size: 0.8rem; }
+    .btn-delete { color: #ff3b30; font-weight: 600; cursor: pointer; font-size: 0.8rem; }
+
+    #chartArea { display: none; margin-top: 15px; text-align: center; }
+    canvas { max-width: 260px; margin: auto; }
+
+    .tax-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+    .tax-item { 
+      background: var(--input-bg); padding: 10px; border-radius: 10px; font-size: 0.8rem; 
+      cursor: pointer; border: 1px solid transparent; transition: 0.2s;
+    }
+    .tax-item b { color: var(--primary); display: block; font-size: 0.9rem; }
+    
+    .btn-link { 
+      display: inline-block; background: var(--btn-link-bg); color: var(--btn-link-text); 
+      padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; margin-right: 6px; margin-bottom: 8px;
+      text-decoration: none; font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  
+  <div class="main-title-section">
+    <h1>NC Real Estate Investment Pro</h1>
+    <p>ROI Calculator & Due Diligence Integration</p>
+  </div>
+
+  <div class="card" style="margin-top: 15px;">
+    <div class="calc-form">
+      <div class="calc-group" style="grid-column: span 2;">
+        <label>Property Name (Change name to add another)</label>
+        <input type="text" id="propName" placeholder="e.g., Ballantyne Condo" oninput="handleNameInput()">
+      </div>
+      <div class="calc-group"><label>Price ($)</label><input type="number" inputmode="decimal" id="housePrice" value="500000" oninput="autoUpdateTax()"></div>
+      <div class="calc-group"><label>Down Payment ($)</label><input type="number" inputmode="decimal" id="downpayment" value="100000"></div>
+      <div class="calc-group"><label>Interest Rate (%)</label><input type="number" inputmode="decimal" id="mortgageRate" value="7.2" step="0.01"></div>
+      <div class="calc-group"><label>Annual Tax ($)</label><input type="number" inputmode="decimal" id="annualTax" value="4500"></div>
+      <div class="calc-group"><label>Annual Insurance ($)</label><input type="number" inputmode="decimal" id="annualIns" value="1200"></div>
+      <div class="calc-group"><label>Monthly HOA ($)</label><input type="number" inputmode="decimal" id="monthlyHOA" value="50"></div>
+      <div class="calc-group"><label>Est. Monthly Rent ($)</label><input type="number" inputmode="decimal" id="expectedRent" value="3200"></div>
+      <div class="calc-group"><label>Opp. Cost Rate (%)</label><input type="number" inputmode="decimal" id="tbillRate" value="5.2"></div>
+      <button class="calc-btn" id="addBtn" onclick="addProperty()">＋ Add & Analyze Property</button>
+    </div>
+  </div>
+
+  <div class="section-title">Popular NC County Tax Rates</div>
+  <div class="card">
+    <div class="tax-grid">
+      <div class="tax-item" onclick="applyTaxRate(0.0095, 'Mecklenburg')"><b>Mecklenburg (CLT)</b>~ 0.95%</div>
+      <div class="tax-item" onclick="applyTaxRate(0.0065, 'Union')"><b>Union (Marvin)</b>~ 0.65%</div>
+      <div class="tax-item" onclick="applyTaxRate(0.0102, 'Wake')"><b>Wake (Raleigh)</b>~ 1.02%</div>
+      <div class="tax-item" onclick="applyTaxRate(0.0085, 'Durham')"><b>Durham</b>~ 0.85%</div>
+    </div>
+  </div>
+
+  <div id="chartArea" class="card">
+    <h3 id="chartTitle" style="margin-top:0; font-size:1rem;">Expense Structure Analysis</h3>
+    <canvas id="expenseChart"></canvas>
+  </div>
+
+  <div class="section-title" id="tableAnchor">Investment Comparison</div>
+  <div class="card" style="padding:10px">
+    <div class="table-container">
+      <table id="propertyList">
+        <thead>
+          <tr>
+            <th onclick="sortTable('name')">Name ↕️</th>
+            <th onclick="sortTable('totalOut')">Monthly Exp ↕️</th>
+            <th onclick="sortTable('beRent')">Break-even Rent ↕️</th>
+            <th onclick="sortTable('cocROI')">Cash ROI ↕️</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-title">Due Diligence Toolkit</div>
+  <div class="card">
+      <a href="https://portal-nc.tylertech.cloud/Portal/" class="btn-link">NC Court Portal</a>
+      <a href="https://mecksheriffweb.mecklenburgcountync.gov" class="btn-link">Arrest Records</a>
+      <a href="https://property.spatialest.com/nc/mecklenburg#/" class="btn-link">Mecklenburg Deeds</a>
+  </div>
+
+  <div class="card">
+      <a href="https://www.fastpeoplesearch.com" class="btn-link">FastPeopleSearch</a>
+      <a href="https://www.mysmartmove.com/SmartMove/login/landlord_new_application.page" class="btn-link">TransUnion SmartMove</a>
+      <a href="https://tenantbackgroundsearch.com" class="btn-link">Tenant Background</a>
+    </div>
+
+    <div class="card">
+      <a href="https://vt.ncsbe.gov/RegLkup" class="btn-link">NC Voter Lookup</a>
+      <a href="https://voterrecords.com/" class="btn-link">US Voter Records</a>
+      <a href="https://property.spatialest.com/nc/mecklenburg#/" class="btn-link">Mecklenburg GIS</a>
+      <a href="https://www.unionconcrod.org/" class="btn-link">Union Deeds</a>
+      <a href="https://property.spatialest.com/nc/union#/" class="btn-link">Union Address Search</a>
+    </div>
+  
+</div>
+
+<script>
+let properties = JSON.parse(localStorage.getItem('nc_invest_props_pro_v2') || '[]');
+let expenseChart = null;
+let lastAddedName = "";
+
+function hapticFeedback() { if (window.navigator && window.navigator.vibrate) window.navigator.vibrate(10); }
+
+function handleNameInput() {
+  const btn = document.getElementById('addBtn');
+  const currentName = document.getElementById('propName').value.trim();
+  
+  if (currentName !== lastAddedName && currentName !== "") {
+    btn.disabled = false;
+    btn.innerText = "＋ Add & Analyze Property";
+    btn.classList.remove('added');
+  }
+}
+
+function applyTaxRate(rate, countyName) {
+  hapticFeedback();
+  const price = +document.getElementById('housePrice').value;
+  document.getElementById('annualTax').value = Math.round(price * rate);
+  const nameInput = document.getElementById('propName');
+  if(!nameInput.value || nameInput.value.includes("Property")) {
+    nameInput.value = countyName + " Property";
+    handleNameInput();
+  }
+}
+
+function calculateROI(p) {
+  const loan = p.housePrice - p.downpayment;
+  const r = p.mortgageRate / 100 / 12;
+  const n = 30 * 12;
+  const monthlyPI = (loan > 0 && r > 0) ? loan * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1) : 0;
+  const monthlyTaxIns = (p.annualTax + p.annualIns) / 12;
+  const maintenance = (p.housePrice * 0.008) / 12;
+  const totalOut = monthlyPI + monthlyTaxIns + maintenance + p.monthlyHOA;
+  const oppCost = p.downpayment * (p.tbillRate / 100) / 12;
+  const beRent = totalOut + oppCost;
+  const netCashFlow = (p.expectedRent - totalOut) * 12;
+  const cocROI = p.downpayment > 0 ? (netCashFlow / p.downpayment * 100).toFixed(2) : "N/A";
+  return { ...p, monthlyPI, monthlyTaxIns, maintenance, totalOut, oppCost, beRent, cocROI };
+}
+
+function addProperty() {
+  const btn = document.getElementById('addBtn');
+  const nameInput = document.getElementById('propName');
+  const currentName = nameInput.value.trim();
+  
+  if (!currentName) {
+    alert("Please enter a property name");
+    return;
+  }
+
+  hapticFeedback();
+  const pId = Date.now();
+  
+  lastAddedName = currentName;
+  btn.disabled = true;
+  btn.innerText = "✓ Added";
+  btn.classList.add('added');
+
+  const p = {
+    id: pId,
+    name: currentName,
+    housePrice: +document.getElementById('housePrice').value,
+    downpayment: +document.getElementById('downpayment').value,
+    mortgageRate: +document.getElementById('mortgageRate').value,
+    annualTax: +document.getElementById('annualTax').value,
+    annualIns: +document.getElementById('annualIns').value,
+    monthlyHOA: +document.getElementById('monthlyHOA').value,
+    expectedRent: +document.getElementById('expectedRent').value,
+    tbillRate: +document.getElementById('tbillRate').value
+  };
+  
+  properties.push(p);
+  saveAndRender(pId);
+  showChart(pId);
+  
+  setTimeout(() => {
+    document.getElementById('tableAnchor').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 200);
+}
+
+function deleteProp(id) {
+  properties = properties.filter(p => p.id !== id);
+  saveAndRender();
+  document.getElementById('chartArea').style.display = 'none';
+}
+
+function saveAndRender(newId = null) {
+  localStorage.setItem('nc_invest_props_pro_v2', JSON.stringify(properties));
+  const body = document.getElementById('tableBody');
+  body.innerHTML = '';
+  properties.forEach(p => {
+    const c = calculateROI(p);
+    const tr = document.createElement('tr');
+    if (p.id === newId) tr.classList.add('new-row');
+    tr.onclick = () => showChart(p.id);
+    tr.innerHTML = `
+      <td><b>${c.name}</b></td>
+      <td>$${c.totalOut.toFixed(0)}</td>
+      <td style="color:var(--primary);font-weight:700">$${c.beRent.toFixed(0)}</td>
+      <td><span class="roi-badge">${c.cocROI}%</span></td>
+      <td><span class="btn-delete" onclick="event.stopPropagation(); deleteProp(${p.id})">Delete</span></td>
+    `;
+    body.appendChild(tr);
+  });
+}
+
+function showChart(id) {
+  const p = properties.find(x => x.id === id);
+  if(!p) return;
+  const c = calculateROI(p);
+  document.getElementById('chartArea').style.display = 'block';
+  document.getElementById('chartTitle').innerText = `${c.name} Monthly Expense Breakdown`;
+  const ctx = document.getElementById('expenseChart').getContext('2d');
+  if(expenseChart) expenseChart.destroy();
+  expenseChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['P&I', 'Tax/Ins', 'HOA', 'Maintenance', 'Opp. Cost'],
+      datasets: [{
+        data: [c.monthlyPI, c.monthlyTaxIns, c.monthlyHOA, c.maintenance, c.oppCost],
+        backgroundColor: ['#5856d6', '#ff9500', '#ff3b30', '#34c759', '#8e8e93']
+      }]
+    },
+    options: { plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } } } }
+  });
+}
+
+function sortTable(key) {
+  properties.sort((a,b) => {
+    const valA = key === 'name' ? a[key] : parseFloat(calculateROI(a)[key]);
+    const valB = key === 'name' ? b[key] : parseFloat(calculateROI(b)[key]);
+    return valA > valB ? 1 : -1;
+  });
+  saveAndRender();
+}
+
+window.onload = saveAndRender;
+</script>
+
+</body>
+</html>
