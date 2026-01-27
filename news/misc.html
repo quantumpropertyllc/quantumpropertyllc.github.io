@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>NC Misc | North Carolina Resources</title>
+
+  <style>
+    :root {
+      --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --sub: #8e8e93;
+      --primary: #5856d6; --accent: #007aff; --border: rgba(0,0,0,0.08);
+      --nav-bg: rgba(2, 136, 209, 0.1); --nav-text: #0288d1;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000; --card: #1c1c1e; --text: #ffffff; --sub: #8e8e93;
+        --primary: #5e5ce6; --accent: #0a84ff; --border: rgba(255,255,255,0.1);
+        --nav-bg: rgba(10, 132, 255, 0.15); --nav-text: #4fc3f7;
+      }
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    
+    body { 
+      margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; 
+      background: var(--bg); color: var(--text); line-height: 1.4;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .mini-header {
+      padding: 15px 20px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .mini-header h1 { margin: 0; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; }
+    .mini-header span { font-size: 0.8rem; color: var(--sub); font-weight: 500; }
+
+    .container { padding: 0 16px; max-width: 600px; margin: auto; }
+
+    .search-wrapper { position: sticky; top: 0; z-index: 100; padding: 10px 0; background: var(--bg); }
+    .controls { 
+      display: flex; gap: 8px; padding: 6px; border-radius: 14px;
+      background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid var(--border);
+    }
+    @media (prefers-color-scheme: dark) { .controls { background: rgba(44, 44, 46, 0.8); } }
+    
+    .controls input, .controls select { 
+      padding: 10px; border-radius: 10px; border: none; background: var(--bg); 
+      color: var(--text); font-size: 0.9rem; outline: none;
+    }
+    .controls input { flex: 2; }
+    .controls select { flex: 1.2; font-weight: 600; cursor: pointer; }
+
+    .section-group { margin-bottom: 25px; }
+    .section-title { 
+      margin: 20px 0 12px 4px; font-size: 1.1rem; font-weight: 700; 
+      color: var(--text); display: flex; align-items: center; gap: 8px;
+    }
+
+    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .card { 
+      background: var(--card); border-radius: 18px; padding: 18px; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02); border: 1px solid var(--border);
+    }
+
+    .info-list { list-style: none; padding: 0; margin: 0; }
+    .info-item { padding: 10px 0; border-bottom: 0.5px solid var(--border); }
+    .info-item:last-child { border-bottom: none; }
+    .info-label { display: block; font-size: 0.7rem; color: var(--sub); margin-bottom: 4px; font-weight: 600; text-transform: uppercase; }
+
+    .link-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 5px; }
+    .link-item {
+      display: flex; align-items: center; justify-content: center;
+      padding: 12px 8px; background: var(--bg); border-radius: 12px;
+      text-decoration: none; color: var(--text); font-size: 0.85rem;
+      font-weight: 500; text-align: center;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    .btn-link { 
+      display: inline-block; background: rgba(0, 122, 255, 0.1); color: var(--accent); 
+      padding: 4px 10px; border-radius: 8px; font-size: 0.8rem; margin: 4px 4px 0 0; font-weight: 600;
+    }
+    .nav-link { 
+      display: inline-block; background: var(--nav-bg); color: var(--nav-text); 
+      padding: 4px 10px; border-radius: 8px; font-size: 0.8rem; margin-top: 4px; font-weight: 700;
+    }
+    
+    #emptyState { display: none; text-align: center; padding: 40px; color: var(--sub); font-size: 0.9rem; }
+
+    footer { 
+      text-align: center; margin-top: 40px; color: var(--sub); font-size: 0.75rem; 
+      padding: 20px; line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="mini-header">
+  <h1>NC Misc</h1>
+  <span>NORTH CAROLINA</span>
+</div>
+
+<div class="container">
+
+  <div class="search-wrapper">
+    <div class="controls">
+      <input id="searchInput" type="search" placeholder="Search name or keywords..." />
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="news">📰 News</option>
+        <option value="life">🛍️ Shopping</option>
+        <option value="food">🍽️ Dining</option>
+        <option value="asianmarkets">🛒 Markets</option>
+        <option value="auto">🚗 Auto Services</option>
+        <option value="health">💪 Health</option>
+        <option value="farms">🍓 Farms</option>
+        <option value="finance">💰 Finance</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="emptyState">No results found</div>
+
+  <div id="contentList">
+    <div class="section-group" data-cat-group="news">
+      <div class="section-title">📰 Chinese News</div>
+      <div class="card item" data-category="news">
+        <div class="link-list">
+          <a class="link-item" href="https://www.wenxuecity.com/news/">Wenxuecity</a>
+          <a class="link-item" href="https://huaren.us/">Huaren.us</a>
+          <a class="link-item" href="https://www.creaders.net/">Creaders</a>
+          <a class="link-item" href="https://www.worldjournal.com/">World Journal</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="life">
+      <div class="section-title">🛍️ Life / Shopping</div>
+      <div class="card item" data-category="life">
+        <div class="link-list">
+          <a class="link-item" href="https://www.dealmoon.com/">Dealmoon</a>
+          <a class="link-item" href="https://www.yami.com/en">Yamibuy</a>
+          <a class="link-item" href="https://www.1point3acres.com/bbs/">1Point3Acres</a>
+          <a class="link-item" href="https://newmitbbs.com/">NewMitBBS</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="food">
+      <div class="section-title">🍽️ Local Dining</div>
+      <div class="card item" data-category="food">
+        <div class="info-list">
+          <div class="info-item">
+            <strong>East Pearl</strong><br>
+            <a href="#" class="nav-link">📍 1810 Liddell Ln</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">RTP Featured</span>
+            <a href="https://acaciatreenc.com">Acacia Tree</a> | <a href="https://www.chengdu7cary.com">Chengdu 7</a> | <a href="https://nanxiangexpress.com/menu/">Nan Xiang Express</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="asianmarkets">
+      <div class="section-title">🛒 Asian Markets & Kitchen</div>
+      <div class="card item" data-category="asianmarkets">
+        <div class="info-list">
+          <div class="info-item">
+            <strong>Super G Mart</strong><br>
+            <a href="#" class="nav-link">📍 Pineville</a> <a href="#" class="nav-link">📍 Independence</a>
+          </div>
+          <div class="info-item">
+            <strong>New Asia Market</strong><br>
+            <a href="#" class="nav-link">📍 4400 Potter Rd</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Kitchenware</span>
+            <a href="https://us.fotileglobal.com">Fotile Official</a> | <a href="https://www.bk-cookware.com/black-steel">BK Woks</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="auto">
+      <div class="section-title">🚗 Auto Services</div>
+      <div class="card item" data-category="auto">
+        <div class="info-list">
+          <div class="info-item"><span class="info-label">Repair</span><a href="http://www.createAutoBody.com">Create Auto Body</a> | <a href="https://www.pepboys.com/">Pep Boys</a></div>
+          <div class="info-item"><span class="info-label">Insurance</span>Progressive, Traveler, Cincinnati</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="health">
+      <div class="section-title">💪 Health & Medical</div>
+      <div class="card item" data-category="health">
+        <div class="info-list">
+          <div class="info-item"><span class="info-label">Dental</span><a href="https://brightdentalcharlotte.com">Bright Dental</a> | <a href="https://capstonedentalnc.com">Capstone</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 NC Chinese Life Guide<br>Bank of World · bankofworld@gmail.com</p>
+  </footer>
+</div>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+const items = document.querySelectorAll(".item");
+const groups = document.querySelectorAll(".section-group");
+const emptyState = document.getElementById("emptyState");
+
+function filterItems() {
+  const k = searchInput.value.toLowerCase().trim();
+  const c = categoryFilter.value;
+  let visibleTotal = 0;
+
+  items.forEach(item => {
+    const text = item.innerText.toLowerCase();
+    const matchSearch = text.includes(k);
+    const matchCategory = (c === "all" || item.dataset.category === c);
+    
+    if (matchSearch && matchCategory) {
+      item.style.display = "";
+      visibleTotal++;
+    } else {
+      item.style.display = "none";
+    }
+  });
+
+  groups.forEach(group => {
+    const visibleInGroup = group.querySelectorAll('.item:not([style*="display: none"])');
+    group.style.display = visibleInGroup.length > 0 ? "" : "none";
+  });
+
+  emptyState.style.display = visibleTotal > 0 ? "none" : "block";
+}
+
+searchInput.addEventListener("input", filterItems);
+categoryFilter.addEventListener("change", filterItems);
+</script>
+
+</body>
+</html>
