@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>NC Home Maintenance Database</title>
+  <style>
+    :root {
+      --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --sub: #8e8e93;
+      --primary: #34c759; --accent: #007aff; --border: rgba(0,0,0,0.08);
+      --tag-bg: rgba(0,122,255,0.1); --tag-text: #007aff;
+      --header-grad: linear-gradient(135deg, #2ecc71, #007aff);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000; --card: #1c1c1e; --text: #ffffff; --sub: #8e8e93;
+        --primary: #32d74b; --accent: #0a84ff; --border: rgba(255,255,255,0.1);
+        --tag-bg: rgba(10,132,255,0.2); --tag-text: #4fc3f7;
+      }
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body { 
+      margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; 
+      background: var(--bg); color: var(--text); line-height: 1.5; padding-bottom: 40px;
+    }
+    header { 
+      padding: 50px 20px 30px; background: var(--header-grad); color: white;
+      border-radius: 0 0 30px 30px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    header h1 { margin: 0; font-size: 1.8rem; font-weight: 800; }
+    header p { margin: 8px 0 0; font-size: 0.9rem; opacity: 0.85; }
+    .container { padding: 0 16px; max-width: 700px; margin: auto; }
+    .search-wrapper { position: sticky; top: 10px; z-index: 100; margin-bottom: 24px; }
+    .controls { 
+      display: flex; gap: 10px; padding: 8px; border-radius: 18px;
+      background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1); border: 1px solid var(--border);
+    }
+    @media (prefers-color-scheme: dark) { .controls { background: rgba(28, 28, 30, 0.7); } }
+    .controls input, .controls select { padding: 12px; border-radius: 12px; border: none; background: var(--bg); color: var(--text); font-size: 1rem; outline: none; }
+    .controls input { flex: 2; border: 1px solid transparent; }
+    .controls select { flex: 1.2; font-weight: 500; }
+    .section-title { font-size: 1.25rem; font-weight: 800; color: var(--text); margin: 32px 0 16px 4px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .card { background: var(--card); border-radius: 24px; padding: 22px; border: 1px solid var(--border); }
+    .card h3 { margin: 0 0 18px 0; font-size: 1.15rem; font-weight: 700; border-bottom: 1px solid var(--border); padding-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+    .info-list { list-style: none; padding: 0; margin: 0; }
+    .info-item { padding: 14px 0; border-bottom: 1px dashed var(--border); }
+    .info-item:last-child { border-bottom: none; }
+    .info-label { display: block; font-size: 0.8rem; color: var(--sub); margin-bottom: 6px; font-weight: 600; }
+    .info-content { font-size: 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+    a { color: var(--accent); text-decoration: none; }
+    .phone-link {
+      display: inline-flex; align-items: center; background: rgba(52, 199, 89, 0.1); color: #248a3d;
+      padding: 4px 10px; border-radius: 8px; font-weight: 600; font-size: 0.9rem;
+    }
+    @media (prefers-color-scheme: dark) { .phone-link { background: rgba(50, 215, 75, 0.15); color: #32d74b; } }
+    .tag { background: var(--tag-bg); color: var(--tag-text); font-size: 0.75rem; padding: 4px 10px; border-radius: 8px; font-weight: 600; }
+    footer { text-align: center; margin: 60px 0 20px; color: var(--sub); font-size: 0.85rem; padding: 0 20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>NC Home Maintenance Database</h1>
+  <p>Charlotte Community Resource · Comprehensive List</p>
+</header>
+
+<div class="container">
+  <div class="search-wrapper">
+    <div class="controls">
+      <input id="searchInput" type="search" placeholder="Search service, name, or phone..." />
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="home">🏠 Home Maintenance</option>
+        <option value="service">🧰 Professional Services</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="mainContent">
+    <div class="section-title">🏠 Home Maintenance</div>
+    <div class="grid">
+      <div class="card item" data-category="home">
+        <h3>Lawn & Trees <span class="tag">Popular</span></h3>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">Mowing</span>
+            <div class="info-content">Gary <a href="tel:7044581850" class="phone-link">📞 704-458-1850</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Aeration</span>
+            <div class="info-content">
+              <a href="https://www.greenyardaeration.com">Green Yard</a> or 
+              Rod <a href="tel:7044880814" class="phone-link">📞 704-488-0814</a> or 
+              Jose <a href="tel:7044974327" class="phone-link">📞 704-497-4327</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Exterior/Landscaping</span>
+            <div class="info-content"><a href="http://www.MrOutdoorLiving.com">Mr. Outdoor Living</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Pine Needles</span>
+            <div class="info-content"><a href="https://www.jjpineneedles.com">JJ Pine Needles</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Tree Removal</span>
+            <div class="info-content"><a href="tel:9803224589" class="phone-link">📞 980-322-4589‬</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Stump Removal</span>
+            <div class="info-content"><a href="https://cornerstonestumpremoval.com">Cornerstone</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card item" data-category="home">
+        <h3>Windows & Garage Doors</h3>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">Window & Glass Repair</span>
+            <div class="info-content">
+              <a href="https://glassdoctor.com">Glass Doctor</a> | 
+              <a href="https://dukevinylwindows.com">Duke Windows</a> <a href="tel:9803550756" class="phone-link">📞 980-355-0756</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Garage Doors</span>
+            <div class="info-content"><a href="https://bggaragedoors.com">B&G Garage Door</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">General Glass</span>
+            <div class="info-content"><a href="https://www.binswangerglass.com/">Binswanger Glass</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Garage Doors / Spring Replacement</span>
+            <div class="info-content">
+              <a href="tel:6172299263" class="phone-link">📞 617-229-9263</a> | 
+              <a href="https://quickfixgaragedoorservice.com">QuickFix</a> | 
+              <a href="https://www.tiptopgaragedoors.com">TipTop</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card item" data-category="home">
+        <h3>Roof, Paint & Walls</h3>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">Popcorn Ceiling Removal</span>
+            <div class="info-content"><a href="https://www.artisttouchdrywall.com/">Artist Touch Drywall</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Painting</span>
+            <div class="info-content">
+              JCP <a href="tel:3365779960" class="phone-link">📞 336-577-9960</a> | 
+              Dennis <a href="tel:9807223681" class="phone-link">📞 980-722-3681</a> | 
+              Christian <a href="tel:7042322668" class="phone-link">📞 704-232-2668</a> | 
+              Molina <a href="tel:9723656178" class="phone-link">📞 972-365-6178</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Roof Repair</span>
+            <div class="info-content">
+              Darryl <a href="tel:7048373967" class="phone-link">📞 704-837-3967</a> | 
+              Tony <a href="tel:9803294410" class="phone-link">📞 980-329-4410</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">New Roof Installation</span>
+            <div class="info-content">
+              <a href="https://www.newroofclt.com">New Roof</a> | 
+              <a href="https://charlotteaceroofing.com/">ACE Roofing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card item" data-category="home">
+        <h3>Flooring & Carpet</h3>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">Installation (Floor/Carpet)</span>
+            <div class="info-content">
+              William <a href="tel:8018317690" class="phone-link">📞 801-831-7690</a> | 
+              Robert <a href="tel:7042888713" class="phone-link">📞 704-288-8713</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Cleaning</span>
+            <div class="info-content">
+              ABC Care <a href="tel:7042015743" class="phone-link">📞 704-201-5743</a> | 
+              Luis <a href="tel:7047791322" class="phone-link">📞 704-779-1322</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Additional Contacts</span>
+            <div class="info-content">
+              Robert: robertwaynehicks@yahoo.com | 
+              <a href="https://www.reoflooringsolutions.com">R.E.O. Solutions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">🧰 Professional Services</div>
+    <div class="grid">
+      <div class="card item" data-category="service">
+        <h3>Moving, Locksmith & Specialized</h3>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">Moving Services</span>
+            <div class="info-content">
+              <a href="https://ballantynemoving.com">Ballantyne</a> | 
+              <a href="https://helpinghandscharlottenc.com">Helping Hands</a> | 
+              <a href="https://www.nbmoving.com">New Beginnings</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Moisture Analysis</span>
+            <div class="info-content">Morgan <a href="tel:9807227412" class="phone-link">📞 980-722-7412</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Emergency Locksmith</span>
+            <div class="info-content">Carissa <a href="tel:9802925625" class="phone-link">📞 980-292-5625</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Charlotte Life Guide<br>Contact: bankofworld@gmail.com</p>
+</footer>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+const items = document.querySelectorAll(".item");
+
+function filterItems() {
+  const keyword = searchInput.value.toLowerCase().trim();
+  const category = categoryFilter.value;
+  items.forEach(item => {
+    const text = item.innerText.toLowerCase();
+    const matchText = text.includes(keyword);
+    const matchCategory = category === "all" || item.dataset.category === category;
+    item.style.display = (matchText && matchCategory) ? "" : "none";
+  });
+}
+searchInput.addEventListener("input", filterItems);
+categoryFilter.addEventListener("change", filterItems);
+</script>
+</body>
+</html>
