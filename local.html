@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Health & Charlotte Events</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial, "Noto Sans",
+                   "PingFang SC", "Microsoft YaHei", sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 6px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    .placeholder {
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1 -->
+  <section>
+    <h2>本地卫生健康咨询</h2>
+    <ul>
+      <li>
+        <a href="https://www.ollietree.org/cn/%e6%a9%84%e6%a6%84%e6%a0%91%e8%b5%84%e8%ae%af/"
+           target="_blank">
+          橄榄树健康资讯
+        </a>
+      </li>
+
+      <!-- Placeholders for future content -->
+      <li class="placeholder">（预留：未来健康资源）</li>
+      <li class="placeholder">（预留：未来健康资源）</li>
+    </ul>
+  </section>
+
+  <!-- Section 2 -->
+  <section>
+    <h2>Upcoming Charlotte Events</h2>
+    <div id="events-content">Loading events…</div>
+  </section>
+
+  <script>
+    fetch('https://yonggewang.github.io/events/')
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        // Remove the page's own header/title to avoid duplication
+        const header = doc.querySelector('h1, h2');
+        if (header) {
+          header.remove();
+        }
+
+        document.getElementById('events-content').innerHTML =
+          doc.body.innerHTML;
+      })
+      .catch(err => {
+        document.getElementById('events-content').innerText =
+          'Failed to load events.';
+        console.error(err);
+      });
+  </script>
+
+</body>
+</html>
