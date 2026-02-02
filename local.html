@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>NC Community Guide | Local life</title>
+  <title>NC Life | Community Guide</title>
 
   <style>
     :root {
@@ -35,6 +35,7 @@
 
     .container { padding: 0 16px; max-width: 600px; margin: auto; }
 
+    /* Sticky Search Bar */
     .search-wrapper { position: sticky; top: 0; z-index: 100; padding: 10px 0; background: var(--bg); }
     .controls { 
       display: flex; flex-direction: column; gap: 8px; padding: 8px; border-radius: 14px;
@@ -51,13 +52,6 @@
     .controls input { flex: 2; }
     .controls select { flex: 1.2; font-weight: 600; cursor: pointer; }
 
-    .quick-link-area { padding: 2px 4px 4px; }
-    .quick-link {
-      display: inline-block; font-size: 0.75rem; color: var(--accent);
-      background: rgba(0, 122, 255, 0.1); padding: 4px 12px; border-radius: 20px;
-      font-weight: 600; text-decoration: none; border: 1px solid var(--accent);
-    }
-
     .section-group { margin-bottom: 25px; scroll-margin-top: 140px; }
     .section-title { 
       margin: 20px 0 12px 4px; font-size: 1.1rem; font-weight: 700; 
@@ -69,7 +63,9 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.02); border: 1px solid var(--border);
     }
 
-    #eventData { font-size: 0.9rem; }
+    .btn-link { font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: 600; margin-right: 10px;}
+
+    #eventData { font-size: 0.9rem; overflow: hidden; }
     #eventData ul { padding: 0; margin: 0; list-style: none; }
     #eventData li { margin-bottom: 12px; border-bottom: 0.5px solid var(--border); padding-bottom: 8px; }
     #eventData li:last-child { border-bottom: none; }
@@ -102,7 +98,6 @@
     }
     
     #emptyState { display: none; text-align: center; padding: 40px; color: var(--sub); font-size: 0.9rem; }
-
     footer { text-align: center; margin-top: 40px; color: var(--sub); font-size: 0.75rem; padding: 20px; }
   </style>
 </head>
@@ -110,8 +105,8 @@
 <body>
 
 <div class="mini-header">
-  <h1>Community Guide</h1>
-  <span>North Carolina</span>
+  <h1>NC Life</h1>
+  <span>Community Guide</span>
 </div>
 
 <div class="container">
@@ -122,17 +117,17 @@
         <input id="searchInput" type="search" placeholder="Search keywords..." />
         <select id="categoryFilter">
           <option value="all">All Categories</option>
-          <option value="events">📅 Events</option>
-	   <option value="health">💪 Health</option>
-          <option value="news">📰 News</option>
-          <option value="life">🛍️ Shopping</option>
-          <option value="food">🍽️ Dining</option>
-          <option value="asianmarkets">🛒 Markets</option>
-          <option value="auto">🚗 Auto</option>
+          <option value="events">⚡ Upcoming Events</option>
+          <option value="health">💪 Health & Medical</option>
+          <option value="news">📰 Chinese News</option>
+          <option value="life">🛍️ Shopping & Life</option>
+          <option value="food">🍽️ Nearby Dining</option>
+          <option value="asianmarkets">🛒 Asian Markets</option>
+          <option value="auto">🚗 Auto Services</option>
+          <option value="farms">🍓 U-Pick Farms</option>
+          <option value="finance">💰 Finance & Stocks</option>
+          <option value="internet">💻 Travel Internet</option>
         </select>
-      </div>
-      <div id="quickLinkArea" class="quick-link-area">
-        <a href="#events-section" class="quick-link">⚡ Jump to Upcoming Events</a>
       </div>
     </div>
   </div>
@@ -149,20 +144,21 @@
       </div>
     </div>
 
-        <div class="section-group" data-cat-group="health">
-      <div class="section-title">💪 Health & Medical</div>
+    <div class="section-group" data-cat-group="health">
+      <div class="section-title">💪 Health & Dental</div>
       <div class="card item" data-category="health">
         <div class="info-list">
-	  <a href="https://https://www.ollietree.org/cn/橄榄树资讯/">ollietree health news</a> |
-          <a href="https://brightdentalcharlotte.com">Bright Dental</a> | <a href="https://capstonedentalnc.com">Capstone Dental</a></div>
+          <div class="info-item">
+            <a href="https://www.ollietree.org/cn/%e6%a9%84%e6%a6%84%e6%a0%91%e8%b5%84%e8%ae%af/">Ollie Tree Health</a> | 
+            <a href="https://brightdentalcharlotte.com">Bright Dental</a> | 
+            <a href="https://capstonedentalnc.com">Capstone Dental</a>
+          </div>
         </div>
       </div>
     </div>
 
-
-
     <div class="section-group" data-cat-group="news">
-      <div class="section-title">📰 News & Media</div>
+      <div class="section-title">📰 Chinese News</div>
       <div class="card item" data-category="news">
         <div class="link-list">
           <a class="link-item" href="https://www.wenxuecity.com/news/">Wenxuecity</a>
@@ -186,7 +182,7 @@
     </div>
 
     <div class="section-group" data-cat-group="food">
-      <div class="section-title">🍽️ Local Dining</div>
+      <div class="section-title">🍽️ Nearby Dining</div>
       <div class="card item" data-category="food">
         <div class="info-list">
           <div class="info-item">
@@ -194,7 +190,11 @@
             <a href="#" class="nav-link">📍 1810 Liddell Ln</a>
           </div>
           <div class="info-item">
-            <span class="info-label">RTP Selections</span>
+            <strong>Royal China (Duluth)</strong><br>
+            <a href="#" class="nav-link">📍 3960 Venture Dr</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">RTP Featured</span>
             <a href="https://acaciatreenc.com">Acacia</a> | <a href="https://www.chengdu7cary.com">Chengdu 7</a> | <a href="https://nanxiangexpress.com/menu/">Nan Xiang</a>
           </div>
         </div>
@@ -202,16 +202,28 @@
     </div>
 
     <div class="section-group" data-cat-group="asianmarkets">
-      <div class="section-title">🛒 Asian Markets</div>
+      <div class="section-title">🛒 Asian Markets & Kitchen</div>
       <div class="card item" data-category="asianmarkets">
         <div class="info-list">
           <div class="info-item">
+            <strong>Bottoms Up Wine & Spirits</strong> (Chinese Liquor)<br>
+            <a href="https://www.facebook.com/sc.bottomsup/" class="btn-link">Facebook Page</a>
+            <a href="#" class="nav-link">📍 Fort Mill, SC</a>
+          </div>
+          <div class="info-item">
             <strong>Super G Mart</strong><br>
-            <a href="#" class="nav-link">📍 Pineville</a> <a href="#" class="nav-link">📍 Independence</a>
+            <a href="https://www.supergmart.com" class="btn-link">Official Site</a><br>
+            <a href="#" class="nav-link">📍 Pineville</a>
+            <a href="#" class="nav-link">📍 Independence</a>
           </div>
           <div class="info-item">
             <strong>New Asia Market</strong><br>
-            <a href="#" class="nav-link">📍 4400 Potter Rd</a>
+            <a href="#" class="nav-link">📍 4400 Potter Rd</a><br>
+            <a href="https://asianmarketplz.com" class="btn-link">The Plaza Website</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Kitchenware</span>
+            <a href="https://us.fotileglobal.com">Fotile</a> | <a href="https://www.bk-cookware.com/black-steel">BK Cookware</a>
           </div>
         </div>
       </div>
@@ -221,15 +233,66 @@
       <div class="section-title">🚗 Auto Services</div>
       <div class="card item" data-category="auto">
         <div class="info-list">
-          <div class="info-item"><span class="info-label">Repair</span><a href="http://www.createAutoBody.com">Create Auto Body</a> | <a href="https://www.pepboys.com/">Pep Boys</a></div>
+          <div class="info-item">
+            <span class="info-label">Repair Shops</span>
+            <a href="http://www.createAutoBody.com">Create Auto Body</a> | 
+            <a href="https://www.pepboys.com/">Pep Boys</a> |
+            <a href="https://www.mrinspectionmatthews.com">Mr. Inspection</a> 
+          </div>
           <div class="info-item"><span class="info-label">Insurance</span>Progressive, Traveler, Cincinnati</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="farms">
+      <div class="section-title">🍓 U-Pick Farms</div>
+      <div class="card item" data-category="farms">
+        <div class="info-list">
+          <div class="info-item">
+            <strong>Big H Farm</strong><br>
+            <a href="https://bighfarm.com" class="btn-link">Official Site</a>
+            <a href="#" class="nav-link">📍 1953 Dilling Farm Rd</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Other Popular Farms</span>
+            <a href="https://www.lockmanvineyard.com/">Lockman Vineyard</a> | 
+            <a href="https://www.linebergersfarm.com/">Lineberger's</a> | 
+            <a href="http://grandadsapples.com">Grandad Apple</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="internet">
+      <div class="section-title">💻📶 Travel Internet</div>
+      <div class="card item" data-category="internet">
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">eSIM Recommendations</span>
+            <a href="https://www.airalo.com/">Airalo</a> | 
+            <a href="https://etravelsim.com">etravelSIM</a> | 
+            <a href="https://www.getnomad.app/">Nomad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="finance">
+      <div class="section-title">💰 Finance & Stocks</div>
+      <div class="card item" data-category="finance">
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">Stock Tracking</span>
+            <a href="https://www.quiverquant.com/politicians/">Quiver Quantitative</a> | 
+            <a href="https://www.capitoltrades.com/">Capitol Trades</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <footer>
-    <p>© 2026 NC Community Guide<br>Bank of World · bankofworld@gmail.com</p>
+    <p>© 2026 NC Life Guide<br>Bank of World · bankofworld@gmail.com</p>
   </footer>
 </div>
 
@@ -247,7 +310,7 @@ async function loadEvents() {
     const allItems = Array.from(doc.querySelectorAll('li'));
     
     if (allItems.length === 0) {
-      eventData.innerHTML = "No events scheduled at this time.";
+      eventData.innerHTML = "No upcoming events scheduled.";
       return;
     }
 
@@ -284,7 +347,6 @@ showMoreBtn.addEventListener("click", () => {
 
 const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
-const quickLinkArea = document.getElementById("quickLinkArea");
 const items = document.querySelectorAll(".item");
 const groups = document.querySelectorAll(".section-group");
 const emptyState = document.getElementById("emptyState");
@@ -293,8 +355,6 @@ function filterItems() {
   const k = searchInput.value.toLowerCase().trim();
   const c = categoryFilter.value;
   let visibleTotal = 0;
-
-  quickLinkArea.style.display = (c === "all" && k === "") ? "block" : "none";
 
   items.forEach(item => {
     const text = item.innerText.toLowerCase();
@@ -319,7 +379,6 @@ function filterItems() {
 
 searchInput.addEventListener("input", filterItems);
 categoryFilter.addEventListener("change", filterItems);
-
 window.onload = loadEvents;
 </script>
 
