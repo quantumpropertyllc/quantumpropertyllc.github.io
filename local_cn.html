@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>北卡杂项 | NC Misc</title>
+
+  <style>
+    :root {
+      --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --sub: #8e8e93;
+      --primary: #5856d6; --accent: #007aff; --border: rgba(0,0,0,0.08);
+      --nav-bg: rgba(2, 136, 209, 0.1); --nav-text: #0288d1;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000; --card: #1c1c1e; --text: #ffffff; --sub: #8e8e93;
+        --primary: #5e5ce6; --accent: #0a84ff; --border: rgba(255,255,255,0.1);
+        --nav-bg: rgba(10, 132, 255, 0.15); --nav-text: #4fc3f7;
+      }
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    
+    body { 
+      margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; 
+      background: var(--bg); color: var(--text); line-height: 1.4;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .mini-header { padding: 15px 20px 10px; display: flex; justify-content: space-between; align-items: baseline; }
+    .mini-header h1 { margin: 0; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; }
+    .mini-header span { font-size: 0.8rem; color: var(--sub); font-weight: 500; }
+
+    .container { padding: 0 16px; max-width: 600px; margin: auto; }
+
+    /* Sticky Search Bar */
+    .search-wrapper { position: sticky; top: 0; z-index: 100; padding: 10px 0; background: var(--bg); }
+    .controls { 
+      display: flex; flex-direction: column; gap: 8px; padding: 8px; border-radius: 14px;
+      background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid var(--border);
+    }
+    .control-row { display: flex; gap: 8px; }
+    @media (prefers-color-scheme: dark) { .controls { background: rgba(44, 44, 46, 0.8); } }
+    
+    .controls input, .controls select { 
+      padding: 10px; border-radius: 10px; border: none; background: var(--bg); 
+      color: var(--text); font-size: 0.9rem; outline: none;
+    }
+    .controls input { flex: 2; }
+    .controls select { flex: 1.2; font-weight: 600; cursor: pointer; }
+
+    .quick-link-area { padding: 2px 4px 4px; }
+    .quick-link {
+      display: inline-block; font-size: 0.75rem; color: var(--accent);
+      background: rgba(0, 122, 255, 0.1); padding: 4px 12px; border-radius: 20px;
+      font-weight: 600; text-decoration: none; border: 1px solid var(--accent);
+    }
+
+    .section-group { margin-bottom: 25px; scroll-margin-top: 140px; }
+    .section-title { 
+      margin: 20px 0 12px 4px; font-size: 1.1rem; font-weight: 700; 
+      color: var(--text); display: flex; align-items: center; gap: 8px;
+    }
+
+    .card { 
+      background: var(--card); border-radius: 18px; padding: 18px; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02); border: 1px solid var(--border);
+    }
+
+    /* Event Content Styling */
+    #eventData { font-size: 0.9rem; overflow: hidden; }
+    #eventData ul { padding: 0; margin: 0; list-style: none; }
+    #eventData li { margin-bottom: 12px; border-bottom: 0.5px solid var(--border); padding-bottom: 8px; }
+    #eventData li:last-child { border-bottom: none; }
+    #eventData a { font-weight: 600; color: var(--accent); text-decoration: none; }
+
+    /* Collapsible Logic */
+    .hidden-events { display: none; }
+    .more-btn {
+      display: block; width: 100%; padding: 10px; margin-top: 10px;
+      background: var(--bg); color: var(--accent); border: none;
+      border-radius: 10px; font-weight: 700; font-size: 0.85rem; cursor: pointer;
+    }
+
+    .link-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 5px; }
+    .link-item {
+      display: flex; align-items: center; justify-content: center;
+      padding: 12px 8px; background: var(--bg); border-radius: 12px;
+      text-decoration: none; color: var(--text); font-size: 0.85rem;
+      font-weight: 500; text-align: center;
+    }
+
+    .info-list { list-style: none; padding: 0; margin: 0; }
+    .info-item { padding: 10px 0; border-bottom: 0.5px solid var(--border); }
+    .info-item:last-child { border-bottom: none; }
+    .info-label { display: block; font-size: 0.7rem; color: var(--sub); margin-bottom: 4px; font-weight: 600; text-transform: uppercase; }
+
+    a { color: var(--accent); text-decoration: none; }
+    .nav-link { 
+      display: inline-block; background: var(--nav-bg); color: var(--nav-text); 
+      padding: 4px 10px; border-radius: 8px; font-size: 0.8rem; margin-top: 4px; font-weight: 700;
+    }
+    
+    #emptyState { display: none; text-align: center; padding: 40px; color: var(--sub); font-size: 0.9rem; }
+
+    footer { text-align: center; margin-top: 40px; color: var(--sub); font-size: 0.75rem; padding: 20px; }
+  </style>
+</head>
+
+<body>
+
+<div class="mini-header">
+  <h1>北卡杂项</h1>
+  <span>NC MISC</span>
+</div>
+
+<div class="container">
+
+  <div class="search-wrapper">
+    <div class="controls">
+      <div class="control-row">
+        <input id="searchInput" type="search" placeholder="搜索名称或关键字..." />
+        <select id="categoryFilter">
+          <option value="all">全部分类</option>
+          <option value="events">📅 活动</option>
+	  <option value="health">💪 健康</option>
+          <option value="news">📰 新闻</option>
+          <option value="life">🛍️ 购物</option>
+          <option value="food">🍽️ 美食</option>
+          <option value="asianmarkets">🛒 超市</option>
+          <option value="auto">🚗 汽修</option>
+        </select>
+      </div>
+      <div id="quickLinkArea" class="quick-link-area">
+        <a href="#events-section" class="quick-link">⚡ 夏洛特近期活动 (Upcoming Events)</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="emptyState">未找到相关结果</div>
+
+  <div id="contentList">
+    
+    <div class="section-group" data-cat-group="events" id="events-section">
+      <div class="section-title">📅 Upcoming Charlotte Events</div>
+      <div class="card item" data-category="events">
+        <div id="eventData">正在加载活动内容...</div>
+        <button id="showMoreBtn" class="more-btn" style="display:none;">显示更多 / Show More</button>
+      </div>
+    </div>
+
+        <div class="section-group" data-cat-group="health">
+      <div class="section-title">💪 健康医疗</div>
+      <div class="card item" data-category="health">
+        <div class="info-list">
+          <div class="info-item">
+
+ <a href="https://www.ollietree.org/cn/%e6%a9%84%e6%a6%84%e6%a0%91%e8%b5%84%e8%ae%af/">橄榄树健康资讯</a> | <a href="https://brightdentalcharlotte.com">Bright Dental（牙科）</a> | <a href="https://capstonedentalnc.com">Capstone（牙科） </a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <div class="section-group" data-cat-group="news">
+      <div class="section-title">📰 华人新闻</div>
+      <div class="card item" data-category="news">
+        <div class="link-list">
+          <a class="link-item" href="https://www.wenxuecity.com/news/">文学城</a>
+          <a class="link-item" href="https://huaren.us/">华人.us</a>
+          <a class="link-item" href="https://www.creaders.net/">万维读者</a>
+          <a class="link-item" href="https://www.worldjournal.com/">世界日报</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="life">
+      <div class="section-title">🛍️ 吃喝玩乐 / 购物</div>
+      <div class="card item" data-category="life">
+        <div class="link-list">
+          <a class="link-item" href="https://www.dealmoon.com/">北美省钱快报</a>
+          <a class="link-item" href="https://www.yami.com/zh">亚米网</a>
+          <a class="link-item" href="https://www.1point3acres.com/bbs/">一亩三分地</a>
+          <a class="link-item" href="https://newmitbbs.com/">新未名空间</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="food">
+      <div class="section-title">🍽️ 周边美食</div>
+      <div class="card item" data-category="food">
+        <div class="info-list">
+          <div class="info-item">
+            <strong>东云阁 East Pearl</strong><br>
+            <a href="#" class="nav-link">📍 1810 Liddell Ln</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">RTP 精选</span>
+            <a href="https://acaciatreenc.com">玖食</a> | <a href="https://www.chengdu7cary.com">成都7号</a> | <a href="https://nanxiangexpress.com/menu/">南翔小笼</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="asianmarkets">
+      <div class="section-title">🛒 亚洲超市与厨具</div>
+      <div class="card item" data-category="asianmarkets">
+        <div class="info-list">
+          <div class="info-item">
+            <strong>Super G Mart</strong><br>
+            <a href="#" class="nav-link">📍 Pineville 店</a> <a href="#" class="nav-link">📍 Independence 店</a>
+          </div>
+          <div class="info-item">
+            <strong>新亚洲超市</strong><br>
+            <a href="#" class="nav-link">📍 4400 Potter Rd</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">厨具</span>
+            <a href="https://us.fotileglobal.com">方太官网</a> | <a href="https://www.bk-cookware.com/black-steel">BK炒锅</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="auto">
+      <div class="section-title">🚗 汽车服务</div>
+      <div class="card item" data-category="auto">
+        <div class="info-list">
+          <div class="info-item"><span class="info-label">汽修</span><a href="http://www.createAutoBody.com">Create Auto Body</a> | <a href="https://www.pepboys.com/">Pep boys</a></div>
+          <div class="info-item"><span class="info-label">保险</span>Progressive, Traveler, Cincinnati</div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <footer>
+    <p>© 2026 北卡华人生活指南<br>Bank of World · bankofworld@gmail.com</p>
+  </footer>
+</div>
+
+<script>
+const eventData = document.getElementById("eventData");
+const showMoreBtn = document.getElementById("showMoreBtn");
+
+async function loadEvents() {
+  try {
+    const response = await fetch('https://yonggewang.github.io/events/');
+    if (!response.ok) throw new Error();
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    
+    // Find all list items from the fetched source
+    const allItems = Array.from(doc.querySelectorAll('li'));
+    
+    if (allItems.length === 0) {
+      eventData.innerHTML = "暂无活动信息。";
+      return;
+    }
+
+    // Display first 3 items
+    const visibleItems = allItems.slice(0, 3);
+    const hiddenItems = allItems.slice(3);
+
+    let contentHtml = '<ul>';
+    visibleItems.forEach(li => contentHtml += li.outerHTML);
+    
+    if (hiddenItems.length > 0) {
+      contentHtml += '<div id="moreContent" class="hidden-events">';
+      hiddenItems.forEach(li => contentHtml += li.outerHTML);
+      contentHtml += '</div>';
+      showMoreBtn.style.display = "block";
+    }
+    contentHtml += '</ul>';
+    
+    eventData.innerHTML = contentHtml;
+  } catch (error) {
+    eventData.innerHTML = '<span style="color:red;">加载失败。</span>';
+  }
+}
+
+showMoreBtn.addEventListener("click", () => {
+  const moreContent = document.getElementById("moreContent");
+  if (moreContent.style.display === "block") {
+    moreContent.style.display = "none";
+    showMoreBtn.innerText = "显示更多 / Show More";
+  } else {
+    moreContent.style.display = "block";
+    showMoreBtn.innerText = "收起 / Show Less";
+  }
+});
+
+// Search and Filter Logic
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+const quickLinkArea = document.getElementById("quickLinkArea");
+const items = document.querySelectorAll(".item");
+const groups = document.querySelectorAll(".section-group");
+const emptyState = document.getElementById("emptyState");
+
+function filterItems() {
+  const k = searchInput.value.toLowerCase().trim();
+  const c = categoryFilter.value;
+  let visibleTotal = 0;
+
+  quickLinkArea.style.display = (c === "all" && k === "") ? "block" : "none";
+
+  items.forEach(item => {
+    const text = item.innerText.toLowerCase();
+    const matchSearch = text.includes(k);
+    const matchCategory = (c === "all" || item.dataset.category === c);
+    
+    if (matchSearch && matchCategory) {
+      item.style.display = "";
+      visibleTotal++;
+    } else {
+      item.style.display = "none";
+    }
+  });
+
+  groups.forEach(group => {
+    const visibleInGroup = group.querySelectorAll('.item:not([style*="display: none"])');
+    group.style.display = visibleInGroup.length > 0 ? "" : "none";
+  });
+
+  emptyState.style.display = visibleTotal > 0 ? "none" : "block";
+}
+
+searchInput.addEventListener("input", filterItems);
+categoryFilter.addEventListener("change", filterItems);
+
+window.onload = loadEvents;
+</script>
+
+</body>
+</html>
