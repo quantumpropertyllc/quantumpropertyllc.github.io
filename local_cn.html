@@ -35,7 +35,6 @@
 
     .container { padding: 0 16px; max-width: 600px; margin: auto; }
 
-    /* Sticky Search Bar */
     .search-wrapper { position: sticky; top: 0; z-index: 100; padding: 10px 0; background: var(--bg); }
     .controls { 
       display: flex; flex-direction: column; gap: 8px; padding: 8px; border-radius: 14px;
@@ -52,13 +51,6 @@
     .controls input { flex: 2; }
     .controls select { flex: 1.2; font-weight: 600; cursor: pointer; }
 
-    .quick-link-area { padding: 2px 4px 4px; }
-    .quick-link {
-      display: inline-block; font-size: 0.75rem; color: var(--accent);
-      background: rgba(0, 122, 255, 0.1); padding: 4px 12px; border-radius: 20px;
-      font-weight: 600; text-decoration: none; border: 1px solid var(--accent);
-    }
-
     .section-group { margin-bottom: 25px; scroll-margin-top: 140px; }
     .section-title { 
       margin: 20px 0 12px 4px; font-size: 1.1rem; font-weight: 700; 
@@ -70,14 +62,16 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.02); border: 1px solid var(--border);
     }
 
-    /* Event Content Styling */
+    /* Missing styles added here */
+    .btn-link { font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: 600; margin-right: 10px;}
+    .grid { display: block; } 
+
     #eventData { font-size: 0.9rem; overflow: hidden; }
     #eventData ul { padding: 0; margin: 0; list-style: none; }
     #eventData li { margin-bottom: 12px; border-bottom: 0.5px solid var(--border); padding-bottom: 8px; }
     #eventData li:last-child { border-bottom: none; }
     #eventData a { font-weight: 600; color: var(--accent); text-decoration: none; }
 
-    /* Collapsible Logic */
     .hidden-events { display: none; }
     .more-btn {
       display: block; width: 100%; padding: 10px; margin-top: 10px;
@@ -105,7 +99,6 @@
     }
     
     #emptyState { display: none; text-align: center; padding: 40px; color: var(--sub); font-size: 0.9rem; }
-
     footer { text-align: center; margin-top: 40px; color: var(--sub); font-size: 0.75rem; padding: 20px; }
   </style>
 </head>
@@ -118,24 +111,23 @@
 </div>
 
 <div class="container">
-
   <div class="search-wrapper">
     <div class="controls">
       <div class="control-row">
         <input id="searchInput" type="search" placeholder="搜索名称或关键字..." />
         <select id="categoryFilter">
           <option value="all">全部分类</option>
-          <option value="events">📅 活动</option>
-	  <option value="health">💪 健康</option>
-          <option value="news">📰 新闻</option>
-          <option value="life">🛍️ 购物</option>
-          <option value="food">🍽️ 美食</option>
-          <option value="asianmarkets">🛒 超市</option>
-          <option value="auto">🚗 汽修</option>
+          <option value="events">⚡ 近期活动 </option>
+          <option value="health">💪 健康医疗</option>
+          <option value="news">📰 华人新闻</option>
+          <option value="life">🛍️ 网上购物</option>
+          <option value="food">🍽️ 周边美食</option>
+          <option value="asianmarkets">🛒 亚洲厨房</option>
+          <option value="auto">🚗 汽车服务</option>
+          <option value="farms">🍓 田园采摘</option>
+          <option value="finance">💰 金融股市</option>
+          <option value="internet">💻 外出上网</option>
         </select>
-      </div>
-      <div id="quickLinkArea" class="quick-link-area">
-        <a href="#events-section" class="quick-link">⚡ 夏洛特近期活动 (Upcoming Events)</a>
       </div>
     </div>
   </div>
@@ -143,27 +135,27 @@
   <div id="emptyState">未找到相关结果</div>
 
   <div id="contentList">
-    
     <div class="section-group" data-cat-group="events" id="events-section">
-      <div class="section-title">📅 Upcoming Charlotte Events</div>
+      <div class="section-title">📅 夏洛特近期活动</div>
       <div class="card item" data-category="events">
         <div id="eventData">正在加载活动内容...</div>
-        <button id="showMoreBtn" class="more-btn" style="display:none;">显示更多 / Show More</button>
+        <button id="showMoreBtn" class="more-btn" style="display:none;">显示更多</button>
       </div>
     </div>
 
-        <div class="section-group" data-cat-group="health">
+    <div class="section-group" data-cat-group="health">
       <div class="section-title">💪 健康医疗</div>
       <div class="card item" data-category="health">
         <div class="info-list">
           <div class="info-item">
-
- <a href="https://www.ollietree.org/cn/%e6%a9%84%e6%a6%84%e6%a0%91%e8%b5%84%e8%ae%af/">橄榄树健康资讯</a> | <a href="https://brightdentalcharlotte.com">Bright Dental（牙科）</a> | <a href="https://capstonedentalnc.com">Capstone（牙科） </a></div>
+            <a href="https://www.ollietree.org/cn/%e6%a9%84%e6%a6%84%e6%a0%91%e8%b5%84%e8%ae%af/">橄榄树健康资讯</a> | 
+            <a href="https://brightdentalcharlotte.com">Bright Dental（牙科）</a> | 
+            <a href="https://capstonedentalnc.com">Capstone（牙科）</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
+
     <div class="section-group" data-cat-group="news">
       <div class="section-title">📰 华人新闻</div>
       <div class="card item" data-category="news">
@@ -177,7 +169,7 @@
     </div>
 
     <div class="section-group" data-cat-group="life">
-      <div class="section-title">🛍️ 吃喝玩乐 / 购物</div>
+      <div class="section-title">🛍️ 网上购物</div>
       <div class="card item" data-category="life">
         <div class="link-list">
           <a class="link-item" href="https://www.dealmoon.com/">北美省钱快报</a>
@@ -197,6 +189,10 @@
             <a href="#" class="nav-link">📍 1810 Liddell Ln</a>
           </div>
           <div class="info-item">
+            <strong>金冠 Royal China (Duluth)</strong><br>
+            <a href="https://maps.google.com/?q=3960+Venture+Dr" class="nav-link">📍 3960 Venture Dr</a>
+          </div>
+          <div class="info-item">
             <span class="info-label">RTP 精选</span>
             <a href="https://acaciatreenc.com">玖食</a> | <a href="https://www.chengdu7cary.com">成都7号</a> | <a href="https://nanxiangexpress.com/menu/">南翔小笼</a>
           </div>
@@ -205,16 +201,24 @@
     </div>
 
     <div class="section-group" data-cat-group="asianmarkets">
-      <div class="section-title">🛒 亚洲超市与厨具</div>
+      <div class="section-title">🛒 亚洲厨房</div>
       <div class="card item" data-category="asianmarkets">
         <div class="info-list">
           <div class="info-item">
-            <strong>Super G Mart</strong><br>
-            <a href="#" class="nav-link">📍 Pineville 店</a> <a href="#" class="nav-link">📍 Independence 店</a>
+            <strong>Bottoms Up Wine & Spirits</strong> (买国酒)<br>
+            <a href="https://www.facebook.com/sc.bottomsup/" class="btn-link">Facebook 网页</a>
+            <a href="https://maps.google.com/?q=Fort+Mill,+SC" class="nav-link">📍 Fort Mill, SC</a>
           </div>
           <div class="info-item">
-            <strong>新亚洲超市</strong><br>
-            <a href="#" class="nav-link">📍 4400 Potter Rd</a>
+            <strong>Super G Mart</strong><br>
+            <a href="https://www.supergmart.com" class="btn-link">官方主页</a><br>
+            <a href="https://maps.google.com/?q=Super+G+Mart+Pineville" class="nav-link">📍 Pineville 店</a>
+            <a href="https://maps.google.com/?q=Super+G+Mart+Independence" class="nav-link">📍 Independence 店</a>
+          </div>
+          <div class="info-item">
+            <strong>新亚洲超市 (New Asia)</strong><br>
+            <a href="https://maps.google.com/?q=4400+Potter+Rd" class="nav-link">📍 4400 Potter Rd</a><br>
+            <a href="https://asianmarketplz.com" class="btn-link">The Plaza 店网页</a>
           </div>
           <div class="info-item">
             <span class="info-label">厨具</span>
@@ -228,13 +232,63 @@
       <div class="section-title">🚗 汽车服务</div>
       <div class="card item" data-category="auto">
         <div class="info-list">
-          <div class="info-item"><span class="info-label">汽修</span><a href="http://www.createAutoBody.com">Create Auto Body</a> | <a href="https://www.pepboys.com/">Pep boys</a></div>
+          <div class="info-item">
+            <span class="info-label">汽修</span>
+            <a href="http://www.createAutoBody.com">Create Auto Body</a> | 
+            <a href="https://www.pepboys.com/">Pep boys</a> |
+            <a href="https://www.mrinspectionmatthews.com">Mr. Inspection</a> 
+          </div>
           <div class="info-item"><span class="info-label">保险</span>Progressive, Traveler, Cincinnati</div>
         </div>
       </div>
     </div>
 
+    <div class="section-group" data-cat-group="farms">
+      <div class="section-title">🍓 田园采摘 (U-Pick Farms)</div>
+      <div class="card item" data-category="farms">
+        <div class="info-list">
+          <div class="info-item">
+            <strong>Big H Farm</strong><br>
+            <a href="https://bighfarm.com" class="btn-link">官方网站</a>
+            <a href="https://maps.google.com/?q=1953+Dilling+Farm+Rd" class="nav-link">📍 1953 Dilling Farm Rd</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">其他热门农场</span>
+            <a href="https://www.lockmanvineyard.com/">Lockman Vineyard</a> | 
+            <a href="https://www.linebergersfarm.com/">Lineberger's farm</a> | 
+            <a href="http://grandadsapples.com">Grandad Apple</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="section-group" data-cat-group="internet">
+      <div class="section-title">💻📶 外出上网 (Internet)</div>
+      <div class="card item" data-category="internet">
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">全球漫游 eSIM 推荐</span>
+            <a href="https://www.airalo.com/">Airalo</a> | 
+            <a href="https://etravelsim.com">etravelSIM</a> | 
+            <a href="https://www.getnomad.app/">Nomad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group" data-cat-group="finance">
+      <div class="section-title">💰 金融与股市 (Finance)</div>
+      <div class="card item" data-category="finance">
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">跟议员买股票</span>
+            <a href="https://www.quiverquant.com/politicians/">Quiver</a> | 
+            <a href="https://www.capitoltrades.com/">Capital Trades</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>© 2026 北卡华人生活指南<br>Bank of World · bankofworld@gmail.com</p>
@@ -252,8 +306,6 @@ async function loadEvents() {
     const html = await response.text();
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
-    
-    // Find all list items from the fetched source
     const allItems = Array.from(doc.querySelectorAll('li'));
     
     if (allItems.length === 0) {
@@ -261,9 +313,9 @@ async function loadEvents() {
       return;
     }
 
-    // Display first 3 items
-    const visibleItems = allItems.slice(0, 3);
-    const hiddenItems = allItems.slice(3);
+    // Fixed slice logic
+    const visibleItems = allItems.slice(0, 2);
+    const hiddenItems = allItems.slice(2);
 
     let contentHtml = '<ul>';
     visibleItems.forEach(li => contentHtml += li.outerHTML);
@@ -286,17 +338,15 @@ showMoreBtn.addEventListener("click", () => {
   const moreContent = document.getElementById("moreContent");
   if (moreContent.style.display === "block") {
     moreContent.style.display = "none";
-    showMoreBtn.innerText = "显示更多 / Show More";
+    showMoreBtn.innerText = "显示更多";
   } else {
     moreContent.style.display = "block";
-    showMoreBtn.innerText = "收起 / Show Less";
+    showMoreBtn.innerText = "收起";
   }
 });
 
-// Search and Filter Logic
 const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
-const quickLinkArea = document.getElementById("quickLinkArea");
 const items = document.querySelectorAll(".item");
 const groups = document.querySelectorAll(".section-group");
 const emptyState = document.getElementById("emptyState");
@@ -305,8 +355,6 @@ function filterItems() {
   const k = searchInput.value.toLowerCase().trim();
   const c = categoryFilter.value;
   let visibleTotal = 0;
-
-  quickLinkArea.style.display = (c === "all" && k === "") ? "block" : "none";
 
   items.forEach(item => {
     const text = item.innerText.toLowerCase();
@@ -331,7 +379,6 @@ function filterItems() {
 
 searchInput.addEventListener("input", filterItems);
 categoryFilter.addEventListener("change", filterItems);
-
 window.onload = loadEvents;
 </script>
 
