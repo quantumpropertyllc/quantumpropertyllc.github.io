@@ -2,11 +2,29 @@
 const CHARLOTTE_COORDS = [35.2271, -80.8431];
 const INITIAL_ZOOM = 12;
 
+// 0. Safety Wrapper & Diagnostics (RESTORED FOR V11)
+function showDiagnostic(msg) {
+    const intro = document.getElementById('intro-text');
+    if (!intro) return;
+
+    let statusEl = document.getElementById('js-status');
+    if (!statusEl) {
+        statusEl = document.createElement('div');
+        statusEl.id = 'js-status';
+        statusEl.className = 'mt-2 p-2 bg-blue-50 text-blue-800 text-[10px] rounded border border-blue-100 font-mono break-all z-50 relative';
+        intro.appendChild(statusEl);
+    }
+    statusEl.textContent = "Status: " + msg;
+    console.log("DIAGNOSTIC:", msg);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     initMap();
     setupUI();
+    showDiagnostic("Ready (v11 - DEBUG MODE)");
 });
+
+// ... (map init and layers objects remain same) ...
 
 let map;
 let layers = {
@@ -19,13 +37,18 @@ let layers = {
 function initMap() {
     // 1. Initialize Map
     map = L.map('map', {
-        zoomControl: false // Disable default to add manually
+        zoomControl: false
     }).setView(CHARLOTTE_COORDS, INITIAL_ZOOM);
 
     // 1.5 Add Zoom Control to Top Right
     L.control.zoom({
         position: 'topright'
     }).addTo(map);
+
+    // Global debug click to see if map interaction works at all
+    map.on('click', (e) => {
+        showDiagnostic(`Map Click: ${e.latlng.lat.toFixed(4)}, ${e.latlng.lng.toFixed(4)}`);
+    });
 
     // 2. Add Base Tile Layer
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
@@ -35,10 +58,203 @@ function initMap() {
     }).addTo(map);
 
     // 3. Load Initial Data
-    loadLayer('rezonings', 'rezoning', renderRezoningLayer);
-    loadLayer('transit_projects', 'transit', renderTransitLayer, false); // Default off
-    loadLayer('cip_projects', 'cip', renderCIPLayer, false); // Default off
-    loadLayer('cmpd_incidents', 'crime', renderCrimeHeatmap, false); // Default off
+    loadLayer('planning/rezonings', 'rezoning', renderRezoningLayer);
+    loadLayer('infrastructure/transit_projects', 'transit', renderTransitLayer, false); // Default off
+    loadLayer('infrastructure/cip_projects', 'cip', renderCIPLayer, false); // Default off
+    loadLayer('risk/cmpd_incidents', 'crime', renderCrimeHeatmap, false); // Default off
+}
+
+// ... (renderers unchanged until onEachFeature) ...
+
+function onEachFeature(feature, layer, type) {
+    const handleInteraction = (e) => {
+        // v11 Debugging
+        console.log(`Event: ${e.type} on ${type}`);
+        showDiagnostic(`${e.type} on ${type}`);
+
+        try {
+            L.DomEvent.stopPropagation(e);
+
+            // Debugging Zoom
+            const target = e.target;
+            if (target.getBounds) {
+                showDiagnostic("Zooming to bounds...");
+                map.fitBounds(target.getBounds());
+            } else if (target.getLatLng) {
+                showDiagnostic("Zooming to point...");
+                map.setView(target.getLatLng(), 16);
+            } else {
+                showDiagnostic("Err: No bounds/latlng found");
+            }
+
+            // Debugging Sidebar
+            updateSidebar(feature.properties, type);
+        } catch (err) {
+            console.error("Interaction Error:", err);
+            showDiagnostic(`Err: ${err.message}`);
+        }
+    };
+
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: (e) => resetHighlight(e, type),
+        click: handleInteraction,
+        touchstart: handleInteraction
+    });
+}
+
+
+// ... (interaction helpers) ...
+
+// REMOVED standalone zoomToFeature to keep logic inside try/catch above for now
+
+// ... (sidebar content) ...
+
+function updateSidebar(props, type) {
+    showDiagnostic(`Sidebar: ${type} / ${props ? 'Has Props' : 'No Props'}`);
+    console.log("Sidebar Update:", { type, props });
+
+    // ... (content logic) ... 
+    const panel = document.getElementById('details-panel');
+    const intro = document.getElementById('intro-text');
+
+    // Safety check
+    if (!panel || !intro) {
+        showDiagnostic("Err: Missing sidebar elements");
+        return;
+    }
+
+    panel.classList.remove('hidden');
+    intro.classList.add('hidden');
+
+    // ... (rendering logic same as before) ...
+
+    // Default fields
+    let title = "Unknown Project";
+    let status = "N/A";
+    let desc = "No description.";
+    let details = {};
+
+    if (type === 'rezoning') {
+        title = `Petition ${props.Petition || props.PETITION || "N/A"}`;
+        status = props.Status || props.STATUS || "Unknown";
+        desc = props.RezoningReason || props.REZONING_REASON || props.ProjName || "No description available.";
+        details = {
+            "Petitioner": props.Petitioner || props.PETITIONER,
+            "Existing Zoning": props.ExistingZoning || props.EXISTING_ZONING,
+            "Proposed Zoning": props.ProposedZoning || props.PROPOSED_ZONING
+        };
+    } else if (type === 'transit') {
+        title = props.ProjectName || props.Station || "Transit Project";
+        status = props.Status || "Unknown";
+        desc = props.Notes || "No notes.";
+        details = {
+            "Corridor": props.Corridor,
+            "Developer": props.Developer,
+            "Land Use": props.LandUse,
+            "Res. Units": props.ResidentialUnits
+        };
+    } else if (type === 'cip') {
+        title = props.ProjectName || "Capital Project";
+        status = "In Progress";
+        desc = props.ProjectDesc || "No description.";
+        details = {
+            "Department": props.Department,
+            "Cost": props.TotalBudget ? `$${props.TotalBudget}` : "N/A"
+        };
+    } else if (type === 'crime') {
+        title = "Crime Incident";
+        // Convert timestamp if needed, or use as is
+        const dateStr = props.DATE_REPORTED ? new Date(props.DATE_REPORTED).toLocaleDateString() : "Unknown Date";
+
+        status = props.YEAR || "Reported";
+        desc = props.LOCATION || "No location description.";
+        details = {
+            "Type": props.HIGHEST_NIBRS_DESCRIPTION || "N/A",
+            "Report ID": props.INCIDENT_REPORT_ID || "N/A",
+            "Date": dateStr
+        };
+    }
+
+    // Render Logic
+    document.getElementById('prop-petition').textContent = title;
+
+    // Status Badge
+    const statusEl = document.getElementById('prop-status');
+    statusEl.textContent = status;
+    statusEl.className = "inline-block px-2 py-1 text-xs font-semibold rounded mb-4 bg-gray-200 text-gray-800";
+    if (status.toLowerCase().includes('approved') || status.toLowerCase().includes('complete')) {
+        statusEl.classList.add('bg-green-100', 'text-green-800');
+    } else if (status.toLowerCase().includes('denied') || status.toLowerCase().includes('withdraw')) {
+        statusEl.classList.add('bg-red-100', 'text-red-800');
+    }
+
+    document.getElementById('prop-notes').textContent = desc;
+
+    // Dynamic Builder for Details
+    const container = document.getElementById('details-container');
+    if (container) {
+        container.innerHTML = '';
+        for (const [key, value] of Object.entries(details)) {
+            if (value) {
+                const div = document.createElement('div');
+                div.className = 'pb-3 border-b border-gray-100 last:border-0';
+                div.innerHTML = `
+                    <div class="text-xs text-gray-500 font-medium mb-1">${key}</div>
+                    <div class="text-sm text-gray-900">${value}</div>
+                `;
+                container.appendChild(div);
+            }
+        }
+
+        // Add description
+        if (desc && desc !== "No description.") {
+            const descDiv = document.createElement('div');
+            descDiv.className = 'pt-2';
+            descDiv.innerHTML = `
+                <div class="text-xs text-gray-500 font-medium mb-1">Description</div>
+                <div class="text-sm text-gray-700 leading-relaxed">${desc}</div>
+            `;
+            container.appendChild(descDiv);
+        }
+    }
+
+    // Auto-open sidebar on mobile
+    if (window.innerWidth < 640) {
+        showDiagnostic("Opening sidebar (Mobile)...");
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar) {
+            sidebar.classList.remove('-translate-x-full');
+        } else {
+            showDiagnostic("Err: Sidebar not found");
+        }
+    } else {
+        showDiagnostic("Sidebar updated (Desktop)");
+    }
+}
+
+function setupUI() {
+    // ... (listeners) ...
+    document.getElementById('close-sidebar').addEventListener('click', () => {
+        document.getElementById('sidebar').classList.add('-translate-x-full');
+    });
+    document.getElementById('open-sidebar').addEventListener('click', () => {
+        document.getElementById('sidebar').classList.remove('-translate-x-full');
+    });
+
+    setupLayerToggle('layer-rezoning', 'rezoning');
+    setupLayerToggle('layer-transit', 'transit');
+    setupLayerToggle('layer-cip', 'cip');
+    setupLayerToggle('layer-crime', 'crime');
+
+    // Fix: Append version to the container DIV, not the H1, to avoid i18n overwrite
+    const headerDiv = document.querySelector('#sidebar .flex.items-center.gap-3 .flex-1');
+    if (headerDiv) {
+        const v = document.createElement('div');
+        v.className = 'text-[10px] text-blue-200 font-mono mt-0.5';
+        v.textContent = 'v11 (DEBUG)';
+        headerDiv.appendChild(v);
+    }
 }
 
 async function loadLayer(fileName, layerKey, renderFunction, addToMap = true) {
@@ -54,6 +270,7 @@ async function loadLayer(fileName, layerKey, renderFunction, addToMap = true) {
         }
     } catch (error) {
         console.warn(`Failed to load ${fileName}:`, error);
+        showDiagnostic(`Load Err: ${fileName}`);
     }
 }
 
@@ -129,19 +346,21 @@ function renderCrimeHeatmap(geoJsonData) {
     });
 
     // 2. Create visible clickable markers for interaction (Red Dots)
-    // FORCE SVG rendering in the markerPane (z-index 600) to ensure they sit above the heatmap (z-index 350)
     const markerRenderer = L.svg({ pane: 'markerPane' });
 
     const markersLayer = L.geoJSON(geoJsonData, {
         pointToLayer: (feature, latlng) => {
+            // Confirm marker creation
+            console.log("Creating marker at", latlng);
             return L.circleMarker(latlng, {
-                renderer: markerRenderer, // Force SVG renderer
+                renderer: markerRenderer,
                 interactive: true,
                 radius: 6,
                 fillColor: '#ef4444', // Red
                 color: '#991b1b', // Dark Red border
                 weight: 1,
-                fillOpacity: 0.9
+                fillOpacity: 0.9,
+                pane: 'markerPane' // Explicitly set pane again just in case
             });
         },
         onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'crime')
@@ -239,59 +458,101 @@ function updateSidebar(props, type) {
         };
     } else if (type === 'cip') {
         title = props.ProjectName || "Capital Project";
-        status = "In Progress"; // Since we fetched from 'In-Progress' layer
+        status = "In Progress";
         desc = props.ProjectDesc || "No description.";
         details = {
             "Department": props.Department,
             "Cost": props.TotalBudget ? `$${props.TotalBudget}` : "N/A"
         };
+    } else if (type === 'crime') {
+        title = "Crime Incident";
+
+        // Defensive property access helper
+        const getProp = (keys) => {
+            for (const k of keys) {
+                if (props[k] !== undefined) return props[k];
+            }
+            return null;
+        };
+
+        const dateVal = getProp(['DATE_REPORTED', 'date_reported', 'incident_datetime', 'DateReported']);
+        const dateStr = dateVal ? new Date(dateVal).toLocaleDateString() : "Unknown Date";
+
+        status = getProp(['YEAR', 'year', 'Year']) || "Reported";
+        desc = getProp(['LOCATION', 'location', 'Location', 'location_description']) || "No location description.";
+
+        details = {
+            "Type": getProp(['HIGHEST_NIBRS_DESCRIPTION', 'highest_nibrs_description', 'offense_type_description', 'Description']) || "N/A",
+            "Report ID": getProp(['INCIDENT_REPORT_ID', 'incident_report_id', 'IncidentReportId']) || "N/A",
+            "Date": dateStr
+        };
+
+        // Debug
+        const debugKeys = Object.keys(props).slice(0, 5).join(',');
+        showDiagnostic(`Props: ${debugKeys}`);
+        console.log("Crime Details:", details);
     }
 
     // Render Logic
-    document.getElementById('prop-petition').textContent = title;
+    const titleEl = document.getElementById('prop-petition');
+    const statusEl = document.getElementById('prop-status');
+    const notesEl = document.getElementById('prop-notes');
+    const container = document.getElementById('details-container');
+
+    if (titleEl) titleEl.textContent = title;
 
     // Status Badge
-    const statusEl = document.getElementById('prop-status');
-    statusEl.textContent = status;
-    statusEl.className = "inline-block px-2 py-1 text-xs font-semibold rounded mb-4 bg-gray-200 text-gray-800"; // Default
-    if (status.toLowerCase().includes('approved') || status.toLowerCase().includes('complete')) {
-        statusEl.classList.add('bg-green-100', 'text-green-800');
-    } else if (status.toLowerCase().includes('denied') || status.toLowerCase().includes('withdraw')) {
-        statusEl.classList.add('bg-red-100', 'text-red-800');
-    }
-
-    document.getElementById('prop-notes').textContent = desc;
-
-    // Dynamic Builder for Details - Mobile optimized
-    const container = document.getElementById('details-container');
-    container.innerHTML = ''; // Clear previous
-
-    for (const [key, value] of Object.entries(details)) {
-        if (value) {
-            const div = document.createElement('div');
-            div.className = 'pb-3 border-b border-gray-100 last:border-0';
-            div.innerHTML = `
-                <div class="text-xs text-gray-500 font-medium mb-1">${key}</div>
-                <div class="text-sm text-gray-900">${value}</div>
-            `;
-            container.appendChild(div);
+    if (statusEl) {
+        statusEl.textContent = status;
+        statusEl.className = "inline-block px-2 py-1 text-xs font-semibold rounded mb-4 bg-gray-200 text-gray-800";
+        if (status.toLowerCase().includes('approved') || status.toLowerCase().includes('complete')) {
+            statusEl.classList.add('bg-green-100', 'text-green-800');
+        } else if (status.toLowerCase().includes('denied') || status.toLowerCase().includes('withdraw')) {
+            statusEl.classList.add('bg-red-100', 'text-red-800');
         }
     }
 
-    // Add description at the end
-    if (desc && desc !== "No description.") {
-        const descDiv = document.createElement('div');
-        descDiv.className = 'pt-2';
-        descDiv.innerHTML = `
-            <div class="text-xs text-gray-500 font-medium mb-1">Description</div>
-            <div class="text-sm text-gray-700 leading-relaxed">${desc}</div>
-        `;
-        container.appendChild(descDiv);
+    if (notesEl) notesEl.textContent = desc;
+
+    // Dynamic Loop
+    if (container) {
+        container.innerHTML = '';
+        for (const [key, value] of Object.entries(details)) {
+            // Render everything, even N/A, so we see it's trying
+            if (value !== null && value !== undefined) {
+                const div = document.createElement('div');
+                div.className = 'pb-3 border-b border-gray-100 last:border-0';
+                div.innerHTML = `
+                    <div class="text-xs text-gray-500 font-medium mb-1">${key}</div>
+                    <div class="text-sm text-gray-900">${value}</div>
+                `;
+                container.appendChild(div);
+            }
+        }
+
+        // Add description
+        if (desc && !desc.startsWith("No ")) {
+            const descDiv = document.createElement('div');
+            descDiv.className = 'pt-2';
+            descDiv.innerHTML = `
+                <div class="text-xs text-gray-500 font-medium mb-1">Description</div>
+                <div class="text-sm text-gray-700 leading-relaxed">${desc}</div>
+            `;
+            container.appendChild(descDiv);
+        }
     }
 
-    // Open sidebar on mobile
+    // Auto-open sidebar on mobile
     if (window.innerWidth < 640) {
-        document.getElementById('sidebar').classList.remove('-translate-x-full');
+        showDiagnostic("Opening sidebar (Mobile)...");
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar) {
+            sidebar.classList.remove('-translate-x-full');
+        } else {
+            showDiagnostic("Err: Sidebar not found");
+        }
+    } else {
+        showDiagnostic("Sidebar updated (Desktop)");
     }
 }
 
@@ -325,8 +586,15 @@ function setupLayerToggle(id, layerKey) {
     if (!el) return;
 
     el.addEventListener('change', (e) => {
+        showDiagnostic(`Toggle: ${layerKey} (${e.target.checked})`);
         if (e.target.checked) {
-            if (layers[layerKey]) layers[layerKey].addTo(map);
+            if (layers[layerKey]) {
+                layers[layerKey].addTo(map);
+                showDiagnostic(`Added: ${layerKey}`);
+            } else {
+                showDiagnostic(`Err: Data for ${layerKey} is missing!`);
+                console.error(`Layer ${layerKey} is null`);
+            }
         } else {
             if (layers[layerKey]) map.removeLayer(layers[layerKey]);
         }
