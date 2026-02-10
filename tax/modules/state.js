@@ -1,0 +1,104 @@
+
+/**
+ * state.js - Manages the global state of the tax return.
+ * Stores all form data and handles recalculation triggers.
+ * Attached to window.TaxCore for file:// compatibility.
+ */
+window.TaxCore = window.TaxCore || {};
+
+window.TaxCore.State = {
+    // Metadata
+    filingStatus: 'single', // default
+    personalDetails: {
+        age65: false,
+        blind: false,
+        spouseAge65: false,
+        spouseBlind: false
+    },
+
+    // Form Data Storage
+    forms: {
+        w2: [], // Array of W-2 objects
+        int: [], // Array of 1099-INT objects
+        div: [], // Array of 1099-DIV objects
+        schedule3: null, // Single object for Schedule 3
+        scheduleC: [], // Array of Schedule C objects
+        scheduleD: [], // Array of Schedule D objects
+        scheduleE: [], // Array of Schedule E objects
+        misc: [], // Array of 1099-MISC objects
+        r: [], // Array of 1099-R objects
+        ssa: [], // Array of SSA-1099 objects
+        scheduleB: {
+            foreignAccounts: false,
+            foreignTrust: false,
+            country: ''
+        }
+    },
+
+    // Dependents
+    dependents: {
+        qualifyingChildren: 0,
+        otherDependents: 0
+    },
+
+    // Getters for aggregation
+    getTotalWages() {
+        return this.forms.w2.reduce((sum, form) => sum + (parseFloat(form.wages) || 0), 0);
+    },
+
+    getTotalTaxWithheld() {
+        let total = 0;
+        this.forms.w2.forEach(f => total += (parseFloat(f.fedTax) || 0));
+        this.forms.int.forEach(f => total += (parseFloat(f.fedTax) || 0));
+        this.forms.div.forEach(f => total += (parseFloat(f.fedTax) || 0));
+        this.forms.misc.forEach(f => total += (parseFloat(f.fedTax) || 0));
+        this.forms.r.forEach(f => total += (parseFloat(f.fedTax) || 0));
+        this.forms.ssa.forEach(f => total += (parseFloat(f.fedTax) || 0));
+        return total;
+    },
+
+    // Save State (Local Memory Only for privacy)
+    listeners: [],
+
+    subscribe(callback) {
+        this.listeners.push(callback);
+    },
+
+    notify() {
+        this.listeners.forEach(cb => cb(this));
+    },
+
+    // Actions
+    saveForm(type, data) {
+        if (!this.forms[type]) this.forms[type] = [];
+
+        const index = this.forms[type].findIndex(f => String(f.id) === String(data.id));
+        if (index > -1) {
+            this.forms[type][index] = data;
+        } else {
+            this.forms[type].push(data);
+        }
+        this.notify();
+    },
+
+    getForm(type, id) {
+        if (!this.forms[type]) return null;
+        return this.forms[type].find(f => String(f.id) === String(id)) || null;
+    },
+
+    removeForm(type, id) {
+        if (this.forms[type] && Array.isArray(this.forms[type])) {
+            this.forms[type] = this.forms[type].filter(f => String(f.id) !== String(id));
+            this.notify();
+        }
+    },
+
+    triggerUpdate() {
+        this.notify();
+    },
+
+    updateFilingStatus(status) {
+        this.filingStatus = status;
+        this.notify();
+    }
+};
