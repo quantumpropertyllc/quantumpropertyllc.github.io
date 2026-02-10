@@ -24,7 +24,6 @@ let layers = {
     cip: null,
     crime: null,
     schools: null,
-    permits: null,
     stations: null,
     opportunity: null,
     plan2040: null,
@@ -63,7 +62,6 @@ function initMap() {
 
     // New Layers
     loadLayer('development/school_districts', 'schools', renderSchoolsLayer, false);
-    loadLayer('development/building_permits', 'permits', renderPermitsLayer, false);
     loadLayer('infrastructure/transit_stations', 'stations', renderStationsLayer, false);
     loadLayer('planning/opportunity_zones', 'opportunity', renderOpportunityLayer, false);
     loadLayer('planning/charlotte_2040_plan', 'plan2040', render2040Layer, false);
@@ -110,150 +108,27 @@ function onEachFeature(feature, layer, type) {
     });
 }
 
-
-// ... (interaction helpers) ...
-
-// REMOVED standalone zoomToFeature to keep logic inside try/catch above for now
-
-// ... (sidebar content) ...
-
-function updateSidebar(props, type) {
-    showDiagnostic(`Sidebar: ${type} / ${props ? 'Has Props' : 'No Props'}`);
-    console.log("Sidebar Update:", { type, props });
-
-    // ... (content logic) ... 
-    const panel = document.getElementById('details-panel');
-    const intro = document.getElementById('intro-text');
-
-    // Safety check
-    if (!panel || !intro) {
-        showDiagnostic("Err: Missing sidebar elements");
-        return;
-    }
-
-    panel.classList.remove('hidden');
-    intro.classList.add('hidden');
-
-    // ... (rendering logic same as before) ...
-
-    // Default fields
-    let title = "Unknown Project";
-    let status = "N/A";
-    let desc = "No description.";
-    let details = {};
-
-    if (type === 'rezoning') {
-        title = `Petition ${props.Petition || props.PETITION || "N/A"}`;
-        status = props.Status || props.STATUS || "Unknown";
-        desc = props.RezoningReason || props.REZONING_REASON || props.ProjName || "No description available.";
-        details = {
-            "Petitioner": props.Petitioner || props.PETITIONER,
-            "Existing Zoning": props.ExistingZoning || props.EXISTING_ZONING,
-            "Proposed Zoning": props.ProposedZoning || props.PROPOSED_ZONING
-        };
-    } else if (type === 'transit') {
-        title = props.ProjectName || props.Station || "Transit Project";
-        status = props.Status || "Unknown";
-        desc = props.Notes || "No notes.";
-        details = {
-            "Corridor": props.Corridor,
-            "Developer": props.Developer,
-            "Land Use": props.LandUse,
-            "Res. Units": props.ResidentialUnits
-        };
-    } else if (type === 'cip') {
-        title = props.ProjectName || "Capital Project";
-        status = "In Progress";
-        desc = props.ProjectDesc || "No description.";
-        details = {
-            "Department": props.Department,
-            "Cost": props.TotalBudget ? `$${props.TotalBudget}` : "N/A"
-        };
-    } else if (type === 'crime') {
-        title = "Crime Incident";
-        // Convert timestamp if needed, or use as is
-        const dateStr = props.DATE_REPORTED ? new Date(props.DATE_REPORTED).toLocaleDateString() : "Unknown Date";
-
-        status = props.YEAR || "Reported";
-        desc = props.LOCATION || "No location description.";
-        details = {
-            "Type": props.HIGHEST_NIBRS_DESCRIPTION || "N/A",
-            "Report ID": props.INCIDENT_REPORT_ID || "N/A",
-            "Date": dateStr
-        };
-    }
-
-    // Render Logic
-    document.getElementById('prop-petition').textContent = title;
-
-    // Status Badge
-    const statusEl = document.getElementById('prop-status');
-    statusEl.textContent = status;
-    statusEl.className = "inline-block px-2 py-1 text-xs font-semibold rounded mb-4 bg-gray-200 text-gray-800";
-    if (status.toLowerCase().includes('approved') || status.toLowerCase().includes('complete')) {
-        statusEl.classList.add('bg-green-100', 'text-green-800');
-    } else if (status.toLowerCase().includes('denied') || status.toLowerCase().includes('withdraw')) {
-        statusEl.classList.add('bg-red-100', 'text-red-800');
-    }
-
-    document.getElementById('prop-notes').textContent = desc;
-
-    // Dynamic Builder for Details
-    const container = document.getElementById('details-container');
-    if (container) {
-        container.innerHTML = '';
-        for (const [key, value] of Object.entries(details)) {
-            if (value) {
-                const div = document.createElement('div');
-                div.className = 'pb-3 border-b border-gray-100 last:border-0';
-                div.innerHTML = `
-                    <div class="text-xs text-gray-500 font-medium mb-1">${key}</div>
-                    <div class="text-sm text-gray-900">${value}</div>
-                `;
-                container.appendChild(div);
-            }
-        }
-
-        // Add description
-        if (desc && desc !== "No description.") {
-            const descDiv = document.createElement('div');
-            descDiv.className = 'pt-2';
-            descDiv.innerHTML = `
-                <div class="text-xs text-gray-500 font-medium mb-1">Description</div>
-                <div class="text-sm text-gray-700 leading-relaxed">${desc}</div>
-            `;
-            container.appendChild(descDiv);
-        }
-    }
-
-    // Auto-open sidebar on mobile
-    if (window.innerWidth < 640) {
-        showDiagnostic("Opening sidebar (Mobile)...");
-        const sidebar = document.getElementById('sidebar');
-        if (sidebar) {
-            sidebar.classList.remove('-translate-x-full');
-        } else {
-            showDiagnostic("Err: Sidebar not found");
-        }
-    } else {
-        showDiagnostic("Sidebar updated (Desktop)");
+function highlightFeature(e) {
+    const layer = e.target;
+    layer.setStyle({
+        weight: 3,
+        color: '#333',
+        dashArray: '',
+        fillOpacity: 0.8
+    });
+    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
     }
 }
 
-function setupUI() {
-    // ... (listeners) ...
-    document.getElementById('close-sidebar').addEventListener('click', () => {
-        document.getElementById('sidebar').classList.add('-translate-x-full');
-    });
-    document.getElementById('open-sidebar').addEventListener('click', () => {
-        document.getElementById('sidebar').classList.remove('-translate-x-full');
-    });
+function resetHighlight(e, type) {
+    const layerKey = type === 'plan2040' ? 'plan2040' :
+        type === 'opportunity' ? 'opportunity' :
+            type === 'rezoning' ? 'rezoning' : type;
 
-    setupLayerToggle('layer-rezoning', 'rezoning');
-    setupLayerToggle('layer-transit', 'transit');
-    setupLayerToggle('layer-cip', 'cip');
-    setupLayerToggle('layer-crime', 'crime');
-
+    if (layers[layerKey] && layers[layerKey].resetStyle) {
+        layers[layerKey].resetStyle(e.target);
+    }
 }
 
 async function loadLayer(fileName, layerKey, renderFunction, addToMap = true) {
@@ -387,21 +262,7 @@ function renderSchoolsLayer(geoJsonData) {
     });
 }
 
-function renderPermitsLayer(geoJsonData) {
-    return L.geoJSON(geoJsonData, {
-        pointToLayer: (feature, latlng) => {
-            return L.circleMarker(latlng, {
-                radius: 4,
-                fillColor: "#0d9488", // Teal
-                color: "#115e59",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-            });
-        },
-        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'permits')
-    });
-}
+
 
 function renderStationsLayer(geoJsonData) {
     return L.geoJSON(geoJsonData, {
@@ -470,154 +331,7 @@ function renderZoningLayer(geoJsonData) {
     });
 }
 
-// --- New Renderers ---
 
-function renderSchoolsLayer(geoJsonData) {
-    return L.geoJSON(geoJsonData, {
-        style: feature => ({
-            fillColor: "#9333ea", // Purple
-            weight: 1,
-            opacity: 1,
-            color: '#7e22ce',
-            fillOpacity: 0.4
-        }),
-        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'schools')
-    });
-}
-
-function renderPermitsLayer(geoJsonData) {
-    return L.geoJSON(geoJsonData, {
-        pointToLayer: (feature, latlng) => {
-            return L.circleMarker(latlng, {
-                radius: 4,
-                fillColor: "#0d9488", // Teal
-                color: "#115e59",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-            });
-        },
-        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'permits')
-    });
-}
-
-function renderStationsLayer(geoJsonData) {
-    return L.geoJSON(geoJsonData, {
-        pointToLayer: (feature, latlng) => {
-            return L.circleMarker(latlng, {
-                radius: 6,
-                fillColor: "#4f46e5", // Indigo
-                color: "#312e81",
-                weight: 2,
-                opacity: 1,
-                fillOpacity: 1
-            });
-        },
-        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'stations')
-    });
-}
-
-function renderOpportunityLayer(geoJsonData) {
-    return L.geoJSON(geoJsonData, {
-        style: feature => ({
-            fillColor: "#ea580c", // Orange
-            weight: 1,
-            opacity: 1,
-            color: '#c2410c',
-            fillOpacity: 0.5
-        }),
-        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'opportunity')
-    });
-}
-
-function render2040Layer(geoJsonData) {
-    return L.geoJSON(geoJsonData, {
-        style: feature => ({
-            fillColor: "#db2777", // Pink
-            weight: 1,
-            opacity: 1,
-            color: '#be185d',
-            fillOpacity: 0.5
-        }),
-        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'plan2040')
-    });
-}
-
-function renderFloodLayer(geoJsonData) {
-    return L.geoJSON(geoJsonData, {
-        style: feature => ({
-            fillColor: "#06b6d4", // Cyan
-            weight: 0,
-            opacity: 0,
-            fillOpacity: 0.5
-        }),
-        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'flood')
-    });
-}
-
-function renderZoningLayer(geoJsonData) {
-    return L.geoJSON(geoJsonData, {
-        style: feature => ({
-            fillColor: "#4b5563", // Gray
-            weight: 1,
-            opacity: 1,
-            color: '#374151',
-            fillOpacity: 0.4
-        }),
-        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'zoning')
-    });
-}
-
-function onEachFeature(feature, layer, type) {
-    const handleInteraction = (e) => {
-        L.DomEvent.stopPropagation(e); // Prevent map click
-        zoomToFeature(e);
-        updateSidebar(feature.properties, type);
-    };
-
-    layer.on({
-        mouseover: highlightFeature,
-        mouseout: (e) => resetHighlight(e, type),
-        click: handleInteraction,
-        touchstart: handleInteraction // Explicit touch support
-    });
-}
-
-// --- Interaction ---
-
-function highlightFeature(e) {
-    const layer = e.target;
-    layer.setStyle({
-        weight: 4,
-        color: '#333',
-        dashArray: '',
-        fillOpacity: 0.9
-    });
-    layer.bringToFront();
-}
-
-function resetHighlight(e, type) {
-    const layer = e.target;
-    // Reset to original style based on type
-    if (type === 'rezoning') {
-        layers.rezoning.resetStyle(layer);
-    } else if (type === 'transit') {
-        layers.transit.resetStyle(layer);
-    } else if (type === 'cip') {
-        layers.cip.resetStyle(layer);
-    }
-}
-
-function zoomToFeature(e) {
-    const layer = e.target;
-    if (layer.getBounds) {
-        map.fitBounds(layer.getBounds());
-    } else if (layer.getLatLng) {
-        map.setView(layer.getLatLng(), 16);
-    }
-}
-
-// --- Sidebar Content ---
 
 function updateSidebar(props, type) {
     const panel = document.getElementById('details-panel');
@@ -638,8 +352,9 @@ function updateSidebar(props, type) {
         desc = props.RezoningReason || props.REZONING_REASON || props.ProjName || "No description available.";
         details = {
             "Petitioner": props.Petitioner || props.PETITIONER,
-            "Existing Zoning": props.ExistingZoning || props.EXISTING_ZONING,
-            "Proposed Zoning": props.ProposedZoning || props.PROPOSED_ZONING
+            "Existing Zoning": props.ExistZone || props.ExistingZoning || props.EXISTING_ZONING,
+            "Proposed Zoning": props.ReqZone || props.ProposedZoning || props.PROPOSED_ZONING,
+            "Acres": props.Acres || props.ACRES
         };
     } else if (type === 'transit') {
         title = props.ProjectName || props.Station || "Transit Project";
@@ -652,12 +367,13 @@ function updateSidebar(props, type) {
             "Res. Units": props.ResidentialUnits
         };
     } else if (type === 'cip') {
-        title = props.ProjectName || "Capital Project";
-        status = "In Progress";
-        desc = props.ProjectDesc || "No description.";
+        title = props.Project_Name || props.ProjectName || "Capital Project";
+        status = props.Status || "Active";
+        desc = props.Location_Description || props.ProjectDesc || "No description.";
         details = {
-            "Department": props.Department,
-            "Cost": props.TotalBudget ? `$${props.TotalBudget}` : "N/A"
+            "Phase": props.Project_Phase || "N/A",
+            "Budget": props.Total_Project_Budget || props.TotalBudget || "N/A",
+            "Manager": props.Project_Manager
         };
     } else if (type === 'crime') {
         title = "Crime Incident";
@@ -686,6 +402,39 @@ function updateSidebar(props, type) {
         const debugKeys = Object.keys(props).slice(0, 5).join(',');
         showDiagnostic(`Props: ${debugKeys}`);
         console.log("Crime Details:", details);
+    } else if (type === 'plan2040') {
+        title = props.PlaceTypeFullTxt || "2040 Policy Area";
+        status = props.PlaceTypeCde || "Policy";
+        desc = `This area is designated as ${title} under the Charlotte Future 2040 Plan.`;
+        details = {
+            "Planning Area": props.CommunityPlanningArea || "Unknown",
+            "Adoption Date": props.AdoptionDate ? new Date(props.AdoptionDate).toLocaleDateString() : "N/A"
+        };
+    } else if (type === 'opportunity') {
+        title = `Opportunity Zone`;
+        status = `Tract ${props.GEOID10 || "N/A"}`;
+        desc = "Opportunity Zones are economically-distressed communities where new investments, under certain conditions, may be eligible for preferential tax treatment.";
+        details = {
+            "Population": props.POPULATION ? props.POPULATION.toLocaleString() : "N/A",
+            "Report": props.Tract_Type || "View official data"
+        };
+    } else if (type === 'schools') {
+        title = props.Name || props.NAME || props.school_name || "School District";
+        status = props.Ownership || "Public";
+        desc = `School district boundary for ${title}.`;
+        details = {
+            "Type": props.Type || props.TYPE || "N/A",
+            "Grade Level": props.GradeLevel || props.Grade_Level || props.LEVEL || "N/A",
+            "Enrollment": props.Enrollment
+        };
+    } else if (type === 'zoning') {
+        title = `Zoning: ${props.ZONING || "Unknown"}`;
+        status = "Current";
+        desc = props.DESCRIPTION || "Current zoning classification.";
+        details = {
+            "Ordinance": props.ORDINANCE || "UDO",
+            "Context": props.CONTEXT || "N/A"
+        };
     }
 
     // Render Logic
@@ -770,7 +519,6 @@ function setupUI() {
     setupLayerToggle('layer-schools', 'schools');
     setupLayerToggle('layer-transit-stations', 'stations');
     setupLayerToggle('layer-opportunity-zones', 'opportunity');
-    setupLayerToggle('layer-building-permits', 'permits');
     setupLayerToggle('layer-2040-plan', 'plan2040');
     setupLayerToggle('layer-flood-zones', 'flood');
     setupLayerToggle('layer-current-zoning', 'zoning');
