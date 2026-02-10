@@ -1,10 +1,10 @@
-name: Weekly Data Update
+name: Charlotte Data Update
 
 on:
   schedule:
-    # This runs at 00:00 every Sunday
-    - cron: '0 0 * * 0'
-  workflow_dispatch: 
+    # Runs at 00:00 every day
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows you to run it manually from the "Actions" tab
 
 jobs:
   update-data:
@@ -24,14 +24,15 @@ jobs:
           pip install requests
 
       - name: Run update script
-        run: python scrape_data.py
+        # This tells the bot to enter your folder before running
+        working-directory: airealestate
+        run: python scraper/scrape_data.py
 
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # This ensures the target directory exists before adding
-          mkdir -p quantumpropertyllc.github.io/airealestate/data/
-          git add quantumpropertyllc.github.io/airealestate/data/
-          git commit -m "Weekly data update: $(date)" || echo "No changes to commit"
+          # This tells the bot to save changes found in your data folder
+          git add airealestate/data/
+          git commit -m "Daily data refresh (Rotation): $(date)" || echo "No changes to commit"
           git push
