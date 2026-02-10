@@ -21,7 +21,7 @@ function showDiagnostic(msg) {
 document.addEventListener('DOMContentLoaded', () => {
     initMap();
     setupUI();
-    showDiagnostic("Ready (v8 - SVG Fix Applied)");
+    showDiagnostic("Ready (v9 - Event Logging)");
 });
 
 let map;
@@ -164,13 +164,26 @@ function renderCrimeHeatmap(geoJsonData) {
 }
 
 function onEachFeature(feature, layer, type) {
+    const handleInteraction = (e) => {
+        // Diagnostic logging
+        console.log(`Event: ${e.type} on ${type}`);
+        showDiagnostic(`Event: ${e.type} on ${type}`);
+
+        try {
+            L.DomEvent.stopPropagation(e); // Prevent map click
+            zoomToFeature(e);
+            updateSidebar(feature.properties, type);
+        } catch (err) {
+            console.error("Interaction Error:", err);
+            showDiagnostic(`Err: ${err.message}`);
+        }
+    };
+
     layer.on({
         mouseover: highlightFeature,
         mouseout: (e) => resetHighlight(e, type),
-        click: (e) => {
-            zoomToFeature(e);
-            updateSidebar(feature.properties, type);
-        }
+        click: handleInteraction,
+        touchstart: handleInteraction // Explicit touch support
     });
 }
 
