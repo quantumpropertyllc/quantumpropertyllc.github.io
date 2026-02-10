@@ -254,10 +254,6 @@ function setupUI() {
     setupLayerToggle('layer-cip', 'cip');
     setupLayerToggle('layer-crime', 'crime');
 
-    h1.appendChild(v);
-}
-
-    // REMOVED DEBUG LABEL CREATION
 }
 
 async function loadLayer(fileName, layerKey, renderFunction, addToMap = true) {
