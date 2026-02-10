@@ -1,57 +1,83 @@
 import requests
 import json
 import os
+import random
 import time
+import argparse
+from datetime import datetime
 
 # Configuration
-DATA_DIR = "data"
+DATA_DIRS = {
+    "planning": ["rezonings", "charlotte_2040_plan", "opportunity_zones", "current_zoning"],
+    "infrastructure": ["transit_projects", "cip_projects", "transit_stations"],
+    "risk": ["cmpd_incidents", "flood_zones"],
+    "development": ["building_permits", "school_districts"],
+    "lifestyle": ["walkability"]
+}
+
+# Rotation Map (0=Monday, 1=Tuesday, etc.)
+ROTATION = {
+    0: ["rezonings", "charlotte_2040_plan"],           # Monday
+    1: ["transit_projects", "cip_projects"],          # Tuesday
+    2: ["cmpd_incidents", "flood_zones"],             # Wednesday
+    3: ["building_permits", "school_districts"],      # Thursday
+    4: ["opportunity_zones", "transit_stations"],     # Friday
+    5: ["current_zoning", "walkability"],              # Saturday
+    6: [] # Sunday reserved for maintenance
+}
 
 # API Endpoints
 ENDPOINTS = {
     "rezonings": "https://gis.charlottenc.gov/arcgis/rest/services/PLN/Rezonings/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
     "transit_projects": "https://gis.charlottenc.gov/arcgis/rest/services/CATS/TransitStationDevelopmentPublic/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
     "cip_projects": "https://gis.charlottenc.gov/arcgis/rest/services/PLN/Planning_ThingsNearMe/MapServer/6/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
-    "cmpd_incidents": "https://gis.charlottenc.gov/arcgis/rest/services/CMPD/CMPDIncidents/MapServer/0/query?where=YEAR+%3E%3D+%272024%27&outFields=INCIDENT_REPORT_ID,LATITUDE_PUBLIC,LONGITUDE_PUBLIC,HIGHEST_NIBRS_DESCRIPTION,DATE_REPORTED,LOCATION&outSR=4326&f=geojson"
+    "cmpd_incidents": "https://gis.charlottenc.gov/arcgis/rest/services/CMPD/CMPDIncidents/MapServer/0/query?where=YEAR+%3E%3D+%272024%27&outFields=INCIDENT_REPORT_ID,LATITUDE_PUBLIC,LONGITUDE_PUBLIC,HIGHEST_NIBRS_DESCRIPTION,DATE_REPORTED,LOCATION&outSR=4326&f=geojson",
+    "school_districts": "https://gis.charlottenc.gov/arcgis/rest/services/CMS/SchoolDistricts/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "transit_stations": "https://gis.charlottenc.gov/arcgis/rest/services/CATS/CATS_Facilities/MapServer/0/query?where=FACILITYTYPE%3D'Light+Rail+Station'&outFields=*&outSR=4326&f=geojson",
+    "opportunity_zones": "https://services.mecklenburgcountync.gov/arcgis/rest/services/Economic_Development/Opportunity_Zones/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "building_permits": "https://services.mecklenburgcountync.gov/arcgis/rest/services/Public/BuildingPermitLocations/MapServer/0/query?where=ISSUED_DATE%20%3E%3D%20DATE%20'2024-01-01'&outFields=*&outSR=4326&f=geojson",
+    "flood_zones": "https://services.mecklenburgcountync.gov/arcgis/rest/services/Water/Floodplain/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "current_zoning": "https://gis.charlottenc.gov/arcgis/rest/services/PLN/Zoning/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "charlotte_2040_plan": "https://services.mecklenburgcountync.gov/arcgis/rest/services/PLN/CLT_Future_2040_Policy_Map/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson"
 }
 
-def ensure_data_dir():
-    if not os.path.exists(DATA_DIR):
-        os.makedirs(DATA_DIR)
+def ensure_dirs():
+    for subdir in DATA_DIRS.keys():
+        path = os.path.join("data", subdir)
+        if not os.path.exists(path):
+            os.makedirs(path)
 
-def fetch_data(name, url):
-    print(f"Fetching {name} from {url}...")
+def fetch_and_save(name, category):
+    url = ENDPOINTS.get(name)
+    if not url: return
+    
+    print(f"Updating {name}...")
     try:
-        response = requests.get(url)
-        response.raise_for_status()
-        data = response.json()
-        
-        # Basic validation
-        if "features" in data:
-            count = len(data["features"])
-            print(f"Successfully fetched {count} records for {name}.")
-            return data
-        else:
-            print(f"Error: Invalid GeoJSON format received for {name}. Response keys: {list(data.keys())}")
-            if "error" in data:
-                print(f"API Error details: {data['error']}")
-            return None
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching {name}: {e}")
-        return None
-
-def save_data(data, filename):
-    if data:
-        filepath = os.path.join(DATA_DIR, filename)
-        with open(filepath, "w") as f:
-            json.dump(data, f, indent=2)
-        print(f"Data saved to {filepath}")
+        response = requests.get(url, timeout=60)
+        if response.status_code == 200:
+            data = response.json()
+            filepath = os.path.join("data", category, f"{name}.json")
+            os.makedirs(os.path.dirname(filepath), exist_ok=True)
+            with open(filepath, "w") as f:
+                json.dump(data, f, indent=2)
+            print(f"Saved: {filepath}")
+    except Exception as e:
+        print(f"Failed {name}: {e}")
 
 def main():
-    ensure_data_dir()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--day", type=int)
+    parser.add_argument("--all", action="store_true")
+    args = parser.parse_args()
+
+    ensure_dirs()
+    current_day = datetime.now().weekday() if args.day is None else args.day
+    targets = ROTATION.get(current_day, [])
     
-    for name, url in ENDPOINTS.items():
-        data = fetch_data(name, url)
-        save_data(data, f"{name}.json")
+    for category, files in DATA_DIRS.items():
+        for filename in files:
+            if args.all or filename in targets:
+                fetch_and_save(filename, category)
 
 if __name__ == "__main__":
     main()
