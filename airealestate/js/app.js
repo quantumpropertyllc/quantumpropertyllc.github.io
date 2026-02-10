@@ -2,26 +2,10 @@
 const CHARLOTTE_COORDS = [35.2271, -80.8431];
 const INITIAL_ZOOM = 12;
 
-// 0. Safety Wrapper & Diagnostics
-function showDiagnostic(msg) {
-    const intro = document.getElementById('intro-text');
-    if (!intro) return;
-
-    let statusEl = document.getElementById('js-status');
-    if (!statusEl) {
-        statusEl = document.createElement('div');
-        statusEl.id = 'js-status';
-        statusEl.className = 'mt-2 p-2 bg-blue-50 text-blue-800 text-[10px] rounded border border-blue-100 font-mono';
-        intro.appendChild(statusEl);
-    }
-    statusEl.textContent = "Status: " + msg;
-    console.log("DIAGNOSTIC:", msg);
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     initMap();
     setupUI();
-    showDiagnostic("Ready (v9 - Event Logging)");
 });
 
 let map;
@@ -34,7 +18,14 @@ let layers = {
 
 function initMap() {
     // 1. Initialize Map
-    map = L.map('map').setView(CHARLOTTE_COORDS, INITIAL_ZOOM);
+    map = L.map('map', {
+        zoomControl: false // Disable default to add manually
+    }).setView(CHARLOTTE_COORDS, INITIAL_ZOOM);
+
+    // 1.5 Add Zoom Control to Top Right
+    L.control.zoom({
+        position: 'topright'
+    }).addTo(map);
 
     // 2. Add Base Tile Layer
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
@@ -165,18 +156,9 @@ function renderCrimeHeatmap(geoJsonData) {
 
 function onEachFeature(feature, layer, type) {
     const handleInteraction = (e) => {
-        // Diagnostic logging
-        console.log(`Event: ${e.type} on ${type}`);
-        showDiagnostic(`Event: ${e.type} on ${type}`);
-
-        try {
-            L.DomEvent.stopPropagation(e); // Prevent map click
-            zoomToFeature(e);
-            updateSidebar(feature.properties, type);
-        } catch (err) {
-            console.error("Interaction Error:", err);
-            showDiagnostic(`Err: ${err.message}`);
-        }
+        L.DomEvent.stopPropagation(e); // Prevent map click
+        zoomToFeature(e);
+        updateSidebar(feature.properties, type);
     };
 
     layer.on({
@@ -213,7 +195,12 @@ function resetHighlight(e, type) {
 }
 
 function zoomToFeature(e) {
-    map.fitBounds(e.target.getBounds());
+    const layer = e.target;
+    if (layer.getBounds) {
+        map.fitBounds(layer.getBounds());
+    } else if (layer.getLatLng) {
+        map.setView(layer.getLatLng(), 16);
+    }
 }
 
 // --- Sidebar Content ---
@@ -322,6 +309,15 @@ function setupUI() {
     setupLayerToggle('layer-transit', 'transit');
     setupLayerToggle('layer-cip', 'cip');
     setupLayerToggle('layer-crime', 'crime');
+
+    // Add version label
+    const h1 = document.querySelector('#sidebar h1');
+    if (h1) {
+        const v = document.createElement('span');
+        v.className = 'text-xs text-gray-400 font-normal ml-2';
+        v.textContent = 'v10';
+        h1.appendChild(v);
+    }
 }
 
 function setupLayerToggle(id, layerKey) {
