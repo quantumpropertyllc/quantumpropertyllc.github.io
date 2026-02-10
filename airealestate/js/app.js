@@ -3,25 +3,16 @@ const CHARLOTTE_COORDS = [35.2271, -80.8431];
 const INITIAL_ZOOM = 12;
 
 // 0. Safety Wrapper & Diagnostics (RESTORED FOR V11)
+// 0. Safety Wrapper - Cleaned for Production
 function showDiagnostic(msg) {
-    const intro = document.getElementById('intro-text');
-    if (!intro) return;
-
-    let statusEl = document.getElementById('js-status');
-    if (!statusEl) {
-        statusEl = document.createElement('div');
-        statusEl.id = 'js-status';
-        statusEl.className = 'mt-2 p-2 bg-blue-50 text-blue-800 text-[10px] rounded border border-blue-100 font-mono break-all z-50 relative';
-        intro.appendChild(statusEl);
-    }
-    statusEl.textContent = "Status: " + msg;
-    console.log("DIAGNOSTIC:", msg);
+    // Disabled for production
+    // console.log("DIAGNOSTIC:", msg);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     initMap();
     setupUI();
-    showDiagnostic("Ready (v11 - DEBUG MODE)");
+    // showDiagnostic("Ready");
 });
 
 // ... (map init and layers objects remain same) ...
@@ -31,7 +22,14 @@ let layers = {
     rezoning: null,
     transit: null,
     cip: null,
-    crime: null
+    crime: null,
+    schools: null,
+    permits: null,
+    stations: null,
+    opportunity: null,
+    plan2040: null,
+    flood: null,
+    zoning: null
 };
 
 function initMap() {
@@ -59,9 +57,18 @@ function initMap() {
 
     // 3. Load Initial Data
     loadLayer('planning/rezonings', 'rezoning', renderRezoningLayer);
-    loadLayer('infrastructure/transit_projects', 'transit', renderTransitLayer, false); // Default off
-    loadLayer('infrastructure/cip_projects', 'cip', renderCIPLayer, false); // Default off
-    loadLayer('risk/cmpd_incidents', 'crime', renderCrimeHeatmap, false); // Default off
+    loadLayer('infrastructure/transit_projects', 'transit', renderTransitLayer, false);
+    loadLayer('infrastructure/cip_projects', 'cip', renderCIPLayer, false);
+    loadLayer('risk/cmpd_incidents', 'crime', renderCrimeHeatmap, false);
+
+    // New Layers
+    loadLayer('development/school_districts', 'schools', renderSchoolsLayer, false);
+    loadLayer('development/building_permits', 'permits', renderPermitsLayer, false);
+    loadLayer('infrastructure/transit_stations', 'stations', renderStationsLayer, false);
+    loadLayer('planning/opportunity_zones', 'opportunity', renderOpportunityLayer, false);
+    loadLayer('planning/charlotte_2040_plan', 'plan2040', render2040Layer, false);
+    loadLayer('risk/flood_zones', 'flood', renderFloodLayer, false);
+    loadLayer('planning/current_zoning', 'zoning', renderZoningLayer, false);
 }
 
 // ... (renderers unchanged until onEachFeature) ...
@@ -247,14 +254,10 @@ function setupUI() {
     setupLayerToggle('layer-cip', 'cip');
     setupLayerToggle('layer-crime', 'crime');
 
-    // Fix: Append version to the container DIV, not the H1, to avoid i18n overwrite
-    const headerDiv = document.querySelector('#sidebar .flex.items-center.gap-3 .flex-1');
-    if (headerDiv) {
-        const v = document.createElement('div');
-        v.className = 'text-[10px] text-blue-200 font-mono mt-0.5';
-        v.textContent = 'v11 (DEBUG)';
-        headerDiv.appendChild(v);
-    }
+    h1.appendChild(v);
+}
+
+    // REMOVED DEBUG LABEL CREATION
 }
 
 async function loadLayer(fileName, layerKey, renderFunction, addToMap = true) {
@@ -371,6 +374,202 @@ function renderCrimeHeatmap(geoJsonData) {
     crimeLayerGroup.addLayer(markersLayer);
 
     return crimeLayerGroup;
+}
+
+// --- New Renderers ---
+
+function renderSchoolsLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: "#9333ea", // Purple
+            weight: 1,
+            opacity: 1,
+            color: '#7e22ce',
+            fillOpacity: 0.4
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'schools')
+    });
+}
+
+function renderPermitsLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        pointToLayer: (feature, latlng) => {
+            return L.circleMarker(latlng, {
+                radius: 4,
+                fillColor: "#0d9488", // Teal
+                color: "#115e59",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            });
+        },
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'permits')
+    });
+}
+
+function renderStationsLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        pointToLayer: (feature, latlng) => {
+            return L.circleMarker(latlng, {
+                radius: 6,
+                fillColor: "#4f46e5", // Indigo
+                color: "#312e81",
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 1
+            });
+        },
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'stations')
+    });
+}
+
+function renderOpportunityLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: "#ea580c", // Orange
+            weight: 1,
+            opacity: 1,
+            color: '#c2410c',
+            fillOpacity: 0.5
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'opportunity')
+    });
+}
+
+function render2040Layer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: "#db2777", // Pink
+            weight: 1,
+            opacity: 1,
+            color: '#be185d',
+            fillOpacity: 0.5
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'plan2040')
+    });
+}
+
+function renderFloodLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: "#06b6d4", // Cyan
+            weight: 0,
+            opacity: 0,
+            fillOpacity: 0.5
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'flood')
+    });
+}
+
+function renderZoningLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: "#4b5563", // Gray
+            weight: 1,
+            opacity: 1,
+            color: '#374151',
+            fillOpacity: 0.4
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'zoning')
+    });
+}
+
+// --- New Renderers ---
+
+function renderSchoolsLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: "#9333ea", // Purple
+            weight: 1,
+            opacity: 1,
+            color: '#7e22ce',
+            fillOpacity: 0.4
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'schools')
+    });
+}
+
+function renderPermitsLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        pointToLayer: (feature, latlng) => {
+            return L.circleMarker(latlng, {
+                radius: 4,
+                fillColor: "#0d9488", // Teal
+                color: "#115e59",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            });
+        },
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'permits')
+    });
+}
+
+function renderStationsLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        pointToLayer: (feature, latlng) => {
+            return L.circleMarker(latlng, {
+                radius: 6,
+                fillColor: "#4f46e5", // Indigo
+                color: "#312e81",
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 1
+            });
+        },
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'stations')
+    });
+}
+
+function renderOpportunityLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: "#ea580c", // Orange
+            weight: 1,
+            opacity: 1,
+            color: '#c2410c',
+            fillOpacity: 0.5
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'opportunity')
+    });
+}
+
+function render2040Layer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: "#db2777", // Pink
+            weight: 1,
+            opacity: 1,
+            color: '#be185d',
+            fillOpacity: 0.5
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'plan2040')
+    });
+}
+
+function renderFloodLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: "#06b6d4", // Cyan
+            weight: 0,
+            opacity: 0,
+            fillOpacity: 0.5
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'flood')
+    });
+}
+
+function renderZoningLayer(geoJsonData) {
+    return L.geoJSON(geoJsonData, {
+        style: feature => ({
+            fillColor: "#4b5563", // Gray
+            weight: 1,
+            opacity: 1,
+            color: '#374151',
+            fillOpacity: 0.4
+        }),
+        onEachFeature: (feature, layer) => onEachFeature(feature, layer, 'zoning')
+    });
 }
 
 function onEachFeature(feature, layer, type) {
@@ -570,6 +769,15 @@ function setupUI() {
     setupLayerToggle('layer-transit', 'transit');
     setupLayerToggle('layer-cip', 'cip');
     setupLayerToggle('layer-crime', 'crime');
+
+    // New Toggles
+    setupLayerToggle('layer-schools', 'schools');
+    setupLayerToggle('layer-transit-stations', 'stations');
+    setupLayerToggle('layer-opportunity-zones', 'opportunity');
+    setupLayerToggle('layer-building-permits', 'permits');
+    setupLayerToggle('layer-2040-plan', 'plan2040');
+    setupLayerToggle('layer-flood-zones', 'flood');
+    setupLayerToggle('layer-current-zoning', 'zoning');
 
     // Add version label
     const h1 = document.querySelector('#sidebar h1');
