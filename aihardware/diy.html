@@ -135,11 +135,26 @@
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
         }
 
+        @keyframes pulse-highlight {
+            0% {
+                box-shadow: 0 0 0 0 rgba(175, 82, 222, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(175, 82, 222, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(175, 82, 222, 0);
+            }
+        }
+
         .template-card.highlight {
             border: 2px solid var(--purple-accent);
             box-shadow: 0 0 20px rgba(175, 82, 222, 0.4);
             transform: scale(1.02);
             border-left-width: 8px;
+            animation: pulse-highlight 2s infinite;
         }
 
         .part-link {
@@ -332,11 +347,6 @@
                 const response = await fetch(CATALOG_URL);
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const data = await response.json();
-
-                if (!data.diy_templates) {
-                    throw new Error('diy_templates section missing in catalog.json');
-                }
-
                 renderTemplates(data.diy_templates);
             } catch (error) {
                 console.error('Error loading templates:', error);
@@ -375,17 +385,20 @@
                 container.appendChild(card);
             });
 
-            // Handle highlighting from URL parameter
+            // Enhanced Scroll & Highlight
             const params = new URLSearchParams(window.location.search);
             const targetId = params.get('template') || params.get('tier');
             if (targetId) {
-                setTimeout(() => {
-                    const targetCard = document.getElementById(targetId);
-                    if (targetCard) {
-                        targetCard.classList.add('highlight');
-                        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                }, 500); // Small delay for rendering
+                // Wait for layout to settle
+                requestAnimationFrame(() => {
+                    setTimeout(() => {
+                        const targetCard = document.getElementById(targetId);
+                        if (targetCard) {
+                            targetCard.classList.add('highlight');
+                            targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }, 300);
+                });
             }
         }
 
