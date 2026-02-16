@@ -132,6 +132,14 @@
 
         .template-card {
             border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .template-card.highlight {
+            border: 2px solid var(--purple-accent);
+            box-shadow: 0 0 20px rgba(175, 82, 222, 0.4);
+            transform: scale(1.02);
+            border-left-width: 8px;
         }
 
         .part-link {
@@ -345,6 +353,7 @@
             templates.forEach(t => {
                 const card = document.createElement('div');
                 card.className = 'card template-card';
+                card.id = t.id; // Set ID for scrolling/highlighting
 
                 let partsHtml = t.parts.map(p => `
                     <a href="${p.url}" target="_blank" class="part-link">
@@ -354,7 +363,7 @@
 
                 card.innerHTML = `
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <h3>${t.name}</h3>
+                        <h3>${t.name} ${t.id === 'diy_budget' ? '🥉' : t.id === 'diy_midrange' ? '🥈' : '🥇'}</h3>
                         <span style="font-weight: bold; color: var(--accent-color);">~$${t.estimated_cost}</span>
                     </div>
                     <p><span class="badge badge-gpu">GPU</span> ${t.gpu}</p>
@@ -365,6 +374,19 @@
                 `;
                 container.appendChild(card);
             });
+
+            // Handle highlighting from URL parameter
+            const params = new URLSearchParams(window.location.search);
+            const targetId = params.get('template') || params.get('tier');
+            if (targetId) {
+                setTimeout(() => {
+                    const targetCard = document.getElementById(targetId);
+                    if (targetCard) {
+                        targetCard.classList.add('highlight');
+                        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 500); // Small delay for rendering
+            }
         }
 
         loadTemplates();
