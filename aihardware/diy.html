@@ -317,16 +317,24 @@
     </div>
 
     <script>
-        const CATALOG_URL = 'https://quantumpropertyllc.github.io/aihardware/catalog.json';
+        const CATALOG_URL = './catalog.json'; // Use relative path for same-origin
 
         async function loadTemplates() {
             try {
                 const response = await fetch(CATALOG_URL);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const data = await response.json();
+
+                if (!data.diy_templates) {
+                    throw new Error('diy_templates section missing in catalog.json');
+                }
+
                 renderTemplates(data.diy_templates);
             } catch (error) {
                 console.error('Error loading templates:', error);
-                document.getElementById('diy-templates').innerHTML = '<p>Error loading configuration templates.</p>';
+                document.getElementById('diy-templates').innerHTML =
+                    `<p style="color: #ff4500;">Error loading configuration templates: ${error.message}</p>
+                     <p style="font-size: 0.8rem; color: var(--secondary-text);">Check: ${new URL(CATALOG_URL, window.location.href)}</p>`;
             }
         }
 
