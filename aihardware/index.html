@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCAI Hardware Catalog</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --card-bg: #1a1a1a;
+            --text-color: #ffffff;
+            --accent-color: #AF52DE;
+            /* Purple */
+            --secondary-text: #a0a0a0;
+            --success-color: #34C759;
+            --border-color: #333;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #AF52DE, #5856D6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--secondary-text);
+            font-size: 1.1rem;
+        }
+
+        #catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .hardware-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hardware-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(175, 82, 222, 0.2);
+            border-color: var(--accent-color);
+        }
+
+        .card-image-container {
+            width: 100%;
+            height: 200px;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Changed to confirm fit */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tier-badge {
+            display: inline-block;
+            background-color: rgba(175, 82, 222, 0.15);
+            color: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+
+        .spec-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .spec-icon {
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+
+        .price-section {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .buy-button {
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .buy-button:hover {
+            background-color: #9c36c9;
+        }
+
+        /* Loading State */
+        #loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--secondary-text);
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: var(--accent-color);
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>AI Hardware Workstations</h1>
+            <div class="subtitle">Hand-picked systems optimized for Local LLMs & Inference</div>
+        </header>
+
+        <div id="loading">
+            <div class="spinner"></div>
+            <p>Loading latest catalog...</p>
+        </div>
+
+        <div id="catalog-grid">
+            <!-- Items will be injected here -->
+        </div>
+    </div>
+
+    <script>
+        const CATALOG_URL = 'https://quantumpropertyllc.github.io/aihardware/catalog.json';
+
+        async function fetchCatalog() {
+            try {
+                const response = await fetch(CATALOG_URL);
+                if (!response.ok) throw new Error('Failed to load catalog');
+                const data = await response.json();
+                renderCatalog(data.hardware_bundles);
+            } catch (error) {
+                console.error(error);
+                document.getElementById('loading').innerHTML = `
+                <p style="color: #ff453a;">Could not load hardware catalog.</p>
+                <p style="font-size: 0.9rem; color: #888;">Please try again later.</p>
+            `;
+            }
+        }
+
+        function renderCatalog(items) {
+            const grid = document.getElementById('catalog-grid');
+            const loading = document.getElementById('loading');
+
+            loading.style.display = 'none';
+            grid.innerHTML = '';
+
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'hardware-card';
+
+                // Format price
+                const formattedPrice = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    maximumFractionDigits: 0
+                }).format(item.price);
+
+                card.innerHTML = `
+                <div class="card-image-container">
+                    <img src="${item.image_url}" alt="${item.name}" class="card-image" onerror="this.src='https://placehold.co/400x300/1a1a1a/FFF?text=No+Image'">
+                </div>
+                <div class="card-content">
+                    <div class="tier-badge">${item.best_for}</div>
+                    <h3 class="card-title">${item.name}</h3>
+                    <ul class="spec-list">
+                        <li class="spec-item">
+                            <span class="spec-icon">⚡</span> ${item.gpu}
+                        </li>
+                        <li class="spec-item">
+                            <span class="spec-icon">🧠</span> ${item.vram}GB VRAM
+                        </li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">${formattedPrice}</div>
+                        <a href="${item.purchase_url}" target="_blank" class="buy-button">Buy Now</a>
+                    </div>
+                </div>
+            `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Initialize
+        fetchCatalog();
+    </script>
+
+</body>
+
+</html>
