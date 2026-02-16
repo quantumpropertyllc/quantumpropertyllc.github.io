@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
     <title>QCAI Hardware Catalog</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -262,7 +263,7 @@
 
                 card.innerHTML = `
                 <div class="card-image-container">
-                    <img src="https://wsrv.nl/?url=${encodeURIComponent(item.image_url)}" alt="${item.name}" class="card-image" loading="lazy" onerror="this.src='https://placehold.co/400x300/1a1a1a/FFF?text=No+Image'">
+                    <img src="${item.image_url}" alt="${item.name}" class="card-image" referrerpolicy="no-referrer" loading="lazy" onerror="this.src='https://placehold.co/400x300/1a1a1a/FFF?text=No+Image'">
                 </div>
                 <div class="card-content">
                     <div class="tier-badge">${item.best_for}</div>
