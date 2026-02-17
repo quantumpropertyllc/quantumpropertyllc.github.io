@@ -363,13 +363,19 @@
             templates.forEach(t => {
                 const card = document.createElement('div');
                 card.className = 'card template-card';
-                card.id = t.id; // Set ID for scrolling/highlighting
+                card.id = t.id;
 
                 let partsHtml = t.parts.map(p => `
                     <a href="${p.url}" target="_blank" class="part-link">
-                        <strong>${p.item}:</strong> ${p.name} ↗
+                        <strong>${p.item}:</strong> ${p.name} <sup>${p.asin || ''}</sup> ↗
                     </a>
                 `).join('');
+
+                // Display Meta-Data (VRAM, Max Support)
+                const vram = t.gpu_vram || t.gpu || "Varies";
+                const support = t.max_model_support || "General AI";
+                const upgradeBadge = t.upgrade_ready ?
+                    `<span class="badge" style="background: var(--purple-accent); color: white;">UPGRADE READY</span>` : '';
 
                 // Generate AI Compatibility HTML
                 let compatibilityHtml = '';
@@ -389,14 +395,20 @@
                 }
 
                 card.innerHTML = `
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <h3>${t.name} ${t.id === 'diy_budget' ? '🥉' : t.id === 'diy_midrange' ? '🥈' : '🥇'}</h3>
-                        <span style="font-weight: bold; color: var(--accent-color);">~$${t.estimated_cost}</span>
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                        <h3 style="margin:0">${t.name}</h3>
+                        <span style="font-weight: bold; color: var(--accent-color); font-size: 1.2rem;">~$${t.estimated_cost}</span>
                     </div>
-                    <p><span class="badge badge-gpu">GPU</span> ${t.gpu}</p>
+                    
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+                        <span class="badge badge-gpu">${vram} VRAM</span>
+                        <span class="badge" style="background: #e67e22; color: white;">SUPPORTS ${support}</span>
+                        ${upgradeBadge}
+                    </div>
+
                     <div style="margin-top: 15px;">
-                        <span style="font-size: 0.8rem; color: var(--secondary-text); font-weight: bold;">PART LIST:</span>
-                        ${partsHtml}
+                        <span style="font-size: 0.8rem; color: var(--secondary-text); font-weight: bold; text-transform: uppercase;">Build Parts:</span>
+                        <div style="margin-top: 10px;">${partsHtml}</div>
                     </div>
                     ${compatibilityHtml}
                 `;

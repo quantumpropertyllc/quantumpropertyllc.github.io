@@ -8,7 +8,7 @@
             "vram": 16,
             "memory_bandwidth": 288,
             "tier": "entry",
-            "diy_template": "diy_budget",
+            "diy_template": "diy_midrange_ai",
             "best_for": "7B Models, Learning (CUDA)",
             "partner_name": "Amazon",
             "purchase_url": "https://www.amazon.com/dp/B0DW48GN42?tag=queencityai-20",
@@ -41,7 +41,7 @@
             "vram": 12,
             "memory_bandwidth": 456,
             "tier": "entry",
-            "diy_template": "diy_budget",
+            "diy_template": "diy_midrange_ai",
             "best_for": "Fast Inference & Dev Workstations",
             "partner_name": "Amazon",
             "purchase_url": "https://www.amazon.com/dp/B0DNL909X1?tag=queencityai-20",
@@ -70,7 +70,7 @@
             "vram": 16,
             "memory_bandwidth": 640,
             "tier": "entry",
-            "diy_template": "diy_budget",
+            "diy_template": "diy_midrange_ai",
             "best_for": "Gaming, ROCm Inference",
             "partner_name": "Amazon",
             "purchase_url": "https://www.amazon.com/dp/B0DX909XLM?tag=queencityai-20",
@@ -128,7 +128,7 @@
             "vram": 12,
             "memory_bandwidth": 504,
             "tier": "mid",
-            "diy_template": "diy_midrange",
+            "diy_template": "diy_70b_midrange",
             "best_for": "13B Models, Balanced (CUDA)",
             "partner_name": "Amazon",
             "purchase_url": "https://www.amazon.com/dp/B0DKG8G5J3?tag=queencityai-20",
@@ -157,7 +157,7 @@
             "vram": 12,
             "memory_bandwidth": 672,
             "tier": "mid",
-            "diy_template": "diy_midrange",
+            "diy_template": "diy_70b_midrange",
             "best_for": "Fast Inference (CUDA)",
             "partner_name": "Amazon",
             "purchase_url": "https://www.amazon.com/dp/B0DLC909X1/?tag=queencityai-20",
@@ -182,7 +182,7 @@
             "vram": 16,
             "memory_bandwidth": 960,
             "tier": "pro",
-            "diy_template": "diy_midrange",
+            "diy_template": "diy_70b_midrange",
             "best_for": "Research, 13B-33B (CUDA)",
             "partner_name": "Amazon",
             "purchase_url": "https://www.amazon.com/dp/B0DZC909X1/?tag=queencityai-20",
@@ -215,7 +215,7 @@
             "vram": 32,
             "memory_bandwidth": 1792,
             "tier": "ultimate",
-            "diy_template": "diy_enterprise",
+            "diy_template": "diy_titan_ai",
             "best_for": "Enterprise, 70B (CUDA)",
             "partner_name": "Amazon",
             "purchase_url": "https://www.amazon.com/dp/B0DZ909XLM/?tag=queencityai-20",
@@ -252,7 +252,7 @@
             "vram": 128,
             "memory_bandwidth": 546,
             "tier": "creative",
-            "diy_template": "diy_midrange",
+            "diy_template": "diy_70b_midrange",
             "best_for": "Unified Memory, MLX",
             "partner_name": "Amazon",
             "purchase_url": "https://www.amazon.com/dp/B0DJM5X9LV?tag=queencityai-20",
@@ -306,7 +306,7 @@
             "vram": 48,
             "memory_bandwidth": 864,
             "tier": "enterprise",
-            "diy_template": "diy_enterprise",
+            "diy_template": "diy_titan_ai",
             "best_for": "Large Models (ROCm)",
             "partner_name": "Amazon",
             "purchase_url": "https://www.amazon.com/dp/B0C3909XLM?tag=queencityai-20",
@@ -335,7 +335,7 @@
             "vram": 32,
             "memory_bandwidth": 800,
             "tier": "enterprise",
-            "diy_template": "diy_enterprise",
+            "diy_template": "diy_titan_ai",
             "best_for": "Pro AI Workstation (ROCm)",
             "partner_name": "Amazon",
             "purchase_url": "https://www.amazon.com/dp/B0C2T3N5K4?tag=queencityai-20",
@@ -360,7 +360,7 @@
             "vram": 192,
             "memory_bandwidth": 5300,
             "tier": "enterprise",
-            "diy_template": "diy_enterprise",
+            "diy_template": "diy_titan_ai",
             "best_for": "HPC, Training Clusters",
             "partner_name": "AMD",
             "purchase_url": "https://www.amd.com/en/products/accelerators/instinct/mi300.html",
@@ -564,61 +564,17 @@
     ],
     "diy_templates": [
         {
-            "id": "diy_budget",
-            "name": "The Budget King",
-            "estimated_cost": 1064,
-            "gpu": "RTX 4060 Ti 16GB",
-            "parts": [
-                {
-                    "item": "CPU",
-                    "name": "Intel Core i5-13400F $579",
-                    "url": "https://www.amazon.com/dp/B0CQ1Y7KHV?tag=queencityai-20"
-                },
-                {
-                    "item": "GPU",
-                    "name": "MSI Ventus RTX 4060 Ti 16GB $222",
-                    "url": "https://www.amazon.com/dp/B0F7WB6LSH?tag=queencityai-20"
-                },
-                {
-                    "item": "RAM",
-                    "name": "Corsair Vengeance 32GB DDR4 $262.99",
-                    "url": "https://www.amazon.com/dp/B08GSTF5NJ?tag=queencityai-20"
-                }
-            ],
+            "id": "diy_70b_midrange",
+            "name": "Mid-Range 70B AI Workstation",
+            "estimated_cost": 2600,
+            "max_model_support": "70B Q4",
+            "gpu_vram": "24GB",
+            "upgrade_ready": true,
             "ai_compatibility": [
-                {
-                    "model_id": "mistral-7b",
-                    "recommended": true
-                },
                 {
                     "model_id": "llama-3.1-8b",
                     "recommended": true
-                }
-            ]
-        },
-        {
-            "id": "diy_midrange",
-            "name": "The Balanced Beast",
-            "estimated_cost": 1899,
-            "gpu": "RTX 5070 Ti Super",
-            "parts": [
-                {
-                    "item": "CPU",
-                    "name": "Intel Core i7-14700K $350",
-                    "url": "https://www.amazon.com/dp/B0CGJC178L?tag=queencityai-20"
                 },
-                {
-                    "item": "GPU",
-                    "name": "ASUS TUF RTX 5070 Ti Super $700",
-                    "url": "https://www.amazon.com/dp/B0DS6WPTLL?tag=queencityai-20"
-                },
-                {
-                    "item": "RAM",
-                    "name": "G.Skill Trident Z5 64GB DDR5 $849",
-                    "url": "https://www.amazon.com/dp/B0BJNTLJ5X?tag=queencityai-20"
-                }
-            ],
-            "ai_compatibility": [
                 {
                     "model_id": "mistral-7b",
                     "recommended": true
@@ -632,49 +588,298 @@
                     "recommended": true
                 },
                 {
-                    "model_id": "llama-3.1-8b",
+                    "model_id": "llama-3.1-70b",
                     "recommended": true
+                },
+                {
+                    "model_id": "gpt-oss-20b",
+                    "recommended": false
+                }
+            ],
+            "parts": [
+                {
+                    "item": "CPU",
+                    "name": "AMD Ryzen 9 7900",
+                    "asin": "B0BBJ59WJ4",
+                    "url": "https://www.amazon.com/dp/B0BBJ59WJ4?tag=queencityai-20"
+                },
+                {
+                    "item": "GPU",
+                    "name": "MSI Gaming GeForce RTX 4090 24GB",
+                    "asin": "B0BG94PS2F",
+                    "url": "https://www.amazon.com/dp/B0BG94PS2F?tag=queencityai-20"
+                },
+                {
+                    "item": "Motherboard",
+                    "name": "MSI MAG B650 Tomahawk WiFi ATX",
+                    "asin": "B0BHCGV5YB",
+                    "url": "https://www.amazon.com/dp/B0BHCGV5YB?tag=queencityai-20"
+                },
+                {
+                    "item": "RAM",
+                    "name": "Corsair Vengeance 96GB (2x48GB) DDR5-5600",
+                    "asin": "B0CHW8QS5V",
+                    "url": "https://www.amazon.com/dp/B0CHW8QS5V?tag=queencityai-20"
+                },
+                {
+                    "item": "Storage",
+                    "name": "Samsung 990 PRO 2TB NVMe SSD",
+                    "asin": "B0BHJJ9Y77",
+                    "url": "https://www.amazon.com/dp/B0BHJJ9Y77?tag=queencityai-20"
+                },
+                {
+                    "item": "PSU",
+                    "name": "Corsair RM1000x Shift 1000W PSU",
+                    "asin": "B0BR7W87ZP",
+                    "url": "https://www.amazon.com/dp/B0BR7W87ZP?tag=queencityai-20"
+                },
+                {
+                    "item": "Case",
+                    "name": "Corsair 4000D Airflow Mid Tower",
+                    "asin": "B08C7BGV3D",
+                    "url": "https://www.amazon.com/dp/B08C7BGV3D?tag=queencityai-20"
+                },
+                {
+                    "item": "CPU Cooler",
+                    "name": "DeepCool AK620 Dual Tower",
+                    "asin": "B09CSXS3X4",
+                    "url": "https://www.amazon.com/dp/B09CSXS3X4?tag=queencityai-20"
                 }
             ]
         },
         {
-            "id": "diy_enterprise",
-            "name": "The Titan God",
-            "estimated_cost": 4568,
-            "gpu": "RTX 5090",
-            "parts": [
-                {
-                    "item": "CPU",
-                    "name": "AMD Ryzen 9 7950X $529",
-                    "url": "https://www.amazon.com/dp/B0BBHD5D8Y?tag=queencityai-20"
-                },
-                {
-                    "item": "GPU",
-                    "name": "NVIDIA RTX 5090 32GB $3860",
-                    "url": "https://www.amazon.com/dp/B0DS2X13PH?tag=queencityai-20"
-                },
-                {
-                    "item": "PSU",
-                    "name": "Corsair HX1200 Platinum $179",
-                    "url": "https://www.amazon.com/dp/B0CBP3C2S9?tag=queencityai-20"
-                }
-            ],
+            "id": "diy_70b_optimized",
+            "name": "The 70B Optimizer",
+            "estimated_cost": 3400,
+            "max_model_support": "70B Q4",
+            "gpu_vram": "24GB",
+            "upgrade_ready": true,
             "ai_compatibility": [
+                {
+                    "model_id": "llama-3.1-8b",
+                    "recommended": true
+                },
                 {
                     "model_id": "mistral-7b",
                     "recommended": true
                 },
                 {
-                    "model_id": "mixtral-8x7b",
+                    "model_id": "baichuan-2-13b",
+                    "recommended": true
+                },
+                {
+                    "model_id": "vicuna-13b",
+                    "recommended": true
+                },
+                {
+                    "model_id": "llama-3.1-70b",
+                    "recommended": true
+                },
+                {
+                    "model_id": "gpt-oss-20b",
+                    "recommended": false
+                }
+            ],
+            "parts": [
+                {
+                    "item": "CPU",
+                    "name": "AMD Ryzen 9 7900",
+                    "asin": "B0BBJ59WJ4",
+                    "url": "https://www.amazon.com/dp/B0BBJ59WJ4?tag=queencityai-20"
+                },
+                {
+                    "item": "GPU",
+                    "name": "MSI RTX 4090 24GB",
+                    "asin": "B0BG94PS2F",
+                    "url": "https://www.amazon.com/dp/B0BG94PS2F?tag=queencityai-20"
+                },
+                {
+                    "item": "Motherboard",
+                    "name": "MSI MAG B650 Tomahawk WiFi",
+                    "asin": "B0BHCGV5YB",
+                    "url": "https://www.amazon.com/dp/B0BHCGV5YB?tag=queencityai-20"
+                },
+                {
+                    "item": "RAM",
+                    "name": "Corsair Vengeance 128GB DDR5-5600",
+                    "asin": "B0CHS1M2KZ",
+                    "url": "https://www.amazon.com/dp/B0CHS1M2KZ?tag=queencityai-20"
+                },
+                {
+                    "item": "Storage",
+                    "name": "Samsung 990 PRO 2TB NVMe",
+                    "asin": "B0BHJJ9Y77",
+                    "url": "https://www.amazon.com/dp/B0BHJJ9Y77?tag=queencityai-20"
+                },
+                {
+                    "item": "PSU",
+                    "name": "Corsair RM1000x Shift 1000W",
+                    "asin": "B0BR7W87ZP",
+                    "url": "https://www.amazon.com/dp/B0BR7W87ZP?tag=queencityai-20"
+                },
+                {
+                    "item": "Case",
+                    "name": "Corsair 4000D Airflow",
+                    "asin": "B08C7BGV3D",
+                    "url": "https://www.amazon.com/dp/B08C7BGV3D?tag=queencityai-20"
+                },
+                {
+                    "item": "Cooler",
+                    "name": "DeepCool AK620",
+                    "asin": "B09CSXS3X4",
+                    "url": "https://www.amazon.com/dp/B09CSXS3X4?tag=queencityai-20"
+                }
+            ]
+        },
+        {
+            "id": "diy_titan_ai",
+            "name": "Titan AI Workstation",
+            "estimated_cost": 4800,
+            "max_model_support": "70B+",
+            "gpu_vram": "24GB+",
+            "upgrade_ready": true,
+            "ai_compatibility": [
+                {
+                    "model_id": "llama-3.1-8b",
+                    "recommended": true
+                },
+                {
+                    "model_id": "mistral-7b",
+                    "recommended": true
+                },
+                {
+                    "model_id": "baichuan-2-13b",
+                    "recommended": true
+                },
+                {
+                    "model_id": "vicuna-13b",
+                    "recommended": true
+                },
+                {
+                    "model_id": "llama-3.1-70b",
                     "recommended": true
                 },
                 {
                     "model_id": "gpt-oss-20b",
                     "recommended": true
+                }
+            ],
+            "parts": [
+                {
+                    "item": "CPU",
+                    "name": "AMD Ryzen 9 7950X",
+                    "url": "https://www.amazon.com/dp/B0BBHD5D8Y?tag=queencityai-20"
                 },
                 {
-                    "model_id": "qwen3-32b",
+                    "item": "Motherboard",
+                    "name": "ASUS ROG Strix X670E-E Gaming WiFi",
+                    "url": "https://www.amazon.com/dp/B0BF8V4V6B?tag=queencityai-20"
+                },
+                {
+                    "item": "GPU",
+                    "name": "MSI RTX 4090 Gaming Trio 24GB",
+                    "url": "https://www.amazon.com/dp/B0BG94PS2F?tag=queencityai-20"
+                },
+                {
+                    "item": "RAM",
+                    "name": "Corsair Vengeance 128GB (4x32GB) DDR5 5600",
+                    "url": "https://www.amazon.com/dp/B0BLYL6R4L?tag=queencityai-20"
+                },
+                {
+                    "item": "Storage",
+                    "name": "WD Black SN850X 4TB NVMe",
+                    "url": "https://www.amazon.com/dp/B0B7CPSN2K?tag=queencityai-20"
+                },
+                {
+                    "item": "PSU",
+                    "name": "Corsair HX1200 1200W Platinum",
+                    "url": "https://www.amazon.com/dp/B0CBP3C2S9?tag=queencityai-20"
+                },
+                {
+                    "item": "Case",
+                    "name": "Corsair 7000D Airflow Full Tower",
+                    "url": "https://www.amazon.com/dp/B094442NL5?tag=queencityai-20"
+                },
+                {
+                    "item": "CPU Cooler",
+                    "name": "Corsair iCUE H150i Elite Capellix XT",
+                    "url": "https://www.amazon.com/dp/B0B3T6XQ6M?tag=queencityai-20"
+                }
+            ]
+        },
+        {
+            "id": "diy_midrange_ai",
+            "name": "Balanced AI Workstation",
+            "estimated_cost": 2400,
+            "max_model_support": "13B-33B",
+            "gpu_vram": "16GB",
+            "upgrade_ready": true,
+            "ai_compatibility": [
+                {
+                    "model_id": "llama-3.1-8b",
                     "recommended": true
+                },
+                {
+                    "model_id": "mistral-7b",
+                    "recommended": true
+                },
+                {
+                    "model_id": "baichuan-2-13b",
+                    "recommended": true
+                },
+                {
+                    "model_id": "vicuna-13b",
+                    "recommended": true
+                },
+                {
+                    "model_id": "llama-3.1-70b",
+                    "recommended": false
+                },
+                {
+                    "model_id": "gpt-oss-20b",
+                    "recommended": false
+                }
+            ],
+            "parts": [
+                {
+                    "item": "CPU",
+                    "name": "Intel Core i7-14700K",
+                    "url": "https://www.amazon.com/dp/B0CGJC178L?tag=queencityai-20"
+                },
+                {
+                    "item": "Motherboard",
+                    "name": "MSI MAG Z790 Tomahawk WiFi DDR5",
+                    "url": "https://www.amazon.com/dp/B0BG7DY6MT?tag=queencityai-20"
+                },
+                {
+                    "item": "GPU",
+                    "name": "ASUS TUF RTX 4070 Ti Super 16GB",
+                    "url": "https://www.amazon.com/dp/B0CSJY8G9B?tag=queencityai-20"
+                },
+                {
+                    "item": "RAM",
+                    "name": "G.Skill Ripjaws S5 64GB (2x32GB) DDR5 6000",
+                    "url": "https://www.amazon.com/dp/B0BJN9F5FK?tag=queencityai-20"
+                },
+                {
+                    "item": "Storage",
+                    "name": "Samsung 990 Pro 2TB NVMe",
+                    "url": "https://www.amazon.com/dp/B0BHJJ9Y77?tag=queencityai-20"
+                },
+                {
+                    "item": "PSU",
+                    "name": "MSI MPG A1000G PCIe5 1000W",
+                    "url": "https://www.amazon.com/dp/B0B4345YV7?tag=queencityai-20"
+                },
+                {
+                    "item": "Case",
+                    "name": "NZXT H6 Flow",
+                    "url": "https://www.amazon.com/dp/B0C5S5YH43?tag=queencityai-20"
+                },
+                {
+                    "item": "CPU Cooler",
+                    "name": "ARCTIC Liquid Freezer II 360",
+                    "url": "https://www.amazon.com/dp/B07WNJCVNW?tag=queencityai-20"
                 }
             ]
         }
