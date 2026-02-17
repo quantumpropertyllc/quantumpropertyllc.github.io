@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verified AI Professionals | QCAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007AFF;
+            --secondary: #AF52DE;
+            --background: #000000;
+            --surface: #121212;
+            --border: rgba(255, 255, 255, 0.15);
+            --text: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.7);
+            --accent: #FF9500;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 0% 0%, rgba(255, 149, 0, 0.1), transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(0, 122, 255, 0.1), transparent 50%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Professionals Grid */
+        .pro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .pro-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .pro-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(255, 149, 0, 0.1);
+        }
+
+        .pro-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            background: var(--border);
+            object-fit: crop;
+            border: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .pro-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0 0 4px;
+        }
+
+        .pro-title {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin-bottom: 12px;
+        }
+
+        .verified-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(0, 122, 255, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Detail View */
+        .detail-view {
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-dim);
+            text-decoration: none;
+            margin-bottom: 24px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .back-btn:hover {
+            color: var(--text);
+        }
+
+        .pro-detail-header {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: 600px) {
+            .pro-detail-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .pro-large-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 32px;
+            background: var(--surface);
+            border: 2px solid var(--accent);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .info-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 16px;
+        }
+
+        .bio-text {
+            line-height: 1.6;
+            color: var(--text-dim);
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        @media (max-width: 500px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .btn-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px;
+            border-radius: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .btn-action:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- List View -->
+        <div id="list-view">
+            <header>
+                <h1>Verified AI Professionals</h1>
+                <p class="subtitle">Queen City Expertise</p>
+            </header>
+            <div id="pro-grid" class="pro-grid">
+                <!-- Loaded from JSON -->
+                <p style="text-align: center; color: var(--text-dim);">Loading experts...</p>
+            </div>
+        </div>
+
+        <!-- Detail View -->
+        <div id="detail-view" class="hidden detail-view">
+            <a href="#" class="back-btn" onclick="showList(event)">
+                <span>←</span> Back to Professionals
+            </a>
+
+            <div class="pro-detail-header">
+                <div id="detail-image" class="pro-large-image"></div>
+                <div>
+                    <div id="detail-verified" class="verified-tag" style="margin-bottom: 12px;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg>
+                        Verified Expert
+                    </div>
+                    <h1 id="detail-name" style="text-align: left; font-size: 2.5rem;"></h1>
+                    <p id="detail-title"
+                        style="font-size: 1.2rem; margin: 4px 0 0; color: var(--accent); font-weight: 600;"></p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2 class="section-title">Background & Experience</h2>
+                <p id="detail-exp" style="font-weight: 600; margin-bottom: 12px;"></p>
+                <p id="detail-bio" class="bio-text"></p>
+            </div>
+
+            <div class="info-section">
+                <h2 class="section-title">Core Specialties</h2>
+                <div id="detail-specialties" class="tags-container"></div>
+            </div>
+
+            <div class="info-section">
+                <h2 class="section-title">Why Verified?</h2>
+                <p id="detail-why" class="bio-text" style="font-style: italic;"></p>
+            </div>
+
+            <div class="contact-grid">
+                <a id="lnk-linkedin" href="#" target="_blank" class="btn-action btn-linkedin">LinkedIn Profile</a>
+                <a id="lnk-email" href="#" class="btn-action btn-primary">Contact via Email</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let professionals = [];
+
+        async function init() {
+            try {
+                const response = await fetch('catalog.json?v=' + Date.now());
+                const data = await response.json();
+                professionals = data.verified_professionals;
+
+                // Route
+                const params = new URLSearchParams(window.location.search);
+                const id = params.get('id');
+
+                if (id) {
+                    showDetail(id);
+                } else {
+                    renderList();
+                }
+            } catch (err) {
+                console.error('Fetch error:', err);
+                document.getElementById('pro-grid').innerHTML =
+                    `<p style="color:#ff3b30">Failed to load expert profiles. Please refresh.</p>`;
+            }
+        }
+
+        function renderList() {
+            const grid = document.getElementById('pro-grid');
+            grid.innerHTML = professionals.map(pro => `
+                <a href="?id=${pro.id}" class="pro-card" onclick="openPro(event, '${pro.id}')">
+                    <div class="pro-image">${pro.name.charAt(0)}</div>
+                    <h2 class="pro-name">${pro.name}</h2>
+                    <p class="pro-title">${pro.title}</p>
+                    <div class="verified-tag">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Verified
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        function showDetail(id) {
+            const pro = professionals.find(p => p.id === id);
+            if (!pro) return showList();
+
+            document.getElementById('list-view').classList.add('hidden');
+            document.getElementById('detail-view').classList.remove('hidden');
+
+            document.getElementById('detail-name').innerText = pro.name;
+            document.getElementById('detail-title').innerText = pro.title;
+            document.getElementById('detail-image').innerText = pro.name.charAt(0);
+            document.getElementById('detail-exp').innerText = pro.experience;
+            document.getElementById('detail-bio').innerText = pro.bio;
+            document.getElementById('detail-why').innerText = pro.why_verified;
+
+            const specialties = document.getElementById('detail-specialties');
+            specialties.innerHTML = pro.specialties.map(s => `<span class="tag">${s}</span>`).join('');
+
+            document.getElementById('lnk-linkedin').href = pro.linkedin_url;
+            document.getElementById('lnk-email').href = `mailto:${pro.email}?subject=Inquiry%20via%20QCAI%20Expert%20Network`;
+
+            window.scrollTo(0, 0);
+        }
+
+        function openPro(e, id) {
+            e.preventDefault();
+            history.pushState(null, '', `?id=${id}`);
+            showDetail(id);
+        }
+
+        function showList(e) {
+            if (e) e.preventDefault();
+            history.pushState(null, '', 'pro.html');
+            document.getElementById('detail-view').classList.add('hidden');
+            document.getElementById('list-view').classList.remove('hidden');
+            renderList();
+        }
+
+        // Handle browser back button
+        window.onpopstate = () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            if (id) showDetail(id);
+            else showList();
+        };
+
+        init();
+    </script>
+</body>
+
+</html>
