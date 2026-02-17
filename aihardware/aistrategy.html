@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Strategy Roadmap | Queen City AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007AFF;
+            --secondary: #AF52DE;
+            --background: #050505;
+            --surface: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+            --text: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            overflow-x: hidden;
+            background: radial-gradient(circle at top left, rgba(0, 122, 255, 0.15), transparent 40%),
+                radial-gradient(circle at bottom right, rgba(175, 82, 222, 0.1), transparent 40%);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 24px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Survey Steps */
+        .card {
+            background: var(--surface);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 32px;
+            margin-bottom: 24px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            line-height: 1.3;
+        }
+
+        .description {
+            font-size: 15px;
+            color: var(--text-dim);
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .options-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px 20px;
+            color: var(--text);
+            font-size: 16px;
+            font-family: inherit;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .option-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+        }
+
+        .option-btn.selected {
+            background: var(--primary);
+            border-color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-bottom: 20px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            font-size: 16px;
+            cursor: pointer;
+            padding: 12px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transition: width 0.4s ease;
+        }
+
+        /* Results Screen */
+        .results-header {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .badge-ai {
+            background: rgba(175, 82, 222, 0.2);
+            color: var(--secondary);
+            border: 1px solid rgba(175, 82, 222, 0.3);
+        }
+
+        .badge-hw {
+            background: rgba(0, 122, 255, 0.2);
+            color: var(--primary);
+            border: 1px solid rgba(0, 122, 255, 0.3);
+        }
+
+        .result-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .result-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .result-subtitle {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-bottom: 16px;
+        }
+
+        .justification {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-dim);
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border);
+        }
+
+        .action-container {
+            margin-top: 32px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 16px;
+            padding: 18px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 122, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+            border-radius: 16px;
+            padding: 18px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .roi-card {
+            background: linear-gradient(135deg, rgba(52, 199, 89, 0.1), transparent);
+            border: 1px solid rgba(52, 199, 89, 0.2);
+            padding: 24px;
+            border-radius: 24px;
+            margin-top: 24px;
+        }
+
+        .roi-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #34C759;
+            margin: 4px 0;
+        }
+
+        .disclaimer {
+            font-size: 10px;
+            color: var(--text-dim);
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">QCAI Strategy</div>
+            <div class="subtitle">AI Adoption Roadmap</div>
+        </header>
+
+        <div class="progress-bar">
+            <div id="progress" class="progress-fill" style="width: 10%;"></div>
+        </div>
+
+        <div id="survey-container">
+            <!-- Questions will be injected here -->
+        </div>
+
+        <div class="nav-buttons" id="nav-container">
+            <button class="btn-secondary" onclick="prevStep()" id="prev-btn" style="visibility: hidden;">Back</button>
+        </div>
+    </div>
+
+    <script>
+        let catalog = null;
+        let currentStep = 0;
+        const responses = {};
+
+        const questions = [
+            {
+                id: 'businessType',
+                title: 'What is your primary focus?',
+                desc: 'We tailor models based on industry reasoning depth.',
+                options: [
+                    { label: 'Legal / Finance / Compliance', value: 'legal' },
+                    { label: 'Software Engineering / Tech', value: 'tech' },
+                    { label: 'Creative / Marketing', value: 'creative' },
+                    { label: 'Enterprise Operations', value: 'enterprise' },
+                    { label: 'Personal / Individual Use', value: 'personal' }
+                ]
+            },
+            {
+                id: 'aiGoals',
+                title: 'Main AI Objective?',
+                desc: 'Select the primary task you want to automate.',
+                options: [
+                    { label: 'Advanced Reasoning & Analysis', value: 'reasoning' },
+                    { label: 'Coding & Technical Tasks', value: 'coding' },
+                    { label: 'Content Writing & RAG', value: 'writing' },
+                    { label: 'Vision / OCR / Image Analysis', value: 'vision' }
+                ]
+            },
+            {
+                id: 'privacy',
+                title: 'Data Privacy Requirement?',
+                desc: 'Determines if you need local hardware or cloud APIs.',
+                options: [
+                    { label: 'Strictly Local (Private Data)', value: 'local' },
+                    { label: 'Hybrid (Mixed Data)', value: 'hybrid' },
+                    { label: 'Cloud-OK (Non-Sensitive)', value: 'cloud' }
+                ]
+            },
+            {
+                id: 'inputSize',
+                title: 'Typical Document Size?',
+                desc: 'Affects the "Context Window" of the recommended model.',
+                options: [
+                    { label: 'Short Queries (1-5 pages)', value: 'standard' },
+                    { label: 'Medium (10-50 pages)', value: 'medium' },
+                    { label: 'Large (Books, Entire Codebases)', value: 'largeDocs' }
+                ]
+            },
+            {
+                id: 'accuracyLevel',
+                title: 'Required Accuracy?',
+                desc: 'Determines the "Quantization" level and memory usage.',
+                options: [
+                    { label: 'High-Precision (Scientific/Legal)', value: 'High-Precision' },
+                    { label: 'Balanced (Daily Pro Use)', value: 'Balanced' },
+                    { label: 'Fast (Drafts/Creative)', value: 'Fast' }
+                ]
+            },
+            {
+                id: 'platformPreference',
+                title: 'Existing Hardware Ecosystem?',
+                desc: 'Helps us match compatible GPU architecture.',
+                options: [
+                    { label: 'Apple Silicon (Mac)', value: 'mac' },
+                    { label: 'NVIDIA (Windows/Linux)', value: 'nvidia' },
+                    { label: 'AMD (Windows/Linux)', value: 'amd' },
+                    { label: 'No Preference / New Setup', value: 'none' }
+                ]
+            },
+            {
+                id: 'teamSize',
+                title: 'Operational Scale?',
+                desc: 'Determines memory bandwidth needs for concurrency.',
+                options: [
+                    { label: 'Individual Specialist', value: 'solo' },
+                    { label: 'Small Team (2-10)', value: 'smallTeam' },
+                    { label: 'Enterprise Department', value: 'enterprise' }
+                ]
+            }
+        ];
+
+        async function init() {
+            try {
+                const res = await fetch('catalog.json');
+                catalog = await res.json();
+                document.getElementById('loading').classList.add('hidden');
+                renderStep();
+            } catch (e) {
+                console.error('Failed to load catalog', e);
+                alert('Connection error. Please try again.');
+            }
+        }
+
+        function renderStep() {
+            const container = document.getElementById('survey-container');
+            const q = questions[currentStep];
+
+            // Progress
+            const progress = ((currentStep + 1) / questions.length) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+            document.getElementById('prev-btn').style.visibility = currentStep > 0 ? 'visible' : 'hidden';
+
+            container.innerHTML = `
+                <div class="card">
+                    <h1>${q.title}</h1>
+                    <p class="description">${q.desc}</p>
+                    <div class="options-grid">
+                        ${q.options.map(opt => `
+                            <button class="option-btn ${responses[q.id] === opt.value ? 'selected' : ''}" 
+                                    onclick="selectOption('${q.id}', '${opt.value}')">
+                                ${opt.label}
+                                <span>→</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectOption(id, value) {
+            responses[id] = value;
+
+            // Check if we should skip hardware/platform questions for cloud users
+            if (id === 'privacy' && value === 'cloud') {
+                // Future optimization: maybe skip some steps. 
+                // For now, let user finish to get full recommendation.
+            }
+
+            if (currentStep < questions.length - 1) {
+                currentStep++;
+                renderStep();
+            } else {
+                showResults();
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                renderStep();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('progress').style.width = '100%';
+            document.getElementById('nav-container').classList.add('hidden');
+
+            const result = calculateRecommendation();
+            const container = document.getElementById('survey-container');
+
+            container.innerHTML = `
+                <div class="results-header">
+                    <span class="badge badge-ai">Strategy Unlocked</span>
+                    <h1>Your AI Roadmap</h1>
+                    <p class="description">Based on ${responses.businessType} focus and ${responses.privacy} privacy needs.</p>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-subtitle">RECOMMENDED MODEL</div>
+                    <div class="result-title">${result.model.name}</div>
+                    <p class="description" style="margin-bottom:0">${result.model.description}</p>
+                    <div class="justification">${result.modelJustification}</div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-subtitle">HARDWARE ARCHITECTURE</div>
+                    <div class="result-title">${result.hardware.name}</div>
+                    <p class="description" style="margin-bottom:8px">${result.hardware.gpu} • ${result.hardware.vram}GB VRAM</p>
+                    <div class="justification">${result.hwJustification}</div>
+                </div>
+
+                <div class="roi-card">
+                    <div class="result-subtitle" style="color:#34C759">ESTIMATED ANNUAL ROI</div>
+                    <div class="roi-value">$${result.savings.toLocaleString()}</div>
+                    <p class="description" style="margin-bottom:0">Payback Period: ~${result.payback} Months</p>
+                </div>
+
+                <div class="action-container">
+                    <a href="${result.hardware.purchaseUrl}" class="btn-primary">Buy Recommended Hardware</a>
+                    <a href="diy.html?template=${result.hardware.id}" class="btn-outline">View DIY Build Guide</a>
+                    <a href="mailto:admin@queencityai.net?subject=Professional%20AI%20Installation%20Request&body=I%20am%20interested%20in%20deploying%20the%20${result.model.name}%20architecture." class="btn-outline">Professional Setup Request</a>
+                </div>
+
+                <p class="disclaimer">As an Amazon Associate, we earn from qualifying purchases. This supports our open-source AI research.</p>
+                <div style="height:100px"></div>
+            `;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function calculateRecommendation() {
+            // 1. Model Selection
+            let models = catalog.models;
+            let model = null;
+
+            // Context window priority
+            if (responses.inputSize === 'largeDocs') {
+                model = models.find(m => m.contextWindow >= 128000 && m.parameters >= 70);
+            }
+
+            if (!model) {
+                if (['legal', 'enterprise'].includes(responses.businessType)) {
+                    model = models.find(m => m.parameters >= 70);
+                } else if (responses.aiGoals === 'coding') {
+                    model = models.find(m => m.id.toLowerCase().includes('coder') || m.name.toLowerCase().includes('coder'));
+                } else if (responses.aiGoals === 'vision') {
+                    model = models.find(m => m.id.toLowerCase().includes('vision') || m.name.toLowerCase().includes('vision'));
+                }
+            }
+
+            if (!model) {
+                model = responses.accuracyLevel === 'High-Precision'
+                    ? [...models].sort((a, b) => b.parameters - a.parameters)[0]
+                    : [...models].sort((a, b) => a.parameters - b.parameters)[0];
+            }
+
+            // 2. VRAM Math
+            const ratio = responses.accuracyLevel === 'High-Precision' ? 1.2 : (responses.accuracyLevel === 'Balanced' ? 0.9 : 0.75);
+            const overhead = responses.accuracyLevel === 'High-Precision' ? 1.2 : (responses.accuracyLevel === 'Balanced' ? 1.15 : 1.1);
+            const vramNeeded = Math.ceil((model.parameters * ratio) * overhead);
+
+            // 3. Bandwidth
+            const bandwidthNeeded = responses.teamSize === 'enterprise' ? 800 : (responses.teamSize === 'smallTeam' ? 500 : 250);
+
+            // 4. Hardware Match
+            let candidates = catalog.bundles.filter(b => b.vram >= vramNeeded && b.memoryBandwidth >= bandwidthNeeded);
+            if (candidates.length === 0) candidates = catalog.bundles.filter(b => b.vram >= vramNeeded);
+
+            const pref = responses.platformPreference.toLowerCase();
+            let filtered = candidates;
+            if (pref === 'mac') filtered = candidates.filter(b => b.name.includes('Mac') || b.gpu.includes('Apple'));
+            else if (pref === 'nvidia') filtered = candidates.filter(b => b.gpu.includes('NVIDIA') || b.gpu.includes('RTX'));
+            else if (pref === 'amd') filtered = candidates.filter(b => b.gpu.includes('AMD') || b.gpu.includes('Radeon'));
+
+            if (filtered.length > 0) candidates = filtered;
+            candidates.sort((a, b) => a.price - b.price);
+            const hardware = candidates[0] || catalog.bundles[catalog.bundles.length - 1];
+
+            // 5. Justifications
+            let modelJust = `Optimized for ${model.name} to balance speed and intelligence.`;
+            if (['legal', 'enterprise'].includes(responses.businessType)) modelJust = `Selected ${model.name} for high reasoning depth required in ${responses.businessType}.`;
+            else if (responses.aiGoals === 'coding') modelJust = `Choosing ${model.name} based on top-tier coding benchmarks.`;
+
+            const hwJust = `Running this model at ${responses.accuracyLevel.toLowerCase()} requires ~${vramNeeded}GB VRAM. This ${hardware.name} setup provides the necessary ${hardware.memoryBandwidth}GB/s bandwidth for ${responses.teamSize} scale.`;
+
+            // 6. ROI
+            const savings = 85 * 20 * 52 * 0.3; // Avg $85/hr, 20hrs/wk, 30% automation
+            const payback = Math.round((hardware.price / (savings / 12)) * 10) / 10;
+
+            return { model, hardware, modelJustification: modelJust, hwJustification: hwJust, savings, payback };
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
