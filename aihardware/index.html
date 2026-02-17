@@ -261,6 +261,23 @@
                     maximumFractionDigits: 0
                 }).format(item.price);
 
+                // Generate AI Compatibility HTML
+                let compatibilityHtml = '';
+                if (item.ai_compatibility && item.ai_compatibility.length > 0) {
+                    compatibilityHtml = `
+                        <div style="margin-top: 15px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                            <span style="font-size: 0.75rem; color: var(--secondary-text); font-weight: bold; text-transform: uppercase;">Suitable AI Models:</span>
+                            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+                                ${item.ai_compatibility.map(ac => `
+                                    <span class="tier-badge" style="margin: 0; font-size: 0.7rem; background-color: ${ac.recommended ? 'rgba(52, 199, 89, 0.15)' : 'rgba(175, 82, 222, 0.1)'}; color: ${ac.recommended ? 'var(--success-color)' : 'var(--accent-color)'};">
+                                        ${ac.recommended ? '★ ' : ''}${ac.model_id.replace(/-/g, ' ')}
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+
                 card.innerHTML = `
                 <div class="card-image-container">
                     <img src="${item.image_url}" alt="${item.name}" class="card-image" referrerpolicy="no-referrer" loading="lazy" onerror="this.src='https://placehold.co/400x300/1a1a1a/FFF?text=No+Image'">
@@ -276,6 +293,7 @@
                             <span class="spec-icon">🧠</span> ${item.vram}GB VRAM
                         </li>
                     </ul>
+                    ${compatibilityHtml}
                     <div class="price-section">
                         <div class="price">${formattedPrice}</div>
                         <a href="${item.purchase_url}" target="_blank" class="buy-button">Buy Now</a>

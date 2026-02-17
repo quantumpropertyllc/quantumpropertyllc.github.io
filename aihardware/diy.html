@@ -371,6 +371,23 @@
                     </a>
                 `).join('');
 
+                // Generate AI Compatibility HTML
+                let compatibilityHtml = '';
+                if (t.ai_compatibility && t.ai_compatibility.length > 0) {
+                    compatibilityHtml = `
+                        <div style="margin-top: 15px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                            <span style="font-size: 0.75rem; color: var(--secondary-text); font-weight: bold; text-transform: uppercase;">Suitable AI Models:</span>
+                            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+                                ${t.ai_compatibility.map(ac => `
+                                    <span class="badge" style="margin: 0; font-size: 0.65rem; background-color: ${ac.recommended ? 'rgba(52, 199, 89, 0.15)' : 'rgba(175, 82, 222, 0.1)'}; color: ${ac.recommended ? 'var(--accent-color)' : 'var(--purple-accent)'}; border: 1px solid ${ac.recommended ? 'var(--accent-color)' : 'var(--purple-accent)'};">
+                                        ${ac.recommended ? '★ ' : ''}${ac.model_id.replace(/-/g, ' ')}
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+
                 card.innerHTML = `
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <h3>${t.name} ${t.id === 'diy_budget' ? '🥉' : t.id === 'diy_midrange' ? '🥈' : '🥇'}</h3>
@@ -381,6 +398,7 @@
                         <span style="font-size: 0.8rem; color: var(--secondary-text); font-weight: bold;">PART LIST:</span>
                         ${partsHtml}
                     </div>
+                    ${compatibilityHtml}
                 `;
                 container.appendChild(card);
             });
