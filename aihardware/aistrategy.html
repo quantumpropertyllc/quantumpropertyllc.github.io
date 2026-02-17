@@ -525,6 +525,28 @@
                     <div class="justification">${result.hwJustification}</div>
                 </div>
 
+                ${result.cloudRecs ? `
+                <div class="result-item" style="border: 1px solid var(--secondary); background: rgba(175, 82, 222, 0.05);">
+                    <div class="result-subtitle" style="color:var(--secondary)">CLOUD & PRIVATE INFRASTRUCTURE</div>
+                    <div class="options-grid" style="margin-top:16px">
+                        ${result.cloudRecs.map(p => `
+                            <a href="${p.url}" target="_blank" class="option-btn" style="text-decoration:none; display:flex; align-items:center;">
+                                <div>
+                                    <div style="font-weight:700; color:var(--text)">${p.name}</div>
+                                    <div style="font-size:12px; color:var(--text-dim)">${p.description}</div>
+                                    ${p.provider ? `<div style="font-size:11px; color:var(--secondary); margin-top:4px">via ${p.provider}</div>` : ''}
+                                </div>
+                                <span style="color:var(--secondary)">↗</span>
+                            </a>
+                        `).join('')}
+                    </div>
+                    <div class="justification">
+                        <strong style="color:var(--text)">Hybrid/Cloud Recommendation:</strong> <br>
+                        For scalable training or managed infrastructure, we recommend <strong>Lambda Labs</strong> (Cloud GPUs) and <strong>Puget Systems</strong> (Custom Servers).
+                    </div>
+                </div>
+                ` : ''}
+
                 <div class="roi-card">
                     <div class="result-subtitle" style="color:#34C759">ESTIMATED ANNUAL ROI</div>
                     <div class="roi-value">$${result.savings.toLocaleString()}</div>
@@ -602,7 +624,15 @@
             const savings = 85 * 20 * 52 * 0.3; // Avg $85/hr, 20hrs/wk, 30% automation
             const payback = Math.round((hardware.price / (savings / 12)) * 10) / 10;
 
-            return { model, hardware, modelJustification: modelJust, hwJustification: hwJust, savings, payback };
+            // 7. Cloud/Private Recommendations
+            let cloudRecs = null;
+            if (['cloud', 'hybrid'].includes(responses.privacy) && catalog.cloud_providers) {
+                // Filter to only show relevant ones (e.g., exclude public cloud for 'strict' private if we had that)
+                // For now, show all 3 (Public, Lambda, Puget) as options
+                cloudRecs = catalog.cloud_providers;
+            }
+
+            return { model, hardware, modelJustification: modelJust, hwJustification: hwJust, savings, payback, cloudRecs };
         }
 
         init();
