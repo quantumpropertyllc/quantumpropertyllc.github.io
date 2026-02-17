@@ -53,6 +53,7 @@
             font-weight: 700;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 8px;
         }
@@ -530,7 +531,7 @@
 
         function calculateRecommendation() {
             // 1. Model Selection
-            let models = catalog.models;
+            let models = catalog.ai_models;
             let model = null;
 
             // Context window priority
@@ -563,8 +564,8 @@
             const bandwidthNeeded = responses.teamSize === 'enterprise' ? 800 : (responses.teamSize === 'smallTeam' ? 500 : 250);
 
             // 4. Hardware Match
-            let candidates = catalog.bundles.filter(b => b.vram >= vramNeeded && b.memoryBandwidth >= bandwidthNeeded);
-            if (candidates.length === 0) candidates = catalog.bundles.filter(b => b.vram >= vramNeeded);
+            let candidates = catalog.hardware_bundles.filter(b => b.vram >= vramNeeded && b.memory_bandwidth >= bandwidthNeeded);
+            if (candidates.length === 0) candidates = catalog.hardware_bundles.filter(b => b.vram >= vramNeeded);
 
             const pref = responses.platformPreference.toLowerCase();
             let filtered = candidates;
@@ -574,14 +575,14 @@
 
             if (filtered.length > 0) candidates = filtered;
             candidates.sort((a, b) => a.price - b.price);
-            const hardware = candidates[0] || catalog.bundles[catalog.bundles.length - 1];
+            const hardware = candidates[0] || catalog.hardware_bundles[catalog.hardware_bundles.length - 1];
 
             // 5. Justifications
             let modelJust = `Optimized for ${model.name} to balance speed and intelligence.`;
             if (['legal', 'enterprise'].includes(responses.businessType)) modelJust = `Selected ${model.name} for high reasoning depth required in ${responses.businessType}.`;
             else if (responses.aiGoals === 'coding') modelJust = `Choosing ${model.name} based on top-tier coding benchmarks.`;
 
-            const hwJust = `Running this model at ${responses.accuracyLevel.toLowerCase()} requires ~${vramNeeded}GB VRAM. This ${hardware.name} setup provides the necessary ${hardware.memoryBandwidth}GB/s bandwidth for ${responses.teamSize} scale.`;
+            const hwJust = `Running this model at ${responses.accuracyLevel.toLowerCase()} requires ~${vramNeeded}GB VRAM. This ${hardware.name} setup provides the necessary ${hardware.memory_bandwidth}GB/s bandwidth for ${responses.teamSize} scale.`;
 
             // 6. ROI
             const savings = 85 * 20 * 52 * 0.3; // Avg $85/hr, 20hrs/wk, 30% automation
