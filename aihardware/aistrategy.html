@@ -505,7 +505,7 @@
                 <div class="result-item">
                     <div class="result-subtitle">RECOMMENDED MODEL</div>
                     <div class="result-title">${result.model.name}</div>
-                    <p class="description" style="margin-bottom:0">${result.model.description}</p>
+                    <p class="description" style="margin-bottom:0">${result.model.family} Model • ${result.model.parameter_size} Specs</p>
                     <div class="justification">${result.modelJustification}</div>
                 </div>
 
@@ -523,8 +523,8 @@
                 </div>
 
                 <div class="action-container">
-                    <a href="${result.hardware.purchaseUrl}" class="btn-primary">Buy Recommended Hardware</a>
-                    <a href="diy.html?template=${result.hardware.id}" class="btn-outline">View DIY Build Guide</a>
+                    <a href="${result.hardware.purchase_url}" target="_blank" class="btn-primary">Buy Recommended Hardware</a>
+                    <a href="diy.html?template=${result.hardware.diy_template}" class="btn-outline">View DIY Build Guide</a>
                     <a href="mailto:admin@queencityai.net?subject=Professional%20AI%20Installation%20Request&body=I%20am%20interested%20in%20deploying%20the%20${result.model.name}%20architecture." class="btn-outline">Professional Setup Request</a>
                 </div>
 
