@@ -428,13 +428,22 @@
 
         async function init() {
             try {
-                const res = await fetch('catalog.json');
+                // Cache buster for mobile webviews
+                const res = await fetch('catalog.json?v=' + Date.now());
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 catalog = await res.json();
-                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('loading')?.classList.add('hidden');
                 renderStep();
             } catch (e) {
                 console.error('Failed to load catalog', e);
-                alert('Connection error. Please try again.');
+                document.getElementById('survey-container').innerHTML = `
+                    <div class="card" style="text-align:center; border-color: #ff3b30;">
+                        <h1 style="color:#ff3b30">Load Failed</h1>
+                        <p class="description">Could not load hardware catalog. Please check your internet connection.</p>
+                        <p style="font-size:12px; opacity:0.5">${e.message}</p>
+                        <button class="btn-primary" onclick="location.reload()" style="margin-top:20px">Retry Now</button>
+                    </div>
+                `;
             }
         }
 
