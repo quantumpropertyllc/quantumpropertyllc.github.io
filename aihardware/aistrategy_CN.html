@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 战略规划 | Queen City AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007AFF;
+            --secondary: #AF52DE;
+            --background: #000000;
+            --surface: rgba(255, 255, 255, 0.08);
+            --card-bg: #121212;
+            --border: rgba(255, 255, 255, 0.15);
+            --text: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.7);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 0% 0%, rgba(0, 122, 255, 0.2), transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(175, 82, 222, 0.15), transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 24px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Survey Steps */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            line-height: 1.3;
+        }
+
+        .description {
+            font-size: 15px;
+            color: var(--text-dim);
+            margin-bottom: 32px;
+            line-height: 1.5;
+            display: block;
+            /* Ensure it's not hidden */
+        }
+
+        .options-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px 20px;
+            color: var(--text);
+            font-size: 16px;
+            font-family: inherit;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .option-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+        }
+
+        .option-btn.selected {
+            background: var(--primary);
+            border-color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-bottom: 20px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            font-size: 16px;
+            cursor: pointer;
+            padding: 12px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transition: width 0.4s ease;
+        }
+
+        /* Results Screen */
+        .results-header {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .badge-ai {
+            background: rgba(175, 82, 222, 0.2);
+            color: var(--secondary);
+            border: 1px solid rgba(175, 82, 222, 0.3);
+        }
+
+        .badge-hw {
+            background: rgba(0, 122, 255, 0.2);
+            color: var(--primary);
+            border: 1px solid rgba(0, 122, 255, 0.3);
+        }
+
+        .result-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .result-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .result-subtitle {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-bottom: 16px;
+        }
+
+        .justification {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-dim);
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border);
+        }
+
+        .action-container {
+            margin-top: 32px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 16px;
+            padding: 18px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 122, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+            border-radius: 16px;
+            padding: 18px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .roi-card {
+            background: linear-gradient(135deg, rgba(52, 199, 89, 0.1), transparent);
+            border: 1px solid rgba(52, 199, 89, 0.2);
+            padding: 24px;
+            border-radius: 24px;
+            margin-top: 24px;
+        }
+
+        .roi-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #34C759;
+            margin: 4px 0;
+        }
+
+        .disclaimer {
+            font-size: 10px;
+            color: var(--text-dim);
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">QCAI 战略</div>
+            <div class="subtitle">AI 采用路线图</div>
+        </header>
+
+        <div class="progress-bar">
+            <div id="progress" class="progress-fill" style="width: 10%;"></div>
+        </div>
+
+        <div id="survey-container">
+            <!-- Questions will be injected here -->
+        </div>
+
+        <div class="nav-buttons" id="nav-container">
+            <button class="btn-secondary" onclick="prevStep()" id="prev-btn" style="visibility: hidden;">返回</button>
+        </div>
+    </div>
+
+    <script>
+        let catalog = null;
+        let currentStep = 0;
+        const responses = {};
+
+        const questions = [
+            {
+                id: 'businessType',
+                title: '您的主要关注点是什么？',
+                desc: '我们根据行业推理深度定制模型。',
+                options: [
+                    { label: '法律 / 金融 / 合规', value: 'legal' },
+                    { label: '软件工程 / 技术', value: 'tech' },
+                    { label: '创意 / 营销', value: 'creative' },
+                    { label: '企业运营', value: 'enterprise' },
+                    { label: '个人 / 独立使用', value: 'personal' }
+                ]
+            },
+            {
+                id: 'aiGoals',
+                title: '主要 AI 目标？',
+                desc: '选择您想要自动化的主要任务。',
+                options: [
+                    { label: '高级推理与分析', value: 'reasoning' },
+                    { label: '编码与技术任务', value: 'coding' },
+                    { label: '内容撰写与 RAG', value: 'writing' },
+                    { label: '视觉 / OCR / 图像分析', value: 'vision' }
+                ]
+            },
+            {
+                id: 'privacy',
+                title: '数据隐私要求？',
+                desc: '决定您是否需要本地硬件或云端 API。',
+                options: [
+                    { label: '严格本地 (隐私数据)', value: 'local' },
+                    { label: '混合 (混合数据)', value: 'hybrid' },
+                    { label: '云端 (非敏感)', value: 'cloud' }
+                ]
+            },
+            {
+                id: 'inputSize',
+                title: '典型文档大小？',
+                desc: '影响推荐模型的“上下文窗口”。',
+                options: [
+                    { label: '短查询 (1-5 页)', value: 'standard' },
+                    { label: '中等 (10-50 页)', value: 'medium' },
+                    { label: '大 (书籍, 整个代码库)', value: 'largeDocs' }
+                ]
+            },
+            {
+                id: 'accuracyLevel',
+                title: '所需精度？',
+                desc: '决定“量化”水平和内存使用。',
+                options: [
+                    { label: '高精度 (科学/法律)', value: 'High-Precision' },
+                    { label: '平衡 (日常专业使用)', value: 'Balanced' },
+                    { label: '快速 (草稿/创意)', value: 'Fast' }
+                ]
+            },
+            {
+                id: 'platformPreference',
+                title: '现有硬件生态系统？',
+                desc: '帮助我们匹配兼容的 GPU 架构。',
+                options: [
+                    { label: 'Apple Silicon (Mac)', value: 'mac' },
+                    { label: 'NVIDIA (Windows/Linux)', value: 'nvidia' },
+                    { label: 'AMD (Windows/Linux)', value: 'amd' },
+                    { label: '无偏好 / 新配置', value: 'none' }
+                ]
+            },
+            {
+                id: 'teamSize',
+                title: '运营规模？',
+                desc: '决定并发所需的内存带宽需求。',
+                options: [
+                    { label: '个人专家', value: 'solo' },
+                    { label: '小团队 (2-10)', value: 'smallTeam' },
+                    { label: '企业部门', value: 'enterprise' }
+                ]
+            }
+        ];
+
+        async function init() {
+            try {
+                // Cache buster for mobile webviews
+                const res = await fetch('catalog.json?v=' + Date.now());
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                catalog = await res.json();
+                document.getElementById('loading')?.classList.add('hidden');
+                renderStep();
+            } catch (e) {
+                console.error('Failed to load catalog', e);
+                document.getElementById('survey-container').innerHTML = `
+                    <div class="card" style="text-align:center; border-color: #ff3b30;">
+                        <h1 style="color:#ff3b30">加载失败</h1>
+                        <p class="description">无法加载硬件目录。请检查您的互联网连接。</p>
+                        <p style="font-size:12px; opacity:0.5">${e.message}</p>
+                        <button class="btn-primary" onclick="location.reload()" style="margin-top:20px">立即重试</button>
+                    </div>
+                `;
+            }
+        }
+
+        function renderStep() {
+            const container = document.getElementById('survey-container');
+            const q = questions[currentStep];
+
+            // Progress
+            const progress = ((currentStep + 1) / questions.length) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+            document.getElementById('prev-btn').style.visibility = currentStep > 0 ? 'visible' : 'hidden';
+
+            container.innerHTML = `
+                <div class="card">
+                    <h1>${q.title}</h1>
+                    <p class="description">${q.desc}</p>
+                    <div class="options-grid">
+                        ${q.options.map(opt => `
+                            <button class="option-btn ${responses[q.id] === opt.value ? 'selected' : ''}" 
+                                    onclick="selectOption('${q.id}', '${opt.value}')">
+                                ${opt.label}
+                                <span>→</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectOption(id, value) {
+            responses[id] = value;
+
+            // Check if we should skip hardware/platform questions for cloud users
+            if (id === 'privacy' && value === 'cloud') {
+                // Future optimization: maybe skip some steps. 
+                // For now, let user finish to get full recommendation.
+            }
+
+            if (currentStep < questions.length - 1) {
+                currentStep++;
+                renderStep();
+            } else {
+                showResults();
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                renderStep();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('progress').style.width = '100%';
+            document.getElementById('nav-container').classList.add('hidden');
+
+            const result = calculateRecommendation();
+            const container = document.getElementById('survey-container');
+
+            container.innerHTML = `
+                <div class="results-header">
+                    <span class="badge badge-ai">战略解锁</span>
+                    <h1>您的 AI 路线图</h1>
+                    <p class="description">基于 ${responses.businessType} 关注点和 ${responses.privacy} 隐私需求。</p>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-subtitle">推荐模型</div>
+                    <div class="result-title">${result.model.name}</div>
+                    <p class="description" style="margin-bottom:0">${result.model.family} 模型 • ${result.model.parameter_size} 规格</p>
+                    <div class="justification">${result.modelJustification}</div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-subtitle">硬件架构</div>
+                    <div class="result-title">${result.hardware.name}</div>
+                    <p class="description" style="margin-bottom:8px">${result.hardware.gpu} • ${result.hardware.vram}GB 显存</p>
+                    <div class="justification">${result.hwJustification}</div>
+                </div>
+
+                ${result.cloudRecs ? `
+                <div class="result-item" style="border: 1px solid var(--secondary); background: rgba(175, 82, 222, 0.05);">
+                    <div class="result-subtitle" style="color:var(--secondary)">云端与私有基础设施</div>
+                    <div class="options-grid" style="margin-top:16px">
+                        ${result.cloudRecs.map(p => `
+                            <a href="${p.url}" target="_blank" class="option-btn" style="text-decoration:none; display:flex; align-items:center;">
+                                <div>
+                                    <div style="font-weight:700; color:var(--text)">${p.name}</div>
+                                    <div style="font-size:12px; color:var(--text-dim)">${p.description}</div>
+                                    ${p.provider ? `<div style="font-size:11px; color:var(--secondary); margin-top:4px">vía ${p.provider}</div>` : ''}
+                                </div>
+                                <span style="color:var(--secondary)">↗</span>
+                            </a>
+                        `).join('')}
+                    </div>
+                    <div class="justification">
+                        <strong style="color:var(--text)">混合/云端推荐:</strong> <br>
+                        对于可扩展训练或托管基础设施，我们推荐 <strong>Lambda Labs</strong> (云端 GPU) 和 <strong>Puget Systems</strong> (定制服务器)。
+                    </div>
+                </div>
+                ` : ''}
+
+                <div class="roi-card">
+                    <div class="result-subtitle" style="color:#34C759">预估年回报率</div>
+                    <div class="roi-value">$${result.savings.toLocaleString()}</div>
+                    <p class="description" style="margin-bottom:0">回本周期: ~${result.payback} 个月</p>
+                </div>
+
+                <div class="action-container">
+                    <a href="${result.hardware.purchase_url}" target="_blank" class="btn-primary">购买推荐硬件</a>
+                    <a href="diy.html?template=${result.hardware.diy_template}" class="btn-outline">查看 DIY 构建指南</a>
+                    <a href="mailto:admin@queencityai.net?subject=Professional%20AI%20Installation%20Request&body=I%20am%20interested%20in%20deploying%20the%20${result.model.name}%20architecture." class="btn-outline">专业安装请求</a>
+                </div>
+
+                <p class="disclaimer">作为亚马逊合作伙伴，我们从符合条件的购买中获利。这支持我们的开源 AI 研究。</p>
+                <div style="height:100px"></div>
+            `;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function calculateRecommendation() {
+            // 1. Model Selection
+            let models = catalog.ai_models;
+            let model = null;
+
+            // Context window priority
+            if (responses.inputSize === 'largeDocs') {
+                model = models.find(m => m.contextWindow >= 128000 && m.parameters >= 70);
+            }
+
+            if (!model) {
+                if (['legal', 'enterprise'].includes(responses.businessType)) {
+                    model = models.find(m => m.parameters >= 70);
+                } else if (responses.aiGoals === 'coding') {
+                    model = models.find(m => m.id.toLowerCase().includes('coder') || m.name.toLowerCase().includes('coder'));
+                } else if (responses.aiGoals === 'vision') {
+                    model = models.find(m => m.id.toLowerCase().includes('vision') || m.name.toLowerCase().includes('vision'));
+                }
+            }
+
+            if (!model) {
+                model = responses.accuracyLevel === 'High-Precision'
+                    ? [...models].sort((a, b) => b.parameters - a.parameters)[0]
+                    : [...models].sort((a, b) => a.parameters - b.parameters)[0];
+            }
+
+            // 2. VRAM Math
+            const ratio = responses.accuracyLevel === 'High-Precision' ? 1.2 : (responses.accuracyLevel === 'Balanced' ? 0.9 : 0.75);
+            const overhead = responses.accuracyLevel === 'High-Precision' ? 1.2 : (responses.accuracyLevel === 'Balanced' ? 1.15 : 1.1);
+            const vramNeeded = Math.ceil((model.parameters * ratio) * overhead);
+
+            // 3. Bandwidth
+            const bandwidthNeeded = responses.teamSize === 'enterprise' ? 800 : (responses.teamSize === 'smallTeam' ? 500 : 250);
+
+            // 4. Hardware Match
+            let candidates = catalog.hardware_bundles.filter(b => b.vram >= vramNeeded && b.memory_bandwidth >= bandwidthNeeded);
+            if (candidates.length === 0) candidates = catalog.hardware_bundles.filter(b => b.vram >= vramNeeded);
+
+            const pref = responses.platformPreference.toLowerCase();
+            let filtered = candidates;
+            if (pref === 'mac') filtered = candidates.filter(b => b.name.includes('Mac') || b.gpu.includes('Apple'));
+            else if (pref === 'nvidia') filtered = candidates.filter(b => b.gpu.includes('NVIDIA') || b.gpu.includes('RTX'));
+            else if (pref === 'amd') filtered = candidates.filter(b => b.gpu.includes('AMD') || b.gpu.includes('Radeon'));
+
+            if (filtered.length > 0) candidates = filtered;
+            candidates.sort((a, b) => a.price - b.price);
+            const hardware = candidates[0] || catalog.hardware_bundles[catalog.hardware_bundles.length - 1];
+
+            // 5. Justifications
+            let modelJust = `为了平衡速度和智力，针对 ${model.name} 进行了优化。`;
+            if (['legal', 'enterprise'].includes(responses.businessType)) modelJust = `由于 ${responses.businessType} 需要深度推理，因此选择了 ${model.name}。`;
+            else if (responses.aiGoals === 'coding') modelJust = `基于顶级编码基准选择了 ${model.name}。`;
+
+            const hwJust = `在 ${responses.accuracyLevel.toLowerCase()} 水平运行此模型需要约 ${vramNeeded}GB 显存。此 ${hardware.name} 配置为 ${responses.teamSize} 规模提供了必要的 ${hardware.memory_bandwidth}GB/s 带宽。`;
+
+            // 6. ROI
+            const savings = 85 * 20 * 52 * 0.3; // Avg $85/hr, 20hrs/wk, 30% automation
+            const payback = Math.round((hardware.price / (savings / 12)) * 10) / 10;
+
+            // 7. Cloud/Private Recommendations
+            let cloudRecs = null;
+            if (['cloud', 'hybrid'].includes(responses.privacy) && catalog.cloud_providers) {
+                // Filter to only show relevant ones (e.g., exclude public cloud for 'strict' private if we had that)
+                // For now, show all 3 (Public, Lambda, Puget) as options
+                cloudRecs = catalog.cloud_providers;
+            }
+
+            return { model, hardware, modelJustification: modelJust, hwJustification: hwJust, savings, payback, cloudRecs };
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
