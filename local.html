@@ -1,386 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>NC Life | Community Guide</title>
-
-  <style>
-    :root {
-      --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --sub: #8e8e93;
-      --primary: #5856d6; --accent: #007aff; --border: rgba(0,0,0,0.08);
-      --nav-bg: rgba(2, 136, 209, 0.1); --nav-text: #0288d1;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #000000; --card: #1c1c1e; --text: #ffffff; --sub: #8e8e93;
-        --primary: #5e5ce6; --accent: #0a84ff; --border: rgba(255,255,255,0.1);
-        --nav-bg: rgba(10, 132, 255, 0.15); --nav-text: #4fc3f7;
-      }
-    }
-
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    
-    body { 
-      margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; 
-      background: var(--bg); color: var(--text); line-height: 1.4;
-      padding-top: env(safe-area-inset-top);
-      padding-bottom: env(safe-area-inset-bottom);
-    }
-
-    .mini-header { padding: 15px 20px 10px; display: flex; justify-content: space-between; align-items: baseline; }
-    .mini-header h1 { margin: 0; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; }
-    .mini-header span { font-size: 0.8rem; color: var(--sub); font-weight: 500; text-transform: uppercase; }
-
-    .container { padding: 0 16px; max-width: 600px; margin: auto; }
-
-    /* Sticky Search Bar */
-    .search-wrapper { position: sticky; top: 0; z-index: 100; padding: 10px 0; background: var(--bg); }
-    .controls { 
-      display: flex; flex-direction: column; gap: 8px; padding: 8px; border-radius: 14px;
-      background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid var(--border);
-    }
-    .control-row { display: flex; gap: 8px; }
-    @media (prefers-color-scheme: dark) { .controls { background: rgba(44, 44, 46, 0.8); } }
-    
-    .controls input, .controls select { 
-      padding: 10px; border-radius: 10px; border: none; background: var(--bg); 
-      color: var(--text); font-size: 0.9rem; outline: none;
-    }
-    .controls input { flex: 2; }
-    .controls select { flex: 1.2; font-weight: 600; cursor: pointer; }
-
-    .section-group { margin-bottom: 25px; scroll-margin-top: 140px; }
-    .section-title { 
-      margin: 20px 0 12px 4px; font-size: 1.1rem; font-weight: 700; 
-      color: var(--text); display: flex; align-items: center; gap: 8px;
-    }
-
-    .card { 
-      background: var(--card); border-radius: 18px; padding: 18px; 
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02); border: 1px solid var(--border);
-    }
-
-    .btn-link { font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: 600; margin-right: 10px;}
-
-    #eventData { font-size: 0.9rem; overflow: hidden; }
-    #eventData ul { padding: 0; margin: 0; list-style: none; }
-    #eventData li { margin-bottom: 12px; border-bottom: 0.5px solid var(--border); padding-bottom: 8px; }
-    #eventData li:last-child { border-bottom: none; }
-    #eventData a { font-weight: 600; color: var(--accent); text-decoration: none; }
-
-    .hidden-events { display: none; }
-    .more-btn {
-      display: block; width: 100%; padding: 10px; margin-top: 10px;
-      background: var(--bg); color: var(--accent); border: none;
-      border-radius: 10px; font-weight: 700; font-size: 0.85rem; cursor: pointer;
-    }
-
-    .link-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 5px; }
-    .link-item {
-      display: flex; align-items: center; justify-content: center;
-      padding: 12px 8px; background: var(--bg); border-radius: 12px;
-      text-decoration: none; color: var(--text); font-size: 0.85rem;
-      font-weight: 500; text-align: center;
-    }
-
-    .info-list { list-style: none; padding: 0; margin: 0; }
-    .info-item { padding: 10px 0; border-bottom: 0.5px solid var(--border); }
-    .info-item:last-child { border-bottom: none; }
-    .info-label { display: block; font-size: 0.7rem; color: var(--sub); margin-bottom: 4px; font-weight: 600; text-transform: uppercase; }
-
-    a { color: var(--accent); text-decoration: none; }
-    .nav-link { 
-      display: inline-block; background: var(--nav-bg); color: var(--nav-text); 
-      padding: 4px 10px; border-radius: 8px; font-size: 0.8rem; margin-top: 4px; font-weight: 700;
-    }
-    
-    #emptyState { display: none; text-align: center; padding: 40px; color: var(--sub); font-size: 0.9rem; }
-    footer { text-align: center; margin-top: 40px; color: var(--sub); font-size: 0.75rem; padding: 20px; }
-  </style>
-</head>
-
-<body>
-
-<div class="mini-header">
-  <h1>NC Life</h1>
-  <span>Community Guide</span>
-</div>
-
-<div class="container">
-
-  <div class="search-wrapper">
-    <div class="controls">
-      <div class="control-row">
-        <input id="searchInput" type="search" placeholder="Search keywords..." />
-        <select id="categoryFilter">
-          <option value="all">All Categories</option>
-          <option value="events">⚡ Upcoming Events</option>
-          <option value="health">💪 Health & Medical</option>
-          <option value="news">📰 Chinese News</option>
-          <option value="life">🛍️ Shopping & Life</option>
-          <option value="food">🍽️ Nearby Dining</option>
-          <option value="asianmarkets">🛒 Asian Markets</option>
-          <option value="auto">🚗 Auto Services</option>
-          <option value="farms">🍓 U-Pick Farms</option>
-          <option value="finance">💰 Finance & Stocks</option>
-          <option value="internet">💻 Travel Internet</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <div id="emptyState">No results found</div>
-
-  <div id="contentList">
-    
-    <div class="section-group" data-cat-group="events" id="events-section">
-      <div class="section-title">📅 Upcoming Charlotte Events</div>
-      <div class="card item" data-category="events">
-        <div id="eventData">Loading events...</div>
-        <button id="showMoreBtn" class="more-btn" style="display:none;">Show More</button>
-      </div>
-    </div>
-
-    <div class="section-group" data-cat-group="health">
-      <div class="section-title">💪 Health & Dental</div>
-      <div class="card item" data-category="health">
-        <div class="info-list">
-          <div class="info-item">
-            <a href="https://www.ollietree.org/cn/%e6%a9%84%e6%a6%84%e6%a0%91%e8%b5%84%e8%ae%af/">Ollie Tree Health</a> | 
-            <a href="https://brightdentalcharlotte.com">Bright Dental</a> | 
-            <a href="https://capstonedentalnc.com">Capstone Dental</a>
-          </div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-02-20 03:26 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Business & Finance Updates</span><span class="cluster">#Crime & Legal Proceedings</span><span class="cluster">#Local News & Events</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>This week's Charlotte news features a mix of business updates, crime reports, and local interest stories. Key developments include acquisitions by KPN Consulting, updates from FG Nexus, and a sentencing in a habitual felon case.</p><div class="divider"></div><p class="insight-text">The Charlotte business landscape is active with financial activities and expansions. Public safety remains a concern as highlighted by murder charges and child abuse cases.</p></div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.5</span></div>
+            <h3>CMPD charges suspect with murder in 1990 killing of Kim Thomas</h3><p class="desc">Marion Gales, a longtime person of interest in the 1990 killing of Kim Thomas Friedland, is now charged with murder in the case.</p>
+            <div class="insight"><strong>Why this matters:</strong> A suspect is charged with murder in a 1990 cold case, bringing closure to a long-unsolved crime.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/cmpd-cold-case-murder-arrest-investigation/275-5c92f14f-840e-4513-806f-2c3728b8f788" class="btn-link" target="_blank">Read More →</a>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="section-group" data-cat-group="news">
-      <div class="section-title">📰 Chinese News</div>
-      <div class="card item" data-category="news">
-        <div class="link-list">
-          <a class="link-item" href="https://www.wenxuecity.com/news/">Wenxuecity</a>
-          <a class="link-item" href="https://huaren.us/">Huaren.us</a>
-          <a class="link-item" href="https://www.creaders.net/">Creaders</a>
-          <a class="link-item" href="https://www.worldjournal.com/">World Journal</a>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>Women Allegedly Tortured and Killed Girl, Kept Her in Dog Crate in NC</h3><p class="desc">Three North Carolina women charged in the child abuse death of Dominique Moody allegedly tortured, beat, and kept the girl in a dog crate at a Charlotte home</p>
+            <div class="insight"><strong>Why this matters:</strong> Details a severe child abuse case in Charlotte, raising public safety concerns.</div>
+            <div class="card-footer">
+                <span class="source">Us Weekly</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: negative</span>
+                <a href="https://www.usmagazine.com/crime-news/news/women-allegedly-tortured-and-killed-girl-kept-her-in-dog-crate-in-nc/" class="btn-link" target="_blank">Read More →</a>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="section-group" data-cat-group="life">
-      <div class="section-title">🛍️ Shopping & Lifestyle</div>
-      <div class="card item" data-category="life">
-        <div class="link-list">
-          <a class="link-item" href="https://www.dealmoon.com/">Dealmoon</a>
-          <a class="link-item" href="https://www.yami.com/zh">Yamibuy</a>
-          <a class="link-item" href="https://www.1point3acres.com/bbs/">1Point3Acres</a>
-          <a class="link-item" href="https://newmitbbs.com/">NewMitBBS</a>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Father arrested after courthouse fight with man accused of killing his son</h3><p class="desc">The fight happened between the father of Jamariyae Dixon and Marion McKnight. McKnight is charged with murder in Dixon's death.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on an altercation at a courthouse related to a murder case.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/mecklenburg-county-courthouse-fight-person-arrested/275-3aca2289-81b9-4153-ae60-59c19a584516" class="btn-link" target="_blank">Read More →</a>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="section-group" data-cat-group="food">
-      <div class="section-title">🍽️ Nearby Dining</div>
-      <div class="card item" data-category="food">
-        <div class="info-list">
-          <div class="info-item">
-            <strong>East Pearl</strong><br>
-            <a href="#" class="nav-link">📍 1810 Liddell Ln</a>
-          </div>
-          <div class="info-item">
-            <strong>Royal China (Duluth)</strong><br>
-            <a href="#" class="nav-link">📍 3960 Venture Dr</a>
-          </div>
-          <div class="info-item">
-            <span class="info-label">RTP Featured</span>
-            <a href="https://acaciatreenc.com">Acacia</a> | <a href="https://www.chengdu7cary.com">Chengdu 7</a> | <a href="https://nanxiangexpress.com/menu/">Nan Xiang</a>
-          </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>KPN Facilitates $20M in Acquisitions, Expands Economic Development Partnerships</h3><p class="desc">Charlotte, NC, United States, January 28th, 2026, FinanceWireKPN Consulting Services, a consulting firm focused on small busi...</p>
+            <div class="insight"><strong>Why this matters:</strong> KPN Consulting Services facilitates acquisitions and partnerships, boosting local economic development.</div>
+            <div class="card-footer">
+                <span class="source">Markets Insider</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: positive</span>
+                <a href="https://markets.businessinsider.com/news/currencies/kpn-facilitates-20m-in-acquisitions-expands-economic-development-partnerships-1035755279" class="btn-link" target="_blank">Read More →</a>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="section-group" data-cat-group="asianmarkets">
-      <div class="section-title">🛒 Asian Markets & Kitchen</div>
-      <div class="card item" data-category="asianmarkets">
-        <div class="info-list">
-          <div class="info-item">
-            <strong>Bottoms Up Wine & Spirits</strong> (Chinese Liquor)<br>
-            <a href="https://www.facebook.com/sc.bottomsup/" class="btn-link">Facebook Page</a>
-            <a href="#" class="nav-link">📍 Fort Mill, SC</a>
-          </div>
-          <div class="info-item">
-            <strong>Super G Mart</strong><br>
-            <a href="https://www.supergmart.com" class="btn-link">Official Site</a><br>
-            <a href="#" class="nav-link">📍 Pineville</a>
-            <a href="#" class="nav-link">📍 Independence</a>
-          </div>
-          <div class="info-item">
-            <strong>New Asia Market</strong><br>
-            <a href="#" class="nav-link">📍 4400 Potter Rd</a><br>
-            <a href="https://asianmarketplz.com" class="btn-link">The Plaza Website</a>
-          </div>
-          <div class="info-item">
-            <span class="info-label">Kitchenware</span>
-            <a href="https://us.fotileglobal.com">Fotile</a> | <a href="https://www.bk-cookware.com/black-steel">BK Cookware</a>
-          </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Charlotte man sentenced to life in prison for violent habitual felon status</h3><p class="desc">Daven Fetherson, 48, has a lengthy criminal history, with arrests dating back to 1995.</p>
+            <div class="insight"><strong>Why this matters:</strong> A Charlotte man receives a life sentence due to his status as a violent habitual felon.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: negative</span>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-man-sentenced-to-life-in-prison-for-violent-habitual-felon-status/275-cac9dac9-0774-4606-84d3-fce0f7401af6" class="btn-link" target="_blank">Read More →</a>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="section-group" data-cat-group="auto">
-      <div class="section-title">🚗 Auto Services</div>
-      <div class="card item" data-category="auto">
-        <div class="info-list">
-          <div class="info-item">
-            <span class="info-label">Repair Shops</span>
-            <a href="http://www.createAutoBody.com">Create Auto Body</a> | 
-            <a href="https://www.pepboys.com/">Pep Boys</a> |
-            <a href="https://www.mrinspectionmatthews.com">Mr. Inspection</a> 
-          </div>
-          <div class="info-item"><span class="info-label">Insurance</span>Progressive, Traveler, Cincinnati</div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Mosaic Capital Partners Seeks Vice President of Business Development</h3><p class="desc">CHARLOTTE, N.C., Feb. 18, 2026 (GLOBE NEWSWIRE) -- Mosaic Capital Partners, LLC ('Mosaic”) is a private equity firm Based in Charlotte, NC, focused on bringing broad based employee ownership to lower middle market businesses through change-of-control transactions. Mosaic invests in companies with EBITDA of $3 - $15 million across the core sectors of business services, niche manufacturing, and consumer. Mosaic manages over $370M of AUM and has supported over 3,000 employee owners in building substantial long-term wealth.</p>
+            <div class="insight"><strong>Why this matters:</strong> Mosaic Capital Partners is seeking a VP, indicating potential growth.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: neutral</span>
+                <a href="https://www.manilatimes.net/2026/02/18/tmt-newswire/globenewswire/mosaic-capital-partners-seeks-vice-president-of-business-development/2280313" class="btn-link" target="_blank">Read More →</a>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="section-group" data-cat-group="farms">
-      <div class="section-title">🍓 U-Pick Farms</div>
-      <div class="card item" data-category="farms">
-        <div class="info-list">
-          <div class="info-item">
-            <strong>Big H Farm</strong><br>
-            <a href="https://bighfarm.com" class="btn-link">Official Site</a>
-            <a href="#" class="nav-link">📍 1953 Dilling Farm Rd</a>
-          </div>
-          <div class="info-item">
-            <span class="info-label">Other Popular Farms</span>
-            <a href="https://www.lockmanvineyard.com/">Lockman Vineyard</a> | 
-            <a href="https://www.linebergersfarm.com/">Lineberger's</a> | 
-            <a href="http://grandadsapples.com">Grandad Apple</a>
-          </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>FG Nexus Provides Update on Common and Preferred Share Buyback Programs and ETH Holdings</h3><p class="desc">Charlotte, NC, Jan. 21, 2026 (GLOBE NEWSWIRE) -- FG Nexus Inc. (Nasdaq: FGNX, FGNXP) (the 'Company”), today announced the current status of its common and preferred share buyback programs and ETH holdings.</p>
+            <div class="insight"><strong>Why this matters:</strong> FG Nexus provides updates on share buyback programs and ETH holdings.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: neutral</span>
+                <a href="https://www.manilatimes.net/2026/01/21/tmt-newswire/globenewswire/fg-nexus-provides-update-on-common-and-preferred-share-buyback-programs-and-eth-holdings/2262621" class="btn-link" target="_blank">Read More →</a>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="section-group" data-cat-group="internet">
-      <div class="section-title">💻📶 Travel Internet</div>
-      <div class="card item" data-category="internet">
-        <div class="info-list">
-          <div class="info-item">
-            <span class="info-label">eSIM Recommendations</span>
-            <a href="https://www.airalo.com/">Airalo</a> | 
-            <a href="https://etravelsim.com">etravelSIM</a> | 
-            <a href="https://www.getnomad.app/">Nomad</a>
-          </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Travis Buys Home Sees Homeowners Are Reassessing When to Sell as Market Conditions Shift</h3><p class="desc">CHARLOTTE, NC, Jan. 28, 2026 (GLOBE NEWSWIRE) --</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on homeowners reassessing their selling strategies amid market changes.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: neutral</span>
+                <a href="https://www.manilatimes.net/2026/01/29/tmt-newswire/globenewswire/travis-buys-home-sees-homeowners-are-reassessing-when-to-sell-as-market-conditions-shift/2267270" class="btn-link" target="_blank">Read More →</a>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="section-group" data-cat-group="finance">
-      <div class="section-title">💰 Finance & Stocks</div>
-      <div class="card item" data-category="finance">
-        <div class="info-list">
-          <div class="info-item">
-            <span class="info-label">Stock Tracking</span>
-            <a href="https://www.quiverquant.com/politicians/">Quiver Quantitative</a> | 
-            <a href="https://www.capitoltrades.com/">Capitol Trades</a>
-          </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>FG Nexus Provides Update on Common and Preferred Share</h3><p class="desc">Charlotte, NC, Jan. 21, 2026 (GLOBE NEWSWIRE) -- FG Nexus Inc. (Nasdaq: FGNX, FGNXP) (the “Company”), today announced the current status of its common...</p>
+            <div class="insight"><strong>Why this matters:</strong> FG Nexus provides updates on common and preferred share.</div>
+            <div class="card-footer">
+                <span class="source">GlobeNewswire</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: neutral</span>
+                <a href="https://www.globenewswire.com/news-release/2026/01/21/3222681/0/en/FG-Nexus-Provides-Update-on-Common-and-Preferred-Share-Buyback-Programs-and-ETH-Holdings.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <p>© 2026 NC Life Guide<br>Bank of World · bankofworld@gmail.com</p>
-  </footer>
-</div>
-
-<script>
-const eventData = document.getElementById("eventData");
-const showMoreBtn = document.getElementById("showMoreBtn");
-
-async function loadEvents() {
-  try {
-    const response = await fetch('https://yonggewang.github.io/events/');
-    if (!response.ok) throw new Error();
-    const html = await response.text();
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    const allItems = Array.from(doc.querySelectorAll('li'));
-    
-    if (allItems.length === 0) {
-      eventData.innerHTML = "No upcoming events scheduled.";
-      return;
-    }
-
-    const visibleItems = allItems.slice(0, 3);
-    const hiddenItems = allItems.slice(3);
-
-    let contentHtml = '<ul>';
-    visibleItems.forEach(li => contentHtml += li.outerHTML);
-    
-    if (hiddenItems.length > 0) {
-      contentHtml += '<div id="moreContent" class="hidden-events">';
-      hiddenItems.forEach(li => contentHtml += li.outerHTML);
-      contentHtml += '</div>';
-      showMoreBtn.style.display = "block";
-    }
-    contentHtml += '</ul>';
-    
-    eventData.innerHTML = contentHtml;
-  } catch (error) {
-    eventData.innerHTML = '<span style="color:red;">Failed to load events.</span>';
-  }
-}
-
-showMoreBtn.addEventListener("click", () => {
-  const moreContent = document.getElementById("moreContent");
-  if (moreContent.style.display === "block") {
-    moreContent.style.display = "none";
-    showMoreBtn.innerText = "Show More";
-  } else {
-    moreContent.style.display = "block";
-    showMoreBtn.innerText = "Show Less";
-  }
-});
-
-const searchInput = document.getElementById("searchInput");
-const categoryFilter = document.getElementById("categoryFilter");
-const items = document.querySelectorAll(".item");
-const groups = document.querySelectorAll(".section-group");
-const emptyState = document.getElementById("emptyState");
-
-function filterItems() {
-  const k = searchInput.value.toLowerCase().trim();
-  const c = categoryFilter.value;
-  let visibleTotal = 0;
-
-  items.forEach(item => {
-    const text = item.innerText.toLowerCase();
-    const matchSearch = text.includes(k);
-    const matchCategory = (c === "all" || item.dataset.category === c);
-    
-    if (matchSearch && matchCategory) {
-      item.style.display = "";
-      visibleTotal++;
-    } else {
-      item.style.display = "none";
-    }
-  });
-
-  groups.forEach(group => {
-    const visibleInGroup = group.querySelectorAll('.item:not([style*="display: none"])');
-    group.style.display = visibleInGroup.length > 0 ? "" : "none";
-  });
-
-  emptyState.style.display = visibleTotal > 0 ? "none" : "block";
-}
-
-searchInput.addEventListener("input", filterItems);
-categoryFilter.addEventListener("change", filterItems);
-window.onload = loadEvents;
-</script>
-
-</body>
-</html>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>Officials release final report in house fire that left Denny Hamlin's father dead</h3><p class="desc">A house fire on Blacksnake Road in Gaston County left the father of NASCAR driver Denny Hamlin dead in December.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on a house fire resulting in the death of Denny Hamlin's father.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: negative</span>
+                <a href="https://www.wcnc.com/article/news/local/denny-hamlin-fire-investigation-cause-undetermined/275-8635656b-ed01-473d-b5dc-2fe9501e6745" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>How Trade Shows in Charlotte, NC Are Leveraging Custom Canopy Tents to Maximize Brand Visibility and ROI</h3><p class="desc">The three issues that are currently under consideration by exhibitors at trade shows in Charlotte, NC, keep changing flexibility, visibility, and Return on investment.</p>
+            <div class="insight"><strong>Why this matters:</strong> Discusses trade show strategies, focusing on brand visibility and ROI.</div>
+            <div class="card-footer">
+                <span class="source">TechBullion</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: positive</span>
+                <a href="https://techbullion.com/how-trade-shows-in-charlotte-nc-are-leveraging-custom-canopy-tents-to-maximize-brand-visibility-and-roi/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div></body></html>
