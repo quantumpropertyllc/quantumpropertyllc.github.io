@@ -423,6 +423,27 @@
                     { label: 'Small Team (2-10)', value: 'smallTeam' },
                     { label: 'Enterprise Department', value: 'enterprise' }
                 ]
+            },
+            {
+                id: 'roleToReplace',
+                title: 'Primary Role to Automate?',
+                desc: 'Used to calculate realistic Return on Investment (ROI).',
+                options: [
+                    { label: 'Administrative / Support (~$45k/yr)', value: 'admin' },
+                    { label: 'Accountant / Analyst (~$75k/yr)', value: 'analyst' },
+                    { label: 'Tech / Legal Specialist (~$120k/yr)', value: 'specialist' }
+                ]
+            },
+            {
+                id: 'headcountReplaced',
+                title: 'Headcount Replaced?',
+                desc: 'How much human labor (in FTEs) will this AI offset?',
+                options: [
+                    { label: 'Partial / Assistant (0.5 FTE)', value: 'half' },
+                    { label: '1 Full-Time Employee (1 FTE)', value: 'one' },
+                    { label: 'Small Team (2-3 FTEs)', value: 'few' },
+                    { label: 'Department / Agency (4+ FTEs)', value: 'many' }
+                ]
             }
         ];
 
@@ -550,13 +571,12 @@
                 <div class="roi-card">
                     <div class="result-subtitle" style="color:#34C759">ESTIMATED ANNUAL ROI</div>
                     <div class="roi-value">$${result.savings.toLocaleString()}</div>
-                    <p class="description" style="margin-bottom:12px">Payback Period: ~${result.payback} Months</p>
+                    <p class="description" style="margin-bottom:12px">Hardware Payback Period: ~${result.payback} Months</p>
                     <div class="justification" style="border-top-color: rgba(52, 199, 89, 0.2); font-size: 13px;">
-                        <strong>How we calculate this:</strong><br>
-                        • Assumes an avg professional rate of <strong>$85/hour</strong>.<br>
-                        • Based on <strong>20 hours/week</strong> spent on automatable cognitive tasks.<br>
-                        • Estimates a conservative <strong>30% time-savings</strong> using AI.<br>
-                        • Factored across 52 weeks, multiplied by your scale (<strong>${result.teamMultiplier}x</strong>).
+                        <strong>How we calculate this justification:</strong><br>
+                        • Assumed Baseline: <strong>${result.roleDisplay} ($${result.salaryBase.toLocaleString()}/yr)</strong>.<br>
+                        • Offset Headcount: <strong>${result.headcountDisplay}</strong>.<br>
+                        • Comparing the one-time $${result.hardware.price.toLocaleString()} hardware cost against the displaced recurring operational salaries.<br>
                     </div>
                 </div>
 
@@ -627,11 +647,19 @@
 
             const hwJust = `Running this model at ${responses.accuracyLevel.toLowerCase()} requires ~${vramNeeded}GB VRAM. This ${hardware.name} setup provides the necessary ${hardware.memory_bandwidth}GB/s bandwidth for ${responses.teamSize} scale.`;
 
-            // 6. ROI
-            let teamMultiplier = 1;
-            if (responses.teamSize === 'smallTeam') teamMultiplier = 5;
-            else if (responses.teamSize === 'enterprise') teamMultiplier = 20;
-            const savings = 85 * 20 * 52 * 0.3 * teamMultiplier; // Avg $85/hr, 20hrs/wk, 30% automation
+            // 6. ROI Math based on substituted roles
+            let salaryBase = 75000;
+            let roleDisplay = "Accountant / Analyst";
+            if (responses.roleToReplace === 'admin') { salaryBase = 45000; roleDisplay = "Administrative / Support"; }
+            else if (responses.roleToReplace === 'specialist') { salaryBase = 120000; roleDisplay = "Tech / Legal Specialist"; }
+
+            let headcountMult = 1;
+            let headcountDisplay = "1 Full-Time Employee";
+            if (responses.headcountReplaced === 'half') { headcountMult = 0.5; headcountDisplay = "0.5 FTE (Assistant)"; }
+            else if (responses.headcountReplaced === 'few') { headcountMult = 2.5; headcountDisplay = "2-3 Employees"; }
+            else if (responses.headcountReplaced === 'many') { headcountMult = 4.0; headcountDisplay = "4+ Employees"; }
+
+            const savings = salaryBase * headcountMult; // Total operational salary savings
             const payback = Math.round((hardware.price / (savings / 12)) * 10) / 10;
 
             // 7. Cloud/Private Recommendations
@@ -642,7 +670,10 @@
                 cloudRecs = catalog.cloud_providers;
             }
 
-            return { model, hardware, modelJustification: modelJust, hwJustification: hwJust, savings, payback, cloudRecs, teamMultiplier };
+            return { 
+                model, hardware, modelJustification: modelJust, hwJustification: hwJust, 
+                savings, payback, cloudRecs, roleDisplay, salaryBase, headcountDisplay 
+            };
         }
 
         init();
