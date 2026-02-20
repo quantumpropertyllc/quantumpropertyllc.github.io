@@ -1,111 +1,171 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-02-20 03:26 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Business & Finance Updates</span><span class="cluster">#Crime & Legal Proceedings</span><span class="cluster">#Local News & Events</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>This week's Charlotte news features a mix of business updates, crime reports, and local interest stories. Key developments include acquisitions by KPN Consulting, updates from FG Nexus, and a sentencing in a habitual felon case.</p><div class="divider"></div><p class="insight-text">The Charlotte business landscape is active with financial activities and expansions. Public safety remains a concern as highlighted by murder charges and child abuse cases.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-02-20 03:35 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Justice</span><span class="cluster">#Local Economy and Development</span><span class="cluster">#Weather and Community Events</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Charlotte news highlights include several violent crimes resulting in arrests and convictions, ongoing legal battles involving Duke Energy and life insurance policies, and developments in the city's dining scene. A notable weather shift is expected, and unique community activities like curling are gaining popularity.</p><div class="divider"></div><p class="insight-text">The Charlotte area faces challenges related to violent crime and economic pressures on small businesses, alongside community growth and unusual recreational trends.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.5</span></div>
-            <h3>CMPD charges suspect with murder in 1990 killing of Kim Thomas</h3><p class="desc">Marion Gales, a longtime person of interest in the 1990 killing of Kim Thomas Friedland, is now charged with murder in the case.</p>
-            <div class="insight"><strong>Why this matters:</strong> A suspect is charged with murder in a 1990 cold case, bringing closure to a long-unsolved crime.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.2</span></div>
+            <h3>Teen faces murder, kidnapping charges after north Charlotte shooting</h3><p class="desc">A 19-year-old is charged with murder, robbery and kidnapping after a Feb. 9 shooting that left one man dead, according to CMPD.</p>
+            <div class="insight"><strong>Why this matters:</strong> Teen violence impacts city's safety perceptions.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/cmpd-cold-case-murder-arrest-investigation/275-5c92f14f-840e-4513-806f-2c3728b8f788" class="btn-link" target="_blank">Read More →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/north-charlotte-shooting-david-cox-road-cmpd/275-9639e51a-2b6b-4c94-9873-697a2b082553" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
-            <h3>Women Allegedly Tortured and Killed Girl, Kept Her in Dog Crate in NC</h3><p class="desc">Three North Carolina women charged in the child abuse death of Dominique Moody allegedly tortured, beat, and kept the girl in a dog crate at a Charlotte home</p>
-            <div class="insight"><strong>Why this matters:</strong> Details a severe child abuse case in Charlotte, raising public safety concerns.</div>
-            <div class="card-footer">
-                <span class="source">Us Weekly</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: negative</span>
-                <a href="https://www.usmagazine.com/crime-news/news/women-allegedly-tortured-and-killed-girl-kept-her-in-dog-crate-in-nc/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
             <h3>Father arrested after courthouse fight with man accused of killing his son</h3><p class="desc">The fight happened between the father of Jamariyae Dixon and Marion McKnight. McKnight is charged with murder in Dixon's death.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on an altercation at a courthouse related to a murder case.</div>
+            <div class="insight"><strong>Why this matters:</strong> Highlights ongoing impact of violence; father seeking justice for son.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: negative</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
                 <a href="https://www.wcnc.com/article/news/crime/mecklenburg-county-courthouse-fight-person-arrested/275-3aca2289-81b9-4153-ae60-59c19a584516" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
-            <h3>KPN Facilitates $20M in Acquisitions, Expands Economic Development Partnerships</h3><p class="desc">Charlotte, NC, United States, January 28th, 2026, FinanceWireKPN Consulting Services, a consulting firm focused on small busi...</p>
-            <div class="insight"><strong>Why this matters:</strong> KPN Consulting Services facilitates acquisitions and partnerships, boosting local economic development.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
+            <h3>Man charged with murder in east Charlotte Food Lion shooting</h3><p class="desc">A murder charge follows a fatal east Charlotte shooting, initiated by an argument, leaving one dead and bystanders at risk as shots hit multiple vehicles.</p>
+            <div class="insight"><strong>Why this matters:</strong> Public safety concern; highlights gun violence in everyday locations.</div>
             <div class="card-footer">
-                <span class="source">Markets Insider</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: positive</span>
-                <a href="https://markets.businessinsider.com/news/currencies/kpn-facilitates-20m-in-acquisitions-expands-economic-development-partnerships-1035755279" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/deadly-east-charlotte-shooting/275-3a0fbf0b-6fd0-40f6-aee9-cf7ea5f8a69f" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
-            <h3>Charlotte man sentenced to life in prison for violent habitual felon status</h3><p class="desc">Daven Fetherson, 48, has a lengthy criminal history, with arrests dating back to 1995.</p>
-            <div class="insight"><strong>Why this matters:</strong> A Charlotte man receives a life sentence due to his status as a violent habitual felon.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>CMPD charges suspect with murder in 1990 killing of Kim Thomas</h3><p class="desc">Marion Gales, a longtime person of interest in the 1990 killing of Kim Thomas Friedland, is now charged with murder in the case.</p>
+            <div class="insight"><strong>Why this matters:</strong> A cold case solved after decades impacts community trust.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: negative</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-man-sentenced-to-life-in-prison-for-violent-habitual-felon-status/275-cac9dac9-0774-4606-84d3-fce0f7401af6" class="btn-link" target="_blank">Read More →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/cmpd-cold-case-murder-arrest-investigation/275-5c92f14f-840e-4513-806f-2c3728b8f788" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.3</span></div>
+            <h3>Delivery driver pleads guilty to voluntary manslaughter in Uptown shooting death of 15-year-old</h3><p class="desc">Emotional courtroom hearing ends with 48- to 70-month prison sentence for Keshawn Boyd</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses juvenile violence and legal outcomes.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/delivery-driver-plea-deal-teenager-shot-killed-uptown-charlotte-north-carolina/275-7c4ca258-b60c-4b80-a847-f49c7ab418e1" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
+            <h3>Matthews woman accused of trying to kill man with her car</h3><p class="desc">Investigators said it stemmed from a domestic dispute.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights domestic violence and its severe consequences.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/matthews-woman-car-hit-man-2-19-2026/275-aa5ebdf5-33cf-4507-ab5a-3dc4d2535a11" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>2 MS-13 leaders sentenced to decades in federal prison</h3><p class="desc">Both men were sentenced for racketeering and violence.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses gang-related crime and federal intervention.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/ms13-gang-members-sentenced-nc-2-19-2026/275-190ad9a0-6f4f-4a51-bafb-0413a41976da" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
+            <h3>Deadly shooting under investigation in Rock Hill</h3><p class="desc">The victim, a 19-year-old man, died at the scene.</p>
+            <div class="insight"><strong>Why this matters:</strong> Another instance of deadly shooting affecting the region.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/rock-hill-deadly-shooting-investigation/275-5aae891c-4439-47ca-8901-f689f56a5d67" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Mosaic Capital Partners Seeks Vice President of Business Development</h3><p class="desc">CHARLOTTE, N.C., Feb. 18, 2026 (GLOBE NEWSWIRE) -- Mosaic Capital Partners, LLC ('Mosaic”) is a private equity firm Based in Charlotte, NC, focused on bringing broad based employee ownership to lower middle market businesses through change-of-control transactions. Mosaic invests in companies with EBITDA of $3 - $15 million across the core sectors of business services, niche manufacturing, and consumer. Mosaic manages over $370M of AUM and has supported over 3,000 employee owners in building substantial long-term wealth.</p>
-            <div class="insight"><strong>Why this matters:</strong> Mosaic Capital Partners is seeking a VP, indicating potential growth.</div>
-            <div class="card-footer">
-                <span class="source">The Manila Times</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: neutral</span>
-                <a href="https://www.manilatimes.net/2026/02/18/tmt-newswire/globenewswire/mosaic-capital-partners-seeks-vice-president-of-business-development/2280313" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>FG Nexus Provides Update on Common and Preferred Share Buyback Programs and ETH Holdings</h3><p class="desc">Charlotte, NC, Jan. 21, 2026 (GLOBE NEWSWIRE) -- FG Nexus Inc. (Nasdaq: FGNX, FGNXP) (the 'Company”), today announced the current status of its common and preferred share buyback programs and ETH holdings.</p>
-            <div class="insight"><strong>Why this matters:</strong> FG Nexus provides updates on share buyback programs and ETH holdings.</div>
-            <div class="card-footer">
-                <span class="source">The Manila Times</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: neutral</span>
-                <a href="https://www.manilatimes.net/2026/01/21/tmt-newswire/globenewswire/fg-nexus-provides-update-on-common-and-preferred-share-buyback-programs-and-eth-holdings/2262621" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>Travis Buys Home Sees Homeowners Are Reassessing When to Sell as Market Conditions Shift</h3><p class="desc">CHARLOTTE, NC, Jan. 28, 2026 (GLOBE NEWSWIRE) --</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on homeowners reassessing their selling strategies amid market changes.</div>
-            <div class="card-footer">
-                <span class="source">The Manila Times</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: neutral</span>
-                <a href="https://www.manilatimes.net/2026/01/29/tmt-newswire/globenewswire/travis-buys-home-sees-homeowners-are-reassessing-when-to-sell-as-market-conditions-shift/2267270" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>FG Nexus Provides Update on Common and Preferred Share</h3><p class="desc">Charlotte, NC, Jan. 21, 2026 (GLOBE NEWSWIRE) -- FG Nexus Inc. (Nasdaq: FGNX, FGNXP) (the “Company”), today announced the current status of its common...</p>
-            <div class="insight"><strong>Why this matters:</strong> FG Nexus provides updates on common and preferred share.</div>
-            <div class="card-footer">
-                <span class="source">GlobeNewswire</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: neutral</span>
-                <a href="https://www.globenewswire.com/news-release/2026/01/21/3222681/0/en/FG-Nexus-Provides-Update-on-Common-and-Preferred-Share-Buyback-Programs-and-ETH-Holdings.html" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
             <h3>Officials release final report in house fire that left Denny Hamlin's father dead</h3><p class="desc">A house fire on Blacksnake Road in Gaston County left the father of NASCAR driver Denny Hamlin dead in December.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on a house fire resulting in the death of Denny Hamlin's father.</div>
+            <div class="insight"><strong>Why this matters:</strong> Closure in the death of a public figure's father.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: negative</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
                 <a href="https://www.wcnc.com/article/news/local/denny-hamlin-fire-investigation-cause-undetermined/275-8635656b-ed01-473d-b5dc-2fe9501e6745" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>How Trade Shows in Charlotte, NC Are Leveraging Custom Canopy Tents to Maximize Brand Visibility and ROI</h3><p class="desc">The three issues that are currently under consideration by exhibitors at trade shows in Charlotte, NC, keep changing flexibility, visibility, and Return on investment.</p>
-            <div class="insight"><strong>Why this matters:</strong> Discusses trade show strategies, focusing on brand visibility and ROI.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
+            <h3>Wanted man arrested in Gastonia on multiple charges after multi-agency manhunt</h3><p class="desc">A collaborative law enforcement effort led to the arrest of Otis Lamar Hunter, wanted on serious felony charges.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses crime and law enforcement collaboration.</div>
             <div class="card-footer">
-                <span class="source">TechBullion</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: positive</span>
-                <a href="https://techbullion.com/how-trade-shows-in-charlotte-nc-are-leveraging-custom-canopy-tents-to-maximize-brand-visibility-and-roi/" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/gastonia-wanted-fugitive-arrested/275-bd6b1ae8-7a82-40b1-9a40-ccbbb70c7148" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Charlotte's dining scene is growing, but not everyone is surviving</h3><p class="desc">Charlotte's restaurant scene is evolving rapidly, with a surge in new openings and an increase in closures of long-standing eateries due to rising costs.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects economic challenges for local businesses.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/life/food/charlottes-restaurant-scene-is-thriving-and-struggling-at-the-same-time/275-c133ec74-9241-4666-b0d0-2548c2b80c14" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Charlotte man sentenced to life in prison for violent habitual felon status</h3><p class="desc">Daven Fetherson, 48, has a lengthy criminal history, with arrests dating back to 1995.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses habitual offender sentencing trends.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-man-sentenced-to-life-in-prison-for-violent-habitual-felon-status/275-cac9dac9-0774-4606-84d3-fce0f7401af6" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Charlotte chef wins $171K, plans to launch food truck</h3><p class="desc">Charlotte chef Jose Naranjo won a $171K Cash 5 jackpot and plans to launch a food truck, turning years of cooking for others into a personal culinary venture.</p>
+            <div class="insight"><strong>Why this matters:</strong> Local success story; chef investing in community.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.wcnc.com/article/news/lottery/charlotte-chef-wins-lottery-jackpot/275-a3237735-eb92-4b77-9872-1afe50dfaf11" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>North Carolina court rules no refunds for Duke Energy customers despite illegal charges</h3><p class="desc">The North Carolina Court of Appeals ruled that Duke Energy customers won't get refunds for improperly collected charges.</p>
+            <div class="insight"><strong>Why this matters:</strong> Impacts consumer trust and utility regulation.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/no-refunds-for-duke-energy-customers/275-278564ea-d712-464e-b86f-cf57a7ebc001" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>York County Christmas tree farm says proposed data center next door threatens their business</h3><p class="desc">When finished, the nine-building campus will back right up to the 95-acre farm.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects conflict between development and local business.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/politics/south-carolina-politics/data-center-york-christmas-tree-2-19-2026/275-94764086-8b88-40f7-9aa5-6611c3643af4" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Two days in the 70s before another winter drop</h3><p class="desc">Friday will be near 80 degrees but Monday's highs will be 35-40 degrees colder. A couple of rain/storm chances Friday through Sunday.</p>
+            <div class="insight"><strong>Why this matters:</strong> Significant weather change affects daily life.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Curling finds a home in Charlotte, building community through an unexpected winter sport</h3><p class="desc">A growing group of curlers in the Queen City is proving you don’t need snow-covered mountains to create connection on the ice.</p>
+            <div class="insight"><strong>Why this matters:</strong> Unusual community activity boosting social connections.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.wcnc.com/article/sports/charlotte-curling-club-creates-friendships-bonding-olympic-sport/275-cdd771f3-3ad0-46a0-93ab-1bb518023fd2" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
