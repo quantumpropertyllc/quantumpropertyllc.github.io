@@ -1,398 +1,161 @@
-
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-        <style>
-            :root {
-                --ios-bg: #F2F2F7;
-                --ios-card: #FFFFFF;
-                --ios-blue: #007AFF;
-                --ios-text: #1C1C1E;
-                --ios-sub: #8E8E93;
-            }
-            body { 
-                font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-                background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; 
-            }
-            .header { padding: 10px 0 20px 0; }
-            .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; }
-            h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; }
-            
-            .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; }
-            .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; }
-            .clusters { display: flex; flex-wrap: wrap; gap: 6px; }
-            .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); }
-            
-            .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; }
-            .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; }
-            .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; }
-            .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; }
-            .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; }
-            .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; }
-            
-            .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); }
-            .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-            .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
-            .impact.high { background: #FF3B3015; color: #FF3B30; }
-            .impact.medium { background: #FF950015; color: #FF9500; }
-            .impact.low { background: #34C75915; color: #34C759; }
-            .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; }
-            
-            h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; }
-            .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; }
-            .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; }
-            
-            .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
-            .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; }
-            .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; }
-            .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); }
-        </style>
-    </head>
-    <body>
-        <div class="header">
-            <div class="updated">Última actualización: 2026-02-20 01:10 PM ET</div>
-            <h1>Local Life</h1>
-            
-        <div class="trending-container">
-            <span class="trending-title">Temas de tendencia:</span>
-            <div class="clusters"><span class="cluster">#Violent Crime and Justice System</span><span class="cluster">#Community and Development</span><span class="cluster">#Economic Changes and Challenges</span></div>
-        </div>
-        
-        </div>
-        
-        <div class="brief">
-            <h2>Resumen de hoy</h2>
-            <p>Charlotte está lidiando con un aumento en los crímenes violentos, que afectan a personas de todas las edades, y desafíos de vivienda asequible. Simultáneamente, la ciudad está experimentando un crecimiento en su escena gastronómica e iniciativas comunitarias como el curling, al tiempo que lamenta la pérdida de figuras influyentes y aborda las disparidades en la atención médica.</p>
-            <div class="divider"></div>
-            <p class="insight-text">El panorama de Charlotte hoy refleja una compleja interacción de progreso y desafíos. Si bien las oportunidades económicas y la participación comunitaria se están expandiendo, los problemas apremiantes como el crimen, la asequibilidad y las disparidades en la atención médica requieren una atención centrada y soluciones innovadoras para garantizar un crecimiento equitativo.</p>
-        </div>
-
-        
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-02-20 03:12 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Public Safety</span><span class="cluster">#Business and Economy</span><span class="cluster">#Local Community and Events</span><span class="cluster">#Health and Social Issues</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Charlotte news highlights include crime updates, business developments, and community events. The city faces challenges like housing affordability and health disparities, while also seeing growth in its dining scene and unique sports like curling.</p><div class="divider"></div><p class="insight-text">Charlotte is experiencing a mix of growth and challenges. The restaurant scene is evolving, and economic development initiatives are underway, but issues like crime, housing affordability, and health disparities require attention.</p></div>
         <div class="card">
-            <div class="card-meta">
-                <span class="impact high">High Impact</span>
-                <span class="score">9.5</span>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>Women Allegedly Tortured and Killed Girl, Kept Her in Dog Crate in NC</h3><p class="desc">Three North Carolina women charged in the child abuse death of Dominique Moody allegedly tortured, beat, and kept the girl in a dog crate at a Charlotte home</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details a horrific child abuse case, raising concerns about child safety and community oversight.</div>
+            <div class="card-footer">
+                <span class="source">Us Weekly</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.usmagazine.com/crime-news/news/women-allegedly-tortured-and-killed-girl-kept-her-in-dog-crate-in-nc/" class="btn-link" target="_blank">Leer más →</a>
             </div>
-            <h3>Un niño de 4 años entre 2 muertos en un tiroteo en Rock Hill, dice la policía</h3>
-            <p class="desc">Los investigadores dicen que un niño de 4 años y un hombre de 19 años fueron asesinados a tiros en Rock Hill el martes por la noche.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> La trágica pérdida de vidas, especialmente la de un niño, impacta profundamente a la comunidad y genera preocupación por la seguridad pública.
-            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
+            <h3>Charlotte man sentenced to life in prison for violent habitual felon status</h3><p class="desc">Daven Fetherson, 48, has a lengthy criminal history, with arrests dating back to 1995.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Reports on a man sentenced to life in prison, highlighting issues with repeat offenders and the justice system.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">
-                    Sentimiento: Negative
-                </span>
-                <a href="https://www.wcnc.com/article/news/crime/shooting-investigation-rock-hill-sc-frank-street/275-d143e554-a210-40f6-8517-78e642bdc567" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-man-sentenced-to-life-in-prison-for-violent-habitual-felon-status/275-cac9dac9-0774-4606-84d3-fce0f7401af6" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
-        
         <div class="card">
-            <div class="card-meta">
-                <span class="impact high">High Impact</span>
-                <span class="score">9.0</span>
-            </div>
-            <h3>Adolescente enfrenta cargos de asesinato y secuestro después de un tiroteo en el norte de Charlotte</h3>
-            <p class="desc">Un joven de 19 años está acusado de asesinato, robo y secuestro después de un tiroteo el 9 de febrero que dejó un hombre muerto, según el CMPD.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Destaca el problema continuo del crimen violento que involucra a jóvenes en Charlotte.
-            </div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.3</span></div>
+            <h3>Breaking barriers in health care: Local leaders tackle racial health gaps in Mecklenburg County</h3><p class="desc">Charlotte is growing, but not everyone is sharing in progress. Black residents continue to face higher rates of chronic illness and other health challenges.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Addresses racial health gaps in Mecklenburg County, underscoring health disparities.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">
-                    Sentimiento: Negative
-                </span>
-                <a href="https://www.wcnc.com/article/news/crime/north-charlotte-shooting-david-cox-road-cmpd/275-9639e51a-2b6b-4c94-9873-697a2b082553" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="card-meta">
-                <span class="impact high">High Impact</span>
-                <span class="score">8.5</span>
-            </div>
-            <h3>Hombre acusado de asesinato en tiroteo en Food Lion en el este de Charlotte</h3>
-            <p class="desc">Un cargo de asesinato sigue a un tiroteo fatal en el este de Charlotte, iniciado por una discusión, que dejó un muerto y transeúntes en riesgo cuando los disparos alcanzaron varios vehículos.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Ilustra el peligro de los tiroteos públicos y su impacto en la comunidad.
-            </div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">
-                    Sentimiento: Negative
-                </span>
-                <a href="https://www.wcnc.com/article/news/crime/deadly-east-charlotte-shooting/275-3a0fbf0b-6fd0-40f6-aee9-cf7ea5f8a69f" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="card-meta">
-                <span class="impact high">High Impact</span>
-                <span class="score">8.0</span>
-            </div>
-            <h3>Informe del condado de Mecklenburg muestra tendencias de vivienda mixtas a medida que se profundiza la crisis de asequibilidad de alquileres</h3>
-            <p class="desc">El informe pinta una imagen sombría del parque de viviendas asequibles del condado.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Subraya la necesidad crítica de soluciones de vivienda asequible en el condado de Mecklenburg.
-            </div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">
-                    Sentimiento: Negative
-                </span>
-                <a href="https://www.wcnc.com/article/money/markets/real-estate/affordable-housing-crisis/mecklenburg-county-state-of-housing-report-2-19-2026/275-dacf8252-6364-4248-a885-3f597b21f977" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="card-meta">
-                <span class="impact medium">Medium Impact</span>
-                <span class="score">8.0</span>
-            </div>
-            <h3>CMPD acusa a sospechoso de asesinato en el caso de Kim Thomas de 1990</h3>
-            <p class="desc">Marion Gales, una persona de interés desde hace mucho tiempo en el asesinato de Kim Thomas Friedland en 1990, ahora está acusada de asesinato en el caso.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> La resolución de un caso sin resolver trae una sensación de justicia, pero destaca el impacto duradero de los crímenes pasados.
-            </div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">
-                    Sentimiento: Negative
-                </span>
-                <a href="https://www.wcnc.com/article/news/crime/cmpd-cold-case-murder-arrest-investigation/275-5c92f14f-840e-4513-806f-2c3728b8f788" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="card-meta">
-                <span class="impact high">High Impact</span>
-                <span class="score">7.8</span>
-            </div>
-            <h3>James Dunmore acepta acuerdo de culpabilidad en la muerte de Allisha Watts</h3>
-            <p class="desc">Dunmore fue acusado de asesinato en 2023 después de que Watts desapareciera tras un viaje a Charlotte para visitarlo. Se declaró culpable de homicidio involuntario el miércoles.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Marca una resolución en un caso de persona desaparecida de alto perfil, brindando cierre y rendición de cuentas.
-            </div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">
-                    Sentimiento: Negative
-                </span>
-                <a href="https://www.wcnc.com/article/news/crime/james-dunmore-allisha-watts-court-wednesday/275-85592be0-e38c-4d18-a48a-e93203a900b6" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="card-meta">
-                <span class="impact medium">Medium Impact</span>
-                <span class="score">7.5</span>
-            </div>
-            <h3>Padre arrestado después de una pelea en el juzgado con un hombre acusado de matar a su hijo</h3>
-            <p class="desc">La pelea ocurrió entre el padre de Jamariyae Dixon y Marion McKnight. McKnight está acusado de asesinato en la muerte de Dixon.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Muestra las emociones crudas y las consecuencias del crimen violento en las familias.
-            </div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">
-                    Sentimiento: Negative
-                </span>
-                <a href="https://www.wcnc.com/article/news/crime/mecklenburg-county-courthouse-fight-person-arrested/275-3aca2289-81b9-4153-ae60-59c19a584516" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="card-meta">
-                <span class="impact high">High Impact</span>
-                <span class="score">7.5</span>
-            </div>
-            <h3>Rompiendo barreras en la atención médica: líderes locales abordan las brechas de salud racial en el condado de Mecklenburg</h3>
-            <p class="desc">Charlotte está creciendo, pero no todos comparten el progreso. Los residentes negros continúan enfrentando tasas más altas de enfermedades crónicas y otros desafíos de salud.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Destaca las disparidades de salud que afectan a los residentes negros en el condado de Mecklenburg, instando a la acción.
-            </div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">
-                    Sentimiento: Negative
-                </span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
                 <a href="https://www.wcnc.com/article/news/local/breaking-barriers-in-health-care-mecklenburg-county/275-1408ac89-f33d-487d-bf0e-5661c311821c" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
-        
         <div class="card">
-            <div class="card-meta">
-                <span class="impact low">Low Impact</span>
-                <span class="score">7.2</span>
-            </div>
-            <h3>Chef de Charlotte gana $171,000 y planea lanzar un camión de comida</h3>
-            <p class="desc">El chef de Charlotte, Jose Naranjo, ganó un premio mayor de Cash 5 de $171,000 y planea lanzar un camión de comida, convirtiendo años de cocinar para otros en una empresa culinaria personal.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Demuestra el espíritu empresarial y la oportunidad dentro de la escena culinaria de Charlotte.
-            </div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
+            <h3>Teen faces murder, kidnapping charges after north Charlotte shooting</h3><p class="desc">A 19-year-old is charged with murder, robbery and kidnapping after a Feb. 9 shooting that left one man dead, according to CMPD.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details a teen facing murder and kidnapping charges, signaling ongoing violence in the community.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">
-                    Sentimiento: Positive
-                </span>
-                <a href="https://www.wcnc.com/article/news/lottery/charlotte-chef-wins-lottery-jackpot/275-a3237735-eb92-4b77-9872-1afe50dfaf11" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/north-charlotte-shooting-david-cox-road-cmpd/275-9639e51a-2b6b-4c94-9873-697a2b082553" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
-        
         <div class="card">
-            <div class="card-meta">
-                <span class="impact medium">Medium Impact</span>
-                <span class="score">7.0</span>
-            </div>
-            <h3>Conductor de reparto se declara culpable de homicidio involuntario en la muerte a tiros de un joven de 15 años en Uptown</h3>
-            <p class="desc">La emotiva audiencia en la sala del tribunal termina con una sentencia de prisión de 48 a 70 meses para Keshawn Boyd</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Indica progreso en un caso criminal, pero destaca la trágica pérdida de una vida joven.
-            </div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.1</span></div>
+            <h3>Delivery driver pleads guilty to voluntary manslaughter in Uptown shooting death of 15-year-old</h3><p class="desc">Emotional courtroom hearing ends with 48- to 70-month prison sentence for Keshawn Boyd</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details a guilty plea in the shooting death of a 15-year-old, emphasizing youth violence.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">
-                    Sentimiento: Negative
-                </span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
                 <a href="https://www.wcnc.com/article/news/crime/delivery-driver-plea-deal-teenager-shot-killed-uptown-charlotte-north-carolina/275-7c4ca258-b60c-4b80-a847-f49c7ab418e1" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
-        
         <div class="card">
-            <div class="card-meta">
-                <span class="impact medium">Medium Impact</span>
-                <span class="score">7.0</span>
-            </div>
-            <h3>La escena gastronómica de Charlotte está creciendo, pero no todos están sobreviviendo</h3>
-            <p class="desc">La escena de restaurantes de Charlotte está evolucionando rápidamente, con un aumento en las nuevas aperturas y un incremento en los cierres de restaurantes de larga data debido al aumento de los costos.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Refleja la naturaleza dinámica de la industria de restaurantes de Charlotte y las presiones económicas.
-            </div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>CMPD charges suspect with murder in 1990 killing of Kim Thomas</h3><p class="desc">Marion Gales, a longtime person of interest in the 1990 killing of Kim Thomas Friedland, is now charged with murder in the case.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Announces a suspect charged in a 1990 murder case, underscoring the persistence of unsolved crimes.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">
-                    Sentimiento: Neutral
-                </span>
-                <a href="https://www.wcnc.com/article/life/food/charlottes-restaurant-scene-is-thriving-and-struggling-at-the-same-time/275-c133ec74-9241-4666-b0d0-2548c2b80c14" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/cmpd-cold-case-murder-arrest-investigation/275-5c92f14f-840e-4513-806f-2c3728b8f788" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
-        
         <div class="card">
-            <div class="card-meta">
-                <span class="impact medium">Medium Impact</span>
-                <span class="score">7.0</span>
-            </div>
-            <h3>Mujer de Matthews acusada de intentar matar a un hombre con su coche</h3>
-            <p class="desc">Los investigadores dijeron que se debió a una disputa doméstica.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Ilustra la posible escalada de disputas domésticas en crímenes violentos.
-            </div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.9</span></div>
+            <h3>Mecklenburg County report shows mixed housing trends as rental affordability crisis deepens</h3><p class="desc">The report paints a stark picture of the county's affordable housing stock.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Shows a deepening rental affordability crisis in Mecklenburg County, impacting housing security.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">
-                    Sentimiento: Negative
-                </span>
-                <a href="https://www.wcnc.com/article/news/crime/matthews-woman-car-hit-man-2-19-2026/275-aa5ebdf5-33cf-4507-ab5a-3dc4d2535a11" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/money/markets/real-estate/affordable-housing-crisis/mecklenburg-county-state-of-housing-report-2-19-2026/275-dacf8252-6364-4248-a885-3f597b21f977" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
-        
         <div class="card">
-            <div class="card-meta">
-                <span class="impact low">Low Impact</span>
-                <span class="score">6.8</span>
-            </div>
-            <h3>El curling encuentra un hogar en Charlotte, construyendo comunidad a través de un deporte de invierno inesperado</h3>
-            <p class="desc">Un grupo creciente de jugadores de curling en Queen City está demostrando que no se necesitan montañas cubiertas de nieve para crear conexión en el hielo.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Muestra el crecimiento de actividades comunitarias únicas y conexiones sociales en Charlotte.
-            </div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
+            <h3>Man charged with murder in east Charlotte Food Lion shooting</h3><p class="desc">A murder charge follows a fatal east Charlotte shooting, initiated by an argument, leaving one dead and bystanders at risk as shots hit multiple vehicles.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Reports on a fatal shooting at a Food Lion, raising concerns about public safety.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">
-                    Sentimiento: Positive
-                </span>
-                <a href="https://www.wcnc.com/article/sports/charlotte-curling-club-creates-friendships-bonding-olympic-sport/275-cdd771f3-3ad0-46a0-93ab-1bb518023fd2" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/deadly-east-charlotte-shooting/275-3a0fbf0b-6fd0-40f6-aee9-cf7ea5f8a69f" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
-        
         <div class="card">
-            <div class="card-meta">
-                <span class="impact medium">Medium Impact</span>
-                <span class="score">6.5</span>
-            </div>
-            <h3>Adolescente involucrado en un tiroteo fatal en Jack in the Box en Charlotte acepta un acuerdo de culpabilidad, evita la condena por asesinato</h3>
-            <p class="desc">Shaheim Robinson, de 17 años, se declaró culpable de robo con un arma peligrosa por un tiroteo en marzo de 2024. Marcus Dahn sigue acusado de asesinato.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Refleja las consecuencias del crimen violento en los jóvenes involucrados.
-            </div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.7</span></div>
+            <h3>Father arrested after courthouse fight with man accused of killing his son</h3><p class="desc">The fight happened between the father of Jamariyae Dixon and Marion McKnight. McKnight is charged with murder in Dixon's death.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Reports a courthouse fight related to a murder case, highlighting the emotional toll of crime.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">
-                    Sentimiento: Negative
-                </span>
-                <a href="https://www.wcnc.com/article/news/crime/deadly-charlotte-jack-in-the-box-shooting-suspect-takes-plea-deal/275-54354f3b-a31a-418c-a831-9ed4e4afb9e2" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/mecklenburg-county-courthouse-fight-person-arrested/275-3aca2289-81b9-4153-ae60-59c19a584516" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
-        
         <div class="card">
-            <div class="card-meta">
-                <span class="impact medium">Medium Impact</span>
-                <span class="score">6.0</span>
-            </div>
-            <h3>Tribunal de Carolina del Norte falla que no habrá reembolsos para los clientes de Duke Energy a pesar de los cargos ilegales</h3>
-            <p class="desc">El Tribunal de Apelaciones de Carolina del Norte dictaminó que los clientes de Duke Energy no recibirán reembolsos por los cargos cobrados incorrectamente.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Revela contratiempos financieros para los clientes de Duke Energy, lo que genera un discurso público.
-            </div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>North Carolina court rules no refunds for Duke Energy customers despite illegal charges</h3><p class="desc">The North Carolina Court of Appeals ruled that Duke Energy customers won't get refunds for improperly collected charges.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Reports no refunds for Duke Energy customers, raising concerns about consumer rights.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">
-                    Sentimiento: Negative
-                </span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
                 <a href="https://www.wcnc.com/article/news/local/no-refunds-for-duke-energy-customers/275-278564ea-d712-464e-b86f-cf57a7ebc001" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
-        
         <div class="card">
-            <div class="card-meta">
-                <span class="impact low">Low Impact</span>
-                <span class="score">6.0</span>
-            </div>
-            <h3>El gobernador de Carolina del Norte ordena que las banderas ondeen a media asta para honrar el fallecimiento del ícono de los derechos civiles, Jesse Jackson</h3>
-            <p class="desc">Carolina del Norte honra el legado del líder de los derechos civiles Jesse Jackson.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Reconoce el fallecimiento de un ícono de los Derechos Civiles y su impacto en Carolina del Norte.
-            </div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
+            <h3>Teen involved in fatal Charlotte Jack in the Box shooting takes plea deal, avoids murder conviction</h3><p class="desc">Shaheim Robinson, 17, pleaded guilty to robbery with a dangerous weapon for a March 2024 shooting. Marcus Dahn remains charged with murder.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Reports a plea deal in a fatal shooting, reflecting the complexities of the justice system.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">
-                    Sentimiento: Neutral
-                </span>
-                <a href="https://www.wcnc.com/article/news/local/flags-at-half-staff-to-honor-jesse-jackson/275-bef0c2a9-5c8a-4060-9b07-47ec3cd722a5" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/deadly-charlotte-jack-in-the-box-shooting-suspect-takes-plea-deal/275-54354f3b-a31a-418c-a831-9ed4e4afb9e2" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
-        
         <div class="card">
-            <div class="card-meta">
-                <span class="impact low">Low Impact</span>
-                <span class="score">5.5</span>
-            </div>
-            <h3>La estrella de los Hornets, LaMelo Ball, involucrado en un accidente en Uptown Charlotte</h3>
-            <p class="desc">El accidente ocurrió cerca de la intersección de Trade Street y North Tryon Street.</p>
-            <div class="insight">
-                <strong>Por qué es importante:</strong> Involucra a una figura deportiva conocida y genera interés local.
-            </div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.2</span></div>
+            <h3>Charlotte chef wins $171K, plans to launch food truck</h3><p class="desc">Charlotte chef Jose Naranjo won a $171K Cash 5 jackpot and plans to launch a food truck, turning years of cooking for others into a personal culinary venture.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Announces a chef winning a lottery and starting a food truck, representing entrepreneurial success.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">
-                    Sentimiento: Neutral
-                </span>
-                <a href="https://www.wcnc.com/article/news/local/uptown-charlotte-crash/275-fc7ec19e-f593-4b6d-93fd-57b1d1ae9467" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="https://www.wcnc.com/article/news/lottery/charlotte-chef-wins-lottery-jackpot/275-a3237735-eb92-4b77-9872-1afe50dfaf11" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
-        
-    </body>
-    </html>
-    
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Charlotte's dining scene is growing, but not everyone is surviving</h3><p class="desc">Charlotte's restaurant scene is evolving rapidly, with a surge in new openings and an increase in closures of long-standing eateries due to rising costs.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Discusses the evolving dining scene with both growth and closures, reflecting economic pressures.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Mixed</span>
+                <a href="https://www.wcnc.com/article/life/food/charlottes-restaurant-scene-is-thriving-and-struggling-at-the-same-time/275-c133ec74-9241-4666-b0d0-2548c2b80c14" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
+            <h3>Mosaic Capital Partners Seeks Vice President of Business Development</h3><p class="desc">CHARLOTTE, N.C., Feb. 18, 2026 (GLOBE NEWSWIRE) -- Mosaic Capital Partners, LLC ('Mosaic”) is a private equity firm Based in Charlotte, NC, focused on bringing broad based employee ownership to lower middle market businesses through change-of-control transactions. Mosaic invests in companies with EBITDA of $3 - $15 million across the core sectors of business services, niche manufacturing, and consumer. Mosaic manages over $370M of AUM and has supported over 3,000 employee owners in building substantial long-term wealth.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details Mosaic Capital Partners seeking a VP, indicating business growth and job opportunities.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="https://www.manilatimes.net/2026/02/18/tmt-newswire/globenewswire/mosaic-capital-partners-seeks-vice-president-of-business-development/2280313" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Curling finds a home in Charlotte, building community through an unexpected winter sport</h3><p class="desc">A growing group of curlers in the Queen City is proving you don’t need snow-covered mountains to create connection on the ice.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Highlights the growth of curling in Charlotte, showcasing community building through sports.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="https://www.wcnc.com/article/sports/charlotte-curling-club-creates-friendships-bonding-olympic-sport/275-cdd771f3-3ad0-46a0-93ab-1bb518023fd2" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>Travis Buys Home Sees Homeowners Are Reassessing When to Sell as Market Conditions Shift</h3><p class="desc">CHARLOTTE, NC, Jan. 28, 2026 (GLOBE NEWSWIRE) --</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Indicates shifts in the housing market, affecting homeowners' decisions.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.manilatimes.net/2026/01/29/tmt-newswire/globenewswire/travis-buys-home-sees-homeowners-are-reassessing-when-to-sell-as-market-conditions-shift/2267270" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div></body></html>
