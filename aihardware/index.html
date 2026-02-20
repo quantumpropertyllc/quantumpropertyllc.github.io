@@ -76,25 +76,6 @@
             border-color: var(--accent-color);
         }
 
-        .card-image-container {
-            width: 100%;
-            height: 200px;
-            background-color: #222;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .card-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            /* Changed to confirm fit */
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
         .card-content {
             padding: 20px;
             flex-grow: 1;
@@ -279,9 +260,6 @@
                 }
 
                 card.innerHTML = `
-                <div class="card-image-container">
-                    <img src="${item.image_url}" alt="${item.name}" class="card-image" referrerpolicy="no-referrer" loading="lazy" onerror="this.src='https://placehold.co/400x300/1a1a1a/FFF?text=No+Image'">
-                </div>
                 <div class="card-content">
                     <div class="tier-badge">${item.best_for}</div>
                     <h3 class="card-title">${item.name}</h3>
