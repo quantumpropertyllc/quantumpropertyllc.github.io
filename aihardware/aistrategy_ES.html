@@ -423,6 +423,27 @@
                     { label: 'Equipo Pequeño (2-10)', value: 'smallTeam' },
                     { label: 'Departamento Empresarial', value: 'enterprise' }
                 ]
+            },
+            {
+                id: 'roleToReplace',
+                title: '¿Rol Principal a Automatizar?',
+                desc: 'Utilizado para calcular el Retorno de Inversión (ROI) realista.',
+                options: [
+                    { label: 'Administrativo / Soporte (~$45k/año)', value: 'admin' },
+                    { label: 'Contador / Analista (~$75k/año)', value: 'analyst' },
+                    { label: 'Especialista Técnico/Legal (~$120k/año)', value: 'specialist' }
+                ]
+            },
+            {
+                id: 'headcountReplaced',
+                title: '¿Número de Personas Reemplazadas?',
+                desc: '¿Cuánto trabajo humano compensará esta IA?',
+                options: [
+                    { label: 'Parcial / Asistente (0.5 personas)', value: 'half' },
+                    { label: '1 Empleado de Tiempo Completo (1 persona)', value: 'one' },
+                    { label: 'Equipo Pequeño (2-3 personas)', value: 'few' },
+                    { label: 'Departamento / Agencia (4+ personas)', value: 'many' }
+                ]
             }
         ];
 
@@ -550,7 +571,13 @@
                 <div class="roi-card">
                     <div class="result-subtitle" style="color:#34C759">ROI ANUAL ESTIMADO</div>
                     <div class="roi-value">$${result.savings.toLocaleString()}</div>
-                    <p class="description" style="margin-bottom:0">Período de Recuperación: ~${result.payback} Meses</p>
+                    <p class="description" style="margin-bottom:12px">Período de Recuperación de Hardware: ~${result.payback} Meses</p>
+                    <div class="justification" style="border-top-color: rgba(52, 199, 89, 0.2); font-size: 13px;">
+                        <strong>Acerca de este cálculo:</strong><br>
+                        • Base Asumida: <strong>${result.roleDisplay} ($${result.salaryBase.toLocaleString()}/año)</strong>.<br>
+                        • Personal Compensado: <strong>${result.headcountDisplay}</strong>.<br>
+                        • Compara el costo inicial del hardware de <strong>$${result.hardware.price.toLocaleString()}</strong> con los ahorros salariales recurrentes.<br>
+                    </div>
                 </div>
 
                 <div class="action-container">
@@ -620,8 +647,19 @@
 
             const hwJust = `Ejecutar este modelo en ${responses.accuracyLevel.toLowerCase()} requiere ~${vramNeeded}GB VRAM. Esta configuración ${hardware.name} proporciona el ancho de banda necesario de ${hardware.memory_bandwidth}GB/s para la escala ${responses.teamSize}.`;
 
-            // 6. ROI
-            const savings = 85 * 20 * 52 * 0.3; // Avg $85/hr, 20hrs/wk, 30% automation
+            // 6. ROI Math based on substituted roles
+            let salaryBase = 75000;
+            let roleDisplay = "Contador / Analista";
+            if (responses.roleToReplace === 'admin') { salaryBase = 45000; roleDisplay = "Administrativo / Soporte"; }
+            else if (responses.roleToReplace === 'specialist') { salaryBase = 120000; roleDisplay = "Especialista Técnico / Legal"; }
+
+            let headcountMult = 1;
+            let headcountDisplay = "1 Empleado de Tiempo Completo";
+            if (responses.headcountReplaced === 'half') { headcountMult = 0.5; headcountDisplay = "0.5 Empleados (Asistente)"; }
+            else if (responses.headcountReplaced === 'few') { headcountMult = 2.5; headcountDisplay = "2-3 Empleados"; }
+            else if (responses.headcountReplaced === 'many') { headcountMult = 4.0; headcountDisplay = "4+ Empleados"; }
+
+            const savings = salaryBase * headcountMult; // Total operational salary savings
             const payback = Math.round((hardware.price / (savings / 12)) * 10) / 10;
 
             // 7. Cloud/Private Recommendations
@@ -632,7 +670,10 @@
                 cloudRecs = catalog.cloud_providers;
             }
 
-            return { model, hardware, modelJustification: modelJust, hwJustification: hwJust, savings, payback, cloudRecs };
+            return {
+                model, hardware, modelJustification: modelJust, hwJustification: hwJust,
+                savings, payback, cloudRecs, roleDisplay, salaryBase, headcountDisplay
+            };
         }
 
         init();

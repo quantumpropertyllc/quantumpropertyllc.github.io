@@ -423,6 +423,27 @@
                     { label: '小团队 (2-10)', value: 'smallTeam' },
                     { label: '企业部门', value: 'enterprise' }
                 ]
+            },
+            {
+                id: 'roleToReplace',
+                title: '要自动化的主要角色？',
+                desc: '用于计算实际投资回报率 (ROI)。',
+                options: [
+                    { label: '行政人员 / 支持人员 (~$45k/年)', value: 'admin' },
+                    { label: '会计师 / 分析师 (~$75k/年)', value: 'analyst' },
+                    { label: '技术 / 法律专家 (~$120k/年)', value: 'specialist' }
+                ]
+            },
+            {
+                id: 'headcountReplaced',
+                title: '替代人数？',
+                desc: '这个 AI 将抵消多少人力资源？',
+                options: [
+                    { label: '兼职 / 助理 (0.5人)', value: 'half' },
+                    { label: '1 名全职员工 (1人)', value: 'one' },
+                    { label: '小团队 (2-3人)', value: 'few' },
+                    { label: '部门 / 机构 (4人+)', value: 'many' }
+                ]
             }
         ];
 
@@ -550,7 +571,13 @@
                 <div class="roi-card">
                     <div class="result-subtitle" style="color:#34C759">预估年回报率</div>
                     <div class="roi-value">$${result.savings.toLocaleString()}</div>
-                    <p class="description" style="margin-bottom:0">回本周期: ~${result.payback} 个月</p>
+                    <p class="description" style="margin-bottom:12px">硬件回本周期: ~${result.payback} 个月</p>
+                    <div class="justification" style="border-top-color: rgba(52, 199, 89, 0.2); font-size: 13px;">
+                        <strong>投资回报率计算方式：</strong><br>
+                        • 假设基准工资：<strong>${result.roleDisplay} ($${result.salaryBase.toLocaleString()}/年)</strong><br>
+                        • 抵消的员工人数：<strong>${result.headcountDisplay}</strong><br>
+                        • 对比一次性支出的硬件成本 ($${result.hardware.price.toLocaleString()}) 与此经常性运营工资支出的节省情况。
+                    </div>
                 </div>
 
                 <div class="action-container">
@@ -620,8 +647,19 @@
 
             const hwJust = `在 ${responses.accuracyLevel.toLowerCase()} 水平运行此模型需要约 ${vramNeeded}GB 显存。此 ${hardware.name} 配置为 ${responses.teamSize} 规模提供了必要的 ${hardware.memory_bandwidth}GB/s 带宽。`;
 
-            // 6. ROI
-            const savings = 85 * 20 * 52 * 0.3; // Avg $85/hr, 20hrs/wk, 30% automation
+            // 6. ROI Math based on substituted roles
+            let salaryBase = 75000;
+            let roleDisplay = "会计师 / 分析师";
+            if (responses.roleToReplace === 'admin') { salaryBase = 45000; roleDisplay = "行政人员 / 支持人员"; }
+            else if (responses.roleToReplace === 'specialist') { salaryBase = 120000; roleDisplay = "技术 / 法律专家"; }
+
+            let headcountMult = 1;
+            let headcountDisplay = "1 名全职员工";
+            if (responses.headcountReplaced === 'half') { headcountMult = 0.5; headcountDisplay = "0.5 名员工 (助理)"; }
+            else if (responses.headcountReplaced === 'few') { headcountMult = 2.5; headcountDisplay = "2-3 名员工"; }
+            else if (responses.headcountReplaced === 'many') { headcountMult = 4.0; headcountDisplay = "4+ 名员工"; }
+
+            const savings = salaryBase * headcountMult; // Total operational salary savings
             const payback = Math.round((hardware.price / (savings / 12)) * 10) / 10;
 
             // 7. Cloud/Private Recommendations
@@ -632,7 +670,10 @@
                 cloudRecs = catalog.cloud_providers;
             }
 
-            return { model, hardware, modelJustification: modelJust, hwJustification: hwJust, savings, payback, cloudRecs };
+            return {
+                model, hardware, modelJustification: modelJust, hwJustification: hwJust,
+                savings, payback, cloudRecs, roleDisplay, salaryBase, headcountDisplay
+            };
         }
 
         init();
