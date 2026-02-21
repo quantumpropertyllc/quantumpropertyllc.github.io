@@ -249,135 +249,65 @@ def call_gemini(prompt, max_retries=3):
             return None
     return None
 
-def ai_enrich_category(category_id, articles):
-    if not articles:
-        logging.warning(f"No articles to enrich for {category_id}")
-        return None
-    # Increased to 20 articles to meet user request for 15-20
-    raw_list = articles[:20]
-    logging.info(f"Enriching {len(raw_list)} articles for {category_id}...")
+def ai_process_bundle(category_id, raw_list, category_name):
+    """Performs Enrichment and Multi-Language Translation (ZH/ES) in ONE single Gemini call."""
+    if not raw_list: return None
     
+    # 20 articles as requested
+    articles_to_process = raw_list[:20]
+    logging.info(f"Bundling Enrichment & Translation for {category_name} (Articles: {len(articles_to_process)})...")
+    
+    # Payload optimization: truncate descriptions even more for the bundle
+    input_data = []
+    for i, a in enumerate(articles_to_process):
+        desc = (a.get("description") or a.get("desc") or "")[:300]
+        input_data.append({"id": i, "title": a["title"], "desc": desc})
+
     prompt = f"""
-    Task: High-Quality Analysis and Enrichment for {category_id} news.
-    Category Name: {category_id.replace('_', ' ').title()}
+    Task: High-Quality Analysis and Multi-Language Translation for {category_name} news.
     Current Date: {datetime.datetime.now().strftime('%Y-%m-%d')}
     
-    Input: {json.dumps([{"id": i, "title": a["title"], "desc": (a.get("description") or "")[:250]} for i, a in enumerate(raw_list)])}
+    Articles: {json.dumps(input_data)}
     
     Requirements:
-    1. Select and process EXACTLY 20 articles. Do not skip any.
-    2. Provide for EACH article:
-       - score (0-10.0): How critical/significant this news is.
-       - sentiment: Positive, Neutral, or Negative.
-       - why_matters: A professional, deep insight (max 120 chars) on the global/local impact. Avoid generic filler.
-       - impact: High, Medium, or Low.
-    3. Generate a professional Category Page Summary (3 sentences): A cohesive summary of current trends based on the articles above.
-    4. Generate a "Landscape Insight": A one-sentence visionary takeaway.
-    5. Group into 3-4 trending clusters (e.g., "Policy Shifts", "Regional Conflict").
+    1. Process EXACTLY {len(articles_to_process)} articles.
+    2. For EACH article, generate:
+       - score (0-10.0), sentiment (Positive/Neutral/Negative), impact (High/Med/Low).
+       - Three versions of (title, description [succinct], why_matters [deep insight, 120 chars]):
+         - "en": English
+         - "zh": Chinese (Simplified)
+         - "es": Spanish
+    3. For BOTH the Category Summary (3 sentences) and Landscape Insight (1 sentence), provide "en", "zh", and "es" versions.
+    4. Provide a list of 3-4 trending clusters (e.g., "AI Regulation", "Market Rally") in all three languages.
     
-    CRITICAL: Avoid placeholders like "Significant update." or "The news is important." Use the specific context of each headline.
-    Return ONLY valid JSON.
-    Structure: {{"summary": "...", "landscape_insight": "...", "clusters": ["..."], "processed_articles": [{{ "id": idx, "score": float, "sentiment": "...", "why_matters": "...", "impact": "..." }}]}}
+    CRITICAL: 
+    - Return ONLY valid JSON.
+    - Avoid placeholders. 
+    - Ensure translations are professional and accurate.
+    
+    Structure: {{
+      "en": {{ "summary": "...", "insight": "...", "clusters": [...], "articles": [{{ "id": idx, "score": float, "sentiment": "...", "impact": "...", "title": "...", "description": "...", "why_matters": "..." }}] }},
+      "zh": {{ "summary": "...", "insight": "...", "clusters": [...], "articles": [{{ "id": idx, "score": float, "sentiment": "...", "impact": "...", "title": "...", "description": "...", "why_matters": "..." }}] }},
+      "es": {{ "summary": "...", "insight": "...", "clusters": [...], "articles": [{{ "id": idx, "score": float, "sentiment": "...", "impact": "...", "title": "...", "description": "...", "why_matters": "..." }}] }}
+    }}
     """
-    ai_data = call_gemini(prompt)
-    if not ai_data:
-        logging.error(f"Gemini enrichment failed for {category_id}")
+    
+    bundle = call_gemini(prompt)
+    if not bundle or "en" not in bundle:
+        logging.error(f"Bundle processing failed for {category_id}")
         return None
-    
-    enriched = []
-    processed_count = len(ai_data.get("processed_articles", []))
-    logging.info(f"Gemini returned {processed_count} processed articles for {category_id}")
-    
-    for p in ai_data.get("processed_articles", []):
-        idx = p.get("id")
-        if idx is not None and idx < len(raw_list):
-            item = raw_list[idx].copy()
-            # TRUNCATE DESCRIPTION to prevent JSON bloat and translation failures
-            desc = item.get("description") or item.get("desc") or ""
-            item["description"] = desc[:350] + "..." if len(desc) > 350 else desc
-            
-            item.update({
-                "score": float(p.get("score", 5.0)),
-                "sentiment": p.get("sentiment", "Neutral"),
-                "why_matters": p.get("why_matters", "Significant update."),
-                "impact": p.get("impact", "Medium")
-            })
-            enriched.append(item)
-    enriched.sort(key=lambda x: x["score"], reverse=True)
-    return {
-        "articles": enriched,
-        "summary": ai_data.get("summary", ""),
-        "insight": ai_data.get("landscape_insight", ""),
-        "clusters": ai_data.get("clusters", [])
-    }
-
-def ai_translate_batch(data, category_name):
-    """Translates EN data into Chinese and Spanish using separate calls for maximum reliability."""
-    if not data: return {}
-    
-    minimal_data = {
-        "summary": data.get("summary", ""),
-        "insight": data.get("insight", ""),
-        "clusters": data.get("clusters", []),
-        "articles": [{"title": a["title"], "description": a["description"], "why_matters": a["why_matters"]} for a in data.get("articles", [])]
-    }
-    
-    final_translations = {}
-    langs = {"zh": "Chinese (Simplified)", "es": "Spanish"}
-    
-    for lang_key, lang_name in langs.items():
-        logging.info(f"Translating {category_name} into {lang_name}...")
-        # Delay between language translations to avoid rate limits
-        if lang_key == "es": 
-            time.sleep(5)
-            
-        prompt = f"""
-        Task: Translate this {category_name} news analysis into {lang_name}.
-        Requirements:
-        1. Translate ALL text fields: titles, summaries, insights, why_matters, and clusters.
-        2. Keep the JSON structure EXACTLY the same.
-        3. Professional and accurate tone.
         
-        JSON to translate:
-        {json.dumps(minimal_data)}
-        
-        Output Format: Give me the translated JSON directly.
-        """
-        translated_data = call_gemini(prompt)
-        if not translated_data:
-            logging.error(f"Translation failed for {lang_name}. Falling back to English.")
-            continue
-
-        merged = data.copy()
-        merged.update({
-            "summary": translated_data.get("summary", merged["summary"]),
-            "insight": translated_data.get("insight", merged["insight"]),
-            "clusters": translated_data.get("clusters", merged["clusters"])
-        })
-        
-        # Merge article translations
-        trans_articles = translated_data.get("articles", [])
-        new_articles = []
-        for i, orig_a in enumerate(data["articles"]):
-            new_a = orig_a.copy()
-            if i < len(trans_articles):
-                ta = trans_articles[i]
-                # Fallback to English if single article translation field is missing
-                new_a.update({
-                    "title": ta.get("title", new_a["title"]),
-                    "description": ta.get("description", new_a["description"]),
-                    "why_matters": ta.get("why_matters", new_a["why_matters"])
-                })
-            new_articles.append(new_a)
-        merged["articles"] = new_articles
-        final_translations[lang_key] = merged
-        
-    # LOGGING: Warn if any language is missing to help debug non-sense copies
-    for lk in langs:
-        if lk not in final_translations:
-            logging.warning(f"Translation for {lk} FAILED. This file will remain in English.")
-            
-    return final_translations
+    # Inject original URLs and sources back into the bundled articles
+    for lang in ["en", "zh", "es"]:
+        if lang in bundle:
+            bundle[lang]["title"] = category_name # Fallback or specific language title if needed
+            for item in bundle[lang].get("articles", []):
+                orig_idx = item.get("id")
+                if orig_idx is not None and orig_idx < len(articles_to_process):
+                    item["url"] = articles_to_process[orig_idx].get("url")
+                    item["source"] = articles_to_process[orig_idx].get("source")
+                    
+    return bundle
 
 # =========================
 # HTML GENERATION
@@ -461,21 +391,19 @@ def process_category(cat_id, config):
         unique_articles = dedupe(raw_articles)
         if not unique_articles: return False
 
-        data_en = ai_enrich_category(cat_id, unique_articles)
-        if not data_en: return False
+        # 2. Bundled AI Processing (Enrichment + Multi-Language in ONE call)
+        bundle = ai_process_bundle(cat_id, unique_articles, config["name"])
+        if not bundle or "en" not in bundle:
+            logging.error(f"Failed to process category bundle for {cat_id}")
+            return False
 
-        # 2.5 Delay to avoid burst rate limits
-        time.sleep(5)
-
-        # 3. Batch Translate (ZH and ES separately now)
-        translations = ai_translate_batch(data_en, config["name"])
+        # 3. Save All
+        for lang in ["en", "zh", "es"]:
+            lang_data = bundle.get(lang)
+            if lang_data:
+                save_files(cat_id, config, lang, lang_data)
         
-        # 4. Save All (Parallel writes)
-        all_langs = {"en": data_en, "zh": translations.get("zh", data_en), "es": translations.get("es", data_en)}
-        for lang, data in all_langs.items():
-            save_files(cat_id, config, lang, data)
-        
-        logging.info(f"Successfully processed {cat_id.upper()} (Articles: {len(data_en['articles'])})")
+        logging.info(f"Successfully processed {cat_id.upper()} (Articles: {len(bundle['en']['articles'])})")
         return True
     except Exception as e:
         logging.error(f"Error {cat_id.upper()}: {e}")
