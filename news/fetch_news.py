@@ -327,6 +327,10 @@ def ai_translate_batch(data, category_name):
     
     for lang_key, lang_name in langs.items():
         logging.info(f"Translating {category_name} into {lang_name}...")
+        # Delay between language translations to avoid rate limits
+        if lang_key == "es": 
+            time.sleep(5)
+            
         prompt = f"""
         Task: Translate this {category_name} news analysis into {lang_name}.
         Requirements:
@@ -457,11 +461,13 @@ def process_category(cat_id, config):
         unique_articles = dedupe(raw_articles)
         if not unique_articles: return False
 
-        # 2. EN Enrichment
         data_en = ai_enrich_category(cat_id, unique_articles)
         if not data_en: return False
 
-        # 3. Batch Translate (ZH and ES in ONE call)
+        # 2.5 Delay to avoid burst rate limits
+        time.sleep(5)
+
+        # 3. Batch Translate (ZH and ES separately now)
         translations = ai_translate_batch(data_en, config["name"])
         
         # 4. Save All (Parallel writes)
@@ -481,27 +487,21 @@ def main():
 
     active_cats = {cid: cfg for cid, cfg in CATEGORIES.items() if not (cid == "ai" and mode != "daily")}
     
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        # Stagger the start of each category by 20 seconds to avoid hitting Gemini rate limits
-        futures = {}
-        for cid, cfg in active_cats.items():
-            futures[executor.submit(process_category, cid, cfg)] = cid
-            time.sleep(20)
-
-        # Added overall timeout to as_completed (reduced to 300s for faster exit)
+    # Sequential processing is MANDATORY for Gemini free tier to avoid 429 rate limit bursts.
+    for cid, cfg in active_cats.items():
         try:
-            for future in as_completed(futures, timeout=300): # 5 minute max for all categories
-                cid = futures[future]
-                try:
-                    res = future.result()
-                    logging.info(f"Finished {cid.upper()} (Success: {res})")
-                except Exception as e:
-                    logging.error(f"Category {cid.upper()} raised an exception: {e}")
-        except TimeoutError:
-            logging.error("Main execution timed out after 5 minutes! Forcing exit.")
-            sys.exit(1)
+            logging.info(f"--- STARTING CATEGORY: {cid.upper()} ---")
+            res = process_category(cid, cfg)
+            logging.info(f"Finished {cid.upper()} (Success: {res})")
+            
+            # Stagger between categories to fully clear rate limits
+            if cid != list(active_cats.keys())[-1]:
+                logging.info("Waiting 20 seconds before next category to clear rate limits...")
+                time.sleep(20)
+        except Exception as e:
+            logging.error(f"Category {cid.upper()} raised an exception: {e}")
 
-    logging.info("--- ALL NEWS TASKS COMPLETED (EXTREME SPEED) ---")
+    logging.info("--- ALL NEWS TASKS COMPLETED (STABLE MODE) ---")
     sys.stdout.flush()
     os._exit(0) # Force exit immediately
 
