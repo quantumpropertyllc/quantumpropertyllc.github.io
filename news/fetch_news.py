@@ -11,6 +11,7 @@ import logging
 import socket
 from eventregistry import EventRegistry, QueryArticlesIter, QueryItems
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from deep_translator import GoogleTranslator
 
 # =========================
 # CONFIG & LOGGING
@@ -218,7 +219,11 @@ def call_gemini(prompt, max_retries=3):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_KEY}"
     body = {
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"response_mime_type": "application/json"}
+        "generationConfig": {
+            "response_mime_type": "application/json",
+            "max_output_tokens": 8192,
+            "temperature": 0.1
+        }
     }
     for attempt in range(max_retries):
         try:
@@ -250,21 +255,21 @@ def call_gemini(prompt, max_retries=3):
     return None
 
 def ai_process_bundle(category_id, raw_list, category_name):
-    """Performs Enrichment and Multi-Language Translation (ZH/ES) in ONE single Gemini call."""
+    """Performs ENRICHMENT (EN only) in one Gemini call to minimize payload size."""
     if not raw_list: return None
     
-    # 20 articles as requested
-    articles_to_process = raw_list[:20]
-    logging.info(f"Bundling Enrichment & Translation for {category_name} (Articles: {len(articles_to_process)})...")
+    # Process EXACTLY 15 articles
+    articles_to_process = raw_list[:15]
+    logging.info(f"Enriching {category_name} with Gemini (Articles: {len(articles_to_process)})...")
     
-    # Payload optimization: truncate descriptions even more for the bundle
+    # Payload optimization
     input_data = []
     for i, a in enumerate(articles_to_process):
-        desc = (a.get("description") or a.get("desc") or "")[:300]
+        desc = (a.get("description") or a.get("desc") or "")[:250]
         input_data.append({"id": i, "title": a["title"], "desc": desc})
 
     prompt = f"""
-    Task: High-Quality Analysis and Multi-Language Translation for {category_name} news.
+    Task: High-Quality Analysis and Enrichment for {category_name} news.
     Current Date: {datetime.datetime.now().strftime('%Y-%m-%d')}
     
     Articles: {json.dumps(input_data)}
@@ -273,41 +278,71 @@ def ai_process_bundle(category_id, raw_list, category_name):
     1. Process EXACTLY {len(articles_to_process)} articles.
     2. For EACH article, generate:
        - score (0-10.0), sentiment (Positive/Neutral/Negative), impact (High/Med/Low).
-       - Three versions of (title, description [succinct], why_matters [deep insight, 120 chars]):
-         - "en": English
-         - "zh": Chinese (Simplified)
-         - "es": Spanish
-    3. For BOTH the Category Summary (3 sentences) and Landscape Insight (1 sentence), provide "en", "zh", and "es" versions.
-    4. Provide a list of 3-4 trending clusters (e.g., "AI Regulation", "Market Rally") in all three languages.
+       - title: Clear, professional headline.
+       - description: Succinct summary (MAX 250 characters).
+       - why_matters: Deep insight (MAX 120 characters).
+    3. Provide Category Summary (3 sentences) and Landscape Insight (1 sentence).
+    4. Provide 3-4 trending clusters.
     
     CRITICAL: 
     - Return ONLY valid JSON.
-    - Avoid placeholders. 
-    - Ensure translations are professional and accurate.
+    - language: English.
     
     Structure: {{
-      "en": {{ "summary": "...", "insight": "...", "clusters": [...], "articles": [{{ "id": idx, "score": float, "sentiment": "...", "impact": "...", "title": "...", "description": "...", "why_matters": "..." }}] }},
-      "zh": {{ "summary": "...", "insight": "...", "clusters": [...], "articles": [{{ "id": idx, "score": float, "sentiment": "...", "impact": "...", "title": "...", "description": "...", "why_matters": "..." }}] }},
-      "es": {{ "summary": "...", "insight": "...", "clusters": [...], "articles": [{{ "id": idx, "score": float, "sentiment": "...", "impact": "...", "title": "...", "description": "...", "why_matters": "..." }}] }}
+      "summary": "...", 
+      "insight": "...", 
+      "clusters": [...], 
+      "articles": [{{ "id": idx, "score": float, "sentiment": "...", "impact": "...", "title": "...", "description": "...", "why_matters": "..." }}]
     }}
     """
     
-    bundle = call_gemini(prompt)
-    if not bundle or "en" not in bundle:
-        logging.error(f"Bundle processing failed for {category_id}")
+    res = call_gemini(prompt)
+    if not res or "articles" not in res:
+        logging.error(f"Enrichment failed for {category_id}")
         return None
         
-    # Inject original URLs and sources back into the bundled articles
-    for lang in ["en", "zh", "es"]:
-        if lang in bundle:
-            bundle[lang]["title"] = category_name # Fallback or specific language title if needed
-            for item in bundle[lang].get("articles", []):
-                orig_idx = item.get("id")
-                if orig_idx is not None and orig_idx < len(articles_to_process):
-                    item["url"] = articles_to_process[orig_idx].get("url")
-                    item["source"] = articles_to_process[orig_idx].get("source")
-                    
-    return bundle
+    # Inject original URLs and sources
+    for item in res.get("articles", []):
+        orig_idx = item.get("id")
+        if orig_idx is not None and orig_idx < len(articles_to_process):
+            item["url"] = articles_to_process[orig_idx].get("url")
+            item["source"] = articles_to_process[orig_idx].get("source")
+            
+    return {"en": res}
+
+def translate_bundle(bundle, target_lang):
+    """Translates an English bundle into target_lang using Google Translate (Standard/Stable)."""
+    if not bundle or "en" not in bundle: return None
+    en_data = bundle["en"]
+    lang_code = "zh-CN" if target_lang == "zh" else "es"
+    
+    logging.info(f"Translating bundle into {target_lang}...")
+    translator = GoogleTranslator(source="auto", target=lang_code)
+    
+    try:
+        translated_data = {
+            "summary": translator.translate(en_data["summary"]),
+            "insight": translator.translate(en_data["insight"]),
+            "clusters": [translator.translate(c) for c in en_data["clusters"]],
+            "articles": []
+        }
+        
+        for a in en_data["articles"]:
+            translated_data["articles"].append({
+                "id": a["id"],
+                "score": a["score"],
+                "sentiment": a["sentiment"],
+                "impact": a["impact"],
+                "url": a["url"],
+                "source": a["source"],
+                "title": translator.translate(a["title"]),
+                "description": translator.translate(a["description"]),
+                "why_matters": translator.translate(a["why_matters"])
+            })
+        return translated_data
+    except Exception as e:
+        logging.error(f"Translation failed for {target_lang}: {e}")
+        return en_data # Fallback to English
 
 # =========================
 # HTML GENERATION
@@ -385,19 +420,23 @@ def save_files(cat_id, config, lang, processed_data):
 def process_category(cat_id, config):
     try:
         logging.info(f"--- Processing {cat_id.upper()} ---")
-        # 1. Fetching (Internal parallel)
+        # 1. Fetching
         fetchers = {"global": fetch_top_news, "market": fetch_market_news, "ai": fetch_ai_news_rich, "charlotte": fetch_charlotte_news_rich}
         raw_articles = fetchers[cat_id]()
         unique_articles = dedupe(raw_articles)
         if not unique_articles: return False
 
-        # 2. Bundled AI Processing (Enrichment + Multi-Language in ONE call)
+        # 2. Gemini EN Enrichment
         bundle = ai_process_bundle(cat_id, unique_articles, config["name"])
         if not bundle or "en" not in bundle:
-            logging.error(f"Failed to process category bundle for {cat_id}")
+            logging.error(f"Failed to process enrichment for {cat_id}")
             return False
 
-        # 3. Save All
+        # 3. Google Translation (ZH/ES)
+        bundle["zh"] = translate_bundle(bundle, "zh")
+        bundle["es"] = translate_bundle(bundle, "es")
+
+        # 4. Save All
         for lang in ["en", "zh", "es"]:
             lang_data = bundle.get(lang)
             if lang_data:
@@ -410,26 +449,24 @@ def process_category(cat_id, config):
         return False
 
 def main():
-    mode = sys.argv[1] if len(sys.argv) > 1 else "hourly"
-    logging.info(f"--- NEWS AGGREGATOR STARTING (Mode: {mode}, EXTREME OPTIMIZED) ---")
+    # Usage: python fetch_news.py [category|hourly|daily]
+    target = sys.argv[1] if len(sys.argv) > 1 else "hourly"
+    logging.info(f"--- NEWS AGGREGATOR STARTING (Target: {target}, HYBRID MODE) ---")
 
-    active_cats = {cid: cfg for cid, cfg in CATEGORIES.items() if not (cid == "ai" and mode != "daily")}
-    
-    # Sequential processing is MANDATORY for Gemini free tier to avoid 429 rate limit bursts.
-    for cid, cfg in active_cats.items():
-        try:
-            logging.info(f"--- STARTING CATEGORY: {cid.upper()} ---")
-            res = process_category(cid, cfg)
-            logging.info(f"Finished {cid.upper()} (Success: {res})")
-            
-            # Stagger between categories to fully clear rate limits
-            if cid != list(active_cats.keys())[-1]:
-                logging.info("Waiting 20 seconds before next category to clear rate limits...")
-                time.sleep(20)
-        except Exception as e:
-            logging.error(f"Category {cid.upper()} raised an exception: {e}")
+    if target in CATEGORIES:
+        # Run specific category
+        process_category(target, CATEGORIES[target])
+    elif target == "daily":
+        # Legacy daily mode (runs AI)
+        process_category("ai", CATEGORIES["ai"])
+    else:
+        # Batch mode (legacy hourly) - though we are moving to single-category runs
+        for cid, cfg in CATEGORIES.items():
+            if cid == "ai": continue # AI usually handled in its own slot
+            process_category(cid, cfg)
+            time.sleep(10)
 
-    logging.info("--- ALL NEWS TASKS COMPLETED (STABLE MODE) ---")
+    logging.info(f"--- {target.upper()} TASKS COMPLETED ---")
     sys.stdout.flush()
     os._exit(0) # Force exit immediately
 

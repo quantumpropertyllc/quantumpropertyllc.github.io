@@ -1,201 +1,151 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-02-20 08:27 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Impacto Ambiental y Política</span><span class="cluster">#Dinámica Política y Gobernanza</span><span class="cluster">#Tecnología y Seguridad</span><span class="cluster">#Incidentes Regionales y Asuntos Globales</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Las noticias globales de esta semana cubren una amplia gama de temas, desde tragedias relacionadas con el clima y cambios en la política ambiental hasta eventos políticos y avances tecnológicos. Las condiciones climáticas extremas y su impacto son un tema recurrente, junto con las tensiones políticas y los ajustes de políticas en varias regiones. Además, la tecnología continúa integrándose en la vida diaria, lo que genera preocupaciones sobre la privacidad y la seguridad de los datos.</p><div class="divider"></div><p class="insight-text">El panorama global está cada vez más definido por la intersección de los desafíos ambientales, la volatilidad política y el avance tecnológico, lo que requiere estrategias proactivas para navegar las complejas interacciones entre estos dominios.</p></div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
-            <h3>Colonos israelíes matan a un palestino-estadounidense de 19 años, dicen funcionarios y testigos - NPR</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPekNULVpNaWYxR0tFalJtTzJzYTAwd2F5Mk92TFBPX2kwaUdCNURLWG8yM1FqUlBEV2FnRWljNEpfai1BbjJENXZleHJsc19BcGxXQjR4WFZHdHktZThQejNaMlFCUjVsM2JFZmk1V1Z6ODZOb2xneHA5WXpBQk53Vm5FMjl3OHFfQllXMURjTUdJRHVmaWREemgxS1RwclJxTTZQVlBSTEloRlB5UHdkNHRuWXg1RHBOOE5yeTZ3b0t2TG54cmc?oc=5" target="_blank">Is...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Aumenta las tensiones en el conflicto israelí-palestino, lo que podría intensificar la violencia e impactar las relaciones diplomáticas.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPekNULVpNaWYxR0tFalJtTzJzYTAwd2F5Mk92TFBPX2kwaUdCNURLWG8yM1FqUlBEV2FnRWljNEpfai1BbjJENXZleHJsc19BcGxXQjR4WFZHdHktZThQejNaMlFCUjVsM2JFZmk1V1Z6ODZOb2xneHA5WXpBQk53Vm5FMjl3OHFfQllXMURjTUdJRHVmaWREemgxS1RwclJxTTZQVlBSTEloRlB5UHdkNHRuWXg1RHBOOE5yeTZ3b0t2TG54cmc?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-02-21 05:19 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Tensiones geopolíticas (Corea del Norte, Rusia, Irán)</span><span class="cluster">#Avances tecnológicos (VE, vacunas, Samsung)</span><span class="cluster">#Actividades laborales y sindicales</span><span class="cluster">#Obituarios y figuras culturales</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Las tensiones geopolíticas, particularmente las que involucran a Corea del Norte y la interceptación de aviones de combate rusos por parte de Estados Unidos, son prominentes. También son dignos de mención los avances tecnológicos, como las nuevas funciones de Rivian y una posible vacuna universal. Además, el fallecimiento de Robert Duvall y las negociaciones del contrato sindical en Volkswagen son acontecimientos importantes.</p><div class="divider"></div><p class="insight-text">El panorama informativo refleja una combinación de inestabilidad global, progreso tecnológico e hitos culturales.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Dos hermanas murieron en una avalancha en el área de Tahoe durante una caminata con amigos - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE84SUpXTU1KNFdoS0hDejA4U1g1WFZ2eXgzam0xVUhJYjRlTGw4WFdXQXY0ZHFFQ05TVTBTa1RCR2dmamlfZnhqczlYZG9uMzgwTjdjVHVUQS0xN1Z0RkNKN2FqRWhQcVJpZ3RQclExTV9WRV9hLUJIRGFaSjRTTUk?oc=5" target="_blank">Two Sisters Died in Tahoe Area Avalanche During Trek With Friends</a>&nbsp;&nbsp;<font color="#6f6...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Destaca las consecuencias mortales del clima extremo y la necesidad de mejores medidas de seguridad en entornos de alto riesgo.</div>
+            <h3>La fuerte posición geopolítica de Corea del Norte</h3><p class="desc">Los analistas informan que Corea del Norte se encuentra en su posición geopolítica y económica más sólida en años bajo Kim Jong Un.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca la creciente influencia y estabilidad de un régimen solitario, que afecta la seguridad regional y las relaciones internacionales.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE84SUpXTU1KNFdoS0hDejA4U1g1WFZ2eXgzam0xVUhJYjRlTGw4WFdXQXY0ZHFFQ05TVTBTa1RCR2dmamlfZnhqczlYZG9uMzgwTjdjVHVUQS0xN1Z0RkNKN2FqRWhQcVJpZ3RQclExTV9WRV9hLUJIRGFaSjRTTUk?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <span class="source">Financial Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.ft.com/content/620a5268-a147-464f-8bf9-1b967efcb210" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Rivian agrega modo deportivo y aplicación Apple Watch</h3><p class="desc">Rivian presenta un modo deportivo y una aplicación Apple Watch para sus vehículos eléctricos R1, mejorando la experiencia y la comodidad del usuario.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Demuestra la innovación continua en el sector de los vehículos eléctricos, mejorando la funcionalidad del vehículo e integrándose con la tecnología portátil.</div>
+            <div class="card-footer">
+                <span class="source">InsideEVs </span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="https://insideevs.com/news/787692/rivian-sport-mode-all-r1-evs-apple-watch-app/" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>La EPA debilita los límites al mercurio de las plantas de carbón - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMie0FVX3lxTFAwVTRkdmlwQzdFZXdzaUllNjN5X2g0T2tranI1cGduMC1LRnVyOHpJN00xNTNTTUJjcEo4UU9RbUpPZDhLaW1nOXVRd1Q0U044OVBBRjlqcHJ6WVVnQWJJRDBkTnFPZ2d3em0xd2NHRHY4U2xFbWdTdVBVcw?oc=5" target="_blank">E.P.A. Weakens Limits on Mercury From Coal Plants</a>&nbsp;&nbsp;<font color="#6f6f6f">The New York Tim...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> El debilitamiento de los límites de mercurio genera preocupaciones sobre el medio ambiente y la salud pública, lo que podría aumentar la contaminación.</div>
+            <h3>Estados Unidos intercepta aviones de combate rusos cerca de Alaska</h3><p class="desc">Aviones de combate estadounidenses interceptaron aviones de combate rusos, incluidos bombarderos y aviones de combate, frente a la costa de Alaska.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Intensifica las tensiones entre Estados Unidos y Rusia, destacando la actividad militar en curso en espacios aéreos estratégicos.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">CBS News</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTFAwVTRkdmlwQzdFZXdzaUllNjN5X2g0T2tranI1cGduMC1LRnVyOHpJN00xNTNTTUJjcEo4UU9RbUpPZDhLaW1nOXVRd1Q0U044OVBBRjlqcHJ6WVVnQWJJRDBkTnFPZ2d3em0xd2NHRHY4U2xFbWdTdVBVcw?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.cbsnews.com/news/u-s-fighter-jets-intercept-russian-warplanes-off-alaskan-coast/" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>La vida es dura y peligrosa en las partes de Ucrania controladas por Rusia, dicen activistas y antiguos residentes - Associated Press News</h3><p class="desc"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNYXJROVp4eDJrdW5CQ0luUUxDenFacW5paVQxOU1xUERjTjlwVVlUdFJ5VkNsb0NpcnMyZUtKT1VxMy13MlI3bTVqQmlmUHB2cktnZkJ5di1uMnFILW1aem9vNW1KT3BUYVBFdG43Ni1Cc21zZUU2RXJadm9jcEdGUWtLN09MYlY5NzhJNUl3amdWT0JreVktR0d2UQ?oc=5" target="_blank">Life is harsh and dangerous in Russian-run parts of Ukraine, activi...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Revela el costo humano del conflicto y la ocupación, lo que subraya la necesidad de ayuda humanitaria y protección de los civiles.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>Las acciones asiáticas caen en medio de la incertidumbre sobre los tipos y las tensiones con Irán</h3><p class="desc">Las acciones asiáticas caen debido a la incertidumbre sobre los tipos y las tensiones que involucran a Irán, siendo Corea del Sur una excepción.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Refleja las ansiedades económicas globales y los riesgos geopolíticos que afectan a los mercados financieros en Asia.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">Investing.com</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNYXJROVp4eDJrdW5CQ0luUUxDenFacW5paVQxOU1xUERjTjlwVVlUdFJ5VkNsb0NpcnMyZUtKT1VxMy13MlI3bTVqQmlmUHB2cktnZkJ5di1uMnFILW1aem9vNW1KT3BUYVBFdG43Ni1Cc21zZUU2RXJadm9jcEdGUWtLN09MYlY5NzhJNUl3amdWT0JreVktR0d2UQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.investing.com/news/stock-market-news/asia-stocks-fall-as-rate-uncertainty-iran-tensions-weigh-skorea-outperforms-4515123" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">7.5</span></div>
-            <h3>La posible tormenta de nieve en Boston podría dejar un pie de nieve o más el lunes, según muestran los mapas de pronóstico del tiempo - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE5OWS1UODVzTWFvbmJ0MjFtSGh3QUdNQWNtZkg4NXVlOEJjUUFrMGNYa2x3bWtjWXE3OThpYmFpMnZKZ1JDR0tBSTFoWFFBbkx3QjJNUW85cjRnb3FGWFdXZHdpMlg2Wk1OZ0REREN6M2hEUThiUTNDaVV3?oc=5" target="_blank">Potential blizzard in Boston could drop a foot of snow or more Monday, weather forecast maps show</a>&nbs...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Las tormentas de nieve interrumpen las principales ciudades, lo que afecta la vida diaria y el comercio, lo que enfatiza la necesidad de una respuesta eficaz ante desastres.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Esquiador desaparecido encontrado muerto en Northstar Resort</h3><p class="desc">Colin Kang, un esquiador desaparecido, fue encontrado muerto en Northstar California Resort, lo que marca la tercera muerte este mes.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca las preocupaciones sobre la seguridad en las estaciones de esquí y las trágicas consecuencias de los accidentes en los deportes de invierno.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">KGO-TV</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://abc7news.com/post/missing-skier-found-dead-northstar-california-resort-marking-3rd-death-month/18622440/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Trabajadores de Volkswagen en Tennessee obtienen contrato sindical</h3><p class="desc">Los trabajadores de Volkswagen en Tennessee consiguen su primer contrato sindical, aunque el impulso para una mayor sindicalización se ha desacelerado.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Ilustra los desafíos y éxitos de los movimientos laborales en la industria automotriz del sur de Estados Unidos.</div>
+            <div class="card-footer">
+                <span class="source">NPR</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE5OWS1UODVzTWFvbmJ0MjFtSGh3QUdNQWNtZkg4NXVlOEJjUUFrMGNYa2x3bWtjWXE3OThpYmFpMnZKZ1JDR0tBSTFoWFFBbkx3QjJNUW85cjRnb3FGWFdXZHdpMlg2Wk1OZ0REREN6M2hEUThiUTNDaVV3?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">7.5</span></div>
-            <h3>Un error de Microsoft expone correos electrónicos confidenciales a la herramienta de inteligencia artificial Copilot - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5paWdoSzFTSmRkYURUU2J2VDFROF9zd1ZVVjd2WHczYjFBdnMxandIemYwN3B4QjFvamRlYlN3TURuSDlUMWVMSGppb0IxRXZBOVowelhMMjgzQQ?oc=5" target="_blank">Microsoft error sees confidential emails exposed to AI tool Copilot</a>&nbsp;&nbsp;<font color="#6f6f6f">BBC</font></li><li><a href="https://news.g...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Las filtraciones de datos generan preocupaciones sobre la seguridad de la IA y la protección de la información confidencial en entornos corporativos.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5paWdoSzFTSmRkYURUU2J2VDFROF9zd1ZVVjd2WHczYjFBdnMxandIemYwN3B4QjFvamRlYlN3TURuSDlUMWVMSGppb0IxRXZBOVowelhMMjgzQQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">7.0</span></div>
-            <h3>Dónde la nieve podría medirse en pulgadas, o pies, en el este este fin de semana - The Washington Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQMjBGaEtaYi1QeU9HX1l3WVRYYlg5dkhzczk1bWtUMDVKNVRyU0FxRDRWejYwNDlBbno1YUhhZ0FNbXY0eHl0bGc2UkNGaDZWWEUybF9ZbjJLNjJScUlueVZLMTB5dVJDaGI4SzM4ZjZ2LXh0OGRKLXFWcTJ0dGxTTFpyTUNVU2E4ai0wUE9sMjdfdWFuRG1CNWE1Y0Q?oc=5" target="_blank">Where snow could be measured in inches — or feet — in the ...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Los eventos climáticos significativos impactan los viajes, la infraestructura y las economías locales, lo que requiere preparación y asignación de recursos.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQMjBGaEtaYi1QeU9HX1l3WVRYYlg5dkhzczk1bWtUMDVKNVRyU0FxRDRWejYwNDlBbno1YUhhZ0FNbXY0eHl0bGc2UkNGaDZWWEUybF9ZbjJLNjJScUlueVZLMTB5dVJDaGI4SzM4ZjZ2LXh0OGRKLXFWcTJ0dGxTTFpyTUNVU2E4ai0wUE9sMjdfdWFuRG1CNWE1Y0Q?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">7.0</span></div>
-            <h3>Exclusiva: representantes de NJ y NY se opondrán a la resolución de poderes de guerra de Irán en la Cámara - Axios</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOeVpTRjhSdDVtdUN3TWZPRUxaNEJlMlVKQnFpc18wekkwUld4aUIyemExenJic2cwTFluNllKbFlJRTRXWDdGMV9OSVZXRkpWRk51SkZ4dENBUzdwMzhZME1LN2dyS0xnaUtPUEdNM2t5SGhiUEJfaFBSaHBtMFJQNA?oc=5" target="_blank">Scoop: NJ, NY reps to oppose Iran war powers resolution in House</a>&nbsp;&nbsp;<font color="#6...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> La oposición a la resolución de poderes de guerra refleja el debate en curso sobre la intervención militar y la autoridad ejecutiva.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOeVpTRjhSdDVtdUN3TWZPRUxaNEJlMlVKQnFpc18wekkwUld4aUIyemExenJic2cwTFluNllKbFlJRTRXWDdGMV9OSVZXRkpWRk51SkZ4dENBUzdwMzhZME1LN2dyS0xnaUtPUEdNM2t5SGhiUEJfaFBSaHBtMFJQNA?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.npr.org/2026/02/19/nx-s1-5711458/union-uaw-volkswagen-tennessee-contract-vote" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Trump ofrece un desayuno para gobernadores después de que la Asociación Nacional de Gobernadores se retirara del evento - PBS</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxNQXplb3RsalVudlN3SEl0bjFtbWtETWRfVlV4LV9WUUl2UXVRaGtBRHM5bW9tZ0NxZFpQYjJFdng2ODlVd3VvdDMtTTlLSElRcHd5YWJjMGE0eG81eGFlZXotQldGclNQWGw3eE5hMHRIQXdvUkg5N2xfNVp1WnZwNnBROHBuYVhHenBrTDlPdkRPTEdvbXNvQXFWMW41TklYX1B4eHY0UnFfeWtTVU1GOGcxTWlYTl93ZHFYTDVlVGZITVMzSVNzd1dyeExtdmxvNEHSAdcBQVVf...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Ilustra las divisiones políticas y los desafíos de la cooperación bipartidista para abordar los problemas nacionales.</div>
+            <h3>El creador de 'The Night Agent' adelanta la temporada 4</h3><p class="desc">El creador de 'The Night Agent' habla sobre la impactante muerte de la temporada 3 y proporciona pistas sobre la temporada 4.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Proporciona información sobre la dirección creativa de una popular serie de televisión, que atrae a los fanáticos del programa.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxNQXplb3RsalVudlN3SEl0bjFtbWtETWRfVlV4LV9WUUl2UXVRaGtBRHM5bW9tZ0NxZFpQYjJFdng2ODlVd3VvdDMtTTlLSElRcHd5YWJjMGE0eG81eGFlZXotQldGclNQWGw3eE5hMHRIQXdvUkg5N2xfNVp1WnZwNnBROHBuYVhHenBrTDlPdkRPTEdvbXNvQXFWMW41TklYX1B4eHY0UnFfeWtTVU1GOGcxTWlYTl93ZHFYTDVlVGZITVMzSVNzd1dyeExtdmxvNEHSAdcBQVVfeXFMT25jTEVES0Q3MF9WNEQ3MDlLRVpKN0MwT2NEcGRpMnBZMzdJU19nbVU2Q3BfTE44eXNaaDBxT2NpQklMdHpDdEhtWld1TjE4anB5cXdZaXhybTNka3dERFJFb2lzVThMQk85bHAyU3JYTGd2SlNfTHpxWk16aGlBV29Yc2YyVDB1NWY5OVBrZDZjd01YeS13Z25NODB2R3B4NlRKZkZkWUxMREFYQ0NTWktETy1kUmZncUlpNFBqUkJxVXQ3dHhJVXVDV0ZCRXhQOTJZNGRFTzQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Bajo Mamdani, la ciudad investigará a las empresas donde la mayoría de los trabajadores no toman días de enfermedad - THE CITY - NYC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxQWXJyMmlFNUlDbmF5TDl3UklRazJJWkdOdVFyV1R4RGVaSVZhd3kxM2NOVk9ldUZQM2tXNVVwbXlQY2k0RVRjX1ZUeXM5WHJTM3h1RXhZbk9oMG9FN3RNSkNZZk03RHNDVzNFTVdTUjVjWEl6d2hnQWtYQVhhSDdnX0lLVlN0enlj?oc=5" target="_blank">Under Mamdani, City to Probe Businesses Where Most Workers Take Zero Sick Days</a>&nb...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Se centra en los derechos y la seguridad de los trabajadores, lo que indica esfuerzos para regular las prácticas comerciales y garantizar el bienestar de los empleados.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">Deadline</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxQWXJyMmlFNUlDbmF5TDl3UklRazJJWkdOdVFyV1R4RGVaSVZhd3kxM2NOVk9ldUZQM2tXNVVwbXlQY2k0RVRjX1ZUeXM5WHJTM3h1RXhZbk9oMG9FN3RNSkNZZk03RHNDVzNFTVdTUjVjWEl6d2hnQWtYQVhhSDdnX0lLVlN0enlj?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="http://deadline.com/2026/02/the-night-agent-shawn-ryan-season-3-death-season-4-clues-1236725307/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
+            <h3>Billy Bob Thornton recuerda a Robert Duvall</h3><p class="desc">Billy Bob Thornton comparte historias sobre su mentor, Robert Duvall, quien falleció recientemente a la edad de 95 años.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Honra el legado de un actor respetado y ofrece anécdotas personales de un compañero intérprete.</div>
+            <div class="card-footer">
+                <span class="source">Deadline</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="http://deadline.com/2026/02/landman-billy-bob-thornton-tells-great-robert-duvall-tales-1236730026/" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Los momentos más extraños de la cumbre de IA de la India: estrellas desaparecidas, caos de tráfico y controversia sobre el perro robot - politico.eu</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQQ0N1b0ZyUzhFWnJuaXhlTlBPNGZwaEhnQnB6NzdXQjdHZWVYQ0hDelVVRFViUVRieG5UTTRGRl9nTW92cW15TEZfQUs3cm1fRzBKaE9NVlpNV2lvNk5MZjlBZ1A2VkNQdUNfc1lSZF91eWg4eElDQzY3cll2X2hBN211Y0Z3WWREeDZYd1lUX2x6ZEtnOHQtbTJWQ0RYaDdUVFluRVYxV185TWNWdjVLMGlaa1lsdGE4U2tvbktiRQ?oc=5" target="_blank">Oddest mome...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Destaca los desafíos y controversias que rodean el desarrollo y la implementación de la IA en foros internacionales.</div>
+            <h3>Epstein 'eliminó el nombre' de Trump, dice Wexner</h3><p class="desc">Les Wexner afirma que Jeffrey Epstein 'nombraría' a Donald Trump, lo que generó escepticismo entre los demócratas del Comité de Supervisión de la Cámara de Representantes.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Continúa vinculando a figuras destacadas con la controvertida figura de Jeffrey Epstein, planteando cuestiones éticas.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">CNBC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQQ0N1b0ZyUzhFWnJuaXhlTlBPNGZwaEhnQnB6NzdXQjdHZWVYQ0hDelVVRFViUVRieG5UTTRGRl9nTW92cW15TEZfQUs3cm1fRzBKaE9NVlpNV2lvNk5MZjlBZ1A2VkNQdUNfc1lSZF91eWg4eElDQzY3cll2X2hBN211Y0Z3WWREeDZYd1lUX2x6ZEtnOHQtbTJWQ0RYaDdUVFluRVYxV185TWNWdjVLMGlaa1lsdGE4U2tvbktiRQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Más de 3 millones de libras de alimentos congelados retirados del mercado, vendidos en Trader Joe's y más - EatingWell</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE9jZEtsQmlhQXpVdnQzTkExVEZlZ2FJelNlRk5TT1VKS1pZVnJLaWlZZ1hEZTZKYmU0aGh3MEhYN0lIVnJBUWo4TkpETW5qX1FpU2Qwb19wckMzdkFUUWxDcUhJdUNHeUVMNEl1TEFKSHQ3a05zZzFZ?oc=5" target="_blank">Over 3 Million Pounds of Frozen Food Recalled—Sold at Trader Joe’s and More</a>&nbsp;&nbsp;<font color="#6f6f...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Los retiros de alimentos pueden afectar la confianza del consumidor y las cadenas de suministro, lo que destaca la importancia de las regulaciones de seguridad alimentaria.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE9jZEtsQmlhQXpVdnQzTkExVEZlZ2FJelNlRk5TT1VKS1pZVnJLaWlZZ1hEZTZKYmU0aGh3MEhYN0lIVnJBUWo4TkpETW5qX1FpU2Qwb19wckMzdkFUUWxDcUhJdUNHeUVMNEl1TEFKSHQ3a05zZzFZ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.cnbc.com/2026/02/19/epstein-trump-les-wexner-deposition.html" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>El juez se ve obligado a reducir el grupo de jurados de SF por odio a Elon Musk - SFGATE</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE5xQ0ZPTHF4T21SdEFTMjZBVkRZUF9MYTJ3RVVMa3lHbFdrcFdJbTByd2VUQUlsU2JJSlItNXI5aXh6TFh4LXRqdXdCb2ZJT2NQWi1lLU1QYTlScWxhU01HS0pZTVhKUjUycFNUNjZSakJTVXN1?oc=5" target="_blank">Judge forced to slash SF jury pool over hate for Elon Musk</a>&nbsp;&nbsp;<font color="#6f6f6f">SFGATE</font></li...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Ilustra el impacto de la opinión pública y el sesgo en los procedimientos legales y la selección del jurado.</div>
+            <h3>Demócrata de Illinois utiliza improperios en anuncio anti-Trump</h3><p class="desc">La candidata demócrata al Senado de Illinois, Juliana Stratton, utiliza un lenguaje fuerte en un nuevo anuncio de campaña anti-Trump.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Refleja la naturaleza cada vez más agresiva y polarizada de la publicidad política en Estados Unidos.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">NBC News</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE5xQ0ZPTHF4T21SdEFTMjZBVkRZUF9MYTJ3RVVMa3lHbFdrcFdJbTByd2VUQUlsU2JJSlItNXI5aXh6TFh4LXRqdXdCb2ZJT2NQWi1lLU1QYTlScWxhU01HS0pZTVhKUjUycFNUNjZSakJTVXN1?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.nbcnews.com/politics/2026-election/illinois-democrat-juliana-stratton-senate-primary-trump-ad-rcna259761" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>¡Denle un respiro a Punch! El zoológico responde al desgarrador video de un bebé mono - USA Today</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxPWnJyNTRCYmhDTmJjNE1nLWQ4QUwtSTk2YW54dllMZzZJMmNOWHk5WEJVSWxXcFFSOVZNWlZab0NJcVgyX3huQjRRWDhkLXE4dGdLY1VPVlhBZXR5eHpFamdsRE9uMDlBb3ZnVFdhUFF6YWNsc3J6Q1V1b01FLXBmRGVPNU9kbW8xZjJjT094MXdBLS05VUdYVDVRa1N3M3lYRkxXRS1uMndiZjVlYnRldFlrbVhvZw?oc=5" target="_blank">Give Punch a break! Zoo...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Las preocupaciones por el bienestar animal pueden generar protestas públicas e impactar la reputación de los zoológicos y los esfuerzos de conservación.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
+            <h3>Aumenta recompensa en búsqueda de Nancy Guthrie</h3><p class="desc">Una donación anónima eleva la recompensa a más de 200.000 dólares por información que conduzca al paradero de Nancy Guthrie.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca los esfuerzos en curso para encontrar una persona desaparecida y la participación de la comunidad en la búsqueda.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxPWnJyNTRCYmhDTmJjNE1nLWQ4QUwtSTk2YW54dllMZzZJMmNOWHk5WEJVSWxXcFFSOVZNWlZab0NJcVgyX3huQjRRWDhkLXE4dGdLY1VPVlhBZXR5eHpFamdsRE9uMDlBb3ZnVFdhUFF6YWNsc3J6Q1V1b01FLXBmRGVPNU9kbW8xZjJjT094MXdBLS05VUdYVDVRa1N3M3lYRkxXRS1uMndiZjVlYnRldFlrbVhvZw?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>La batalla legal de Nevada contra los mercados de predicción que llama 'apuestas deportivas sin licencia' avanza - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQTHhhNUZaaTBvcDhXeG1TVzgtU0RFSVozU0dEc2FySWoyYkNHN1NOOElXSEE5ckFobTFnQkRQUmViRlNzRjViUS1Ma0lwWU5XWHJnR2xTZGNMRTBzMlFoSGlxNENYZzdnYWk5d0Jab2dZeEVnMWF1S296cVZVTDJiaF9TdzMyajZaNUh4dGRCN3ZCS2taby00QmlTZ1RGYUYzUkwzSDNYREU0azZfa1NfS2RSTDBSek5LR3c?oc=5" target="_blank">Nevada legal battl...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> La batalla legal indica desafíos regulatorios en el mercado emergente de plataformas de predicción y apuestas en línea.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQTHhhNUZaaTBvcDhXeG1TVzgtU0RFSVozU0dEc2FySWoyYkNHN1NOOElXSEE5ckFobTFnQkRQUmViRlNzRjViUS1Ma0lwWU5XWHJnR2xTZGNMRTBzMlFoSGlxNENYZzdnYWk5d0Jab2dZeEVnMWF1S296cVZVTDJiaF9TdzMyajZaNUh4dGRCN3ZCS2taby00QmlTZ1RGYUYzUkwzSDNYREU0azZfa1NfS2RSTDBSek5LR3c?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>Un teléfono misterioso, encontrado en el desierto, revela lentamente sus secretos - CNET</h3><p class="desc"><a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdWdBSFRrME04WEFMcGt4VFJLNU1FS0ZqTlBVcXR4R2pyc2N2a0EzaW5MamtSVEtneC1BUW55Z1JQNGUzUDBFc0ZHc1pfNGNJVjhHZVhreUtwcEtNNXB2WFNraHR4eU5NX2VsQzFrVGlxS291QXR0ZG5FVkJSZHlrQ0J1ZmpBSDM0dFpJ?oc=5" target="_blank">A Mystery Phone, Found in the Desert, Slowly Reveals Its Secrets</a>&nbsp;&nbsp;<font col...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Destaca la naturaleza impredecible de la tecnología y su potencial para descubrir historias y misterios ocultos.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">Fox News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdWdBSFRrME04WEFMcGt4VFJLNU1FS0ZqTlBVcXR4R2pyc2N2a0EzaW5MamtSVEtneC1BUW55Z1JQNGUzUDBFc0ZHc1pfNGNJVjhHZVhreUtwcEtNNXB2WFNraHR4eU5NX2VsQzFrVGlxS291QXR0ZG5FVkJSZHlrQ0J1ZmpBSDM0dFpJ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://foxnews.com/live-news/nancy-guthrie-disappearance-arizona-feb-19-live-updates" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>Película animada de ‘Venom’ en proceso con los cineastas de ‘Destino final’ Zach Lipovsky, Adam B. Stein (Exclusiva) - The Hollywood Reporter</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxOSUZEX2JTVTJnUEtwU2R5UXVYUXpJOUhiSmppQ0dxa3IzLV9ZTTF1Y3M4TnVPSHlxeWFkc0hnR18wMmF5VGcwMlZJYTVVdF9PSFVydExneUMtRjJCRF9vWW9vc1pMZzlZWUZBc3I3YWhQdGxGRHRMcklOd016UGxYMWlHTkVaMWhoaXIwZGo2MWpxZWxXUlQzeTFsVnRUQQ?oc=5" target="_blank">‘Venom’ Animated Movie in the Works With ‘Final Destina...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Ilustra la expansión y diversificación continua de la industria del entretenimiento en nuevos formatos y géneros.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
+            <h3>'El Caballero de los Siete Reinos' y 'La Fosa' atraen a grandes audiencias</h3><p class="desc">'El Caballero de los Siete Reinos' promedia casi 13 millones de espectadores por episodio, mientras que la segunda temporada de 'The Pitt' alcanza los 12 millones.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Demuestra la continua popularidad de la programación de HBO y HBO Max, mostrando cifras de audiencia exitosas.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">Variety</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxOSUZEX2JTVTJnUEtwU2R5UXVYUXpJOUhiSmppQ0dxa3IzLV9ZTTF1Y3M4TnVPSHlxeWFkc0hnR18wMmF5VGcwMlZJYTVVdF9PSFVydExneUMtRjJCRF9vWW9vc1pMZzlZWUZBc3I3YWhQdGxGRHRMcklOd016UGxYMWlHTkVaMWhoaXIwZGo2MWpxZWxXUlQzeTFsVnRUQQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://variety.com/2026/tv/ratings/knight-of-the-seven-kingdoms-the-pitt-season-2-viewership-1236667803/" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
-            <h3>Apple podría estar dejando caer ojos en el costado de tu cabeza con los nuevos AirPods que pueden ver - supercarblondie.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE9ya1NobUpSRFR1OGdsWTFWQkszNG9IMkt0NUlCeEJBNTlBZ3VGd3ZfSklpd2VkeGloTHVNYmNUTEFlRFJjWl9qaG5OMHZiV3k4dnZ2RHVxejlsb2VUZmlDR3UzZzh5NVB0X1N4R3FkQWlOTjhFWXhWeA?oc=5" target="_blank">Apple could be dropping eyes in the side of your head with new AirPods that can see</a>&nbsp;&nbsp;<font co...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Destaca la innovación continua en electrónica de consumo, lo que podría plantear preguntas éticas y de privacidad.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
+            <h3>El aerosol nasal protege a los ratones de los virus respiratorios</h3><p class="desc">Los investigadores de Stanford Medicine desarrollan un aerosol nasal que protege a los ratones de virus respiratorios, bacterias y alérgenos.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Representa un paso significativo hacia una vacuna universal, que potencialmente revolucionará la prevención de enfermedades.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">Medical Xpress</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE9ya1NobUpSRFR1OGdsWTFWQkszNG9IMkt0NUlCeEJBNTlBZ3VGd3ZfSklpd2VkeGloTHVNYmNUTEFlRFJjWl9qaG5OMHZiV3k4dnZ2RHVxejlsb2VUZmlDR3UzZzh5NVB0X1N4R3FkQWlOTjhFWXhWeA?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://medicalxpress.com/news/2026-02-universal-vaccine-nasal-spray-mice.html" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
-            <h3>Los últimos plegables de Motorola finalmente recibirán Android 16 en los EE. UU. - GSMArena.com news - GSMArena.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSTJ2eTh1T3hfSFBmaU9lYW0wMjZnRzBmVmRKY2t2ZUVjemdjZDkyUnYxcEFTSC1hMTNpeGJfWDdkSlp5OF94YXhfN0hPT3FpeGRaUGNQajFYeWhIZ2JXaGVzOXdnd1ZXU0E4bjBPZmtXdE0tOW1ySFZWcF9rckpRT1IwaEpEZDZlQ1BhUHUzbk1BV2lUamhZM0tPUm1MZUNpQUZSV0RPNHZPVjTSAacBQVVfeXFMUEppSHFNckRGLVFxU2trS1ZMM3FXcllPNGhBRnRWajU1ZGhr...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Las actualizaciones de software oportunas garantizan la seguridad y funcionalidad del dispositivo, aunque las demoras pueden afectar la experiencia del usuario.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.3</span></div>
+            <h3>Novedades clave del segundo día de pruebas en Bahrein</h3><p class="desc">Lawrence Barretto examina los acontecimientos clave del día 2 de la segunda prueba de pretemporada de 2026 en Bahréin para la Fórmula 1.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Proporciona información sobre los preparativos y avances en la tecnología de carreras de Fórmula 1 y las estrategias de los equipos.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">Formula 1</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSTJ2eTh1T3hfSFBmaU9lYW0wMjZnRzBmVmRKY2t2ZUVjemdjZDkyUnYxcEFTSC1hMTNpeGJfWDdkSlp5OF94YXhfN0hPT3FpeGRaUGNQajFYeWhIZ2JXaGVzOXdnd1ZXU0E4bjBPZmtXdE0tOW1ySFZWcF9rckpRT1IwaEpEZDZlQ1BhUHUzbk1BV2lUamhZM0tPUm1MZUNpQUZSV0RPNHZPVjTSAacBQVVfeXFMUEppSHFNckRGLVFxU2trS1ZMM3FXcllPNGhBRnRWajU1ZGhrdldURmJNbEplNlBSQ0pfUDZUTFgzdlYwUnR0SW5nTlUwdHZLQ25kMW55MmFOd0dRTWhvVFo2NVhVVWhnNm8zcUtpUHpsWm10T2dlYVBWWTFhcC12SXhsdVdoVjRBaXVXb2gwZkVrcV9fQUlLS09PYUQxNmhsX1VjSTJpd0k?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.formula1.com/en/latest/article/what-we-learned-from-day-2-of-the-second-2026-pre-season-test-in-bahrain.5Fj2kkTW99M5uL35BLatxF" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
-            <h3>Prensa de banca, dominadas... ¿Kid Rock? La Casa Blanca tuvo una semana muy varonil. - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNN2FpbU5IdWJHVDVSY2UtNWVOYmhJZV9mbzIxU3FyZFZUcmlBZktlN1RmX3llcndHVUZJNTA1Y0FCdkZKYjg4SmNDd0V4V3BfVDJ1VDBYOThobVoybGJYLUUwOFp4dmE0Y1NyNV9UTHJabndNZ1pTSmN1UDdNRlJ6NzVIcFhnQQ?oc=5" target="_blank">Bench Presses, Pull Ups … Kid Rock? The White House Had a Very Manly Week.</a>&nbsp;&nb...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Muestra la intersección de la política, la cultura y el entretenimiento, lo que influye en la percepción pública y el discurso social.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.7</span></div>
+            <h3>Las fugas ficticias de los Galaxy Buds 4 restan importancia a las comparaciones de AirPod</h3><p class="desc">Las filtraciones sugieren que los próximos Galaxy Buds 4 de Samsung contarán con un nuevo acabado metálico, que los diferenciará de los AirPods.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Indica los esfuerzos de Samsung por innovar y distinguir sus productos en el competitivo mercado de auriculares inalámbricos.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">9to5google.com</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNN2FpbU5IdWJHVDVSY2UtNWVOYmhJZV9mbzIxU3FyZFZUcmlBZktlN1RmX3llcndHVUZJNTA1Y0FCdkZKYjg4SmNDd0V4V3BfVDJ1VDBYOThobVoybGJYLUUwOFp4dmE0Y1NyNV9UTHJabndNZ1pTSmN1UDdNRlJ6NzVIcFhnQQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="http://9to5google.com/2026/02/19/galaxy-buds-4-dummy-leaks-downplay-airpod-comparisons-with-new-metallic-finish/" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div></body></html>
