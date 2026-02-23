@@ -1,98 +1,118 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-02-23 05:43 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#International Conflict (Pakistan-Afghanistan, Israel-Lebanon)</span><span class="cluster">#Severe Weather (Northeast Storm)</span><span class="cluster">#Sports Updates (UFC, NBA, College)</span><span class="cluster">#Entertainment News (Annie Awards, Box Office)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>This news cycle is dominated by international conflicts, weather events, and sports updates. The conflict between Pakistan and Afghanistan is escalating, while a powerful storm is expected to impact the US Northeast. Additionally, there are updates on entertainment awards, sports outcomes, and political controversies.</p><div class="divider"></div><p class="insight-text">Geopolitical tensions and extreme weather events are creating uncertainty and impacting communities globally.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-02-23 11:49 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#US Politics (Trump, DeSantis, State of the Union)</span><span class="cluster">#Ukraine War (Impact, Attacks, Russia)</span><span class="cluster">#Sports (Olympics, Boxing)</span><span class="cluster">#Technology (AI, Gadgets)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Today's news covers a wide range of topics, from political events and international conflicts to sports, technology, and entertainment. Several articles focus on the ongoing war in Ukraine and its impact, while others highlight political developments in the US, including the upcoming State of the Union address and the Florida governor race. There are also stories about advancements in AI technology, sports competitions, and the entertainment industry.</p><div class="divider"></div><p class="insight-text">The convergence of political, technological, and social issues underscores the complex and interconnected nature of current events.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Major Winter Storm Forecast for US Northeast</h3><p class="desc">A powerful nor'easter is set to bring heavy snow, blizzard conditions, and coastal flooding to the Mid-Atlantic and Northeast regions.</p>
-            <div class="insight"><strong>Why this matters:</strong> Disruptions to travel, infrastructure, and daily life are expected across a heavily populated area.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
+            <h3>Man Killed at Mar-a-Lago Perimeter; Trump Not Present</h3><p class="desc">A suspect carrying a shotgun and fuel can was killed after entering the secure perimeter of Trump's Mar-a-Lago residence. The former president was not in Florida at the time.</p>
+            <div class="insight"><strong>Why this matters:</strong> Security concerns surrounding high-profile figures and their residences remain a significant issue.</div>
             <div class="card-footer">
-                <span class="source">The Washington Post</span>
+                <span class="source">BBC News</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.washingtonpost.com/weather/2026/02/21/storm-forecast-cities-boston-new-york/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.2</span></div>
-            <h3>Pakistan Conducts Strikes in Afghanistan, Casualties Reported</h3><p class="desc">Pakistani military strikes in Afghanistan have reportedly resulted in dozens of casualties, including deaths and injuries.</p>
-            <div class="insight"><strong>Why this matters:</strong> Escalating tensions between the two nations could destabilize the region further.</div>
-            <div class="card-footer">
-                <span class="source">Al Jazeera English</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.aljazeera.com/news/2026/2/22/pakistan-carries-out-strikes-in-afghanistan-after-islamabad-suicide-attack" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.bbc.com/news/live/cr57l3rj3yqt" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>BYU Upsets No. 6 Iowa State in Basketball</h3><p class="desc">BYU achieved a significant victory by defeating No. 6 ranked Iowa State in a college basketball game.</p>
-            <div class="insight"><strong>Why this matters:</strong> This win significantly boosts BYU's standing and impacts college basketball rankings.</div>
+            <h3>Adults Returning to Education Represent 'New Majority' Student</h3><p class="desc">Millions of adults are returning to education for career growth and personal interests, enrolling in various programs to advance their skills and knowledge.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the increasing importance of lifelong learning and skills development in a changing job market.</div>
             <div class="card-footer">
-                <span class="source">Deseret News</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.deseret.com/sports/2026/02/21/byu-basketball-upsets-iowa-state-3-takeaways/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>2026 Annie Awards Winners Announced</h3><p class="desc">The Annie Awards, celebrating achievements in animation, were presented on February 21st.</p>
-            <div class="insight"><strong>Why this matters:</strong> Recognizes excellence in the animation industry and highlights top animated productions.</div>
-            <div class="card-footer">
-                <span class="source">Deadline</span>
+                <span class="source">Associated Press</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="http://deadline.com/2026/02/annie-awards-2026-winners-list-1236731211/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://apnews.com/article/education-adult-learning-upskilling-hobbies-6b5ba4c45b1451ad5ebecd49e1d7b0b5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.1</span></div>
-            <h3>Strickland Calls Out Chimaev After UFC Houston Victory</h3><p class="desc">Sean Strickland defeated Anthony Hernandez at UFC Houston and subsequently challenged Khamzat Chimaev.</p>
-            <div class="insight"><strong>Why this matters:</strong> Sets the stage for a potentially high-profile and anticipated UFC matchup.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.2</span></div>
+            <h3>Ukraine War's Impact on Russia: Rights, Economy, and Support</h3><p class="desc">The war in Ukraine has led to curbs on rights and fewer choices in Russia, but support for the war remains high despite the toll.</p>
+            <div class="insight"><strong>Why this matters:</strong> Examines the multifaceted consequences of the conflict on Russian society.</div>
             <div class="card-footer">
-                <span class="source">MMA Fighting</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.mmafighting.com/ufc/472881/sean-strickland-calls-out-khamzat-chimaev-after-stopping-anthony-hernandez-in-ufc-houston-main-event" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
-            <h3>Newsom 'Bans' Kid Rock From California</h3><p class="desc">California Governor Gavin Newsom seemingly 'banned' Kid Rock from performing in California.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reflects the ongoing political polarization and cultural clashes in the US.</div>
-            <div class="card-footer">
-                <span class="source">Daily Beast</span>
+                <span class="source">Al Jazeera English</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.thedailybeast.com/gavin-newsom-bans-kid-rock-from-entering-california/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.aljazeera.com/news/2026/2/22/how-four-years-of-ukraine-war-have-changed-russia" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Suns' Brooks Out with Broken Hand, Booker Out One Week</h3><p class="desc">Dillon Brooks of the Phoenix Suns suffered a broken hand, while Devin Booker is sidelined for a week.</p>
-            <div class="insight"><strong>Why this matters:</strong> Injuries impact the Suns' performance and playoff prospects in the NBA.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Sidney Crosby Out for Olympic Gold Medal Game</h3><p class="desc">Canada's captain, Sidney Crosby, was absent from the lineup for the men's hockey Olympic gold medal game.</p>
+            <div class="insight"><strong>Why this matters:</strong> Significant blow to Canada's chances in a high-stakes game.</div>
             <div class="card-footer">
                 <span class="source">ESPN</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.espn.com/nba/story/_/id/48000519/suns-brooks-broken-hand-booker-one-week" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.espn.com/olympics/story/_/id/48003675/canada-captain-sidney-crosby-olympic-gold-medal-game" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.9</span></div>
+            <h3>Casey DeSantis' Role in Florida Governor Race</h3><p class="desc">Florida’s first lady, Casey DeSantis, has increased her public appearances as part of her Healthy Florida First initiative.</p>
+            <div class="insight"><strong>Why this matters:</strong> Explores the potential influence of the First Lady in the upcoming election.</div>
+            <div class="card-footer">
+                <span class="source">Politico</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.politico.com/news/2026/02/22/casey-desantis-florida-governor-00791391" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>Investigation into Police Confrontation with Student Protesters</h3><p class="desc">The Bucks County DA is investigating a police confrontation with student protesters in Quakertown, PA.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises concerns about police conduct and the rights of student protesters.</div>
+            <h3>Poll: 60% Disapprove of Trump Ahead of State of the Union</h3><p class="desc">A Washington Post-ABC poll reveals that 60% of Americans disapprove of Trump, but Democrats haven't convinced voters they have better ideas.</p>
+            <div class="insight"><strong>Why this matters:</strong> Indicates a challenging political landscape leading up to the State of the Union address.</div>
             <div class="card-footer">
-                <span class="source">WHYY</span>
+                <span class="source">The Washington Post</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="http://whyy.org/articles/bucks-county-district-attorney-investigation-quakertown-police-student-ice-protest/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.washingtonpost.com/politics/2026/02/22/trump-disapproval-post-poll/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Zelensky Reports Casualties After New Russian Attacks</h3><p class="desc">New Russian drone and missile attacks in Ukraine resulted in deaths and injuries, including a child, according to President Zelensky.</p>
+            <div class="insight"><strong>Why this matters:</strong> Continues to highlight the human cost of the ongoing conflict.</div>
+            <div class="card-footer">
+                <span class="source">Dpa-international.com</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://dpa-international.com/politics/urn:newsml:dpa.com:20090101:260222-99-611156/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
+            <h3>Redistricting Reduces Competitive House Seats</h3><p class="desc">Redistricting, particularly mid-decade redistricting, is further reducing the number of competitive House seats.</p>
+            <div class="insight"><strong>Why this matters:</strong> Diminishes voter choice and increases the influence of primary voters.</div>
+            <div class="card-footer">
+                <span class="source">NPR</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.npr.org/2026/02/22/nx-s1-5707254/power-trump-congress-house-representatives-voters-control" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Galaxy AI Integrates with Perplexity AI for Enhanced Multi-Agent System</h3><p class="desc">Galaxy AI now features deeper integration with Perplexity AI, enabling seamless interaction with multiple AI agents.</p>
-            <div class="insight"><strong>Why this matters:</strong> Improves user experience and efficiency by streamlining AI interactions.</div>
+            <h3>Ryan Garcia Wins WBC Title in Dominant Performance</h3><p class="desc">Ryan Garcia secured a unanimous decision victory over Mario Barrios to claim the WBC welterweight title.</p>
+            <div class="insight"><strong>Why this matters:</strong> Marks a significant achievement in Garcia's boxing career.</div>
             <div class="card-footer">
-                <span class="source">GSMArena.com</span>
+                <span class="source">ESPN</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.gsmarena.com/galaxy_ai_turns_into_a_multiagent_ecosystem_adds_deep_integration_with_perplexity_ai-news-71652.php" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.espn.com/boxing/story/_/id/48002524/ryan-garcia-wrests-mario-barrios-wbc-title-one-sided-win" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Trump and the Alien Files: Conspiracy Theories in America</h3><p class="desc">Explores the reasons behind the prevalence of conspiracy theories in America, referencing Trump's interest in alien files.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the public's search for explanations in a complex world.</div>
+            <h3>Samsung Expands Galaxy AI Ecosystem</h3><p class="desc">Samsung announced the expansion of Galaxy AI, aiming for a rich, open, and integrated multi-agent ecosystem to simplify everyday tasks.</p>
+            <div class="insight"><strong>Why this matters:</strong> Demonstrates Samsung's commitment to AI development and integration.</div>
+            <div class="card-footer">
+                <span class="source">Samsung.com</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://news.samsung.com/global/galaxy-ai-expands-multi-agent-ecosystem-to-give-users-more-choice-and-flexibility" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.7</span></div>
+            <h3>US Pays Tribute to Gaudreau Brothers at Olympics</h3><p class="desc">The U.S. men's hockey team honored the late Johnny Gaudreau and his brother Matthew, who died in 2024, during the Winter Olympics.</p>
+            <div class="insight"><strong>Why this matters:</strong> A touching tribute adds emotional weight to the Olympic competition.</div>
+            <div class="card-footer">
+                <span class="source">Associated Press</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://apnews.com/article/johnny-gaudreau-olympics-team-usa-43c05ba80d4c3f51c4a4b94285c63038" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Trump and Alien Files: Why Americans Believe Conspiracies</h3><p class="desc">The article explores why Americans are drawn to conspiracy theories, particularly in the context of Trump and the release of alien files.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects a broader societal trend of distrust and the search for alternative explanations.</div>
             <div class="card-footer">
                 <span class="source">Axios</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -100,9 +120,19 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.3</span></div>
-            <h3>'GOAT' and 'Wuthering Heights' Compete for Top Box Office Spot</h3><p class="desc">The films 'GOAT' and 'Wuthering Heights' are in a close race for the number one position at the box office.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides insight into current movie trends and audience preferences.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>MOFT Releases MagSafe Wallet with Find My Support</h3><p class="desc">MOFT's MagSafe wallet with kickstand, featuring Find My support, is now available after being unveiled at CES 2025.</p>
+            <div class="insight"><strong>Why this matters:</strong> Offers enhanced functionality and convenience for users of MagSafe accessories.</div>
+            <div class="card-footer">
+                <span class="source">9to5Mac</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://9to5mac.com/2026/02/21/moft-magsafe-wallet-with-find-my-now-available/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.3</span></div>
+            <h3>Box Office: 'GOAT' and 'Wuthering Heights' Compete for No. 1</h3><p class="desc">'GOAT' and 'Wuthering Heights' are in a close race for the top spot at the box office, while a new Elvis Presley concert film impresses.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides insights into current trends in the film industry.</div>
             <div class="card-footer">
                 <span class="source">Hollywood Reporter</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -110,42 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.7</span></div>
-            <h3>Zelda Series Flirts With Sci-Fi Elements</h3><p class="desc">A retrospective look at the Legend of Zelda series and its occasional forays into science fiction themes.</p>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.7</span></div>
+            <h3>Zelda Series Flirts With Sci-Fi</h3><p class="desc">On its 40th anniversary, the article looks back at the Legend of Zelda series' attempted space missions and its flirtation with science fiction elements.</p>
             <div class="insight"><strong>Why this matters:</strong> Examines the evolution and potential future directions of a popular video game franchise.</div>
             <div class="card-footer">
                 <span class="source">Kotaku</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
                 <a href="https://kotaku.com/legend-zelda-sci-fi-concept-art-40th-anniversary-2000672580" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
-            <h3>Far-Right Activist's Death Heightens Divisions in France</h3><p class="desc">The death of a far-right activist after clashes with far-left activists is exacerbating political divisions in France.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reflects the growing polarization and social unrest in the country.</div>
-            <div class="card-footer">
-                <span class="source">The Wall Street Journal</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wsj.com/world/europe/a-far-right-activists-killing-deepens-divisions-in-france-64cba921" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
-            <h3>Measles Exposure Reported in Downtown Bethesda</h3><p class="desc">A confirmed measles case in a Virginia resident led to potential exposure in a Bethesda office building.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises public health concerns about the spread of measles and the importance of vaccination.</div>
-            <div class="card-footer">
-                <span class="source">WTOP</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://wtop.com/montgomery-county/2026/02/potential-measles-exposure-reported-in-downtown-bethesda/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
-            <h3>Israeli Strikes Kill At Least 10 in Lebanon</h3><p class="desc">Israeli military strikes in Lebanon have resulted in at least 10 deaths, according to officials.</p>
-            <div class="insight"><strong>Why this matters:</strong> Escalates tensions and threatens the fragile ceasefire between Israel and Hezbollah.</div>
-            <div class="card-footer">
-                <span class="source">BBC News</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.bbc.com/news/articles/cvg8914dkl0o" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
