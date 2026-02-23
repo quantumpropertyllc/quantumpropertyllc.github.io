@@ -89,11 +89,27 @@
         }
 
         .compliance-box {
-            background: #fbfbfd;
-            border: 1px solid #d2d2d7;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .compliance-box:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .compliance-box h3 {
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         footer {
@@ -166,9 +182,8 @@
             <p>QCAI includes an AI-powered assistant that sends your queries to third-party AI service providers. We are
                 committed to full transparency about how this works.</p>
 
-            <div class="compliance-box"
-                style="background: rgba(0,210,255,0.05); border-color: rgba(0,210,255,0.3); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-                <h3 style="color: var(--primary); margin-top: 0;">4a. What data is sent</h3>
+            <div class="compliance-box" style="border-left: 4px solid var(--primary);">
+                <h3 style="color: var(--primary);">4a. What data is sent</h3>
                 <ul>
                     <li><strong>Your typed message</strong> — the text you enter in the AI chat input field.</li>
                     <li><strong>Photos you attach</strong> — only when you explicitly add an image to a query (e.g., for
@@ -181,9 +196,8 @@
                 </ul>
             </div>
 
-            <div class="compliance-box"
-                style="background: rgba(157,80,187,0.05); border-color: rgba(157,80,187,0.3); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-                <h3 style="color: var(--accent); margin-top: 0;">4b. Who receives your data</h3>
+            <div class="compliance-box" style="border-left: 4px solid var(--accent);">
+                <h3 style="color: var(--accent);">4b. Who receives your data</h3>
                 <p>Depending on the AI engine you select in the app's Settings, your messages are sent to one of the
                     following third-party services:</p>
                 <ul>
@@ -205,9 +219,8 @@
                 </p>
             </div>
 
-            <div class="compliance-box"
-                style="background: rgba(52,199,89,0.05); border-color: rgba(52,199,89,0.3); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
-                <h3 style="color: #34C759; margin-top: 0;">4c. What is NOT shared</h3>
+            <div class="compliance-box" style="border-left: 4px solid #34C759;">
+                <h3 style="color: #34C759;">4c. What is NOT shared</h3>
                 <ul>
                     <li>Your account email or password</li>
                     <li>Your GPS location or precise home address</li>
