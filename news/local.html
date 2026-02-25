@@ -1,108 +1,98 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-02-25 07:02 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Law Enforcement (arrests, court cases, police activity)</span><span class="cluster">#Community Development and Infrastructure (rezoning, data centers, local projects)</span><span class="cluster">#Weather and Environment (storms, seasonal changes)</span><span class="cluster">#Local Government and Public Services (firefighter compensation, legislation)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in Charlotte and surrounding areas covers crime, weather, and community development. Crime-related stories include arrests, court proceedings, and discussions on repeat offenders, reflecting ongoing public safety concerns. Community development focuses on rezoning proposals, infrastructure projects, and the efforts of local organizations.</p><div class="divider"></div><p class="insight-text">The prevalence of crime-related news suggests a heightened focus on public safety and law enforcement effectiveness in the Charlotte area.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-02-25 09:33 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Charlotte Business and Economy</span><span class="cluster">#Local Crime and Public Safety</span><span class="cluster">#Regional Airport and Travel Updates</span><span class="cluster">#North Carolina Legal and Political News</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in Charlotte, NC, and surrounding areas covers a range of topics, from business and economic development to crime and public safety. Several articles highlight economic activity, including trade shows, business expansions, and real estate market shifts. Public safety concerns are also prominent, with reports of violent crime, firefighter compensation disputes, and rabies cases.</p><div class="divider"></div><p class="insight-text">The Charlotte area faces challenges balancing economic growth with public safety and community well-being.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
-            <h3>Arrest Made in 2024 North Charlotte Homicide</h3><p class="desc">Woodie Rodrick Daniels, III arrested in connection to a deadly shooting that occurred in 2024.</p>
-            <div class="insight"><strong>Why this matters:</strong> Brings closure to a past crime and highlights ongoing efforts to solve cold cases in the Charlotte area.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Charlotte Trade Shows Boost Brand Visibility with Custom Tents</h3><p class="desc">Exhibitors in Charlotte, NC, are using custom canopy tents to enhance brand visibility and ROI at trade shows.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights innovative marketing strategies for businesses in Charlotte seeking to maximize trade show impact.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/suspect-arrested-2024-homicide-north-charlotte/275-9c85d7eb-4bdc-482b-ab09-0b4cb3c388f7" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">TechBullion</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://techbullion.com/how-trade-shows-in-charlotte-nc-are-leveraging-custom-canopy-tents-to-maximize-brand-visibility-and-roi/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.2</span></div>
-            <h3>Weather Forecast: Windy Wednesday, Rainy Thursday</h3><p class="desc">Expect warmer weather today with a chance of rain Thursday morning into the afternoon.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides a brief weather update, informing residents about upcoming conditions.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
+            <h3>Mosaic Capital Partners Seeks Business Development VP in Charlotte</h3><p class="desc">Mosaic Capital Partners, a Charlotte-based private equity firm, is hiring a Vice President of Business Development.</p>
+            <div class="insight"><strong>Why this matters:</strong> Indicates growth and investment activity in Charlotte's financial sector.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.manilatimes.net/2026/02/18/tmt-newswire/globenewswire/mosaic-capital-partners-seeks-vice-president-of-business-development/2280313" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
+            <h3>Florence Airport Passenger Numbers Rise Despite Flight Loss</h3><p class="desc">Florence Regional Airport saw increased passenger traffic in 2025 but lost an American Airlines flight to Charlotte, NC.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects changes in regional air travel and potential new routes.</div>
+            <div class="card-footer">
+                <span class="source">Charleston Post and Courier</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.postandcourier.com/pee-dee/news/florence-regional-airport-passenger-increase-american-airlines/article_2e808ef7-1adb-4199-b104-54769de1415f.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.1</span></div>
+            <h3>Women Charged in Torture and Death of Girl in Charlotte, NC</h3><p class="desc">Three women in North Carolina are accused of torturing and killing a girl, keeping her in a dog crate at a Charlotte home.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details a horrific case of child abuse and raises serious concerns about community safety.</div>
+            <div class="card-footer">
+                <span class="source">Us Weekly</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.usmagazine.com/crime-news/news/women-allegedly-tortured-and-killed-girl-kept-her-in-dog-crate-in-nc/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Charlotte Homeowners Reassessing When to Sell Amid Market Shifts</h3><p class="desc">Homeowners in Charlotte, NC, are reconsidering their selling timelines due to changing market conditions.</p>
+            <div class="insight"><strong>Why this matters:</strong> Shows how market dynamics influence real estate decisions in Charlotte.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.manilatimes.net/2026/01/29/tmt-newswire/globenewswire/travis-buys-home-sees-homeowners-are-reassessing-when-to-sell-as-market-conditions-shift/2267270" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.9</span></div>
+            <h3>KPN Facilitates $20M in Acquisitions, Expands Partnerships in Charlotte</h3><p class="desc">KPN Consulting Services facilitated $20M in acquisitions and expanded economic development partnerships in Charlotte, NC.</p>
+            <div class="insight"><strong>Why this matters:</strong> Demonstrates economic growth and investment in Charlotte's small business sector.</div>
+            <div class="card-footer">
+                <span class="source">Markets Insider</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://markets.businessinsider.com/news/currencies/kpn-facilitates-20m-in-acquisitions-expands-economic-development-partnerships-1035755279" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.2</span></div>
+            <h3>Mooresville Woman Wins $1 Million Powerball Prize</h3><p class="desc">A woman from Mooresville, NC, won a $1 million Powerball prize after matching five white balls.</p>
+            <div class="insight"><strong>Why this matters:</strong> A local feel-good story about a lottery win.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.wcnc.com/article/news/lottery/mooresville-woman-scores-powerball-prize/275-5731e771-8518-4a78-b331-d735b71db33f" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>Teenager to Remain Jailed in Rock Hill Shooting</h3><p class="desc">A 16-year-old charged in a deadly Rock Hill shooting will remain in jail as the investigation continues.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the issue of youth violence and the complexities of legal proceedings involving minors.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/teens-charged-rock-hill-south-carolina-deadly-shooting-court-appearance/275-c66e194b-30e8-4c9a-8598-9087f36919a8" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Science Behind the Northeast Winter Storm</h3><p class="desc">Analysis of the massive winter storm that impacted the East Coast, causing significant snowfall and travel disruptions.</p>
-            <div class="insight"><strong>Why this matters:</strong> Explains the meteorological factors contributing to severe weather events.</div>
+            <h3>Waymo Self-Driving Cars Coming to Charlotte</h3><p class="desc">Waymo confirms its self-driving cars are expanding to Charlotte, enabled by North Carolina's autonomous vehicle laws.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights Charlotte's role in the development and adoption of autonomous vehicle technology.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/connect-the-dots/massive-winter-storm-northeast/275-c42b5516-ed1b-4fe4-8f18-6b42d5312bfb" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/waymo-self-driving-cars-reportedly-seen-charlotte-north-carolina/275-a9ad53c6-72ba-40f5-9797-94d9e9451b0e" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Arrest Made After Hemp Business Search in Kings Mountain</h3><p class="desc">Police search of a hemp business leads to an arrest following suspicions of illegal marijuana cultivation.</p>
-            <div class="insight"><strong>Why this matters:</strong> Illustrates law enforcement's efforts to combat illegal drug operations disguised as legitimate businesses.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Rabid Raccoon Found in Caldwell County, NC</h3><p class="desc">A raccoon tested positive for rabies in Caldwell County, prompting health officials to issue warnings.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises awareness about rabies risks and public health concerns in the region.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/kings-mountain-hemp-business-marijuana-arrest-2-24-2026/275-2aaec345-234f-4f79-b4cd-7368d845d5af" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/health/caldwell-county-north-carolina-rabies-case-raccoon-tests-positive/275-51647e6e-7a24-4728-9679-91ed7bbdc57b" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
-            <h3>Man Charged in Matthews Road Rage Assault</h3><p class="desc">James Washer, 61, charged with assault after a road rage incident in Matthews.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses the issue of road rage and the potential for violence arising from traffic disputes.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/man-accused-of-beating-woman-road-rage-incident/275-dbfc28d9-cf99-4fca-8bce-2ff7eb24a063" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>ICE Arrests Four Men in Mecklenburg County</h3><p class="desc">ICE arrests four men ahead of their court hearings in Mecklenburg County, prompting intervention from their attorneys.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises questions about immigration enforcement and legal rights within the local court system.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/ice-arrests-four-men-ahead-of-court-hearings/275-fef83513-7410-4565-8d6a-bff12f286e08" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>House Rejects Aircraft Locator Bill</h3><p class="desc">Bill requiring aircraft locator systems fails to pass the House, hindering efforts to prevent midair collisions.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights legislative challenges in improving aviation safety measures.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/house-rejects-bill-requiring-aircraft-locator-systems-to-prevent-midair-collisions/275-216d88da-d2ab-4e77-957b-6a686af22f35" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
-            <h3>Charlotte Crime Concerns Addressed by Police Chief</h3><p class="desc">CMPD Chief Patterson urges public action and highlights repeat offender issues to address crime concerns.</p>
-            <div class="insight"><strong>Why this matters:</strong> Emphasizes the importance of community involvement in crime prevention and the challenges posed by repeat offenders.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-crime-concerns-2-24-2026/275-c3eae3a6-d22f-4ad1-8073-ab8d1c690926" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Huntersville Leaders Reject Rezoning Proposal</h3><p class="desc">Huntersville leaders reject a rezoning proposal for townhomes and a grocery store project, impacting local development plans.</p>
-            <div class="insight"><strong>Why this matters:</strong> Demonstrates the complexities of local land use decisions and their impact on community growth.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/huntersville-rezoning-proposal/275-65bf7eda-97a1-4b94-9ebe-0aac781e6690" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.7</span></div>
-            <h3>Charlotte Firefighters Call for Higher Pay</h3><p class="desc">Charlotte firefighters advocate for better compensation and benefits to keep pace with the city's growth and job demands.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses concerns about public safety personnel and the need for competitive compensation.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
+            <h3>Charlotte Firefighters Call for Higher Pay and Better Benefits</h3><p class="desc">The Charlotte Firefighters Association is advocating for improved compensation to keep pace with the city's growth and job demands.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses concerns about public safety and the well-being of first responders in Charlotte.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -110,42 +100,52 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
-            <h3>Trump Mentions Iryna Zarutska's Killing in SOTU</h3><p class="desc">President Trump recognizes the mother of Iryna Zarutska during the State of the Union, calling for stricter laws on repeat offenders.</p>
-            <div class="insight"><strong>Why this matters:</strong> Connects local crime to national policy discussions and highlights the impact of crime on families.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>Windy Wednesday, Rainy Thursday Forecast for Charlotte</h3><p class="desc">Charlotte weather forecast predicts windy conditions on Wednesday and rain on Thursday.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides a brief weather update relevant to local residents.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.8</span></div>
+            <h3>Suspect Arrested in 2024 Homicide in North Charlotte</h3><p class="desc">A suspect was arrested in connection to a deadly shooting that occurred in north Charlotte in 2024.</p>
+            <div class="insight"><strong>Why this matters:</strong> Offers updates on past crime cases and the pursuit of justice in Charlotte.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/suspect-arrested-2024-homicide-north-charlotte/275-9c85d7eb-4bdc-482b-ab09-0b4cb3c388f7" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.0</span></div>
+            <h3>Trump Mentions Iryna Zarutska's Killing in State of the Union</h3><p class="desc">President Trump recognized the mother of Iryna Zarutska, who was killed, during the 2026 State of the Union Address.</p>
+            <div class="insight"><strong>Why this matters:</strong> Connects a local tragedy to national political discourse on crime.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
                 <a href="https://www.wcnc.com/article/news/politics/national-politics/iryna-zarutska-state-of-the-union-trump-2-24-2026/275-a2c6a650-15b7-4d90-97b5-b53273f684a6" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
-            <h3>East Charlotte Neighbors Unsure About Data Center</h3><p class="desc">Proposed data center in east Charlotte sparks concerns among neighbors about infrastructure and energy consumption.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reflects community concerns about the environmental and infrastructural impacts of new developments.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
+            <h3>Teenager Charged in Rock Hill Shooting to Remain in Jail</h3><p class="desc">A 16-year-old charged in a deadly Rock Hill shooting will remain in jail as the investigation continues.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on juvenile crime and the legal proceedings in a neighboring city.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/east-charlotte-residents-raise-concerns-over-proposed-data-center/275-38bbffda-9f7e-460a-983b-cd26a6ade8ab" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/crime/teens-charged-rock-hill-south-carolina-deadly-shooting-court-appearance/275-c66e194b-30e8-4c9a-8598-9087f36919a8" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
-            <h3>Adoptive Father Returns to Help Other Families</h3><p class="desc">An adoptive father returns to Alexander Youth Network to help other families, 13 years after adopting his son.</p>
-            <div class="insight"><strong>Why this matters:</strong> Showcases the positive impact of adoption and the importance of supporting families in need.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Science Behind the Massive Winter Storm in the Northeast</h3><p class="desc">A powerful winter storm impacted the East Coast, bringing heavy snowfall from Virginia to Maine.</p>
+            <div class="insight"><strong>Why this matters:</strong> Explains the meteorological factors behind a significant weather event affecting a large region.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/news/local/full-circle-moment-adoptive-father-returns-to-alexander-youth-network-to-help-other-families/275-c26efa37-b29e-4b27-80c2-12555b5136f2" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>Inside the Union County Sheriff’s Crime Lab</h3><p class="desc">Expanded lab capabilities support the agency’s record of solving murder cases faster through scientific analysis.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the role of forensic science in improving law enforcement effectiveness.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/news/local/union-county-nc-sheriff-crime-lab-2-24-2026/275-fc31058d-2c4f-459a-927f-8b714c5862ee" class="btn-link" target="_blank">Read More →</a>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/connect-the-dots/massive-winter-storm-northeast/275-c42b5516-ed1b-4fe4-8f18-6b42d5312bfb" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
