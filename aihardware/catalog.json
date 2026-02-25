@@ -46,7 +46,7 @@
             "description": "Instant access to SOTA models via API",
             "options": [
                 {
-                    "name": "Google Gemini",
+                    "name": "Google AI",
                     "url": "https://ai.google.dev/"
                 },
                 {
@@ -376,6 +376,7 @@
             "vram": 32,
             "memory_bandwidth": 1792,
             "tier": "ultimate",
+            "hardware_tier": 3,
             "diy_template": "diy_titan_ai",
             "best_for": "Enterprise, 70B (CUDA)",
             "partner_name": "Amazon",
@@ -384,11 +385,11 @@
             "specs": "Intel Ultra 9 / Threadripper, 96GB DDR5, 4TB RAID",
             "ai_compatibility": [
                 {
-                    "model_id": "mistral-7b",
+                    "model_id": "llama-3.1-8b",
                     "recommended": true
                 },
                 {
-                    "model_id": "llama-3.1-8b",
+                    "model_id": "olmo-3-1-32b",
                     "recommended": true
                 },
                 {
@@ -396,11 +397,7 @@
                     "recommended": true
                 },
                 {
-                    "model_id": "gpt-oss-20b",
-                    "recommended": true
-                },
-                {
-                    "model_id": "qwen3-32b",
+                    "model_id": "kimi-linear-48b",
                     "recommended": true
                 }
             ]
@@ -413,6 +410,7 @@
             "vram": 192,
             "memory_bandwidth": 5300,
             "tier": "enterprise",
+            "hardware_tier": 5,
             "diy_template": "diy_titan_ai",
             "best_for": "HPC, Training Clusters",
             "partner_name": "AMD",
@@ -421,15 +419,15 @@
             "specs": "CDNA 3, 192GB HBM3, 5.3TB/s Bandwidth",
             "ai_compatibility": [
                 {
-                    "model_id": "llama-3.1-8b",
+                    "model_id": "deepseek-v3-671b",
                     "recommended": true
                 },
                 {
-                    "model_id": "mixtral-8x7b",
+                    "model_id": "kimi-k2-5",
                     "recommended": true
                 },
                 {
-                    "model_id": "gpt-oss-20b",
+                    "model_id": "glm-5",
                     "recommended": true
                 }
             ]
@@ -437,182 +435,79 @@
     ],
     "ai_models": [
         {
-            "id": "llama-3.1-8b",
-            "name": "LLaMA 3.1 8B",
-            "family": "Meta LLaMA",
-            "parameter_size": "8B",
-            "parameters": 8.0,
+            "id": "kimi-k2-5",
+            "name": "Kimi K2.5",
+            "family": "Moonshot",
+            "parameter_size": "1000B (MoE)",
+            "parameters": 1000.0,
+            "context_window": 256000,
+            "is_open_weights": true,
+            "vram_requirements": {
+                "q4": 529,
+                "q8": 1054
+            },
+            "min_vram": 530,
+            "model_url": "https://huggingface.co/moonshotai/Kimi-K2.5"
+        },
+        {
+            "id": "deepseek-v3-671b",
+            "name": "DeepSeek-V3 671B",
+            "family": "DeepSeek",
+            "parameter_size": "671B (MoE)",
+            "parameters": 671.0,
             "context_window": 128000,
-            "is_open_source": false,
             "is_open_weights": true,
-            "license": "Meta LLaMA Community License",
-            "best_for": [
-                "chatbot",
-                "document_review",
-                "data_analysis"
-            ],
             "vram_requirements": {
-                "fp16": 16,
-                "q8": 10,
-                "q4": 6
+                "q4": 356,
+                "q8": 708
             },
-            "min_vram": 8,
-            "model_url": "https://huggingface.co/meta-llama/Llama-3.1-8B"
+            "min_vram": 360,
+            "model_url": "https://huggingface.co/deepseek-ai/DeepSeek-V3"
         },
         {
-            "id": "mistral-7b",
-            "name": "Mistral 7B",
-            "family": "Mistral AI",
-            "parameter_size": "7B",
-            "parameters": 7.0,
-            "context_window": 8192,
-            "is_open_source": true,
+            "id": "glm-5",
+            "name": "GLM-5",
+            "family": "Z.ai",
+            "parameter_size": "744B (MoE)",
+            "parameters": 744.0,
+            "context_window": 200000,
             "is_open_weights": true,
-            "license": "Apache 2.0",
-            "best_for": [
-                "chatbot",
-                "data_analysis"
-            ],
             "vram_requirements": {
-                "fp16": 14,
-                "q8": 8,
-                "q4": 5
+                "q4": 401,
+                "q8": 791
             },
-            "min_vram": 7,
-            "model_url": "https://huggingface.co/mistralai/Mistral-7B-v0.1"
+            "min_vram": 405,
+            "model_url": "https://huggingface.co/zai-org/GLM-5"
         },
         {
-            "id": "baichuan-2-13b",
-            "name": "Baichuan 2 13B",
-            "family": "Baichuan",
-            "parameter_size": "13B",
-            "parameters": 13.0,
-            "context_window": 16384,
-            "is_open_source": true,
+            "id": "kimi-linear-48b",
+            "name": "Kimi Linear 48B",
+            "family": "Moonshot",
+            "parameter_size": "48B",
+            "parameters": 48.0,
+            "context_window": 1000000,
             "is_open_weights": true,
-            "license": "Apache 2.0",
-            "best_for": [
-                "general_nlp",
-                "multilingual",
-                "chatbot"
-            ],
             "vram_requirements": {
-                "fp16": 26,
-                "q8": 15,
-                "q4": 9
+                "q4": 28,
+                "q8": 53
             },
-            "min_vram": 12,
-            "model_url": "https://huggingface.co/baichuan-inc/Baichuan2-13B"
+            "min_vram": 32,
+            "model_url": "https://huggingface.co/moonshotai/Kimi-Linear-48B"
         },
         {
-            "id": "vicuna-13b",
-            "name": "Vicuna 13B",
-            "family": "LMSYS Vicuna",
-            "parameter_size": "13B",
-            "parameters": 13.0,
-            "context_window": 16384,
-            "is_open_source": true,
-            "is_open_weights": true,
-            "license": "Apache 2.0",
-            "best_for": [
-                "chatbot",
-                "instruction_following"
-            ],
-            "vram_requirements": {
-                "fp16": 26,
-                "q8": 15,
-                "q4": 9
-            },
-            "min_vram": 12,
-            "model_url": "https://huggingface.co/lmsys/vicuna-13b-v1.5"
-        },
-        {
-            "id": "gemma-2-9b",
-            "name": "Gemma 2 9B",
-            "family": "Google Gemma",
-            "parameter_size": "9B",
-            "parameters": 9.0,
-            "context_window": 8192,
-            "is_open_source": true,
-            "is_open_weights": true,
-            "license": "Apache 2.0",
-            "best_for": [
-                "general_text",
-                "reasoning"
-            ],
-            "vram_requirements": {
-                "fp16": 18,
-                "q8": 10,
-                "q4": 6
-            },
-            "min_vram": 8,
-            "model_url": "https://huggingface.co/google/gemma2-9b"
-        },
-        {
-            "id": "qwen3-32b",
-            "name": "Qwen 3 32B",
-            "family": "Alibaba Qwen",
+            "id": "olmo-3-1-32b",
+            "name": "OLMo 3.1 32B",
+            "family": "Ai2",
             "parameter_size": "32B",
             "parameters": 32.0,
-            "context_window": 32768,
-            "is_open_source": true,
+            "context_window": 128000,
             "is_open_weights": true,
-            "license": "Apache 2.0",
-            "best_for": [
-                "long_context",
-                "multilingual"
-            ],
             "vram_requirements": {
-                "fp16": 64,
-                "q8": 32,
-                "q4": 20
+                "q4": 25,
+                "q8": 42
             },
-            "min_vram": 20,
-            "model_url": "https://huggingface.co/Qwen3-32B"
-        },
-        {
-            "id": "mixtral-8x7b",
-            "name": "Mixtral 8x7B",
-            "family": "Mistral AI (MoE)",
-            "parameter_size": "47B (MoE)",
-            "parameters": 47.0,
-            "context_window": 32768,
-            "is_open_source": true,
-            "is_open_weights": true,
-            "license": "Apache 2.0",
-            "best_for": [
-                "reasoning",
-                "coding"
-            ],
-            "vram_requirements": {
-                "fp16": 100,
-                "q8": 50,
-                "q4": 24
-            },
-            "min_vram": 24,
-            "model_url": "https://huggingface.co/mistralai/mixtral-8x7b"
-        },
-        {
-            "id": "gpt-oss-20b",
-            "name": "GPT-OSS 20B",
-            "family": "OpenAI GPT-OSS",
-            "parameter_size": "20B",
-            "parameters": 20.0,
-            "context_window": 131072,
-            "is_open_source": true,
-            "is_open_weights": true,
-            "license": "Apache 2.0",
-            "best_for": [
-                "general_text",
-                "reasoning"
-            ],
-            "vram_requirements": {
-                "fp16": 40,
-                "q8": 22,
-                "q4": 12
-            },
-            "min_vram": 16,
-            "model_url": "https://huggingface.co/openai/gpt-oss-20b"
+            "min_vram": 32,
+            "model_url": "https://huggingface.co/allenai/OLMo-3.1-32B"
         }
     ],
     "diy_templates": [

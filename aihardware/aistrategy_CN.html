@@ -582,7 +582,7 @@
 
                 <div class="action-container">
                     <a href="${result.hardware.purchase_url}" target="_blank" class="btn-primary">购买推荐硬件</a>
-                    <a href="diy.html?template=${result.hardware.diy_template}" class="btn-outline">查看 DIY 构建指南</a>
+                    <a href="https://quantumpropertyllc.github.io/aihardware/diy.html?template=${result.hardware.diy_template}" class="btn-outline">查看 DIY 构建指南</a>
                     <a href="mailto:admin@queencityai.net?subject=Professional%20AI%20Installation%20Request&body=I%20am%20interested%20in%20deploying%20the%20${result.model.name}%20architecture." class="btn-outline">专业安装请求</a>
                 </div>
 
@@ -599,16 +599,16 @@
 
             // Context window priority
             if (responses.inputSize === 'largeDocs') {
-                model = models.find(m => m.contextWindow >= 128000 && m.parameters >= 70);
+                model = models.find(m => m.context_window >= 200000) || models.find(m => m.parameters >= 600);
             }
 
             if (!model) {
                 if (['legal', 'enterprise'].includes(responses.businessType)) {
-                    model = models.find(m => m.parameters >= 70);
+                    model = models.find(m => m.parameters >= 600) || models.find(m => m.parameters >= 70);
                 } else if (responses.aiGoals === 'coding') {
-                    model = models.find(m => m.id.toLowerCase().includes('coder') || m.name.toLowerCase().includes('coder'));
+                    model = models.find(m => m.id.includes('coder') || m.id.includes('deepseek'));
                 } else if (responses.aiGoals === 'vision') {
-                    model = models.find(m => m.id.toLowerCase().includes('vision') || m.name.toLowerCase().includes('vision'));
+                    model = models.find(m => m.id.includes('vision') || m.id.includes('ministral'));
                 }
             }
 
