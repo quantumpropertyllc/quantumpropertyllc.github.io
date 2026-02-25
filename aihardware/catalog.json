@@ -86,6 +86,7 @@
             "vram": 20,
             "memory_bandwidth": 960,
             "tier": "mid",
+            "hardware_tier": 2,
             "diy_template": "diy_midrange",
             "best_for": "Budget 24GB VRAM (ROCm)",
             "partner_name": "Amazon",
@@ -119,6 +120,7 @@
             "vram": 16,
             "memory_bandwidth": 288,
             "tier": "entry",
+            "hardware_tier": 1,
             "diy_template": "diy_midrange_ai",
             "best_for": "7B Models, Learning (CUDA)",
             "partner_name": "Amazon",
@@ -181,6 +183,7 @@
             "vram": 8,
             "memory_bandwidth": 125,
             "tier": "mobile",
+            "hardware_tier": 2,
             "diy_template": "diy_budget",
             "best_for": "On-the-Go AI",
             "partner_name": "Amazon",
@@ -206,6 +209,7 @@
             "vram": 16,
             "memory_bandwidth": 640,
             "tier": "entry",
+            "hardware_tier": 2,
             "diy_template": "diy_midrange_ai",
             "best_for": "Gaming, ROCm Inference",
             "partner_name": "Amazon",
@@ -256,6 +260,7 @@
             "vram": 12,
             "memory_bandwidth": 504,
             "tier": "mid",
+            "hardware_tier": 2,
             "diy_template": "diy_70b_midrange",
             "best_for": "13B Models, Balanced (CUDA)",
             "partner_name": "Amazon",
@@ -285,6 +290,7 @@
             "vram": 128,
             "memory_bandwidth": 546,
             "tier": "creative",
+            "hardware_tier": 4,
             "diy_template": "diy_70b_midrange",
             "best_for": "Unified Memory, MLX",
             "partner_name": "Amazon",
@@ -314,6 +320,7 @@
             "vram": 48,
             "memory_bandwidth": 864,
             "tier": "enterprise",
+            "hardware_tier": 3,
             "diy_template": "diy_titan_ai",
             "best_for": "Large Models (ROCm)",
             "partner_name": "Amazon",
@@ -343,6 +350,7 @@
             "vram": 16,
             "memory_bandwidth": 960,
             "tier": "pro",
+            "hardware_tier": 3,
             "diy_template": "diy_70b_midrange",
             "best_for": "Research, 13B-33B (CUDA)",
             "partner_name": "Amazon",
@@ -500,7 +508,7 @@
             "family": "Ai2",
             "parameter_size": "32B",
             "parameters": 32.0,
-            "context_window": 128000,
+            "context_window": 65536,
             "is_open_weights": true,
             "vram_requirements": {
                 "q4": 25,
@@ -508,6 +516,51 @@
             },
             "min_vram": 32,
             "model_url": "https://huggingface.co/allenai/OLMo-3.1-32B"
+        },
+        {
+            "id": "llama-3.1-8b",
+            "name": "LLaMA 3.1 8B",
+            "family": "Meta LLaMA",
+            "parameter_size": "8B",
+            "parameters": 8.0,
+            "context_window": 128000,
+            "is_open_weights": true,
+            "vram_requirements": {
+                "q4": 6,
+                "q8": 10
+            },
+            "min_vram": 8,
+            "model_url": "https://huggingface.co/meta-llama/Llama-3.1-8B"
+        },
+        {
+            "id": "gemma-3-12b",
+            "name": "Gemma 3 12B",
+            "family": "Google Gemma",
+            "parameter_size": "12B",
+            "parameters": 12.0,
+            "context_window": 128000,
+            "is_open_weights": true,
+            "vram_requirements": {
+                "q4": 11,
+                "q8": 17
+            },
+            "min_vram": 12,
+            "model_url": "https://huggingface.co/google/gemma-3-12b-it"
+        },
+        {
+            "id": "ministral-3-8b",
+            "name": "Ministral 3 8B",
+            "family": "Mistral AI",
+            "parameter_size": "8B",
+            "parameters": 8.0,
+            "context_window": 256000,
+            "is_open_weights": true,
+            "vram_requirements": {
+                "q4": 9,
+                "q8": 13
+            },
+            "min_vram": 10,
+            "model_url": "https://huggingface.co/mistralai/Ministral-3-8B-Instruct-2512"
         }
     ],
     "diy_templates": [

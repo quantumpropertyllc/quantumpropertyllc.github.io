@@ -613,9 +613,13 @@
             }
 
             if (!model) {
-                model = responses.accuracyLevel === 'High-Precision'
-                    ? [...models].sort((a, b) => b.parameters - a.parameters)[0]
-                    : [...models].sort((a, b) => a.parameters - b.parameters)[0];
+                if (responses.accuracyLevel === 'Fast' || (responses.businessType === 'personal' && responses.accuracyLevel === 'Balanced')) {
+                    model = models.find(m => m.parameters <= 12);
+                } else {
+                    model = responses.accuracyLevel === 'High-Precision'
+                        ? [...models].sort((a, b) => b.parameters - a.parameters)[0]
+                        : [...models].sort((a, b) => a.parameters - b.parameters)[0];
+                }
             }
 
             // 2. VRAM Math
