@@ -427,21 +427,84 @@
             "specs": "CDNA 3, 192GB HBM3, 5.3TB/s Bandwidth",
             "ai_compatibility": [
                 {
+                    "model_id": "kimi-k2-5",
+                    "recommended": true
+                },
+                {
                     "model_id": "deepseek-v3-671b",
+                    "recommended": true
+                },
+                {
+                    "model_id": "qwen-3.5-397b-a17",
+                    "recommended": true
+                }
+            ]
+        },
+        {
+            "id": "mac_m4_ultra_256",
+            "name": "Ultra: Mac Studio M4 Ultra (2026)",
+            "gpu": "Apple M4 Ultra (256GB Unified)",
+            "price": 12900.0,
+            "vram": 256,
+            "memory_bandwidth": 800,
+            "tier": "creative",
+            "hardware_tier": 5,
+            "diy_template": "diy_titan_ai",
+            "best_for": "SOTA 400B+ Models (Unified Memory)",
+            "partner_name": "Apple",
+            "purchase_url": "https://www.apple.com/mac-studio/",
+            "image_url": "https://www.apple.com/v/mac-studio/f/images/overview/hero/static_front__eo0f7p4p8lyu_large.jpg",
+            "specs": "256GB Unified RAM, 2TB SSD, M4 Ultra Chip",
+            "ai_compatibility": [
+                {
+                    "model_id": "qwen-3.5-397b-a17",
                     "recommended": true
                 },
                 {
                     "model_id": "kimi-k2-5",
                     "recommended": true
-                },
+                }
+            ]
+        },
+        {
+            "id": "expert_dual_5090_offload",
+            "name": "Expert: Dual RTX 5090 (RAM Offload)",
+            "gpu": "2x NVIDIA RTX 5090 (64GB VRAM)",
+            "price": 14500.0,
+            "vram": 256,
+            "memory_bandwidth": 3584,
+            "tier": "ultimate",
+            "hardware_tier": 5,
+            "diy_template": "diy_titan_ai",
+            "best_for": "Professional Inference & Offload",
+            "partner_name": "Custom Build",
+            "purchase_url": "https://quantumpropertyllc.github.io/aihardware/diy.html?template=diy_titan_ai",
+            "image_url": "https://m.media-amazon.com/images/I/71fV9p-8O9L._AC_SL1500_.jpg",
+            "specs": "2x RTX 5090, 256GB DDR5-6000, Ryzen 9 9950X, 1600W PSU",
+            "ai_compatibility": [
                 {
-                    "model_id": "glm-5",
+                    "model_id": "qwen-3.5-397b-a17",
                     "recommended": true
                 }
             ]
         }
     ],
     "ai_models": [
+        {
+            "id": "qwen-3.5-397b-a17",
+            "name": "Qwen3.5-397B-A17",
+            "family": "Alibaba Qwen",
+            "parameter_size": "397B (MoE)",
+            "parameters": 397.0,
+            "context_window": 262144,
+            "is_open_weights": true,
+            "vram_requirements": {
+                "q4": 224,
+                "q8": 440
+            },
+            "min_vram": 224,
+            "model_url": "https://huggingface.co/unsloth/Qwen3.5-397B-A17B-GGUF"
+        },
         {
             "id": "kimi-k2-5",
             "name": "Kimi K2.5",

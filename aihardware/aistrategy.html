@@ -604,11 +604,11 @@
 
             if (!model) {
                 if (['legal', 'enterprise'].includes(responses.businessType)) {
-                    model = models.find(m => m.parameters >= 600) || models.find(m => m.parameters >= 70);
+                    model = models.find(m => m.id.includes('qwen')) || models.find(m => m.parameters >= 600) || models.find(m => m.parameters >= 70);
                 } else if (responses.aiGoals === 'coding') {
-                    model = models.find(m => m.id.includes('coder')) || models.find(m => m.id.includes('deepseek'));
+                    model = models.find(m => m.id.includes('qwen')) || models.find(m => m.id.includes('coder')) || models.find(m => m.id.includes('deepseek'));
                 } else if (responses.aiGoals === 'vision') {
-                    model = models.find(m => m.id.includes('vision')) || models.find(m => m.id.includes('ministral'));
+                    model = models.find(m => m.id.includes('qwen')) || models.find(m => m.id.includes('vision')) || models.find(m => m.id.includes('ministral'));
                 }
             }
 
