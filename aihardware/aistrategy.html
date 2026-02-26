@@ -599,7 +599,7 @@
 
             // Context window priority
             if (responses.inputSize === 'largeDocs') {
-                model = models.find(m => m.context_window >= 200000) || models.find(m => m.parameters >= 600);
+                model = models.find(m => m.id.includes('scout')) || models.find(m => m.context_window >= 200000) || models.find(m => m.parameters >= 600);
             }
 
             if (!model) {
