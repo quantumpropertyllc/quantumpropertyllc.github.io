@@ -1,138 +1,88 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-02-26 08:22 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#政治审查（克林顿、特朗普）</span><span class="cluster">#国际关系（美国-伊朗、乌克兰、古巴）</span><span class="cluster">#经济问题（德中贸易、产品召回）</span><span class="cluster">#国内政策（ICE、外科医生）</span></div></div></div><div class="brief"><h2>今日简报</h2><p>新闻格局以政治事态发展为主，包括对知名人物过去行动的审查和正在进行的国际谈判。围绕贸易失衡和产品召回的讨论也存在经济问题。此外，国际冲突和国内政策辩论继续影响着新闻周期。</p><div class="divider"></div><p class="insight-text">政治、经济和国际事件的交汇凸显了全球事务的相互关联性及其对国内政策的影响。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-02-27 05:32 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#政治权力游戏（特朗普，中国）</span><span class="cluster">#国际冲突（乌克兰、中东）</span><span class="cluster">#经济法规和劳工（美国劳工部）</span><span class="cluster">#选举与政治转变（绿党）</span></div></div></div><div class="brief"><h2>今日简报</h2><p>新闻格局以政治事态发展为主，包括潜在的权力争夺和选举结果。国际关系因冲突和军事行动而紧张。经济和监管变化也很突出，对企业和工人产生影响。</p><div class="divider"></div><p class="insight-text">政治不稳定、国际紧张局势和经济变化的共同作用造成了一个不稳定和不确定的环境。</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>克林顿证词：否认爱泼斯坦知情</h3><p class="desc">据《纽约时报》报道，希拉里·克林顿在一份紧张的证词中否认了解爱泼斯坦或他的罪行。</p>
-            <div class="insight"><strong>深度见解:</strong> 继续审查知名人物与爱泼斯坦的关系，影响公众信任和政治叙事。</div>
+            <h3>美国人在古巴快艇事件中丧生</h3><p class="desc">白宫证实，一名美国公民在古巴水域快艇事故中丧生。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调与前往某些地区旅行相关的风险以及潜在的地缘政治影响。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQWGxCNlJWU1M1UnFacFJMOWRUcmdqS1N1bnJDenV1QkhTNUhEZ3NEWGFDb09Ca2NKSHBiaDZoMlkzbzNOMzJWS3R1XzFNTDZrNWtXaE04czZqM01LaW9Ec1otd1VfT2xMT2oxMWZMVmYzTHR1OTBwUzRVR3RubzN3ZHRWWlZ0LUIyQ0o5MGJqMHVIelNFZDR6TnNDR1ZpV1lES1Iw?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxPY2kzdVdPUHVHVlNHb2tsNUZqY0daR3RKMHpBc0Y2T281aEVGa3hDZWFlWjFmNlYzRmRtQUxkVEY5SHJXRVU1N0U2MVNOSDVvSTNiWEFNdEFLODc5WU9Sd3RsZ0dSbDdYUzA0RUdEZFRIaU5SQzhJM3dyRFRPVU1pT2lSVUlnRDRTaFItWVRmTXJ2Rk10QllEcTRDYmpXQUxkVTlF0gGoAUFVX3lxTFA3MkxaX1p5Rmt6bjdmMkxxR1gtMlRENzlKN2FiZnVsZlFnZDNfZ0JLMmlYZXZhQlVmZTM3bC01c1dsYjhaR0lJUi1nMDNEUFhmZWI2cUl3cnZhOFBJUXRuODNOYnhCdHRiSzBFNk9KVUV6emIxY0s4Qk5hb2d1RjhabEc4Ym9icGlTT2FSX1BNZW50NVJ4aUVSRUVIZnNDRG5MczY1NUxZUQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.8</span></div>
+            <h3>特朗普考虑宣布国家紧急状态以夺取权力</h3><p class="desc">据报道，特朗普正在考虑宣布“国家紧急状态”，这可能为夺取权力铺平道路。</p>
+            <div class="insight"><strong>深度见解:</strong> 引起人们对潜在滥用权力和民主规范受到侵蚀的担忧。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxNMEpDWHNjQWRCRzM5bEt2Z2JoNThHSk5QbnRNMlZ1TUE4bXdFTlA3Mk9YYUMyMWJTNFlVM3Z1Ykk1WmhORHpUOGU2OHV2YnhrWXNaWE5ibFY2S1FnRGRWVDhYUjJsWDBpNDVucWFMRVB6bGxpVTdGc3pWSlZQTi1jcmI0WEVMRXZ5V0QxU1ZMYnNhdw?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.2</span></div>
+            <h3>洛杉矶消防员：拉赫曼大火尚未完全扑灭</h3><p class="desc">一名洛杉矶消防员作证说，当消防人员被命令离开现场时，拉赫曼的大火尚未完全扑灭。</p>
+            <div class="insight"><strong>深度见解:</strong> 揭示了应急响应协议中潜在的安全疏忽和管理不善。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMi4wFBVV95cUxPMmtrMm9QOVF2WERfMkNKS1VoUDNmSUcwYWRkYmUwSDZabHNqWGlFTVJqRWxDYkpfWnBJeXN5RHhNYl9EbTZ2NGFacTU4QWdvUmh4bWxHZVAyQUJiSFBMWllVUUx0d05VSkJYUTVrLTRpS0lldjhHdlh0WGhudmxhZ0NCR1lUZHMzSnVYUElNaVJjZjhDSkpIdXVMdFZCd1FNdFlqY3E3cVpZWTdXZ2ZuemtPLWlJUGJaSGthRVZWaXZYM2ZHNHRqTXlRRTBFWElHSlFDNGk4STBOaE5odUhJc3pIWQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>美国司法部审查扣留的爱泼斯坦-特朗普文件</h3><p class="desc">据《华盛顿邮报》报道，司法部正在审查爱泼斯坦与特朗普有关的指控文件是否被错误扣留。</p>
-            <div class="insight"><strong>深度见解:</strong> 对特朗普的潜在影响以及对爱泼斯坦案的进一步审查，影响政治看法。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxPcUg0TEZHTlZmSS1jWmxUX2FOQ1E1Yy1aNFNvajl5amh4Vnl2YVRYUG15N0hGc1pKUXh1di1wbk9aeFdyRm9xd1hXUzBSaDU1cVR3cTl0WEZpTEdlbHNtUEZnang1djI1c3RPQWt0ay13anZNOWl4Ym0tZ29wMkppSmtPamF4OEV1Y1FCVGw3VUR2clU0am1GUlY4ZlNXcm5QajVfZHJNUEk?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>美伊核谈判取得进展</h3><p class="desc">据 Axios 报道，美国高级官员称美伊核谈判是“积极的”。</p>
-            <div class="insight"><strong>深度见解:</strong> 可能会导致紧张局势缓和并可能达成协议，从而影响地区稳定和全球安全。</div>
+            <h3>绿党赢得英国补选，工党第三</h3><p class="desc">绿党在英国戈顿和丹顿补选中获胜，将工党推至第三位。</p>
+            <div class="insight"><strong>深度见解:</strong> 表明选民偏好的转变以及对环境政策的支持不断增加。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE8tWmlfR1JzWE80bDNSRUVfajNBNkV2SXdxaE1zQWtKdXVpQ3JYbHpJLXhUS3hnak1aRUtVSldvMUNKQ0s2eGV3Yjd4eW5hRzMzcVFUWjdFbVByVURvV0VhWUF3VTBzRVRjT2c?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>特朗普国情咨文收视率</h3><p class="desc">根据尼尔森早期数据，唐纳德·特朗普的国情咨文在主要电视网络上吸引了大约 2800 万观众。</p>
-            <div class="insight"><strong>深度见解:</strong> 反映了公众对政治话语的参与以及特朗普信息的影响力，影响着政治策略。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE1zclcxZ0RLaUVYbHcyWEZvZ0k3Q2FuUmRCdUNDRGN0QkR2N0tHRkZyd05WeHlGM0dWZ2t2MGtpSUkyYmM5ZFlHTC1aWVVadGxVMHB2ZWFjVmk5T1JyLXRUZjlvWDFBc0NpMmcybHRraDNUN2w0SHNJQkMyNFVKQQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
-            <h3>特朗普的卫生局局长人选陷入停滞</h3><p class="desc">据 Politico 报道，特朗普的卫生局局长人选凯西·米恩斯仍缺乏确认票数。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调政治僵局和确认关键任命的挑战，影响医疗保健政策。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQRFp5aUdIaXFhNExxX004dFZiS3lyR0ctU3F0NGtRekFaZERyX2F6cWhrY3BnMS1zLUVhYmpaWTBibEdVVU1UQU92X2hERWJMQ0pCbENHc3dsLVhlQlF5N1RkbHBPS1drdkp2d3ZLcGQ4VjV6RGIzU0dQRnN4Z2VaN05MbU8wZld2MlVPb1lnOUZjMzluaTlIbE9iR194U3ZRRXVz?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>马姆达尼会见特朗普并取得胜利</h3><p class="desc">据《纽约时报》报道，马姆达尼再次与特朗普会面，并取得了两项意想不到的胜利。</p>
-            <div class="insight"><strong>深度见解:</strong> 说明政治影响力的动态以及意想不到的政策结果的可能性。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE5udGVOM2pyVFVhUW9BeVR4S1B0WVU5c0FhdUFvWmdXZ3hzTU5pMjF4YUU1WjZOeW9wcFBudEFzWGNQMDZUVmJ2cl91UTg0RUMzaFlKdFFkdmZSdEQ2SVF3QVFyUTJ3bkNwejl0ZVpYWW10MGc0cVF0dlh3?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
-            <h3>参与古巴致命枪击事件的美国公民</h3><p class="desc">据 Axios 报道，美国公民乘坐被盗船只与古巴海岸警卫队发生致命枪击事件。</p>
-            <div class="insight"><strong>深度见解:</strong> 引发围绕海事安全和国际执法的外交紧张局势和问题。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE5IYU4yZHF6Ul85elZvYnVCako0anI2d1hCVW01ajNwUlJtd0U2N0ZlVUt3WGFFX3pGRl9JQlNWampJNjQ3TGZQZVpyZjJ4LWl2d3BaNElhUHQyeDZiUHRxaEZ1ZWlCS3JEeHFjWkdUYWRlVW1FWGl3MUVn?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>丹佛限制 ICE 出入，保护抗议者</h3><p class="desc">据《纽约时报》报道，丹佛市长禁止 ICE 进入城市财产，并下令保护抗议者。</p>
-            <div class="insight"><strong>深度见解:</strong> 反映了关于移民政策以及联邦和地方当局之间的平衡的持续辩论。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE5HcE9aNGVNODdDQTlSR2xqcDJOMm1Ya190bDdqUU1mR21td2JVVzAyZmQxRUNXdWlpVkZjcVVBNURnc0JpRGxTaC16OElQQ0JVMUNPcjVPSHJ2aXctTlVITGExODlBZ3ZZZTNOcUo2UWNCX25FdGNv?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>国税局与国土安全部非法共享数据</h3><p class="desc">法官：据《华盛顿邮报》报道，国税局在提供国土安全部数据时“大约违法了 42,695 次”。</p>
-            <div class="insight"><strong>深度见解:</strong> 引起人们对政府过度干预和保护公民隐私权的担忧。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxOaEp4MmY0YXozRkxaU2lpS1ZxbEZpQUx1VU5jNS13ZzNBYm9PVURwQTdrbW9vREpvVFM5VGgzamMtQ3VVa1B5dzFDUTVvbHE0aDlwRG1HT2VLSzNndTVranFhZkhSM1pnNnRfNmFOQUtZb3gwTGZvN1FEa05Bcmk5WEFKREhVbzl0ajI1NmUzbw?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
-            <h3>克罗克特的德克萨斯根源和选举前景</h3><p class="desc">茉莉花·克罗克特 (Jasmine Crockett) 东德克萨斯州的过去能否为她在德克萨斯州农村地区的选举带来推动力？ - 德克萨斯论坛报</p>
-            <div class="insight"><strong>深度见解:</strong> 探讨当地身份对选举结果和德克萨斯州政治动态的影响。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQSnBNU2w1NXNCTUtxNVFjQnJ2Qlc5N3VySVR2c0VLRVU2UTRtNTVSVks0TnJLczZ0YmNqeGpWVTkyTXpZbllNTzZhdnlUdHJqTnlMSXdIeGJ2Y2lUSmdyZU12NDRNaGNDZUJNeGNLSTZYREJHMzJuakZwbEwzLVRMWlB2TE0yNkIxbmZPS0RlUU9uR1JiODJ3Z2ZkZHBsZXZm?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
-            <h3>戈顿和丹顿补选结果等待</h3><p class="desc">戈顿和丹顿补选投票结束并开始计票 - BBC</p>
-            <div class="insight"><strong>深度见解:</strong> 提供有关英国当地政治趋势和选民情绪的见解。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
                 <a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTFBKZVpjSjRiWTZXQTlPLTV5cEkwVEhralRxTW9NalRydWNZUVZXRXJ4cGp4VXFNd21XT0FjRThrMEZDVDdDeHJIV1FGYXI1bjMzellUZQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>哥伦比亚泥火山喷发</h3><p class="desc">哥伦比亚住宅附近泥火山喷发；疏散正在进行中 - BNO News</p>
-            <div class="insight"><strong>深度见解:</strong> 强调与自然灾害相关的风险以及备灾的重要性。</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>爱泼斯坦文件指控特朗普滥用权力</h3><p class="desc">爱泼斯坦的文件包含一个明确但未经证实的指控，即特朗普虐待未成年人。</p>
+            <div class="insight"><strong>深度见解:</strong> 指控的敏感性需要仔细考虑来源和证据。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxNem5FbVl5bGxhU2FEWFBnZVJvREZnSkp3Q2lBZFV0RFk5TlA1aEtoSDI4VjkxOTAwcEZUbXJRUFE5SDVTVE1mUUxHcENYN1BsTHlVeUFkUmFEckNXZUxqX2JUTGFLeVFZMUdsSVRENDhwbzd3Zl9oREwyR2JXOVR4T19WMEJfNldTbzNVQ2tUazBoTjVzN3JXczY5TC1yU0Rwc1lV?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTFBrS0c3NkJVdHpsb1k0cDVuTXRZZEJxelFpRkxvaTNMRWNlYk9Nbjdpa3pOVGNodnB0a1Z2VEwwVTFxR3FiZ2p6UDU1MVEzaC1VN1Ita2NQMGV2WmdSeVdqSWF5YWY1MzIwZWlLdmQ3aURJcEg0Nkc4ZW5tUQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">5.5</span></div>
-            <h3>德国重新考虑与中国的贸易关系</h3><p class="desc">默茨呼吁重新平衡德国与中国“不健康”的贸易关系 - politico.eu</p>
-            <div class="insight"><strong>深度见解:</strong> 反映出人们对经济依赖和全球贸易多元化需求日益增长的担忧。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>美国指挥官向特朗普介绍伊朗的选择</h3><p class="desc">美国驻中东最高指挥官向特朗普介绍了有关伊朗的潜在选择。</p>
+            <div class="insight"><strong>深度见解:</strong> 反映了中东持续的紧张局势和军事升级的可能性。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE02SWRIMy1pVkhRTGdxMGRpVmdKRXIyUUVkNXhRSHp5Z0xLMTQ3V0hWOWtzOXh5WU42UE9UQl9QTXFsUW9iSk9BYjlqbGVueW9FcjA2a19zeXFXVUVEM0lfQVZma18zLUZTdFltZEtxWTRmNVJPX2lhckVILXg?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>美国军方使用激光击落边境无人机</h3><p class="desc">据立法者称，美国军方使用激光击落了一架边境保护无人机。</p>
+            <div class="insight"><strong>深度见解:</strong> 提出了有关在边境安全中使用先进技术和潜在风险的问题。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxORlVPY2M4bHB5MTdONDlyWTZXbXBwcV85VmpBYlZaaG5YeDdCaGpKYkdtdng4VFBOV3dXUUdWR3FGNFhxQ09TS0F1TWg1LWgxcDVZTF9jNHlfRlpQUUJCMFhtWG5kbmtod2NYY3lLMzNkdFBYbzNfczE5WmxLbU1oZHVSbkczNjljLXljOWpUYk9WaWctanNYMnhZcklCZnFoNXpkUm5rUnB6SmlJ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxNWXN6aWtDT0V3MVQ4YzEtejc1ZFMwZ0thRDREdUtYWW5GWWt0TW0wVUdwRllsQ01TQ25SWGRXRHB5YUZjODctTGRtME1Pd3g5Q202TU8xX2tyZ096LWhvczBTXy00WmpHd1J4Q0d3c0U0eG5GMER2cGN4UHB6VEllOGVZSnFaNW5kY3E0NHVuZTJiSlkzMEdiOTNxUXozc3RIT0M4?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.8</span></div>
+            <h3>万斯批评民主党的国情咨文态度</h3><p class="desc">万斯在国情咨文演讲中继续批评民主党的态度。</p>
+            <div class="insight"><strong>深度见解:</strong> 反映了持续的政治两极分化和党派分歧。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQeXVmcng5Zm40LTl5TXFiNXlrRjB6Tm1YWm9uejVKVnhXRlY4RmJONEVNRHRrQTJKYi16TW0zZl9KYXNpUkwtRFpGV0Zkc2JoNHFPdXZHd2xibUZEdVA1WlFSb1pheFBfNEs3N2NGRGY2OGxhNjR1TTFERXhzY1A2ako0Z0IzTGdsajdrUkJTWQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>乌克兰战争局势评估</h3><p class="desc">乌克兰正在输掉战争 - 外交事务</p>
-            <div class="insight"><strong>深度见解:</strong> 对影响地缘政治战略的持续冲突及其潜在结果进行批判性分析。</div>
+            <h3>乌克兰正在输掉战争</h3><p class="desc">分析表明乌克兰目前正在输掉这场战争。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调乌克兰局势的恶化及其对国际安全的潜在影响。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
@@ -140,12 +90,62 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>韦伯因危险召回烧烤刷</h3><p class="desc">Weber 因摄入危险而召回超过 320 万把金属丝鬃毛烧烤刷美国消费品安全委员会网站</p>
-            <div class="insight"><strong>深度见解:</strong> 强调产品安全的重要性以及监管机构在保护消费者方面的作用。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.2</span></div>
+            <h3>欧盟跨境堕胎基金</h3><p class="desc">欧盟表示，其社会基金可用于跨境堕胎。</p>
+            <div class="insight"><strong>深度见解:</strong> 解决欧盟境内的生殖权利和获得医疗保健服务的问题。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQcXdUQV84SXZETy12XzNUT0NxVjNoYnlCdnMyR3BPZHB1SF9Yak9uWVZLcHFKdWc0ZlQ1S1hMU2JKOHcwMVljdDh5TTJMUWVGRnJES1hzQmxlMmpsSUhlblJ2YmhTSW9sTmRBSEM3dUFTbDc3Ni04ZnJUa1ctZmpjRVBLYldmV2ZqTmhSeWIzOU50dFgyc1NrbjI3Zk9SSHFzWTRQZ3N0SGM0NFhrNlcwYXprOFVXLUR2TU5kZw?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>将安德鲁王子从王位继承中删除</h3><p class="desc">讨论英国如何将前安德鲁王子从王室继承顺序中剔除。</p>
+            <div class="insight"><strong>深度见解:</strong> 解决王室责任和公众对君主制的看法问题。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxOc2tJRGZPVjhmQWI4NjVuYVJCaFdsbFZqeERONk9jQ3NzeFViTUllT2YxQnBsWkxCZ2VuaEtNZzVlT0VRcU85dVlIZ3JWVVBXQmFvSDVKUF9QUWxYTWJ3SUhfdWlIakRpNldYamxnLVpkMUh4blFuMGNrOE5INmhhZzl5Q1l2WW9HbDIxWEFYX1V3T0t4ZzA4U1VqRVdpZ1R1?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>中国在“两会”前撤换军官</h3><p class="desc">北京“两会”前夕，中国撤换了 9 名军事官员。</p>
+            <div class="insight"><strong>深度见解:</strong> 表明中国军队内部潜在的权力斗争或政策转变。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxQOUZHX1hYY1FINXBxM28yTndWYlUwekNuaXlSOGpBelRLS3BSR3FxUXhoN0V1WFp3S3dSSHg0TDhrMjJLWUlKb0NKMURBd0p2bWJsRzNzLWJDU0xuR3hBYnBjZm5iY3dZTW1IWHFubWpJQ1lBNjRaeFJveFQ5bjdkUks5RnQ3d1g1XzF6UnBPRzJoX2FYS19XRjk3NG9BbVhJVFhrU3RJQ2JIQ2lXVGEwalhFb2piV09kMlp0UzB3?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxNaS1tNnZDSDdZcFBYdUIxYWhIOFBPZ1hlbnY5Mmo5RXBVWmROYVBXVDVGWGxCNDFENW5VMkV3N0pvRHU0MzlUd2RMMnNFNF9XWFl0VzZaVTAtajd1dW5SNW1pRWJUSjBWaWZ6U3VWa2ZOYUFLLVI1anVJcVlaakY0Zm1KWXJSSk1yS0pkc2xBVHM4UkZabFlzSWZTUUhhODBUU0swMGtUSWhUdFkycmFMcFJIZTdmSzZ0MnhQTnd2RmpsZ3lUVHkzR1ZyQTF5TkV3VEHSAdIBQVVfeXFMT1JMM05yVFFmR0IxQmkzS0M5Um5LZGY0ZUQzSnNyelVjY0JHYWRjdktSUzg5c1BTUFJZaXFxcDZUTmRyTzNhRTlPVDByclNGcVRBQTRQX0JFNnFIdHBzdVFmdzVXc2xRbEcwVV9QN3p1bDJNYWdaOGhjWGgyMVF1TUlOZ2ViNDQwajNybkowUm55REd1NW1TWmZ1dTZNMk01aVRNc1pqcHl1dG5OZ2hhbWVkYU1yR0pHZ2o0cjA2eEVWVlFKZkYtNGsxVDE0WnM5RWNn?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>任天堂宣布出售 1.9B 美元股票</h3><p class="desc">任天堂宣布京都银行和其他银行将出售 19 亿美元的股票。</p>
+            <div class="insight"><strong>深度见解:</strong> 影响任天堂的财务状况和潜在的未来投资。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxPX2JMcDJILUFUdGlqaU01THAyeXFlajJIU1Q1LWxocmFfYncweXpxMVZ2R1NWUm1TckRmVGg2YVREOVFra3RCOXEtZnUxdTU3QUdjMUJwb0toamtqQ2lzSXdDeXRxdk1qcUNZZzlfbWk2ZjBNSW5ndzV4Vk1BSEtoOFlzaDVEcUZ2clQ5UnZXa1BnUDcwVjRtdVRJSU80N2ZVYWFSSGp5bDZ5a2t1Uk50T0poWThrTWRxdHZBSTJ1aU0yR2tsQ3JwVDFrSUZqTWNPdlZxUEJFckZXNVktUEhiZlB6Z1VWRXljLThBWHpB?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
+            <h3>埃里森的特朗普邻近游戏</h3><p class="desc">审视拉里·埃里森与特朗普日益亲近的关系及其潜在动机。</p>
+            <div class="insight"><strong>深度见解:</strong> 探索商业与政治的交叉点以及潜在影响。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNNUxmN1RnbHpMdklrSzFZZEJCMTJtMTNSbEpnWGxqQUZ0a20xbHZIeEZvUEwxcHUxbTV6b0U3ZlZTLXlEQWlsMldTUFRCaGk5Nm1UdFlTX2dSdlViMXNucXhLNlo4RWdabXY3dWZyQUx3OWVxTkR5RG95SF95Nlo5Yzhra2V1c090aGVkZEYzRmxNVGZGa3ZHNERfZ0YweU9oZnNIeDRsNEtJZlRk?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.7</span></div>
+            <h3>美国劳工部澄清员工状况</h3><p class="desc">美国劳工部提出了一项规则，明确联邦工资和工时法下雇员与独立承包商的地位。</p>
+            <div class="insight"><strong>深度见解:</strong> 影响工人权利和雇主责任，影响零工经济。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMiY0FVX3lxTFBPeDJGcF95aW8tOHFjY2trOERlbEFRMmZjLWU1ZGZZandiRVBLcFhWRmhQM2NKaVp5NE5EX2tEV3MxOWJKZFhVRUh3S2RqUXh2azVTZV9aU1RZbFp1Z3hGMTFJbw?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div></body></html>
