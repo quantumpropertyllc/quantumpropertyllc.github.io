@@ -1,48 +1,98 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-03-05 11:11 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Public Safety</span><span class="cluster">#Education and Schools</span><span class="cluster">#Infrastructure and Transportation</span><span class="cluster">#Local Government and Legal Issues</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in the Charlotte region covers a range of issues, from public safety and crime to community initiatives and infrastructure concerns. Several articles highlight incidents involving law enforcement, including arrests, assaults, and traffic-related incidents. Additionally, there are reports on environmental issues, education, and technological advancements impacting healthcare.</p><div class="divider"></div><p class="insight-text">Community safety and well-being are central themes, reflecting residents' concerns and local government responses.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-03-05 01:58 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Charlotte crime and legal issues</span><span class="cluster">#Local business and economic development in NC</span><span class="cluster">#Transportation and infrastructure updates</span><span class="cluster">#Government and political matters</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in the Charlotte, NC region covers a range of topics, from political controversies and business developments to crime, accidents, and community initiatives. Several articles focus on Charlotte and its surrounding counties, highlighting both positive and negative events impacting residents. The news also extends to neighboring areas in North and South Carolina, showcasing regional interconnectedness.</p><div class="divider"></div><p class="insight-text">The local news landscape reflects a mix of economic activity, public safety concerns, and community development efforts.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Cabarrus County Installs Pet Microchip Scan Station</h3><p class="desc">Cabarrus County installs a self-service pet microchip scan station to reunite lost pets with owners faster and reduce shelter admissions.</p>
-            <div class="insight"><strong>Why this matters:</strong> Improves pet recovery rates and reduces strain on animal shelters, promoting responsible pet ownership in the community.</div>
+            <h3>Fact Check: Trump's Claim on Charlotte Refugee Stabbing</h3><p class="desc">Trump's claim about the suspect in a Charlotte stabbing case being an immigrant is false; the suspect is a U.S. citizen.</p>
+            <div class="insight"><strong>Why this matters:</strong> Misinformation can fuel harmful narratives about immigration and public safety, impacting community relations.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/news/local/cabarrus-county-self-service-pet-microchip-scan-station/275-517f343b-581a-4720-bd8a-de3397d53cab" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">Winston-Salem Journal</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://journalnow.com/news/local/government-politics/article_247a5d8e-f4a7-46f4-8e92-71171fd2f733.html" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Chemical Spill Closes Fort Mill Elementary School</h3><p class="desc">Flint Hill Elementary closed due to a hydrofluoric acid spill at Silfab Solar, raising safety concerns for students and staff.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the potential dangers of industrial accidents and the importance of safety protocols near residential areas.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
+            <h3>Hayward: Major Employer in Clemmons, NC</h3><p class="desc">Hayward, a swimming pool filter maker based in Charlotte, employs over 1,000 workers in Clemmons, NC.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the importance of manufacturing jobs and private employers in the local economy.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/silfab-solar-chemical-incident-fort-mill-school-closed/275-5e4c143b-73cc-461e-ae09-22fe1e4248c9" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">Winston-Salem Journal</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://journalnow.com/news/local/business/article_d392812a-720d-4ed9-a9b5-4b8fc177dee8.html" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Ex-Employees Sue Mooresville, Alleging Retaliation</h3><p class="desc">Three former Mooresville employees sue the town, claiming retaliation after reporting the mayor's late-night Town Hall incident.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses issues of transparency and accountability in local government, potentially impacting public trust.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.2</span></div>
+            <h3>Charlotte Trade Shows Focus on ROI</h3><p class="desc">Trade show exhibitors in Charlotte are prioritizing flexibility, visibility, and return on investment.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects the business community's focus on maximizing value and adapting to changing market conditions.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/lawsuit-suit-filed-by-mooresville-officials-town-hall-incident-in-october-2024/275-3ab27c5e-8e04-4e85-8720-c0f547306007" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">TechBullion</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://techbullion.com/how-trade-shows-in-charlotte-nc-are-leveraging-custom-canopy-tents-to-maximize-brand-visibility-and-roi/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Spring Heat Wave Expected Next Week</h3><p class="desc">A record heat wave is expected, with temperatures in the 70s and 80s dominating the 7-day forecast.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides weather information relevant to daily planning and awareness of potential heat-related health risks.</div>
+            <h3>Mosaic Capital Partners Seeks VP in Charlotte</h3><p class="desc">Mosaic Capital Partners, a Charlotte-based private equity firm, is hiring a Vice President of Business Development.</p>
+            <div class="insight"><strong>Why this matters:</strong> Indicates growth and investment activity in the Charlotte financial sector.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">The Manila Times</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.manilatimes.net/2026/02/18/tmt-newswire/globenewswire/mosaic-capital-partners-seeks-vice-president-of-business-development/2280313" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
-            <h3>Union County Man Charged After Traffic Stop</h3><p class="desc">James Hunt III faces multiple charges after allegedly assaulting an officer and fleeing a traffic stop in Union County.</p>
-            <div class="insight"><strong>Why this matters:</strong> Illustrates the risks faced by law enforcement during routine traffic stops and the consequences of resisting arrest.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Florence Airport Passenger Increase, Route Loss</h3><p class="desc">Florence Regional Airport saw increased passenger traffic in 2025 but lost an American Airlines flight to Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Illustrates the challenges and opportunities for regional airports in maintaining and expanding service.</div>
+            <div class="card-footer">
+                <span class="source">Charleston Post and Courier</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.postandcourier.com/pee-dee/news/florence-regional-airport-passenger-increase-american-airlines/article_2e808ef7-1adb-4199-b104-54769de1415f.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.2</span></div>
+            <h3>NC Women Charged in Child Abuse Death</h3><p class="desc">Three women in Charlotte are charged with torturing and killing a girl, keeping her in a dog crate.</p>
+            <div class="insight"><strong>Why this matters:</strong> A tragic case of child abuse and neglect, raising serious concerns about child welfare.</div>
+            <div class="card-footer">
+                <span class="source">Us Weekly</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.usmagazine.com/crime-news/news/women-allegedly-tortured-and-killed-girl-kept-her-in-dog-crate-in-nc/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
+            <h3>Alex Bowman to Miss Phoenix Race Due to Vertigo</h3><p class="desc">NASCAR driver Alex Bowman will miss the race in Phoenix due to vertigo symptoms.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the physical demands and health challenges faced by professional athletes.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/sports/motor/nascar/alex-bowman-vertigo-missing-nascar-race/275-f520078b-3101-4701-a8a6-d74089574235" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.3</span></div>
+            <h3>Restraining Order in Joe Gibbs Racing Lawsuit</h3><p class="desc">Joe Gibbs Racing files restraining order against former competition director, preventing information sharing.</p>
+            <div class="insight"><strong>Why this matters:</strong> Illustrates the competitive and legal aspects of professional racing.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/sports/motor/nascar/joe-gibbs-racing-lawsuit-against-former-competition-director/275-8a22e795-1561-42b2-9fa2-7bd89a6e83aa" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.0</span></div>
+            <h3>Confederate Monument to Remain in Gaston County</h3><p class="desc">Court upholds decision to keep Confederate monument in front of Gaston County Courthouse.</p>
+            <div class="insight"><strong>Why this matters:</strong> Ongoing debate about Confederate symbols and their place in public spaces.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/gastonia/court-doubles-down-on-confederate-monument-remaining-in-front-of-gaston-county-courthouse/275-81ff3301-0165-4e1f-825d-2ff83c38f8f9" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
+            <h3>Union County Man Charged After Fiery Crash</h3><p class="desc">James Hunt III faces charges after assaulting an officer and fleeing a traffic stop, resulting in a crash.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the dangers of reckless driving and the risks faced by law enforcement officers.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -50,102 +100,52 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Debate Continues Over I-77 South Express Lanes</h3><p class="desc">Community members meet with NC transportation officials amid opposition to proposed I-77 South toll lanes, especially in Black neighborhoods.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses concerns about equitable access to transportation and the potential impact of infrastructure projects on communities.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.8</span></div>
+            <h3>Hickory Driver Charged in Child's Death</h3><p class="desc">Donald Glen Bledsole, 78, is charged with hitting and killing a child in Hickory.</p>
+            <div class="insight"><strong>Why this matters:</strong> A tragic accident with severe consequences, raising concerns about road safety.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/traffic/ncdot-77-express-lanes-community-meetings-3-4-2026/275-60b6e2f0-b1bf-47df-8dd6-d4764cf1b313" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/crime/child-hit-killed-by-elderly-driver-hickory-north-carolina/275-d41f1889-2545-4b8b-9ce2-5abdf752c526" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
-            <h3>Man Accused of Knife Assault in Salisbury</h3><p class="desc">Eugene D. Nolen is jailed without bond after allegedly assaulting someone with a knife and preventing a girl from leaving a home.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights violent crime in the area and the importance of law enforcement in protecting vulnerable individuals.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/salisbury-knife-assault-arrest-3-4-2026/275-586ac0d4-9b7a-411c-a6ab-519a66374ddd" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Study Finds ChatGPT Health Often Errs</h3><p class="desc">A study reveals that ChatGPT Health often makes errors in medical urgency decisions, potentially endangering patients.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises concerns about the reliability of AI in healthcare and the need for human oversight in medical advice.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/connect-the-dots/ai-health-advice-connect-the-dots/275-00238327-4d6d-4ce8-a458-877c59c025dc" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Kyle Busch Settles Lawsuit with Pacific Life</h3><p class="desc">Kyle Busch settles a lawsuit with Pacific Life Insurance over an alleged retirement scheme; details of the settlement remain undisclosed.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on a legal dispute involving a public figure, though the lack of details limits its overall impact.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Bats Discovered Inside Lincoln County Hospital</h3><p class="desc">Bats were found inside a Lincoln County hospital, prompting health precautions.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the importance of public health measures and environmental safety in healthcare facilities.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/sports/motor/nascar/kyle-busch-settles-lawsuit-with-pacific-life-insurance/275-786af072-5ad9-4c6c-b303-7284f85c3ba3" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/health/bats-lincoln-county-hospital/275-1b950199-e574-4bb5-9500-f9200b1ebe1d" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
-            <h3>Rowan County Man Shot Himself to Avoid Court</h3><p class="desc">Jason Michael Wyatt Jr. was arrested after deputies say he shot himself to avoid a court date.</p>
-            <div class="insight"><strong>Why this matters:</strong> Illustrates the extreme measures some individuals take to evade legal consequences, raising questions about mental health.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
+            <h3>Silfab Solar Faces 'Total Stop' After Spill</h3><p class="desc">Silfab Solar in South Carolina faces a 'total stop' after a second chemical spill this week.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises concerns about environmental safety and the potential health risks associated with industrial accidents.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/rowan-county-nc-self-gunshot-court-3-4-2026/275-1b0397ac-c53e-4d44-be39-74ec55ac829f" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/silfab-solar-chemical-incident-fort-mill-school-closed/275-5e4c143b-73cc-461e-ae09-22fe1e4248c9" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
-            <h3>Man Sentenced for Meth Distribution, Linked to Cartel</h3><p class="desc">A South Carolina man was sentenced to nearly 13 years for distributing meth and was linked to the Sinaloa cartel.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the ongoing fight against drug trafficking and the involvement of international cartels in local communities.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/drug-trafficking-nc-sc-sinaloa-3-4-2026/275-b71feb74-ce1c-4cf8-aaee-99d6c3f7311d" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.0</span></div>
-            <h3>What to Do If Stuck on Train Tracks</h3><p class="desc">Following a Gastonia crash, police offer guidance on what to do immediately if stuck on train tracks, emphasizing safety.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides crucial safety information to prevent accidents at railroad crossings, potentially saving lives.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/gastonia/train-track-safety-gastonia-3-4-2026/275-cc99a76a-3e3e-4b40-9699-ef8c1af3eacd" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Gastonia Police Locate Missing Teen Using Real Time Crime Center</h3><p class="desc">Gastonia Police tout their Real Time Crime Center after a missing teen with unique needs was safely located within minutes.</p>
-            <div class="insight"><strong>Why this matters:</strong> Demonstrates the effectiveness of technology in law enforcement and its positive impact on community safety.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.7</span></div>
+            <h3>Pet Microchip Scan Station in Cabarrus County</h3><p class="desc">Cabarrus County installs a self-service pet microchip scan station outside the animal shelter.</p>
+            <div class="insight"><strong>Why this matters:</strong> A positive initiative to help reunite lost pets with their owners and reduce shelter overcrowding.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/news/local/gastonia/gastonia-real-time-crime-center-missing-teen-3-4-2026/275-42aea950-4621-417f-8508-2cc95458ecfa" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/cabarrus-county-self-service-pet-microchip-scan-station/275-517f343b-581a-4720-bd8a-de3397d53cab" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
-            <h3>Pedestrian Killed in Northwest Charlotte</h3><p class="desc">A pedestrian was hit and killed in northwest Charlotte, prompting CMPD to urge drivers to seek alternate routes.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the dangers pedestrians face and the importance of road safety awareness for both drivers and pedestrians.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.2</span></div>
+            <h3>Mooresville Employees Sue Town for Retaliation</h3><p class="desc">Three former Mooresville employees sue the town, alleging retaliation related to the mayor's Town Hall incident.</p>
+            <div class="insight"><strong>Why this matters:</strong> Concerns about transparency and accountability in local government.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/traffic/deadly-pedestrian-crash-northwest-charlotte-3-4-2026/275-56ec940e-7f39-4f6f-b011-a54122c0aa60" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Charlotte Mother Worried After School Threat</h3><p class="desc">A Charlotte mother expresses concern after a threat was made against her son's school; police say there is no further threat.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses the serious issue of school safety and the impact of threats on students, parents, and the community.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/education/ridge-road-middle-3-4-2026/275-57eb6343-bf76-4bd1-9708-9f3c5b1a5f31" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/lawsuit-suit-filed-by-mooresville-officials-town-hall-incident-in-october-2024/275-3ab27c5e-8e04-4e85-8720-c0f547306007" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
