@@ -1,88 +1,108 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-03-05 12:57 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Iran's military capabilities and regional conflicts (missile cities, Ukrainian interceptor drones, wartime leadership)</span><span class="cluster">#US political landscape and elections (Virginia redistricting, Texas primary, Labor Department scandal)</span><span class="cluster">#Economic challenges and consumer impact (Gulf shipping crisis, gas prices, Target's retail plan)</span><span class="cluster">#Healthcare and nutrition (RFK Jr.'s nutrition push, obesity drug coverage)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>The news landscape is dominated by geopolitical tensions, economic concerns, and domestic policy shifts. International conflicts and potential food price shocks are major worries. Simultaneously, there's focus on US political dynamics, healthcare, and retail strategies.</p><div class="divider"></div><p class="insight-text">Geopolitical instability and economic pressures are creating a volatile environment, demanding careful navigation by governments and businesses.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-03-05 02:50 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Donald Trump's activities and statements</span><span class="cluster">#Economic policies and financial updates</span><span class="cluster">#Environmental concerns and regulations</span><span class="cluster">#International relations and local incidents</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Today's news covers a range of topics, from environmental issues and political developments to economic trends and technological advancements. Several articles focus on Donald Trump's activities and statements, while others highlight international affairs and local incidents. Economic news includes updates on exports, financial policies, and government investments.</p><div class="divider"></div><p class="insight-text">The prominence of Donald Trump in multiple news items suggests his continued influence on current events.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>Icing and Snow Possible in Massachusetts</h3><p class="desc">Significant icing and plowable snow are possible in parts of Massachusetts Thursday night into Friday, according to weather maps.</p>
-            <div class="insight"><strong>Why this matters:</strong> Severe weather can disrupt travel and daily life, requiring preparedness and caution for residents in affected areas.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Jersey Aims to Be Top Bluefin Tuna Destination</h3><p class="desc">Jersey aims to become the premier location for bluefin tuna fishing, attracting anglers and boosting tourism.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights Jersey's efforts to promote sustainable tourism and capitalize on its natural resources.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE81NG5OZHFTQlpMaTRsdEtfZTBQNF9hQUM5X3M2Yy1ScGJSWERaQkw0UGxRQmE1SWdPaUZaRDRicXVEQzFSZ3cxMTFkWmVidXdHcWFTSHNHZlZ4bVJ3bm9sWF9QUGFaQXhiamQzUlhDMTNQakZCdWtBejBqUXg?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">jerseyeveningpost</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://jerseyeveningpost.com/news/2026/03/05/all-eyes-on-jersey-as-island-aims-to-be-the-best-place-to-catch-bluefin-tuna/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.8</span></div>
-            <h3>Pentagon Considers Ukrainian Drones Against Iran</h3><p class="desc">The Pentagon is exploring the possibility of providing Ukraine with interceptor drones to counter Iranian threats.</p>
-            <div class="insight"><strong>Why this matters:</strong> Escalating tensions between Ukraine, Iran, and the US could lead to further geopolitical instability.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
+            <h3>Bengaluru Man Arrested for Murdering Uncle</h3><p class="desc">A 22-year-old in Bengaluru was arrested for allegedly killing his uncle during a house dispute, attempting to disguise it as an accident.</p>
+            <div class="insight"><strong>Why this matters:</strong> Illustrates the tragic consequences of family disputes and the prevalence of violent crime.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE1xcGRnRi1lZGtqZlRiZlJlTUxWb2wtalVOZ2tqSm90NEpmYzBGZnRha2UyVmxHSURIYTgzc3N0RFFQRTlrUWd1MzA3SEFwTUJUSzZ4VUw5ZExKWDkzemN1OWQyZG5LMHRlSk1wdDJHU1I?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
-            <h3>Iran's 'Missile Cities' as Vulnerabilities</h3><p class="desc">Iran's underground missile cities, intended for defense, are now considered a major vulnerability.</p>
-            <div class="insight"><strong>Why this matters:</strong> Revealing the locations of these sites could invite preemptive strikes, increasing the risk of conflict.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">hindustantimes</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE5qR19tRFZjLXRRSlZtdXBfdW1LYzRmVVVzM3NPc0MwMHRla3lmSXYtS0R4cjBQSEI3aFQyM0RfenRNS0VmeWVtdkQ2NjhvWGVJRXM0cEt0U1JBV0ZybTlQTnVhVGRQQU9hVElNQkpfdXhmVzU2dGJWQi01UHg?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.hindustantimes.com/cities/bengaluru-news/bengaluru-man-held-for-killing-uncle-over-house-dispute-tried-to-pass-it-off-as-accidental-death-101772696677565.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
+            <h3>Trump Invests in Netflix Amid Media Company Maneuvering</h3><p class="desc">Donald Trump has reportedly increased his investment in Netflix bonds during Paramount's pursuit of Warner Bros. Discovery.</p>
+            <div class="insight"><strong>Why this matters:</strong> Shows Trump's continued involvement in financial markets and his investment strategies.</div>
+            <div class="card-footer">
+                <span class="source">mandatory</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.mandatory.com/news/1738880-donald-trump-netflix-debt-paramount-warner-bros-deal" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.0</span></div>
+            <h3>Army Supports Kebbi Forest Guards with Equipment</h3><p class="desc">The Nigerian Army provided 170 forest guards in Kebbi with motorcycles, kits, and other essential logistics.</p>
+            <div class="insight"><strong>Why this matters:</strong> Demonstrates the army's commitment to supporting local efforts in protecting forests and combating deforestation.</div>
+            <div class="card-footer">
+                <span class="source">leadership</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://leadership.ng/army-presents-kits-motorcycles-to-170-kebbi-forest-guards/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
+            <h3>Nigeria Approves Funds to Boost Engineering in Universities</h3><p class="desc">The Nigerian government has allocated 48 billion Naira to enhance engineering and technology programs in 12 universities.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights government investment in education and technology to drive economic growth.</div>
+            <div class="card-footer">
+                <span class="source">leadership</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://leadership.ng/federal-govt-approves-n48bn-to-boost-engineering-technology-in-varsities/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>RFK Jr. Advocates for Nutrition Education in Medical Schools</h3><p class="desc">RFK Jr. is urging medical schools to increase their focus on nutrition education for future doctors.</p>
-            <div class="insight"><strong>Why this matters:</strong> Better nutrition knowledge for doctors could improve preventative care and public health outcomes.</div>
+            <h3>The Japan News Weekly Edition Available</h3><p class="desc">The weekly ePaper from The Japan News is now available, featuring noteworthy recent topics in an accessible format.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides access to curated news content and insights on Japanese affairs.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">japannewsyomiuri</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxOUzNQNmR2RGdoU2hNQ0xlSTU4SzBKMkkwS2ItbF9wWFhLc1B1MDBhRmNRazJKcThqNlJfYjA4aC1JRjYxUElxX1B5NUdnc3k1Vk5SbUt2bFAwUmFqU0NmeWxYeUpZS3F2OHVjNmZjb1AzQThuaWhOUWNYaDVaWVI5Z05YNkQyZ2dyVUF1MWV5SlVMVUYxMlZxZm53cHdtRjEw?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://japannews.yomiuri.co.jp/original/weekly/20260305-314727/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Virginia Court Approves Redistricting Referendum</h3><p class="desc">A Virginia court has allowed a referendum on Democratic-led redistricting, potentially flipping 4 US House seats.</p>
-            <div class="insight"><strong>Why this matters:</strong> Redistricting outcomes can significantly impact the balance of power in the US House of Representatives.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Romania to Sell Mangalia Shipyards</h3><p class="desc">Romania plans to sell Damen Shipyards Mangalia, with Rheinmetall expressing interest in potential cooperation.</p>
+            <div class="insight"><strong>Why this matters:</strong> Indicates potential shifts in the shipbuilding industry and foreign investment opportunities in Romania.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">romania_insider</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPOGVEa1ZYRm1mUm5tUVZDV3diYjgwWktROWpIM0Q2Tm5WeHYyUnVNRE5zOXNCZTFVMzN5VkxEcXBDWFJUbjVaYXB5U0lmSXdHdjBselZvNWw2dkcwdzBPdmJGMktrZFFOQ2F0T0JYTzNqaHJSRl80QXdGeFQxbmxWenJGMG9YTjR2UGZrOEo2YjZrOUlEeTBjMHFFQjRUU295YzV1TlBYMnZYXzNfZUlGNjc2YzgwRkxkaFE?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.romania-insider.com/mangalia-shipyards-sale-march-2026" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>Labor Department Scandal Sidelines Aide</h3><p class="desc">An investigation into a Labor Department scandal has led to another aide of Chavez-DeRemer being sidelined.</p>
-            <div class="insight"><strong>Why this matters:</strong> Scandals within government departments can erode public trust and impact policy implementation.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Malawi Cracks Down on Illegal Plastics Traders</h3><p class="desc">The Malawi Environment Protection Authority (Mepa) launched a crackdown on companies involved in the illegal manufacture and sale of banned plastics.</p>
+            <div class="insight"><strong>Why this matters:</strong> Shows efforts to enforce environmental regulations and combat plastic pollution.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">times_mw</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNVDRIMjBoNzZVcFZHR1Rxc2ZwRXB4cnRJTGkyMENCcGhCZS0tekdUU2JfQW11LU5EdWUxQ01VeHdrUDdtdk1kdHZVZm1QbE1Id2hyd0dvMkhCQ3ZoLU1ESUtDR25mMmZiR3FUMDloUENvcFlKOFVaRjExdnB2bnQ1Q3hFY2dhSFYxbThPeGNRVXgzMlk1dzM3V09EU3k?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://times.mw/mepa-cracks-down-on-thin-plastics-traders/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
-            <h3>James Talarico Sees 'New Politics' After Texas Win</h3><p class="desc">James Talarico claims 'new politics is being born' following his primary win in Texas.</p>
-            <div class="insight"><strong>Why this matters:</strong> Primary wins can signal shifts in political sentiment and emerging trends within parties.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.2</span></div>
+            <h3>Malaysia Maintains OPR at 2.75 Percent</h3><p class="desc">Bank Negara Malaysia holds the Overnight Policy Rate (OPR) steady at 2.75% to support economic growth amid global uncertainties.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects the central bank's strategy to balance economic growth and stability.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE0wM2pCWUc2T2g1Z2FvXzEycFdqZ2hjclNKN29iUkMxUVFndUJvYXdkQWhoeTJzcHdnNlBhaTFjWTB6TFAwX002dk8xNUNMcWZQVVJPelpQR3JBV1REWWFSVHBZQmhuTVBnMlF3V0lEVWVJOF9KdTdRWDhsVWhaNFE?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Cleric Joins Iran's Wartime Leadership</h3><p class="desc">Hardline cleric Arafi joins wartime leadership as Iran juggles conflict and succession planning.</p>
-            <div class="insight"><strong>Why this matters:</strong> Changes in leadership during conflict can indicate shifts in strategy and power dynamics.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">thesun_my</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxQenpZSnZlV09fT1dNbkNuYVFvQzQ3SE80c3NKTU11Nmk1QVlXN0hLT2R3TGF3QlZ2WW5SQW1nV3dhQWJwXzhreDJRVlBiM01UYlhXUW5QblNBdVNqNDdxYnUydlRtbGU3T1F2Si1iZkJaOW9qRUxBU3ZKZkw3cEV4Tkt6MjlMMGJFWDBoR0g1NDV6M0p2SnNTNWl2R21acnJ6MzM2TTFqUk9tSXl2MUFWbHVxdzQ5a0diLWU4eG00TFZJYW9hdlJpaEZMc2NmQQ?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://thesun.my/news/bnm-keeps-opr-steady-at-2-75-percent/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>Trump Seeks Kurdish Aid Against Iran</h3><p class="desc">Trump calls on Kurds to aid U.S. effort in Iran, offering support in return.</p>
-            <div class="insight"><strong>Why this matters:</strong> Seeking alliances with non-state actors can complicate international relations and regional stability.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
+            <h3>Pakistan's Service Exports Surge</h3><p class="desc">Pakistan's service exports reach $5.66 billion, driven by significant growth in the IT sector in FY26.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the growing importance of the IT sector in Pakistan's economy.</div>
+            <div class="card-footer">
+                <span class="source">phoneworld_pk</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.phoneworld.com.pk/pakistan-services-exports-hit-5-66-billion-as-it-sector-powers-record-growth-in-fy26/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.0</span></div>
+            <h3>Trump Seeks Kurdish Aid in Iran Effort</h3><p class="desc">Trump calls on Kurds to aid U.S. effort in Iran, offers support.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects Trump's continued interest in foreign policy and potential alliances.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -90,62 +110,42 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.9</span></div>
-            <h3>The President's Sole War Decision Power</h3><p class="desc">An analysis of how the decision to start a war has become increasingly concentrated in the hands of the President.</p>
-            <div class="insight"><strong>Why this matters:</strong> The concentration of war powers raises concerns about checks and balances and potential for unilateral action.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxPS3UwWngyTnVZV3BRQm1peHhtVksxMVlQdDlwSTVYcGU0M2pHZldUTlJaaTZhS2Z1T1VYRV8wbDlTN3BuVDN0SzJjdklRR0NFdEU4Tkd2UlJzWWJGZklhaUJZd3hJZkNXM0JuZldjWE53UHBjSUxpMDg4eU9ucTJHNGxqekJadk1HeW5FOW93?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Gulf Shipping Crisis Threatens Food Prices</h3><p class="desc">The Gulf shipping crisis is creating a 'big burden for farmers' and threatens a potential food price shock.</p>
-            <div class="insight"><strong>Why this matters:</strong> Disruptions to global shipping lanes can have significant consequences for food security and affordability.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.5</span></div>
+            <h3>Trump's TikTok Deal Benefited Allies</h3><p class="desc">Lawsuit alleges Trump's TikTok deal benefited firms that 'personally enriched' him.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises questions about potential conflicts of interest during Trump's presidency.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNeVN5QjVrcDd4WjBoN2didlNOY1lacHktZzZjb280VUJ1NzA4ZjVLYnpTckNNRHVvWWFJbV9tZ25kUEZEOFNrWGdXSE42UTgyT3JpRldZaHl1TnlnOXhLdG9sNDZra1IySjBqcXpueHJCVzMyTklER2NHdFU0aEkyaWEtbVhucWtubkFPczRUZ0x5Wkp4clc5SFFDWGdPQy1BSnVISFUzT2NhMWhMTHNJZlpEZjB1VlZialQ4?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxNTWlpSEl5S2tiRUNJM3otQkZTa3pBckc2WHg1OFY5a19QZGlvZ0VsbFk2d3A4NzJ3NS1OSk51V0h5SlVvbTkwRDZyLWtGeTZlQl9qZjExWFVNTml1QVhnV09zYUFZaVkwLU12RFNZUEtiQVhUYl9mand0bFZFNWI1N3FQN0FVaXJ6S1E3aVBERUdkMUZFVXFtY1VmQmVfQkNwbENELUhB?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>Paramount & WBD Open For Business After Deal</h3><p class="desc">ITV Studios indicates that Paramount & WBD are open for business following an agreed deal.</p>
-            <div class="insight"><strong>Why this matters:</strong> Deal agreements can stabilize business operations and open new opportunities for media companies.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQNndobXBOamdxTHBTcFJyNnNGSjZKbHE1Z1JCWTNTYk1ZMEZYRXZSeDJZeHFHYlI0Y205S3NINmVGYV9aR3VKbFBWckthcGgtNEVfaEtsQXRuOExpLXZJeXhOb1E3MWtPV1QzaVlydzVBMmtSaHpHZHFyaWxoZjJKeUVfSHd6Mk5WT0UxanFnUFVyU0c4YW4tNy0wNlVUaVh0OXc?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.7</span></div>
-            <h3>Susie Wiles Warns About Rising Gas Prices</h3><p class="desc">Susie Wiles sounds the alarm regarding the potential impact of rising gas prices on consumers.</p>
-            <div class="insight"><strong>Why this matters:</strong> Rising gas prices can affect household budgets and contribute to inflationary pressures.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
+            <h3>Trump Ballroom Vote Delayed After Criticism</h3><p class="desc">Vote on Trump ballroom plans pushed to April after critics blast 'hideous,' 'appalling,' 'shameful' design.</p>
+            <div class="insight"><strong>Why this matters:</strong> Illustrates public opposition to Trump's development projects.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxQX3RoUHJTOUhrOGNDdVdUVE5ycWY5Q1ljdkx2Zlhvcnp5Z3ZINjNUNkhPd2h0TXpnSVhHMWdtOW5PSXhvdkxKcjJxYldHaV9UaVhOZXpHdkY4Nm8wV1h6QUFhTVFyZjZseE1IaTFtc29BcmpHV3NSOGc1dHJIZnREM2FpUEIwcWc?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNVWxfTnJCcmtVQXUzbHdGZ1JBMFk3RjA2Q09Rd3F3NTRWMG5XWlc4OUxsVGswLW0xdE5tLWRONWE5NzVpZ3Q3TWZyMFBZRzFyejZDNDNQaU55eGxfZHdFQmdvUWxvTkVFNnhjeFl5MUFic0RaV3lnNFFwR1VyNnE5aS1sT18wcVBJRldiUk9HWXNFWGMxelRmcmlhN0xjRjVlR2Q5WDF4ZkY4ZWRMaWR3eTJkWndsMDZLd3Q0?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.3</span></div>
-            <h3>Eli Lilly Boosts Obesity Drug Coverage</h3><p class="desc">Eli Lilly launches a program to help boost employer coverage of obesity drugs in the U.S.</p>
-            <div class="insight"><strong>Why this matters:</strong> Increased access to obesity drugs could improve health outcomes for individuals struggling with weight management.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.2</span></div>
+            <h3>Texas Lawmaker Admits Affair</h3><p class="desc">Texas lawmaker admits 'lapse in judgement' in affair with aide.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights ethical concerns and potential consequences for political figures.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFBDcUVyTl9weVFsbkxGRHQ1S0kwclNIWTBrNVRfUkJzTTlfWlhlemQzblpDRGFXOFpLVVp1UmdsaFAwaGdvNS1wVzV6dHBzM25KSVEwTFl5ZFVnZw?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.8</span></div>
+            <h3>Trump Wants Involvement in Picking Iran's Leader</h3><p class="desc">Trump says he must be involved in picking Iran's next leader.</p>
+            <div class="insight"><strong>Why this matters:</strong> Shows Trump's continued interest in influencing international affairs.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxNNXhMV2QxSDl0MG50Z0ppUG1yek1WaGVUR0lOd1k3aG92UnFMU2gyeHg1WjcyN3c4ZnJWLWFjVFY3bTZtSGpuSGx4NFFJMk5lcDlRMlR2aTFWSlMtLVEyaGJiclBQMW9mbTlMV090ejZselg4UGd0TldPLUNsSHQ0TWZ2Wm54UDVfejlUbnpqUTBBNnNLakJRWGZvVjdNRS1XRjdPZ1NaUVYxZFHSAbABQVVfeXFMTWlRb0VpNWVtNkRjWXF0YUNvQ2xGeXF0aXBIdDkwOHVuTE5PMHJCZExDazE4eHRQVkJXdmFEdEprMGFPUE5hdGIyT2Y4Skw5RjhxeFBxMm1xYU5xQ2VUUkhiWTM3NTNEYjRHU3B1SUREVTVheTctaUhjRWdQUXBaNmFHWXlYdGZvYU44ZHlWOXBUR3VaMDVUWGFkc2tpcjJ0U0ZaWUxsN3VLNG9jb1pEUlQ?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Target's Retail Experience Plan</h3><p class="desc">Target is planning to create 'the most delightful experience in retail' through various strategies.</p>
-            <div class="insight"><strong>Why this matters:</strong> Retail innovation can enhance customer satisfaction and drive business growth in a competitive market.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZGlNYjRmb0RQNTAwVU8weWs1YjNLU1JHYzI1OFhyTGl0bmh6MTlPdUc0bmhSLXlpWUVvbkZ1TWxPNHBFNVczV1VLdEp1eHZ0Nm5NZFRSZWtpQndLc2c0RGFrVU84OGtxazl5X3B3VVVZVmRyTGJOOER6Z0tGS0llM0NmTGdtb09GMmcyYnFiQUNQU1NpOWpPWHRpdHpNTjJVeGsxRW9FTmdfQlRzdG0xQmR3MDlwN0pCUmNz?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE5QNGgxOHhkbTFZN0VVZ1d2S1piQkVuandjWUwtaWFTeDl4ZkZIUTZfU3hBUnpTUmpEbjZESFNvSEpCV0FFVWxOWlRDZjZQeWRYdUkzaFhqSll4UmpjcjlPdGdQYm1RZkktRjdJ?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
