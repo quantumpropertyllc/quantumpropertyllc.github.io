@@ -1,18 +1,78 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-03-27 10:08 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#伊朗冲突与全球能源</span><span class="cluster">#经济不稳定与资金筹措</span><span class="cluster">#技术更新和娱乐</span></div></div></div><div class="brief"><h2>今日简报</h2><p>当前的新闻格局在很大程度上受到地缘政治紧张局势的影响，特别是有关伊朗及其对全球能源市场的影响。经济焦虑也很突出，围绕市场波动、资金关闭和潜在的基础设施影响进行了讨论。技术进步和娱乐更新为新闻周期提供了对比鲜明、轻松的一面。</p><div class="divider"></div><p class="insight-text">地缘政治不稳定和经济不确定性正在给多个行业带来不稳定的环境。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-03-27 12:45 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#政治紧张局势和国际关系（伊朗、美国、日本）</span><span class="cluster">#金融市场趋势和经济指标（沙特阿拉伯、美国股市）</span><span class="cluster">#法律诉讼和犯罪报告（袭击案件、虐待儿童）</span><span class="cluster">#娱乐和社交媒体争议（《哈利·波特》、《UK07 Rider》）</span></div></div></div><div class="brief"><h2>今日简报</h2><p>今天的新闻涵盖广泛的主题，从法律诉讼和国际关系到金融市场和娱乐更新。有几篇文章重点关注国内和国际的政治紧张局势和政府行为。此外，还有商业、体育和社交媒体争议的最新动态，反映了复杂且相互关联的全球格局。</p><div class="divider"></div><p class="insight-text">政治不稳定和经济波动的交织凸显了当前全球秩序的脆弱性。</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>油价飙升至 100 美元以上，道琼斯指数下跌</h3><p class="desc">在油价上涨的情况下，实时更新市场表现，包括道指、标准普尔 500 指数和纳斯达克指数。</p>
-            <div class="insight"><strong>深度见解:</strong> 油价上涨可能进一步影响通胀和消费者支出，从而影响整体经济稳定。</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.5</span></div>
+            <h3>凯尔西·菲茨西蒙斯在袭击案中被判无罪</h3><p class="desc">北安多弗警官凯尔西·菲茨西蒙斯（Kelsey Fitzsimmons）在法庭审判后被判使用危险武器袭击罪名不成立。</p>
+            <div class="insight"><strong>深度见解:</strong> 执法官员的法律结果始终受到社区的密切关注，并可能影响公众的信任。</div>
+            <div class="card-footer">
+                <span class="source">bostoncbslocal</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.cbsnews.com/boston/video/kelsey-fitzsimmons-found-not-guilty-of-assault-after-bench-trial/" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>日本将入籍居住要求提高一倍</h3><p class="desc">日本从 4 月开始将入籍最低居住期限提高至 10 年。</p>
+            <div class="insight"><strong>深度见解:</strong> 这一政策变化将显着影响日本的移民前景和人口趋势。</div>
+            <div class="card-footer">
+                <span class="source">kyodonews</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://english.kyodonews.net/articles/-/73089" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
+            <h3>男子因虐待儿童材料面临严重指控</h3><p class="desc">新南威尔士州警方透露，一名男子因虐待儿童材料和兽交图片而面临严重指控。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调了正在进行的打击网络儿童剥削的斗争以及此类犯罪的严重性。</div>
+            <div class="card-footer">
+                <span class="source">blayneychronicle</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.blayneychronicle.com.au/story/9208970/tullamore-man-54-charged-with-child-abuse-material-offences/?src=rss" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>特朗普赞扬莫迪总理，强调双边合作</h3><p class="desc">唐纳德·特朗普赞扬莫迪总理，称他们是“两个把事情做好的人”，并分享了一张照片。</p>
+            <div class="insight"><strong>深度见解:</strong> 表明尽管领导层发生了变化，美国和印度之间仍保持着积极的关系。</div>
+            <div class="card-footer">
+                <span class="source">etnownews</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
+                <a href="https://www.etnownews.com/news/two-people-that-get-things-done-donald-trump-praises-pm-modi-shares-picture-full-statement-article-153933267" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>UK07 骑手的妻子在争议中为姻亲辩护</h3><p class="desc">Ritika Chauhan 在针对 UK07 车手 Anurag Dobhal 的指控中为她的姻亲辩护。</p>
+            <div class="insight"><strong>深度见解:</strong> 深入了解社交媒体争议对个人和家庭的个人影响。</div>
+            <div class="card-footer">
+                <span class="source">news18</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.news18.com/movies/television/uk07-rider-anurag-dobhals-wife-ritika-defends-her-in-laws-amid-allegations-none-of-us-deserves-this-9999684.html" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
+            <h3>2025年沙特阿拉伯储备资产将激增5.3%</h3><p class="desc">沙特阿拉伯金融管理局 (SAMA) 报告称，储备资产增长 5.3%，到 2025 年底达到 4,610 亿美元。</p>
+            <div class="insight"><strong>深度见解:</strong> 反映了沙特阿拉伯在全球市场上的金融稳定和经济增长。</div>
+            <div class="card-footer">
+                <span class="source">zawya</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
+                <a href="https://www.zawya.com/en/economy/gcc/saudi-samas-reserve-assets-surge-53-to-461bln-by-end-of-2025-aqruxz7r" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>道琼斯指数下跌，油价飙升至 100 美元以上 - 市场动态</h3><p class="desc">实时更新市场趋势，包括道琼斯工业平均指数下跌和油价上涨。</p>
+            <div class="insight"><strong>深度见解:</strong> 提供有关当前经济状况以及对投资者和消费者的潜在影响的见解。</div>
             <div class="card-footer">
                 <span class="source">The Wall Street Journal</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
                 <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-03-26-2026" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>以色列击毙伊朗指挥官 霍尔木兹海峡恐封锁</h3><p class="desc">以色列报告称，一名参与可能封锁霍尔木兹海峡的伊朗关键指挥官被杀，紧张局势升级。</p>
-            <div class="insight"><strong>深度见解:</strong> 这可能导致全球石油供应严重中断并加剧地缘政治不稳定。</div>
+            <h3>以色列声称在紧张局势中杀死了伊朗主要指挥官</h3><p class="desc">以色列报告称，一名参与霍尔木兹海峡封锁的伊朗重要指挥官被杀，导致地区紧张局势升级。</p>
+            <div class="insight"><strong>深度见解:</strong> 加剧了人们对中东潜在冲突和不稳定的担忧。</div>
             <div class="card-footer">
                 <span class="source">CNN</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
@@ -21,8 +81,8 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>《极限竞速：地平线 6》PC 规格和兼容性已确认</h3><p class="desc">《极限竞速：地平线 6》的详细信息已公布，包括 PC 规格、光线追踪功能和 ROG Xbox Ally 兼容性。</p>
-            <div class="insight"><strong>深度见解:</strong> 为游戏玩家提供有关即将推出的游戏的性能和兼容性的信息。</div>
+            <h3>Forza Horizo​​n 6 PC 规格和兼容性详细信息</h3><p class="desc">《极限竞速：地平线 6》PC 规格、光线追踪功能和 ROG Xbox Ally 兼容性的详细信息已公布。</p>
+            <div class="insight"><strong>深度见解:</strong> 为对即将发布的版本及其技术要求感兴趣的游戏玩家提供信息。</div>
             <div class="card-footer">
                 <span class="source">Pure Xbox</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
@@ -30,9 +90,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>国土安全部在资金僵局中陷入绝望</h3><p class="desc">一位共和党参议员对资金僵局影响国土安全部表示沮丧。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调政治僵局及其对政府基本职能的影响。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
+            <h3>国土安全部资金僵局导致国会山绝望</h3><p class="desc">一位共和党参议员对影响国土安全部的持续资金僵局表示沮丧。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调政治僵局及其对政府运作和员工士气的影响。</div>
             <div class="card-footer">
                 <span class="source">Politico</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
@@ -40,9 +100,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
             <h3>NCAA 锦标赛甜蜜 16 强选秀和预测</h3><p class="desc">2026 年 NCAA 锦标赛甜蜜 16 场比赛的分析和投注卡。</p>
-            <div class="insight"><strong>深度见解:</strong> 为体育迷提供对即将到来的篮球比赛的见解和预测。</div>
+            <div class="insight"><strong>深度见解:</strong> 为 NCAA 锦标赛后的体育爱好者和博彩玩家提供见解和预测。</div>
             <div class="card-footer">
                 <span class="source">The Action Network</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
@@ -50,9 +110,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>特朗普敦促伊朗“认真对待”谈判</h3><p class="desc">特朗普建议伊朗在暂停能源打击行动结束之前认真参与谈判。</p>
-            <div class="insight"><strong>深度见解:</strong> 表明紧张局势持续存在，如果谈判失败，则有可能重新爆发冲突。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.7</span></div>
+            <h3>特朗普敦促伊朗“认真对待”谈判</h3><p class="desc">特朗普告诉伊朗在谈判中“认真对待”，“以免为时已晚”，因为他对能源打击的暂停已接近尾声。</p>
+            <div class="insight"><strong>深度见解:</strong> 表明如果谈判未能取得进展，紧张局势可能会升级。</div>
             <div class="card-footer">
                 <span class="source">Axios</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
@@ -60,9 +120,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>HBO 的《哈利·波特》预告片随圣诞首映首映</h3><p class="desc">HBO 新版《哈利·波特》改编版的首部预告片发布，透露了 2026 年圣诞节的首映日期。</p>
-            <div class="insight"><strong>深度见解:</strong> 备受期待的热门图书系列改编作品令人兴奋不已。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>HBO 的《哈利·波特》预告片公布演员阵容，圣诞首映</h3><p class="desc">HBO 新版《哈利·波特》改编版的首个片段曝光，首映日期为 2026 年圣诞节。</p>
+            <div class="insight"><strong>深度见解:</strong> 让粉丝们对即将推出的系列及其对系列的潜在影响感到兴奋。</div>
             <div class="card-footer">
                 <span class="source">Hollywood Reporter</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
@@ -70,9 +130,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>资金关闭导致工资拖欠和机场延误</h3><p class="desc">持续的资金关闭影响了旅行、工资，并引发了人们对机场可能关闭的担忧。</p>
-            <div class="insight"><strong>深度见解:</strong> 说明政治僵局对公共服务和雇员的现实后果。</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.3</span></div>
+            <h3>资金关闭扰乱了旅行、工资和机场运营</h3><p class="desc">国会面临越来越大的压力，要求结束国土安全部的资金关闭，导致旅行中断和工资被拖欠。</p>
+            <div class="insight"><strong>深度见解:</strong> 说明政治僵局对基本服务和公共安全的现实后果。</div>
             <div class="card-footer">
                 <span class="source">Associated Press</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
@@ -80,72 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>比尔·马赫荣获马克·吐温幽默奖</h3><p class="desc">经常批评总统的喜剧演员比尔·马赫将被授予马克·吐温幽默奖。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调讽刺和言论自由在政治话语中的重要性。</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.7</span></div>
+            <h3>比尔·马赫荣获马克·吐温幽默奖</h3><p class="desc">喜剧演员比尔·马赫将获得马克·吐温幽默奖，尽管白宫过去对此予以否认。</p>
+            <div class="insight"><strong>深度见解:</strong> 认可马赫对喜剧和讽刺的贡献，尽管他经常批评政治人物。</div>
             <div class="card-footer">
                 <span class="source">Politico</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
                 <a href="https://www.politico.com/news/2026/03/26/bill-maher-kennedy-center-mark-twain-humor-prize-00845852" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>三星为 Galaxy S24 开放 One UI 8.5 Beta 计划</h3><p class="desc">三星推出适用于 Galaxy S24、S24+ 和 S24 Ultra 设备的 One UI 8.5 beta 计划。</p>
-            <div class="insight"><strong>深度见解:</strong> 允许用户测试三星设备的最新软件更新并提供反馈。</div>
-            <div class="card-footer">
-                <span class="source">SamMobile</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://www.sammobile.com/news/samsung-opens-one-ui-8-5-beta-program-for-galaxy-s24/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>特朗普对海上风电的攻击威胁到基础设施支出</h3><p class="desc">特朗普总统反对海上风电项目可能会对商业信心和基础设施支出产生负面影响。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调政治干预可再生能源项目的潜在经济后果。</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.npr.org/2026/03/26/nx-s1-5760979/trump-offshore-wind-climate-change-energy" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>华尔街奖金富矿</h3><p class="desc">纽约州审计长对金融领域的潜在风险发出警告。</p>
-            <div class="insight"><strong>深度见解:</strong> 表明金融行业存在潜在的不稳定因素，需要保持警惕。</div>
-            <div class="card-footer">
-                <span class="source">Axios</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.axios.com/2026/03/26/wall-street-bonuses-pay" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>亚洲为伊朗战争中的能源危机做好准备</h3><p class="desc">由于美国和伊朗之间持续的冲突，亚洲各国政府正在为严重的能源供应中断做好准备。</p>
-            <div class="insight"><strong>深度见解:</strong> 展示地缘政治紧张局势对能源安全的全球影响。</div>
-            <div class="card-footer">
-                <span class="source">Bloomberg</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.bloomberg.com/news/articles/2026-03-25/asia-braces-for-worst-case-energy-scenarios-as-iran-war-drags-on" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>iOS 26.4 更新：立即更新警告</h3><p class="desc">Apple 发布 iOS 26.4，并警告立即更新，因为存在 37 个安全修复程序。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调及时软件更新对于安全和设备性能的重要性。</div>
-            <div class="card-footer">
-                <span class="source">Forbes</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://www.forbes.com/sites/kateoflahertyuk/2026/03/26/ios-264-update-now-warning-issued-to-all-iphone-users/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>梅拉尼娅·特朗普在活动中与机器人分享焦点</h3><p class="desc">梅拉尼娅·特朗普在白宫举行的教育和技术峰会上展示了一个机器人。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调技术在教育和公共活动中日益重要的作用。</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.npr.org/2026/03/26/nx-s1-5761898/melania-trump-robot-education-technology-ai" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div></body></html>
