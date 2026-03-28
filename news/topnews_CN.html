@@ -1,48 +1,118 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-03-27 09:28 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#NCAA 锦标赛甜蜜 16 名结果</span><span class="cluster">#美伊冲突升级</span><span class="cluster">#名人新闻和活动</span><span class="cluster">#科技行业创新和监管</span></div></div></div><div class="brief"><h2>今日简报</h2><p>2026 年 3 月 28 日的新闻格局多元化，涵盖体育、政治、娱乐和商业。重要事件包括 NCAA 锦标赛、美国和伊朗之间不断升级的紧张局势以及科技行业的发展。娱乐界看到名人订婚和真人秀电视剧的最新动态。</p><div class="divider"></div><p class="insight-text">政治紧张局势和技术进步是影响当前事件的主要驱动因素。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-03-28 06:26 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#伊朗谈判和特朗普的行动</span><span class="cluster">#特朗普政府的政策与争议</span><span class="cluster">#娱乐与流行文化</span><span class="cluster">#法律诉讼和犯罪</span></div></div></div><div class="brief"><h2>今日简报</h2><p>新闻格局主要是围绕伊朗的政治紧张局势，无论是国内特朗普的行动还是国际上谈判陷入僵局。经济问题也存在，这反映在股市波动和伊朗局势可能造成的经济影响上。其他值得注意的领域包括法律诉讼、体育新闻和娱乐新闻。</p><div class="divider"></div><p class="insight-text">政治、经济和社会问题的交汇创造了复杂且不确定的环境。</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>NCAA 锦标赛 Sweet 16 实时更新</h3><p class="desc">周四直播 2026 年 NCAA 锦标赛甜蜜 16 场比赛。</p>
-            <div class="insight"><strong>深度见解:</strong> NCAA 锦标赛是一项具有重大文化和经济影响的重大体育赛事。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>由于伊朗谈判的不确定性，股票期货上涨</h3><p class="desc">尽管人们持续担心油价上涨和国债收益率影响股市，但股票期货仍上涨。</p>
+            <div class="insight"><strong>深度见解:</strong> 市场波动反映了投资者对地缘政治紧张局势和经济指标的焦虑。</div>
             <div class="card-footer">
-                <span class="source">CBS Sports</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.cbssports.com/college-basketball/news/march-madness-2026-sweet-16-live-updates-scores-bracket-thursday/live/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
-            <h3>普渡大学击败德克萨斯大学，晋级甜蜜 16 强</h3><p class="desc">特雷·考夫曼-雷恩 (Trey Kaufman-Renn) 最后的投篮帮助普渡大学在甜蜜 16 强赛中以 79-77 战胜德克萨斯大学。</p>
-            <div class="insight"><strong>深度见解:</strong> NCAA 锦标赛中势均力敌的比赛会引起兴奋和全国关注。</div>
-            <div class="card-footer">
-                <span class="source">ESPN</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://www.espn.com/mens-college-basketball/story/_/id/48317344/trey-kaufman-renn-bucket-gives-purdue-win-texas" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
-            <h3>特朗普考虑升级与伊朗的冲突</h3><p class="desc">在外交陷入停滞的情况下，特朗普总统正在权衡升级对伊朗战争的选择。</p>
-            <div class="insight"><strong>深度见解:</strong> 升级可能导致重大人员伤亡并破坏中东稳定。</div>
-            <div class="card-footer">
-                <span class="source">CNN</span>
+                <span class="source">CNBC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.cnn.com/2026/03/26/politics/trump-iran-kharg-war-military" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.cnbc.com/2026/03/26/stock-market-today-live-updates.html" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.8</span></div>
+            <h3>参议院资助国土安全部，不包括 ICE/边境巡逻队，结束关闭</h3><p class="desc">参议院结束了国土安全部为期 40 天的关闭，但取消了为移民执法提供资金，凸显了政治分歧。</p>
+            <div class="insight"><strong>深度见解:</strong> 妥协可以避免政府关闭，但也凸显了移民政策上的深刻分歧。</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.nbcnews.com/politics/congress/senate-agrees-fund-dhs-ice-border-patrol-bid-shutdown-tsa-pay-delays-rcna265108" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.2</span></div>
+            <h3>法官阻止五角大楼对人类的禁令</h3><p class="desc">一名法官暂时中止了五角大楼对 Anthropic 的禁令，理由是供应链风险指定可能造成危害。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调了政府对科技公司的限制所面临的法律挑战。</div>
+            <div class="card-footer">
+                <span class="source">Axios</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.axios.com/2026/03/26/judge-temporarily-blocks-pentagon-ban-anthropic" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>疯狂三月甜蜜 16：实时更新和亮点</h3><p class="desc">报道 2026 年 NCAA 男子篮球锦标赛 I 组甜蜜十六强赛，包括精彩集锦和新闻。</p>
+            <div class="insight"><strong>深度见解:</strong> 提供重大体育赛事的实时更新。</div>
+            <div class="card-footer">
+                <span class="source">Heat.com</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
+                <a href="https://www.nba.com/news/live-updates-march-madness-sweet-16-purdue-vs-texas-opens-the-night" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.8</span></div>
+            <h3>2027 英菲尼迪 QX65 揭晓：时尚 SUV 选择</h3><p class="desc">2027 款英菲尼迪 QX65 亮相，这是一款采用溜背式设计的新型豪华跨界车。</p>
+            <div class="insight"><strong>深度见解:</strong> 展示最新的汽车设计和技术。</div>
+            <div class="card-footer">
+                <span class="source">Motor1 </span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.motor1.com/news/791252/2027-infiniti-qx65-specs-price-powertrain-details/" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>泰勒·斯威夫特 (Taylor Swift) 和特拉维斯·凯尔斯 (Travis Kelce) 订婚后首次亮相颁奖典礼</h3><p class="desc">泰勒·斯威夫特 (Taylor Swift) 和特拉维斯·凯尔斯 (Travis Kelce) 在 iHeartRadio 音乐奖订婚后首次公开露面。</p>
-            <div class="insight"><strong>深度见解:</strong> 名人的参与引起了广泛的公众兴趣和媒体报道。</div>
+            <h3>特朗普签名将出现在美元上</h3><p class="desc">特朗普的签名将出现在美元上，这对于在任总统来说尚属首次。</p>
+            <div class="insight"><strong>深度见解:</strong> 象征性行为反映了总统对国家机构的影响力。</div>
             <div class="card-footer">
-                <span class="source">InStyle</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://www.instyle.com/taylor-swift-travis-kelce-iheartradio-music-awards-2026-first-appearance-post-engagement-11935576" class="btn-link" target="_blank">阅读全文 →</a>
+                <span class="source">Al Jazeera English</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.aljazeera.com/economy/2026/3/27/trumps-signature-to-appear-on-us-currency-in-first-for-sitting-president" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>真人秀明星与前男友勾搭后送花</h3><p class="desc">杰西·德雷珀 (Jessi Draper) 在与米兰达·霍普 (Miranda Hope) 交往后给米兰达·霍普 (Miranda Hope) 送花。</p>
-            <div class="insight"><strong>深度见解:</strong> 真人秀电视剧经常吸引公众关注并引发社交媒体讨论。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
+            <h3>国会陷入僵局，特朗普下令向运输安全管理局官员支付工资</h3><p class="desc">特朗普总统援引紧急权力，确保运输安全管理局官员在国会陷入僵局期间获得报酬。</p>
+            <div class="insight"><strong>深度见解:</strong> 凸显行政权力和政治僵局。</div>
+            <div class="card-footer">
+                <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.washingtonpost.com/politics/2026/03/26/trump-tsa-unilateral-payment/" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
+            <h3>众议院道德委员会听取对希拉·切尔菲勒斯·麦考密克的指控</h3><p class="desc">众议院道德委员会正在审议对众议员希拉·切尔菲勒斯-麦考密克的指控。</p>
+            <div class="insight"><strong>深度见解:</strong> 解决国会议员潜在的道德违规行为。</div>
+            <div class="card-footer">
+                <span class="source">Politico</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.politico.com/news/2026/03/26/house-ethics-shelia-cherfilus-mccormick-00847808" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
+            <h3>吉尔戈海滩连环杀人案嫌疑人预计将认罪</h3><p class="desc">被指控犯有吉尔戈海滩谋杀案的雷克斯·霍伊尔曼预计将于下个月认罪。</p>
+            <div class="insight"><strong>深度见解:</strong> 结束了一起长期悬而未决且备受瞩目的刑事案件。</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.nbcnews.com/news/us-news/suspect-gilgo-beach-serial-killings-rex-heuermann-expected-guilty-plea-rcna265396" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>泰勒·斯威夫特 (Taylor Swift) 在 iHeartRadio 颁奖典礼上大喊特拉维斯·凯尔斯 (Travis Kelce)</h3><p class="desc">泰勒·斯威夫特 (Taylor Swift) 在 iHeartRadio 音乐奖获奖感言中向特拉维斯·凯尔斯 (Travis Kelce) 致谢。</p>
+            <div class="insight"><strong>深度见解:</strong> 反映流行文化趋势的名人新闻。</div>
+            <div class="card-footer">
+                <span class="source">Rolling Stone</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
+                <a href="http://www.rollingstone.com/music/music-news/taylor-swift-artist-of-the-year-2026-iheartradio-awards-1235537980/" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
+            <h3>《爱情故事：小约翰·F·肯尼迪和卡罗琳·贝塞特》结局解释</h3><p class="desc">FX 电视台关于小约翰·F·肯尼迪和卡罗琳·贝塞特的系列剧以悲惨的结局结束。</p>
+            <div class="insight"><strong>深度见解:</strong> 回顾热门电视连续剧的结局。</div>
+            <div class="card-footer">
+                <span class="source">Hollywood Reporter</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="http://www.hollywoodreporter.com/tv/tv-news/love-story-fx-jfk-jr-carolyn-bessette-ending-explained-1236547161/" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">3.8</span></div>
+            <h3>杰西·德雷珀 (Jessi Draper) 联播后向米兰达·霍普 (Miranda Hope) 送花</h3><p class="desc">《摩门教妻子的秘密生活》明星杰西·德雷珀在与前男友交往后给米兰达·霍普送花。</p>
+            <div class="insight"><strong>深度见解:</strong> 提供名人八卦和真人秀电视剧。</div>
             <div class="card-footer">
                 <span class="source">TMZ</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
@@ -50,9 +120,19 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>美国和伊朗在战争中强化立场</h3><p class="desc">伊朗和美国在停火谈判上的立场变得更强硬，增加了局势进一步升级的风险。</p>
-            <div class="insight"><strong>深度见解:</strong> 谈判陷入僵局可能会延长冲突并加剧地区不稳定。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>JK 罗琳赞扬《哈利·波特》预告片和奥运会的跨性别禁令</h3><p class="desc">JK罗琳支持哈利波特系列和奥运会禁止跨性别女性参加女子比赛的规定。</p>
+            <div class="insight"><strong>深度见解:</strong> 有争议的言论引发了关于包容性和代表性的辩论。</div>
+            <div class="card-footer">
+                <span class="source">Variety</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://variety.com/2026/tv/news/jk-rowling-praises-harry-potter-trailer-olympics-trans-women-ban-1236701238/" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
+            <h3>伊朗和美国在战争谈判上立场趋于强硬</h3><p class="desc">伊朗和美国停火谈判陷入僵局，增加了中东局势升级的风险。</p>
+            <div class="insight"><strong>深度见解:</strong> 紧张局势加剧威胁地区稳定。</div>
             <div class="card-footer">
                 <span class="source">Associated Press</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
@@ -60,92 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>法官阻止特朗普政府的人为禁令</h3><p class="desc">一名法官暂时阻止了特朗普政府对科技公司 Anthropic 的禁令。</p>
-            <div class="insight"><strong>深度见解:</strong> 该裁决引发了人们对政府越权和第一修正案权利的质疑。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>盟友称特朗普对伊朗发出了混合信号</h3><p class="desc">特朗普在伊朗问题上发出的混合信息令盟友感到不安，他们担心经济后果恶化。</p>
+            <div class="insight"><strong>深度见解:</strong> 不明确的政策会带来不确定性，并有疏远主要合作伙伴的风险。</div>
             <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.npr.org/2026/03/26/nx-s1-5762971/judge-temporarily-blocks-anthropic-ban" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>英菲尼迪推出新款SUV，力争在美国扭亏为盈</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
-            <div class="insight"><strong>深度见解:</strong> QX65 的成功对于英菲尼迪在竞争激烈的美国汽车市场的未来至关重要。</div>
-            <div class="card-footer">
-                <span class="source">CNBC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.cnbc.com/2026/03/26/inifiniti-qx65-suv-nissan.html" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>特朗普签名将出现在货币上</h3><p class="desc">特朗普的签名将出现在纸币上，这对于在任总统来说尚属首次。</p>
-            <div class="insight"><strong>深度见解:</strong> 这是体现总统影响力的象征性变化。</div>
-            <div class="card-footer">
-                <span class="source">NBC News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.nbcnews.com/politics/donald-trump/signature-appear-paper-currency-dollar-bills-first-sitting-president-rcna265389" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>阿肯色州 vs 亚利桑那州 Sweet 16 预测</h3><p class="desc">阿肯色剃刀鲸队 vs 亚利桑那野猫队 Sweet 16 比赛的预测、选秀权和赔率。</p>
-            <div class="insight"><strong>深度见解:</strong> 体育预测会影响重大赛事期间的投注和球迷参与度。</div>
-            <div class="card-footer">
-                <span class="source">The Action Network</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.actionnetwork.com/ncaab/arkansas-razorbacks-vs-arizona-wildcats-predictions-picks-odds-ncaa-tournament-sweet-16-thursday-march-26" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>纳斯达克进入调整，油价突破 100 美元</h3><p class="desc">纳斯达克指数进入调整区间，油价再次突破 100 美元。</p>
-            <div class="insight"><strong>深度见解:</strong> 这些市场走势反映了经济不确定性和全球能源担忧。</div>
-            <div class="card-footer">
-                <span class="source">The Wall Street Journal</span>
+                <span class="source">Politico</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-03-26-2026" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>谷歌简化了 Gemini 的 AI 内存导入</h3><p class="desc">谷歌正在让将另一个人工智能的记忆导入 Gemini 变得更加容易。</p>
-            <div class="insight"><strong>深度见解:</strong> 此功能可以吸引新用户并增强 Gemini 的功能。</div>
-            <div class="card-footer">
-                <span class="source">The Verge</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://www.theverge.com/ai-artificial-intelligence/902085/google-gemini-import-memory-chat-history" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>特朗普政府调查医学院招生中的种族问题</h3><p class="desc">特朗普政府对三所医学院的招生种族问题进行调查。</p>
-            <div class="insight"><strong>深度见解:</strong> 这些调查加剧了有关高等教育中平权行动的争论。</div>
-            <div class="card-footer">
-                <span class="source">Associated Press</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://apnews.com/article/trump-medical-school-stanford-ohio-state-a7d892267d74cc798167fb48379f7f6d" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>萨凡纳·格思里 (Savannah Guthrie) 讲述母亲失踪事件</h3><p class="desc">萨凡纳·格思里 (Savannah Guthrie) 接受了关于她母亲被绑架指控的情感采访。</p>
-            <div class="insight"><strong>深度见解:</strong> 公众人物家庭成员的失踪引起了媒体的广泛关注。</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.washingtonpost.com/entertainment/tv/2026/03/26/savannah-guthrie-today-interview/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>由于 TSA 资金问题，机场等待时间持续延长</h3><p class="desc">由于国会无法就运输安全管理局的资金问题达成一致，机场等待时间仍然很长。</p>
-            <div class="insight"><strong>深度见解:</strong> 资金纠纷影响机场的旅行和安全。</div>
-            <div class="card-footer">
-                <span class="source">Yahoo Entertainment</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.yahoo.com/news/politics/article/trump-says-hell-sign-an-order-to-pay-tsa-with-congress-still-deadlocked-on-a-deal-to-end-the-shutdown-200226542.html" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.politico.com/news/2026/03/26/i-have-no-idea-trump-allies-iran-00847304" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div></body></html>

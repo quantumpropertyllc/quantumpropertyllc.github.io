@@ -1,48 +1,118 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-03-27 09:28 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#NCAA Tournament Sweet 16 Results</span><span class="cluster">#US-Iran Conflict Escalation</span><span class="cluster">#Celebrity News and Events</span><span class="cluster">#Tech Industry Innovations and Regulations</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>The news landscape on March 28, 2026, is diverse, covering sports, politics, entertainment, and business. Key events include the NCAA Tournament, escalating tensions between the US and Iran, and developments in the tech industry. The entertainment sector sees updates on celebrity engagements and reality TV drama.</p><div class="divider"></div><p class="insight-text">Political tensions and technological advancements are major drivers shaping current events.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-03-28 06:26 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Iran Negotiations & Trump's Actions</span><span class="cluster">#Trump Administration Policies & Controversies</span><span class="cluster">#Entertainment & Pop Culture</span><span class="cluster">#Legal Proceedings & Crime</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>The news landscape is dominated by political tensions surrounding Iran, both domestically with Trump's actions and internationally with stalled negotiations. Economic concerns are also present, reflected in stock market fluctuations and the potential for economic fallout from the Iran situation. Other notable areas include legal proceedings, sports updates, and entertainment news.</p><div class="divider"></div><p class="insight-text">The convergence of political, economic, and social issues creates a complex and uncertain environment.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>NCAA Tournament Sweet 16 Live Updates</h3><p class="desc">Live coverage of the 2026 NCAA Tournament Sweet 16 games on Thursday.</p>
-            <div class="insight"><strong>Why this matters:</strong> The NCAA Tournament is a major sporting event with significant cultural and economic impact.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Stock Futures Rise Amid Iran Negotiation Uncertainty</h3><p class="desc">Stock futures show gains despite ongoing concerns about higher oil prices and Treasury yields impacting equities.</p>
+            <div class="insight"><strong>Why this matters:</strong> Market volatility reflects investor anxiety over geopolitical tensions and economic indicators.</div>
             <div class="card-footer">
-                <span class="source">CBS Sports</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.cbssports.com/college-basketball/news/march-madness-2026-sweet-16-live-updates-scores-bracket-thursday/live/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
-            <h3>Purdue Defeats Texas in Thrilling Sweet 16 Finish</h3><p class="desc">Trey Kaufman-Renn's late bucket secures a 79-77 victory for Purdue over Texas in the Sweet 16.</p>
-            <div class="insight"><strong>Why this matters:</strong> Close games in the NCAA tournament generate excitement and national attention.</div>
-            <div class="card-footer">
-                <span class="source">ESPN</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.espn.com/mens-college-basketball/story/_/id/48317344/trey-kaufman-renn-bucket-gives-purdue-win-texas" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
-            <h3>Trump Considers Escalation of Conflict with Iran</h3><p class="desc">President Trump weighs options for escalating the war against Iran amid stalled diplomacy.</p>
-            <div class="insight"><strong>Why this matters:</strong> Escalation could lead to significant casualties and destabilize the Middle East.</div>
-            <div class="card-footer">
-                <span class="source">CNN</span>
+                <span class="source">CNBC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.cnn.com/2026/03/26/politics/trump-iran-kharg-war-military" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.cnbc.com/2026/03/26/stock-market-today-live-updates.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.8</span></div>
+            <h3>Senate Funds DHS, Excludes ICE/Border Patrol, Ending Shutdown</h3><p class="desc">The Senate ended a 40-day DHS shutdown but omitted funding for immigration enforcement, highlighting political divisions.</p>
+            <div class="insight"><strong>Why this matters:</strong> Compromise avoids shutdown but underscores deep disagreements on immigration policy.</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.nbcnews.com/politics/congress/senate-agrees-fund-dhs-ice-border-patrol-bid-shutdown-tsa-pay-delays-rcna265108" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.2</span></div>
+            <h3>Judge Blocks Pentagon's Ban on Anthropic</h3><p class="desc">A judge temporarily halted the Pentagon's ban on Anthropic, citing potential harm from the supply chain risk designation.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights legal challenges to government restrictions on tech companies.</div>
+            <div class="card-footer">
+                <span class="source">Axios</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.axios.com/2026/03/26/judge-temporarily-blocks-pentagon-ban-anthropic" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>March Madness Sweet 16: Live Updates and Highlights</h3><p class="desc">Coverage of the Sweet Sixteen round of the 2026 Men's Division I NCAA Basketball Tournament, featuring highlights and news.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides real-time updates on a major sporting event.</div>
+            <div class="card-footer">
+                <span class="source">Heat.com</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.nba.com/news/live-updates-march-madness-sweet-16-purdue-vs-texas-opens-the-night" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.8</span></div>
+            <h3>2027 Infiniti QX65 Revealed: Stylish SUV Option</h3><p class="desc">The 2027 Infiniti QX65, a new luxury crossover with a fastback design, is unveiled.</p>
+            <div class="insight"><strong>Why this matters:</strong> Showcases the latest automotive design and technology.</div>
+            <div class="card-footer">
+                <span class="source">Motor1 </span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.motor1.com/news/791252/2027-infiniti-qx65-specs-price-powertrain-details/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Taylor Swift and Travis Kelce Debut Post-Engagement at Awards</h3><p class="desc">Taylor Swift and Travis Kelce make their first public appearance since their engagement at the iHeartRadio Music Awards.</p>
-            <div class="insight"><strong>Why this matters:</strong> Celebrity engagements generate widespread public interest and media coverage.</div>
+            <h3>Trump's Signature to Appear on US Currency</h3><p class="desc">Trump's signature will appear on US currency, marking a first for a sitting president.</p>
+            <div class="insight"><strong>Why this matters:</strong> Symbolic act reflects the president's influence on national institutions.</div>
             <div class="card-footer">
-                <span class="source">InStyle</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.instyle.com/taylor-swift-travis-kelce-iheartradio-music-awards-2026-first-appearance-post-engagement-11935576" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">Al Jazeera English</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.aljazeera.com/economy/2026/3/27/trumps-signature-to-appear-on-us-currency-in-first-for-sitting-president" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Reality Star Sends Flowers After Hookup with Ex</h3><p class="desc">Jessi Draper sends Miranda Hope flowers after hooking up with Miranda's ex-husband.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reality TV drama often captures public attention and fuels social media discussions.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
+            <h3>Trump Orders TSA Officers Paid Amid Congressional Stalemate</h3><p class="desc">President Trump invokes emergency powers to ensure TSA officers are paid during a congressional impasse.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights executive power and political gridlock.</div>
+            <div class="card-footer">
+                <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.washingtonpost.com/politics/2026/03/26/trump-tsa-unilateral-payment/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
+            <h3>House Ethics Panel Hears Charges Against Sheila Cherfilus-McCormick</h3><p class="desc">The House Ethics panel is deliberating on charges against Representative Sheila Cherfilus-McCormick.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses potential ethical violations by a member of Congress.</div>
+            <div class="card-footer">
+                <span class="source">Politico</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.politico.com/news/2026/03/26/house-ethics-shelia-cherfilus-mccormick-00847808" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
+            <h3>Gilgo Beach Serial Killings Suspect Expected to Plead Guilty</h3><p class="desc">Rex Heuermann, charged in the Gilgo Beach murders, is expected to plead guilty next month.</p>
+            <div class="insight"><strong>Why this matters:</strong> Brings closure to a long-standing and high-profile criminal case.</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.nbcnews.com/news/us-news/suspect-gilgo-beach-serial-killings-rex-heuermann-expected-guilty-plea-rcna265396" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>Taylor Swift Shouts Out Travis Kelce at iHeartRadio Awards</h3><p class="desc">Taylor Swift acknowledges Travis Kelce in her acceptance speech at the iHeartRadio Music Awards.</p>
+            <div class="insight"><strong>Why this matters:</strong> Celebrity news reflecting pop culture trends.</div>
+            <div class="card-footer">
+                <span class="source">Rolling Stone</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="http://www.rollingstone.com/music/music-news/taylor-swift-artist-of-the-year-2026-iheartradio-awards-1235537980/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
+            <h3>'Love Story: John F. Kennedy Jr. & Carolyn Bessette' Finale Explained</h3><p class="desc">FX's series about John F. Kennedy Jr. and Carolyn Bessette concludes with a tragic ending.</p>
+            <div class="insight"><strong>Why this matters:</strong> Recaps the finale of a popular television series.</div>
+            <div class="card-footer">
+                <span class="source">Hollywood Reporter</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="http://www.hollywoodreporter.com/tv/tv-news/love-story-fx-jfk-jr-carolyn-bessette-ending-explained-1236547161/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">3.8</span></div>
+            <h3>Jessi Draper Sends Miranda Hope Flowers After Hookup</h3><p class="desc">"The Secret Lives of Mormon Wives" star Jessi Draper sent flowers to Miranda Hope after hooking up with her ex.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides celebrity gossip and reality TV drama.</div>
             <div class="card-footer">
                 <span class="source">TMZ</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -50,9 +120,19 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>US and Iran Harden Positions Amid War</h3><p class="desc">Iran and the US harden their positions over ceasefire talks, raising the risk of further escalation.</p>
-            <div class="insight"><strong>Why this matters:</strong> Stalled negotiations could prolong the conflict and increase regional instability.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>JK Rowling Praises Harry Potter Trailer and Olympics' Trans Ban</h3><p class="desc">JK Rowling supports the Harry Potter series and the Olympics' ban on trans women in female events.</p>
+            <div class="insight"><strong>Why this matters:</strong> Controversial statements spark debate on inclusivity and representation.</div>
+            <div class="card-footer">
+                <span class="source">Variety</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://variety.com/2026/tv/news/jk-rowling-praises-harry-potter-trailer-olympics-trans-women-ban-1236701238/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
+            <h3>Iran and US Harden Positions on War Talks</h3><p class="desc">Iran and the US are at an impasse in ceasefire talks, increasing the risk of escalation in the Middle East.</p>
+            <div class="insight"><strong>Why this matters:</strong> Heightened tensions threaten regional stability.</div>
             <div class="card-footer">
                 <span class="source">Associated Press</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -60,92 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Judge Blocks Trump Administration's Anthropic Ban</h3><p class="desc">A judge temporarily blocks the Trump administration's ban on tech company Anthropic.</p>
-            <div class="insight"><strong>Why this matters:</strong> The ruling raises questions about government overreach and First Amendment rights.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Allies Say Trump Sends Mixed Signals on Iran</h3><p class="desc">Trump's mixed messaging on Iran is unsettling allies, who fear worsening economic consequences.</p>
+            <div class="insight"><strong>Why this matters:</strong> Unclear policy creates uncertainty and risks alienating key partners.</div>
             <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.npr.org/2026/03/26/nx-s1-5762971/judge-temporarily-blocks-anthropic-ban" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Infiniti Aims for U.S. Turnaround with New SUV</h3><p class="desc">Infiniti releases the QX65, a new midsize SUV, to boost sales in the U.S. market.</p>
-            <div class="insight"><strong>Why this matters:</strong> The success of the QX65 is crucial for Infiniti's future in the competitive U.S. auto market.</div>
-            <div class="card-footer">
-                <span class="source">CNBC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.cnbc.com/2026/03/26/inifiniti-qx65-suv-nissan.html" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Trump's Signature to Appear on Currency</h3><p class="desc">Trump's signature will appear on paper currency, a first for a sitting president.</p>
-            <div class="insight"><strong>Why this matters:</strong> This is a symbolic change that reflects the president's influence.</div>
-            <div class="card-footer">
-                <span class="source">NBC News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.nbcnews.com/politics/donald-trump/signature-appear-paper-currency-dollar-bills-first-sitting-president-rcna265389" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Arkansas vs Arizona Sweet 16 Predictions</h3><p class="desc">Predictions, picks, and odds for the Arkansas Razorbacks vs Arizona Wildcats Sweet 16 game.</p>
-            <div class="insight"><strong>Why this matters:</strong> Sports predictions influence betting and fan engagement during major tournaments.</div>
-            <div class="card-footer">
-                <span class="source">The Action Network</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.actionnetwork.com/ncaab/arkansas-razorbacks-vs-arizona-wildcats-predictions-picks-odds-ncaa-tournament-sweet-16-thursday-march-26" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Nasdaq Enters Correction, Oil Surpasses $100</h3><p class="desc">Nasdaq falls into correction territory, and oil prices push past $100 again.</p>
-            <div class="insight"><strong>Why this matters:</strong> These market movements reflect economic uncertainty and global energy concerns.</div>
-            <div class="card-footer">
-                <span class="source">The Wall Street Journal</span>
+                <span class="source">Politico</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-03-26-2026" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Google Simplifies AI Memory Import to Gemini</h3><p class="desc">Google is making it easier to import another AI’s memory into Gemini.</p>
-            <div class="insight"><strong>Why this matters:</strong> This feature could attract new users and enhance Gemini's capabilities.</div>
-            <div class="card-footer">
-                <span class="source">The Verge</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.theverge.com/ai-artificial-intelligence/902085/google-gemini-import-memory-chat-history" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Trump Administration Investigates Race in Medical School Admissions</h3><p class="desc">The Trump administration investigates race in admissions at three medical schools.</p>
-            <div class="insight"><strong>Why this matters:</strong> The investigations intensify the debate over affirmative action in higher education.</div>
-            <div class="card-footer">
-                <span class="source">Associated Press</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://apnews.com/article/trump-medical-school-stanford-ohio-state-a7d892267d74cc798167fb48379f7f6d" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Savannah Guthrie Speaks on Mom's Disappearance</h3><p class="desc">Savannah Guthrie gives an emotional interview about her mother's alleged abduction.</p>
-            <div class="insight"><strong>Why this matters:</strong> The disappearance of a public figure's family member attracts significant media attention.</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.washingtonpost.com/entertainment/tv/2026/03/26/savannah-guthrie-today-interview/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Airport Wait Times Persist Due to TSA Funding Issues</h3><p class="desc">Airport wait times remain high due to Congress's inability to agree on TSA funding.</p>
-            <div class="insight"><strong>Why this matters:</strong> Funding disputes impact travel and security at airports.</div>
-            <div class="card-footer">
-                <span class="source">Yahoo Entertainment</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.yahoo.com/news/politics/article/trump-says-hell-sign-an-order-to-pay-tsa-with-congress-still-deadlocked-on-a-deal-to-end-the-shutdown-200226542.html" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.politico.com/news/2026/03/26/i-have-no-idea-trump-allies-iran-00847304" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
