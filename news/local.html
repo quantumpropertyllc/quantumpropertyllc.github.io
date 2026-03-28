@@ -1,88 +1,38 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-03-27 07:56 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Public Safety (shootings, assault, protests)</span><span class="cluster">#Housing and Social Services (shelter shortages, family support)</span><span class="cluster">#Environmental Concerns (burn bans, wildfire risks, climate)</span><span class="cluster">#Development and Community (redevelopment, sports, events)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in Charlotte and surrounding areas reveals a mix of developments, from urban redevelopment projects to crime and public safety concerns. Housing shortages and their impact on families are also highlighted, alongside environmental issues like burn bans and wildfire risks. Community events and protests add to the diverse local landscape.</p><div class="divider"></div><p class="insight-text">The Charlotte region faces challenges balancing growth, safety, and social equity.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-03-28 07:53 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Public Safety (shootings, assaults, legal proceedings)</span><span class="cluster">#Weather and Environmental Risks (fire danger, burn bans)</span><span class="cluster">#Housing and Community Support (shelter limitations, new developments)</span><span class="cluster">#Local Events and Culture (Knights season opening, Women's History Month)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>The local news landscape in Charlotte is currently dominated by crime-related incidents, including shootings, assaults, and legal proceedings related to past protests. Weather-related concerns, such as fire risks and burn bans, also feature prominently. Additionally, there are developments in local infrastructure and community support, including new apartments and challenges in housing assistance.</p><div class="divider"></div><p class="insight-text">The prevalence of crime and safety concerns highlights the need for community-focused solutions and increased public safety measures.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Uptown Redevelopment Project Announced</h3><p class="desc">The former Duke Energy headquarters will be transformed into 448 apartments and new retail space near Bank of America Stadium.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses housing needs and boosts the local economy through job creation and increased consumer spending in the uptown area.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/money/business/uptown-charlotte-redevelopment-mixed-use-housing-business-projects/275-0be913a9-8f27-4bf8-99e9-6d82ac735107" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>CMPD Officer Charged with Assault</h3><p class="desc">Officer Ryan Clement is placed on unpaid administrative leave following an assault charge, pending investigation results.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises concerns about police conduct and accountability, potentially impacting community trust in law enforcement.</div>
+            <h3>Overnight Shooting in West Charlotte Injures One</h3><p class="desc">One person was injured in a shooting near Freedom Drive around 2 a.m., according to Medic.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights ongoing concerns about violent crime in certain areas of Charlotte and the need for community safety initiatives.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/cmpd-officer-arrested-domestic-violence-investigation/275-13a319e0-0f54-4414-85c0-54f2aaa815d0" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
-            <h3>Charlotte Families Face Shelter Age Limit Crisis</h3><p class="desc">Shelter age limits leave families with teens without housing options, forcing some to live in cars, advocates warn.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights critical gaps in social services and the urgent need for family housing assistance in Charlotte.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-mother-unhoused-family-shelter-age-limits-teenagers-housing-assistance-programs/275-8c7d107a-b584-4ccb-919c-955ec1185d26" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/freedom-drive-shooting-march-28-2026/275-7d5609c0-60dc-4d9b-97c1-b9edbc879596" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>South Carolina Issues Statewide Burn Ban</h3><p class="desc">The South Carolina Forestry Commission enacts a ban on all outdoor burning, effective 4 p.m. March 27, until further notice.</p>
-            <div class="insight"><strong>Why this matters:</strong> Aims to prevent wildfires during dry conditions, protecting forests, property, and public health across the state.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/statewide-burning-ban-south-carolina/101-9b3422a6-b444-45ab-a38a-0fa2ec05a326" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Kathie Dello's Impact as NC State Climatologist</h3><p class="desc">A look at Kathie Dello's tenure as North Carolina's first state climatologist (2019-2025) and her current role at NCDEQ.</p>
-            <div class="insight"><strong>Why this matters:</strong> Recognizes contributions to climate science and environmental policy in North Carolina.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/kathie-dello-first-climatologist-north-carolina-womens-history-month/275-4dab3c7d-8287-4059-add9-abd356fc8a73" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>CMPD Faces Lawsuit Over 2020 Protest Response</h3><p class="desc">A judge is reviewing whether CMPD used unlawful force during 2020 protests, with plaintiffs alleging protesters were trapped and met with force.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses police conduct during protests and its implications for freedom of assembly and police accountability.</div>
+            <h3>Three Hospitalized After Northeast Charlotte Crash</h3><p class="desc">A crash in northeast Charlotte early Saturday resulted in three people being hospitalized with serious injuries, Medic reports.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses traffic safety and the potential for serious accidents on Charlotte's roadways.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-mecklenburg-police-2020-protest-kettling-lawsuit-excessive-force-claims-pepperballs-tear-gas/275-e01d2ed4-e20e-4686-b034-64bee7f74455" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/northeast-charlotte-3-injured-medic/275-554eb214-ff90-4002-8d3e-fc69c307868c" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Red Flag Warning Issued for North Carolina</h3><p class="desc">Warm temperatures, low humidity, and strong winds combine to create an increased risk of wildfires across North Carolina.</p>
-            <div class="insight"><strong>Why this matters:</strong> Alerts residents to heightened fire danger and the need for caution to prevent potentially devastating wildfires.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Fire Danger Risks Prompt Cooler, Drier Weekend</h3><p class="desc">A fire weather warning is in effect for Saturday due to dry conditions.</p>
+            <div class="insight"><strong>Why this matters:</strong> Informs residents about potential fire hazards and encourages preventative measures during dry weather conditions.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/weather/weather-impact/red-flag-warning-western-north-carolina-increased-risk-wildfires-brad-panovich/275-14d08609-9dc5-4bb3-8b62-a59145c769f1" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Charlotte Experiences Very Warm Friday</h3><p class="desc">Friday is expected to be a record-breaking day with unseasonably warm temperatures in Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights unusual weather patterns and potential impacts on local activities and energy consumption.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
                 <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
-            <h3>Woman Killed in North Charlotte Shooting</h3><p class="desc">A woman was fatally shot through her front door at a north Charlotte apartment complex late Thursday night.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises concerns about violent crime and safety in residential areas of Charlotte.</div>
+            <h3>Woman Fatally Shot at North Charlotte Apartment</h3><p class="desc">A woman was shot and killed through her front door late Thursday. Shell casings were found outside her apartment.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises serious concerns about safety and security within residential areas of Charlotte.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -90,9 +40,99 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>Suspects Indicted in 2022 Chester County Murder</h3><p class="desc">Two men are indicted for the 2022 murder of Darius Minter in Chester County, facing multiple charges.</p>
-            <div class="insight"><strong>Why this matters:</strong> Brings progress in a cold case, offering some closure to the victim's family and the community.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>Trump Signs Order to Pay TSA, Easing Airport Delays</h3><p class="desc">President Trump signed an executive order to pay TSA workers, alleviating long airport wait times.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses the impact of government actions on travel and airport operations.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.wcnc.com/article/news/local/trump-executive-order-tsa-agents/275-d137bcb4-c3c3-4091-b5c5-f8d0744a96f5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Gunfire Strikes East Charlotte Restaurant, Video Shows Chaos</h3><p class="desc">Surveillance video captured chaotic moments as gunfire hit an east Charlotte restaurant, leaving patrons scared.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the impact of gun violence on local businesses and the community's sense of safety.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/gunfire-hits-east-charlotte-restaurant/275-f4d06fe2-5f0f-44cf-8316-f7ee0edff5f7" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Kathie Dello: NC's First Female State Climatologist</h3><p class="desc">Kathie Dello served as North Carolina's first female state climatologist from 2019 to 2025.</p>
+            <div class="insight"><strong>Why this matters:</strong> Recognizes the achievements of women in science and environmental leadership within North Carolina.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/weather/kathie-dello-first-climatologist-north-carolina-womens-history-month/275-4dab3c7d-8287-4059-add9-abd356fc8a73" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>Judge Considers Legality of CMPD Force During 2020 Protests</h3><p class="desc">A judge is reviewing whether CMPD used unlawful force during the 2020 protests, with plaintiffs arguing officers trapped and used force without cause.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses accountability and transparency in law enforcement practices during public demonstrations.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-mecklenburg-police-2020-protest-kettling-lawsuit-excessive-force-claims-pepperballs-tear-gas/275-e01d2ed4-e20e-4686-b034-64bee7f74455" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>Uptown Redevelopment: Apartments and Retail Near Stadium</h3><p class="desc">A major redevelopment project in Uptown will bring 448 apartments and new retail space near Bank of America Stadium.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details urban development and its potential impact on housing and retail opportunities in Charlotte.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/money/business/uptown-charlotte-redevelopment-mixed-use-housing-business-projects/275-0be913a9-8f27-4bf8-99e9-6d82ac735107" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>Charlotte Mom: Shelter Age Limits Leave Families Homeless</h3><p class="desc">A Charlotte mom highlights how shelter age limits leave families with teens without housing options, forcing some to live in cars.</p>
+            <div class="insight"><strong>Why this matters:</strong> Exposes gaps in social services and the challenges faced by families experiencing homelessness.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-mother-unhoused-family-shelter-age-limits-teenagers-housing-assistance-programs/275-8c7d107a-b584-4ccb-919c-955ec1185d26" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>CMPD Officer Charged with Assault on a Female</h3><p class="desc">CMPD officer Ryan Clement has been charged with assault on a female and is on unpaid administrative leave.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses issues of police misconduct and accountability within the Charlotte-Mecklenburg Police Department.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/cmpd-officer-arrested-domestic-violence-investigation/275-13a319e0-0f54-4414-85c0-54f2aaa815d0" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>South Carolina Issues Statewide Burn Ban</h3><p class="desc">The South Carolina Forestry Commission has issued a statewide ban on outdoor burning, effective March 27.</p>
+            <div class="insight"><strong>Why this matters:</strong> Alerts residents to fire safety measures and restrictions in neighboring South Carolina.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/statewide-burning-ban-south-carolina/101-9b3422a6-b444-45ab-a38a-0fa2ec05a326" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Red Flag Warning: Increased Wildfire Risk in North Carolina</h3><p class="desc">A Red Flag Warning has been issued for North Carolina due to warm temperatures, low humidity, and strong winds, increasing wildfire risk.</p>
+            <div class="insight"><strong>Why this matters:</strong> Warns of heightened wildfire danger and encourages caution to prevent fires.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/weather/weather-impact/red-flag-warning-western-north-carolina-increased-risk-wildfires-brad-panovich/275-14d08609-9dc5-4bb3-8b62-a59145c769f1" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Chester County Shooting Suspects Indicted for 2022 Murder</h3><p class="desc">Two men have been indicted for murder in connection with the 2022 killing of Darius Minter in Chester County.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on progress in the investigation and prosecution of a past violent crime.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -100,52 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Charlotte Knights Kick Off Baseball Season</h3><p class="desc">The Charlotte Knights begin their season with a weekend series against the Durham Bulls, featuring fireworks and family events.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides entertainment and community engagement opportunities in Charlotte.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>Charlotte Knights Kick Off Season Against Durham Bulls</h3><p class="desc">The Charlotte Knights begin their season with a weekend series against the Durham Bulls, featuring fireworks and family events.</p>
+            <div class="insight"><strong>Why this matters:</strong> Promotes local sports and entertainment opportunities for the community.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
                 <a href="https://www.wcnc.com/article/news/local/charlotte-knights-opening-weekend-series-durham-bulls/275-e744c115-edaf-44c2-b9ed-1411512e2fc7" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
-            <h3>Man Charged with Murder in East Charlotte Shooting</h3><p class="desc">A 22-year-old man is charged with first-degree murder in the fatal shooting of Luis Gutierrez Mora in east Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses violent crime and its impact on the community, highlighting ongoing efforts to bring perpetrators to justice.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/cmpd-investigates-deadly-shooting-in-east-charlotte/275-3f6d9147-a247-429b-8df1-4d5350577d1b" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Parents Charged After Gun Found in Student's Backpack</h3><p class="desc">Parents in West Jefferson face felony charges after a firearm was discovered in their child's backpack at Westwood Elementary.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises concerns about school safety and responsible gun ownership in the community.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/parents-charged-after-firearm-found-on-student-at-school-ashe-county/275-d3077e97-41df-420d-b557-f3ed15160332" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
-            <h3>"No Kings" Protests Planned in Charlotte Area</h3><p class="desc">Multiple "No Kings" protests are scheduled across the Charlotte region as part of a nationwide movement.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reflects ongoing social and political activism in the Charlotte area.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/politics/no-kings-protests-march-28-2026-charlotte-north-carolina-south-carolina-anti-trump-rallies/275-dc96c1c5-a77a-4902-8b17-50a42f8303c1" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>TSA Under Strain at Charlotte Airport</h3><p class="desc">Officials warn that the TSA is 'under serious strain' due to the shutdown, impacting Charlotte's economy with delays and missed flights.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the impact of government shutdowns on essential services and the local economy.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/connect-the-dots/tsa-under-serious-strain-shutdown-impacts-charlotte-economy/275-67ac5426-c35f-4304-aae9-68612f977f87" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
