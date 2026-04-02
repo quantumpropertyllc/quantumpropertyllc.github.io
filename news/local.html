@@ -1,118 +1,108 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-04-02 08:08 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Public Safety (shootings, death investigations)</span><span class="cluster">#Business and Development (solar company lawsuit, hotel rezoning)</span><span class="cluster">#Community Programs and Events (literacy program, public safety forum)</span><span class="cluster">#Infrastructure and Accidents (milk tanker spill, stadium upgrades)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news covers a range of issues, from crime and public safety to business developments and community initiatives. Several incidents of violence, including shootings and a drowning, are reported across the region. Community engagement is highlighted through forums, literacy programs, and protests against development projects.</p><div class="divider"></div><p class="insight-text">Public safety and community development are key concerns for residents in the Charlotte area.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-04-02 10:40 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime in Charlotte (stabbings, shootings)</span><span class="cluster">#ACC Tournament in Charlotte (Virginia vs. NC State)</span><span class="cluster">#Local Business & Community (museum branding, deck building)</span><span class="cluster">#Lincoln County Murder Case</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in the Charlotte area is currently dominated by crime reports, including stabbings and shootings. There's also coverage of local sports, specifically ACC Tournament games held in Charlotte. Additionally, there are business and community interest stories, such as a museum branding project and a deck-building guide.</p><div class="divider"></div><p class="insight-text">The prevalence of crime stories suggests a heightened concern for public safety within the Charlotte metropolitan area.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Death Investigation in East Charlotte Linked to Missing Person</h3><p class="desc">A body found near The Plaza is connected to a missing person report. CMPD is investigating.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights ongoing public safety concerns and the need for community vigilance in East Charlotte.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Repeat Offender Arrested in Charlotte Pregnant Woman Stabbing</h3><p class="desc">A woman with a criminal history was apprehended after stabbing a pregnant woman in a Charlotte grocery store parking lot.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights concerns about public safety and repeat offenders in the Charlotte area.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">The Gateway Pundit</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/charlotte-homicide-investigation-the-plaza/275-d96c4269-ded6-41d2-851f-eb6614b3e655" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.thegatewaypundit.com/2026/04/horror-woman-extensive-criminal-background-finally-caught-two/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Rock Hill Company Sues Silfab Solar for Unpaid Bills</h3><p class="desc">Rock Hill Industrial Piping & Fabrication sues Silfab Solar for nearly $80,000 in unpaid invoices for work at the Fort Mill facility.</p>
-            <div class="insight"><strong>Why this matters:</strong> Illustrates financial challenges within the solar industry and potential impacts on local businesses.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
+            <h3>NC Repeat Offender Accused in Harris Teeter Stabbing</h3><p class="desc">Marvina Butler-Hardy, a repeat offender, is accused of stabbing a pregnant woman in a Charlotte parking lot. She has nine prior convictions.</p>
+            <div class="insight"><strong>Why this matters:</strong> Emphasizes the issue of repeat offenders and their impact on community safety.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">Fox News</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/silfab-solar-lawsuit-april-2-2026/275-932fd66d-9ee2-40a5-ba13-9cebb4b18403" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.foxnews.com/us/repeat-offender-allegedly-stabs-pregnant-mom-random-grocery-store-parking-lot-attack-with-steak-knife" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Milk Tanker Overturns, Closes I-40 West</h3><p class="desc">A milk tanker overturned on I-40 in Burke County, causing a spill into Muddy Creek and road closure. No injuries reported.</p>
-            <div class="insight"><strong>Why this matters:</strong> Disrupts traffic and raises environmental concerns due to the spill, impacting commuters and local ecosystems.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">3.5</span></div>
+            <h3>2028 WR Braylon Clark Visits Tennessee Football</h3><p class="desc">2028 Charlotte Country Day (NC) wide-out Braylon Clark visited Knoxville.</p>
+            <div class="insight"><strong>Why this matters:</strong> Showcases local high school athletes and their recruitment journeys.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/traffic/i-40-west-closed-overturned-tractor-trailer-burke-county-ems/275-4104c427-6107-46cc-b473-07dc8b3928c0" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>The Psychology Behind Reality TV Obsession</h3><p class="desc">Psychologists explain why reality TV is so popular, citing our innate desires for status, connection, and escapism.</p>
-            <div class="insight"><strong>Why this matters:</strong> Explores the psychological factors driving the popularity of reality television.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">Sports Illustrated</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/life/local-life/psychology-behind-reality-television/275-31deb476-2eb5-431e-8536-4932054a7d5f" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.si.com/college/tennessee/recruiting/2028-north-carolina-wr-braylon-clark-details-great-visit-with-tennessee-football-01kmtfp5y69z" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
-            <h3>Warmer Weather Pattern Continues</h3><p class="desc">The region experiences warmer than average temperatures, with highs 10-15 degrees above normal before changes later this week.</p>
-            <div class="insight"><strong>Why this matters:</strong> Indicates a shift in weather patterns and potential impacts on local climate and seasonal activities.</div>
+            <h3>Choosing the Best Deck Builder in Charlotte</h3><p class="desc">A guide on selecting a deck builder in Charlotte to enhance your home's outdoor living space and property value.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides practical advice for homeowners looking to improve their property.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">TechBullion</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://techbullion.com/how-to-pick-the-best-deck-builder-in-charlotte/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
+            <h3>Students Design Brand for Brown Museum in Guilford County NC</h3><p class="desc">Students are designing a brand for Charlotte Hawkins Brown's Canary Cottage, which is 100 years old.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights local history and student involvement in community projects.</div>
+            <div class="card-footer">
+                <span class="source">Greensboro News & Record</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://greensboro.com/news/local/education/article_eb0a8d53-9508-4219-b3b0-326ff1026146.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">3.0</span></div>
+            <h3>FG Nexus CEO to Speak at FII Priority Miami 2026</h3><p class="desc">FG Nexus CEO Maja Vujinovic will co-chair the digital assets conclave and speak on a stablecoins panel at FII Priority Miami 2026.</p>
+            <div class="insight"><strong>Why this matters:</strong> Showcases local business leaders participating in international events.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.manilatimes.net/2026/03/23/tmt-newswire/globenewswire/fg-nexus-ceo-of-digital-assets-maja-vujinovic-to-serve-as-speaker-and-co-chair-at-fii-priority-miami-2026/2305732" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>Virginia Defeats NC State in ACC Tourney</h3><p class="desc">No. 10 Virginia beat NC State for the third time this season, 81-74, to advance in the ACC Tournament in Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on a significant local sporting event and its outcome.</div>
+            <div class="card-footer">
+                <span class="source">WJLA</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://wjla.com/sports/college-basketball/no-10-virginia-beats-nc-state-for-third-time-this-season-81-74-to-advance-in-acc-tourney" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>University City Forum Addresses Public Safety</h3><p class="desc">University City Partners hosts a forum to discuss public safety, food insecurity, and solutions for the growing area.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses critical issues facing University City and seeks community-driven solutions.</div>
+            <h3>Virginia Defeats NC State in ACC Tourney</h3><p class="desc">No. 10 Virginia defeated N.C. State for the third time this season 81-74 in Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on a significant local sporting event and its outcome.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/university-city-public-safety-forum-april-2-2026/275-f0c9b470-3874-4d32-9557-3e7bfaa9327d" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>7-Year-Old Boy Drowns at Hickory Park</h3><p class="desc">A 7-year-old boy drowned at Bruce Meisner Park on Wednesday around 6 p.m.</p>
-            <div class="insight"><strong>Why this matters:</strong> Tragic incident highlighting the importance of water safety and supervision at public parks.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/7-year-old-boy-drowns-in-hickory/275-c080f039-3861-467c-a5ec-17aea962fe2f" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Study Questions Effectiveness of School Cellphone Bans</h3><p class="desc">A UNC Chapel Hill study finds 60% of students use phones during school, questioning the effectiveness of cellphone bans.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises concerns about the practicality and impact of cellphone bans in schools amid mental health considerations.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/study-questions-effectiveness-of-nc-school-cellphone-bans/275-7fe55846-4d65-4bc6-a97b-14ae53edef37" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Tiawana Brown's Daughter Pleads Guilty in Fraud Scheme</h3><p class="desc">Tijema Brown pleads guilty to wire fraud and conspiracy, facing up to 20 years in prison.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details a significant legal case involving fraud and its potential consequences.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/tiawana-brown-daughter-plea-deal-covid-fraud-scheme-case/275-252b72b3-6215-4b88-b5d1-3167cf98c18f" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">WTOP</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://wtop.com/ncaa-basketball/2026/03/no-10-virginia-beats-nc-state-for-third-time-this-season-81-74-to-advance-in-acc-tournament/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>Charlotte Program Promotes Early Literacy</h3><p class="desc">A Charlotte program puts books in kids’ hands and promotes early literacy through a ‘Big Read’ event.</p>
-            <div class="insight"><strong>Why this matters:</strong> Emphasizes the importance of early literacy and community involvement in children's education.</div>
+            <h3>Virginia Faces NC State in ACC Tournament Quarters</h3><p class="desc">Virginia faces NC State in a quarterfinal round matchup at the 2026 ACC Tournament in Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Previews a key matchup in a local sporting event.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/news/education/charlotte-program-puts-books-in-kids-hands-promotes-early-literacy-through-big-read-event/275-5501beba-661e-4550-bdf5-5d8d024753c8" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>NC Auditor to Oversee Bank of America Stadium Upgrades</h3><p class="desc">North Carolina's State Auditor's Office will oversee $650 million in public funds for Charlotte's Bank of America Stadium renovations.</p>
-            <div class="insight"><strong>Why this matters:</strong> Ensures accountability and transparency in the use of public funds for a major infrastructure project.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">Augusta Free Press</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/nc-auditor-to-provide-oversight-on-bank-of-america-stadium-upgrades-project/275-7f620568-100e-4792-b92d-9aa1188430b6" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://augustafreepress.com/news/live-coverage-virginia-faces-nc-state-in-acc-tournament-quarterfinal/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>1 Dead, 1 Hurt in Gastonia Shooting</h3><p class="desc">A shooting at an apartment complex on Hine Way in Gastonia leaves one dead and one injured.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights ongoing concerns about gun violence and public safety in the Gastonia area.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">5.5</span></div>
+            <h3>NC State vs. Virginia ACC Tournament Odds and Predictions</h3><p class="desc">Analysis of the NC State Wolfpack vs. Virginia Cavaliers ACC Tournament quarterfinal game in Charlotte, North Carolina.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides insights and predictions for a local sporting event.</div>
+            <div class="card-footer">
+                <span class="source">Asbury Park Press</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.app.com/story/sports/ncaab/2026/03/11/nc-state-vs-virginia-acc-tournament-odds-picks-and-predictions/89110577007/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
+            <h3>19-Year-Old Dead in Gastonia Shooting</h3><p class="desc">A shooting at a Gastonia apartment complex left a 19-year-old dead and an 18-year-old critically injured.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on a tragic incident of gun violence in the area.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -120,19 +110,29 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Charlotte Nonprofit Launches Cash Program for LGBTQ+ Youth</h3><p class="desc">A Charlotte nonprofit launches a $200,000 direct cash program for LGBTQ+ youth facing housing instability.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses housing insecurity among LGBTQ+ youth and provides direct financial assistance.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
+            <h3>Gas Prices Soar Past $4</h3><p class="desc">Gas prices spike above $4 amid Middle East conflict impacts on oil routes.</p>
+            <div class="insight"><strong>Why this matters:</strong> Discusses the impact of global events on local gas prices.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-nonprofit-launches-200000-direct-cash-program-for-lgbtq-youth-homelessness/275-a3bf5f4c-1094-4612-b5b9-64c112d37df2" class="btn-link" target="_blank">Read More →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/connect-the-dots/gas-prices-and-global-instability-connect-the-dots/275-e5b35f38-919c-4167-a42f-ef49a3119dd8" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>1 Killed in Northwest Charlotte Shooting</h3><p class="desc">A shooting in northwest Charlotte results in one fatality. Detectives believe it was not a random act.</p>
-            <div class="insight"><strong>Why this matters:</strong> Contributes to concerns about violent crime in Charlotte, even if not random.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Man Pleads Guilty in Lincoln County Murder</h3><p class="desc">Clarence Pinckney pleaded guilty to second-degree murder for his wife's death in Lincoln County, receiving a 20-25 year sentence.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on a local murder case and its legal resolution.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/clarence-pinckney-pleads-guilty-to-second-degree-murder-lincoln-county/275-f0a1247c-d7db-470f-a77b-4897828c44a6" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Victim Identified in Northwest Charlotte Shooting</h3><p class="desc">Authorities identified the victim in a northwest Charlotte shooting; the suspect and victim were related.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on a shooting incident and the relationship between the parties involved.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -140,12 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>Cornelius Residents Oppose Hotel Rezoning</h3><p class="desc">Residents in Cornelius rally against a proposed hotel development, citing concerns about traffic and environmental impacts.</p>
-            <div class="insight"><strong>Why this matters:</strong> Demonstrates community resistance to development projects and concerns about local impacts.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Death Investigation Linked to Missing Person Report</h3><p class="desc">An East Charlotte death investigation is linked to a missing person report; the victim was found dead along The Plaza.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on a death investigation and its connection to a missing person case.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/money/business/cornelius-residents-rally-against-rezoning-for-a-new-hotel-development/275-1d1cdcf8-8f9f-494c-983b-7f808c7b1749" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/crime/charlotte-homicide-investigation-the-plaza/275-d96c4269-ded6-41d2-851f-eb6614b3e655" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
