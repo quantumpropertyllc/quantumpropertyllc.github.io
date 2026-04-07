@@ -1,58 +1,128 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-04-07 06:50 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Tensiones entre Estados Unidos e Irán y posible conflicto</span><span class="cluster">#Elecciones y acontecimientos políticos internos de EE. UU.</span><span class="cluster">#Accidentes trágicos y actos de heroísmo.</span><span class="cluster">#Exploración espacial y avances científicos.</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>El panorama informativo está dominado por las tensiones internacionales, particularmente en relación con Irán y su relación con Estados Unidos. La política interna estadounidense también está en el centro de atención, con atención en las elecciones especiales y los respaldos. Además, hay informes de accidentes trágicos y actos de heroísmo, junto con avances en la exploración espacial y acciones militares.</p><div class="divider"></div><p class="insight-text">La inestabilidad geopolítica y las maniobras políticas internas están creando un entorno volátil e incierto.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-04-07 12:50 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Escalada del conflicto entre Estados Unidos e Irán</span><span class="cluster">#Elección de la Corte Suprema de Wisconsin</span><span class="cluster">#Las polémicas declaraciones de Trump</span><span class="cluster">#Interferencia política internacional</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>El panorama informativo actual está fuertemente influenciado por la escalada de tensiones entre Estados Unidos e Irán, impulsadas por la retórica y las acciones agresivas del presidente Trump. Esta situación se complica aún más por los acontecimientos políticos internos, incluidas elecciones clave y conflictos internos entre partidos. Las relaciones internacionales y la política interna están entrelazadas, creando un entorno volátil e incierto.</p><div class="divider"></div><p class="insight-text">La convergencia de conflictos internacionales y batallas políticas internas sugiere un período de mayor inestabilidad y potencial para cambios rápidos en la dinámica del poder global.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
-            <h3>Trump sopesa opciones sobre Irán: destrucción de infraestructura o conversaciones</h3><p class="desc">Axios informa que Trump está considerando una acción militar contra Irán o un compromiso diplomático.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> La decisión podría intensificar el conflicto o conducir a una reducción de la tensión, impactando la estabilidad global y los precios del petróleo.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>El plazo de Trump para Irán genera temores globales</h3><p class="desc">Trump advierte sobre el fin de la civilización a medida que se intensifican los ataques contra Irán antes de su fecha límite, lo que aumenta las tensiones.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Una acción militar inminente podría desestabilizar el Medio Oriente, desencadenando una crisis global y afectando las relaciones internacionales.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE9wc1psUVRRXy1YaVBzOGlFVXRPMDJwQTVCUHhhbnpINjd1b2hzTXRRdUpwTUJGVmtiRzJpVUFUaG1SY2tJYWRDcTNIa1E5WkhjTW9jWk5UMjhHa2pNUWNUNFQ5VGVjQnJycF9WeFRYSDlfOGhfT0lJc01sS3NTUQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxOQWdMR2RQZEpSSnE3R1BPd1dPVVNvX21tYjhCbFZjcVJRMkozZVFxc3NKUFZid19fMTBZR2Zia3lhbmtLbDlXV21fSERfY3JNYkhEMktlNHZKVXdzaEk4UGlkcDBienpZWjl2OHpwQW9pRnBBaUh2aU5sQlBsVlNkM1FLLVowRXB4WFhWc2g3dmQxYjZzelJzNWhXRlROZjFmN2psUkJWbS1NcHF00gGyAUFVX3lxTE9YUXdxUGhSZ2lHV1p6cHJ1WExBTkFKRlgyQmZuaWRqMGFMTjUtamk2TnI3WGc0eWh5MkpNRTV3bEptbUhFMFdhTmlfZ1lMaFVBbEFseUxDLU9HdVNadkdBUHh1YUVuc1JKTzVJRTNLdXNGbGhYdnFMZlJmSlJfbUhoempHaVB2RjA3bVdFV1dvblpvUnVNRzFubFU0TTlNakk1R0xJTnIwNHFlcmc4VXhkZEE?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Tucker Carlson condena el mensaje de Pascua de Trump</h3><p class="desc">Carlson critica el ofensivo mensaje de Pascua de Trump, destacando las divisiones dentro del Partido Republicano.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> El conflicto interno del Partido Republicano revela fracturas y desafíos al liderazgo de Trump, lo que influye en la cohesión del partido.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxQY2lVTmhoYjg4ZnluMUpZeXZPdHp5VmJwb2JLdVdVdGEtVFJQYzR2UVF6bEFOZjNSX2VlMl92bnF6Z3lRWEJmVFRYelFQNURXTktwaTZlZFdXa3FpN2s1WG1IZnJUUTF3YmFTeHFDRGc0S0JTWTJLa0FiOE9LYWZOZHpxRUt3TzNzN3NBeXVsX3VVR0NDdmRyRWlhamZ2Wl9yUmhJakVlMFNaLTVDd0RDN2Z3?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
+            <h3>JD Vance respalda la reelección de Orbán en Hungría</h3><p class="desc">JD Vance viaja a Hungría para apoyar a Viktor Orbán, señalando su alineación con los movimientos nacionalistas.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> El apoyo de Vance a Orbán indica vínculos crecientes entre los conservadores estadounidenses y los líderes nacionalistas europeos.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE85dU9SZ3BaanZ0QUlKQ2gzdHlGRWtFeGNPMFIwbnRJazNzVXE5SHFHcFNNeFRpNzBFdFByd2tyOV9COHJzOWZuemNxb2wyZzBGbTZFeTdXR3FSQQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Elecciones clave en Wisconsin y Georgia</h3><p class="desc">Los votantes deciden la carrera por la Corte Suprema de Wisconsin y la segunda vuelta en Georgia, lo que impacta la política estatal y nacional.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Estas elecciones podrían cambiar el equilibrio de poder en estados clave, influyendo en futuras decisiones políticas.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxOQXRNbWRiRUF0QU1sZndUQjdudno2SnZhTFJkRFpVTnQ2a3N1RnU3TWxUZ0Y5d2VPanVKVTh2dXFlUjZHenNfY2J4RUZSVjd0RGpUNFJmTHlzdTVoSVFFM0d1c1I2M0p1TzdYTDRySEdHSERXa2RkTGpKMzZzWXZ3LXB3ZElDbERHR2pzOHkzcWRQd2ttX0hqX0lNY3loSGdwSmFzV1dCVlAyRHFyb1otQ2tYSnBERWV6eVlwNHVUSWxhUQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>El rescate de una tripulación estadounidense en Irán involucró a decenas de aviones y un subterfugio</h3><p class="desc">AP informa sobre la arriesgada operación de rescate de una tripulación estadounidense en Irán, destacando la complejidad.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Ilustra los grandes riesgos y recursos involucrados en las operaciones militares estadounidenses en regiones sensibles.</div>
+            <h3>Irán se prepara para posibles ataques estadounidenses</h3><p class="desc">Irán pide cadenas humanas alrededor de las centrales eléctricas a medida que se acerca la fecha límite de Trump, preparándose para un conflicto.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> El aumento de la alerta en Irán subraya la gravedad de la amenaza y el potencial de consecuencias devastadoras.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxOb0pXMTBYSEFsZzhoUERCLV9RZjRSdldxMU9lR0NSUkkwTk8wN3o0NHZhVTY3QW1xMWhXbWpFaVhtOGxxUVhFcTdyMC16YWxEcVdVOFdBQ0NZQ045Uk9RNmY3cm5XVXBWS0RaX0JhOHA0YVZMT25BMk9jd1VLUGV3MUtCXzRsNDc1RkRjMTQ1eTU2c3lMd1JocQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNYTgwdktKbkpmWG13V0pCZFBBNWpGeGQwOXF1bm41Q2dZSFBzUmE1cTgyQ1lOVGhYM2hmNlkta3pMSnd6RlNrSkc1enVYUDJYQmx0cEJKT3RPMmVFelU2YkJvNHpSbHhTZXMtSV8zTzVGY284d2NCREdveEJiY3MxOXZGXzFOMXNyQnFHXzJwaGU4b256SXEtOVVTMXA4X3V6?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
-            <h3>Trump habla sobre la guerra con niños durante la rueda de huevos de Pascua en la Casa Blanca</h3><p class="desc">El Washington Post informa que Trump habló sobre la guerra a los niños en la rueda de huevos de Pascua.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Refleja la normalización del conflicto en el discurso público, incluso en entornos tradicionalmente apolíticos.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>Estados Unidos ataca la isla de Kharg; Trump emite advertencia</h3><p class="desc">La acción militar estadounidense contra Irán se intensifica mientras Trump advierte sobre consecuencias nefastas, lo que intensificaría el conflicto.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> El compromiso militar directo indica una escalada peligrosa, que corre el riesgo de una guerra a gran escala y repercusiones globales.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxQRDZ4WkRzNkNFcWROOXQydTVpTzRpOEpxbjBCbVYydFBFZ3kzUjkwV3dBcFBQWEhMLTBBYTdqT1E4dlNfOWRNZFJjTVRJOHVGRW1LSzduUkg0ekhFTWtXVFhIVkR5Y1VxRTVhWTYzU3lMeGc3RnE4SFkxSGNDQXNfbQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>Segunda vuelta de las elecciones especiales de Georgia para reemplazar a Marjorie Taylor Greene</h3><p class="desc">PBS adelanta la segunda vuelta especial del Congreso en Georgia.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> El resultado influirá en el equilibrio de poder en el Congreso y reflejará el sentimiento de los votantes.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPUDhrak82STNhU2pGRm1RVS1vYk5DVUVBeEZRanZaallBWEFzS0p6X0htcTkwMFRJS3l5TU4ya1RMNVFUbnFVZ3Z2RTA5SmJXMW9RUzQ0bkRnaWE1NExjdGtZZTNiTnRkRVdQRDNHdFVxVFdwcUJrX1Y2VEhnN2RtempaU01KUjdZTWY3MUMzRlVnWUhkVlhUMGNieERDb2VCQ0hSWVJvRldGMTdrX0dQbVMxeDJDbm1vbUN0TVhHZXR6bDlDNkHSAcsBQVVfeXFMTjlDNGliZFI1N1c1S1BpckM1WFJIbnpWWG1xUnJkS0hzTGlLY1pxTVk5eXNhRHFCZTN3aTNEeXhEN29zRFpkR29sUnRURGRoVm1YWno1a0oxLUxfMWViZzlPdXdrSHpLV1M0UF9fOXd3blF5YkUzRFpEZnVYSEVzeGo4RzRSYWk4dy1SVU0xQU1hbTdSdzFsSVpjejlCb0lnZGU4dUdBWWFQVk5xeVM5MXZfQXFSaHUyNVBTMDJ5eFZKdUw5aFhBeVhRTHM?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE8wQkwyTS03d3YtSHI2NWt1YTVtLVhFV0tMMkFLMURFbGRvTl9YTEY4ME9PanJkMEo0RlF3NlBxV19pWnZuNVVOSGxVQW0ycmlaWVduRHREUl8wV1g0SURvM1FLNWR6LWR1MDBjWW1nYng3WlAydldZQVpyQXpiQQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Los astronautas Artemis 2 volarán alrededor de la Luna en una misión de la NASA</h3><p class="desc">Space.com informa sobre la misión Artemis 2 de la NASA, un circuito lunar sin precedentes.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Representa un paso significativo en la renovada exploración lunar y los futuros esfuerzos espaciales.</div>
+            <h3>Se intensifican las elecciones para la Corte Suprema de Wisconsin</h3><p class="desc">Los liberales pretenden ampliar su mayoría en la Corte Suprema de Wisconsin, preparando el escenario para una elección crucial.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> El resultado tendrá un impacto significativo en el panorama legal y político en Wisconsin, con implicaciones nacionales.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNVU10MFZyOEdfZTlyT3kxbF9DSnFCSERFWWNubTBUQm1idnJLYUpweV9VTXU4dmY0SmdJQnVZcEotdTU3d2VBU2FLaUt4TXltbk5ENjV1UkJoR0c3Y2pOZmZodklnb1BvMGotYWI3UVVSLWc2ZkJ4eWg5YWRtdDNfUjhwSTIzLW0wTlZwVFQ3NWFiUnZjRTdZTkFxTVF1eDNiSEE5S3g2dGFZaGVQbkZ1cVk2Yw?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE5VRDl2RzNrWEhEWkVlOC1hQUp3QzVGbTBvTW96MUZGdU0zUTZGLW5SaEd0czV0Y1Q1ZGVBWFZpWnMxOXVuWG1sNTVwdHBUdXhBY2ZERW5oWTBhMy1WZThCUFE1bTNDd1NRRXktUG50WHU5bUItcWY5T1RGejA?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Barcos asiáticos que pasan por el estrecho de Ormuz: una descripción general</h3><p class="desc">La BBC examina qué barcos de países asiáticos navegan por el Estrecho de Ormuz.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Destaca la importancia estratégica del Estrecho y la implicación de diversas naciones asiáticas.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
+            <h3>Demócrata critica las "enfermizas" amenazas de Trump sobre Irán</h3><p class="desc">El principal demócrata critica la retórica agresiva de Trump hacia Irán, calificándolo de "persona extremadamente enferma".</p>
+            <div class="insight"><strong>Por qué es importante:</strong> La dura condena política pone de relieve profundas divisiones sobre la política exterior y el estilo de liderazgo de Trump.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMiiAJBVV95cUxQNDAtLXdrajdfeEVZR2cyMTdBMEJWRFFlNndVZGc3ck4yeXIydThaX0lWbmFFUmdjMkE0ekE0MkJIbDE5UmdwNWt2bXNmT012RWwtdU5XVGZHYU1Va0U5TUVuQllBal9vWEtBMXltYTRrTVhkdFBkc25KdG10R2oyTnhPWklfZ3ZHU3lJSEJxX0hhTUI2SGJKRWV2X2h1TW94UlJTT0prd0FNcTAxUDJVRl93MVRNeHg1V1NscjdrVTJZaVJ6MWpnUFJncTBUN2JDTFNHSmVpWmVieGxYdHhNSU1BcktOb0ZhazdhbTBLc3ZfamFKVkdDcW5SRHpiRW8zRHl3MFk2Wmw?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Verificación de hechos de las afirmaciones republicanas sobre el voto por correo</h3><p class="desc">El NYT desacredita las afirmaciones republicanas engañosas sobre el voto por correo y el fraude electoral, abordando las preocupaciones sobre la integridad electoral.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Combatir la desinformación es crucial para mantener la confianza en los procesos democráticos y garantizar elecciones justas.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxOTnhEbEcyZlRXWVpjUFNoQXROVDkxZmx2YmFQdEl5RFVsVG5jUFVNZTFiTGY2V1JqMVh1N1ZqNk5ZQ29rV3A4ODVZUkk4aWRDbzNtUDl6aUM1dF9lNFV0d1hQbEpHNVpJMFlyd0dpWW1GV29QR29ZbjB0d1NkUmItRkpvVjNUb1I1WXR2ZWJfVEM1WW9l?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
+            <h3>El rescate de Irán de Trump cuenta con asesores desconcertados</h3><p class="desc">Las afirmaciones de Trump sobre una operación secreta de rescate de Irán desconciertan a los principales asesores y plantean dudas sobre la credibilidad.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Las inconsistencias en las declaraciones de Trump socavan la confianza en el manejo de asuntos delicados por parte de su administración.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMieEFVX3lxTFAyQzhSWnE3ODlobGFCTXladEtHSHZjSmZoOF9ZcDRfdWFORDdZUklGemc2WEtoZWhzRVhlV2t3YzRBeVVTQU05VEhNRzNIclYwcnV1NlVTdjBmM0xCQ0FPQzkwbEY2ZkQ2VlpMRUV5YWJaa0htZk8zNA?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
+            <h3>El equipo inalámbrico de Kanye West en el Reino Unido genera controversia</h3><p class="desc">La actuación de Kanye West en Reino Unido genera polémica, llamando la atención sobre la expresión artística y la reacción del público.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Las controversias que rodean a las figuras públicas pueden influir en el discurso cultural y moldear la opinión pública.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQWm5fWm5HZUw4aTZjLTNrX3VrUEZWUEN0WTFhZmJPLWVvaXp4aG8way1OWmNWWU80WTZmemdya2drZVlNT2dZVWI5RmVCaEVVMWVGOXpwM0JETW9Hai1vZjlKVVZiOGc5Ql9oU2V5RE0xUmpvUEdyc2kwNVlsRXR2NE9lNlJqcGpha0lYcTRTcjRTR0xQaldvcnd2dFh6WFkxakVj?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
+            <h3>Exsoldado australiano acusado de crímenes de guerra</h3><p class="desc">Australia acusa a un exsoldado de múltiples asesinatos por crímenes de guerra en Afganistán y aborda la rendición de cuentas.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Hacer que las personas rindan cuentas por crímenes de guerra es esencial para defender el derecho y la justicia internacionales.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxONEdnZWtoQ1FneHUwZWdzUDFlU2Mwc2c1YU1Dbk96bWhKbUgyZmRDMHhVamFUUUp5R2lncDdhYjlqQUJLd3FOcUhNZVRLWHF3VTB4dy1IYmZYalo2SFNiWEVfemtNTnBnRVRNOWo3T3NvME9hc1F4aWlNWXJfLTFlWU9BcElMMTJpQ1RyT3lBeV9ONFZEV1M3VUtlTnlNbDdMWEd0TnRTb0t0ZWt6TllGcA?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Barcos asiáticos en el Estrecho de Ormuz</h3><p class="desc">Análisis de qué barcos de países asiáticos navegan por el Estrecho de Ormuz, una ruta marítima crítica.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Monitorear la actividad marítima es crucial para comprender la dinámica del comercio regional y los posibles riesgos de seguridad.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
@@ -60,92 +130,22 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
-            <h3>Trump respalda a Steve Hilton en la carrera por gobernador de California</h3><p class="desc">Los Angeles Times informa sobre el respaldo de Trump a Steve Hilton como gobernador de California.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Indica la continua influencia de Trump en la política republicana y posibles cambios en California.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdjhGenlrcFVzUUNaZXBIQlBkM2VrSm9ISVI1elQ2aXpadGNDeVB0bUNubElFd2hwam03a2JvcnBxeFphNzVZUnVjaTZIOVRPb0N4bjQyQldvNzBkbUt4di1ZYlNjOXpObkwtWlliQjBpRjZRSGZjdDN4Y3VJNWdaSHNjZzI2LWI5VFRVbjZ2UXhlZXlGaHpWTnUySlM1aXV3YkRBckdPMWdMdFl1MUhmRENGTjVBc3dG?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>¿Se podría invocar la Enmienda 25 contra Trump?</h3><p class="desc">PBS explica cómo se podría utilizar la 25ª Enmienda contra Trump.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Plantea dudas sobre la aptitud presidencial y posibles crisis constitucionales.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.7</span></div>
+            <h3>Hombres armados atacan el consulado israelí en Estambul</h3><p class="desc">Un ataque al consulado de Israel en Estambul plantea preocupaciones de seguridad y aumenta las tensiones regionales.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Estos ataques pueden aumentar la inestabilidad geopolítica y afectar las relaciones diplomáticas en la región.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxOdUtzWmkxNGQ4bzQxa0JEWEJBU043cjVZdHVUYVF1Mm5vV3ptVnhZenp0X1RHanlONk1oSFU2TUlHRWJaUTZ0ejNNLU5zRGxINjJYNzQ2U0lJRkNrRGt3cnR6allaMnBuU2w1aU5oQUdKZWhSV21yVmhQbndrTDlMWG0yUWdBWTRlajFINFJxUl9rOGhGNVJZV1RpR1hnOGRaUmVKa2pmZXQwd9IBrwFBVV95cUxOeHlEN3UwZG53MTg5ZXExalhhLVYxUHJnS2FXOENLNE5LTDJFaEdUYmlmYTBScE8yNXQ5TE1MNlU3Yk9pNm93TlJIZ0djSl85Ym9QZTJvQ21jUk5sY3YtaDJwemhhVTF2M0xOdzhVZ1NTNXg4T2tWUXJ3U25ZSUFSM2tkVlBaNEFrTEVjcm0tWGd1RkdieXZ6UXZ1UnhNZk5SWEtpdTRmSVJ5Q3FXOHFN?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxOTXN2RGtIem1mNmFuYmE5cnlZZ3g3MGpRX1IzMFgwTEY1UTZCUzZ1eUw2d3hHUWVPNXRvcUdTRFRJSEE2aHRqeUlTbmF0cmZTeWJYcmRCcGRGTFJEb0FBaGNTZGlRYzB4VkNscmdhUW5RTWE3clpja2JFSnd2ZmdsbFpoYkpsZ0s0ODJNNGYwTjh3WjRDTXJ2TmlmZUhIOEdv?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
-            <h3>Entrenador de Maine se ahoga salvando a niños de una corriente de resaca en Florida</h3><p class="desc">ABC7 informa sobre la trágica muerte de un entrenador que se ahogó salvando a niños.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Destaca la valentía y el sacrificio de un individuo, al tiempo que subraya los peligros de las corrientes de resaca.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.9</span></div>
+            <h3>Los precios del petróleo suben en medio de las tensiones entre Estados Unidos e Irán</h3><p class="desc">El mercado de valores reacciona ante el aumento de los precios del petróleo tras el aumento de la presión de Estados Unidos sobre Irán, lo que refleja la incertidumbre económica.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Las tensiones geopolíticas impactan directamente en los mercados globales, influyendo en las estrategias de inversión y la estabilidad económica.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxNUW93QVkzVUdBRElqa3lybm9DTWRtUG5jS05rS19lZmo2ajJES1l2aHl0VzhGejVEZ2NmNU9tQXc3REZTdkU0N2REMDNZcnVDNFI5V2dmODd6OFFUQTJtaVQxeVQ1SkJ6Xzhmd21sa3Qydjh6SkR6akpwTXNObzNuUGVoX0MxMlZIQ0xERkhjUU8tYmdZRjBJOFBIcFhnbW1qQXg4bUpXQjNUX1pSbFdjZS1SNjhqbWtIOU1tY2tyQWpjSnJ0ZldMYkRB0gHPAUFVX3lxTFB6S3RiRmx4MURYZTg4SGFTMlpETFd2clZ0SzdwVGgxRGZuRVlsc3pLelNQVjQ1Qmx3Qk5mX1pieVUxeUN1LTdQTEY4eVNKem51MVdNVnNFM2k5TXllSmNzY0lxWE9RdVZLWjdOdzY2TVNfZjVscmVlNTZSTV95ekI1MTZKYjNrNkoyN25LN242b0FNUlBUUjAtOWZCQkJ1cVZGdW5MLWM0cjZaemd1SXJ2UHlVUHphdmgzQ1FaRm1td29GZkdSUVdWUVRzbXBYWQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>Video de Minneapolis socava las afirmaciones de ICE sobre tiroteos</h3><p class="desc">MPR News informa sobre evidencia en video que contradice las afirmaciones de ICE sobre un tiroteo no fatal.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Plantea preocupaciones sobre la transparencia y la rendición de cuentas en las operaciones de aplicación de la ley.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxNU0RFUG5Tc2pmaWJjS0lRNHdPM2pCbEhYcW0ycW1OaDJlMmVRWDBUcEI4UmZFRnBNQW5pX0Q5azQwOXlWNl9kZWlZMFhNdkhJd25DY0ozXzh0MVVuVTZwbnAxWGNYNDN3S1BESDBRZk90R2NXYVdMRlk0ODZyWVRReEdlY3VzLXhZeEJZS3pIRTMtYzJkRVVJYlJTTDdTaUkxVmVhUHdlLVdZWU1GWGVrTzZrb3JwSWpnTXNBak0xUE9iUHk3ZkdVaQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Australia acusa a un exsoldado de crímenes de guerra en Afganistán</h3><p class="desc">El NYT informa sobre Australia acusando a un exsoldado de crímenes de guerra.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Demuestra esfuerzos para responsabilizar a las personas por presuntas malas conductas durante las operaciones militares.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxNRXJHbDdMX1F4LU12RnJMRkxnemM2SjdObVU0M2xKSXYyTFBCeGl2anN3dkpyR1hIMGdJa193U0tuT0tvbDlJa3BTaV8zOWZVeWNESDVzWTZ0RFVaUGN4Y1NvNGRfek9NSmVTeTBLSGFGNHF4eGhwcEtkTjNldDQwcmRZNDg4dmZMZzJiRUJfbmZfYzRucWIzSnRheHhtZ3VGVjdyVUlFd1BzeDVVV2cw?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
-            <h3>Irán desafiante bajo ataques aéreos antes de la fecha límite de Trump</h3><p class="desc">Reuters informa sobre el desafío de Irán a pesar de los ataques aéreos antes de la fecha límite del alto el fuego fijada por Trump.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Señala la posibilidad de una mayor escalada e inestabilidad en la región.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxONkdoNUg5eFdxOVZFWkhrMEtYUzl5VUtmUjJNZm5SWE5PbGFFUWVydUcyNHp3Q1E5ckJUaXpUUmZsU3NRcUxCY05lZEQwN2FFQldsUzJ3Mmt3NktrUU5MaDVsRHZicTE3M1NEZlJaNVo3WW00bWlYdFYzYUpZaWllOFZ6ZFNQQy11YlVvdEpRMjNEZmJfbm5sT1VtcGJGdw?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>Hombres armados abren fuego cerca del consulado de Israel en Estambul</h3><p class="desc">El Jerusalem Post informa sobre un tiroteo cerca del consulado de Israel en Estambul.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Plantea preocupaciones sobre la seguridad y la posibilidad de que aumenten las tensiones en la región.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE5sR3l4TFlJN3EySzNXTUtYNUJCQWRLRkx5TDB3cUFfd3ZqczJPaVJRZ1ZlS1N6cU1mU3NFVXU5aURJaDRGMWZmanlFeUZ3T01icWRvUFhlbm1zZEh2?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
-            <h3>Kim Jong Un elogia a Lee de Corea del Sur por disculparse por los drones</h3><p class="desc">Bloomberg informa que Kim Jong Un elogia a Lee de Corea del Sur por su disculpa por los drones.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Sugiere un potencial deshielo en las relaciones entre Corea del Norte y Corea del Sur.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxNeFNMYTVJU1BySXFjQzFwUUYtLWhEeEMyck1YQjBoSFZrOWdxVHFHMVlIZGtyenp3SWVYVHVCUDdGcktnVWhhV05DYzktS0E4Z1RfMHltVjhaaERnLUYyRTlQWDI5TzFlR1ZlbUtwZ2RQaW1yUGZkX3hBRDB6Y2hPQnVxVy1XMU9CYVh0UzkyczZiXzZhQXllSldCdlRjNWlSZmxkanJDem1jWlBzaWFIdy1R?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Los precios del petróleo suben a medida que se acerca la fecha límite de Trump para alcanzar un acuerdo</h3><p class="desc">El NYT informa un aumento en el precio del petróleo debido a la próxima fecha límite de Trump para llegar a un acuerdo.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Destaca el impacto de los acontecimientos geopolíticos en los mercados globales y los precios de la energía.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxQOTNjN3FsQU0zRTM1MDcxZjNoSG1CNkJSM3FqVzNYOW9iWW5sOFNYWkhnU25jMlJrSGhMVE9JNndEMWJmMmlPNi1yZF9PWUF1MkRLY0dLQWVsTmdTNE1odWpqVVE0UEc2dGlLbVVsTHJDZDJfYnYxZVRobzhCczVFag?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxQTXJjSWVmMi1mYVVSakE0YmJhRUctTHdDb29wSk5wUlNNZXphTjI2N29TXzVYb2xEam9jTUNscl84OTg5ZHVuQlhWUGtBU3VzS3Rxa2tuRFlLdFNWNlNwbzEwd3dVaTVuckVlX01fTVNSMy12bTFOSHhIRkhRVWh5M2NVSU5NeWc?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div></body></html>
