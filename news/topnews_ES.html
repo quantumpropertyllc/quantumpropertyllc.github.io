@@ -1,28 +1,138 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-04-08 03:55 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Conflicto entre Estados Unidos e Irán (estrecho de Ormuz, isla Kharg)</span><span class="cluster">#Desarrollo de productos Apple (iPhone plegable, MacBook Neo)</span><span class="cluster">#Desafíos legales y políticos (Registros presidenciales, JD Vance)</span><span class="cluster">#Crimen y cuestiones legales (tiroteo en ICE, compensación del rapero)</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Las tensiones geopolíticas están aumentando con los ataques de Estados Unidos a objetivos iraníes y el veto de China y Rusia de una resolución de la ONU sobre el Estrecho de Ormuz. Los problemas internos incluyen impugnaciones legales a las leyes sobre registros presidenciales y el aumento de los costos del combustible que afectan a los conductores estadounidenses. Las noticias de tecnología incluyen el desarrollo del iPhone plegable de Apple y el regreso de Motorola al mercado de tabletas de EE. UU.</p><div class="divider"></div><p class="insight-text">La convergencia de los conflictos geopolíticos y los avances tecnológicos crea incertidumbre en el panorama global.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-04-08 06:34 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Tensiones entre Estados Unidos e Irán</span><span class="cluster">#Acciones de la administración Trump</span><span class="cluster">#Innovaciones tecnológicas</span><span class="cluster">#Noticias deportivas</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>El panorama noticioso está actualmente dominado por las crecientes tensiones entre Estados Unidos e Irán, junto con importantes avances en los deportes y la tecnología. Los acontecimientos políticos, incluidas las acciones y declaraciones de Trump, también son destacados. Además, hay actualizaciones sobre la industria del entretenimiento y la exploración espacial.</p><div class="divider"></div><p class="insight-text">La inestabilidad geopolítica y los avances tecnológicos son factores clave que dan forma a los acontecimientos actuales.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>China y Rusia vetan la resolución de Ormuz</h3><p class="desc">Rusia y China vetaron una resolución de la ONU sobre la coordinación de esfuerzos defensivos para reabrir el Estrecho de Ormuz.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> El veto pone de relieve las divisiones geopolíticas y obstaculiza los esfuerzos internacionales para abordar posibles conflictos marítimos.</div>
+            <h3>Trump fija fecha límite para Irán en medio de ataques militares</h3><p class="desc">Trump amenaza a Irán y fija la hora a las 8 p.m. Fecha límite ET cuando Estados Unidos ataca objetivos en la isla Kharg.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> La escalada de tensiones podría tener importantes consecuencias geopolíticas y un posible conflicto militar.</div>
             <div class="card-footer">
-                <span class="source">Bloomberg</span>
+                <span class="source">CNN</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.bloomberg.com/news/articles/2026-04-07/china-and-russia-veto-security-council-resolution-on-hormuz" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.cnn.com/2026/04/07/world/live-news/iran-war-trump-us-israel" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.2</span></div>
-            <h3>Tiroteo de ICE en Patterson cierra rampas de la I-5</h3><p class="desc">Un tiroteo en el que participó un oficial de ICE cerca de Sperry Avenue en Patterson, California, provocó el cierre de las rampas de la I-5. Sospechoso hospitalizado.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> El incidente genera preocupación sobre las actividades policiales y la seguridad pública en la región.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Los precios del petróleo aumentan a medida que aumentan las tensiones entre Estados Unidos e Irán</h3><p class="desc">El mercado de valores cae, los precios del petróleo suben después de que Estados Unidos intensifica la presión sobre Irán.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> La inestabilidad geopolítica impacta los mercados financieros y los precios de la energía.</div>
             <div class="card-footer">
-                <span class="source">Modesto Bee</span>
+                <span class="source">The Wall Street Journal</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.modbee.com/news/local/article315328322.html" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-07-2026" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>Michael Malone contratado como entrenador de baloncesto de la UNC</h3><p class="desc">Michael Malone, ex entrenador campeón de la NBA, se convierte en el nuevo entrenador en jefe del baloncesto masculino de la UNC.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Contratación importante para el programa atlético de la universidad, que trae a un ganador probado.</div>
+            <div class="card-footer">
+                <span class="source">Goheels.com</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="https://goheels.com/news/2026/4/7/mens-basketball-carolina-hires-michael-malone-as-mens-basketball-head-coach" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.9</span></div>
+            <h3>Kanye West prohibido en el Reino Unido y festival de música cancelado</h3><p class="desc">Wireless Festival cancelado después de que Gran Bretaña le negara la entrada a Kanye West debido a declaraciones antisemitas.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca las consecuencias de declaraciones controvertidas y debates sobre la libertad de expresión.</div>
+            <div class="card-footer">
+                <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.washingtonpost.com/entertainment/music/2026/04/07/kanye-west-wireless-festival-canceled/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Fiscal General Interino afirma que Trump puede ordenar investigaciones de enemigos</h3><p class="desc">El fiscal general interino afirma el "derecho" de Trump a ordenar investigaciones sobre sus adversarios políticos.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Plantea preocupaciones sobre la politización del sistema de justicia.</div>
+            <div class="card-footer">
+                <span class="source">Democracydocket.com</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.democracydocket.com/news-alerts/acting-attorney-general-todd-blanche-trump-duty-right-order-investigations/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Delta Air aumenta las tarifas de equipaje debido a los costos del combustible para aviones</h3><p class="desc">Delta Air aumenta las tarifas de equipaje facturado en rutas nacionales e internacionales debido al aumento de los precios del combustible para aviones.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Los consumidores enfrentan mayores costos de viaje debido a las tensiones geopolíticas que afectan los precios del combustible.</div>
+            <div class="card-footer">
+                <span class="source">KSL.com</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.ksl.com/article/51478252/delta-air-hikes-checked-baggage-fees-as-jet-fuel-prices-soar" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
+            <h3>'The Boys' elige nuevos personajes para la última temporada</h3><p class="desc">The Boys agrega The Worm & Teenage Kix para su quinta y última temporada que se estrenará mañana.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Los fanáticos anticipan el final de la popular serie con nuevos personajes.</div>
+            <div class="card-footer">
+                <span class="source">Deadline</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="http://deadline.com/2026/04/the-boys-casts-the-worm-teenage-kix-final-season-1236783572/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
+            <h3>Estados Unidos ataca la isla iraní de Kharg en medio de la advertencia de Trump</h3><p class="desc">Estados Unidos ataca la isla Kharg mientras Trump advierte a Irán que abra el Estrecho de Ormuz a las 8 p.m. ET o enfrentarse a la destrucción.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Una mayor escalada del conflicto con consecuencias potencialmente devastadoras.</div>
+            <div class="card-footer">
+                <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.washingtonpost.com/world/2026/04/07/trump-us-iran-war-threat/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
+            <h3>Harbaugh optimista acerca de que Lawrence se quede con los Gigantes</h3><p class="desc">John Harbaugh cree que Dexter Lawrence permanecerá con los Giants a pesar de la solicitud de cambio.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> El equipo tiene como objetivo resolver problemas contractuales para retener al jugador clave.</div>
+            <div class="card-footer">
+                <span class="source">NBCSports.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/john-harbaugh-i-think-prospects-are-high-dexter-lawrence-remains-with-giants" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Trump respalda a Viktor Orban antes de las elecciones húngaras</h3><p class="desc">Trump apoya a Viktor Orban en una llamada telefónica durante el mitin de Vance mientras Orban enfrenta una elección difícil.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Muestra alianzas políticas continuas e influencia en la política europea.</div>
+            <div class="card-footer">
+                <span class="source">Politico</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.politico.com/news/2026/04/07/trump-viktor-orban-vance-00861898" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
+            <h3>El mundo espera el plazo de Trump sobre Irán</h3><p class="desc">Las 8 p.m. de Trump Se acerca la fecha límite para que Irán reabra el Estrecho de Ormuz, amenazando con ataques a la infraestructura.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Incertidumbre global mientras el mundo espera el resultado del ultimátum de Trump.</div>
+            <div class="card-footer">
+                <span class="source">Politico</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.politico.com/news/2026/04/07/only-the-president-knows-the-world-awaits-trumps-8-p-m-iran-deadline-00861865" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.3</span></div>
+            <h3>El rapero Lil Tjay arrestado en relación con un tiroteo en offset</h3><p class="desc">Lil Tjay arrestado por participar en el tiroteo de Offset en Florida.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Cuestiones legales que afectan a la industria del entretenimiento.</div>
+            <div class="card-footer">
+                <span class="source">Variety</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://variety.com/2026/music/news/lil-tjay-arrested-connection-offset-shooting-florida-1236710162/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Los astronautas proponen nombrar el cráter lunar en honor a la esposa del comandante</h3><p class="desc">La tripulación de Artemis II sugiere nombrar un cráter lunar 'Carroll' en honor a la difunta esposa de Reid Wiseman.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Conmovedor homenaje durante la misión de exploración espacial.</div>
+            <div class="card-footer">
+                <span class="source">NPR</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.npr.org/2026/04/07/nx-s1-5776440/artemis-moon-crater-carroll-wiseman" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>El iPhone plegable de Apple está en camino de debutar en septiembre</h3><p class="desc">Según se informa, el lanzamiento del primer teléfono plegable de Apple está programado durante el período normal de lanzamiento del iPhone este año.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> El lanzamiento podría tener un impacto significativo en el mercado de teléfonos plegables y en la posición competitiva de Apple.</div>
+            <h3>El iPhone plegable de Apple está en camino de su lanzamiento en septiembre</h3><p class="desc">Aún se espera que el iPhone plegable de Apple se lance en septiembre, a pesar de las preocupaciones sobre la fabricación.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Importante desarrollo en el mercado de los teléfonos inteligentes.</div>
             <div class="card-footer">
                 <span class="source">Bloomberg</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
@@ -30,122 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Demanda impugna memorando del Departamento de Justicia sobre registros presidenciales</h3><p class="desc">Las organizaciones están cuestionando la determinación del Departamento de Justicia de que una ley de registros presidenciales es inconstitucional.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> La demanda podría tener implicaciones para la preservación y accesibilidad de los registros presidenciales.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.7</span></div>
+            <h3>Chrome agrega pestañas verticales</h3><p class="desc">La actualización de Google Chrome introduce pestañas verticales y un modo de lectura más limpio.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Mejoras en la experiencia del usuario en la navegación web.</div>
             <div class="card-footer">
-                <span class="source">CBS News</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.cbsnews.com/news/justice-department-memo-presidential-records-act-lawsuit/" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>El mensaje de Trump sobre Irán genera conversaciones sobre un juicio político</h3><p class="desc">Los demócratas en el Capitolio están discutiendo un posible juicio político o destitución del presidente Trump tras sus declaraciones sobre Irán.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Las crecientes tensiones con Irán están alimentando divisiones políticas y planteando cuestiones constitucionales.</div>
-            <div class="card-footer">
-                <span class="source">Axios</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.axios.com/2026/04/07/trump-iran-impeachment-25th-amendment-war-crimes" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.2</span></div>
-            <h3>Trump amenaza a Irán mientras se intensifican los ataques</h3><p class="desc">El presidente Trump advierte sobre la destrucción de "toda una civilización" si Irán no reabre el Estrecho de Ormuz, mientras aumentan los ataques contra Irán.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> La escalada de retórica y acciones militares aumentan el riesgo de un conflicto a gran escala.</div>
-            <div class="card-footer">
-                <span class="source">CBS News</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.cbsnews.com/live-updates/iran-war-trump-deadline-power-plants-human-chains-israel-train-strikes/" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>El rapero Offset disparó en Florida; Lil Tjay acusado</h3><p class="desc">Según los informes, el rapero Offset de Migos recibió un disparo cerca de un hotel de Hollywood, Florida. Lil Tjay ha sido acusado.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> El incidente resalta los problemas actuales de violencia y crimen dentro de la industria del entretenimiento.</div>
-            <div class="card-footer">
-                <span class="source">WSB Atlanta</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.wsbtv.com/news/local/gwinnett-county/former-migos-rapper-metro-atlanta-native-offset-shot-florida-reports-say/S5QQY3IOMFDYDKJHZBKL443TWU/" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>Los estadounidenses buscan formas de ahorrar en gasolina</h3><p class="desc">Con precios de la gasolina por encima de los 4 dólares el galón, los estadounidenses están explorando opciones como conducir más lento, optar por vehículos eléctricos o reducir la conducción por completo.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Los crecientes costos del combustible están impactando el comportamiento de los consumidores y generando interés en el transporte alternativo.</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
+                <span class="source">TechCrunch</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.npr.org/2026/04/07/nx-s1-5775907/high-gas-prices-save-money-iran-war" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.2</span></div>
-            <h3>Motorola lanza la primera tableta estadounidense en una década</h3><p class="desc">La Moto Pad de Motorola marca el regreso de la compañía al mercado de tabletas de EE. UU. después de más de 15 años.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> El lanzamiento señala el renovado enfoque de Motorola en ampliar su cartera de productos.</div>
-            <div class="card-footer">
-                <span class="source">The Verge</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.theverge.com/tech/908068/motorola-moto-pad-2026-tablet-g-stylus-smartphone-pricing-availability" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Dexter Lawrence busca intercambio con los gigantes</h3><p class="desc">NFL.com examina los destinos potenciales para Dexter Lawrence luego de que el tackle defensivo de los Giants solicitara un intercambio.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> La solicitud de cambio podría impactar significativamente la alineación defensiva de los Giants.</div>
-            <div class="card-footer">
-                <span class="source">NFL News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.nfl.com/news/dexter-lawrence-landing-spots-eight-potential-destinations-for-giants-star-dt" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>La demanda de MacBook Neo supera las expectativas</h3><p class="desc">Apple se enfrenta a desafíos en la cadena de suministro a medida que la demanda del nuevo MacBook Neo supera las previsiones iniciales.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> La alta demanda indica un fuerte interés de los consumidores en la última oferta de portátiles de Apple.</div>
-            <div class="card-footer">
-                <span class="source">9to5Mac</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
-                <a href="https://9to5mac.com/2026/04/07/apple-faces-supply-chain-problem-as-macbook-neo-demand-exceeds-expectations/" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>UConn aborda el arbitraje en la pérdida del juego por el título</h3><p class="desc">El equipo de baloncesto masculino de UConn se abstuvo en gran medida de criticar al equipo de árbitros después de su derrota en el juego por el título.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> La respuesta del equipo refleja un enfoque en el espíritu deportivo a pesar de los problemas percibidos con los árbitros.</div>
-            <div class="card-footer">
-                <span class="source">Ctinsider.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.ctinsider.com/sports/uconn-mens-basketball/article/uconn-mens-basketball-march-madness-dan-hurley-22191809.php" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>JD Vance critica la intromisión de Bruselas en Hungría</h3><p class="desc">JD Vance critica a los "burócratas" de Bruselas por interferir en las elecciones húngaras, mientras que el rival de Orbán acusa a la Casa Blanca de interferencia.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Los comentarios resaltan los debates en curso sobre la influencia extranjera en las elecciones europeas.</div>
-            <div class="card-footer">
-                <span class="source">POLITICO.eu</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.politico.eu/article/us-jd-vance-slams-eu-brussels-bureaucrats-meddling-hungary-before-election/" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
-            <h3>Estados Unidos ataca objetivos militares iraníes en la isla de Kharg</h3><p class="desc">Estados Unidos ha atacado objetivos militares en la isla Kharg, un centro clave de exportación de petróleo iraní, pero evitó atacar instalaciones petroleras.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Los ataques representan una escalada significativa de las tensiones entre Estados Unidos e Irán.</div>
-            <div class="card-footer">
-                <span class="source">CNN</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.cnn.com/2026/04/07/middleeast/kharg-island-us-assault-risk-trump-intl" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
-            <h3>Australia acusa a exsoldado de crímenes de guerra</h3><p class="desc">Australia acusó a un exsoldado de cinco asesinatos por crímenes de guerra en Afganistán.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Los cargos subrayan los esfuerzos en curso para investigar y procesar presuntos crímenes de guerra.</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.npr.org/2026/04/07/g-s1-116644/australia-charges-ex-soldier-with-5-war-crime-murders-in-afghanistan" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://techcrunch.com/2026/04/07/chrome-is-finally-getting-vertical-tabs/" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div></body></html>

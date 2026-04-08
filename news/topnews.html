@@ -1,28 +1,138 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-04-08 03:55 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#US-Iran Conflict (Hormuz Strait, Kharg Island)</span><span class="cluster">#Apple Product Development (Foldable iPhone, MacBook Neo)</span><span class="cluster">#Legal and Political Challenges (Presidential Records, JD Vance)</span><span class="cluster">#Crime and Legal Issues (ICE Shooting, Rapper Offset)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Geopolitical tensions are escalating with the US striking Iranian targets and China and Russia vetoing a UN resolution regarding the Strait of Hormuz. Domestic issues include legal challenges to presidential records laws and rising fuel costs impacting American drivers. Technology news features Apple's foldable iPhone development and Motorola's return to the US tablet market.</p><div class="divider"></div><p class="insight-text">The convergence of geopolitical conflict and technological advancements creates uncertainty in the global landscape.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-04-08 06:34 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#US-Iran Tensions</span><span class="cluster">#Trump Administration Actions</span><span class="cluster">#Technology Innovations</span><span class="cluster">#Sports News</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>The news landscape is currently dominated by escalating tensions between the U.S. and Iran, alongside significant developments in sports and technology. Political events, including Trump's actions and statements, are also prominent. Furthermore, there are updates regarding the entertainment industry and space exploration.</p><div class="divider"></div><p class="insight-text">Geopolitical instability and technological advancements are key drivers shaping current events.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>China and Russia Veto Hormuz Resolution</h3><p class="desc">Russia and China vetoed a UN resolution on coordinating defensive efforts for reopening the Strait of Hormuz.</p>
-            <div class="insight"><strong>Why this matters:</strong> The veto highlights geopolitical divisions and hinders international efforts to address potential maritime conflicts.</div>
+            <h3>Trump Issues Iran Deadline Amidst Military Strikes</h3><p class="desc">Trump threatens Iran, setting an 8 p.m. ET deadline as the US strikes targets on Kharg Island.</p>
+            <div class="insight"><strong>Why this matters:</strong> Escalating tensions could lead to significant geopolitical consequences and potential military conflict.</div>
             <div class="card-footer">
-                <span class="source">Bloomberg</span>
+                <span class="source">CNN</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.bloomberg.com/news/articles/2026-04-07/china-and-russia-veto-security-council-resolution-on-hormuz" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.cnn.com/2026/04/07/world/live-news/iran-war-trump-us-israel" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.2</span></div>
-            <h3>ICE Shooting in Patterson Closes I-5 Ramps</h3><p class="desc">An ICE officer-involved shooting near Sperry Avenue in Patterson, California, led to the closure of I-5 ramps. Suspect hospitalized.</p>
-            <div class="insight"><strong>Why this matters:</strong> The incident raises concerns about law enforcement activities and public safety in the region.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Oil Prices Surge as US-Iran Tensions Rise</h3><p class="desc">Stock market dips, oil prices jump after the U.S. escalates pressure on Iran.</p>
+            <div class="insight"><strong>Why this matters:</strong> Geopolitical instability impacts financial markets and energy prices.</div>
             <div class="card-footer">
-                <span class="source">Modesto Bee</span>
+                <span class="source">The Wall Street Journal</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.modbee.com/news/local/article315328322.html" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-07-2026" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>Michael Malone Hired as UNC Basketball Coach</h3><p class="desc">Michael Malone, former NBA champion coach, becomes the new head coach for UNC Men's Basketball.</p>
+            <div class="insight"><strong>Why this matters:</strong> Significant hire for the university's athletic program, bringing in a proven winner.</div>
+            <div class="card-footer">
+                <span class="source">Goheels.com</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://goheels.com/news/2026/4/7/mens-basketball-carolina-hires-michael-malone-as-mens-basketball-head-coach" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.9</span></div>
+            <h3>Kanye West Banned from UK, Music Festival Canceled</h3><p class="desc">Wireless Festival canceled after Britain denies Kanye West entry due to antisemitic statements.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the consequences of controversial statements and freedom of speech debates.</div>
+            <div class="card-footer">
+                <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.washingtonpost.com/entertainment/music/2026/04/07/kanye-west-wireless-festival-canceled/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Acting AG Claims Trump Can Order Investigations of Enemies</h3><p class="desc">Acting attorney general asserts Trump's 'right' to order investigations into his political adversaries.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises concerns about the politicization of the justice system.</div>
+            <div class="card-footer">
+                <span class="source">Democracydocket.com</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.democracydocket.com/news-alerts/acting-attorney-general-todd-blanche-trump-duty-right-order-investigations/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Delta Air Raises Baggage Fees Due to Jet Fuel Costs</h3><p class="desc">Delta Air increases checked baggage fees on domestic and international routes due to soaring jet fuel prices.</p>
+            <div class="insight"><strong>Why this matters:</strong> Consumers face higher travel costs due to geopolitical tensions affecting fuel prices.</div>
+            <div class="card-footer">
+                <span class="source">KSL.com</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.ksl.com/article/51478252/delta-air-hikes-checked-baggage-fees-as-jet-fuel-prices-soar" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
+            <h3>'The Boys' Casts New Characters for Final Season</h3><p class="desc">The Boys adds The Worm & Teenage Kix for its fifth and final season premiering tomorrow.</p>
+            <div class="insight"><strong>Why this matters:</strong> Fans anticipate the conclusion of the popular series with new characters.</div>
+            <div class="card-footer">
+                <span class="source">Deadline</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="http://deadline.com/2026/04/the-boys-casts-the-worm-teenage-kix-final-season-1236783572/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
+            <h3>US Strikes Iran's Kharg Island Amidst Trump's Warning</h3><p class="desc">U.S. strikes Kharg Island as Trump warns Iran to open the Strait of Hormuz by 8 p.m. ET or face destruction.</p>
+            <div class="insight"><strong>Why this matters:</strong> Further escalation of conflict with potentially devastating consequences.</div>
+            <div class="card-footer">
+                <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.washingtonpost.com/world/2026/04/07/trump-us-iran-war-threat/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
+            <h3>Harbaugh Optimistic About Lawrence Staying with Giants</h3><p class="desc">John Harbaugh believes Dexter Lawrence will remain with the Giants despite trade request.</p>
+            <div class="insight"><strong>Why this matters:</strong> Team aims to resolve contract issues to retain key player.</div>
+            <div class="card-footer">
+                <span class="source">NBCSports.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/john-harbaugh-i-think-prospects-are-high-dexter-lawrence-remains-with-giants" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Trump Endorses Viktor Orban Ahead of Hungarian Election</h3><p class="desc">Trump supports Viktor Orban in a phone call during Vance's rally as Orban faces a tough election.</p>
+            <div class="insight"><strong>Why this matters:</strong> Shows continued political alliances and influence in European politics.</div>
+            <div class="card-footer">
+                <span class="source">Politico</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.politico.com/news/2026/04/07/trump-viktor-orban-vance-00861898" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
+            <h3>World Awaits Trump's Iran Deadline</h3><p class="desc">Trump's 8 p.m. deadline for Iran to reopen the Strait of Hormuz looms, threatening strikes on infrastructure.</p>
+            <div class="insight"><strong>Why this matters:</strong> Global uncertainty as the world awaits the outcome of Trump's ultimatum.</div>
+            <div class="card-footer">
+                <span class="source">Politico</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.politico.com/news/2026/04/07/only-the-president-knows-the-world-awaits-trumps-8-p-m-iran-deadline-00861865" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.3</span></div>
+            <h3>Rapper Lil Tjay Arrested in Connection with Offset Shooting</h3><p class="desc">Lil Tjay arrested for involvement in Offset's shooting in Florida.</p>
+            <div class="insight"><strong>Why this matters:</strong> Legal issues impacting the entertainment industry.</div>
+            <div class="card-footer">
+                <span class="source">Variety</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://variety.com/2026/music/news/lil-tjay-arrested-connection-offset-shooting-florida-1236710162/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Astronauts Propose Naming Moon Crater After Commander's Wife</h3><p class="desc">Artemis II crew suggests naming a moon crater 'Carroll' after Reid Wiseman's late wife.</p>
+            <div class="insight"><strong>Why this matters:</strong> Touching tribute during space exploration mission.</div>
+            <div class="card-footer">
+                <span class="source">NPR</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.npr.org/2026/04/07/nx-s1-5776440/artemis-moon-crater-carroll-wiseman" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>Apple's Foldable iPhone on Track for September Debut</h3><p class="desc">Apple's first foldable phone is reportedly on schedule for release during the normal iPhone launch period this year.</p>
-            <div class="insight"><strong>Why this matters:</strong> The launch could significantly impact the foldable phone market and Apple's competitive position.</div>
+            <h3>Apple's Foldable iPhone on Track for September Release</h3><p class="desc">Apple's foldable iPhone is still expected to launch in September, despite manufacturing concerns.</p>
+            <div class="insight"><strong>Why this matters:</strong> Significant development in the smartphone market.</div>
             <div class="card-footer">
                 <span class="source">Bloomberg</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
@@ -30,122 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Lawsuit Challenges Justice Department Memo on Presidential Records</h3><p class="desc">Organizations are challenging the Justice Department's determination that a presidential records law is unconstitutional.</p>
-            <div class="insight"><strong>Why this matters:</strong> The lawsuit could have implications for the preservation and accessibility of presidential records.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.7</span></div>
+            <h3>Chrome Adds Vertical Tabs</h3><p class="desc">Google Chrome's update introduces vertical tabs and a cleaner Reading Mode.</p>
+            <div class="insight"><strong>Why this matters:</strong> Enhancements to user experience in web browsing.</div>
             <div class="card-footer">
-                <span class="source">CBS News</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.cbsnews.com/news/justice-department-memo-presidential-records-act-lawsuit/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>Trump's Iran Post Sparks Impeachment Talk</h3><p class="desc">Democrats on Capitol Hill are discussing potential impeachment or removal of President Trump following his statements on Iran.</p>
-            <div class="insight"><strong>Why this matters:</strong> Escalating tensions with Iran are fueling political divisions and raising constitutional questions.</div>
-            <div class="card-footer">
-                <span class="source">Axios</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.axios.com/2026/04/07/trump-iran-impeachment-25th-amendment-war-crimes" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.2</span></div>
-            <h3>Trump Threatens Iran as Strikes Intensify</h3><p class="desc">President Trump warns of destroying "a whole civilization" if Iran doesn't reopen the Strait of Hormuz, as strikes on Iran ramp up.</p>
-            <div class="insight"><strong>Why this matters:</strong> The escalating rhetoric and military actions heighten the risk of a full-scale conflict.</div>
-            <div class="card-footer">
-                <span class="source">CBS News</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.cbsnews.com/live-updates/iran-war-trump-deadline-power-plants-human-chains-israel-train-strikes/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Rapper Offset Shot in Florida; Lil Tjay Charged</h3><p class="desc">Rapper Offset of Migos was reportedly shot near a Hollywood, Florida hotel. Lil Tjay has been charged.</p>
-            <div class="insight"><strong>Why this matters:</strong> The incident highlights ongoing issues of violence and crime within the entertainment industry.</div>
-            <div class="card-footer">
-                <span class="source">WSB Atlanta</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wsbtv.com/news/local/gwinnett-county/former-migos-rapper-metro-atlanta-native-offset-shot-florida-reports-say/S5QQY3IOMFDYDKJHZBKL443TWU/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>Americans Seek Ways to Save on Gas</h3><p class="desc">With gas prices above $4 a gallon, Americans are exploring options like driving slower, going electric, or reducing driving altogether.</p>
-            <div class="insight"><strong>Why this matters:</strong> Rising fuel costs are impacting consumer behavior and driving interest in alternative transportation.</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
+                <span class="source">TechCrunch</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.npr.org/2026/04/07/nx-s1-5775907/high-gas-prices-save-money-iran-war" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.2</span></div>
-            <h3>Motorola Launches First US Tablet in a Decade</h3><p class="desc">Motorola's Moto Pad marks the company's return to the US tablet market after over 15 years.</p>
-            <div class="insight"><strong>Why this matters:</strong> The launch signals Motorola's renewed focus on expanding its product portfolio.</div>
-            <div class="card-footer">
-                <span class="source">The Verge</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.theverge.com/tech/908068/motorola-moto-pad-2026-tablet-g-stylus-smartphone-pricing-availability" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Dexter Lawrence Seeks Trade from Giants</h3><p class="desc">NFL.com examines potential destinations for Dexter Lawrence after the Giants defensive tackle requested a trade.</p>
-            <div class="insight"><strong>Why this matters:</strong> The trade request could significantly impact the Giants' defensive lineup.</div>
-            <div class="card-footer">
-                <span class="source">NFL News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.nfl.com/news/dexter-lawrence-landing-spots-eight-potential-destinations-for-giants-star-dt" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>MacBook Neo Demand Exceeds Expectations</h3><p class="desc">Apple is facing supply chain challenges as demand for the new MacBook Neo surpasses initial forecasts.</p>
-            <div class="insight"><strong>Why this matters:</strong> The high demand indicates strong consumer interest in Apple's latest laptop offering.</div>
-            <div class="card-footer">
-                <span class="source">9to5Mac</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://9to5mac.com/2026/04/07/apple-faces-supply-chain-problem-as-macbook-neo-demand-exceeds-expectations/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>UConn Addresses Officiating in Title Game Loss</h3><p class="desc">UConn men's basketball team largely refrained from criticizing the officiating crew after their title game defeat.</p>
-            <div class="insight"><strong>Why this matters:</strong> The team's response reflects a focus on sportsmanship despite perceived officiating issues.</div>
-            <div class="card-footer">
-                <span class="source">Ctinsider.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.ctinsider.com/sports/uconn-mens-basketball/article/uconn-mens-basketball-march-madness-dan-hurley-22191809.php" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>JD Vance Criticizes Brussels' Meddling in Hungary</h3><p class="desc">JD Vance criticizes Brussels "bureaucrats" for interfering in Hungary's election, while Orbán's rival accuses the White House of interference.</p>
-            <div class="insight"><strong>Why this matters:</strong> The comments highlight ongoing debates about foreign influence in European elections.</div>
-            <div class="card-footer">
-                <span class="source">POLITICO.eu</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.politico.eu/article/us-jd-vance-slams-eu-brussels-bureaucrats-meddling-hungary-before-election/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
-            <h3>US Strikes Iranian Military Targets on Kharg Island</h3><p class="desc">The US has struck military targets on Kharg Island, a key Iranian oil export hub, but avoided targeting oil facilities.</p>
-            <div class="insight"><strong>Why this matters:</strong> The strikes represent a significant escalation in tensions between the US and Iran.</div>
-            <div class="card-footer">
-                <span class="source">CNN</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.cnn.com/2026/04/07/middleeast/kharg-island-us-assault-risk-trump-intl" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
-            <h3>Australia Charges Ex-Soldier with War Crimes</h3><p class="desc">Australia has charged an ex-soldier with five war crime murders in Afghanistan.</p>
-            <div class="insight"><strong>Why this matters:</strong> The charges underscore the ongoing efforts to investigate and prosecute alleged war crimes.</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.npr.org/2026/04/07/g-s1-116644/australia-charges-ex-soldier-with-5-war-crime-murders-in-afghanistan" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://techcrunch.com/2026/04/07/chrome-is-finally-getting-vertical-tabs/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
