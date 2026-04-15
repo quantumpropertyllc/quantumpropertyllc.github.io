@@ -1,38 +1,108 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-04-15 04:00 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Iran War & Global Economy</span><span class="cluster">#AI Advancements & Cybersecurity</span><span class="cluster">#US Political Landscape</span><span class="cluster">#Entertainment & Culture</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Today's news landscape is significantly shaped by geopolitical tensions, particularly the ongoing war with Iran and its economic repercussions. Technological advancements in AI and software continue to evolve, presenting both opportunities and challenges. Furthermore, political dynamics in the US, including Senate control and legal battles, remain central themes.</p><div class="divider"></div><p class="insight-text">The convergence of geopolitical instability and rapid technological advancement creates a complex and uncertain future.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-04-15 06:36 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Iran War & Global Impact</span><span class="cluster">#Political Misconduct & Resignations</span><span class="cluster">#Technology & AI Advancements</span><span class="cluster">#Entertainment Industry News</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>The current news landscape is dominated by the ongoing Iran war and its global economic repercussions, alongside significant political and social developments. The conflict's impact is felt across financial markets and international relations, while domestic issues such as misconduct allegations and legal battles also command attention. Entertainment and technology sectors contribute to the diverse range of headlines.</p><div class="divider"></div><p class="insight-text">Geopolitical tensions are creating significant market volatility and influencing policy decisions across various sectors.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
-            <h3>Senate Control in Play Amidst Iran War, Economic Concerns</h3><p class="desc">Democrats see potential to flip key Senate seats due to the unpopular war with Iran and persistent affordability issues.</p>
-            <div class="insight"><strong>Why this matters:</strong> Senate control shift could drastically alter US policy on war, economy.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>U.S. Blockade of Iranian Ports Intensifies Conflict</h3><p class="desc">The U.S. blockade of Iran's ports enters its second day, escalating tensions as Washington pressures Tehran over the Strait of Hormuz.</p>
+            <div class="insight"><strong>Why this matters:</strong> The blockade could lead to further escalation and significant disruption of global oil supplies and trade routes.</div>
             <div class="card-footer">
                 <span class="source">CBS News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.cbsnews.com/live-updates/iran-war-peace-talks-us-blockade-irans-ports-day-2/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>US-Iran Talks May Resume, Led by VP Vance</h3><p class="desc">Potential second round of negotiations with Iranian officials may occur before the ceasefire expires next week, led by Vice President JD Vance.</p>
+            <div class="insight"><strong>Why this matters:</strong> Negotiations could de-escalate tensions, but success is uncertain given the current strained relations.</div>
+            <div class="card-footer">
+                <span class="source">CNN</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.cbsnews.com/news/senate-midterm-elections-11-races-control/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.cnn.com/2026/04/14/world/live-news/iran-war-blockade-us-trump" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>S&P 500 Recovers After Iran War Losses</h3><p class="desc">Wall Street demonstrates resilience, rebounding one day after the S&P 500 wipes out losses incurred due to the Iran war.</p>
+            <div class="insight"><strong>Why this matters:</strong> Market recovery indicates investor confidence, but geopolitical risks remain a significant factor.</div>
+            <div class="card-footer">
+                <span class="source">CNBC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.cnbc.com/2026/04/13/stock-markets-today-live-updates.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>Dianna Russini Resigns from The Athletic</h3><p class="desc">NFL reporter Dianna Russini resigns after photos with coach Mike Vrabel prompt an internal investigation at The Athletic.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the increasing scrutiny and ethical considerations surrounding media relationships.</div>
+            <div class="card-footer">
+                <span class="source">Associated Press</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://apnews.com/article/russini-vrabel-0e0006364d9d31f8e0fec65ecfb937c0" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Reps. Swalwell and Gonzales Resign Amid Misconduct Claims</h3><p class="desc">Representatives Eric Swalwell and Tony Gonzales officially resign following accusations of sexual misconduct with staff members.</p>
+            <div class="insight"><strong>Why this matters:</strong> Further erodes public trust in political figures and highlights ongoing issues of accountability.</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.nbcnews.com/politics/congress/reps-tony-gonzales-eric-swalwell-officially-resign-misconduct-claims-rcna331765" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>Adria Arjona Cast as Maxima in 'Superman' Sequel</h3><p class="desc">Adria Arjona will play Maxima in James Gunn's upcoming "Superman" sequel, "Man of Tomorrow."</p>
-            <div class="insight"><strong>Why this matters:</strong> Casting choices shape audience expectations and franchise direction.</div>
+            <h3>Justice Department Accused of Weaponizing Law Against Anti-Abortion Activists</h3><p class="desc">The Trump administration accuses the Biden DOJ of weaponizing the FACE Act against conservative anti-abortion activists.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises concerns about the politicization of law enforcement and potential bias in legal proceedings.</div>
             <div class="card-footer">
-                <span class="source">Variety</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://variety.com/2026/film/news/adria-arjona-maxima-superman-sequel-man-of-tomorrow-1236721502/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>Court Orders End to Trump Admin Deportation Flight Investigation</h3><p class="desc">Appeals court halts contempt investigation into Trump administration's handling of Venezuelan migrant flights.</p>
-            <div class="insight"><strong>Why this matters:</strong> Legal battles over past administrations continue to resonate.</div>
-            <div class="card-footer">
-                <span class="source">Associated Press</span>
+                <span class="source">NPR</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://apnews.com/article/trump-judge-boasberg-contempt-f5ab5110336be20773e8aa8d5b484879" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.npr.org/2026/04/14/g-s1-117430/doj-biden-weaponization-report" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
-            <h3>IMF: Iran War Impacts Global Economy, Growth Forecast Cut</h3><p class="desc">The IMF has lowered its 2026 global growth estimate, citing the ongoing war with Iran and associated uncertainties.</p>
-            <div class="insight"><strong>Why this matters:</strong> War's economic fallout affects international stability and trade.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Crypto Firms Prepare for AI Vulnerability Exploitation</h3><p class="desc">Crypto exchanges like Coinbase and Binance are preparing for AI models like Anthropic’s Mythos, which could exploit software vulnerabilities.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the growing cybersecurity threats posed by advanced AI and the need for robust defenses.</div>
+            <div class="card-footer">
+                <span class="source">The Information</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.theinformation.com/articles/crypto-firms-seek-access-anthropics-mythos-shoring-defenses" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
+            <h3>Measles Exposure Reported at Portland Middle School</h3><p class="desc">Health officials report potential measles exposure at Centennial Middle School in Southeast Portland during early April.</p>
+            <div class="insight"><strong>Why this matters:</strong> Underscores the importance of vaccination and public health measures to prevent disease outbreaks.</div>
+            <div class="card-footer">
+                <span class="source">OregonLive</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.oregonlive.com/health/2026/04/measles-exposure-reported-at-southeast-portland-middle-school.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
+            <h3>Predicting NFL Draft Fit for the Giants</h3><p class="desc">Analysis of potential NFL draft picks for the Giants, focusing on defensive needs and innovative approaches.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides insights into team strategies and player evaluations ahead of the NFL draft.</div>
+            <div class="card-footer">
+                <span class="source">Sports Illustrated</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.si.com/nfl/albert-breer-predicting-perfect-nfl-draft-fit-for-giants-2026" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Adria Arjona Cast in 'Superman' Sequel</h3><p class="desc">Adria Arjona wins a role in the upcoming 'Superman' sequel, the next DC Studios feature to go into production.</p>
+            <div class="insight"><strong>Why this matters:</strong> Signals progress in the development of the new DC Studios Superman franchise.</div>
+            <div class="card-footer">
+                <span class="source">Hollywood Reporter</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="http://www.hollywoodreporter.com/movies/movie-news/superman-man-of-tomorrow-adria-arjona-cast-1236560352/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>Iran War Impacts Global Economy, IMF Forecasts</h3><p class="desc">The IMF cuts its 2026 growth estimate, citing the Iran war's toll on the global economy and an unusual amount of uncertainty.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the significant economic consequences of geopolitical conflict on global financial stability.</div>
             <div class="card-footer">
                 <span class="source">The Washington Post</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -40,112 +110,42 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>GOP Holdouts Push for Amendments to Section 702 Extension</h3><p class="desc">Some GOP members are still seeking amendments to the Section 702 extension, but Speaker Johnson resists changes.</p>
-            <div class="insight"><strong>Why this matters:</strong> Divisions within the GOP impact surveillance law extensions.</div>
-            <div class="card-footer">
-                <span class="source">Politico</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.politico.com/live-updates/2026/04/14/congress/gop-holdouts-not-giving-up-on-amendments-to-section-702-extension-00871419" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Texas Man Charged in Attacks on Sam Altman's Home, OpenAI HQ</h3><p class="desc">A 20-year-old Texas man faces charges for allegedly attacking OpenAI CEO Sam Altman's home with a Molotov cocktail.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights security risks faced by tech leaders.</div>
-            <div class="card-footer">
-                <span class="source">SFGate</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.sfgate.com/bayarea/article/attacks-sam-altman-sf-openai-22206069.php" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>Google Chrome Adds AI 'Skills' for Workflow Automation</h3><p class="desc">Google introduces "Skills" to Chrome, enabling users to save and reuse AI prompts across different websites.</p>
-            <div class="insight"><strong>Why this matters:</strong> AI integration enhances browser functionality and user experience.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Science Corp. to Place Sensor in Human Brain</h3><p class="desc">Max Hodak’s Science Corp. prepares to place its first sensor in a human brain to address neurological conditions.</p>
+            <div class="insight"><strong>Why this matters:</strong> Represents a significant step in developing brain-computer interfaces for medical applications.</div>
             <div class="card-footer">
                 <span class="source">TechCrunch</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://techcrunch.com/2026/04/14/google-adds-ai-skills-to-chrome-to-help-you-save-favorite-workflows/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>Dimon: Anthropic's Mythos Exposes Cyberattack Vulnerabilities</h3><p class="desc">Jamie Dimon warns that Anthropic's Mythos reveals new cybersecurity vulnerabilities, despite AI's productivity benefits.</p>
-            <div class="insight"><strong>Why this matters:</strong> AI tools can inadvertently create new security risks.</div>
-            <div class="card-footer">
-                <span class="source">CNBC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.cnbc.com/2026/04/14/jamie-dimon-anthropic-mythos-vulnerabilities-cyber-attacks.html" class="btn-link" target="_blank">Read More →</a>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://techcrunch.com/2026/04/14/max-hodaks-science-corp-is-preparing-to-place-its-first-sensor-in-a-human-brain/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>Roseman Reaffirms A.J. Brown's Status as an Eagle</h3><p class="desc">Howie Roseman dismisses trade rumors surrounding A.J. Brown, stating he remains an Eagle.</p>
-            <div class="insight"><strong>Why this matters:</strong> Team stability is important for fans and performance.</div>
-            <div class="card-footer">
-                <span class="source">NBCSports.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/howie-roseman-im-not-answering-the-question-any-differently-a-j-brown-is-an-eagle" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Rubio Hosts Talks Between Israeli, Lebanese Ambassadors Amid Ceasefire Efforts</h3><p class="desc">Senator Rubio facilitates discussions between Israeli and Lebanese ambassadors amid ongoing conflict and ceasefire attempts.</p>
-            <div class="insight"><strong>Why this matters:</strong> Diplomatic efforts seek to de-escalate regional tensions.</div>
-            <div class="card-footer">
-                <span class="source">Axios</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.axios.com/2026/04/14/iran-war-peace-talks-rubio-israel-lebanon-ambassadors" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>NASA Selects Crew for New Era of Space Exploration</h3><p class="desc">NASA's crew selection marks a significant step in advancing human space exploration.</p>
-            <div class="insight"><strong>Why this matters:</strong> Space exploration inspires innovation and discovery.</div>
-            <div class="card-footer">
-                <span class="source">Ars Technica</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://arstechnica.com/space/2026/04/rockets-and-spaceships-are-cool-but-the-humanity-of-artemis-ii-resonated-most/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>Usher and Chris Brown Announce 2026 Stadium Tour Dates</h3><p class="desc">USHER and Chris Brown reveal dates for their co-headlining stadium tour in 2026, including a stop in Cleveland.</p>
-            <div class="insight"><strong>Why this matters:</strong> Major concert tours drive entertainment revenue and cultural engagement.</div>
-            <div class="card-footer">
-                <span class="source">clevelandbrowns.com</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.clevelandbrowns.com/news/usher-and-chris-brown-reveal-dates-for-2026-co-headlining-stadium-tour" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
-            <h3>Iran's Geographic Advantage in Strait of Hormuz Persists Despite US Blockade</h3><p class="desc">Geography empowers Iran's control over the Strait of Hormuz, a crucial global chokepoint, even with a U.S. blockade.</p>
-            <div class="insight"><strong>Why this matters:</strong> Strategic waterways remain vital for global trade and security.</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.washingtonpost.com/world/interactive/2026/hormuz-strait-control-blockade/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
-            <h3>Google to Penalize Sites for Back Button Hijacking in June</h3><p class="desc">Google will begin demoting websites in search rankings that engage in back button hijacking practices.</p>
-            <div class="insight"><strong>Why this matters:</strong> Google aims to improve user experience and combat deceptive practices.</div>
-            <div class="card-footer">
-                <span class="source">Ars Technica</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://arstechnica.com/gadgets/2026/04/websites-that-hijack-your-back-button-must-stop-by-june-15-or-face-googles-wrath/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.7</span></div>
-            <h3>DaVinci Resolve Adds Photo Editing Tools to Compete with Lightroom, Photoshop</h3><p class="desc">DaVinci Resolve 21 introduces new photo editing tools, challenging Adobe Lightroom and Photoshop.</p>
-            <div class="insight"><strong>Why this matters:</strong> Competition drives innovation in creative software.</div>
+            <h3>Google's Desktop Search Bar for Windows Now Available</h3><p class="desc">Google's Spotlight-like desktop search bar for Windows is globally available in English, resembling macOS's feature.</p>
+            <div class="insight"><strong>Why this matters:</strong> Enhances user experience by providing quick access to search functionality on Windows devices.</div>
             <div class="card-footer">
                 <span class="source">The Verge</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.theverge.com/tech/911741/google-windows-app-launch" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Usher and Chris Brown Announce Co-Headlining Tour</h3><p class="desc">Usher and Chris Brown are teaming up for a co-headlining 'R&B' stadium tour that kicks off this summer.</p>
+            <div class="insight"><strong>Why this matters:</strong> Anticipated collaboration between two major R&B artists, expected to draw large audiences.</div>
+            <div class="card-footer">
+                <span class="source">Variety</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.theverge.com/tech/911635/blackmagic-design-davinci-resolve-21-photo-page-raw-support" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://variety.com/2026/music/news/usher-chris-brown-tour-dates-1236721467/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
+            <h3>Questions About the Rock & Roll Hall of Fame</h3><p class="desc">Speculation on whether Oasis, Iron Maiden, or New Order will attend the Rock & Roll Hall of Fame induction ceremony.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects on the significance and potential controversies surrounding the Rock & Roll Hall of Fame.</div>
+            <div class="card-footer">
+                <span class="source">Rolling Stone</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="http://www.rollingstone.com/music/music-features/rock-and-roll-hall-of-fame-2026-questions-controversy-1235546698/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
