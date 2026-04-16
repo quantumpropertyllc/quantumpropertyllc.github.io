@@ -1,8 +1,98 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-04-16 12:55 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Mental Health Crisis (Myers Park suicides, support needed)</span><span class="cluster">#Infrastructure & Development (Rail Trail closure, transit changes)</span><span class="cluster">#Community Support (Lowe's bed build, hygiene initiatives)</span><span class="cluster">#Public Safety Concerns (shooting, deadly crash)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in Charlotte focuses on a range of issues, from tragic accidents and crime to community initiatives and infrastructure projects. Mental health concerns, particularly among students, are a significant theme, alongside efforts to address hygiene poverty and maternal health disparities. The city is also experiencing infrastructure changes and dealing with environmental challenges like drought and energy costs.</p><div class="divider"></div><p class="insight-text">Charlotte is grappling with a complex mix of social, economic, and environmental issues that are shaping the community's well-being and future.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-04-16 02:44 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime in Charlotte</span><span class="cluster">#Water Restrictions and Drought</span><span class="cluster">#Business and Development</span><span class="cluster">#Local Sports and Education</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in Charlotte and surrounding areas covers a range of topics, including crime, business, weather, and community events. Recent incidents include a stabbing, water restrictions due to drought, and a rate hike request from Duke Energy. The region is also experiencing record-breaking heat and dry conditions.</p><div class="divider"></div><p class="insight-text">The local news landscape reflects a mix of challenges and opportunities for the Charlotte region.</p></div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Leistritz Extrusion to Host Reactive Extrusion Workshop</h3><p class="desc">Leistritz Extrusion will host a Reactive Extrusion (REX) Workshop May 13-14 at the Polymers Center of Excellence in Charlotte, NC.</p>
+            <div class="insight"><strong>Why this matters:</strong> Promotes innovation and collaboration in polymer extrusion technology within the Charlotte region.</div>
+            <div class="card-footer">
+                <span class="source">RubberWorld</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://rubberworld.com/leistritz-extrusion-to-host-rex-workshop-may-13-14/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Suspect Arrested in Charlotte Grocery Store Stabbing</h3><p class="desc">A woman with a criminal background has been arrested for stabbing a pregnant woman in a Charlotte grocery store parking lot.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses public safety concerns and the impact of violent crime on the community.</div>
+            <div class="card-footer">
+                <span class="source">The Gateway Pundit</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.thegatewaypundit.com/2026/04/horror-woman-extensive-criminal-background-finally-caught-two/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>Repeat Offender Accused in Harris Teeter Stabbing</h3><p class="desc">Marvina Butler-Hardy, a repeat offender, is accused of stabbing a pregnant woman in a Charlotte Harris Teeter parking lot.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights issues with repeat offenders and public safety at local businesses.</div>
+            <div class="card-footer">
+                <span class="source">Fox News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.foxnews.com/us/repeat-offender-allegedly-stabs-pregnant-mom-random-grocery-store-parking-lot-attack-with-steak-knife" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>Braylon Clark Details Visit with Tennessee Football</h3><p class="desc">2028 North Carolina WR Braylon Clark visits Knoxville.</p>
+            <div class="insight"><strong>Why this matters:</strong> Showcases local talent and the recruitment process for young athletes.</div>
+            <div class="card-footer">
+                <span class="source">Sports Illustrated</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.si.com/college/tennessee/recruiting/2028-north-carolina-wr-braylon-clark-details-great-visit-with-tennessee-football-01kmtfp5y69z" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>Choosing the Best Deck Builder in Charlotte</h3><p class="desc">Tips on selecting a deck builder in Charlotte to enhance your home's outdoor living space and property value.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides guidance for homeowners looking to improve their properties.</div>
+            <div class="card-footer">
+                <span class="source">TechBullion</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://techbullion.com/how-to-pick-the-best-deck-builder-in-charlotte/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Students Design Brand for Brown Museum</h3><p class="desc">Students design a brand for Charlotte Hawkins Brown's Canary Cottage, a 100-year-old museum in Guilford County, NC.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights local history and student involvement in preserving cultural heritage.</div>
+            <div class="card-footer">
+                <span class="source">Greensboro News & Record</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://greensboro.com/news/local/education/article_eb0a8d53-9508-4219-b3b0-326ff1026146.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>FG Nexus CEO to Speak at FII Priority Miami 2026</h3><p class="desc">FG Nexus CEO Maja Vujinovic will co-chair the digital assets conclave and speak on a stablecoins panel at FII Priority Miami 2026.</p>
+            <div class="insight"><strong>Why this matters:</strong> Showcases Charlotte's involvement in the digital assets industry.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.manilatimes.net/2026/03/23/tmt-newswire/globenewswire/fg-nexus-ceo-of-digital-assets-maja-vujinovic-to-serve-as-speaker-and-co-chair-at-fii-priority-miami-2026/2305732" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Major Delays on I-85 South After Crash</h3><p class="desc">A crash in Gaston County caused major delays on I-85 South, backing up traffic for nearly 10 miles.</p>
+            <div class="insight"><strong>Why this matters:</strong> Informs commuters about traffic disruptions and potential delays.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/traffic/interstate-85-closed-gaston-county-north-carolina/275-b7e1e983-91a1-4735-a1ad-d0414e256127" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>Charlotte Water Moves to Voluntary Water Restrictions</h3><p class="desc">Charlotte Water urges customers to reduce non-essential water use due to extremely dry weather and drought conditions.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses water conservation efforts and the impact of drought on the community.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Warning</span>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-water-voluntary-restrictions-drought-north-carolina-south-carolina/275-324e2fd7-9673-45ad-bcec-5d7321712242" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Teenager Charged in Gastonia Fatal Car Accident</h3><p class="desc">A teenager has been charged following a deadly car crash on Shannon Bradley Road in Gastonia.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the dangers of reckless driving and the tragic consequences for families and the community.</div>
+            <h3>Teen Charged in Deadly Gastonia Crash</h3><p class="desc">A teenager has been charged in connection with a deadly crash that occurred along Shannon Bradley Road in Gastonia.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on traffic fatalities and legal consequences.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -10,9 +100,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>Charlotte Faces Continued Heat Wave and Dry Conditions</h3><p class="desc">Charlotte is experiencing record-breaking heat and dry conditions, with no rain expected until Sunday.</p>
-            <div class="insight"><strong>Why this matters:</strong> Prolonged heat waves can strain resources and pose health risks, especially for vulnerable populations.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>More Record-Breaking Heat and Very Dry Conditions</h3><p class="desc">Charlotte is experiencing more record-breaking heat and very dry conditions, with no rain expected until Sunday.</p>
+            <div class="insight"><strong>Why this matters:</strong> Alerts residents to extreme weather conditions and potential health risks.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -21,8 +111,8 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Mecklenburg County Considers Water Restrictions Amid Drought</h3><p class="desc">Charlotte Water will soon decide on potential water restrictions as extreme drought conditions persist in Mecklenburg County.</p>
-            <div class="insight"><strong>Why this matters:</strong> Water restrictions can impact daily life and businesses, raising awareness about water conservation.</div>
+            <h3>Who Decides on Water Restrictions in Mecklenburg County?</h3><p class="desc">Explains the process by which Charlotte Water decides when to implement water restrictions in Mecklenburg County.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides transparency on water management decisions during drought conditions.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -30,9 +120,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Carolina Panthers Announce Atrium Health Training Facility Partnership</h3><p class="desc">The Carolina Panthers have partnered with Atrium Health to name their new training facility, expected to open before the 2027 training camp.</p>
-            <div class="insight"><strong>Why this matters:</strong> New facilities can boost team morale and provide state-of-the-art resources for player development.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>Panthers Name Atrium Health Training Facility</h3><p class="desc">The Carolina Panthers name their training facility the Atrium Health Training Facility in a new partnership, opening before 2027 camp.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights local sports partnerships and facility development.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
@@ -40,9 +130,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Alleged Gang Member Arrested After Wife's Accidental Shooting</h3><p class="desc">A man was arrested after his pregnant wife accidentally shot herself in the stomach, killing their unborn child.</p>
-            <div class="insight"><strong>Why this matters:</strong> Gun violence and accidental shootings have devastating consequences, raising concerns about public safety.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>Gang Member Arrested After Wife Shoots Herself</h3><p class="desc">Alleged Venezuelan gang member arrested after pregnant wife accidentally shot herself in stomach, killing unborn child.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses gun violence and its tragic consequences.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -51,101 +141,11 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Duke Energy Seeks Rate Hike After Record Winter Demand</h3><p class="desc">Duke Energy is requesting another rate hike to recover approximately $800 million in fuel and power costs from the extreme cold earlier this year.</p>
-            <div class="insight"><strong>Why this matters:</strong> Rate hikes can strain household budgets and raise questions about energy affordability and infrastructure resilience.</div>
+            <h3>Duke Energy Requests Another Rate Hike</h3><p class="desc">Duke Energy requests another rate hike to recover approximately $800 million in fuel and power costs from the extreme cold earlier this year.</p>
+            <div class="insight"><strong>Why this matters:</strong> Informs residents about potential increases in energy costs.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
                 <a href="https://www.wcnc.com/article/money/consumer/duke-energy-rate-hike-request-extreme-winter-cold-power-usage-north-carolina/275-355d6d31-d941-492c-a801-5c0ae4f08e60" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>Fatal Shooting in Southwest Charlotte Leaves One Dead</h3><p class="desc">A shooting on Forest Point Boulevard in southwest Charlotte has left one person dead and two others hospitalized.</p>
-            <div class="insight"><strong>Why this matters:</strong> Gun violence continues to be a serious problem in Charlotte, impacting community safety and well-being.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/3-people-hurt-in-shooting-in-southwest-charlotte/275-341e81f8-e27e-4a7b-aed3-a0c5b0dbe130" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Charlotte Transit Riders to See Major Changes Ahead</h3><p class="desc">Charlotte's MPTA is advancing its "Better Bus" program, promising shorter waits and improved service.</p>
-            <div class="insight"><strong>Why this matters:</strong> Improved public transit can enhance accessibility, reduce traffic congestion, and promote economic development.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/news/local/mpta-committee-discuss-better-bus-plan-charlotte-cats/275-0b90fed0-62b4-4153-b0e2-33b1ed093496" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>Lowe's 'Bed Build' Event Provides Beds for Children in Need</h3><p class="desc">Thousands of volunteers are building beds for children in need at the Charlotte Convention Center, aiming for 10,000 beds by noon Thursday.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses a critical need for children and highlights the power of community collaboration and volunteerism.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/news/local/lowes-24-hour-bed-build-charlotte/275-3d6c40b6-ebc5-4d7c-af35-1ce34f67f777" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
-            <h3>Mental Health Crisis: 8 Student Suicides at Myers Park Since 2021</h3><p class="desc">Reports of eight student suicides at Myers Park High School since 2021 highlight the urgent need for better mental health support.</p>
-            <div class="insight"><strong>Why this matters:</strong> Urgent call for action to address mental health issues among students and provide necessary resources.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/8-myers-park-students-died-by-suicide-since-2021-report-says-prompting-mental-health-concerns/275-ef33f1b8-a29a-4483-8841-2ca6002ba740" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Charlotte Groups Combat Hygiene Poverty Among Students</h3><p class="desc">Advocates say lack of access to laundry is keeping some kids out of the classroom, and local efforts aim to change that.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses a hidden barrier to education and promotes equity by ensuring students have access to basic hygiene.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/news/local/clean-clothes-clear-confidence-charlotte-groups-tackle-hygiene-poverty-among-students/275-ca72caa8-fb4e-496e-8c82-edf655268646" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>LaMelo Ball Fined for Tripping and Swearing</h3><p class="desc">NBA fined Ball for a flagrant foul and swearing in a live interview during the Hornets vs. Heat game.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the importance of sportsmanship and responsible behavior by athletes.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/sports/nba/hornets/lamelo-ball-fined-60k-total-for-tripping-bam-adebayo-swearing-in-live-interview/275-5f79387c-8f74-4571-a530-30c16df97305" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Charlotte Catholic High School Priest's Confession Questions Under Review</h3><p class="desc">Parents say a Charlotte Catholic High School priest's questions during confession crossed a line; the Diocese found no misconduct.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises questions about appropriate boundaries and confidentiality within religious practices.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/parents-say-a-charlotte-catholic-high-school-priest-crossed-a-line/275-c0fcebe8-7b71-4dc2-a3eb-3c54b810ddfd" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>Charlotte Rail Trail Temporarily Closed for Construction</h3><p class="desc">The Charlotte Rail Trail will close temporarily for the South End station project and will reopen as work gets done.</p>
-            <div class="insight"><strong>Why this matters:</strong> Temporary inconvenience for trail users, but necessary for long-term infrastructure improvements.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/rail-trail-to-close-for-south-end-station-project/275-2c1f9bae-24fb-4e83-afb1-7a5f0d565123" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Black Maternal Health Week Spotlights Disparities</h3><p class="desc">Black Maternal Health Week is drawing attention to persistent disparities impacting Black mothers in North Carolina and across the country.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises awareness about critical health disparities and promotes efforts to improve maternal health outcomes.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/news/health/black-maternal-health-week-highlights-efforts-to-close-pregnancy-outcome-gaps/275-982e3a04-2870-426d-9414-7f0f80db6b21" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
