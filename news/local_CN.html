@@ -1,28 +1,118 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-04-20 04:11 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#公共安全事件（枪击、事故）</span><span class="cluster">#地方政府决策（学校合并、辞职）</span><span class="cluster">#与天气相关的问题（冰冻警告、山体滑坡）</span><span class="cluster">#消费者问题（订阅取消）</span></div></div></div><div class="brief"><h2>今日简报</h2><p>本周的当地新闻涵盖一系列事件，从悲惨事故和犯罪活动到重要的社区决策和天气事件。有几篇文章强调了公共安全问题，包括枪击、交通事故以及改善基础设施的必要性。此外，还有有关地方政府行动及其对教育和社区服务的潜在影响的故事。</p><div class="divider"></div><p class="insight-text">安全相关事件的盛行凸显了社区保持警惕并采取积极措施的必要性。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-04-20 06:09 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#犯罪和公共安全（刺伤、枪击、毒品逮捕）</span><span class="cluster">#商务和活动（研讨会、会议、公司新闻）</span><span class="cluster">#基础设施和环境（用水限制、飓风恢复）</span><span class="cluster">#教育和社区（博物馆品牌、学校参观）</span></div></div></div><div class="brief"><h2>今日简报</h2><p>夏洛特地区的当地新闻涵盖一系列主题，从商业活动和社区倡议到犯罪和基础设施问题。有几篇文章强调了暴力事件及其对社区的影响。其他故事则侧重于发展、环境问题和教育计划，反映了该地区面临的多样化利益和挑战。</p><div class="divider"></div><p class="insight-text">夏洛特地区正在经历增长、与犯罪和基础设施相关的挑战以及社区为解决这些问题所做的努力。</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>造成人员伤亡后敦促绘制山体滑坡测绘图</h3><p class="desc">海伦期间发生致命山体滑坡后，家庭需要更快的山体滑坡测绘和早期预警系统。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调迫切需要改善脆弱地区的备灾和基础设施。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Leistritz Extrusion 将举办反应挤出研讨会</h3><p class="desc">Leistritz Extrusion 将于 5 月 13 日至 14 日在北卡罗来纳州夏洛特的聚合物卓越中心举办反应挤出 (REX) 研讨会。</p>
+            <div class="insight"><strong>深度见解:</strong> 促进聚合物挤出领域的创新与合作，使当地制造和研究受益。</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/north-carolina-families-demand-action-lawmakers-push-landslide-mapping-heleve-devastation-deaths/275-9ded6a42-183a-497a-a57d-cf63ec4aeffa" class="btn-link" target="_blank">阅读全文 →</a>
+                <span class="source">RubberWorld</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://rubberworld.com/leistritz-extrusion-to-host-rex-workshop-may-13-14/" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>男子因家庭枪击案被指控</h3><p class="desc">小罗尼·科里·佩里 (Ronnie Corey Perry Jr.) 是一名被定罪的重罪犯，被指控在夏洛特-梅克伦堡枪杀一名家庭成员。</p>
-            <div class="insight"><strong>深度见解:</strong> 说明社区中持续存在的枪支暴力和屡犯问题。</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>夏洛特杂货店刺伤案嫌疑人被捕</h3><p class="desc">一名具有广泛犯罪背景的妇女因在夏洛特杂货店停车场刺伤一名孕妇而被捕。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调公共安全问题以及惯犯对社区的影响。</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">The Gateway Pundit</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/man-arrested-for-shooting-family-member-hovis-road-charlotte-nc/275-2891c1c6-d44b-4ca8-bf02-ba6816cf10e9" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.thegatewaypundit.com/2026/04/horror-woman-extensive-criminal-background-finally-caught-two/" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>屡犯者被指控在夏洛特刺伤孕妇</h3><p class="desc">马维娜·巴特勒-哈迪 (Marvina Butler-Hardy) 是一名惯犯，被指控在夏洛特停车场刺伤一名孕妇。她有九次前科。</p>
+            <div class="insight"><strong>深度见解:</strong> 对司法系统和公共安全措施的有效性提出质疑。</div>
+            <div class="card-footer">
+                <span class="source">Fox News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.foxnews.com/us/repeat-offender-allegedly-stabs-pregnant-mom-random-grocery-store-parking-lot-attack-with-steak-knife" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>布雷伦·克拉克 (Braylon Clark) 详细访问田纳西州橄榄球队</h3><p class="desc">2028 年夏洛特乡村日（北卡罗来纳州）外接手布雷伦·克拉克 (Braylon Clark) 访问诺克斯维尔寻求足球招募机会。</p>
+            <div class="insight"><strong>深度见解:</strong> 展示当地人才以及大学招募年轻运动员的重要性。</div>
+            <div class="card-footer">
+                <span class="source">Sports Illustrated</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.si.com/college/tennessee/recruiting/2028-north-carolina-wr-braylon-clark-details-great-visit-with-tennessee-football-01kmtfp5y69z" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>选择夏洛特最好的甲板建造者</h3><p class="desc">有关在夏洛特选择可靠的甲板建造商以增强您家的户外生活空间和财产价值的提示。</p>
+            <div class="insight"><strong>深度见解:</strong> 为希望改善财产和生活质量的房主提供宝贵的建议。</div>
+            <div class="card-footer">
+                <span class="source">TechBullion</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
+                <a href="https://techbullion.com/how-to-pick-the-best-deck-builder-in-charlotte/" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>约克郡休息室发生枪击事件</h3><p class="desc">约克县蓝橄榄休息室发生枪击事件，造成一人受伤。</p>
-            <div class="insight"><strong>深度见解:</strong> 加剧了人们对公共安全和娱乐场所潜在暴力的担忧。</div>
+            <h3>学生为布朗博物馆设计品牌</h3><p class="desc">学生们为夏洛特·霍金斯·布朗的金丝雀小屋设计品牌，该小屋位于北卡罗来纳州吉尔福德县，是一座拥有 100 年历史的博物馆。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调保护当地历史和让学生参与社区项目的重要性。</div>
+            <div class="card-footer">
+                <span class="source">Greensboro News & Record</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://greensboro.com/news/local/education/article_eb0a8d53-9508-4219-b3b0-326ff1026146.html" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>FG Nexus 首席执行官将在 2026 年迈阿密 FII Priority 大会上发表讲话</h3><p class="desc">FG Nexus 首席执行官 Maja Vujinovic 将在 2026 年迈阿密 FII Priority 会议上共同主持数字资产会议并在稳定币小组上发表讲话。</p>
+            <div class="insight"><strong>深度见解:</strong> 展示夏洛特对数字资产行业和全球金融讨论的参与。</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.manilatimes.net/2026/03/23/tmt-newswire/globenewswire/fg-nexus-ceo-of-digital-assets-maja-vujinovic-to-serve-as-speaker-and-co-chair-at-fii-priority-miami-2026/2305732" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>夏洛特开始自愿限水</h3><p class="desc">随着干旱情况继续恶化，夏洛特水务公司的客户现已实施自愿限水。</p>
+            <div class="insight"><strong>深度见解:</strong> 解决环境问题以及在干旱时负责任地用水的需要。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/voluntary-water-restrictions-begin-as-drought-worsens-in-charlotte/275-257a3031-c03c-40ac-9f52-195f4593320e" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>飓风海伦后卢尔湖重新开放</h3><p class="desc">海伦飓风一年多后，卢尔湖开始软性重新开放，这标志着该社区的一个转折点。</p>
+            <div class="insight"><strong>深度见解:</strong> 展示自然灾害后的社区复原力和恢复工作。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
+                <a href="https://www.wcnc.com/article/weather/hurricane/helene/lake-lure-begins-soft-reopening-more-than-a-year-after-hurricane-helene/275-b13dd2cb-c2d0-49cd-9fd1-3d05620a56b1" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>两人在交通堵塞期间发现可卡因后被指控</h3><p class="desc">加斯顿县警员在一次交通检查中发现了超过 30 磅的可卡因和一把隐藏的手枪，两名嫌疑人被判入狱。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调打击贩毒及相关犯罪的执法努力。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/gaston-county-drug-arrest-cocaine-firearms-suspects-arrested/275-a1034b7e-2f8f-4467-96d0-61c3b3ac3c8e" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>大学城一枪一车被撞</h3><p class="desc">在大学城哈里斯休斯顿路 1700 号街区，一人被枪击，一人被一辆汽车撞倒。</p>
+            <div class="insight"><strong>深度见解:</strong> 引起人们对大学城地区公共安全和暴力的担忧。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/one-shot-one-hit-by-vehicle-in-university-city-medic-confirms/275-347098b8-ebf2-4275-83c1-b4852b0aa578" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>米尔堡休息室发生枪击事件，一人受伤</h3><p class="desc">据调查人员称，米尔堡蓝橄榄酒廊发生枪击事件，造成一人受伤。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调枪支暴力问题及其对当地企业和社区的影响。</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
@@ -30,122 +120,32 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>西夏洛特车祸造成多人受伤</h3><p class="desc">夏洛特西部自由大道上一辆巴士发生车祸，造成四人受伤。</p>
-            <div class="insight"><strong>深度见解:</strong> 提出有关交通安全和繁忙道路上发生严重事故的可能性的问题。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>海伦死亡后，立法者推动绘制山体滑坡地图</h3><p class="desc">立法者正在倡导在飓风海伦造成死亡后加快山体滑坡测绘，要求北卡罗来纳州西部家庭采取行动。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调需要改进备灾和预警系统。</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/west-charlotte-crash-bus-medic/275-b43cd9da-9123-437f-aa7f-be272fc13d49" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.wcnc.com/article/news/local/north-carolina-families-demand-action-lawmakers-push-landslide-mapping-heleve-devastation-deaths/275-9ded6a42-183a-497a-a57d-cf63ec4aeffa" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
-            <h3>交通堵塞期间发现爆炸物和毒品</h3><p class="desc">一名亚历山大县男子在一次交通检查站发现爆炸物、毒品和枪支后面临 14 项指控。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调该地区存在危险物质和潜在的犯罪活动。</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>男子被控射杀家人</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> 解决家庭暴力和惯犯在暴力犯罪中的作用。</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/man-arrested-after-explosives-drugs-firearm-found-in-car-during-traffic-stop-alexander-county/275-4b23d9de-d019-4236-afe0-3e67b90cd0ce" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.wcnc.com/article/news/crime/man-arrested-for-shooting-family-member-hovis-road-charlotte-nc/275-2891c1c6-d44b-4ca8-bf02-ba6816cf10e9" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>联邦快递工厂发生工业事故</h3><p class="desc">约克蒙特路联邦快递船舶中心发生工业事故，造成一人严重受伤。</p>
-            <div class="insight"><strong>深度见解:</strong> 提请人们注意工作场所安全以及与工业环境相关的风险。</div>
+            <h3>西夏洛特巴士撞车事故造成四人受伤</h3><p class="desc">据医务人员称，夏洛特西部的自由大道上发生了一起巴士撞车事故，造成四人受伤。</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/industrial-accident-west-charlotte1-injured-medic/275-5a39626e-105e-4ca2-82d4-e8231a3b7604" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>多个县发布冰冻警告</h3><p class="desc">阿什县、沃托加县和艾弗里县已发布冰冻警告，并在夏洛特以北地区发布霜冻警告。</p>
-            <div class="insight"><strong>深度见解:</strong> 告知居民潜在的天气危害以及保护农作物和财产的必要性。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>FTC 放宽订阅取消流程</h3><p class="desc">联邦贸易委员会正在修改其“点击取消”规则，以使消费者更容易取消订阅。</p>
-            <div class="insight"><strong>深度见解:</strong> 解决消费者因困难的订阅取消流程而感到沮丧的问题。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.wcnc.com/article/money/consumer/hard-to-cancel-subscriptions-federal-push-to-make-it-easier-companies-deceptive-advertising/275-44129a67-6016-4d64-8e5e-b6c3dc94c37b" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>要求学校董事会成员辞职</h3><p class="desc">抗议者要求加斯顿学校董事会成员辞职，因为他在 Facebook 上发表了反伊斯兰言论。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调负责任的社交媒体行为对公职人员的重要性。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.wcnc.com/article/news/education/gaston-county-school-board-meeting-protest-anti-islam-remarks-tod-kinlaw/275-2d23551f-eb42-4813-b95a-2fc65fa18594" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>约克县致命摩托车事故</h3><p class="desc">约克郡两辆摩托车发生追尾事故，造成一人死亡、一人受伤。</p>
-            <div class="insight"><strong>深度见解:</strong> 提醒人们注意摩托车安全和发生严重事故的可能性。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/rear-end-motorcycle-crash-york-county-schp/275-41164ffb-b18d-4720-b442-5503c3339364" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>对学区合并进行投票</h3><p class="desc">卡托巴县委员将对一项将三个学区合并为一个全县系统的提案进行投票。</p>
-            <div class="insight"><strong>深度见解:</strong> 标志着当地教育体系发生了重大变化。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/education/catawba-county-commissioners-to-vote-on-proposed-school-district-merger-april-20-2026/275-49350155-66cf-42a8-b951-87860ba6f469" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.9</span></div>
-            <h3>夏洛特西北部发生致命枪击事件</h3><p class="desc">夏洛特西北部一栋有人居住的房屋发生枪击事件，一名男子死亡。</p>
-            <div class="insight"><strong>深度见解:</strong> 加剧了对枪支暴力和社区安全的担忧。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/homicide-investigation-in-northwest-charlotte/275-20aa42e8-d130-4516-8ae4-b989b9b7a714" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.3</span></div>
-            <h3>致命的蓝线碰撞</h3><p class="desc">一名男子在夏洛特东北部与蓝线列车相撞时丧生。</p>
-            <div class="insight"><strong>深度见解:</strong> 提出有关公共交通安全和行人意识的问题。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/blue-line-light-rail-hits-pedestrian-in-east-charlotte/275-e77d7f03-82a2-43b4-9c90-305a2fda0f2e" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.7</span></div>
-            <h3>一人在入室盗窃企图中丧生</h3><p class="desc">据报道，斯泰茨维尔发生一起入室盗窃案，造成一人死亡。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调暴力犯罪的风险和家庭安全的重要性。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/one-person-killed-after-reported-home-invasion-attempt/275-eb3134d4-7b83-4bb4-a756-11e6c15f28df" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>停电后恢复供电</h3><p class="desc">大多数杜克能源公司客户的电力已经恢复，但仍存在一些零星断电，主要是在大学区。</p>
-            <div class="insight"><strong>深度见解:</strong> 提供有关公用事业服务的最新信息以及最近停电的影响。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/nearly-30k-duke-energy-customers-without-power-in-charlotte/275-34c18cfa-e88e-4968-840b-fc7ebdccb439" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.wcnc.com/article/news/local/west-charlotte-crash-bus-medic/275-b43cd9da-9123-437f-aa7f-be272fc13d49" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div></body></html>

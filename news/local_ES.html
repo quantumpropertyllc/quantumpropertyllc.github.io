@@ -1,28 +1,118 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-04-20 04:11 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Incidentes de Seguridad Pública (tiroteo, accidentes)</span><span class="cluster">#Decisiones del gobierno local (fusiones de escuelas, renuncias)</span><span class="cluster">#Preocupaciones relacionadas con el clima (advertencias de heladas, deslizamientos de tierra)</span><span class="cluster">#Problemas del consumidor (cancelaciones de suscripciones)</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Las noticias locales de esta semana cubren una variedad de incidentes, desde accidentes trágicos y actividades criminales hasta importantes decisiones comunitarias y eventos climáticos. Varios artículos destacan las preocupaciones sobre la seguridad pública, incluidos tiroteos, accidentes de tráfico y la necesidad de mejorar la infraestructura. Además, hay historias sobre las acciones del gobierno local y su impacto potencial en la educación y los servicios comunitarios.</p><div class="divider"></div><p class="insight-text">La prevalencia de incidentes relacionados con la seguridad subraya la necesidad de vigilancia comunitaria y medidas proactivas.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-04-20 06:09 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crimen y seguridad pública (puñaladas, tiroteos, arrestos por drogas)</span><span class="cluster">#Empresas y Eventos (talleres, conferencias, noticias de empresa)</span><span class="cluster">#Infraestructura y Medio Ambiente (restricciones de agua, recuperación de huracanes)</span><span class="cluster">#Educación y Comunidad (marca de museo, visitas escolares)</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Las noticias locales en el área de Charlotte cubren una variedad de temas, desde eventos comerciales e iniciativas comunitarias hasta preocupaciones sobre el crimen y la infraestructura. Varios artículos destacan incidentes de violencia y su impacto en la comunidad. Otras historias se centran en el desarrollo, cuestiones ambientales y programas educativos, reflejando los diversos intereses y desafíos que enfrenta la región.</p><div class="divider"></div><p class="insight-text">El área de Charlotte está experimentando una combinación de crecimiento, desafíos relacionados con el crimen y la infraestructura, y esfuerzos comunitarios para abordar estos problemas.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Se insta a realizar mapeo de deslizamientos de tierra después de las muertes</h3><p class="desc">Las familias exigen un mapeo más rápido de deslizamientos de tierra y sistemas de alerta temprana después de un deslizamiento de tierra mortal durante Helene.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Destaca la necesidad urgente de mejorar la preparación y la infraestructura ante desastres en zonas vulnerables.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Leistritz Extrusion organizará un taller de extrusión reactiva</h3><p class="desc">Leistritz Extrusion organizará un taller de extrusión reactiva (REX) del 13 al 14 de mayo en el Centro de excelencia de polímeros en Charlotte, Carolina del Norte.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Promueve la innovación y la colaboración en la extrusión de polímeros, beneficiando la fabricación y la investigación local.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/north-carolina-families-demand-action-lawmakers-push-landslide-mapping-heleve-devastation-deaths/275-9ded6a42-183a-497a-a57d-cf63ec4aeffa" class="btn-link" target="_blank">Leer más →</a>
+                <span class="source">RubberWorld</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://rubberworld.com/leistritz-extrusion-to-host-rex-workshop-may-13-14/" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>Hombre acusado de tiroteo familiar</h3><p class="desc">Ronnie Corey Perry Jr., un delincuente convicto, está acusado de dispararle a un miembro de su familia en Charlotte-Mecklenburg.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Ilustra el problema actual de la violencia armada y los reincidentes en la comunidad.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>Sospechoso arrestado por apuñalamiento en tienda de comestibles de Charlotte</h3><p class="desc">Una mujer con amplios antecedentes penales fue arrestada por apuñalar a una mujer embarazada en el estacionamiento de una tienda de comestibles de Charlotte.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca las preocupaciones de seguridad pública y el impacto de los reincidentes en la comunidad.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">The Gateway Pundit</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/man-arrested-for-shooting-family-member-hovis-road-charlotte-nc/275-2891c1c6-d44b-4ca8-bf02-ba6816cf10e9" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.thegatewaypundit.com/2026/04/horror-woman-extensive-criminal-background-finally-caught-two/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Reincidente acusado de apuñalar a una mujer embarazada en Charlotte</h3><p class="desc">Marvina Butler-Hardy, reincidente, está acusada de apuñalar a una mujer embarazada en un estacionamiento de Charlotte. Tiene nueve condenas previas.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Plantea dudas sobre la eficacia del sistema de justicia y las medidas de seguridad pública.</div>
+            <div class="card-footer">
+                <span class="source">Fox News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.foxnews.com/us/repeat-offender-allegedly-stabs-pregnant-mom-random-grocery-store-parking-lot-attack-with-steak-knife" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Braylon Clark detalla la visita con Tennessee Football</h3><p class="desc">Braylon Clark, receptor del Charlotte Country Day (NC) de 2028, visita Knoxville para tener una oportunidad de reclutamiento futbolístico.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Muestra el talento local y la importancia del reclutamiento universitario para los atletas jóvenes.</div>
+            <div class="card-footer">
+                <span class="source">Sports Illustrated</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.si.com/college/tennessee/recruiting/2028-north-carolina-wr-braylon-clark-details-great-visit-with-tennessee-football-01kmtfp5y69z" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Elegir el mejor constructor de terrazas en Charlotte</h3><p class="desc">Consejos para seleccionar un constructor de terrazas confiable en Charlotte para mejorar el espacio exterior de su hogar y el valor de la propiedad.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Proporciona valiosos consejos para los propietarios que buscan mejorar su propiedad y su calidad de vida.</div>
+            <div class="card-footer">
+                <span class="source">TechBullion</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="https://techbullion.com/how-to-pick-the-best-deck-builder-in-charlotte/" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Tiroteo en el salón del condado de York</h3><p class="desc">Una persona resultó herida en un tiroteo en el Blue Olive Lounge en el condado de York.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Se suma a las preocupaciones sobre la seguridad pública y la posible violencia en los lugares de entretenimiento.</div>
+            <h3>Estudiantes diseñan marca para el Museo Brown</h3><p class="desc">Los estudiantes diseñan una marca para Canary Cottage de Charlotte Hawkins Brown, un museo de 100 años de antigüedad en el condado de Guilford, Carolina del Norte.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca la importancia de preservar la historia local e involucrar a los estudiantes en proyectos comunitarios.</div>
+            <div class="card-footer">
+                <span class="source">Greensboro News & Record</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://greensboro.com/news/local/education/article_eb0a8d53-9508-4219-b3b0-326ff1026146.html" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>El director ejecutivo de FG Nexus hablará en FII Priority Miami 2026</h3><p class="desc">Maja Vujinovic, directora ejecutiva de FG Nexus, copresidirá el cónclave de activos digitales y hablará en un panel sobre monedas estables en FII Priority Miami 2026.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Muestra la participación de Charlotte en la industria de activos digitales y los debates financieros globales.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.manilatimes.net/2026/03/23/tmt-newswire/globenewswire/fg-nexus-ceo-of-digital-assets-maja-vujinovic-to-serve-as-speaker-and-co-chair-at-fii-priority-miami-2026/2305732" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Comienzan las restricciones voluntarias de agua en Charlotte</h3><p class="desc">Ahora están vigentes restricciones voluntarias de agua para los clientes de Charlotte Water a medida que las condiciones de sequía continúan empeorando.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Aborda las preocupaciones ambientales y la necesidad de un uso responsable del agua ante la sequía.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/voluntary-water-restrictions-begin-as-drought-worsens-in-charlotte/275-257a3031-c03c-40ac-9f52-195f4593320e" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Lake Lure reabre después del huracán Helene</h3><p class="desc">Lake Lure comienza una reapertura suave más de un año después del huracán Helene, lo que marca un punto de inflexión para la comunidad.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Demuestra resiliencia comunitaria y esfuerzos de recuperación después de un desastre natural.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="https://www.wcnc.com/article/weather/hurricane/helene/lake-lure-begins-soft-reopening-more-than-a-year-after-hurricane-helene/275-b13dd2cb-c2d0-49cd-9fd1-3d05620a56b1" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Dos acusados ​​después de que se encontrara cocaína durante una parada de tráfico</h3><p class="desc">Dos sospechosos son encarcelados después de que los agentes del condado de Gaston encontraran más de 30 libras de cocaína y una pistola escondida durante una parada de tráfico.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca los esfuerzos de aplicación de la ley para combatir el tráfico de drogas y los delitos relacionados.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/gaston-county-drug-arrest-cocaine-firearms-suspects-arrested/275-a1034b7e-2f8f-4467-96d0-61c3b3ac3c8e" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>Un disparo, un atropello por vehículo en Ciudad Universitaria</h3><p class="desc">Una persona recibió un disparo y otra fue atropellada por un vehículo en la cuadra 1700 de Harris Houston Road en University City.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Plantea preocupaciones sobre la seguridad pública y la violencia en el área de Ciudad Universitaria.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/one-shot-one-hit-by-vehicle-in-university-city-medic-confirms/275-347098b8-ebf2-4275-83c1-b4852b0aa578" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Una persona resulta herida en tiroteo en Fort Mill Lounge</h3><p class="desc">Según los investigadores, un tiroteo en el Blue Olive Lounge en Fort Mill hirió a una persona.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca el problema de la violencia armada y su impacto en las empresas y comunidades locales.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
@@ -30,122 +120,32 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Múltiples lesiones en accidente en West Charlotte</h3><p class="desc">Cuatro personas resultaron heridas en un accidente que involucró a un autobús en Freedom Drive en el oeste de Charlotte.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Plantea dudas sobre la seguridad del tráfico y la posibilidad de que se produzcan accidentes graves en carreteras muy transitadas.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Los legisladores presionan para realizar un mapeo de deslizamientos de tierra después de las muertes de Helene</h3><p class="desc">Los legisladores abogan por un mapeo más rápido de los deslizamientos de tierra después de las muertes causadas por el huracán Helene, exigiendo acciones para las familias del oeste de Carolina del Norte.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca la necesidad de mejorar la preparación ante desastres y los sistemas de alerta temprana.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/west-charlotte-crash-bus-medic/275-b43cd9da-9123-437f-aa7f-be272fc13d49" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.wcnc.com/article/news/local/north-carolina-families-demand-action-lawmakers-push-landslide-mapping-heleve-devastation-deaths/275-9ded6a42-183a-497a-a57d-cf63ec4aeffa" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
-            <h3>Explosivos y drogas encontrados durante una parada de tráfico</h3><p class="desc">Un hombre del condado de Alexander enfrenta 14 cargos después de que una parada de tráfico revelara explosivos, drogas y un arma de fuego.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Destaca la presencia de materiales peligrosos y potencial actividad criminal en la zona.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Hombre acusado de dispararle a un familiar</h3><p class="desc">Ronnie Corey Perry Jr., un delincuente convicto, está acusado de dispararle a un miembro de su familia, según la policía de Charlotte-Mecklenburg.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Aborda la violencia doméstica y el papel de los reincidentes en los delitos violentos.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/man-arrested-after-explosives-drugs-firearm-found-in-car-during-traffic-stop-alexander-county/275-4b23d9de-d019-4236-afe0-3e67b90cd0ce" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.wcnc.com/article/news/crime/man-arrested-for-shooting-family-member-hovis-road-charlotte-nc/275-2891c1c6-d44b-4ca8-bf02-ba6816cf10e9" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Accidente industrial en las instalaciones de FedEx</h3><p class="desc">Una persona resultó gravemente herida en un accidente industrial en un FedEx Ship Center en Yorkmont Road.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Llama la atención sobre la seguridad laboral y los riesgos asociados a los entornos industriales.</div>
+            <h3>Cuatro heridos en accidente de autobús en West Charlotte</h3><p class="desc">Según Medic, un accidente en Freedom Drive en el oeste de Charlotte que involucró a un autobús resultó en heridas a cuatro personas.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca las preocupaciones sobre la seguridad del tráfico y la posibilidad de que se produzcan lesiones graves en accidentes automovilísticos.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/industrial-accident-west-charlotte1-injured-medic/275-5a39626e-105e-4ca2-82d4-e8231a3b7604" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Advertencia de congelamiento emitida para varios condados</h3><p class="desc">Hay una advertencia de heladas vigente para los condados de Ashe, Watauga y Avery, con un aviso de heladas al norte de Charlotte.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Informa a los residentes sobre posibles peligros climáticos y la necesidad de proteger cultivos y propiedades.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>La FTC facilitará las cancelaciones de suscripciones</h3><p class="desc">La FTC está reelaborando su regla de "hacer clic para cancelar" para facilitar la cancelación de suscripciones a los consumidores.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Aborda la frustración de los consumidores con los difíciles procesos de cancelación de suscripciones.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/money/consumer/hard-to-cancel-subscriptions-federal-push-to-make-it-easier-companies-deceptive-advertising/275-44129a67-6016-4d64-8e5e-b6c3dc94c37b" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>Pide la dimisión de un miembro de la junta escolar</h3><p class="desc">Los manifestantes exigen la dimisión de un miembro de la junta escolar de Gaston por comentarios antiislámicos en Facebook.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Destaca la importancia de un comportamiento responsable en las redes sociales para los funcionarios públicos.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.wcnc.com/article/news/education/gaston-county-school-board-meeting-protest-anti-islam-remarks-tod-kinlaw/275-2d23551f-eb42-4813-b95a-2fc65fa18594" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>Accidente fatal de motocicleta en el condado de York</h3><p class="desc">Una colisión trasera entre dos motocicletas en el condado de York provocó una muerte y un herido.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Sirve como recordatorio de la seguridad de las motocicletas y la posibilidad de que se produzcan accidentes graves.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/rear-end-motorcycle-crash-york-county-schp/275-41164ffb-b18d-4720-b442-5503c3339364" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>Votación sobre la fusión del distrito escolar</h3><p class="desc">Los comisionados del condado de Catawba votarán sobre una propuesta para fusionar tres distritos escolares en un sistema para todo el condado.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Indica un cambio significativo en el sistema educativo local.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/education/catawba-county-commissioners-to-vote-on-proposed-school-district-merger-april-20-2026/275-49350155-66cf-42a8-b951-87860ba6f469" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.9</span></div>
-            <h3>Tiroteo fatal en el noroeste de Charlotte</h3><p class="desc">Un hombre murió después de un tiroteo en una casa ocupada en el noroeste de Charlotte.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Contribuye a las preocupaciones sobre la violencia armada y la seguridad del vecindario.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/homicide-investigation-in-northwest-charlotte/275-20aa42e8-d130-4516-8ae4-b989b9b7a714" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.3</span></div>
-            <h3>Colisión fatal de la línea azul</h3><p class="desc">Un hombre murió en una colisión con el tren de la Línea Azul en el noreste de Charlotte.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Plantea preguntas sobre la seguridad en torno al transporte público y la concienciación de los peatones.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/blue-line-light-rail-hits-pedestrian-in-east-charlotte/275-e77d7f03-82a2-43b4-9c90-305a2fda0f2e" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.7</span></div>
-            <h3>Un muerto en un intento de invasión a una vivienda</h3><p class="desc">Una persona murió durante un intento de allanamiento de morada en Statesville.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Destaca el riesgo de delitos violentos y la importancia de la seguridad en el hogar.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/one-person-killed-after-reported-home-invasion-attempt/275-eb3134d4-7b83-4bb4-a756-11e6c15f28df" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>Energía restaurada después de cortes</h3><p class="desc">Se ha restablecido el suministro eléctrico para la mayoría de los clientes de Duke Energy, aunque persisten algunos cortes dispersos, principalmente en el área universitaria.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Proporciona actualizaciones sobre los servicios públicos y el impacto de los cortes de energía recientes.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/nearly-30k-duke-energy-customers-without-power-in-charlotte/275-34c18cfa-e88e-4968-840b-fc7ebdccb439" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.wcnc.com/article/news/local/west-charlotte-crash-bus-medic/275-b43cd9da-9123-437f-aa7f-be272fc13d49" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div></body></html>
