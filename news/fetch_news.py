@@ -298,7 +298,7 @@ def ai_process_bundle(category_id, raw_list, category_name):
     
     res = call_gemini(prompt)
     if not res or "articles" not in res:
-        logging.error(f"Enrichment failed for {category_id}. Using raw data fallback.")
+        logging.warning(f"Enrichment skipped for {category_id} (Gemini Rate Limit). Using raw data fallback.")
         res = {
             "summary": f"Latest updates for {category_name}.",
             "insight": "AI enrichment temporarily unavailable.",
@@ -479,7 +479,7 @@ def main():
         for cid, cfg in CATEGORIES.items():
             if cid == "ai": continue # AI usually handled in its own slot
             process_category(cid, cfg)
-            time.sleep(10)
+            time.sleep(20) # Increased delay to avoid Gemini rate limits
 
     logging.info(f"--- {target.upper()} TASKS COMPLETED ---")
     sys.stdout.flush()
