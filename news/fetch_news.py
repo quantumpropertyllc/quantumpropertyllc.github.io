@@ -298,8 +298,23 @@ def ai_process_bundle(category_id, raw_list, category_name):
     
     res = call_gemini(prompt)
     if not res or "articles" not in res:
-        logging.error(f"Enrichment failed for {category_id}")
-        return None
+        logging.error(f"Enrichment failed for {category_id}. Using raw data fallback.")
+        res = {
+            "summary": f"Latest updates for {category_name}.",
+            "insight": "AI enrichment temporarily unavailable.",
+            "clusters": ["News Updates"],
+            "articles": []
+        }
+        for i, a in enumerate(articles_to_process):
+            res["articles"].append({
+                "id": i,
+                "score": 5.0,
+                "sentiment": "Neutral",
+                "impact": "Medium",
+                "title": a.get("title", "Untitled"),
+                "description": (a.get("description") or a.get("desc") or "")[:250],
+                "why_matters": "Details available in the source article."
+            })
         
     # Inject original URLs and sources
     for item in res.get("articles", []):
