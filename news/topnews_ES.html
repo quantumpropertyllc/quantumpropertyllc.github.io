@@ -1,98 +1,88 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-05-01 07:04 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-05-01 10:15 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Protestas del Primero de Mayo y descontento económico</span><span class="cluster">#Relaciones entre Estados Unidos e Irán y postura militar</span><span class="cluster">#Conflictos internos del Partido Republicano y maniobras políticas</span><span class="cluster">#Situación política en Myanmar</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Se están desarrollando varios eventos clave, incluidas protestas generalizadas del Primero de Mayo en todo Estados Unidos impulsadas por preocupaciones económicas y un cierre sin precedentes del DHS. Las tensiones geopolíticas siguen siendo altas con discusiones en curso y conflictos potenciales que involucran a Irán, lo que influye en los precios del petróleo y las relaciones internacionales. Las cuestiones políticas internas también son prominentes, con conflictos internos del Partido Republicano y maniobras demócratas estratégicas.</p><div class="divider"></div><p class="insight-text">La convergencia de ansiedades económicas, conflictos internacionales y luchas políticas internas crea un entorno volátil e incierto.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Conclusiones del segundo día de testimonio de Hegseth sobre la guerra de Irán - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxPTFRlTkRMSkNYTkNmU0tvX1NNOWlkcnQ5QzZiQTBvTGMxeFM3UUFUSml6Rjc1 TXBkbDJ5LTZhQVVTUUVZeHhvTURFMFlncWExdUcya3E1SXFwdmhEekpCNThHNDZaZk12ZVJtVUlNZlctVUNLRE9EZTRHajBmMjd6Q0IwRmdmMDRDRnB0Tg?o</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Estados Unidos se prepara para las protestas del Primero de Mayo 'Sin escuela, sin trabajo, sin compras'</h3><p class="desc">Se espera que miles de personas en Estados Unidos participen en las protestas del Primero de Mayo, boicoteando la escuela, el trabajo y las compras para resaltar los agravios económicos.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Refleja un creciente descontento económico y una posible perturbación de la vida cotidiana y el comercio.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxPTFRlTkRMSkNYTkNmU0tvX1NNOWlkcnQ5QzZiQTBvTGMxeFM3UUFUSml6Rjc1TXBkbDJ5LTZhQVVTUUVZeHhvTURFMFlncWExdUcya3E1SXFwdmhEekpCNThHNDZaZk12ZVJtVUlNZlctVUNLRE9EZTRHajBmMjd6Q0IwRmdmMDRDRnB0Tg?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPN2I5Snp1Wno5RDJWTjhjSFowa0twdDNpMzJweVpVVHNWc2VqUWlHaDJrN18yMDlYbFlVQldDTk9nUUF5U0dOSW04dGtMbEIwZmlOM2FzajdFbEpoU3RlNmw5cE1wSG9lZ2dYU1poa2otVi1BcjIxRVBoUVpndUFYRzNnemNoaEk?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La Cámara aprueba un proyecto de ley de financiación del DHS que pondría fin al cierre de la mayor parte de la agencia - The Washington Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQVVNfSS1rQTR5amRFazR4TWhSV2tuYnkyU3c4TnhSUHR1bi1FdVUyMlRqU GVtSlRaeGR0QXZ6OGZiN0Yxakh6U1VJTkxhbnpHRzdvX0JOeDZ2VFVrWDNEOHAtWXBacE1LQy1WeExLRlJnWkFENl9LUHNNaTA5VWkyNXZqMjk?oc=5" objetivo</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>Los republicanos ceden ante Trump en el plazo para la guerra contra Irán</h3><p class="desc">Los republicanos indican que se someterán al juicio de Trump con respecto a una posible acción militar contra Irán a pesar de que se acerca la fecha límite.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca la continua influencia de Trump dentro del Partido Republicano en las decisiones de política exterior.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQVVNfSS1rQTR5amRFazR4TWhSV2tuYnkyU3c4TnhSUHR1bi1FdVUyMlRqUGVtSlRaeGR0QXZ6OGZiN0Yxakh6U1VJTkxhbnpHRzdvX0JOeDZ2VFVrWDNEOHAtWXBacE1LQy1WeExLRlJnWkFENl9LUHNNaTA5VWkyNXZqMjk?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQZUpzUUJ5a0M4d29lMWdXbVhHem9WS1NUa0ZHZjdSZXpUYW05OGhhM2pGRFoyMWFSekZrMzlhMGxFWFBoYWh0Z2licWNVa04wcUtkTUtRUC0tX0lzeWZsLXpLd2MyeEVXNkV4V2h1M1NvNnYtTlJkdG1IMVJDdzVaejNkSnZyaU5PV3NCOGhoaWNvQ1E3QzAyX0lyZUEyOFU?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los judíos londinenses describen "horror total" y viven con miedo después del último ataque, exigen acción del gobierno - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxPMVN6RnB0TlNOQ3Y2WWgwNmx5M2hjNFV3NFJmM2E1cmw1cVA1cFozVmlaWDVI M0UzN2lCWDZ2R0EwdkpOX3Z4NU5BOWlOVnhGN0J4WFk1S3B4N1ZISkcyb0xqbENpZ1NiNUFjbXhKM0lGVVhJWkI3TnJQck5XNDY1Z2s1MzNmZXRzYjdvQVVY</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Irán presenta a Estados Unidos una nueva respuesta sobre el proyecto de acuerdo de paz</h3><p class="desc">Irán ha proporcionado a Estados Unidos una nueva respuesta sobre el proyecto de acuerdo de paz, lo que indica que hay negociaciones en curso.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Indica esfuerzos diplomáticos continuos para reducir las tensiones, aunque el contenido de la respuesta es clave.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxPMVN6RnB0TlNOQ3Y2WWgwNmx5M2hjNFV3NFJmM2E1cmw1cVA1cFozVmlaWDVIM0UzN2lCWDZ2R0EwdkpOX3Z4NU5BOWlOVnhGN0J4WFk1S3B4N1ZISkcyb0xqbENpZ1NiNUFjbXhKM0lGVVhJWkI3TnJQck5XNDY1Z2s1MzNmZXRzYjdvQVVYUlZsTzJ0bEM5WXZ30gGfAUFVX3lxTFBqbGllYzJpVm92Nk5TN2JuLXh6eVlDdE1BMTF4WTFtcGhZVkZPSlppMzM2ZWIzWnV0WUswdGRBWTFiWHpFMTJ3VExqTW1IbDRvNXpqZHJDcm9rOHFzdEtKVzFhWGR1TGZxbWR6OU5UaUNDNGdsNXEwakxlci1SV1ZQazVSVWdKQV94cm11N05MTno4NnF2eGtYY1loTGs5OA?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMicEFVX3lxTFBuSEh0bll5dU1WTW04bWNxb0NfMUlTVF9BampMd09TNHo2YTRIbWJ3c2xHRGRDUmdXeTBDYnVwNVFxMENsbnI3OXM2UXNmWldrS3JTNEFPOEtETkJBQjJBZGNQcW1OZGsybnhGWW9iUFY?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Se espera que las protestas nacionales del Primero de Mayo recojan el manto de 'No Kings' - NPR</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxOblZmcU9EM1hRTzVjenRmRHRHOFg4YlVQUEdLcXpYTHY0SjVoWHRCZ0NlOUFU Mks4RFh4ZjBpWEUyOXQ1Tnh0T3dRWDhLeGdKV2hGVnhObnZ3REVRMGtjU3c5TC1QM2djaFBJelVsSjZsTEt0SnhiTXlBWG9rb1Bxd3VmbUY3U1lwZXhr?oc=</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Los demócratas, no Trump, pusieron fin a su carrera política</h3><p class="desc">La carrera de un político terminó debido a acciones de los demócratas, a pesar de las amenazas anteriores de Trump de poner fin a ella él mismo.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Ilustra la dinámica política interna y los cambios de poder dentro del Partido Demócrata.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxOblZmcU9EM1hRTzVjenRmRHRHOFg4YlVQUEdLcXpYTHY0SjVoWHRCZ0NlOUFUMks4RFh4ZjBpWEUyOXQ1Tnh0T3dRWDhLeGdKV2hGVnhObnZ3REVRMGtjU3c5TC1QM2djaFBJelVsSjZsTEt0SnhiTXlBWG9rb1Bxd3VmbUY3U1lwZXhr?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El petróleo sube mientras la Casa Blanca dice que el alto el fuego en Irán detiene el plazo de guerra de 60 días - CNBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQOGNMSWt5YmhaS2J4cVlvX2VFMDdDQWJxV01SOGZKbFEwOXpyS2E3MHBlYVh4 c3FyUWY2V3NhbjhJSlp2Z0RnYkVMOW90Ymo4b3pnTk45SkJmTzJVTmJEMXNGalloOTRkNVNpZkFZMHNieWtpdlVDd1hFLW84Z3d5dHlLN3RaRXRoeGcyNjdj</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQOGNMSWt5YmhaS2J4cVlvX2VFMDdDQWJxV01SOGZKbFEwOXpyS2E3MHBlYVh4c3FyUWY2V3NhbjhJSlp2Z0RnYkVMOW90Ymo4b3pnTk45SkJmTzJVTmJEMXNGalloOTRkNVNpZkFZMHNieWtpdlVDd1hFLW84Z3d5dHlLN3RaRXRoeGcyNjdjWXBiTjJRYnZIU3pzdEw1VXRRM2V30gGoAUFVX3lxTFA0cWZUdDBSVzBSVFRjck9kb0wtVnlfWHgwQ3F5aFV3SXN4NDFGTE51NUpUSTJXOXZ0VzdWT25LTDZsWnI3cFJOdC04TWU4VzJtaDFsVHFnX1ppTkVGQnRxRWNNRlVETjd6RFctaUlVbnpJdFBqTVNVeld5Q3lrbW5ZQXJrZUtqVVhfbFR3RFV4bVZlc3N3RE5SMEF5cW9idHFSYWxpWFNTRw?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Fiscales estadounidenses publican nuevas imágenes del sospechoso de disparar contra Trump - dw.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNaU5odUxyOW9ySjlJV3hKM2VLTGVVTml5aWVhLXZ4NFp4ZlJneGZ4cnB4TW01 QjZFbFBQOHFJMDRuSklYZnR0M1cteUgzOG9kYnVCak5mUF96cS1WVlRCM0JPT3hPRmVSNHRHSUtkZFR5eHZlRmphQUdNaV9rdWN1NV9keUlRLUkxVVFfd05f</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNaU5odUxyOW9ySjlJV3hKM2VLTGVVTml5aWVhLXZ4NFp4ZlJneGZ4cnB4TW01QjZFbFBQOHFJMDRuSklYZnR0M1cteUgzOG9kYnVCak5mUF96cS1WVlRCM0JPT3hPRmVSNHRHSUtkZFR5eHZlRmphQUdNaV9rdWN1NV9keUlRLUkxVVFfd05fUVJoRFJtdk9VY9IBmAFBVV95cUxQanJKUXNFM2lTOFA2NFF3YWp0T2NZTzA2T2NMN1JkQVZ2Z0VHY29XaGVxNkxpM1NfUWc4dmlDN1ROVDZHelJpbFVZYVpCV3RjeVpTTG5pbGpBUlBGVVN4dURvQVE4dlZjUEtjSzFwVUd4WTZxaFppTTBOQzJLS0RBUXgwRVBTcGRPTXRzWUlTckJQTkFoWXFiMA?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Kimmel destaca la baja aprobación récord de Trump después de que el presidente pidiera su despido nuevamente - Forbes</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxOTm5WU2VmdHdTTHc2b2w2OTgwQzdXTzU1WmFnQlZxcW9hR3laYWlmOXA1WmNT R0VfbE1tcUlpaGhHbl90RWFiOFdlTk5NeFRNZ0lJSHhzS054LWEyVDVoTEFscTg0TG0zYjBBTmxTcHptdTMxVnBPalRzMTR2QjFtYWJxVVQ3eUNnb2RzOW5L</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxOTm5WU2VmdHdTTHc2b2w2OTgwQzdXTzU1WmFnQlZxcW9hR3laYWlmOXA1WmNTR0VfbE1tcUlpaGhHbl90RWFiOFdlTk5NeFRNZ0lJSHhzS054LWEyVDVoTEFscTg0TG0zYjBBTmxTcHptdTMxVnBPalRzMTR2QjFtYWJxVVQ3eUNnb2RzOW5LUFl0ZGx6ZVd4SUpnTE8wNW8yaWhKLV95ZE8xazFZSEhRd1o0ZC1tLWpZMTcxSmU3cHVyak10Q19id2JyaXhmVmp2WE02MVQyTFQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Janet Mills se enfrentó a Trump. Los votantes demócratas se encogieron de hombros. - El Washington Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxQVGdRNlZnN3NldDlaOHpNODl0SlpCZ01EeDlLNWFDWk10dTdKekdER2NOb2hM d3JuaFF5YlBsTmxHTldaTkVZS1lOTE5qUWViQmw1Tm5ETW5jV3NYLWEwUGlHLWtPV2w2SkZTNlpBTDVWbmh6b3c0aGI0R0ZtVVh4SDBBZF94cGkxNkFxUUU0</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
                 <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxQVGdRNlZnN3NldDlaOHpNODl0SlpCZ01EeDlLNWFDWk10dTdKekdER2NOb2hMd3JuaFF5YlBsTmxHTldaTkVZS1lOTE5qUWViQmw1Tm5ETW5jV3NYLWEwUGlHLWtPV2w2SkZTNlpBTDVWbmh6b3c0aGI0R0ZtVVh4SDBBZF94cGkxNkFxUUU0T1ltLTA?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Seis heridos en apuñalamiento en escuela estatal de Washington - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5vTjFZalV3cnF2R25XajZha0JQOUw1 QUUydllPU3l2bGxPSzJmYTc0WVRYUldXOFNaTjdza2lUOWNXd21nODA3TVdhV09veFhiR2l4SjQ5bkk1dw?oc=5" target="_blank">Seis heridos en apuñalamiento en escuela estatal de Washington</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>Los estadounidenses son cada vez más sombríos respecto a las finanzas y se oponen a la acción militar contra Irán</h3><p class="desc">Una nueva encuesta revela un pesimismo creciente entre los estadounidenses con respecto a sus finanzas y una oposición generalizada al uso del ejército contra Irán.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Refleja el sentimiento público sobre cuestiones clave de política económica y exterior, lo que potencialmente influye en las decisiones gubernamentales.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5vTjFZalV3cnF2R25XajZha0JQOUw1QUUydllPU3l2bGxPSzJmYTc0WVRYUldXOFNaTjdza2lUOWNXd21nODA3TVdhV09veFhiR2l4SjQ5bkk1dw?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxOZ09sWUd6YWFZN3RuYmxMUkdEQ3hDMXJZWE9FX2ZnSncybEFXQmxELXU0NHRXYUVlN1FJRVdrTFRQbl96YWMyeTFCV1lwZVhYbEtDaDJ5THFPMGdjQjU3YndhbG1mejBpQ1E4Q1BGdU5YMGI2ZGFlQUFqRk5JSkhZU2t5QXFuOXdmdG5ZZzFJcm5YTm1aRTU1Y3hnc0N5VV9YbjNCdHVMYmdyUFQ3cjBz?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La definición de “86” en el centro de la acusación contra Comey - FactCheck.org</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxPRGhTOU05TUo2QzcwNGR1V1FGak9KUm9qbm12NDBNa1pzVENLc28tRS1Sdy1p bE9xTTRjRWJicmI2V3ZVbC1ZYTNGYm5wTkYyc2pFRzN3ZzBISUUzNWJxU29MWFFPY3JkTnA2S1diV2xJLTBXSko1Z052R2J5XzlETmN0RmJwelNCSl84aQ?o</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
+            <h3>Funcionarios estadounidenses: El verdadero costo de la guerra contra Irán se acerca a los 50 mil millones de dólares</h3><p class="desc">Los funcionarios estadounidenses estiman que el costo potencial de una guerra con Irán se acerca a los 50 mil millones de dólares, significativamente más alto que las estimaciones anteriores.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca las importantes implicaciones financieras de los conflictos militares, que afectan las asignaciones presupuestarias.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE85OE1pMTYwUVlJZ2MybGtXdEs2cHVZdUZiM2F4UUx2M0FxdDc0OTNxLTVDT2xMYnc3bjVFcDJlaTFsM1FUWUNRTUE3TzJDd1Q3aEM4LWdkX0pNVzBRanN5dXYwcmxxNzczalM4ZS1FT1hqR3d0NFQ4MFNqRDJuQTTSAYQBQVVfeXFMTzJVc1luWGJZUXNPRHVBbno2Q1RVYk5VVGdZcVlJS0o2LXRIclZSX1hBSDdUM2VLUkwtMW1jTHBHTmdNODF4c2V4SnJTS3JqSF96OUZtNjZzSUhya0pyZWZVUXRhdC1jd0NldGliekVJNERPVEJIdnZFOXRZV1l3d2daU1pu?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
+            <h3>El Partido Republicano enfrenta discordia interna por el liderazgo de Mike Johnson</h3><p class="desc">El descontento interno con el liderazgo de Mike Johnson está creciendo dentro del Partido Republicano.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Revela divisiones internas dentro del Partido Republicano, lo que podría afectar la eficacia legislativa.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxQdW81MG5YR045WVBfY0l0MEMzYlQwa3I2RnlBMHA2c01KZjFkUTJjbi1JbjIybWNEM3JXOUZ3ZVdHVjdxblhwSUNMVUdsZ0FRT2JQUzJjYmQ5SmJaLVIzeXU5M1lyR0JoX01iYUhFd2VlU3FwRGxrZUs2UXJyaGtvNHhFbE96S0JudVJvdw?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Los republicanos apuntan al último distrito demócrata de Tennessee</h3><p class="desc">Los republicanos apuntan estratégicamente a ganar el último distrito demócrata que queda en la Cámara de Representantes en Tennessee.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Demuestra esfuerzos continuos para cambiar el poder político a nivel estatal.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxPMlNrbFBlMTR6RDFpSGthcVVZbjBYamJWNU9FNGVpMTJvaDF6U1M2bkNWWTZxZmF1WXllYkpac1pLbzhGcFdrVk1uY1ItMU9fVG9lSHNmTERJYUdOSGhyaWtfQzEtNXVwSEF3dXJLajRDeU94RGw2Sm1SY2VFQ3BEQU0yZzFUXzBEemlfT0hmSHN4U0NBeGpXZFlOMG5mRlRUTS1URzlaaDZCSVE5MGlJ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>La acusación contra Comey depende de la definición de '86'</h3><p class="desc">La acusación contra James Comey está significativamente influenciada por la interpretación del término "86".</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Se centra en los matices legales y su impacto en casos legales de alto perfil.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
@@ -100,52 +90,62 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La ex líder detenida de Myanmar, Aung San Suu Kyi, pasó a arresto domiciliario, dice el ejército - CNN</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE1ya3diM1dLdFJsQV9XaFNXUnY1VlpWUi1JSjFzdG8ta1pPVFptNjhI bEJiM28tNjFvRUZhc2dhQkZEUzhJTHZoWXIyWnRxem16U3NrR2dfc1I2Z1IzcVNhb29xbms2NzR3aDQ1cmRDemhONHlRVGtEckxJelFTZw?oc=5" objetivo="_en blanco"</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Finaliza el cierre récord del DHS; Se esperan protestas del Primero de Mayo</h3><p class="desc">El cierre récord del DHS concluye mientras se anticipan protestas del Primero de Mayo en todo el país.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Combina la resolución de una crisis gubernamental con manifestaciones públicas en curso.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQRVFMSERqQXhzN0txUXhJRXVWSVlZQWRjM2kwSDFwTUVQYVFGZUQ0U19VSzkyNDlxc1BqUHJ3VTFHbHN3OThYUW5PeVNYMVAzS1A1bnBTN2V4aHlTMXJsVG5GXzZmeU56bV9TV0h6M2pTWS13NXJnRUVvYzhodGJrZ1JIMzRfTmllTmFtLWE3dXhCR01SRWZuQjhkYWt2LU5fazlUdWx3a1duZFFBQzdBTGR1TUtkZHZ4Mk1Ed2JNVQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.3</span></div>
+            <h3>Un hombre comparece ante el tribunal por intento de asesinato con ataque con cuchillo en Londres</h3><p class="desc">Un hombre ha comparecido ante el tribunal tras un intento de asesinato con ataques con cuchillo en Londres.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Informes sobre delitos y procesos judiciales en el contexto internacional.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxOSFAwU1VzRXB6ZmlISDI4VUxBeDN2Y1hSZnNEZ1FodFZES0c4Uy1kWWctTWVBRW0zRmJ6VmdCQ0hXZGY5MS02a3NOcnROREN4NGJjSEF5QlZfcTJOOXYyd1dpTVFwZjBZT094U2J0QkgxZF9yTDJvWllMMkZFWjQ1b29ucDJoOGp5VmVjNFFXMHlzZ3l0Vks1R3JHRm1HM1F0QzJvMzVQOHExVC1YT2ktdUFyQ1llaFA1S1FTa3haSXZQWVFZQ0l3VC1hdw?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.6</span></div>
+            <h3>Aung San Suu Kyi pasó a arresto domiciliario, dice el ejército de Myanmar</h3><p class="desc">El ejército de Myanmar confirma que Aung San Suu Kyi, la ex líder detenida, ha sido trasladada a arresto domiciliario.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Indica un cambio en las condiciones de su detención y la inestabilidad política actual en Myanmar.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
                 <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE1ya3diM1dLdFJsQV9XaFNXUnY1VlpWUi1JSjFzdG8ta1pPVFptNjhIbEJiM28tNjFvRUZhc2dhQkZEUzhJTHZoWXIyWnRxem16U3NrR2dfc1I2Z1IzcVNhb29xbms2NzR3aDQ1cmRDemhONHlRVGtEckxJelFTZw?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El jurado de la Bienal de Venecia dimite días antes del inicio de la principal exposición de arte - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE9YenVUNV8wYWlvajUtNzRDV0NOb3BY Xy1TTnhINVgwVXh0TlpzWDF0RnM5TnBIcHVyT2l6SzVSTUU3QWpvNFc3VE54S0NuY1hVanJEWm9LVnZhUQ?oc=5" target="_blank">El jurado de la Bienal de Venecia dimite días antes de su inicio</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
+            <h3>El Primer Ministro de Antigua y Barbuda ganará su cuarto mandato</h3><p class="desc">Se prevé que el Primer Ministro de Antigua y Barbuda obtenga un cuarto mandato en las próximas elecciones.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Refleja estabilidad política y confianza de los votantes en el liderazgo actual.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE9YenVUNV8wYWlvajUtNzRDV0NOb3BYXy1TTnhINVgwVXh0TlpzWDF0RnM5TnBIcHVyT2l6SzVSTUU3QWpvNFc3VE54S0NuY1hVanJEWm9LVnZhUQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxQM3lvUmlaSExSWEp0U0xzaG9zckY3dGUxREFlNW4ycGcyUDVnYXo1Tjd4T1pQU004NDFYLWdpVE9UVy0zSXpwLVM4TDdGaUVtWW5BdkY1bkhNallxNnd2eE9LQTZDd3pvc3dxOG1zOEhpQUo4d2xYU1ZaN2U0U2FfRUttTGZOMUJrNDJWT0lYWmNYZw?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La violencia estalla en una ciudad australiana tras el arresto del sospechoso del asesinato de una niña - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQam9TeVdhNjN1MXRRWDNFUGM2UnNEY3MzVXhaVXlkX1ZLUG9ZaGJJeTVQZjY3 TUJEUU8yR1FCUkYzbHR6SWRmT2NuV3FSalo3MVVkSURCWi1vNFU5VURqMDNoeTJuQ3lrTm9iSFhPV2dLZlNod1JfblM1TDRkQVlqWWFzcDhOYkQxMlJ0aHpr</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
+            <h3>La frustración con Hezbollah se convierte en apoyo a medida que Israel se afianza</h3><p class="desc">A medida que la presencia de Israel se fortalece, la frustración con Hezbollah se está desplazando hacia el apoyo.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Ilustra la dinámica cambiante en los conflictos regionales y las respuestas de las poblaciones locales.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQam9TeVdhNjN1MXRRWDNFUGM2UnNEY3MzVXhaVXlkX1ZLUG9ZaGJJeTVQZjY3TUJEUU8yR1FCUkYzbHR6SWRmT2NuV3FSalo3MVVkSURCWi1vNFU5VURqMDNoeTJuQ3lrTm9iSFhPV2dLZlNod1JfblM1TDRkQVlqWWFzcDhOYkQxMlJ0aHprdzNkU1locExjXzhraTRhQ3h0Z3c?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxOeUx1eTNLTEItVmg0VUdQVVVqNGpyNnlIZ1B5WTctQmlBM0czYnhnWldQRGtEc182Q2VmazJNdHBEWUJVVERlNFAzaUtiT1dNV3Azd1J1dlhhakVSbEdiakUxejJhSU4zQjE1MExjbDRDbkpIRVIzVEFrU1VjdHRSdzRiWlBBWWxFVXV3anpxemdHbG9uWEE?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Trump vuelve a criticar al alemán Merz y le dice que deje de interferir en Irán - Reuters</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxPUFV3WE9MUzNCX2xtWDFSVE4wQjFWYVBGRjdzOGNFajBtMlh3VDVXb3FQZ0ti TVNraUdTWTF4SENZY2pxMDd6Nnp0aDNqajAwQkxRMWw0MkM0cmNaQnY4LTl2SXZrdVJGNlU5Rk5RV3FMaEFjTThDYnAyTXhjeDdFMEdzRmxMYXdTM1V1bVez</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
+            <h3>Chevron supera las expectativas debido al aumento del precio del petróleo provocado por la guerra</h3><p class="desc">Chevron reporta ganancias significativamente mayores de lo esperado, impulsadas por el aumento de los precios del petróleo como resultado de factores relacionados con la guerra.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Demuestra el impacto económico de los conflictos geopolíticos en el sector energético.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxPUFV3WE9MUzNCX2xtWDFSVE4wQjFWYVBGRjdzOGNFajBtMlh3VDVXb3FQZ0tiTVNraUdTWTF4SENZY2pxMDd6Nnp0aDNqajAwQkxRMWw0MkM0cmNaQnY4LTl2SXZrdVJGNlU5Rk5RV3FMaEFjTThDYnAyTXhjeDdFMEdzRmxMYXdTM1V1bVEzS21wUVE4ODctZmJBU29tXzEwaFBTWUNiSHJqUTlRN2c?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Apple ofrece un sólido pronóstico en señal de que está capeando la escasez - Bloomberg.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPemRKR1ozRkk0dzFLUGJDbUVmbmJicHpQQWR6cmkyc1BRSGEteUNxelY4TVBU WDZJRW1vdE9wSXM0Q0hVQnAzeDZVUUdrdFM5WldRbXF3YS1KUDJ4dkFUS2w5Y1E5NjhUTWpZTlpqYndvVXB0MEc5dkt6YXJHZXVzeUg1ZF9UVUdhV05hbDlf</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPemRKR1ozRkk0dzFLUGJDbUVmbmJicHpQQWR6cmkyc1BRSGEteUNxelY4TVBUWDZJRW1vdE9wSXM0Q0hVQnAzeDZVUUdrdFM5WldRbXF3YS1KUDJ4dkFUS2w5Y1E5NjhUTWpZTlpqYndvVXB0MEc5dkt6YXJHZXVzeUg1ZF9UVUdhV05hbDlfZzg4RGNNWjV4amtoMWQ0R0lYQXhuWk1Sd2FTZWUyNThPOQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPY24wWjJ1X1Z6VzZVM1ZhV0RtZW5SMTh1NWpzUE9LVWUwVzhPcVdyVzlLTHhLVFVRd25PTG1pYmNrem1rel93M0RZTTlnOG0xb3ZzVjR2WHV4djJNODB4c0ZuMGp6eEV2NlJJVG5Mc1hSUjhNbTM0T0x1UjBpTFVuR0hVT20wM2FEekhrZ011d09DTzg0Ukp2cWZBMkF5VmFlZGVmS3RZdlVkeWIzOGFVV0pscw?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div></body></html>
