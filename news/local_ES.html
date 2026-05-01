@@ -1,28 +1,118 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-05-01 02:39 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de la vida local.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-05-01 04:28 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crimen y Seguridad Pública (tiroteo, apuñalamiento)</span><span class="cluster">#Sequía y restricciones de agua</span><span class="cluster">#Eventos comunitarios y protestas</span><span class="cluster">#Gobierno y políticas locales (aumentos de tarifas, financiación)</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Las noticias locales en Charlotte, Carolina del Norte y sus alrededores están dominadas por el crimen, el clima y los eventos comunitarios. Se han denunciado varios incidentes de violencia, incluidos tiroteos y apuñalamientos, lo que genera preocupación por la seguridad pública. La región también está lidiando con condiciones de sequía, lo que lleva a restricciones de agua y prohibiciones de quemas.</p><div class="divider"></div><p class="insight-text">El panorama de las noticias locales refleja una comunidad que enfrenta desafíos relacionados con la seguridad, las preocupaciones ambientales y las presiones económicas.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>'Situación de emergencia' provoca respuesta policial y evacuación en Walmart en el condado de Caldwell</h3><p class="desc">Una "situación de emergencia" en un Walmart en Hudson provocó evacuaciones y una gran presencia policial, según los agentes y un testigo.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Tiroteo masivo en el parque Winston-Salem deja dos muertos</h3><p class="desc">Un tiroteo masivo en el parque Leinbach en Winston-Salem provocó dos muertos y múltiples heridos.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca la creciente violencia armada y su impacto en los espacios comunitarios, lo que genera preocupaciones sobre la seguridad pública.</div>
+            <div class="card-footer">
+                <span class="source">Hartford Courant</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.courant.com/2026/04/20/planned-fight-leads-to-mass-shooting-at-park-2-killed-several-wounded-nc-police-say/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
+            <h3>Leistritz Extrusion organizará un taller de extrusión reactiva en Charlotte</h3><p class="desc">Leistritz Extrusion organizará el taller de extrusión reactiva (REX) 2026 del 13 al 14 de mayo en el Centro de excelencia de polímeros en Charlotte.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Muestra a Charlotte como un centro para la tecnología e innovación de polímeros, fomentando la colaboración de la industria.</div>
+            <div class="card-footer">
+                <span class="source">RubberWorld</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://rubberworld.com/leistritz-extrusion-to-host-rex-workshop-may-13-14/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
+            <h3>Sospechoso arrestado por apuñalar a una mujer embarazada en Charlotte</h3><p class="desc">La policía detuvo al sospechoso de apuñalar a una mujer embarazada en el estacionamiento de una tienda de comestibles de Charlotte.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Aborda las preocupaciones sobre los delitos violentos y la seguridad de las personas vulnerables en los espacios públicos.</div>
+            <div class="card-footer">
+                <span class="source">The Gateway Pundit</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.thegatewaypundit.com/2026/04/horror-woman-extensive-criminal-background-finally-caught-two/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Reincidente acusado de apuñalar a una mujer embarazada en Harris Teeter</h3><p class="desc">Marvina Butler-Hardy, reincidente, está acusada de apuñalar a una mujer embarazada en un estacionamiento de Charlotte Harris Teeter.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Plantea interrogantes sobre los reincidentes y la eficacia del sistema de justicia.</div>
+            <div class="card-footer">
+                <span class="source">Fox News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.foxnews.com/us/repeat-offender-allegedly-stabs-pregnant-mom-random-grocery-store-parking-lot-attack-with-steak-knife" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.2</span></div>
+            <h3>Trabajador del aeropuerto de Charlotte acusado de robar joyas del equipaje</h3><p class="desc">Un contratista del aeropuerto de Charlotte está acusado de robar joyas por valor de 5.000 dólares de la maleta de un viajero y venderlas en Facebook.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Socava la confianza en la seguridad de los aeropuertos y genera preocupaciones sobre robos dentro de la industria de viajes.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/airport-worker-accused-of-stealing-jewelry-from-passenger-luggage/275-1c2f1f10-b284-4e05-9000-92313f150684" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>La deuda como metáfora de la sequía en las Carolinas</h3><p class="desc">El artículo establece un paralelo entre la dificultad de escapar de la deuda y las persistentes condiciones de sequía en las Carolinas.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Ofrece una perspectiva única sobre la sequía, vinculándola con desafíos económicos más amplios.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.wcnc.com/article/weather/weather-impact/ongoing-drought-north-carolina-south-carolina-comparing-to-debt/275-5dd555d7-60fb-4a5e-94d6-2f3380e734c2" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.0</span></div>
+            <h3>Charlotte Water implementa restricciones obligatorias de agua</h3><p class="desc">Charlotte Water ha implementado restricciones de agua obligatorias debido al empeoramiento de las condiciones de sequía en las Carolinas.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca la gravedad de la sequía y la necesidad de que los residentes conserven el agua.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/mandatory-water-restrictions-charlotte-north-carolina-amid-exceptional-drought/275-de307555-2878-4b13-be06-ffc93f1c4363" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Manifestantes de Charlotte apuntan a Duke Energy por el aumento de tarifas propuesto</h3><p class="desc">Los manifestantes en Charlotte se oponen al aumento de tarifas del 18% propuesto por Duke Energy, que aumentaría significativamente las facturas de los clientes residenciales.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Refleja la preocupación pública por el aumento de los costos de la energía y el impacto en los presupuestos de los hogares.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://www.wcnc.com/article/news/politics/north-carolina-politics/duke-energy-proposed-rate-hike-may-day-protest-charlotte-north-carolina/275-cbe4368b-c5b0-4be4-b447-d106ca491a45" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Greg Biffle recibe póstumamente el honor de Carolina del Norte</h3><p class="desc">Greg Biffle recibió póstumamente la Orden del Pino de Hoja Larga por su heroísmo durante el huracán Helene.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Reconoce actos de valentía y servicio comunitario, honrando a personas que marcaron la diferencia.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="https://www.wcnc.com/article/weather/hurricane/helene/greg-biffle-order-of-the-long-leaf-pine-helene-heroism-community-service/275-0345ae99-2006-47d5-a0da-89035917b63d" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Situación de emergencia provoca evacuación en Walmart en el condado de Caldwell</h3><p class="desc">Una "situación de emergencia" en un Walmart en Hudson provocó evacuaciones y una gran presencia policial.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Crea malestar y perturbación en la comunidad, generando preguntas sobre la seguridad en los espacios públicos.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
                 <a href="https://www.wcnc.com/article/news/local/emergency-situation-at-walmart-caldwell-county/275-f5e163bd-e039-4e97-970f-b7c09c4414cd" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los parques del condado de Mecklenburg emiten prohibición de quemas en medio de graves condiciones de sequía</h3><p class="desc">El Parque y Recreación del Condado de Mecklenburg implementará una prohibición de quema obligatoria en todo su sistema de parques a partir del lunes 4 de mayo.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>Los parques del condado de Mecklenburg emiten prohibición de quemas en medio de la sequía</h3><p class="desc">El Parque y Recreación del Condado de Mecklenburg ha implementado una prohibición de quema obligatoria en todo su sistema de parques debido a las graves condiciones de sequía.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca el impacto de la sequía en las actividades recreativas y la necesidad de seguridad contra incendios.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
                 <a href="https://www.wcnc.com/article/weather/mecklenburg-county-park-and-recreation-burn-ban/275-ebd77075-d2c7-4c54-8d13-c2034bc15465" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Se avecina un fin de semana frío: se espera lluvia el sábado por la mañana y se aclarará el domingo en Charlotte</h3><p class="desc">Un patrón climático más frío de lo normal traerá lluvias de ligeras a moderadas el sábado por la mañana.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
+            <h3>Se avecina un fin de semana frío: se espera lluvia en Charlotte</h3><p class="desc">Charlotte espera un fin de semana más fresco con lluvias de ligeras a moderadas el sábado por la mañana.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Proporciona actualizaciones meteorológicas relevantes para la planificación diaria y las actividades al aire libre.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
@@ -30,122 +120,32 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La fiesta termina en un incidente con "víctimas masivas" en una granja ecuestre en el condado de Iredell, dicen los agentes</h3><p class="desc">Una gran fiesta en Healing Chamber Farms provocó un incidente con muchas víctimas, y los funcionarios del condado de Iredell respondieron a numerosas necesidades médicas en medio de una investigación.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.9</span></div>
+            <h3>Incidente con víctimas masivas en una fiesta agrícola del condado de Iredell</h3><p class="desc">Una gran fiesta en Healing Chamber Farms en el condado de Iredell resultó en un incidente con muchas víctimas y numerosas necesidades médicas.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Plantea preocupaciones sobre la seguridad en reuniones grandes y la posibilidad de emergencias médicas.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
                 <a href="https://www.wcnc.com/article/news/local/mass-casualty-incident-at-healing-chambers-farms-iredell-county/275-aadb84cd-aa17-43f2-8259-79a14915c5b9" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Investigación de muerte en curso en el sur de Charlotte, dice CMPD</h3><p class="desc">Una persona fue encontrada muerta en Shady Oak Trail el viernes por la mañana, dice la policía.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Investigación de muerte en curso en el sur de Charlotte</h3><p class="desc">La policía está investigando una muerte en Shady Oak Trail en el sur de Charlotte.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Crea incertidumbre y preocupación dentro de la comunidad a medida que se desarrolla la investigación.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
                 <a href="https://www.wcnc.com/article/news/crime/death-investigation-charlotte-north-carolina-shady-oak-trail/275-7e0ddd41-4d66-4963-a1c4-c2d176f3dcfe" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Charlotte Water implementa restricciones obligatorias de agua en medio del empeoramiento de la sequía</h3><p class="desc">Se pide a los residentes de Charlotte que reduzcan el uso de agua no esencial para ayudar a proteger el suministro de agua de la región en medio de condiciones excepcionales de sequía en las Carolinas.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>Los maestros de Carolina del Norte se manifiestan por mejores salarios y financiación</h3><p class="desc">Miles de educadores, padres y estudiantes se manifestaron en Raleigh para exigir más fondos para las escuelas públicas y mayores salarios para los docentes.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca el debate en curso sobre la financiación de la educación y la compensación de los docentes en Carolina del Norte.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/mandatory-water-restrictions-charlotte-north-carolina-amid-exceptional-drought/275-de307555-2878-4b13-be06-ffc93f1c4363" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Miles de maestros de Carolina del Norte marchan por mejores salarios y mayores fondos en la manifestación 'Kids over Corporation'</h3><p class="desc">Se espera que miles de educadores, padres y estudiantes se reúnan en Raleigh el viernes para exigir más fondos para las escuelas públicas y mejores salarios para los docentes.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
                 <a href="https://www.wcnc.com/article/news/education/thousands-expected-kids-over-corporation-teacher-pay-rally-raleigh-north-carolina/275-9a383389-6d0b-4266-b010-bcead2b87bdd" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Las condiciones excepcionales de sequía provocan restricciones de agua en el área de Charlotte</h3><p class="desc">Las comunidades de toda la región ya no sólo piden a la gente que ahorre agua voluntariamente, sino que ahora lo exigen.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/severe-weather/exceptional-drought-conditions-water-restrictions-charlotte/275-5d25bfef-c17b-4c08-bf81-117191e30595" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Muerte bajo custodia en el centro de detención de Chesterfield bajo investigación por SLED</h3><p class="desc">La muerte de una persona en el Centro de Detención del Condado de Chesterfield está bajo investigación y las pruebas se han entregado a la División de Aplicación de la Ley de Carolina del Sur.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/sled-investigates-chesterfield-county-incident/275-e10719cf-5cab-45ad-ba98-ce97b927f670" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Hombre de Mooresville enfrenta 20 cargos de explotación sexual infantil</h3><p class="desc">Scott Robertson está detenido con una fianza de 800.000 dólares.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/crime/mooresville-man-faces-20-counts-of-child-sexual-exploitation/275-d780c065-f29b-46fa-b5fc-69d7b99b9144" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Concierto benéfico planeado para el sobreviviente del atropello y fuga de Salisbury, ya que dos sospechosos siguen buscados</h3><p class="desc">Un concierto benéfico en Gastonia apoyará a un sobreviviente de un atropello y fuga de Salisbury que perdió una pierna, mientras la policía continúa buscando a dos sospechosos buscados en el accidente.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/benefit-concert-for-salisbury-motorcycle-crash-victim/275-1159bb5a-fe2d-4c86-b025-e059f981b534" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Estudiante de primer grado del condado de Rowan tiene la oportunidad de cumplir sus sueños científicos</h3><p class="desc">Vote por Tucker en la competencia de Estudiante Favorito de Estados Unidos.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/rowan-county-first-grader-americas-favorite-student/275-6edbe0d4-b653-4c9c-9800-e4dcb84f68a2" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El patrimonio de Greg Biffle enfrenta demandas por muerte por negligencia por valor de 15 millones de dólares</h3><p class="desc">Las demandas se presentaron el 17 de abril en el Tribunal del Condado de Iredell. Los herederos de Dennis y Jack Dutton buscan 15 millones de dólares.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/greg-biffle-estate-wrongful-death-lawsuits-plane-crash/275-efbf7ee5-eaae-4783-b9aa-ac73b5651e4a" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Las condiciones de sequía se intensifican en la región de Charlotte</h3><p class="desc">Los cursos de agua bajos, los céspedes estresados ​​y la creciente preocupación por el agua ponen de relieve el impacto generalizado de la sequía.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/drought-conditions-intensify/275-24e24e4d-6fd9-4896-a5dd-7efa1860b054" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>'Otra burla' | La familia reacciona después de que el sospechoso se niega a asistir a la audiencia judicial</h3><p class="desc">La madre de Anthony Zellars dice que cada retraso obliga a la familia a revivir la pérdida.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/family-reacts-after-suspect-refuses-to-attend-court-hearing/275-3208bad5-382e-4198-9803-f316a451a395" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div></body></html>
