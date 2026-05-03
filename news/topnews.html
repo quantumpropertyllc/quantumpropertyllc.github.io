@@ -1,48 +1,88 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-02 10:10 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#International Conflicts (Iran, Gaza)</span><span class="cluster">#Domestic Policy (Abortion, Food Aid)</span><span class="cluster">#Economic Disruptions (Airlines, Water)</span><span class="cluster">#Political Controversies (Trump, Comey)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>The news landscape is dominated by international relations, domestic policy, and economic concerns. Tensions surrounding Iran and Gaza are escalating, while domestic issues like abortion access and food aid are under scrutiny. Economic factors, including airline disruptions and water conservation efforts, also play a significant role.</p><div class="divider"></div><p class="insight-text">Geopolitical instability and domestic policy debates are creating a complex and uncertain environment.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-03 06:48 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#US-Iran Relations (Trump's statements, potential strikes)</span><span class="cluster">#Healthcare Access (Emergency room closures, abortion pill access)</span><span class="cluster">#Local Community Events (Schoolhouse anniversary, kitchen redesign)</span><span class="cluster">#Accidents and Incidents (Portland attack, Washington 911 call)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>This news compilation covers a range of topics from local community events and healthcare to international politics and sports. Several articles focus on political tensions involving Iran and the United States, alongside domestic issues such as healthcare access and legal battles. The collection also includes stories about local achievements, accidents, and community celebrations, reflecting a diverse set of interests and concerns.</p><div class="divider"></div><p class="insight-text">Geopolitical tensions and domestic policy debates are prominent themes, indicating a complex and uncertain global environment.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
-            <h3>Germany and Europe Face Significant Challenges Due to Potential Trump Policies</h3><p class="desc">Europe braces for potential economic and security challenges if Trump alters US foreign policy.</p>
-            <div class="insight"><strong>Why this matters:</strong> A shift in US policy could destabilize transatlantic relations and impact European security and economic stability.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Oliver Hospital Emergency Room to Close Overnight</h3><p class="desc">Interior Health announces the emergency room at Oliver hospital will be temporarily closed overnight, with services resuming at 7 a.m. Sunday.</p>
+            <div class="insight"><strong>Why this matters:</strong> Temporary ER closures can impact immediate healthcare access for residents needing urgent medical attention.</div>
+            <div class="card-footer">
+                <span class="source">eaglevalleynews</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://eaglevalleynews.com/2026/05/02/emergency-room-closing-overnight-at-oliver-hospital/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.0</span></div>
+            <h3>NASCAR Driver Greg Biffle Honored Posthumously</h3><p class="desc">Gov. Josh Stein posthumously inducted NASCAR driver Greg Biffle into the Order of the Long Leaf Pine, one of North Carolina’s highest honors.</p>
+            <div class="insight"><strong>Why this matters:</strong> Recognizes Biffle's contributions to NASCAR and North Carolina's sports legacy.</div>
+            <div class="card-footer">
+                <span class="source">thederrick</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.thederrick.com/news/entertainment/nascar-driver-greg-biffle-honored-posthumously-by-nc-gov-josh-stein/article_d0805e37-f084-5e2e-a32d-61be62529b79.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.2</span></div>
+            <h3>Historic Schoolhouse Celebrates 150th Anniversary</h3><p class="desc">Pine Grove’s Stanhope One-Room Schoolhouse commemorates its 150th anniversary with a new book and educational programs.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the importance of preserving local history and educational heritage.</div>
+            <div class="card-footer">
+                <span class="source">yahoo</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.yahoo.com/lifestyle/articles/historic-schoolhouse-prepares-150th-anniversary-224700976.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
+            <h3>The Quadays Design a 'Sophisticated Rustic' Kitchen</h3><p class="desc">Liz and Steve Quaday redesign their Big Sand Lake home's kitchen, creating a 'sophisticated rustic' space.</p>
+            <div class="insight"><strong>Why this matters:</strong> Showcases personal home improvement projects and design trends.</div>
+            <div class="card-footer">
+                <span class="source">parkrapidsenterprise</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.parkrapidsenterprise.com/lifestyle/the-quadays-create-a-sophisticated-rustic-kitchen" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Fires Fuel Pollution Fears in Northern Thailand</h3><p class="desc">Forest fires in northern Thailand intensify, raising concerns about air pollution despite efforts to control the blazes.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights environmental concerns and the impact of uncontrolled fires on air quality.</div>
+            <div class="card-footer">
+                <span class="source">bangkokpost</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.bangkokpost.com/thailand/general/3248792/fires-fuel-pollution-fear" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.5</span></div>
+            <h3>Verstappen Optimistic After Miami Grand Prix Qualifying</h3><p class="desc">Max Verstappen expresses optimism after securing second place in qualifying for the Miami Grand Prix.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects on Verstappen's performance and expectations for the race.</div>
+            <div class="card-footer">
+                <span class="source">columbiagorgenews</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.columbiagorgenews.com/news/national/verstappen-sees-light-at-the-end-of-tunnel/article_e7b7572e-f636-5bd3-8866-627a69053005.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Germany 'Anticipated' U.S. Troop Withdrawal; Spain, Italy Could Be Next</h3><p class="desc">Germany states it 'anticipated' the U.S. troop withdrawal, suggesting Spain and Italy could be next.</p>
+            <div class="insight"><strong>Why this matters:</strong> Indicates potential shifts in European defense strategies and alliances.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxOaWR4c2M1VHhkWEVjVk11VXB2TFhBakJYczdQdXYtS0VTcjJvWGktd2IxWDN4cTZUc210YVQxenROZDFaZExUWlB1OU5xMldlUHowbDZuRUMxVEdPQlZUNDZDV2NXbUtZQWdOLUd2c2VSTWdGR2lSUXF5ckp2M19BNmpQbEQ3RUNyTWktc2hrVQ?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
+            <h3>Trump Doubts Acceptability of Iran's New Offer</h3><p class="desc">Trump states he is reviewing Iran's new offer but expresses doubts about whether it is 'acceptable'.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights ongoing tensions and negotiations between the U.S. and Iran.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTVBOeVJKOHhIeGZxaTF4ajI0eHhPcDNJa01rakJSOXY4TXNRRVVubUdqS3cxR005dXFpTEdVZE1tQ3FZNDI3eTU1M2Q2V1hSdk9xYU1GTGdBZlVVdFhtQS16Y1lKc2IzWGQ3Q2xUc3NFdUpsRUZzQnNsVC1UTi1PbElwT3RIZ2c4QS1ILUFsaUNoUkctNmJTSEg1d0Z6VjZTYjZCMjloMnc4QQ?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOUmc3NVZQczFfTHBDWDY2Z2R6eFhYWnFFZmdnaG52UTBMb215cU52aGIxSDVSNDdYYUozOW50ZGlYaFhiWHNzdXdGanN0OUlEcHRkZnVIUFdvWGg0THEyRy1GMUh6dWhCbV90d0FUVGlEQXRCY0xXUkNfcndqWUdhc2Y1dkdRR1lkeTJMM1Rfa1IzYTVxOFo3S2dtWTdvd3RidUROUXhqcWNaNVFDY0tkbw?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>Iran Responds to U.S. Proposal with 14-Point Plan to End Conflict</h3><p class="desc">Iran submits a 14-point response to the U.S. proposal aimed at de-escalating tensions and ending the war.</p>
-            <div class="insight"><strong>Why this matters:</strong> The response could be a step towards negotiation or a point of contention depending on its terms.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTFBLMi1mWVVxa2c3MmhYY3lTYndRdDhoQWZVaGhXVE1JVnN3ZW1jWldnUnEtSDU3ODNPa3l4emNCb2RCQWlYSERJdjBwVGtFLUQ3TllZRmZuT3hSQzYtWS1LSHpFTWp6UUJTMm4wR0FhY19BNnRueE9qUTVhMFJ3Zw?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>Supreme Court Considers Restoring Mail Access to Abortion Pill</h3><p class="desc">The Supreme Court is reviewing a case concerning access to abortion pills via mail, impacting reproductive rights.</p>
-            <div class="insight"><strong>Why this matters:</strong> The decision could significantly alter access to abortion services nationwide.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPeXBkWmY5RVlJYkFMaEpPYVdxQ3ZkSi1mZlhsb19KTkFmVm5FT0psUFdJa0IweHN6UkI5SGM1N0w3WEN4S255aXdxM1RGY2pLbVVTX0N6d1hVaEt0cm1hV0N1MmhWSS1UX29RUGVRWjgxSUZJVXRPeFk0TUFLTEtpcWpSTmxHOEZjS0QwdF9zRTdRTTFfeXpwMVlHaU9aQjFvdGZRWA?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>California, Arizona, Nevada Announce Colorado River Water-Saving Plan</h3><p class="desc">States agree on a new plan to conserve water from the dwindling Colorado River amid ongoing drought conditions.</p>
-            <div class="insight"><strong>Why this matters:</strong> The agreement is crucial for managing water resources in the drought-stricken region.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxPMjBLbHFxN1lieUVOcmc0OTNTS3phMzIzSDZ1aF9wMkJPeWd4aUN1TUNoN01DNkVxNGk5dEw4azM5SWdGSGJuLVgwUy1VQ1Z2TFNBV00tbmw2ZnUxaTJLOFBja3pmX2ZSZklnOXZMQzNZM2hfY014UzdNWWVVelR4eHo4WHdlN0lDTDhSQnd0aGU?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Analysis Suggests Suspect Fired First in Correspondents’ Dinner Incident</h3><p class="desc">New video analysis indicates the suspect initiated the attack at the Correspondents’ Dinner.</p>
-            <div class="insight"><strong>Why this matters:</strong> The new evidence could influence the ongoing investigation and legal proceedings.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
+            <h3>Video Analysis Suggests Suspect Fired First in Correspondents’ Dinner Attack</h3><p class="desc">New video analysis indicates the suspect in the Correspondents’ Dinner attack fired first.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides new insights into the sequence of events during the attack.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -50,102 +90,62 @@
             </div>
         </div>
         <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Drugmakers Ask Supreme Court to Restore Abortion Pill Access by Mail</h3><p class="desc">Drugmakers petition the Supreme Court to reinstate access to abortion pills via mail.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses ongoing legal battles surrounding abortion access and reproductive rights.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxOa0RDRTdBc295N0hyNHh3d3IyZnB1anUtOWRLdldlQVdfZjVsY0RmYVlJTHdBT3FzQVVHU09lb1R6WnVuS1h6bzBMXzM4cjlmZXlOdTZRd25YN3czMk45RmFTQ05INGVJbC1LbXdJT25oMkRKamZLWkZianpiNXJxMFBpUWsxQk5PYlY1dmFJTnZZSWZ6?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Trump Warns of Possible New Strikes if Iran 'Misbehaves'</h3><p class="desc">Trump warns of potential new strikes against Iran if it 'misbehaves'.</p>
+            <div class="insight"><strong>Why this matters:</strong> Escalates tensions and raises concerns about potential military action.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE5mV1Rna195WmRWc19NWWJVUF90TTNfRi1wU3ZCSGk1VlhSMUZKaS1rR0hST2hPcUNYSHFfTl8yUmRMQWg3OF9hNWtLOVBqbWxxZHI4WUtYcEdxaVczYTJQUA?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>Fatal Attack at Portland Athletic Club: Explosive Devices Found</h3><p class="desc">An attack on Portland’s Multnomah Athletic Club resulted in one death and multiple explosive devices discovered.</p>
-            <div class="insight"><strong>Why this matters:</strong> The incident raises concerns about public safety and potential future attacks.</div>
+            <h3>Trump Faces Complex Reality of Costly, Unpopular War in Iran</h3><p class="desc">Trump confronts the challenges of a costly and unpopular war in Iran.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the political and economic implications of military involvement in Iran.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxNRExHdzM4bzNoYUF0T0hXR29UUmZUN3FUam1FU0VPUy1fNmJrMmxRWE9MTW1WbThSVW16N2xwTk42RFVoVlRwSlNrOVBKUFBINndRcUw2V1J1NnVzX3dkLVVJSE9KbnNlcHlFUmdZelgzZnBWWlVrMHRfdkRyWGYzR21lZmg?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
-            <h3>Spirit Airlines Cancels All Flights, Stranding Passengers</h3><p class="desc">Spirit Airlines cancels all flights, leaving numerous passengers stranded and disrupting travel plans.</p>
-            <div class="insight"><strong>Why this matters:</strong> The mass cancellation highlights operational issues and affects thousands of travelers.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxPSi1ZblcwUVEzQlNJZEVVQTJmTnFmQnpZeUtRXzFzdmtoUHdWRnh4S1U5ekFudHFaUVJIRi1JYTY3M1VoSHZ3X2ZWZUZCdlpOQW15cGVaQUEtd2RXLTNJUkxXN29qV0JmMEd3b0x2R2FWTkgtOGlMd043aEphMjVHVE43N1Z5XzBneXBEYQ?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Surgeon General Nominee Faces Scrutiny Over MAHA Affiliations</h3><p class="desc">The new surgeon general nominee is under scrutiny due to potential conflicts related to MAHA.</p>
-            <div class="insight"><strong>Why this matters:</strong> Affiliations could raise ethical questions during the confirmation process.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxONEdZRDM5NVg0dV85QmJHZnZpLThSRmI4NmVRVEpYQTZwUGtoUE0tbzUtWEdhS1lHMjZTUnNLNFFtOFBqNlNOZjhPX2ZuSVpCNFllZkZfeWl5Y2dSOFJUQVpYOVNneGxmUmlRSXpkM3M1dXVBX1lrRkNNVnE4akY2MEIzN0YxOVc1Y1FJT1Fzenp4ZWM4bTdHclFEQWd1QQ?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>Over Three Million People Lose Federal Food Aid Benefits</h3><p class="desc">More than three million individuals have lost access to federal food aid, increasing food insecurity.</p>
-            <div class="insight"><strong>Why this matters:</strong> The reduction in aid could lead to increased hardship for vulnerable populations.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPYkJDZkNvdnA5SU1fNUItejF6bXN4ZmlzZThwaHhVRU9qX3BCT2FPVWVBTzJSNnJhUFMweGtIbm9ZdmxtRTIybzhoRkRLUDZXMHBtYXVCRHMxalhhV2ZWb0s1Yi0wVmFFZjUzWGs3bUhIcFdfazMwTWFTLXlnNklUbUJ6cno2SVRUbTdVTGJPRW1xa2FZME9QS0tpWjkwRDVDRWxMZA?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Joe Rogan Reacts to Trump Administration's Indictment of James Comey</h3><p class="desc">Joe Rogan criticizes the Trump administration's indictment of James Comey over a seashell image.</p>
-            <div class="insight"><strong>Why this matters:</strong> The reaction highlights the ongoing political divisions and controversies.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxOaGY4UWJGWFJqXzRtSGZmWmR1Z0Z6Tm9KYVZ0b0lIRGhyLTBCN29LelE2dk9fVGRXVWZWZ1dzWUFiRnJ4bEI4RHA5Mlp6bnBQdjc4VTd0V2dtSVRVUkJodVJfMzllYU1ETVRMRUF0WlJnRnlvc0l0ZnJzcUFMZERaTmNWNHMzQjdacjR2Y21qSkhjOW0w?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
-            <h3>U.K. Prime Minister Calls for Stronger Action Against Antisemitic Gaza Protests</h3><p class="desc">The U.K. prime minister urges tougher measures against antisemitic incidents during Gaza protests.</p>
-            <div class="insight"><strong>Why this matters:</strong> The call reflects growing concerns about rising antisemitism amid geopolitical tensions.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxNVG5CQWRhOWg3UjRKNHlpWE5DVXZsNGxXS0xjeVRRbGpYNGZiNzRmT1p5bm5JbDVYSVc4QVdfYy1vR0NGTEI1U0MzektVTjVUakFsM2NSX0g1ZGdUdTZEUVJQTmxFZzE3Q3JuWFlmcFVLVTdsbzNza0JyMDNkTkdlZkptOHVMaXdqMWkxdkw3V21MdUnSAZgBQVVfeXFMTWhsZEdreHlsLWRoZ19qS3VCUmhGSEZpd3BGM3g5NkZ4aHNYZl9HbGxpOTYtOEd0UFlSOXN5VjRlalB6N1J3VnhFbGtCVi12emVoaTg0Sy02X2wwVzFKamZDZ1BCeFJvNXJEcGxSOFlWcnVFS1dtTklKc0RGczFGQ0hlSlRocFVwc0VBYVVpOHVOZ0VvMXdXdzk?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPWWUwbHhDR3dKN2ZnVlRBTlRHSHRKZDZrMUl1OEh4WlRWQzdOR1p4NnZLRXNUdUpfMVdPcnFHRzJnMndyWmNCV3B6NkNVRDBDeENmTVU2a3dwVmgzU2pIUnJfMFViNm5MSkppazNFY1ZIUGsyUVRSZGdYTEp2WEN5RGhB?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
-            <h3>Timmy the Stranded Whale Rescued After Weekslong Effort</h3><p class="desc">Timmy, a whale, is successfully rescued after a weekslong rescue operation.</p>
-            <div class="insight"><strong>Why this matters:</strong> The rescue highlights conservation efforts and marine animal welfare.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQNzZ5cExuQUNnQUxVbXRZYWZiU2tIN21JUWxKZE9RNU01U2ZYYzRVUGhmQ0hLOGJxRnRoM3M1S1RBUS05czJPdUwtVDYwc3VtWW00RnJvTU5nT2NXc2htRml2cGNzbXJGS0xjOE1SblZibVJsVng0ek9vTnFFN0o0ekV6cUN5Ui1rcW5YUnBhTHFIVE5sbWc3RXN2Rl9EV1U?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>Taiwan's Remaining Diplomatic Allies</h3><p class="desc">An overview of the 12 countries that maintain diplomatic relations with Taiwan.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights Taiwan's diplomatic challenges amid pressure from China.</div>
+            <h3>Inside the Final Hours of Spirit Airlines</h3><p class="desc">A detailed look into the final operational hours of Spirit Airlines.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides insight into the aviation industry and airline operations.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxOamNsYnEwcVlTaVU4QzMtQmhZR1h0T09vQUliSHZKQWtIWHNBZjVRM251TzFQcEtaSG1RdlNYXzRpSDV5NmkwOXdtaVdrWWFvT2xnUHFvWFA4a2locGt6X3FqREgzYm96SE5nMDRUWU5jTU5UQjBlRzkweGdoOWt1bHVpR1VpamFTNVMtT3lfOA?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOcWpWSXM5V044clVDOEh4T2xxNnBWYkMtVmZfVHYySXNYeG01M1hjRjdmXzZjMmhpdkMxTUwyenlBNFhlRkNOU2lKcHNIbFJvRlNnVG9idHE4ajhzenhuRWRnTnVuenNqbkpjT1FPQlJEWHFQZGdZa1o2dkR6V3pueGljc2FzZ0NjUGphatIBkgFBVV95cUxOdmRCZkREa1VnSVJKd3p4aDJWVi1JVldXNF9ZenEzbmVJQnFxOWYzTVpMQ1RnV0dlQWpMRjQxQUR5UHNsR3dQTmFaWkRmMXJyVzVETlFxUmRhSUt1TEVhTUh5MnZhYmtwX3NyRFZIdGpzRnFpVVpZUlhXRmhuRHI0WVFEQmpqOER4eVpSSVVzbkswUQ?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.6</span></div>
-            <h3>Concern Grows for Jailed Iranian Nobel Laureate Due to Deteriorating Health</h3><p class="desc">Family expresses concern over the deteriorating health of a jailed Iranian Nobel laureate.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises concerns about human rights and political prisoners in Iran.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>Washington Mother's Final Moments Captured on Horrific 911 Call</h3><p class="desc">A Washington mother's last moments are recorded on a harrowing 911 call during a violent incident.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the tragic consequences of gun violence and domestic disputes.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE1BQnhzZXBZbGNaazNkZHNCOHlIckkwc1NHX3QtM2RnU0tWcDgyZnYyQ2VBWWNhMHhFa3RYa1BiRDZmMGdxOHVqdHFJaTRxaDJFTlQ1SVUtVUNZdw?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQZkxPU01JZlJhWUwzMGtOeDNDMlBhaTM2U2VGcDBkSnJ3eDJzazNOR1hVei0yQWlEUmhadW9acmhrNzZ0Rm1hR0d0eC1sOUptdExZbDFyeWVITVhoVDRHSWsxVVRBakI3Z1R5RGlMSlhGUGR2dTU3c2tjYksyR2xYUlhmc1lUVzB2NU9JcG5wY0Q3WW5fTlhWT211M29pYnpGbGhJUFF30gGrAUFVX3lxTFB4STlodXpmcUI3cEtJVlc1VW1JNklUVDg5dTExcm5pMHNBaTFpbFZOOHM3UE1GeTh6TE1TRnl4dVMwV0pmRUxqdGZGWGJfNzNHdUJlN2NSYkV0a3hHWldMUXkzOVphVzdiM3ZtNjAtQUxab21YYnp3V0x0RWhfdTd6cXZfeEVKUlljbHptVDVLM3ZPQVJGaXd0UHMxTldzWWNabTNmZVBfNG5XTQ?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.3</span></div>
-            <h3>Warren Buffett's Surprise Interview: From Excitement to Grimness to Hope</h3><p class="desc">An account of Warren Buffett's surprise interview, detailing the shifting moods and insights shared.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides insights into Buffett's perspectives on the current economic climate.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
+            <h3>Attack on Portland Athletic Club: Explosive Devices Found, 1 Dead</h3><p class="desc">Police report one fatality and multiple explosive devices discovered following an attack on Portland’s Multnomah Athletic Club.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details a violent incident and raises concerns about public safety and security.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxQaTV3VERRd0dsNG5sS19jSVducmlUd0hNMU42VXFURHBsWWM2R0NrUFg2aVR4TVEya0FXTnI0d2FMTU5La2dEbzhTNnhKbXhURm1jNFdRcHE4cHExWjZSYzhZMmhtOWFVbE91VUFZVlRxZFI4NGVad09jQzNQdzgtYUpKV3JrdFdEY1JILUNJSkl2YVQ1bHpLWnBWLVhrcXFDNzUtTGYyQXM0WmpoOEh2UmxuUUR3VFloVkNhaTN4UC0xaF9E?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxNRExHdzM4bzNoYUF0T0hXR29UUmZUN3FUam1FU0VPUy1fNmJrMmxRWE9MTW1WbThSVW16N2xwTk42RFVoVlRwSlNrOVBKUFBINndRcUw2V1J1NnVzX3dkLVVJSE9KbnNlcHlFUmdZelgzZnBWWlVrMHRfdkRyWGYzR21lZmg?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
