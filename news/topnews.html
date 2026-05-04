@@ -1,78 +1,138 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-03 10:09 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Sports Events (Kentucky Derby, Miami Grand Prix, Boxing)</span><span class="cluster">#Political Developments (US troop reduction, Iran negotiations)</span><span class="cluster">#Business & Tech (SAG-AFTRA deal, Ask.com shutdown, Spirit Airlines)</span><span class="cluster">#People in the News (Kim Kardashian, Warren Buffett, Anna Nicole Smith's daughter)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>The news landscape is diverse, covering sports, entertainment, politics, business, and technology. Key events include the Kentucky Derby, Miami Grand Prix, and political developments in the US and Iran. Several articles also cover business closures and deals.</p><div class="divider"></div><p class="insight-text">The entertainment and sports industries are seeing significant activity, while political tensions and economic shifts continue to shape global events.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-04 07:44 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#International tensions (Iran, Taiwan)</span><span class="cluster">#Sports achievements (Kentucky Derby, Boxing)</span><span class="cluster">#Domestic issues (Abortion rights, Crime)</span><span class="cluster">#Business and Finance (Spirit Airlines)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>This news cycle features a diverse range of topics, from sports and politics to crime and business. Several articles highlight international relations and potential conflicts, while others focus on domestic issues such as abortion rights and crime. The sports headlines cover both horse racing and boxing, showcasing significant achievements in these fields.</p><div class="divider"></div><p class="insight-text">The global landscape appears increasingly volatile, with potential conflicts and political tensions dominating headlines.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Benavidez vs. Ramirez Fight: Live Updates</h3><p class="desc">Live round-by-round updates from the David Benavidez vs. Zurdo Ramirez title fight in Las Vegas.</p>
-            <div class="insight"><strong>Why this matters:</strong> High-stakes boxing match attracting significant sports fan interest and media coverage.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Golden Tempo Wins Kentucky Derby, DeVaux Makes History</h3><p class="desc">Golden Tempo wins the Kentucky Derby with a late surge, making Cherie DeVaux the first female trainer to win the prestigious race.</p>
+            <div class="insight"><strong>Why this matters:</strong> DeVaux's win breaks barriers, inspiring future generations in horse racing.</div>
             <div class="card-footer">
-                <span class="source">Yahoo Entertainment</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://sports.yahoo.com/boxing/breaking-news/live/david-benavidez-vs-zurdo-ramirez-live-results-round-by-round-updates-ring-walks-for-tonights-title-fight-063000097.html" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.2</span></div>
-            <h3>Kim Kardashian Attends Daughter's Pop-Up Event</h3><p class="desc">Kim Kardashian attends North West's pop-up event in Los Angeles after missing the first night due to the Miami Grand Prix.</p>
-            <div class="insight"><strong>Why this matters:</strong> Celebrity news highlighting family activities and event attendance.</div>
-            <div class="card-footer">
-                <span class="source">TMZ</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.tmz.com/2026/05/02/kim-kardashian-attends-north-wests-pop-up/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>Hegseth's Growing Influence at the Pentagon</h3><p class="desc">Defense Secretary Hegseth gains more control at the Pentagon despite earlier challenges.</p>
-            <div class="insight"><strong>Why this matters:</strong> Insight into the evolving power dynamics within the U.S. Department of Defense.</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.washingtonpost.com/national-security/2026/05/02/hegseth-trump-job-security/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.1</span></div>
-            <h3>Golden Tempo Wins Kentucky Derby; DeVaux Makes History</h3><p class="desc">Golden Tempo wins the Kentucky Derby, making Cherie DeVaux the first woman to train the winner.</p>
-            <div class="insight"><strong>Why this matters:</strong> Historic win in a major sporting event, breaking barriers for women in horse racing.</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
+                <span class="source">BBC News</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.npr.org/2026/05/02/nx-s1-5808929/golden-tempo-kentucky-derby-winner-cherie-devaux" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.bbc.com/sport/horse-racing/articles/ce3plndgkreo" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Iran Responds to U.S. Proposal to End War</h3><p class="desc">Iran submits a 14-point response to the U.S. proposal aimed at ending the ongoing conflict.</p>
-            <div class="insight"><strong>Why this matters:</strong> Critical diplomatic developments in efforts to resolve international conflict.</div>
+            <h3>Taiwan Leader Visits Eswatini Amid China's Opposition</h3><p class="desc">President Lai Ching-te visits Eswatini, meeting King Mswati III and signing trade agreements despite China's attempts to block the trip.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights Taiwan's efforts to maintain diplomatic ties despite Chinese pressure.</div>
             <div class="card-footer">
-                <span class="source">NPR</span>
+                <span class="source">Al Jazeera English</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.npr.org/2026/05/02/nx-s1-5808924/iran-response-trump-proposal" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.aljazeera.com/news/2026/5/3/taiwan-leader-visits-eswatini-despite-chinas-attempts-to-block-trip" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
-            <h3>Trump Announces Further Troop Reductions in Germany</h3><p class="desc">Trump announces further troop reductions in Germany, escalating tensions with German leadership.</p>
-            <div class="insight"><strong>Why this matters:</strong> Impacts European security and transatlantic relations.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Drugmakers Challenge Abortion Pill Access Restrictions</h3><p class="desc">Drugmakers petition the Supreme Court to restore mail access to mifepristone after a court ruling restricted in-person pickup.</p>
+            <div class="insight"><strong>Why this matters:</strong> Impacts access to abortion medication and raises legal questions.</div>
             <div class="card-footer">
-                <span class="source">Associated Press</span>
+                <span class="source">The Washington Post</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://apnews.com/article/germany-trump-troops-nato-drawdown-pistorius-merz-a93151327dcb7279a56a36dd4bbeca1c" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.washingtonpost.com/politics/2026/05/02/mifepristone-supreme-court-mail-access/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Benavidez Stops Ramirez, Becomes Three-Division Champ</h3><p class="desc">David Benavidez defeats Gilberto Ramirez to claim the WBA and WBO cruiserweight titles, becoming a three-division champion.</p>
+            <div class="insight"><strong>Why this matters:</strong> Solidifies Benavidez's status as a top boxer in the cruiserweight division.</div>
+            <div class="card-footer">
+                <span class="source">ESPN</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.espn.com/boxing/story/_/id/48646802/david-benavidez-vs-gilberto-zurdo-ramirez-live-updates-boxing-results-analysis" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">2.0</span></div>
+            <h3>Horoscope for Sunday, May 03, 2026</h3><p class="desc">Daily horoscope.</p>
+            <div class="insight"><strong>Why this matters:</strong> Entertainment.</div>
+            <div class="card-footer">
+                <span class="source">Suntimes.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://chicago.suntimes.com/horoscopes/2026/05/03/horoscopes-today-sunday-may-03-2026" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Olivia Rodrigo Mocks Jake Paul on SNL</h3><p class="desc">Olivia Rodrigo jokes about Jake Paul's career during her Saturday Night Live hosting gig, contrasting her music career with his boxing.</p>
+            <div class="insight"><strong>Why this matters:</strong> Celebrity news and pop culture commentary.</div>
+            <div class="card-footer">
+                <span class="source">Whereisthebuzz.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://whereisthebuzz.com/olivia-rodrigo-clowns-on-jake-paul-at-snl-i-wanted-to-make-music-he-wanted-to-beat-up-old-guys-on-netflix/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>SAG-AFTRA and Studios Reach New Deal</h3><p class="desc">SAG-AFTRA and the Alliance of Motion Picture and Television Producers confirm a new contract agreement.</p>
-            <div class="insight"><strong>Why this matters:</strong> Significant development for the entertainment industry, ensuring labor stability.</div>
+            <h3>Suspect Arrested in Austria Over Poisoned Baby Food</h3><p class="desc">A 39-year-old man is arrested in Austria for allegedly attempting to blackmail a German baby food manufacturer by poisoning HiPP products.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights potential threats to food safety and consumer confidence.</div>
             <div class="card-footer">
-                <span class="source">Deadline</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="http://deadline.com/2026/05/studios-sag-aftra-confirm-new-deal-amptp-1236879173/" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">DW (English)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.dw.com/en/austria-police-arrest-suspect-over-poisoned-hipp-baby-food/a-77021390" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>Vehicle Crash at Portland Athletic Club; Explosive Device Found</h3><p class="desc">One dead, explosive device found after a vehicle crashes into Portland’s Multnomah Athletic Club.</p>
-            <div class="insight"><strong>Why this matters:</strong> Serious incident raising concerns about public safety and potential threats.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Trump Reviews Iran's Offer, Expresses Doubt</h3><p class="desc">President Trump is reviewing a new offer from Iran to end the war but remains skeptical about its viability.</p>
+            <div class="insight"><strong>Why this matters:</strong> Indicates ongoing diplomatic efforts and potential for conflict resolution.</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.nbcnews.com/politics/donald-trump/trump-says-reviewing-irans-new-offer-doubts-acceptable-rcna343288" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
+            <h3>Washington Mother's Murder Captured on 911 Call</h3><p class="desc">Gloria Choi was murdered by her ex-boyfriend after repeated 911 calls reporting stalking. The attack was captured during a 911 call.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises concerns about domestic violence and the effectiveness of emergency response systems.</div>
+            <div class="card-footer">
+                <span class="source">CBS News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.cbsnews.com/news/gloria-choi-billy-rickman-washington-murder-captured-on-911-call-48-hours/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.9</span></div>
+            <h3>76ers Complete 3-1 Comeback Against Boston</h3><p class="desc">Philadelphia 76ers defeat Boston after overcoming a 3-1 deficit, marking their first series win against Boston since 1982.</p>
+            <div class="insight"><strong>Why this matters:</strong> Showcases resilience and determination in sports.</div>
+            <div class="card-footer">
+                <span class="source">NBCSports.com</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.nbcsports.com/nba/news/joel-embiids-big-night-bostons-missed-3s-help-76ers-complete-3-1-comeback-take-series" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
+            <h3>Germany Downplays U.S. Troop Withdrawal Impact</h3><p class="desc">Germany's defense minister minimizes the impact of the U.S. troop withdrawal, but the move has unsettled NATO allies.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects shifting alliances and concerns about European security.</div>
+            <div class="card-footer">
+                <span class="source">NPR</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.npr.org/2026/05/02/nx-s1-5808891/europe-allies-germany-troop-withdrawal-us" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.6</span></div>
+            <h3>Trump Threatens New Strikes if Iran 'Misbehaves'</h3><p class="desc">Trump considers ordering new military action against Iran to break the stalemate.</p>
+            <div class="insight"><strong>Why this matters:</strong> Escalates tensions and raises the possibility of further conflict.</div>
+            <div class="card-footer">
+                <span class="source">Axios</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.axios.com/2026/05/02/trump-iran-strikes" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
+            <h3>Canes Announce Second Round Schedule</h3><p class="desc">Carolina Hurricanes will face Philadelphia in the second round of the 2026 Stanley Cup Playoffs.</p>
+            <div class="insight"><strong>Why this matters:</strong> Sports scheduling information.</div>
+            <div class="card-footer">
+                <span class="source">NHL News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.nhl.com/hurricanes/news/canes-announce-2026-second-round-schedule" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
+            <h3>Attack on Portland Athletic Club, Explosives Found</h3><p class="desc">One person is dead, and multiple explosive devices were found after an attack on Portland's Multnomah Athletic Club.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights potential security threats and violence in public spaces.</div>
             <div class="card-footer">
                 <span class="source">OPB News</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -80,72 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.9</span></div>
-            <h3>Antonelli Beats Verstappen for Miami GP Pole</h3><p class="desc">Kimi Antonelli outperforms Max Verstappen to secure pole position for the Formula 1 Miami Grand Prix.</p>
-            <div class="insight"><strong>Why this matters:</strong> Exciting development in Formula 1 racing, setting the stage for a competitive race.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Spirit Airlines Ceases Operations After Failed Bailout</h3><p class="desc">Spirit Airlines has ceased operations overnight following a failed government bailout attempt.</p>
+            <div class="insight"><strong>Why this matters:</strong> Illustrates the financial challenges facing the airline industry.</div>
             <div class="card-footer">
-                <span class="source">Motorsport.com</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.motorsport.com/f1/news/f1-miami-gp-q-report/10817515/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Buffett Warns of Excessive Gambling Mood in Markets</h3><p class="desc">Warren Buffett cautions about the current "gambling mood" in the market, suggesting prices may be inflated.</p>
-            <div class="insight"><strong>Why this matters:</strong> Expert commentary on market conditions and potential risks for investors.</div>
-            <div class="card-footer">
-                <span class="source">Fortune</span>
+                <span class="source">CNBC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://fortune.com/2026/05/02/warren-buffett-investing-gambling-mood-one-day-options-prediction-markets-betting-berkshire-hathaway/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Ask.com Shuts Down Search Business</h3><p class="desc">IAC announces the discontinuation of its search business, marking the end of Ask.com's search engine.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reflects the changing landscape of the search engine market.</div>
-            <div class="card-footer">
-                <span class="source">TechCrunch</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://techcrunch.com/2026/05/02/farewell-jeeves-ask-com-shuts-down/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>Spirit Airlines Ceases Operations: What to Know</h3><p class="desc">Spirit Airlines announces it is ceasing operations, leaving travelers seeking refunds and alternative options.</p>
-            <div class="insight"><strong>Why this matters:</strong> Significant disruption for travelers and the airline industry.</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.washingtonpost.com/travel/2026/05/02/spirit-airlines-how-to-get-refund/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
-            <h3>Stranded Whale 'Timmy' Rescued After Weekslong Effort</h3><p class="desc">Timmy, the stranded whale, is successfully rescued after a weekslong effort, capturing global attention.</p>
-            <div class="insight"><strong>Why this matters:</strong> Heartwarming story of animal rescue and international collaboration.</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.npr.org/2026/05/02/g-s1-119913/timmy-the-stranded-whale-rescued-after-weekslong-effort" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.3</span></div>
-            <h3>New Surgeon General Nominee Faces Scrutiny</h3><p class="desc">Nicole Saphier's nomination for Surgeon General faces scrutiny.</p>
-            <div class="insight"><strong>Why this matters:</strong> Political implications of the nomination process.</div>
-            <div class="card-footer">
-                <span class="source">Politico</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.politico.com/news/2026/05/02/casey-means-maha-surgeon-general-nicole-saphier-00903761" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>Anna Nicole Smith's Daughter Debuts New Look</h3><p class="desc">Dannielynn Birkhead, Anna Nicole Smith's daughter, debuts a bold new look at the Kentucky Derby.</p>
-            <div class="insight"><strong>Why this matters:</strong> Celebrity news and public interest in the daughter of a well-known figure.</div>
-            <div class="card-footer">
-                <span class="source">Entertainment Weekly</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://ew.com/anna-nicole-smith-daughter-dannielynn-birkhead-new-look-kentucky-derby-11964748" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.cnbc.com/2026/05/02/spirit-airlines-shutdown-inside-the-final-hours.html" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>

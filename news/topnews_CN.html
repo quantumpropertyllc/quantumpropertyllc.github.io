@@ -1,78 +1,138 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-05-03 10:09 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#体育赛事（肯塔基德比赛、迈阿密大奖赛、拳击）</span><span class="cluster">#政治动态（美军裁减、伊朗谈判）</span><span class="cluster">#商业与科技（SAG-AFTRA 交易、Ask.com 关闭、Spirit Airlines）</span><span class="cluster">#新闻人物（金·卡戴珊、沃伦·巴菲特、安娜·妮可·史密斯的女儿）</span></div></div></div><div class="brief"><h2>今日简报</h2><p>新闻格局多种多样，涵盖体育、娱乐、政治、商业和科技。重要赛事包括肯塔基德比、迈阿密大奖赛以及美国和伊朗的政治动态。有几篇文章还涉及企业倒闭和交易。</p><div class="divider"></div><p class="insight-text">娱乐和体育产业正在蓬勃发展，而政治紧张局势和经济变化继续影响着全球事件。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-05-04 07:44 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#国际紧张局势（伊朗、台湾）</span><span class="cluster">#体育成就（肯塔基德比赛、拳击）</span><span class="cluster">#国内问题（堕胎权、犯罪）</span><span class="cluster">#商业与金融（精神航空）</span></div></div></div><div class="brief"><h2>今日简报</h2><p>这个新闻周期涵盖了从体育和政治到犯罪和商业的各种主题。有几篇文章强调了国际关系和潜在冲突，而其他文章则重点关注堕胎权和犯罪等国内问题。体育头条涵盖赛马和拳击，展示这些领域的重大成就。</p><div class="divider"></div><p class="insight-text">全球格局似乎越来越不稳定，潜在的冲突和政治紧张局势成为头条新闻。</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>贝纳维德斯 vs. 拉米雷斯之战：实时更新</h3><p class="desc">大卫·贝纳维德斯 (David Benavidez) 与祖尔多·拉米雷斯 (Zurdo Ramirez) 在拉斯维加斯举行的冠军争夺战的逐轮实时更新。</p>
-            <div class="insight"><strong>深度见解:</strong> 高风险的拳击比赛吸引了大量体育迷的兴趣和媒体报道。</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Golden Tempo 赢得肯塔基德比，DeVaux 创造历史</h3><p class="desc">黄金节奏 (Golden Tempo) 在肯塔基德比 (Kentucky Derby) 比赛中凭借后期的出色表现赢得了胜利，使切丽·德沃 (Cherie DeVaux) 成为第一位赢得这项著名比赛的女练马师。</p>
+            <div class="insight"><strong>深度见解:</strong> 德沃的胜利打破了障碍，激励了赛马界的后代。</div>
             <div class="card-footer">
-                <span class="source">Yahoo Entertainment</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://sports.yahoo.com/boxing/breaking-news/live/david-benavidez-vs-zurdo-ramirez-live-results-round-by-round-updates-ring-walks-for-tonights-title-fight-063000097.html" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.2</span></div>
-            <h3>金·卡戴珊 (Kim Kardashian) 出席女儿的快闪活动</h3><p class="desc">金·卡戴珊 (Kim Kardashian) 因迈阿密大奖赛错过了第一晚，出席了 North West 在洛杉矶举办的快闪活动。</p>
-            <div class="insight"><strong>深度见解:</strong> 名人新闻重点介绍家庭活动和活动出席情况。</div>
-            <div class="card-footer">
-                <span class="source">TMZ</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.tmz.com/2026/05/02/kim-kardashian-attends-north-wests-pop-up/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">尽管此前面临挑战，国防部长赫格塞斯仍获得了对五角大楼的更多控制权。</p>
-            <div class="insight"><strong>深度见解:</strong> 深入了解美国国防部内部不断变化的权力动态。</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.washingtonpost.com/national-security/2026/05/02/hegseth-trump-job-security/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.1</span></div>
-            <h3>Golden Tempo Wins Kentucky Derby;德沃创造历史</h3><p class="desc">Golden Tempo 赢得了肯塔基德比，使 Cherie DeVaux 成为第一位训练获胜者的女性。</p>
-            <div class="insight"><strong>深度见解:</strong> 在重大体育赛事中取得历史性胜利，打破了女性赛马的障碍。</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
+                <span class="source">BBC News</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://www.npr.org/2026/05/02/nx-s1-5808929/golden-tempo-kentucky-derby-winner-cherie-devaux" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.bbc.com/sport/horse-racing/articles/ce3plndgkreo" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>伊朗回应美国结束战争的提议</h3><p class="desc">伊朗对美国旨在结束持续冲突的提议提出了 14 点回应。</p>
-            <div class="insight"><strong>深度见解:</strong> 解决国际冲突的重要外交进展。</div>
+            <h3>台湾领导人不顾中国反对访问斯威士兰</h3><p class="desc">赖清德总统访问斯威士兰，会见国王姆斯瓦蒂三世并签署贸易协定，尽管中国试图阻止此行。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调台湾不顾中国压力维持外交关系的努力。</div>
             <div class="card-footer">
-                <span class="source">NPR</span>
+                <span class="source">Al Jazeera English</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.npr.org/2026/05/02/nx-s1-5808924/iran-response-trump-proposal" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.aljazeera.com/news/2026/5/3/taiwan-leader-visits-eswatini-despite-chinas-attempts-to-block-trip" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
-            <h3>特朗普宣布进一步削减驻德美军</h3><p class="desc">特朗普宣布进一步削减驻德美军，导致与德国领导层的紧张关系升级。</p>
-            <div class="insight"><strong>深度见解:</strong> 影响欧洲安全和跨大西洋关系。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>制药商挑战堕胎药的获取限制</h3><p class="desc">在法院裁定限制亲自取件后，制药商请求最高法院恢复米非司酮的邮寄服务。</p>
+            <div class="insight"><strong>深度见解:</strong> 影响获得堕胎药物的机会并引发法律问题。</div>
             <div class="card-footer">
-                <span class="source">Associated Press</span>
+                <span class="source">The Washington Post</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://apnews.com/article/germany-trump-troops-nato-drawdown-pistorius-merz-a93151327dcb7279a56a36dd4bbeca1c" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.washingtonpost.com/politics/2026/05/02/mifepristone-supreme-court-mail-access/" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>贝纳维德斯阻止拉米雷斯，成为三级冠军</h3><p class="desc">大卫·贝纳维德斯击败吉尔伯托·拉米雷斯，夺得 WBA 和 WBO 轻量级冠军，成为三个级别的冠军。</p>
+            <div class="insight"><strong>深度见解:</strong> 巩固了贝纳维德斯作为轻量级顶级拳击手的地位。</div>
+            <div class="card-footer">
+                <span class="source">ESPN</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
+                <a href="https://www.espn.com/boxing/story/_/id/48646802/david-benavidez-vs-gilberto-zurdo-ramirez-live-updates-boxing-results-analysis" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">2.0</span></div>
+            <h3>2026 年 5 月 3 日星期日星座运势</h3><p class="desc">每日星座运势。</p>
+            <div class="insight"><strong>深度见解:</strong> 娱乐。</div>
+            <div class="card-footer">
+                <span class="source">Suntimes.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://chicago.suntimes.com/horoscopes/2026/05/03/horoscopes-today-sunday-may-03-2026" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>奥利维亚·罗德里戈在《周六夜现场》中嘲笑杰克·保罗</h3><p class="desc">奥利维亚·罗德里戈（Olivia Rodrigo）在周六夜现场主持演出时开玩笑地谈论杰克·保罗（Jake Paul）的职业生涯，将她的音乐生涯与他的拳击生涯进行了对比。</p>
+            <div class="insight"><strong>深度见解:</strong> 名人新闻和流行文化评论。</div>
+            <div class="card-footer">
+                <span class="source">Whereisthebuzz.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://whereisthebuzz.com/olivia-rodrigo-clowns-on-jake-paul-at-snl-i-wanted-to-make-music-he-wanted-to-beat-up-old-guys-on-netflix/" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>SAG-AFTRA 与电影公司达成新协议</h3><p class="desc">SAG-AFTRA 和电影电视制片人联盟确认了一项新的合同协议。</p>
-            <div class="insight"><strong>深度见解:</strong> 娱乐业显着发展，劳动力稳定。</div>
+            <h3>涉嫌婴儿食品中毒的嫌疑人在奥地利被捕</h3><p class="desc">一名 39 岁男子因涉嫌试图通过在 HiPP 产品中投毒勒索一家德国婴儿食品制造商而在奥地利被捕。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调对食品安全和消费者信心的潜在威胁。</div>
             <div class="card-footer">
-                <span class="source">Deadline</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="http://deadline.com/2026/05/studios-sag-aftra-confirm-new-deal-amptp-1236879173/" class="btn-link" target="_blank">阅读全文 →</a>
+                <span class="source">DW (English)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.dw.com/en/austria-police-arrest-suspect-over-poisoned-hipp-baby-food/a-77021390" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>波特兰体育俱乐部发生车祸；发现爆炸装置</h3><p class="desc">一辆汽车撞入波特兰摩特诺玛体育俱乐部后发现了一个死亡的爆炸装置。</p>
-            <div class="insight"><strong>深度见解:</strong> 严重事件引发对公共安全和潜在威胁的担忧。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>特朗普评论伊朗的提议并表示怀疑</h3><p class="desc">特朗普总统正在审查伊朗提出的结束战争的新提议，但仍对其可行性持怀疑态度。</p>
+            <div class="insight"><strong>深度见解:</strong> 表明正在进行的外交努力和解决冲突的潜力。</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.nbcnews.com/politics/donald-trump/trump-says-reviewing-irans-new-offer-doubts-acceptable-rcna343288" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
+            <h3>911 电话抓获华盛顿母亲谋杀案</h3><p class="desc">蔡格洛丽亚 (Gloria Choi) 在多次拨打 911 举报跟踪骚扰后，被前男友谋杀。这次袭击是在拨打 911 电话时被捕捉到的。</p>
+            <div class="insight"><strong>深度见解:</strong> 引起人们对家庭暴力和应急响应系统有效性的担忧。</div>
+            <div class="card-footer">
+                <span class="source">CBS News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.cbsnews.com/news/gloria-choi-billy-rickman-washington-murder-captured-on-911-call-48-hours/" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.9</span></div>
+            <h3>76人队3-1逆转波士顿</h3><p class="desc">费城 76 人队在以 3-1 落后的情况下击败波士顿队，这是他们自 1982 年以来首次在系列赛中战胜波士顿队。</p>
+            <div class="insight"><strong>深度见解:</strong> 展现运动中的韧性和决心。</div>
+            <div class="card-footer">
+                <span class="source">NBCSports.com</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
+                <a href="https://www.nbcsports.com/nba/news/joel-embiids-big-night-bostons-missed-3s-help-76ers-complete-3-1-comeback-take-series" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
+            <h3>德国淡化美军撤军影响</h3><p class="desc">德国国防部长将美国撤军的影响降到最低，但此举令北约盟国感到不安。</p>
+            <div class="insight"><strong>深度见解:</strong> 反映出联盟的变化和对欧洲安全的担忧。</div>
+            <div class="card-footer">
+                <span class="source">NPR</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.npr.org/2026/05/02/nx-s1-5808891/europe-allies-germany-troop-withdrawal-us" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.6</span></div>
+            <h3>特朗普威胁称，如果伊朗“行为不端”，将发动新的打击</h3><p class="desc">特朗普考虑下令对伊朗采取新的军事行动以打破僵局。</p>
+            <div class="insight"><strong>深度见解:</strong> 加剧紧张局势并增加进一步冲突的可能性。</div>
+            <div class="card-footer">
+                <span class="source">Axios</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.axios.com/2026/05/02/trump-iran-strikes" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
+            <h3>坎尼斯公布第二轮赛程</h3><p class="desc">卡罗莱纳飓风队将在 2026 年斯坦利杯季后赛第二轮对阵费城队。</p>
+            <div class="insight"><strong>深度见解:</strong> 体育赛事安排信息。</div>
+            <div class="card-footer">
+                <span class="source">NHL News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.nhl.com/hurricanes/news/canes-announce-2026-second-round-schedule" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
+            <h3>波特兰体育俱乐部遇袭，发现爆炸物</h3><p class="desc">波特兰摩特诺玛体育俱乐部发生袭击事件，造成一人死亡，并发现多个爆炸装置。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调公共场所潜在的安全威胁和暴力。</div>
             <div class="card-footer">
                 <span class="source">OPB News</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
@@ -80,72 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.9</span></div>
-            <h3>安东内利击败维斯塔潘夺得迈阿密大奖赛杆位</h3><p class="desc">基米·安东内利 (Kimi Antonelli) 超越马克斯·维斯塔潘 (Max Verstappen)，获得一级方程式迈阿密大奖赛杆位。</p>
-            <div class="insight"><strong>深度见解:</strong> 一级方程式赛车令人兴奋的发展，为竞技比赛奠定了基础。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>精神航空在救助失败后停止运营</h3><p class="desc">在政府救助尝试失败后，精神航空已于隔夜停止运营。</p>
+            <div class="insight"><strong>深度见解:</strong> 说明航空业面临的财务挑战。</div>
             <div class="card-footer">
-                <span class="source">Motorsport.com</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://www.motorsport.com/f1/news/f1-miami-gp-q-report/10817515/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>巴菲特警告市场过度赌博情绪</h3><p class="desc">沃伦·巴菲特对市场当前的“赌博情绪”发出警告，暗示价格可能会被夸大。</p>
-            <div class="insight"><strong>深度见解:</strong> 对市场状况和投资者潜在风险的专家评论。</div>
-            <div class="card-footer">
-                <span class="source">Fortune</span>
+                <span class="source">CNBC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://fortune.com/2026/05/02/warren-buffett-investing-gambling-mood-one-day-options-prediction-markets-betting-berkshire-hathaway/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Ask.com 关闭搜索业务</h3><p class="desc">IAC宣布终止搜索业务，标志着Ask.com搜索引擎的终结。</p>
-            <div class="insight"><strong>深度见解:</strong> 反映了搜索引擎市场不断变化的格局。</div>
-            <div class="card-footer">
-                <span class="source">TechCrunch</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://techcrunch.com/2026/05/02/farewell-jeeves-ask-com-shuts-down/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>精神航空停止运营：须知</h3><p class="desc">精神航空宣布将停止运营，旅客纷纷寻求退款和其他选择。</p>
-            <div class="insight"><strong>深度见解:</strong> 对旅客和航空业造成重大干扰。</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.washingtonpost.com/travel/2026/05/02/spirit-airlines-how-to-get-refund/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
-            <h3>经过数周的努力，搁浅的鲸鱼“蒂米”获救</h3><p class="desc">经过一周的努力，搁浅的鲸鱼蒂米被成功救起，引起了全球的关注。</p>
-            <div class="insight"><strong>深度见解:</strong> 动物救援和国际合作的感人故事。</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://www.npr.org/2026/05/02/g-s1-119913/timmy-the-stranded-whale-rescued-after-weekslong-effort" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.3</span></div>
-            <h3>新外科医生提名人面临审查</h3><p class="desc">妮可·萨菲尔 (Nicole Saphier) 的卫生局局长提名面临审查。</p>
-            <div class="insight"><strong>深度见解:</strong> 提名过程的政治影响。</div>
-            <div class="card-footer">
-                <span class="source">Politico</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.politico.com/news/2026/05/02/casey-means-maha-surgeon-general-nicole-saphier-00903761" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>安娜妮可史密斯的女儿首次亮相新造型</h3><p class="desc">安娜·妮可·史密斯 (Anna Nicole Smith) 的女儿丹尼琳·伯克海德 (Dannielynn Birkhead) 在肯塔基德比大赛上以大胆的新造型首次亮相。</p>
-            <div class="insight"><strong>深度见解:</strong> 名人新闻和公众对知名人物女儿的兴趣。</div>
-            <div class="card-footer">
-                <span class="source">Entertainment Weekly</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://ew.com/anna-nicole-smith-daughter-dannielynn-birkhead-new-look-kentucky-derby-11964748" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.cnbc.com/2026/05/02/spirit-airlines-shutdown-inside-the-final-hours.html" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div></body></html>
