@@ -1,28 +1,108 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-05 08:13 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Public Safety (shootings, homicides)</span><span class="cluster">#Community Development and Infrastructure (I-77, mosque proposal)</span><span class="cluster">#Education and Budget (CMS budget gaps)</span><span class="cluster">#Community Events (US Navy visit, REX Workshop)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in Charlotte and surrounding areas is marked by a mix of crime, community events, and infrastructure projects. Several shootings and violent incidents are reported, alongside community debates over development and school budgets. The return of the US Navy for community engagements provides a positive counterpoint.</p><div class="divider"></div><p class="insight-text">Public safety concerns and community development projects are key themes shaping local discourse.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-06 09:14 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Traffic incidents and safety concerns</span><span class="cluster">#Crime and law enforcement actions</span><span class="cluster">#Community and educational initiatives</span><span class="cluster">#Weather-related events and alerts</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news covers a range of incidents, from traffic accidents and severe weather to crime and community initiatives. Several articles focus on public safety, including searches for missing individuals and arrests related to drug trafficking and vehicle break-ins. Community engagement and educational matters are also highlighted, such as school budget discussions and the Navy's return to Charlotte for community events.</p><div class="divider"></div><p class="insight-text">The local news landscape reflects a focus on safety, community development, and accountability.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Mass Shooting at Winston-Salem Park Leaves Two Dead</h3><p class="desc">A planned fight at Leinbach Park in Winston-Salem resulted in a mass shooting, leaving two dead and several wounded.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights rising gun violence and its impact on community spaces, raising concerns about public safety.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>School Bus Crash in University City Injures One</h3><p class="desc">A crash involving a school bus in University City resulted in one injury. The presence of students on board is currently unknown.</p>
+            <div class="insight"><strong>Why this matters:</strong> Impacts local transportation and raises concerns about student safety in the University City area.</div>
             <div class="card-footer">
-                <span class="source">Hartford Courant</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.courant.com/2026/04/20/planned-fight-leads-to-mass-shooting-at-park-2-killed-several-wounded-nc-police-say/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/university-city-area-crash-involving-school-bus/275-11926a50-9f10-41e0-b247-d282a786d712" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Leistritz Extrusion to Host Reactive Extrusion Workshop in Charlotte</h3><p class="desc">Leistritz Extrusion will host the 2026 Reactive Extrusion (REX) Workshop May 13-14 at the Polymers Center of Excellence in Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Showcases Charlotte's growing importance as a hub for polymer technology and advanced manufacturing.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
+            <h3>Rain and Storms Expected Late Wednesday</h3><p class="desc">The weather forecast predicts rain and possible storms arriving late Wednesday, with cooler temperatures expected for Friday.</p>
+            <div class="insight"><strong>Why this matters:</strong> Residents should prepare for potential weather changes and adjust outdoor activities accordingly.</div>
             <div class="card-footer">
-                <span class="source">RubberWorld</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://rubberworld.com/leistritz-extrusion-to-host-rex-workshop-may-13-14/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>Fatal Motorcycle Crash in University City</h3><p class="desc">A motorcycle crash at the intersection of North Tryon Street and University City Boulevard resulted in one fatality.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights traffic safety concerns and the potential dangers on major roadways in University City.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/deadly-north-charlotte-crash-may-6-2026/275-b06ff3b1-3e96-42d4-8ea9-b69cc2f198cd" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Charlotte Man Charged with Multiple Vehicle Break-ins</h3><p class="desc">A Charlotte man faces 43 charges related to vehicle break-ins in Lincoln County, including theft of firearms and electronics.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses crime trends and law enforcement efforts in Lincoln County.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/charlotte-man-arrested-in-numerous-east-lincoln-county-vehicle-break-ins/275-78241ffc-a0f5-45a7-8fb0-ff7544b1c379" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Search for Missing Teen in Catawba County</h3><p class="desc">The Catawba County Sheriff's Office is searching for a missing 15-year-old, last seen in Conover early Friday.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises awareness about missing persons cases and community safety in Catawba County.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/missing-catawba-county-teen/275-538eb6a6-5645-43b4-afbc-8705d0437d80" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Search Continues for Missing Hunter in Lancaster County, SC</h3><p class="desc">Authorities are searching for 70-year-old Charles McCoy, who has been missing from a hunting area in Lancaster County since May 2.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights search and rescue operations and safety concerns for outdoor activities.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/missing-70-year-old-hunter-lancaster-kershaw-counties/275-fde5a6e0-db33-4764-b0e2-8d9a6181f79f" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>Charlotte-Mecklenburg School Board Addresses Budget Gaps</h3><p class="desc">The Charlotte-Mecklenburg School Board is working to close budget gaps in its 2026-27 budget, focusing on equitable resource distribution.</p>
-            <div class="insight"><strong>Why this matters:</strong> Impacts educational resources and equity within the Charlotte-Mecklenburg school system.</div>
+            <h3>Weather Alert: Severe Weather Possible Wednesday Night</h3><p class="desc">Charlotte could experience heavy rain and a low-end severe weather risk from Wednesday night into early Thursday.</p>
+            <div class="insight"><strong>Why this matters:</strong> Informs residents about potential weather hazards and encourages preparedness.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/weather/weather-impact/heavy-rain-severe-thunderstorm-risk-charlotte-north-carolina-brad-panovich-forecast/275-b4a7ed4f-fb79-4d98-93b9-87cd073ffccb" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>Fourth Arrest in Chesterfield County Shooting</h3><p class="desc">An 18-year-old has been charged with murder in connection to a fatal shooting in Chesterfield County, with a fourth suspect arrested.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses violent crime and law enforcement efforts in Chesterfield County.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/deadly-chesterfield-county-shooting-cheraw-three-charged/275-2ed0067d-e3fb-40b5-b510-c904b329b029" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>'Logan's Law' Proposed to Track Violent Offenders</h3><p class="desc">Federal lawmakers will introduce "Logan's Law," proposing a public registry for violent offenders, in memory of Logan Federico.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses systemic failures in tracking violent offenders and aims to improve public safety.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/politics/south-carolina-politics/sc-lawmakers-introduce-logans-law/275-5b2f969f-db94-46f6-9e83-310ce1f6414f" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Housing for Teachers Considered on Former School Property</h3><p class="desc">Mecklenburg commissioners are considering converting a former school property into housing, prioritizing teachers.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses affordable housing for teachers and supports community development.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.wcnc.com/article/news/local/a-major-investment-in-housing-is-moving-from-idea-to-action-in-mecklenburg-county/275-cedcd719-3e58-483b-9756-5468cc6eadd9" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>CMS Board Addresses Budget Gaps</h3><p class="desc">The Charlotte-Mecklenburg School Board is working to close budget gaps for 2026-27, emphasizing equitable resource distribution.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights financial challenges and priorities in the Charlotte-Mecklenburg School system.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -30,69 +110,19 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
-            <h3>Ryan Preece Fined, Penalized for Texas Crash</h3><p class="desc">Ryan Preece was fined $50,000 and docked 25 points for causing a crash at the NASCAR race in Texas.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reflects on the consequences of unsafe driving in NASCAR events.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Fire Chief Arrested on Drug Trafficking Charges</h3><p class="desc">The fire chief for the Morven Fire Department, William Stubbs, was arrested on drug trafficking and explosives charges.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses corruption and illegal activities within public service roles.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/sports/motor/nascar/ryan-preece-penalized-for-texas-crash/275-db108cdc-3ba1-4573-8583-c92889e59fa3" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/crime/north-carolina-fire-chief-arrested-drug-trafficking-explosives-charges/275-19609692-e71a-4b30-af49-16ef7fc43ba7" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>Indian Land Mosque Proposal Sparks Community Debate</h3><p class="desc">A proposal for a new mosque in Indian Land is generating community debate ahead of the scheduled vote on Monday, May 11.</p>
-            <div class="insight"><strong>Why this matters:</strong> Illustrates tensions between religious freedom and local community concerns regarding development.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/indian-land-mosque-proposal-sparks-community-debate-ahead-of-vote/275-06c8940e-e92e-4ca1-9a7f-40aa817cb741" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Charlotte Residents Clash Over I-77 Toll Lanes Project</h3><p class="desc">Residents and Charlotte leaders clash over the design and community impact of the I-77 South toll lanes project.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights ongoing infrastructure debates and their impact on local communities.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-leaders-and-residents-clash-over-i-77-south-toll-lanes-project/275-dcb5ac2f-b750-444a-8278-0c60b5bee6d1" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Fatal RV Crash on I-77 in Chester County</h3><p class="desc">One person was killed in an RV crash on I-77 in Chester County around 10:15 a.m. near mile marker 64.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses traffic safety and the potential dangers of highway travel.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/traffic/interstate-77-serious-crash-chester-county-south-carolina/275-5f0e0dbd-8abf-4b9d-a787-c60a3a59be3f" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>Salisbury Police Search for Suspect in Livingstone College Break-ins</h3><p class="desc">Salisbury police are searching for a suspect involved in multiple break-ins at Livingstone College, issuing 12 felony warrants.</p>
-            <div class="insight"><strong>Why this matters:</strong> Concerns campus security and the safety of students and faculty.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/salisbury-police-searching-for-suspect-in-livingstone-college-break-ins/275-dd2342ff-d2d4-4b3f-b49b-3a50bfa0c8a3" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>Increase in Child Deaths Alarms Catawba County</h3><p class="desc">A report reveals an increase in child deaths in Catawba County, particularly among infants, prompting calls for preventative measures.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises critical public health concerns and the need for improved child welfare initiatives.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/life/family/an-increase-in-child-deaths-is-raising-the-alarm-in-catawba-county-especially-among-the-most-vulnerable/275-557b0ce1-50d1-40d3-a450-06a8d4a9bfc0" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>US Navy Returns to Charlotte for Community Events</h3><p class="desc">The US Navy returns to Charlotte for the first time in nearly 20 years, participating in community events across the region.</p>
-            <div class="insight"><strong>Why this matters:</strong> Strengthens community ties and provides opportunities for engagement with naval personnel.</div>
+            <h3>US Navy Returns to Charlotte for Community Events</h3><p class="desc">The US Navy is in Charlotte for the first time in nearly 20 years, participating in community events across the region.</p>
+            <div class="insight"><strong>Why this matters:</strong> Promotes community engagement and strengthens ties between the Navy and Charlotte residents.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
@@ -100,52 +130,22 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>Northwest Charlotte Shooting Ruled Justified Homicide</h3><p class="desc">A shooting in Northwest Charlotte on April 19 has been labeled a justified homicide, and no charges will be filed.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the complexities of self-defense laws and their application in violent incidents.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/crime/northwest-charlotte-shooting-labeled-justified-homicide-no-charges-filed/275-fd9de21f-2451-48c3-bf5b-266af361dbf6" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>Southwest Charlotte Shooting Ruled Justified Homicide</h3><p class="desc">A shooting in Southwest Charlotte that resulted in one death and two injuries has been ruled a justified homicide.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses the legal and ethical considerations surrounding self-defense in violent encounters.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Police Search for Suspect in Livingstone College Break-ins</h3><p class="desc">Salisbury police are searching for a suspect involved in break-ins at Livingstone College, with 12 felony warrants issued.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses security concerns and law enforcement efforts at Livingstone College.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-shooting-labeled-justified-homicide-none-to-be-charged/275-3e3be7e0-135e-48e6-9d6d-60a96e21eb52" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/crime/salisbury-police-searching-for-suspect-in-livingstone-college-break-ins/275-dd2342ff-d2d4-4b3f-b49b-3a50bfa0c8a3" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>First Suspect Convicted in Deadly 2022 Hickory Shooting</h3><p class="desc">Jakeis Zameir Harris was sentenced to 20-25 years in prison for the death of Khalil Rhynhart in a 2022 Hickory shooting.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides closure in a past violent crime and highlights the consequences of gun violence.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Ryan Preece Fined for Texas Crash</h3><p class="desc">Ryan Preece was fined $50,000 and penalized 25 points for crashing Ty Gibbs in Sunday's NASCAR race at Texas.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on disciplinary actions in NASCAR following a racing incident.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/deadly-2022-hickory-shooting-suspect-convicted/275-e0ec4fb9-9ac5-4d58-9125-ec2b4bf9972d" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>Man Charged with Murder, Rape in East Charlotte</h3><p class="desc">Thomaz Hamilton is charged with the murder and rape of Isabella Stroupe in east Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses a severe violent crime and its impact on the community's sense of safety.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/man-charged-for-womans-death-in-east-charlotte/275-50973202-a3a9-4fea-8741-e874d1715813" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
-            <h3>Rain Expected Mid-Week</h3><p class="desc">Warm Tuesday, but tracking good rain chances for Thursday.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides a weather forecast update.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/sports/motor/nascar/ryan-preece-penalized-for-texas-crash/275-db108cdc-3ba1-4573-8583-c92889e59fa3" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
