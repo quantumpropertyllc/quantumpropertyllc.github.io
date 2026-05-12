@@ -1,128 +1,98 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-11 09:17 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Public Safety Incidents</span><span class="cluster">#Local Government and Development</span><span class="cluster">#Health and Emergency Services</span><span class="cluster">#Community Events and Business News</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in Charlotte and surrounding areas covers a range of topics, from crime and public safety to business and community events. Recent incidents include shootings, fires, and arrests, highlighting ongoing challenges in the region. Development and infrastructure projects, along with health-related news, also shape the local landscape.</p><div class="divider"></div><p class="insight-text">Public safety and community development are key areas of focus in the Charlotte metro area.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-12 09:21 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Traffic incidents and road safety concerns</span><span class="cluster">#Education and cybersecurity issues</span><span class="cluster">#Local government decisions and transparency</span><span class="cluster">#Weather patterns and forecasts</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in the Charlotte area covers a range of topics, from tragic accidents and crime to education and community initiatives. Several articles highlight transportation issues, including road safety and public transportation costs. The area is also experiencing weather fluctuations, with a heat wave expected after a mild week.</p><div class="divider"></div><p class="insight-text">Local government transparency and accountability are recurring themes, suggesting potential public concern.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Mass Shooting at Winston-Salem Park Leaves 2 Dead</h3><p class="desc">A planned fight at Leinbach Park in Winston-Salem resulted in a mass shooting, leaving two dead and several wounded.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the ongoing issue of gun violence and its impact on community safety in North Carolina.</div>
-            <div class="card-footer">
-                <span class="source">Hartford Courant</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.courant.com/2026/04/20/planned-fight-leads-to-mass-shooting-at-park-2-killed-several-wounded-nc-police-say/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
-            <h3>Leistritz Extrusion to Host Reactive Extrusion Workshop</h3><p class="desc">Leistritz Extrusion will host a Reactive Extrusion (REX) Workshop May 13-14 at the Polymers Center of Excellence in Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Showcases Charlotte's role as a hub for polymer technology and advanced manufacturing.</div>
-            <div class="card-footer">
-                <span class="source">RubberWorld</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://rubberworld.com/leistritz-extrusion-to-host-rex-workshop-may-13-14/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>DA Rules Police Shooting in Gastonia Justified</h3><p class="desc">The District Attorney has ruled a police shooting that occurred during an alcohol sales enforcement operation in Gastonia as justified.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses police accountability and transparency in law enforcement operations.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/gastonia/deadly-gastonia-police-shooting-justified/275-8151d6b9-0f94-441d-b6eb-94459a66483f" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Charlotte City Council to Hold Public Hearing on Data Center Moratorium</h3><p class="desc">Charlotte City Council schedules a public hearing for May 26 regarding a potential moratorium on data center development.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reflects ongoing debates about balancing economic growth with community concerns.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/date-center-pause-charlotte-city-council-sets-date-for-public-hearing-on-moratorium/275-5e445ada-2283-4e2c-bee4-db815fd03849" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>New Belmont Shop Caters to Alternative Scene</h3><p class="desc">The Belmont Bat Cave, a new shop in Belmont, offers alternative clothing, skull accessories, and unique decor.</p>
-            <div class="insight"><strong>Why this matters:</strong> Contributes to the cultural diversity and unique retail offerings in the Carolinas.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/news/local/belmont-batcave-alternative-scene-market-opens/275-0788e2cb-2195-4b74-9b02-81ccd0bb513e" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>Rock Hill My Ride to Charge $2.50 Fare</h3><p class="desc">Rock Hill My Ride passengers will now be charged $2.50 for public transportation, ending the previous no-cost service.</p>
-            <div class="insight"><strong>Why this matters:</strong> Impacts accessibility and affordability of public transportation for residents.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/money/rock-hill-my-ride-passengers-may-start-paying-250-for-public-transportation/275-4e56f81d-4a90-4312-9280-894ef3b482d3" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>Two Fatalities in Rowan County House Fire</h3><p class="desc">A late-night house fire in Rowan County resulted in the deaths of two individuals.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the importance of fire safety and emergency response in residential areas.</div>
+            <h3>Queens University Swimmer Killed in Charlotte Crash</h3><p class="desc">Keegan McKinney died in a single-vehicle crash on Mother's Day in south Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the tragic loss of a young athlete and raises concerns about road safety in the community.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/deadly-house-fire-china-grove-rowan-county-nc/275-464828f4-5bd9-429f-b93d-0505f48d8aba" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Man Charged in South Charlotte Strip Club Shooting</h3><p class="desc">A 22-year-old man has been charged with shooting another person at Club Onyx in South Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses crime and safety concerns associated with nightlife establishments.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/club-onyx-shooting-charlotte-north-carolina-nightclub-violence/275-48e8997c-72d4-44ca-b3db-439e92a7548d" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>UNC Charlotte Ends Gender-Affirming Housing</h3><p class="desc">UNC Charlotte discontinues gender-affirming housing to comply with federal guidance, while affirming support for all students.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reflects ongoing debates about inclusivity and compliance with federal regulations in higher education.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/education/unc-charlotte-ends-gender-affirming-campus-housing-students-federal-guidance/275-08fdfeec-aae8-4928-8e78-7b1df6f38eb3" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
-            <h3>Man Impersonates Officer in Road Rage Incident</h3><p class="desc">A driver is accused of impersonating a police officer using blue lights during a road rage incident.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises concerns about public safety and the potential for abuse of authority.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/monroe-police-arrest-alleged-officer-impersonator-road-rage/275-8e477297-bfb5-427f-9816-3c71e6e943db" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.9</span></div>
-            <h3>Arson Investigation Underway After Apartment Fire</h3><p class="desc">Police are investigating an apartment fire in north Charlotte as arson, after heavy smoke was seen billowing from four units.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the risk of arson and its impact on residential communities.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/north-charlotte-apartment-fire-arson-investigation-underway-charlotte-fire-cmpd/275-363e0fd8-ccb0-4456-be3f-3d2f52a6a307" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
-            <h3>Elementary Teacher Arrested for Assaulting Student</h3><p class="desc">A Catawba County elementary teacher, Christina McCarthy, was arrested for allegedly assaulting a student.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses concerns about student safety and professional conduct in schools.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/elementary-teacher-arrested-for-assaulting-student/275-18024d34-5c41-4317-a037-c3e22c07a12c" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/deadly-crash-south-charlotte-cmpd/275-f75e4f91-5da3-4183-a1ee-a83b08c0b70c" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Dry and Mild Weather Expected This Week, Heat Wave by Weekend</h3><p class="desc">The weather forecast predicts dry and mild conditions this week, with a heat wave expected by the weekend.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides important weather information for residents to prepare for upcoming conditions.</div>
+            <h3>Woman Arrested for Trespassing at Charlotte Douglas Airport</h3><p class="desc">A woman was arrested after crawling under a fence and accessing secure areas of Charlotte Douglas Airport.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises security concerns at a major transportation hub, though the impact appears limited.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/woman-arrested-after-crawling-under-fence-onto-clt-runway-area-cmpd/275-19cd3b1c-eda8-4d4e-bb9d-6d5f7f90320f" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Local Nurse Making a Difference During National Nurses Week</h3><p class="desc">A local nurse is recognized for her dedication and commitment to providing compassionate care.</p>
+            <div class="insight"><strong>Why this matters:</strong> Showcases the positive impact of healthcare professionals in the community.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.wcnc.com/article/news/local/national-nurse-week-how-one-local-nurse-is-making-the-difference/275-6628a40f-2578-4bfb-b6ec-6edfd23a8089" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Canvas Access Restored for CMS, Cabarrus Schools After Cyberattack</h3><p class="desc">Access to the Canvas learning platform has been restored for Charlotte-Mecklenburg and Cabarrus County schools after a cyberattack.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the vulnerability of educational institutions to cyber threats and the importance of data security.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/education/canvas-restored-for-local-schools-after-data-breach/275-a36bac2e-0ee9-4bd3-907f-a4cd03494cfb" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>More Americans Taking 'Micro-Retirements' for Work-Life Balance</h3><p class="desc">Workers are increasingly taking months or a year off during their careers for better work-life balance.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects changing attitudes towards work and leisure, and the desire for more flexible lifestyles.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/connect-the-dots/micro-retirements-connect-the-dots/275-051c8302-e813-4c1a-9c0c-89903a54db8e" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>Councilman Injured in Crash Urges Road Safety Initiative</h3><p class="desc">Charlotte Councilman JD Mazuera Arias emphasizes the urgency of Vision Zero after being injured in a car crash.</p>
+            <div class="insight"><strong>Why this matters:</strong> Brings attention to the need for improved road safety measures to reduce traffic fatalities and injuries.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/cltcc-jd-mazuera-arias-injured-in-crash-emphasizes-vision-zero-charlotte/275-01cb2736-5a7f-4537-85c6-fa8e192a9843" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Charlotte Rescinds Support for I-77 Toll Lane Project</h3><p class="desc">Charlotte City Council votes to rescind support for the I-77 toll lane project and requests NCDOT to pause it.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects ongoing debate and potential changes to transportation infrastructure in the region.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/politics/north-carolina-politics/charlotte-votes-to-rescind-support-for-i-77-toll-lane-project-what-comes-next/275-a0a037bb-ce1f-449e-826f-76fbaf7a0675" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Man Indicted for Molotov Cocktail Arson Attacks in Charlotte</h3><p class="desc">James Thomas Johnson Jr. is indicted for using Molotov cocktails to set fire to a Charlotte bar, causing significant damage.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights serious criminal activity and potential threats to public safety.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/man-indicted-in-west-charlotte-arson-attacks/275-bd897902-8458-437a-b420-c344c33264c2" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Monroe Police Seek Help Finding Missing 73-Year-Old Man</h3><p class="desc">The Monroe Police Department is asking for public assistance in locating 73-year-old Cecil Hailey, who has been missing since Monday.</p>
+            <div class="insight"><strong>Why this matters:</strong> Emphasizes the importance of community involvement in locating missing persons.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/missing-monroe-man-may-12-2026/275-ac78d6a7-aa06-4263-9772-78614c69f26a" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Heat Wave Expected After Comfortable Week</h3><p class="desc">Dry, hot weather is forecast for the Charlotte area after a period of mild temperatures.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides information about upcoming weather conditions and potential impacts on daily life.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -130,22 +100,52 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.1</span></div>
-            <h3>NC Resident Onboard Cruise Ship with Hantavirus Outbreak</h3><p class="desc">North Carolina confirms one resident was onboard a cruise ship experiencing a hantavirus outbreak; state monitoring closely.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights potential health risks associated with travel and disease outbreaks.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Charlotte City Council Sets Date for Data Center Moratorium Hearing</h3><p class="desc">A public hearing on a potential moratorium on data centers is scheduled for May 26, with a vote possible on June 8.</p>
+            <div class="insight"><strong>Why this matters:</strong> Indicates potential policy changes regarding data center development in Charlotte.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/health/north-carolina-confirms-one-resident-was-onboard-cruise-ship-hantavirus-outbreak/275-8f3402ff-0967-47c1-adcc-209c72390bfb" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/date-center-pause-charlotte-city-council-sets-date-for-public-hearing-on-moratorium/275-5e445ada-2283-4e2c-bee4-db815fd03849" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.7</span></div>
-            <h3>Novant Health Seeks Approval for Emergency Department in SouthPark</h3><p class="desc">Novant Health is seeking approval for a $21.3 million freestanding emergency department in SouthPark, slated for completion in 2029.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses healthcare accessibility and infrastructure development in the SouthPark area.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Weddington Councilman Resigns, Citing Lack of Transparency</h3><p class="desc">Clayton Jones resigned from the Weddington council, citing a lack of transparency in local government.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises concerns about governance and accountability in Weddington.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/politics/north-carolina-politics/weddington-councilman-who-abruptly-resigned-says-there-is-a-lack-of-transparency-in-local-government/275-33d3ebe5-03b4-4f65-85c6-b349304c6d38" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Police Shooting at Gastonia Convenience Store Ruled Justified</h3><p class="desc">The DA ruled that a deadly police shooting at a Gastonia convenience store during an alcohol sales enforcement operation was justified.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses issues of police conduct and accountability in law enforcement.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/novant-health-emergency-department-south-charlotte-approval-request/275-b8556786-0922-4578-912f-2acfa00ef5bf" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/gastonia/deadly-gastonia-police-shooting-justified/275-8151d6b9-0f94-441d-b6eb-94459a66483f" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>New Belmont Shop Caters to Alternative Scene</h3><p class="desc">The Belmont Bat Cave offers alternative clothing and accessories for the Carolinas' alternative scene.</p>
+            <div class="insight"><strong>Why this matters:</strong> Showcases the diversity of local businesses and cultural offerings.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.wcnc.com/article/news/local/belmont-batcave-alternative-scene-market-opens/275-0788e2cb-2195-4b74-9b02-81ccd0bb513e" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Rock Hill Public Transportation to Start Charging Passengers</h3><p class="desc">Rock Hill My Ride passengers may start paying $2.50 for public transportation, ending the no-cost service.</p>
+            <div class="insight"><strong>Why this matters:</strong> Indicates changes in public transportation funding and accessibility.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/money/rock-hill-my-ride-passengers-may-start-paying-250-for-public-transportation/275-4e56f81d-4a90-4312-9280-894ef3b482d3" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
