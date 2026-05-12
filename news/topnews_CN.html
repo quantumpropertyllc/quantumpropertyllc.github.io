@@ -1,58 +1,88 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-05-12 11:38 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#美伊关系及经济影响</span><span class="cluster">#美国国内政治与事件</span><span class="cluster">#国际法律和政治发展</span><span class="cluster">#技术和安全漏洞</span></div></div></div><div class="brief"><h2>今日简报</h2><p>新闻格局以国际紧张局势为主，特别是有关美伊关系及其对全球经济的影响。美国国内的政治操弄、地方事件等问题也备受关注。此外，国际法律和政治的发展，包括英国、乌克兰和以色列的法律和政治发展，也促成了新闻的多样化。</p><div class="divider"></div><p class="insight-text">地缘政治不稳定和国内政治挑战正在营造复杂不确定的环境。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-05-12 01:55 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#美国通货膨胀与伊朗战争</span><span class="cluster">#特朗普的中国会议</span><span class="cluster">#政治丑闻和辞职</span><span class="cluster">#社交媒体监管</span></div></div></div><div class="brief"><h2>今日简报</h2><p>这一新闻周期主要是国际紧张局势，特别是涉及伊朗和中国的紧张局势，以及美国和欧洲的国内政治和经济挑战。关键事件包括伊朗战争导致美国通胀上升、特朗普和习近平之间的高风险会面，以及欧盟可能禁止儿童使用社交媒体。几篇文章还强调了政治争议和调查。</p><div class="divider"></div><p class="insight-text">全球事件的相互关联性是显而易见的，伊朗战争等冲突直接影响美国通胀等经济指标。</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
-            <h3>德黑兰提议后美伊停火“维持生命”</h3><p class="desc">特朗普批评伊朗的和平提议，对美伊停火的可行性表示怀疑。</p>
-            <div class="insight"><strong>深度见解:</strong> 升级可能会破坏该地区的稳定并影响全球石油价格，从而增加地缘政治风险。</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>巴尔的摩钥匙桥倒塌事件公布刑事指控</h3><p class="desc">司法部宣布对巴尔的摩基桥致命倒塌事件提出刑事指控。</p>
+            <div class="insight"><strong>深度见解:</strong> 对过失的问责可以为基础设施安全和企业责任开创先例。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOTW5vT0NCMTZSa1AtOU85bHo0a3ZWeGR6R1B2X25kZzhHcWZrOGdKN3I5ZmVrUGQ5VWF1bXA4U2Z6TWNyZGxHbGQ2SjJ1WF9ZZlhNbFFoQTY1UjR2cnZ0ZERVWHNrQXZOdHFhY3lfcGZwc2lHU1hLd1hqNnhMNXNoMk5nb25vSzZLdDhWbzlR0gGTAUFVX3lxTE10LUprVUUwN2NTYm92MjJVamxmam16TkptYmU0V1VvcWVPWldFV3B6bnN5UFJpSUJSUkRsZUxVUnJiUVVEWTR3Z1djWmNVajE5WWtVMTRSaTdzUXEyeGFnMlFnWUJTWTRtdk9hUC1LYWVmRjFiMHBXZzZOOGE5RDVLVWo5azVNRmk1YUJaTk9XRVp3WQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxNbmtBSVB4WFJ4bGRCRHVLd2UwY0dSRFJoam1XQUVKZElLbTl6TjVib3VjeU43WEZZWFRHeTN6R1JCaG1EVmU1RE55M0NXdlFkRWo2RXFmTTNiazltei04U3dkZHNsQ21jNXZZaUNFMG9LdnE0ZFFhbkV1aFJURU9pZWlGN004MFAyWGhsOENR?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>巴尔的摩大桥倒塌事件中的船舶运营商被指控</h3><p class="desc">参与巴尔的摩大桥倒塌的船舶运营商面临不当行为和妨碍司法公正的指控。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调海上灾难中的问责问题和基础设施安全问题。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPVk5KbU1tX1k2RlljTjJ3SEVPeVhNU2ZLZk5vdlktX3pOYkZabm9XQ2FPX0QtVVo1QUNkNWJfV1lkaDM3SDVkWnBRYjVseTEzTHV1dVdHVTZobzlGbF85VmpKcmREbXFhV3BzZHhDN3dieXZLYWNBZm12WFZzNlRUMFhYMDZhS1FrdUVoMjRXSWRsYWh2bG1wYXlyMUlYVDM3Q0w5VFlmUTlTdlZULW9SV21MQjRna0lTTmc?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.2</span></div>
-            <h3>特朗普面临暂停燃油税的挑​​战</h3><p class="desc">特朗普在试图暂停征收汽油税的过程中遇到了重大障碍。</p>
-            <div class="insight"><strong>深度见解:</strong> 说明了在政治僵局中实施民粹主义经济政策的困难。</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.8</span></div>
+            <h3>特朗普前往中国与习近平会面</h3><p class="desc">特朗普前往中国与习近平举行重要会议，讨论贸易和地缘政治问题。</p>
+            <div class="insight"><strong>深度见解:</strong> 结果可能会对美中关系和全球贸易动态产生重大影响。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxOY0lEMkw2cGV2RVMxVkx1QWVMbGhoVUQycVVSQ0hRR2ZuZm8yc1RkeUctMFBEMm5nVllpd3N2VGpOeElrTjBPMXY0b1dFMTE3d2d4VzFxN21zT2FLMVoxalVIV3JlOVdCam5rUzlHNzlMaUh3Z2tvV0lBekRfaHN0S1d2b2s0VW1iWHfSAY8BQVVfeXFMTWpWci04VVdjZ21zR0w2YkNJZWZJUndEcmIzYU04dWxjWDBVTHdKcWJuSlVmOXNwZWJpWGJoTmhlYThBMGp2eWRRQWxyWkcySFhQdEd3Snlra3QteUFJaGlaNmladWh6Smgtb1p3UjhRYW0yUDlYU2h4ZHBOSUNTbnhEQlpocl9IekdnVno5YWc?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.2</span></div>
+            <h3>FDA 专员 Makary 由 Diamantas 取代</h3><p class="desc">马卡里作为 FDA 专员的任期结束；迪亚曼塔斯被任命为代理专员。</p>
+            <div class="insight"><strong>深度见解:</strong> FDA 领导层的变动可能会改变医疗保健和制药领域的监管重点。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxQcE01SElib0V6aEQ2RlVNZ1pLUmtiQkZpcnM4SVB2bm5nYnVqaUllVHowZjJwZ2lGcWZSMUFSU1psNGdFeVJySWIzdnVCMEVEUnp4MUtQa3k1b3hoYlJKWkhnMFh6ZXpJUTgzSHZyaXMySkt0RjlQeEI1bGVjeGlZZlBadTdkZw?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>共和党在电台采访中面临辞职呼吁</h3><p class="desc">众议院一位重要共和党人在接受电台采访时发表有争议的言论后，面临着要求民主党辞职的呼声。</p>
+            <div class="insight"><strong>深度见解:</strong> 凸显政治言论日益两极分化和审查。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdS1TRzluR1RuWldlbTd4S05kTXBVSklmVlZ0eFJhaDcxOTJBbkc0SXdjdkxqZ3RuY1F6S01ldG9aWXN4WFNHek0ySlZpdjZMSm1pdVc0bUV5V3cteWQwaU9YRmpBTjhwX3Z0RnlmSFVNUndZdVhtdzg0LUs5cHgzUUVfbFVzNlBw?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>特朗普暂停燃油税面临挑战</h3><p class="desc">特朗普在试图暂停征收汽油税的过程中遇到了重大障碍。</p>
+            <div class="insight"><strong>深度见解:</strong> 说明了实施民粹主义经济政策的困难。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
                 <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE9BNi01YTFHSURPTjhWaDNiV0RXVDNUSTNVa1VTUW9ndUoteGhiUExQbkdLb09uT1I0WWQ0cnVicmtJa1J0TFBXVHE4My1uSkpHUjVWUnVKcHB3NEx3azUyMGcxR3RqMUd0X2xvZTRsaVEwMzNlWE42STBLWEo?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>纪念大道枪击案嫌疑人的暴力过去被揭露</h3><p class="desc">纪念大道枪击事件的嫌疑人有与警察发生暴力冲突的历史。</p>
-            <div class="insight"><strong>深度见解:</strong> 提出有关累犯和司法系统有效性的问题。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>伊朗战争成本预估增加 40 亿美元</h3><p class="desc">五角大楼报告称，伊朗战争的估计成本增加了 40 亿美元。</p>
+            <div class="insight"><strong>深度见解:</strong> 不断上升的成本引发了人们对冲突的经济负担和长期影响的担忧。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxQRjF3T01FbmFQS3U5SFY2SVNaRWtpTmtTRFRWUWZNdVdBeVBfRmRralg3ZnVtX0Q4ZEtuRW0teGJyWlJmRnplTlFhRnNvZzBabXI1Y0dRcV9tM1BZTXR6SXhPTTZOejZlTTFmX0VjWE1VeHR1V1Z4d2NSQXVhb1Fzb2pRNVh5WlMy?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxNYWVMdDhOZXd2dE9rSWZ2cnc1d1QxRTgxUTAzWTVhOWR4TkRFMU82TzdXbWxJRTVyemNWNXJYY2FlenBRUHpZdEJUbWJtTGtvTzFoSmwxMUd3WUFUdDJxa3NBZ0o3NnMtY1Y5U282VVp5QkEtRmVRbUxGWElQY3RDR1hRSmJwRzIyWnZuR0hZV04zOEk0Z2JtQlN3OEhDcFZuWUJiZjd2U2tqUnExVDVLdDUwRlp0NDladm1jSTl4YWZzS3ZiY3pJZVdvbUxHUVN1Mk5kMEZQdUtmTWIwZWdyRlhINlhQczI3?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.0</span></div>
-            <h3>特朗普和习近平旨在在峰会上遏制伊朗战争分歧</h3><p class="desc">特朗普和习近平寻求防止伊朗战争问题上的分歧扰乱他们的峰会。</p>
-            <div class="insight"><strong>深度见解:</strong> 显示出全球冲突中美中关系的微妙平衡。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>与黑客就 Canvas 数据泄露达成协议</h3><p class="desc">已与黑客达成协议，删除从 Canvas 教育平台窃取的数据。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调网络攻击对教育机构的持续威胁。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxPTFZBVEVjTWR0WnJiM3ZLWnFId1B0eUNZMnFsYTNCdmNIV3hlc0FNdXdiUXBTOUVqTHRhSEhYYndlNHJtRGtzVEhvNE9uY0JvS0dMOExjazZsQ0tEUVA1Y2xoNEc1Y2p3dnpBeTVoc3VEVk9YTVU4RTZJSkhrTUlhOEtTdjVFRlFfdWczTmJ3QlhWX0k?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxOaHJQWDliRk9nYk93aGo1S0NaWENjR3lyRm85anF0OVoyRzIxalF3UEctYThtTy0xTnJiOHZfNUQ1WDVOODZCczI0WnJoa2JRbUc0dTNXZlZnWFpNWlphcnJNSEViOWtPWjIzOHlVXzVSdS0wZy1vU3ZZenJjMnBmSXhabVlhQWNrVFU1Qmd1Wk5na29tUzhud0FZMGZKTTJNOHpCcWh3?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>加州市长王艾琳因中国代理人指控辞职</h3><p class="desc">加州一座城市的市长王艾琳因被指控为中国特工而辞职。</p>
-            <div class="insight"><strong>深度见解:</strong> 引起人们对外国对当地政治影响和潜在安全风险的担忧。</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.3</span></div>
+            <h3>特朗普驳回伊朗停战计划，预计经济将遭受痛苦</h3><p class="desc">随着特朗普驳回伊朗停战计划，世界准备迎接持久的经济后果。</p>
+            <div class="insight"><strong>深度见解:</strong> 与伊朗的持续紧张局势可能会加剧全球经济不稳定。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNdmYyb056cXBUdFpxbmw2MkVSeHZyWFVNSWZRZ0FnakhQREluR0JObTJOVnVnMWIyUF8xZUJfWkNTWHliQ2h0RGhjdllITG1rMVpuRUhyeDR1UVQ2UW9SeHljQkxSS3RLdk5DNkwwOVAwTFVlbVBvekpPang1T2Jhazk5Y3lqbm03ZmU3RUM1bnk?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>加州市长王艾琳因中国代理人指控辞职</h3><p class="desc">加利福尼亚州市长王艾琳因被指控为中国特工而辞职。</p>
+            <div class="insight"><strong>深度见解:</strong> 引起人们对外国对当地政治影响的担忧。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
@@ -60,49 +90,29 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>与黑客达成 Canvas 数据泄露协议</h3><p class="desc">已与黑客达成协议，删除从 Canvas 教育平台窃取的数据。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调网络攻击对教育机构和数据安全措施的持续威胁。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxOaHJQWDliRk9nYk93aGo1S0NaWENjR3lyRm85anF0OVoyRzIxalF3UEctYThtTy0xTnJiOHZfNUQ1WDVOODZCczI0WnJoa2JRbUc0dTNXZlZnWFpNWlphcnJNSEViOWtPWjIzOHlVXzVSdS0wZy1vU3ZZenJjMnBmSXhabVlhQWNrVFU1Qmd1Wk5na29tUzhud0FZMGZKTTJNOHpCcWh3?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>共和党的选区重划与民主党的中期战略</h3><p class="desc">随着共和党重新划定黑人选区，民主党转向中期选举的新信息。</p>
-            <div class="insight"><strong>深度见解:</strong> 展示了围绕投票权和选举策略的党派之争。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>被指控的纪念大道枪手此前曾试图杀害警察</h3><p class="desc">泰勒·布朗（Tyler Brown）在纪念大道枪击事件中被指控，此前曾在 2020 年试图杀害波士顿警察。</p>
+            <div class="insight"><strong>深度见解:</strong> 揭露暴力历史并提出有关执法和公共安全的问题。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxPYnkzMGN1NWMtNkc5c2o3Z0pTNGtPNnlWSXJZbXg3TEV0NU9XLV91MTVmQlhSY0I4UUdNd3lPRjRfc1g3OUh4dXRqazBpT1JPZHZlQXdUSWtXQ3dwOVJ6M2ZadFMxSTYwT3V5RHFrekxmUzFwTjBkemNxdHBEZHpESk94R3U2Mlh6UEVfeHdBMWd6bldvMlV6RTM3OHlQNHV3N2dEckozLTVSSHZjQ0I5cENBUHpmb2VqdzhCR3BsMDVGQTdL?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPR25SYzNDZnJ1d2NZYURnZFl2UVREbktnZFdpNkZwcE5HbVBxMV8zb2FSRkdudkVNSm14TXNwaXdfLUJRSDVQSG9Fd2lHcWg1bEZWRDlzMjVrY3hzQ0s1OTAzNFI1YjVWdG5UU2d1anVjeE9PdWJ0eUJyRWZVR2NwVFhqWmkwTnZkTEE?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.3</span></div>
-            <h3>民主党因种族主义言论要求辞职</h3><p class="desc">美国民主党人呼吁詹·基甘斯辞职，因为她同意种族主义的“采摘棉花”言论。</p>
-            <div class="insight"><strong>深度见解:</strong> 反映了政治中种族问题的高度敏感性。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVTItbWVSUVJjc2h2cW1PaG5CVDdKejdjVFJmZnRzVnFVQm9HTkRuZ0RZcUszQ1cwUmhpVEtRckV6LXZNVWo3ZFlSS0VlNS01MTNTcWZNWEZUaWhXUjJrWWRCdjlqSDdfRlhxMC1uR2JfMWRGS1ZxaTQyX0drQXB5X3lQWEpQMHJJYkJz?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.9</span></div>
-            <h3>10 亿美元的宴会厅可能由预算协调法案资助</h3><p class="desc">保罗建议，预算协调法案可能会为白宫宴会厅提供 10 亿美元的资金。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调预算分配中潜在的资金滥用和政治操纵。</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>英国 Starmer 退出或面临挑战的潜在情况</h3><p class="desc">分析如果英国斯塔默辞职或受到领导挑战会发生什么。</p>
+            <div class="insight"><strong>深度见解:</strong> 英国政治领导层的不确定性可能会影响政策和稳定。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxOdGNHbWlNV1hXQ1VRR2l2Q2FpbXNBMllzMDZuRVRSRHM5Q01xdEs3VlpCSWNwSHNoZlBmVnlYOFJVWUdzUHo2eWtmME96RDQ2MFZ6Q0tZY0VKZnlPUnRlQVpKUFVyQTRYaWxHNEdSTTFHR3NsMGZOUVlCZjNnLTBLVF9zME0tb09BX25OLTJfVdIBlAFBVV95cUxONWc0ZHZfTVFoT293N3hRTlR0Ukx1MEFhVVlLVFdjQlVCSXlyLW9kU1hXUFAxVlZwR1JwSUJTM1cteE9qYjZYZDk0dTg3R0s0REk1MkpQdjlZbXgyZGFadDNiQlk4czhQTDNBN3RaZ1c3ZFdEZ2tZRGpXeHp3SVV4ZHc3S2kwb1pVRlByY3czTFhpeXFh?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPd05YUWNjUWtEUFpma19SaHYzREtsVnYwamlhWUo5T1JFaWNsRnpaMlBXOUZnWXk5TXFHLUg0SWljVEtjUmtBY2hMdGpHTG1TNmd0bzJCZUNQVWpUSFo0N3RzanZzejFRMm9Sall1eG45UDVweUVBbUNtVEZhbmFkcllRa204TWN3X1VwcDZKbjBJNVltWERCUWJKQQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.7</span></div>
-            <h3>泽伦斯基前幕僚长涉嫌洗钱</h3><p class="desc">乌克兰官员报告称，泽连斯基的前幕僚长是洗钱调查的嫌疑人。</p>
-            <div class="insight"><strong>深度见解:</strong> 破坏对政府的信任并引发有关乌克兰腐败的问题。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>泽伦斯基前幕僚长涉嫌洗钱调查</h3><p class="desc">乌克兰官员表示，泽连斯基的前幕僚长是洗钱调查的嫌疑人。</p>
+            <div class="insight"><strong>深度见解:</strong> 腐败指控可能会损害公众对乌克兰的信任和国际支持。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
@@ -110,39 +120,29 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>英国首相凯尔·斯塔默拒绝辞职</h3><p class="desc">英国首相凯尔·斯塔默表示，他不会迫于政治压力而辞职。</p>
-            <div class="insight"><strong>深度见解:</strong> 反映了政治韧性和尽管面临挑战仍继续掌权的决心。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1xTGJfXzBoTG9xVHVra0VLUExTT0dtcWpIQ1g1dG83RzdEUzN3X2pmTFpSUGI0RFFqMlB6WEZ1c0I2V2xtSnhLX3gxVFZZQmNab0JKNU9tV3U4YXdTTjZzWEdZNnMwaXM?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.8</span></div>
-            <h3>马里兰州居民接受汉坦病毒暴露监测</h3><p class="desc">据卫生官员称，正在监测两名马里兰州居民是否可能接触汉坦病毒。</p>
-            <div class="insight"><strong>深度见解:</strong> 强调公共卫生问题和疾病监测的重要性。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQUDhDdEFxRHpMVmo3UmpFeHVwd0JnbXNtWVBpdXVRSEEybjd0WmkySmhyRFpVMms3b2dya25nZDlWNHY3QXdRdWtHM3dUSUd4N1ZqNlB0MTM2Rm12MThtZHh6U202QUFVbHUyMy1iTnN5NEY1NVBFMVFMZkVEMUkydHFtRWd1NV8wbVZBSEc0VmRnNzlEdFNvOVlDTTRkOHc?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>以色列议员支持对 10 月 7 日袭击事件嫌疑人判处死刑</h3><p class="desc">以色列议员支持设立一个特别法庭，该法庭有权对 10 月 7 日袭击事件的嫌疑人判处死刑。</p>
-            <div class="insight"><strong>深度见解:</strong> 提出有关死刑和恐怖主义受害者正义的道德和法律问题。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.7</span></div>
+            <h3>欧盟考虑禁止儿童使用社交媒体</h3><p class="desc">冯德莱恩表示，欧盟可能会在今年夏天禁止儿童使用社交媒体。</p>
+            <div class="insight"><strong>深度见解:</strong> 关于儿童在线安全和访问社交媒体的潜在限制的争论。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQcVhFV29uZ2VIeFNpNTJNRGpSZlo0UV8zNzVwYXlLbGhWSkxIaGR2am05aEtkNXp1UGZhUERBU1hTRFFlN0RvUE5FNzk0TURkbFJFX2QxNDM3clZlZ2hXRmN2VDNKQTVoMldfRGxjSUFVZG1oN2dtdzdnbEVEcnllSFdPd081YTRsVEJFUFl5MmNLUE8yc3lKRDQ3X2hpU1lqUXc?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQaDJNS000aDFzYktGbm1ZUW93bl92b0dYV1AyS2I1WVdfRnhJb0ZEcG5QME1GOFlTYzI5Zk5YcFl1V1VXN05lVno2RzRmcXFWcE5MSjFPWVN1V2loN1JuaWJtWmlabHRDNHByWndOY1RvU0poQVoyNndCWm1tR3RCWjdmVXlKUjQ4UzlCTnpySkVEeWhRbW0tOXh0eUc4MzRZRVRMVjNhMkg4SEVUZndNbw?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.1</span></div>
+            <h3>科威特挫败伊朗伊斯兰革命卫队的渗透行动</h3><p class="desc">科威特报告称，它挫败了伊朗伊斯兰革命卫队（IRGC）的渗透行动。</p>
+            <div class="insight"><strong>深度见解:</strong> 加剧地区紧张局势以及对伊朗在中东影响力的担忧。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxOQnJRZ2ozaUNvM1BpVGNyOERKZ1Z3VEplaXhVVDRJZHlRcURqTm9jOXFDTUMyM3BFLTV6eEVNVS10bV9STkVfYnpOUXR1blJBa2lkV1dRdHZleTRGXzZ6WXFydkZJczhlLTZDekRYa1B6ZlVybnJqM1l3QkcwZGZmQU5zMnc4N3pVaWNLdDRNQ0dFQkRodHBHbmRrakdZUnPSAaQBQVVfeXFMT1dHYmVidzFGYVY0c241eGlwQ21fZVhYRnBNV0ZnOHJOTEJBZjl5RmZmVEJxQVZsVmRWQlEydFRSMUx6LWgxaGVLOEltRk00UXRfMWlsSDlkQzhReEI1NDkyRW9HNkNxTnBJSkhRUThxRmFkN1I5U3hSS21yN0FhTHFmaUFMRWhOMlc1ajFPSlhPaGdaTUcwLXhwVkM2a3JmTUtGVy0?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
             <h3>伊朗战争能源成本导致美国通胀率跃升至3.8%</h3><p class="desc">由于持续的伊朗战争导致能源成本飙升，美国通胀率升至 3.8%。</p>
-            <div class="insight"><strong>深度见解:</strong> 战争正在影响美国经济，导致通货膨胀加剧和经济不稳定。</div>
+            <div class="insight"><strong>深度见解:</strong> 通胀上升可能会影响消费者支出和经济稳定。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
