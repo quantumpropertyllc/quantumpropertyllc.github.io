@@ -1,38 +1,58 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-14 11:42 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Public Safety Concerns (shootings, crime)</span><span class="cluster">#Infrastructure and Resources (water restrictions, I-77 project)</span><span class="cluster">#Political and Social Issues (city council decisions, racial representation)</span><span class="cluster">#Economic Impacts (food prices, state funding)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in Charlotte and surrounding areas covers a range of critical issues, from public safety and infrastructure to economic concerns and social justice. Recent events include a mass shooting, water restrictions due to drought, and debates over city leadership. These stories reflect the challenges and changes impacting the community.</p><div class="divider"></div><p class="insight-text">The interconnectedness of local events highlights the need for proactive community planning and responsive governance.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-14 03:19 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Legal Proceedings</span><span class="cluster">#Environmental Concerns (Drought)</span><span class="cluster">#Transportation and Infrastructure Debates</span><span class="cluster">#Political and Social Justice Issues</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in Charlotte and surrounding areas is marked by crime, legal proceedings, and infrastructure concerns. Several articles detail guilty pleas in homicide cases, reflecting ongoing efforts to address violent crime. Additionally, the region faces environmental challenges, including a severe drought leading to water restrictions, and political debates surrounding transportation projects.</p><div class="divider"></div><p class="insight-text">The local news landscape reveals a community grappling with crime, environmental pressures, and political tensions, all impacting daily life.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>Retirement Everest Film Features HK Solutions' Keith Helmendach</h3><p class="desc">Retirement Everest examines financial decumulation risks after retirement savings goals are met.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the importance of post-retirement financial planning and expert insights in managing retirement funds.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Woman Pleads Guilty in 2025 Charlotte Murder Case</h3><p class="desc">Rebecca Oxendine pleads guilty to manslaughter in the 2025 north Charlotte murder, facing up to 17 years in prison.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the consequences of violent crime and the legal system's response in the Charlotte community.</div>
             <div class="card-footer">
-                <span class="source">The Manila Times</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.manilatimes.net/2026/05/12/tmt-newswire/globenewswire/keith-helmendach-of-hk-solutions-featured-inretirement-everestas-film-examines-decumulation-risks/2341285" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.2</span></div>
-            <h3>Mass Shooting at Winston-Salem Park Leaves 2 Dead, Several Wounded</h3><p class="desc">A mass shooting at Leinbach Park in Winston-Salem resulted in multiple casualties and injuries.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises concerns about public safety and the need for community violence prevention measures.</div>
-            <div class="card-footer">
-                <span class="source">Hartford Courant</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.courant.com/2026/04/20/planned-fight-leads-to-mass-shooting-at-park-2-killed-several-wounded-nc-police-say/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/crime/rebecca-oxendine-second-degree-murder-guilty-plea/275-1526ed7c-8d44-4d40-8d98-9052ddc03c3f" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>Leistritz Extrusion to Host Reactive Extrusion Workshop</h3><p class="desc">Leistritz Extrusion will host a Reactive Extrusion (REX) Workshop at the Polymers Center of Excellence in Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Showcases advancements in polymer technology and educational opportunities for industry professionals.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Guilty Plea Entered in 2024 Northeast Charlotte Homicide</h3><p class="desc">Reginald Anthony pleads guilty in a 2024 homicide case that occurred in northeast Charlotte when he was 17.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses juvenile crime and its impact on the community, emphasizing the need for intervention.</div>
             <div class="card-footer">
-                <span class="source">RubberWorld</span>
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/guilty-plea-in-2024-northeast-charlotte-homicide/275-02f87bc5-0e21-4307-a349-08d2f392a062" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Motorcyclist Seriously Injured in Troutman Crash</h3><p class="desc">A motorcyclist sustained serious injuries in a crash along Charlotte Highway near Interstate 77 in Troutman.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises awareness about road safety and the potential dangers faced by motorcyclists.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/traffic/motorcycle-serious-crash-troutman-north-carolina-investigation/275-d4e6112d-5276-4ffb-bc46-07fc7c7f98b8" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Teen Pleads Guilty to Deadly 2024 Shooting</h3><p class="desc">A teenager pleads guilty to a deadly shooting that occurred in 2024 along Tom Hunter Road in northeast Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Underscores the issue of gun violence among youth and its devastating consequences.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/teen-pleads-guilty-to-2024-deadly-shooting-in-northeast-charlotte/275-15937f2b-9005-46c6-a8fb-4dc2faf062e6" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>TB Exposure Investigated at Fort Mill Middle School</h3><p class="desc">SC DPH investigates a tuberculosis exposure at Pleasant Knoll Middle School, identifying individuals who require testing.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights public health concerns and the importance of disease control measures in schools.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://rubberworld.com/leistritz-extrusion-to-host-rex-workshop-may-13-14/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/health/tb-exposure-at-pleasant-knoll-middle-school-in-fort-mill-sc-dph/275-b70363c3-1255-40ec-83bb-06d7783e9f27" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
-            <h3>Charlotte Weather Forecast: 70s This Week, Heat Arrives Weekend</h3><p class="desc">Charlotte's weather will be mild before transitioning to hot and humid conditions next week.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides a brief weather update, useful for planning outdoor activities.</div>
+            <h3>Weather Forecast: Warm-up Expected This Weekend</h3><p class="desc">The weather forecast predicts temperatures in the 70s for Thursday and Friday, with hotter and more humid conditions arriving next week.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides information about upcoming weather conditions, allowing residents to prepare accordingly.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -40,8 +60,8 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Charlotte City Council Reconsiders I-77 Toll Lanes Project</h3><p class="desc">The City Council revisits the I-77 South Express Lanes project amid political pressure and public debate.</p>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>City Council Cancels Meeting on I-77 Toll Lanes</h3><p class="desc">Charlotte City Council cancels a special meeting to revisit the I-77 South Express Lanes project amid political pressure and public debate.</p>
             <div class="insight"><strong>Why this matters:</strong> Reflects ongoing debates about infrastructure development and its impact on the community.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
@@ -50,9 +70,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.5</span></div>
-            <h3>Father Charged with Murder of 8-Month-Old Baby in Charlotte</h3><p class="desc">Nieves Alexander Acosta-Maldonado confessed to murdering his 8-month-old baby.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights a tragic case of infant homicide and the importance of child welfare.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Father Charged with Murder of 8-Month-Old Baby</h3><p class="desc">Nieves Alexander Acosta-Maldonado is charged with the murder of his 8-month-old baby, confessing to shaking him until he stopped crying.</p>
+            <div class="insight"><strong>Why this matters:</strong> Deals with a tragic case of infant homicide, raising concerns about child safety and domestic violence.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -61,18 +81,8 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>TB Exposure Investigated at Fort Mill Middle School</h3><p class="desc">The SC Department of Public Health investigates a tuberculosis exposure at Pleasant Knoll Middle School.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses public health concerns and the importance of disease control measures in schools.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/health/tb-exposure-at-pleasant-knoll-middle-school-in-fort-mill-sc-dph/275-b70363c3-1255-40ec-83bb-06d7783e9f27" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
-            <h3>Fatal Head-On Crash in Indian Trail Claims One Life</h3><p class="desc">A head-on collision in Indian Trail resulted in one fatality and serious injuries.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights road safety issues and the consequences of traffic accidents.</div>
+            <h3>Fatal Head-On Crash in Indian Trail</h3><p class="desc">One person died and another was seriously injured in a head-on crash in Indian Trail on Tuesday, according to officials.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the dangers of reckless driving and the importance of road safety measures.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -80,9 +90,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
-            <h3>Mandatory Water Restrictions Begin for Charlotte Water Customers</h3><p class="desc">Charlotte Water implements mandatory water restrictions due to severe drought conditions.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses water scarcity and the need for conservation efforts in the face of drought.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>Mandatory Water Restrictions Begin Amid Severe Drought</h3><p class="desc">Charlotte Water implements mandatory water restrictions on May 15 due to a severe drought, limiting water usage and urging conservation.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses the impact of environmental issues and the need for water conservation efforts.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -90,9 +100,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Food Prices Surge Amid Iran Conflict and Rising Fuel Costs</h3><p class="desc">Food prices are increasing, particularly for beef, coffee, and fresh produce, due to the Iran conflict.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the impact of international events on local economic conditions and consumer costs.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Food Prices Surge Due to Iran Conflict and Fuel Costs</h3><p class="desc">Food prices are increasing, particularly for beef, coffee, and fresh produce, due to the Iran conflict and rising fuel costs.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the economic impact of global events on local consumers and the rising cost of living.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -100,9 +110,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
-            <h3>Fatal Crash in Southwest Charlotte Under Investigation</h3><p class="desc">A crash on Westinghouse Boulevard at South Tryon resulted in two deaths and one injury.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses traffic safety and the impact of serious accidents on the community.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
+            <h3>Fatal Crash in Southwest Charlotte</h3><p class="desc">Two people are dead and one injured in a southwest Charlotte crash. Westinghouse Boulevard at South Tryon is closed for investigation.</p>
+            <div class="insight"><strong>Why this matters:</strong> Emphasizes the severity of traffic accidents and their impact on the community.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -110,9 +120,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>NC Lawmakers Consider Bill to Raise Vaping Age to 21</h3><p class="desc">House Bill 430 aims to raise the legal age for buying tobacco and nicotine products to 21.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reflects efforts to reduce vaping among minors and align state law with federal regulations.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
+            <h3>NC Lawmakers Consider Bill to Curb Vaping Sales to Minors</h3><p class="desc">House Bill 430 aims to raise the legal age to purchase tobacco and nicotine products from 18 to 21, aligning with federal law.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses public health concerns related to vaping and nicotine use among young people.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -120,9 +130,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>NAACP Warns Against Appointing Non-Black Interim Mayor</h3><p class="desc">NAACP Charlotte president urges the city council to appoint a Black interim mayor.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights debates over racial representation and accountability in city leadership.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.3</span></div>
+            <h3>NAACP Warns Against Appointing Non-Black Interim Mayor</h3><p class="desc">NAACP Charlotte president warns against appointing a non-Black interim mayor, urging accountability amid debates over racial representation.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights issues of racial representation and social justice within local government.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -130,22 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Member of 'Cabo 6' Seeks Dismissal of Wrongful Death Lawsuit</h3><p class="desc">E'Mani Green seeks dismissal of a wrongful death lawsuit in Shanquella Robinson's death case.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides updates on a high-profile legal case involving the death of a Charlotte resident in Mexico.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>'Cabo 6' Member Seeks Dismissal of Wrongful Death Suit</h3><p class="desc">A member of the 'Cabo 6' seeks dismissal of a wrongful death lawsuit in Shanquella Robinson's death, denying allegations of attacking her.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides updates on a high-profile legal case involving the death of a local woman in Mexico.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
                 <a href="https://www.wcnc.com/article/news/crime/cabo-6-defendant-seeks-dismissal-wrongful-death-lawsuit-shanquella-robinson-case/275-1aa06a17-8f30-420c-a1a2-83dc25530879" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.3</span></div>
-            <h3>CMS Presents Budget Amid State Funding Uncertainty</h3><p class="desc">Charlotte-Mecklenburg Schools presents its budget amid uncertainty over state funding and teacher raises.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses education funding challenges and the need to match state-approved teacher raises.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/education/cms-budget-uncertain-state-funding-teacher-pay-public-education-money/275-fa375e8a-a158-4dfe-8336-58e7bfe004e8" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
