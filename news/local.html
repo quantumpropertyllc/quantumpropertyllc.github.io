@@ -1,58 +1,68 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-20 10:05 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Public Safety (shootings, jail overcrowding)</span><span class="cluster">#Sports and Recreation (baseball tournaments, casino openings)</span><span class="cluster">#Weather and Environment (drought, energy efficiency)</span><span class="cluster">#Local Economy and Development (casino, senior living)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in the Charlotte area covers a range of topics, from sports and weather to crime and community issues. Recent events include shootings, drought concerns, and economic developments. The region is also seeing activity in sports with baseball tournaments and casino openings.</p><div class="divider"></div><p class="insight-text">Public safety and economic stability are key concerns for residents in the Charlotte metropolitan area.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-20 02:04 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Violent Crime (shootings, human trafficking)</span><span class="cluster">#Economic Development (casino, energy)</span><span class="cluster">#Environmental Concerns (drought, energy efficiency)</span><span class="cluster">#Public Safety & Overcrowding (jail)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in the Charlotte region reveals a mix of crime, tragedy, and community developments. Several incidents involve violence, including shootings and human trafficking, alongside economic news like casino expansions. Environmental concerns are also present with drought measures and energy efficiency initiatives.</p><div class="divider"></div><p class="insight-text">The region faces challenges balancing growth with public safety and resource management.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.5</span></div>
-            <h3>Virginia Baseball Heads to ACC Tournament in Charlotte</h3><p class="desc">Virginia baseball is the No. 8 seed in the ACC tournament in Charlotte, facing NC State or Duke on Wednesday.</p>
-            <div class="insight"><strong>Why this matters:</strong> Local sports fans will be interested in the ACC baseball tournament held in Charlotte.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Armed Suspect Arrested After Gastonia Standoff</h3><p class="desc">Gastonia police apprehended an armed suspect following a standoff in the Airline Avenue area.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights law enforcement's response to armed threats in residential areas, impacting community safety perceptions.</div>
             <div class="card-footer">
-                <span class="source">Charlottesville Progress</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://dailyprogress.com/sports/college/baseball/virginia-cavaliers/article_92d9ce36-bb0d-45f9-992b-e3c0b3d556e9.html" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Sports on TV for Tuesday, May 19</h3><p class="desc">A list of sports events being televised, including the Duke vs. NC State game in Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides information on televised sports events relevant to local viewers.</div>
-            <div class="card-footer">
-                <span class="source">WTOP</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://wtop.com/sports/2026/05/sports-on-tv-for-tuesday-may-19/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>NC NAACP Defends Branch President on Interim Mayor Stance</h3><p class="desc">NC NAACP defends Corine Mack after her comments about White interim mayor candidates in Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights racial tensions and political discourse within Charlotte's leadership.</div>
-            <div class="card-footer">
-                <span class="source">Fox News</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.foxnews.com/media/naacp-official-condemns-white-politicians-trying-replace-resigning-black-mayor" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/crime/gastonia-barricade-situation/275-3bdbb5cf-aeb0-4724-a594-b91cad1d01f4" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>HK Solutions' Keith Helmendach Featured in Retirement Film</h3><p class="desc">Keith Helmendach of HK Solutions is featured in 'Retirement Everest,' a film about retirement planning.</p>
-            <div class="insight"><strong>Why this matters:</strong> Focuses on financial planning and retirement strategies relevant to the local community.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>Autopsy Reveals Caregiver Neglect in Dallas Woman's Death</h3><p class="desc">An autopsy revealed a Dallas woman with a severe disability died from malnutrition due to caregiver neglect.</p>
+            <div class="insight"><strong>Why this matters:</strong> Exposes the tragic consequences of caregiver neglect and the vulnerability of individuals with disabilities.</div>
             <div class="card-footer">
-                <span class="source">The Manila Times</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.manilatimes.net/2026/05/12/tmt-newswire/globenewswire/keith-helmendach-of-hk-solutions-featured-inretirement-everestas-film-examines-decumulation-risks/2341285" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/aaliyah-fortner-cause-of-death-revealed/275-026bcfdb-138e-41ea-9223-d95ea256bd71" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Teenager Killed in Northeast Charlotte Shooting</h3><p class="desc">A teenager was killed in a shooting on Tom Hunter Road near North Tryon Street in Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses the ongoing issue of gun violence affecting young people in the Charlotte community.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/northeast-charlotte-shooting/275-52f4d4c6-3397-4649-b6cb-abe134c3eed3" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Mass Shooting at Winston-Salem Park Leaves 2 Dead</h3><p class="desc">A mass shooting at a park in Winston-Salem, NC, resulted in two deaths and several injuries.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises concerns about public safety and gun violence in nearby communities.</div>
+            <h3>Lincoln County Pair Charged in Human Trafficking, Drug Exposure Case</h3><p class="desc">Two individuals in Lincoln County face charges related to human trafficking and drug exposure of a minor.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reveals the presence of human trafficking and its connection to drug-related crimes within the county.</div>
             <div class="card-footer">
-                <span class="source">Hartford Courant</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.courant.com/2026/04/20/planned-fight-leads-to-mass-shooting-at-park-2-killed-several-wounded-nc-police-say/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/crime/two-arrested-in-human-trafficking-investigation-lincoln-county/275-4abcab43-2661-4b83-bfcb-23473018522c" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Motorcyclist Killed in Alexander County Collision</h3><p class="desc">A motorcyclist died in a collision in Alexander County, north of Lake Hickory.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on traffic fatalities and road safety in the region.</div>
+            <h3>Human Remains Discovered in Rock Hill Building</h3><p class="desc">Police are investigating human remains found in the crawl space of a building in Rock Hill.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises concerns about potential unsolved crimes and the need for thorough investigation.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/rock-hill-human-remains-found-in-crawl-space/275-79ec9d2e-77e8-44b3-a937-e14e779c9cdb" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Growing AI Backlash Sparks Protests, Election Debates in US</h3><p class="desc">Increasing concerns about AI's impact on jobs and communities are fueling public protests and political discussions.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects growing societal anxiety about the rapid advancement and potential consequences of artificial intelligence.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/connect-the-dots/connect-the-dots-ai-fatigue/275-252a5ac9-a331-4623-82ab-6adee8428388" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Motorcyclist Killed in Alexander County Collision</h3><p class="desc">A motorcyclist died in a collision that occurred Tuesday night north of Lake Hickory in Alexander County.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the dangers faced by motorcyclists and the importance of road safety awareness.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -60,9 +70,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
-            <h3>Catawba Two Kings Casino Opens First Phase in Kings Mountain</h3><p class="desc">The Catawba Nation opened Phase I of its $1B casino resort, promising economic benefits for Kings Mountain.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details a significant economic development project and its potential impact.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>Catawba Two Kings Casino Opens First Phase in Kings Mountain</h3><p class="desc">The Catawba Nation launched Phase I of its $1B casino resort, promising economic growth and jobs.</p>
+            <div class="insight"><strong>Why this matters:</strong> Signifies economic development and job creation in Kings Mountain, impacting the local economy.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
@@ -71,8 +81,8 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Duke Energy Offers Home Assessments for Energy Efficiency</h3><p class="desc">Duke Energy offers home assessments to help residents lower energy bills during hot weather.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides practical advice for residents to manage energy consumption and costs.</div>
+            <h3>Duke Energy Offers Home Assessments for Energy Efficiency</h3><p class="desc">Duke Energy provides home assessments to help residents lower energy bills and improve efficiency.</p>
+            <div class="insight"><strong>Why this matters:</strong> Promotes energy conservation and cost savings for residents during periods of high temperatures.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -80,9 +90,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>Hot and Humid Midweek, Scattered Storms Late Week</h3><p class="desc">Weather forecast predicts hot and humid conditions midweek, with scattered storms later in the week.</p>
-            <div class="insight"><strong>Why this matters:</strong> Informs residents about upcoming weather conditions.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Hot and Humid Midweek, Scattered Storms Late Week</h3><p class="desc">The weather forecast predicts hot and humid conditions midweek, followed by scattered storms later in the week.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides essential weather information for residents to prepare for changing conditions.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -90,9 +100,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Residents Scramble After Sudden Senior Living Community Sale</h3><p class="desc">Residents at a senior living community face uncertainty after a sudden sale, with potential displacement.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses concerns about housing security for senior citizens.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
+            <h3>Senior Living Residents Scramble After Sudden Sale</h3><p class="desc">Residents at a senior living community face uncertainty after the property's sudden sale.</p>
+            <div class="insight"><strong>Why this matters:</strong> Illustrates the vulnerability of senior residents facing displacement due to property sales.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -100,19 +110,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>Teenager Killed in Northeast Charlotte Shooting</h3><p class="desc">A teenager was killed in a shooting on Tom Hunter Road in northeast Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on violent crime affecting young people in the city.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/northeast-charlotte-shooting/275-52f4d4c6-3397-4649-b6cb-abe134c3eed3" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Charlotte Man Drowns in Lake Wylie Near Tega Cay</h3><p class="desc">A Charlotte man drowned in Lake Wylie after a search near Tega Cay.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on water-related accidents and safety concerns.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
+            <h3>Charlotte Man Drowns in Lake Wylie Near Tega Cay</h3><p class="desc">A Charlotte man drowned in Lake Wylie after submerging near Tega Cay; his body was recovered.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the dangers of water activities and the importance of safety precautions.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -120,9 +120,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>18-Year-Old Killed in Morganton Shooting, No Arrests Made</h3><p class="desc">Dawson Whisenant, 18, was killed and Timothy Whisenant, 47, injured in a Morganton shooting.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights ongoing investigations into violent crimes in the region.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.8</span></div>
+            <h3>18-Year-Old Killed in Morganton Shooting, No Arrests Made</h3><p class="desc">Dawson Whisenant, 18, died in a Morganton shooting; Timothy Whisenant, 47, was injured. No arrests have been made.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses unsolved gun violence and its impact on families and the community.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -130,9 +130,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Mecklenburg County Reopens Jail North Amid Overcrowding</h3><p class="desc">Mecklenburg County plans to reopen Jail North due to overcrowding at the detention center.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses issues related to the capacity and management of the local jail system.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
+            <h3>Mecklenburg County Reopens Jail North Amid Overcrowding</h3><p class="desc">Mecklenburg County plans to reopen Jail North to address overcrowding at the main detention center.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reveals the challenges of managing jail capacity and the strain on the criminal justice system.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -140,9 +140,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.7</span></div>
             <h3>Mooresville Enters Stage 2 Drought Measures</h3><p class="desc">Mooresville implements stage 2 drought measures, restricting outdoor water usage.</p>
-            <div class="insight"><strong>Why this matters:</strong> Informs residents about water conservation efforts during drought conditions.</div>
+            <div class="insight"><strong>Why this matters:</strong> Indicates water scarcity issues and the need for conservation efforts in the region.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
