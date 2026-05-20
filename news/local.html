@@ -1,48 +1,78 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-19 09:31 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Public Safety (shootings, accidents)</span><span class="cluster">#Environmental Concerns (drought, flooding)</span><span class="cluster">#Infrastructure & Development (toll lanes)</span><span class="cluster">#Social Services Funding (Safe Alliance)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in the Charlotte region is dominated by safety concerns, including fatal shootings, water-related incidents, and traffic safety initiatives. Environmental issues such as drought conditions and flood resilience efforts are also prominent. Additionally, infrastructure projects and budget allocations for social services are key areas of focus.</p><div class="divider"></div><p class="insight-text">Public safety and environmental challenges are significantly shaping local government priorities and community well-being.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-20 10:05 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Public Safety (shootings, jail overcrowding)</span><span class="cluster">#Sports and Recreation (baseball tournaments, casino openings)</span><span class="cluster">#Weather and Environment (drought, energy efficiency)</span><span class="cluster">#Local Economy and Development (casino, senior living)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in the Charlotte area covers a range of topics, from sports and weather to crime and community issues. Recent events include shootings, drought concerns, and economic developments. The region is also seeing activity in sports with baseball tournaments and casino openings.</p><div class="divider"></div><p class="insight-text">Public safety and economic stability are key concerns for residents in the Charlotte metropolitan area.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Body Recovered from Lake Wylie After Search</h3><p class="desc">York County officials recovered a body from Lake Wylie after a person submerged and did not resurface Monday night.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the risks associated with water activities and the importance of water safety measures in the community.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.5</span></div>
+            <h3>Virginia Baseball Heads to ACC Tournament in Charlotte</h3><p class="desc">Virginia baseball is the No. 8 seed in the ACC tournament in Charlotte, facing NC State or Duke on Wednesday.</p>
+            <div class="insight"><strong>Why this matters:</strong> Local sports fans will be interested in the ACC baseball tournament held in Charlotte.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/york-county-agencies-stage-at-ebenezer-park-boat-landing-for-lake-wylie-water-rescue/275-49b16182-fe7b-4128-80fc-aff83aa00986" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">Charlottesville Progress</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://dailyprogress.com/sports/college/baseball/virginia-cavaliers/article_92d9ce36-bb0d-45f9-992b-e3c0b3d556e9.html" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Heat Wave Forecast for Charlotte Region</h3><p class="desc">Heat and humidity builds today through Wednesday, until another weather change brings relief from the 90+ degree temperatures.</p>
-            <div class="insight"><strong>Why this matters:</strong> Extreme heat can impact public health, especially for vulnerable populations, and strains energy resources.</div>
+            <h3>Sports on TV for Tuesday, May 19</h3><p class="desc">A list of sports events being televised, including the Duke vs. NC State game in Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides information on televised sports events relevant to local viewers.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">WTOP</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://wtop.com/sports/2026/05/sports-on-tv-for-tuesday-may-19/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Fatal Shooting in Northeast Charlotte</h3><p class="desc">One person was killed in a shooting on Tom Hunter Road near North Tryon Street, raising concerns about violent crime.</p>
-            <div class="insight"><strong>Why this matters:</strong> Contributes to ongoing concerns about public safety and the need for community-based violence prevention strategies.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>NC NAACP Defends Branch President on Interim Mayor Stance</h3><p class="desc">NC NAACP defends Corine Mack after her comments about White interim mayor candidates in Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights racial tensions and political discourse within Charlotte's leadership.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">Fox News</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/northeast-charlotte-shooting/275-52f4d4c6-3397-4649-b6cb-abe134c3eed3" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
-            <h3>Morganton Shooting Claims Teen's Life</h3><p class="desc">An 18-year-old was killed and a 47-year-old injured in a Morganton shooting, with no arrests made, sparking community concern.</p>
-            <div class="insight"><strong>Why this matters:</strong> Illustrates the impact of gun violence on young people and the challenges of solving such crimes.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/18-year-old-killed-in-morganton-shooting/275-6e4ff2e1-884f-4f6a-876d-7aa56d154918" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.foxnews.com/media/naacp-official-condemns-white-politicians-trying-replace-resigning-black-mayor" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Duke Energy Offers Home Energy Assessments</h3><p class="desc">Duke Energy offers home assessments to help residents lower energy bills and improve efficiency during the heat wave.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides practical advice for residents to manage energy consumption and reduce costs during peak demand periods.</div>
+            <h3>HK Solutions' Keith Helmendach Featured in Retirement Film</h3><p class="desc">Keith Helmendach of HK Solutions is featured in 'Retirement Everest,' a film about retirement planning.</p>
+            <div class="insight"><strong>Why this matters:</strong> Focuses on financial planning and retirement strategies relevant to the local community.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.manilatimes.net/2026/05/12/tmt-newswire/globenewswire/keith-helmendach-of-hk-solutions-featured-inretirement-everestas-film-examines-decumulation-risks/2341285" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Mass Shooting at Winston-Salem Park Leaves 2 Dead</h3><p class="desc">A mass shooting at a park in Winston-Salem, NC, resulted in two deaths and several injuries.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises concerns about public safety and gun violence in nearby communities.</div>
+            <div class="card-footer">
+                <span class="source">Hartford Courant</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.courant.com/2026/04/20/planned-fight-leads-to-mass-shooting-at-park-2-killed-several-wounded-nc-police-say/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Motorcyclist Killed in Alexander County Collision</h3><p class="desc">A motorcyclist died in a collision in Alexander County, north of Lake Hickory.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on traffic fatalities and road safety in the region.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/motorcyclist-killed-in-alexander-county-collision/275-4d0d213f-10b9-45e4-bd93-20a658bff931" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Catawba Two Kings Casino Opens First Phase in Kings Mountain</h3><p class="desc">The Catawba Nation opened Phase I of its $1B casino resort, promising economic benefits for Kings Mountain.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details a significant economic development project and its potential impact.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.wcnc.com/article/news/local/catawba-two-kings-casino-first-phase-opening/275-12eb8621-e472-4b77-8606-07b2544225d7" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Duke Energy Offers Home Assessments for Energy Efficiency</h3><p class="desc">Duke Energy offers home assessments to help residents lower energy bills during hot weather.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides practical advice for residents to manage energy consumption and costs.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -50,9 +80,59 @@
             </div>
         </div>
         <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>Hot and Humid Midweek, Scattered Storms Late Week</h3><p class="desc">Weather forecast predicts hot and humid conditions midweek, with scattered storms later in the week.</p>
+            <div class="insight"><strong>Why this matters:</strong> Informs residents about upcoming weather conditions.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Residents Scramble After Sudden Senior Living Community Sale</h3><p class="desc">Residents at a senior living community face uncertainty after a sudden sale, with potential displacement.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses concerns about housing security for senior citizens.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/money/markets/real-estate/residents-at-a-senior-living-community-are-scrambling-for-answers-after-sudden-sale/275-9d08fc1c-d1e6-4bd0-8945-74778bef9673" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>Teenager Killed in Northeast Charlotte Shooting</h3><p class="desc">A teenager was killed in a shooting on Tom Hunter Road in northeast Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on violent crime affecting young people in the city.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/crime/northeast-charlotte-shooting/275-52f4d4c6-3397-4649-b6cb-abe134c3eed3" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Charlotte Man Drowns in Lake Wylie Near Tega Cay</h3><p class="desc">A Charlotte man drowned in Lake Wylie after a search near Tega Cay.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on water-related accidents and safety concerns.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/york-county-agencies-stage-at-ebenezer-park-boat-landing-for-lake-wylie-water-rescue/275-49b16182-fe7b-4128-80fc-aff83aa00986" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>18-Year-Old Killed in Morganton Shooting, No Arrests Made</h3><p class="desc">Dawson Whisenant, 18, was killed and Timothy Whisenant, 47, injured in a Morganton shooting.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights ongoing investigations into violent crimes in the region.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/18-year-old-killed-in-morganton-shooting/275-6e4ff2e1-884f-4f6a-876d-7aa56d154918" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Mecklenburg Jail North to Reopen Amid Overcrowding</h3><p class="desc">Mecklenburg County plans to reopen Jail North due to an overcrowding crisis at the detention center, with nearly 300 inmates in overflow.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the challenges of managing jail populations and the need for solutions to address overcrowding issues.</div>
+            <h3>Mecklenburg County Reopens Jail North Amid Overcrowding</h3><p class="desc">Mecklenburg County plans to reopen Jail North due to overcrowding at the detention center.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses issues related to the capacity and management of the local jail system.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -60,92 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>Mooresville Implements Stage 2 Drought Measures</h3><p class="desc">Mooresville enters stage 2 drought measures, restricting outdoor water usage to conserve resources during dry conditions.</p>
-            <div class="insight"><strong>Why this matters:</strong> Demonstrates the impact of drought on local communities and the need for water conservation efforts.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/mooresville-enters-stage-2-drought-measures-restricting-outdoor-water-usage/275-cea45cfd-45de-4548-812b-80ef3d498cc5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
-            <h3>Woman Charged in East Charlotte Shooting</h3><p class="desc">Hannah Lofton, 27, is charged with assault with a deadly weapon after allegedly shooting a man multiple times in east Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reflects ongoing issues with interpersonal violence and the role of law enforcement in addressing such incidents.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/woman-shot-man-multiple-times-in-east-charlotte-records-say/275-3efa9696-848e-4b49-8806-1abea4fc97fe" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>Mallard Creek Appeals Track Meet Disqualification</h3><p class="desc">Mallard Creek appeals disqualification at NC state track meet after viral finish, hoping to overturn the decision and claim a co-championship.</p>
-            <div class="insight"><strong>Why this matters:</strong> Illustrates the competitive nature of high school sports and the potential for controversy in close competitions.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/mallard-creek-appeals-disqualification-at-nc-state-track-meet-after-viral-finish/275-cdf9b2ee-f3b5-4a56-8b34-d6d6365aec72" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
-            <h3>Senators Push for Restrictions on Child-Targeted Gambling Ads</h3><p class="desc">Senators push 'GAME' Act to curb child-targeted gambling ads on TikTok, Instagram, with potential fines for violations.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses concerns about the exposure of children to gambling advertising on social media platforms.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/connect-the-dots/connect-the-dots-game-act-sports-betting/275-8106b5a4-34d4-4afd-9ac9-13f8c1f4496a" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Monroe Campaign Aims to Prevent Downtown Crashes</h3><p class="desc">Monroe PD launches 'Slow Monroe' to improve safety and prevent injuries and deaths in the downtown area through increased enforcement.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights local efforts to improve traffic safety and reduce accidents in high-risk areas.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/slow-monroe-campaign-aims-to-prevent-crash-injuries-deaths-in-downtown/275-bd23f637-9ea5-4f06-a69f-b7ae8812e99b" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Suspect Charged in Rock Hill Homicide</h3><p class="desc">A suspect has been charged in the homicide of a 19-year-old in Rock Hill, bringing some closure to a grieving family.</p>
-            <div class="insight"><strong>Why this matters:</strong> Underscores the devastating impact of violent crime on families and communities.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/homicide-investigation-in-rock-hill/275-f7bb88db-109f-40d9-b5ab-ccd1009b2446" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
-            <h3>New Renderings Released for I-77 Toll Lane Project</h3><p class="desc">New renderings released for controversial I-77 toll lane project show elevated lanes with added pedestrian bridges and walkway areas.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides updates on a significant infrastructure project and its potential impact on local transportation.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/new-renderings-released-for-controversial-i-77-toll-lane-project/275-23e9a4ac-4a7d-4e82-a2a0-9834cac74b8a" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>Tool to Increase Flood Resiliency in North Carolina</h3><p class="desc">A new tool is helping North Carolina increase its flood resiliency, developed by the NC Department of Environmental Quality.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses the growing threat of flooding and the importance of proactive measures to mitigate its impact.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/how-a-new-tool-is-helping-north-carolina-increase-its-flood-resiliency/275-c854799d-c855-469b-9f22-6cb2f8abe4ac" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Safe Alliance Faces Potential Funding Cuts</h3><p class="desc">Safe Alliance pushes for city funding cut from budget proposal, potentially impacting services for vulnerable populations.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises concerns about the potential impact of budget cuts on essential social services and community support.</div>
+            <h3>Mooresville Enters Stage 2 Drought Measures</h3><p class="desc">Mooresville implements stage 2 drought measures, restricting outdoor water usage.</p>
+            <div class="insight"><strong>Why this matters:</strong> Informs residents about water conservation efforts during drought conditions.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/safe-alliance-pushes-for-city-funding-cut-from-budget-proposal/275-fb8d8c00-1272-4653-b03b-8265393bf234" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/mooresville-enters-stage-2-drought-measures-restricting-outdoor-water-usage/275-cea45cfd-45de-4548-812b-80ef3d498cc5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
