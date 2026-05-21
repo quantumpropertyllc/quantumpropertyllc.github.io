@@ -1,18 +1,108 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-05-20 07:07 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Desafíos políticos y legales de Estados Unidos (Trump, DOJ)</span><span class="cluster">#Relaciones Internacionales y Conflictos (Cuba, Rusia, Palestina)</span><span class="cluster">#Desarrollos Tecnológicos y Regulaciones (AI, SpaceX)</span><span class="cluster">#Cuestiones sociales y de seguridad (ataque a una mezquita, calificación de Harvard)</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Las noticias de hoy cubren una variedad de eventos globales críticos, desde tensiones políticas y batallas legales en los EE. UU. hasta relaciones internacionales y preocupaciones de seguridad. Los temas clave incluyen la política interna de Estados Unidos, los conflictos internacionales y los avances tecnológicos. También son destacados los desafíos legales y políticos que enfrentan figuras e instituciones prominentes.</p><div class="divider"></div><p class="insight-text">La convergencia de noticias políticas, jurídicas y tecnológicas pone de relieve un período de cambios significativos e incertidumbre en varios sectores.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-05-20 10:40 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Política estadounidense (Trump, elecciones)</span><span class="cluster">#Avances en IA (Google DeepMind, Gemini)</span><span class="cluster">#Cuestiones sociales (derechos LGBT, tiempo frente a la pantalla)</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>El panorama noticioso es diverso y cubre política, tecnología y temas sociales. Las noticias políticas se centran en elecciones, desafíos legales y debates políticos. Las noticias sobre tecnología destacan los avances de la IA y sus implicaciones en varios sectores.</p><div class="divider"></div><p class="insight-text">El papel cada vez mayor de la IA en la ciencia y la gobernanza plantea consideraciones éticas y prácticas.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>El Departamento de Justicia acusa a Raúl Castro, ex líder cubano</h3><p class="desc">El Departamento de Justicia de Estados Unidos acusó a Raúl Castro, ex líder de Cuba, lo que está aumentando las tensiones entre las dos naciones.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Esta acusación podría tensar aún más las relaciones entre Estados Unidos y Cuba y afectar la estabilidad regional.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Los demócratas de California se enfrentan a un grupo decepcionante de candidatos a gobernador</h3><p class="desc">La carrera para gobernador de California se describe como un "desastre" debido a la presencia de candidatos mediocres.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca los desafíos en la selección de candidatos y la posible insatisfacción de los votantes en una elección estatal clave.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">pjmedia</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOQVhNVkU0NDdoTnM5WVhOd3BuOVo4M0daMEhJRkNMd2tyUVplQVhMNV84ZGF1MHpoQ2V3VzQtOW15TjRwZHZCdG56akJRalhsR1pOV3BJcFNOdy1EeHVQNDdIbWpybUFFeGtoTTBUaWZmcVA1bkNWMHBVWXllVU1pZWtB?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://pjmedia.com/rick-moran/2026/05/20/california-democrats-are-asking-is-this-the-best-we-can-come-up-with-in-the-race-for-governor-n4953058" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>6 de enero: agentes de policía demandan para bloquear el “fondo antiarmamentismo” de Trump</h3><p class="desc">Los agentes de policía involucrados en el ataque al Capitolio del 6 de enero están demandando para bloquear el fondo de Trump, alegando que obstaculiza la justicia.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Esta demanda añade otra capa a los desafíos legales que rodearon los acontecimientos del 6 de enero.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">3.2</span></div>
+            <h3>El equipo de golf femenino de St. Peter compite en Waseca después de una interrupción por lluvia</h3><p class="desc">El equipo de golf femenino de St. Peter participó en un torneo por invitación en Waseca después de una lluvia.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Cobertura deportiva local que refleja las actividades del equipo y las interrupciones relacionadas con el clima.</div>
+            <div class="card-footer">
+                <span class="source">southernminn</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.southernminn.com/st_peter_herald/sports/after-rain-brings-tcu-invite-to-an-early-end-st-peter-girls-golfers-compete-in/article_7b41563b-8ea8-4021-93e4-e3d0727eedec.html" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
+            <h3>Google DeepMind analiza el uso de la IA con los sindicatos del Reino Unido en medio de preocupaciones éticas</h3><p class="desc">Google DeepMind inicia conversaciones con sindicatos del Reino Unido sobre el uso de IA por parte de los gobiernos de Estados Unidos e Israel.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Aborda consideraciones éticas y relaciones laborales en el desarrollo y despliegue de la IA.</div>
+            <div class="card-footer">
+                <span class="source">nytimesnewstoday</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.nytimesnewstoday.com/google-deepmind-in-talks-with-uk-unions-amid-staff-concern-over-us-and-israels-ai-use/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.9</span></div>
+            <h3>Brooks gana las primarias demócratas para el séptimo distrito de la Cámara de Representantes de EE.UU.</h3><p class="desc">Bob Brooks, un líder sindical, representará a los demócratas contra Ryan Mackenzie en el otoño.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Indica cambios en la representación política y el papel del apoyo sindical en las elecciones.</div>
+            <div class="card-footer">
+                <span class="source">blackchronicle</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://blackchronicle.com/mid-atlantic/pennsylvania/brooks-wins-crowded-democratic-field-for-7th-u-s-house-district/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.1</span></div>
+            <h3>Barney Frank, pionero de los derechos LGBT y exrepresentante estadounidense, muere a los 86 años</h3><p class="desc">El ex congresista estadounidense Barney Frank, defensor de los derechos LGBT, falleció a los 86 años.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Marca el fallecimiento de una figura importante en los derechos LGBT y la reforma financiera.</div>
+            <div class="card-footer">
+                <span class="source">hindustantimes</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.hindustantimes.com/world-news/us-news/barney-frank-cause-of-death-what-happened-to-former-us-rep-and-gay-rights-icon-all-about-health-issues-101779287494731.html" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Las acciones estadounidenses se recuperan a medida que disminuyen la presión del mercado de bonos y los precios del petróleo</h3><p class="desc">El mercado de valores estadounidense se recupera a medida que disminuye la presión de los bonos y los precios del petróleo.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Refleja la estabilidad del mercado y la respuesta de los inversores a los indicadores económicos.</div>
+            <div class="card-footer">
+                <span class="source">beloitdailynews</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="https://www.beloitdailynews.com/news/national-news/us-stocks-recover-as-pressure-eases-from-the-bond-market-and-oil-prices-fall/article_5cdc8da2-6d95-5e3e-ad94-1972b7ca817d.html" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Google DeepMind lanza Gemini for Science con puntos de referencia revisados ​​por pares</h3><p class="desc">Google DeepMind presenta Gemini for Science, herramientas de inteligencia artificial para la automatización de la investigación científica.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Destaca el papel cada vez mayor de la IA en la aceleración de los procesos de investigación y descubrimiento científico.</div>
+            <div class="card-footer">
+                <span class="source">techtimes</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
+                <a href="https://www.techtimes.com/articles/316901/20260520/gemini-science-launches-peer-reviewed-benchmarks-era-beat-cdc-forecasting-model.htm" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">5.8</span></div>
+            <h3>El gobierno de Trump toma medidas para salvar a un contribuyente descontento llamado Trump</h3><p class="desc">Detalla acciones que potencialmente benefician a Trump en materia fiscal.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Plantea dudas sobre la equidad y posibles conflictos de intereses.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPX1FWeUc0alVDNzBDRThiZ2kyUW9oYzVBS25VUjRyZzJRcElLU1RNMXdZcThMSnltckMtWEdvVTM4RXRsYV9HT1dSOXAyeWVycGJoT0JYeGhzeHBwR3lHRjZDcEVDX1c1NTZHeW5XdlUzcXRNd3dpS0ZQU1dlb1VUdkhsSndVTXZVVnV6MUkwVQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.2</span></div>
+            <h3>Las prioridades de Trump enfrentan desafíos después de su gira de venganza</h3><p class="desc">Analiza las dificultades que enfrenta Trump para lograr sus objetivos políticos.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Indica cambios potenciales en la influencia y el apoyo políticos.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNX21sWm1Gc0p1N2hGNFpfdkJDX1BCNGxIX21ZUV9vTHVHcHh3ZUt2WXFpOG5Fb1paNUpwOVJnMHByeE91N0xaMENsamJQbUdscHROZFVaaE9FT3c0WHlILW8wOUFpMWQ0T1RZa25IZWZOQXJyOFVLMDluLWlVLUhybXl3?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Fiscal acusado de robar el informe sellado de Jack Smith sobre el caso Trump</h3><p class="desc">Un fiscal está acusado de robar un informe sellado relacionado con el caso de documentos clasificados de Trump.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Agrega complejidad a los procedimientos legales que rodean a Trump.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
+                <a href="https://news.google.com/rss/articles/CBMi5gFBVV95cUxNU2xsVUY4TXdrcl9RUjZFRTF4UmRibjJleGNXVGRFTXhPU2xES1RNOGRHT0NDdVQtZVBlQVZ0Ykpid2UzY3MxeFhLRHFSQkFDSjRKNkdCNjNjUWNSTlJvclQxTFRLREJDLWJyWXpHRDc3cl9Qc1Y0amF0enFqdEpYcEoyU1Y4SW9mcFo2eWo2U3d0bklFMG5KdEpLbzZpZkd2Qm9pcUU3TTVQcFlrQnZTeVNBd3o3VVJDVEtoUnRmN05qSVU0NGJ5bGhQdnpJVWVHSkM0Ty15OW0tWHhWOGhPd0hYUlpwUQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
+            <h3>6 de enero: agentes de policía demandan para bloquear el “fondo antiarmamentismo” de Trump</h3><p class="desc">Agentes de policía demandan para impedir el 'fondo antiarmamentismo' de Trump.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Refleja batallas legales en curso relacionadas con los acontecimientos del 6 de enero.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
@@ -20,132 +110,42 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>El fondo de 1.800 millones de dólares de Trump pone a prueba los límites constitucionales</h3><p class="desc">El importante fondo de Trump se enfrenta a un escrutinio en cuanto a su legalidad constitucional y su potencial influencia.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> La estructura y el propósito del fondo plantean interrogantes sobre el financiamiento de campañas y los límites legales.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPVU9BRG56cWxWRHBaSnVNd3BuVEM2YzNud1NmNFJtTjJJbHU2dFFKX3oxRmxRVWxDTTNudlBqWVlJY0o4SGpFelJONXByZWxzdWFvb1BZbUxwSFFRelIxOEY0YllrNEs1R0l1LUk2WkU1WEY4NlJMcW5qODZPOHhqNXBCeDA?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
-            <h3>Guardia de seguridad aclamado como héroe en ataque a mezquita de San Diego</h3><p class="desc">Un guardia de seguridad está siendo elogiado por su valentía y sacrificio durante un ataque mortal en una mezquita de San Diego.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Sus acciones resaltan la amenaza actual de violencia y la importancia de la protección de la comunidad.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentimiento: Positive</span>
-                <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPRGoxdW1fYjBBOTNkbHBiX3hvRzNmRUFhRmlJQkE5eVRnTVBnQ3A1MElqMHRmRnFxdWFWaUpZRVZOcl9lcGdWRW9JZEh5em5manFaUUVzNkFFVU0zWFJJNWpveFJPdjVvaWZmdC1MSDJsQmRtY09TVTVydW5zbjIyaGNqN0VPbE1YZ0xHaXVpYw?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.2</span></div>
-            <h3>Los republicanos reconocen la limitada influencia de Trump a mitad de mandato</h3><p class="desc">Los republicanos están reevaluando el papel de Trump en las próximas elecciones de mitad de período, reconociendo que su impacto está disminuyendo.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Este cambio podría remodelar la estrategia republicana e influir en los resultados electorales.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNb19rU0s3a3JEUGhnR09UNFd4bVJ4V0oyenZaYmEyTWtRWXJwNGw3cEVJbFRVOW5wdDRTQ2xLUlJwdTFQM3BUTGhZRjE4aFd5YngxcThoTnBvSmdITnJhVGpvS1oxZUtqSlEtc2xoVHpoZTFsekNFeVdQanJucHM2VHlJLUlCVkY5c1d3RFlRNFBkOEgtS3c?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
-            <h3>El Departamento de Justicia acusa a un exfiscal de robar documentos de Trump Informe del caso</h3><p class="desc">Un exfiscal está acusado de robar un informe elaborado por Jack Smith relacionado con el caso de los documentos de Trump.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Este incidente genera preocupaciones sobre la seguridad y la integridad de documentos legales confidenciales.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQMk5ZbnJsenBvakM2anQ0NE1ETXFOOENPUWFLQl9Pc0ppUzJuRVhfQmw1U29wQjR6ejhMYnBJN203eE83dFlJZVJLTnVRbjlNdUN5aG1SLW53b2NzOUFFa0wtX2dRZkxRdUw2RlRQb3dfNWhveHcyWUJ2NjUzbERRanlqMm5UZUVHdGF4ZFZoTmN2NVhDMDI4azc5ZVVnNmZJ0gGmAUFVX3lxTE9lRi02S1E3eTdyMmI3WjhUcjIzS256bk1fSlNsMjZlazhUeWNmcDA0QjRSMy1TMVZPT081WmgyRGtIVjRxTFlpWjF5cnB6bXFxZ1F5SDRQRUJsNlZfRmhlN3N6bGNUazNRTnl1ekUwTWRnekNEZ0VIX010bnFLajVyNXBHRmFfaFpuWHVIYUNWLVhST0ZfOVFRMXNDTHl4N1FfSUlGYWc?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
-            <h3>Cronología de las relaciones entre Estados Unidos y Cuba en medio de crecientes tensiones</h3><p class="desc">Una cronología detalla las recientes relaciones entre Estados Unidos y Cuba, destacando el aumento de las tensiones durante el segundo mandato de Trump.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Comprender el contexto histórico es crucial para interpretar los desafíos diplomáticos actuales.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPTFJHMmZXVDVvNjBuRDBnSFdnMkRjcEtvTTAwMU8tV1BwNERBT2JldWd5Zmpfb1RzZmJJdkM0eDdCelI5X2gyOHcyMGtuTi1Id0V3dU1aal95QXNpUEk0TlctMEZjd2hMYUZZb01ucHBqQ19xcDQtOWtMR1JSZHdTUEd0c0U3akNNbF9kamdiaw?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Se espera pronto el gran pedido de IA de Trump</h3><p class="desc">Se espera que Trump emita una importante orden ejecutiva relacionada con la inteligencia artificial, potencialmente este jueves.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Esta orden podría establecer nuevas regulaciones y prioridades para el desarrollo y despliegue de la IA.</div>
+            <h3>Irán consolida el control de Ormuz con puntos de control y acuerdos</h3><p class="desc">Irán refuerza su control sobre el Estrecho de Ormuz mediante diversas medidas.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Afecta las rutas comerciales internacionales y la seguridad regional.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTFByT1pQS1JVVTVzdVBQb1pXWHMyNjRBQm51QTU0YzV1a2I0dkw0RU00OGQxN3NWbTJmRUZiREl6X0FWX0dBdXlaN3pFM3B1THk5YjdEbzQ2S1NodjQ0SE44QTVHWXBoOUJBUC1sTkhfSDAzaFlwMUlVSnMyUUk?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.7</span></div>
-            <h3>Juez ordena al personal de la Casa Blanca cumplir con la ley de registros presidenciales</h3><p class="desc">Un juez ordenó al personal de la Casa Blanca que respete la ley de registros presidenciales, a pesar de las preocupaciones constitucionales del Departamento de Justicia.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Este fallo afecta la transparencia y la rendición de cuentas en las administraciones presidenciales.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxPdmFtN2Z1UmRJX3FLNUJXNmJIT2d0bUZvVDRVZUFjdlZnQ3dTaVl2aUkwazY5MXRHQ1NfLW9QanpQU3g5WXU5Uy1TcmJHQzBlX3pualNETEdXV1VsSjJBNWRiU2l1Z2R1bUl0Zm4xZGJla1NMTWQ4VG51eHhNZ0p4dTRKM3kxX19rejlyR2NycGlsU0w1WnfSAZsBQVVfeXFMT3A3LUMwMGR2RmlURlRfTlRUc0VEQzJOc3NKanl1U0ZjUDVfQThoQTN6amJaQkxXRWFsRFRlNEd2ZWMxTG9ZNkRVdFl1LUNrWGNQOEE2S21jLUZMTy12anRiZWhZYWhydHJlTVF1SFFJdkZGa0dvOG1pYlc2ZFZSelIxcDRLUm9KeVBBMUlXTEZBNUtxemFNTnJYSk0?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Los profesores de Harvard votan para limitar las calificaciones A para los estudiantes universitarios</h3><p class="desc">Los profesores de Harvard han votado para restringir el número de calificaciones A otorgadas a los estudiantes de pregrado.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Este cambio de política podría afectar las métricas de desempeño de los estudiantes y la cultura académica.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQSWNXTDNmcnlrNEtvZURyTklfLVlpenlPdjJyRkNlX051b0s2dDV1cDdaNmJSRTBQNkVkVVVheWptYktLRk82VXg2emlmVVFFYklmLVdicHczcUdleEZFWE9hdll1SGJjUk5ncGw5R0tSZmdmWDFKaXNOeUthb21EUjQ3WnBJbzczMEVYb095Tm1jS01LZmN6N0tHclFRVkxTdDNV?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
-            <h3>Avión espía del Reino Unido interceptado por aviones rusos sobre el Mar Negro</h3><p class="desc">Un avión espía del Reino Unido fue "peligrosamente interceptado" por aviones militares rusos sobre el Mar Negro, lo que intensificó las tensiones.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Este incidente genera preocupaciones sobre la seguridad del espacio aéreo y una posible escalada militar.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQLU1vSUsxVVVZLTUzc2c4YTJYMG8xQU9ydTV2QjJnSXprUWkxRWhrUldZamR6YjZqdmRVLVJtY21pSnlZV3RyVDNRRXZXR1Z5WkhqRlJFbl8yYUQtWkRVVGlfeEtFdGtMcHdDTExfS082VEhHMWU1ME5TRzEwdXlvbEppWUlMQW1iY1R3czc0SdIBlAFBVV95cUxNOVRmWkx0eGNxME5kOEs1d3JUcUFBVHFIa0tYQ1BVRlFCZjV3SWdVemNyQl8ySjFzZXJCYjJyQU9tVUJOUkFfYWFvMTdkRXBhTHkwcWVaQzg3UFEwem10ZUl2SDFsZTVFY0lZRURZM2s5OTlCZjdBMThRcXBZY3FpdWM2NXkydk9kbVpfWHVLYm1udDRT?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Rutte descarta la reducción de la presencia militar estadounidense en Europa</h3><p class="desc">Rutte minimiza la importancia de una presencia militar estadounidense reducida en Europa, calificándola de "esperada".</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Esto refleja perspectivas cambiantes sobre las estrategias europeas de seguridad y defensa.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxQSjh4NDFEcjNrRjdJTXNWZEJ1UWk3UzBCZkozQkEtLXlCQXhzLUxQS2ItTElfQTNxYzBaRGN6cGIyU3VwV3daYlhZc3JiTEk5UEdkVGhqcmc4eHRWWVQ5VkhTakhib09zRFNqR0luTjVmR3AzWUNKTDhBd3VuaFVtUHpn?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxOMzNJZTNOVW9ScHNEZjlhenY5VFdwa3ZmVXhCVk9MYWgxY0hnRlVmVUFUNERHS0ZsVlBJZXNBSEw5c3BHYTJxUFA2cDdlZjBBMXRsTDFFN2dXMEJybG9ycU44d1c5WDdwZ09EdDNCWm5kRE8yTW04clJnY05URDdadVZzanZTSFA0bkxFVF90Ym10a1RUYUdmYWNmN2dlNXc1SGdOelpZLU1UQm9aV0RXZkJZeEdRamlmbEl4SlFveEs4RVA0LVlN?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
-            <h3>Estados Unidos presiona a líderes palestinos para que retiren su candidatura a la ONU</h3><p class="desc">Estados Unidos está presionando a los líderes palestinos para que retiren su candidatura a la vicepresidencia de la ONU.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Esto pone de relieve las tensiones diplomáticas actuales y la postura de Estados Unidos sobre la representación palestina.</div>
+            <h3>El nuevo aviso del Cirujano General genera alarma sobre los riesgos del tiempo frente a la pantalla</h3><p class="desc">El Cirujano General advierte sobre los peligros del tiempo excesivo frente a la pantalla para niños y adolescentes.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Aborda los problemas de salud pública relacionados con el uso de dispositivos digitales.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQVTV5Y2hIZk9qb0VrU0NGNWR6TkNaYnpTcTdMcU42NkZ6TFgyUnFTUENhWXpmdVg2b2RFZHAwa1hTWlV6SzRyaVVVWm1RZnI3dWp1aXdZV0w1VEtGbjVEb214RWM1UGZhcFhuNzZPWmNfdVB2dDVpWVBjZFNuT1JKNzBGeWpPMVdRR25lX1Z1NEQ2cXZuc0pLVWc3TkRvcENqcW5R?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxNYmZXTmF3NWo0OUctN1U2WnZOOTlDZnplS3c4WU44UFNGcjlubGZDVll2VllHcmtLeVk0TDBfU2c1ZTFCUW9EazZ6blVLRWVEODYzMHlMUDViSW9HS19UZUo5LTNWMEJwMEdGQ2tpOFFEeEpjNG1zRTN0YmpZZzRDMjhIV0h2MW9INldj?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.6</span></div>
-            <h3>Ministro israelí de extrema derecha condenado por burlarse de activistas de la flotilla de Gaza</h3><p class="desc">Un ministro israelí de extrema derecha enfrenta una condena por burlarse de los activistas esposados ​​de la flotilla de Gaza.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Este incidente exacerba las tensiones políticas y plantea preocupaciones en materia de derechos humanos.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.6</span></div>
+            <h3>El expresidente cubano Raúl Castro acusado en Estados Unidos de asesinato</h3><p class="desc">Raúl Castro es acusado en Estados Unidos de asesinato y conspiración.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Agrega una nueva dimensión a las relaciones entre Estados Unidos y Cuba.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentimiento: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFBsVllORHZldWQ4TzNHaUJlYXVMWnBUek92OXJrMTNmdlIwc1ZJOVpZRzBGX0lFQmxGbEpNWXVDQjhKS0tfTkpHbm1ZX2NOeTl4MGxHSjFSU2Jodw?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxQaWxJMzlPU3NreEhRTDhMR0VURkZ1eWZOYzJCOG8wUGNtcWUxVVRteVU2Zm1pUDVORlBHdWFUcUE2Q0xTRl8tNVhBdktoTGs4cnh1ck1MTFpObWtQSnpHclBWd1YyQlYxSmNxVkZ0TTNUTk1xU2RYblZMYVlHWEtrVDdkalhuLWlqY0tJUEFsS1RQWjBxYlB6YUhUVUt3c3hCREJCT1R4eWdzMWZnWDlMaExXUW5fRzRsSDlVZDNrT3dXM3dDc3EzTEZ3ZXE?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
-            <h3>SpaceX presenta la documentación para la salida a bolsa; Las ganancias de Nvidia en foco</h3><p class="desc">Según se informa, SpaceX está presentando los trámites de salida a bolsa a medida que las ganancias de Nvidia se vuelven más visibles para los inversores.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Estos acontecimientos señalan cambios significativos en el panorama tecnológico y de inversión.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.7</span></div>
+            <h3>Trump podría firmar una orden ejecutiva sobre IA el jueves</h3><p class="desc">Trump puede firmar una orden ejecutiva relacionada con la IA.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Indica posibles cambios de política con respecto a la regulación de la IA.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNamxkTXhqN095MEZtdjVLV1JMUHNkdHI5cy1uMHV6S2l0aU81TVBDemxpV3NmczNkaTJFWXdlT3dyZUVpdmNLRXcyRlQteU1ab0tfMGd4Z2NnS2M3UVNrWjVqWERGYjRLVnhyNWU5MC0yb3NQZ2gwREQwZ29CUFhWSi02X2ZUaFU?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE0ycE4ybk5tNXZGbDlTVDdxZ1VleUNuMS1Vb1hvWksxeTV4WFhXQ2ZkOXBDU2hVS1ZPUkJvOUpCX2MwWmpUQXZ0UGNYU2VWNjR6Wkd2Rndqb3JPeE1Zb3lzSFdPMmM1N0JwVi1GSUJzcXBGZHVkTmdGQk5Ydkg?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div></body></html>
