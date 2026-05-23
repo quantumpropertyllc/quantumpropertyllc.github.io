@@ -1,38 +1,98 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-23 04:03 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Political Transitions (Gabbard resignation, Trump's activities)</span><span class="cluster">#Financial Market Updates (Stock market, Bitcoin, Fed Chair)</span><span class="cluster">#Technological Advancements (Google AI, AI executive order)</span><span class="cluster">#Entertainment Industry News (Late night TV, 'Mandalorian', casting changes)</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Today's news covers a wide range of topics, from political resignations and presidential activities to financial market updates and technological advancements. The entertainment industry sees shifts with late-night show changes and casting decisions. Global health concerns and space exploration initiatives also feature prominently, reflecting diverse areas of public interest.</p><div class="divider"></div><p class="insight-text">The convergence of political, economic, and technological news highlights the interconnectedness of these sectors in shaping current events.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-23 06:45 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Trump Administration Legal Issues</span><span class="cluster">#Sports World Developments</span><span class="cluster">#Business Acquisitions and Market Trends</span><span class="cluster">#Personal Tragedies and Public Figures</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>This news compilation covers a range of topics from politics and legal battles to sports, business, and personal tragedies. Key themes include legal and political controversies surrounding the Trump administration, developments in sports and entertainment, and significant business acquisitions. The articles reflect a mix of serious news events and human-interest stories.</p><div class="divider"></div><p class="insight-text">The diversity of topics highlights the complex and interconnected nature of current events, reflecting a world grappling with political tensions, economic shifts, and personal challenges.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Tulsi Gabbard Resigns as US Director of National Intelligence</h3><p class="desc">Tulsi Gabbard resigns due to her husband's illness after being largely out of public view during recent US operations.</p>
-            <div class="insight"><strong>Why this matters:</strong> Gabbard's resignation impacts national intelligence leadership during critical US operations.</div>
+            <h3>Jan. 6 Prosecutor, Trump Targets Sue Over 'Weaponization' Fund</h3><p class="desc">Jan. 6 prosecutor and targets of the Trump administration are suing over a 'weaponization' fund.</p>
+            <div class="insight"><strong>Why this matters:</strong> Legal challenges could impact future investigations and political accountability.</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.nbcnews.com/politics/justice-department/jan-6-prosecutor-trump-administration-targets-sue-weaponization-fund-rcna346523" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Tulsi Gabbard's Resignation Letter as Intelligence Director</h3><p class="desc">Tulsi Gabbard's resignation letter highlights scrutiny during her tenure as director of national intelligence.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects challenges and controversies within U.S. intelligence leadership.</div>
+            <div class="card-footer">
+                <span class="source">PBS</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.pbs.org/newshour/politics/read-tulsi-gabbards-full-resignation-letter-as-director-of-national-intelligence" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>NASCAR Great Kyle Busch's Death: 911 Call Details</h3><p class="desc">Details emerge from the 911 call before NASCAR legend Kyle Busch's death, revealing he was coughing up blood.</p>
+            <div class="insight"><strong>Why this matters:</strong> The unexpected death of a sports icon shocks fans and the racing community.</div>
+            <div class="card-footer">
+                <span class="source">Abcnews.com</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://abcnews.com/US/nascar-great-kyle-busch-coughing-blood-day-died/story?id\\u003d133228671" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Usyk vs. Rico Weigh-In: Verhoeven Heavier</h3><p class="desc">Oleksandr Usyk and Rico Verhoeven weigh in for their Glory in Giza main event, with Verhoeven weighing 25 pounds more.</p>
+            <div class="insight"><strong>Why this matters:</strong> Sets the stage for a significant clash in the fighting world.</div>
+            <div class="card-footer">
+                <span class="source">MMA Fighting</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.mmafighting.com/boxing/489975/usyk-vs-rico-weigh-in-results-rico-verhoeven-25-pounds-heaver-than-oleksandr-usyk" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
+            <h3>F1 Canadian GP: Live Practice Updates</h3><p class="desc">Live commentary and updates from Formula 1 practice at the Canadian Grand Prix.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides real-time coverage for motorsport enthusiasts.</div>
+            <div class="card-footer">
+                <span class="source">Motorsport.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.motorsport.com/f1/live-text/f1-miami-gp-live-commentary-and-updates-free-practice-1126839/1126840/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Trump to Skip Son Donald Jr.'s Wedding</h3><p class="desc">Donald Trump will not attend his son Donald Jr.'s wedding to Bettina Anderson.</p>
+            <div class="insight"><strong>Why this matters:</strong> Draws attention to the personal lives of prominent political figures.</div>
+            <div class="card-footer">
+                <span class="source">CNBC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.cnbc.com/2026/05/22/trump-wedding-donald-bettina-anderson-bahamas.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Trump Admin: Visa Holders Must Return Home for Green Cards</h3><p class="desc">The Trump administration requires non-immigrant visa holders to return to their home countries to apply for green cards.</p>
+            <div class="insight"><strong>Why this matters:</strong> Significant change in immigration policy affecting many individuals.</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.nbcnews.com/news/us-news/visa-holders-green-cards-return-home-country-trump-rcna346546" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>Maguire 'Unlucky' to Miss England Squad: Rooney</h3><p class="desc">Wayne Rooney says Harry Maguire is "very unlucky" to miss out on the England squad for the World Cup.</p>
+            <div class="insight"><strong>Why this matters:</strong> Debate over team selection in international soccer.</div>
             <div class="card-footer">
                 <span class="source">BBC News</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.bbc.com/news/articles/cvgj2gkv1x1o" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
-            <h3>President Trump Skips Son's Wedding, Cites Washington Responsibilities</h3><p class="desc">President Trump will not attend Donald Trump Jr.'s wedding, stating his responsibilities in Washington, D.C., are paramount.</p>
-            <div class="insight"><strong>Why this matters:</strong> The President's decision reflects his focus on current duties amidst important events.</div>
-            <div class="card-footer">
-                <span class="source">CBS News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.cbsnews.com/news/trump-wont-attend-son-wedding-citing-responsibilities-in-washington/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.bbc.com/sport/football/articles/c4g02kdwp4go" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>Kevin Warsh Sworn in as Fed Chair; S&P 500 on Winning Streak</h3><p class="desc">Kevin Warsh is sworn in as Fed Chair as the S&P 500 continues its winning streak.</p>
-            <div class="insight"><strong>Why this matters:</strong> Warsh's appointment and the S&P 500's performance signal economic shifts.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>Warsh Takes Fed's Helm Amid Policy Dilemma</h3><p class="desc">Kevin Warsh is sworn in as chair of the U.S. Federal Reserve, facing immediate policy challenges.</p>
+            <div class="insight"><strong>Why this matters:</strong> Leadership change at the Federal Reserve impacts economic policy.</div>
             <div class="card-footer">
-                <span class="source">The Wall Street Journal</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-22-2026" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">Yahoo Entertainment</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://finance.yahoo.com/economy/policy/articles/warsh-takes-over-fed-policy-100952678.html" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
-            <h3>"Cockroach Janta Party" Protest Movement Spooks India's Leaders</h3><p class="desc">The satirical "Cockroach Janta Party," a youth-led political front, gains traction, potentially facing government suppression in India.</p>
-            <div class="insight"><strong>Why this matters:</strong> The movement highlights youth discontent and potential government response.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>"Cockroach Janta Party" Spooks India's Leaders</h3><p class="desc">The satirical "Cockroach Janta Party" online protest movement gains traction, potentially worrying India's government.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the power of online activism and government response.</div>
             <div class="card-footer">
                 <span class="source">CBS News</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -41,28 +101,28 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>911 Call Reveals Medical Emergency at Racing Simulator Facility</h3><p class="desc">A 911 call reports a medical emergency at a facility the same day Kyle Busch reportedly fell ill while testing a racing simulator.</p>
-            <div class="insight"><strong>Why this matters:</strong> The incident raises questions about safety protocols at racing simulator facilities.</div>
+            <h3>Polish Aide: Trump Committed to Troops in Europe</h3><p class="desc">Despite 'chaotic communication,' a Polish aide says Trump is committed to keeping troops in Europe.</p>
+            <div class="insight"><strong>Why this matters:</strong> Clarifies U.S. commitment to European defense amid communication issues.</div>
             <div class="card-footer">
-                <span class="source">WCNC.com</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/911-call-from-gm-charlotte-technical-center/275-ed9cd9cd-b24d-4955-8844-c3151c640a73" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Bitcoin Holds Near $77,000 Ahead of Kevin Warsh's Fed Takeover</h3><p class="desc">Bitcoin maintains its position near $77,000 as Kevin Warsh prepares to assume the role of Fed chairman.</p>
-            <div class="insight"><strong>Why this matters:</strong> Bitcoin's stability reflects market anticipation of Warsh's influence on monetary policy.</div>
-            <div class="card-footer">
-                <span class="source">CoinDesk</span>
+                <span class="source">POLITICO.eu</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.coindesk.com/tech/2026/05/22/live-markets-bitcoin-continues-holding-pattern-near-usd77-000-ahead-of-holiday-weekend" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.politico.eu/article/despite-chaotic-communication-polish-aide-says-trump-committed-troops-europe/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
-            <h3>Google Search Breaks When Searching 'Disregard' After AI Update</h3><p class="desc">Google Search's AI update causes the word "disregard" to effectively break the search interface.</p>
-            <div class="insight"><strong>Why this matters:</strong> The glitch reveals potential issues with Google's AI integration in search functionality.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Wall Street Eyes IMAX Sale: Potential Buyers</h3><p class="desc">Wall Street analysts believe IMAX is a potential acquisition target, with preliminary talks reportedly underway.</p>
+            <div class="insight"><strong>Why this matters:</strong> Indicates potential shifts in the entertainment industry landscape.</div>
+            <div class="card-footer">
+                <span class="source">CNBC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.cnbc.com/2026/05/22/imax-sale-talks-potential-buyers-wall-street-analysts.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Google Search Breaks with "Disregard" Query</h3><p class="desc">Google Search's AI update causes the word "disregard" to effectively break the search interface.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights potential issues with AI integration in search technology.</div>
             <div class="card-footer">
                 <span class="source">TechCrunch</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -70,82 +130,22 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
-            <h3>Google's AI Glasses Show Promise in Gemini-Powered Demo</h3><p class="desc">Google demos prototype Android XR glasses with Gemini-powered translation and navigation overlaid into the user's view.</p>
-            <div class="insight"><strong>Why this matters:</strong> The glasses showcase the potential of AI-enhanced augmented reality applications.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>'Danny Go!' Star Daniel Coleman Announces Son's Death</h3><p class="desc">Daniel Coleman, star of 'Danny Go!', announces the death of his 14-year-old son Isaac after a battle with cancer.</p>
+            <div class="insight"><strong>Why this matters:</strong> A personal tragedy affecting a public figure resonates with many.</div>
             <div class="card-footer">
-                <span class="source">TechCrunch</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://techcrunch.com/2026/05/22/we-tried-googles-ai-glasses-and-theyre-almost-there/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>LIVE: 2026 F1 Canadian Grand Prix - Free Practice</h3><p class="desc">Live coverage of the sole practice session for the 2026 F1 Canadian Grand Prix.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides real-time updates on the F1 Canadian Grand Prix practice session.</div>
-            <div class="card-footer">
-                <span class="source">Racingnews365.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://racingnews365.com/live-2026-f1-canadian-grand-prix-free-practice" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>Read Trump's Unsigned AI Executive Order</h3><p class="desc">POLITICO obtains a copy of President Trump's unsigned executive order on artificial intelligence oversight.</p>
-            <div class="insight"><strong>Why this matters:</strong> The order reveals the administration's intended approach to AI regulation.</div>
-            <div class="card-footer">
-                <span class="source">Politico</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.politico.com/news/2026/05/22/heres-a-draft-of-trumps-unsigned-ai-executive-order-00933411" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
-            <h3>Ebola Outbreak Death Toll Rises To 177: WHO Expresses Concern</h3><p class="desc">The Ebola outbreak death toll reaches 177, prompting the WHO to express deep concern. One American is receiving treatment in Germany.</p>
-            <div class="insight"><strong>Why this matters:</strong> The outbreak poses a significant global health threat, requiring international attention.</div>
-            <div class="card-footer">
-                <span class="source">Forbes</span>
+                <span class="source">USA Today</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.forbes.com/sites/maryroeloffs/2026/05/22/ebola-outbreak-death-toll-reaches-177-as-uganda-now-stable-who-says-live-updates/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.usatoday.com/story/entertainment/celebrities/2026/05/22/daniel-coleman-danny-go-14-year-old-son-dies/90215484007/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>'Star Wars: Mandalorian And Grogu' Earns $12M in Thursday Previews</h3><p class="desc">'Star Wars: Mandalorian and Grogu' pulls in approximately $12M in Thursday night previews at the domestic box office.</p>
-            <div class="insight"><strong>Why this matters:</strong> The strong opening indicates high audience interest in the latest Star Wars installment.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Shein Buys Everlane: Ethical Luxury?</h3><p class="desc">Shein acquires Everlane, raising questions about the future of ethical and affordable luxury.</p>
+            <div class="insight"><strong>Why this matters:</strong> Merger impacts the fashion industry and consumer perceptions of ethical brands.</div>
             <div class="card-footer">
-                <span class="source">Deadline</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="http://deadline.com/2026/05/box-office-mandalorian-and-grogu-1236918713/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
-            <h3>Trump Celebrates Colbert's Exit, Wishes Ill on Other Late Night Hosts</h3><p class="desc">President Trump celebrates Colbert's departure from CBS and makes controversial remarks about other late-night hosts.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reflects Trump's ongoing feud with late-night television personalities.</div>
-            <div class="card-footer">
-                <span class="source">Hollywood Reporter</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="http://www.hollywoodreporter.com/tv/tv-news/trump-celebrates-colbert-cancelation-threatens-late-night-1236604262/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.0</span></div>
-            <h3>Tom Hardy Fired From 'Mobland' Season 3</h3><p class="desc">Tom Hardy will not appear in the third season of 'Mobland' after Season 2 wraps production.</p>
-            <div class="insight"><strong>Why this matters:</strong> The casting change impacts the future direction of the Paramount+ crime drama.</div>
-            <div class="card-footer">
-                <span class="source">Variety</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://variety.com/2026/tv/news/tom-hardy-fired-mobland-season-3-1236757052/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.3</span></div>
-            <h3>NASA Announces Realignment to Accelerate Mission Delivery</h3><p class="desc">NASA announces a realignment to accelerate mission delivery, including a retirement.</p>
-            <div class="insight"><strong>Why this matters:</strong> The realignment aims to improve efficiency in NASA's mission operations.</div>
-            <div class="card-footer">
-                <span class="source">NASA</span>
+                <span class="source">NPR</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.nasa.gov/news-release/nasa-announces-realignment-to-accelerate-mission-delivery/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.npr.org/2026/05/22/nx-s1-5825872/shein-buys-everlane" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>

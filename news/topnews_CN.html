@@ -1,38 +1,98 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-05-23 04:03 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#政治转型（加巴德辞职、特朗普的活动）</span><span class="cluster">#金融市场动态（股市、比特币、美联储主席）</span><span class="cluster">#技术进步（Google AI、AI 行政命令）</span><span class="cluster">#娱乐行业新闻（深夜电视、“曼达洛人”、演员阵容变动）</span></div></div></div><div class="brief"><h2>今日简报</h2><p>今天的新闻涵盖广泛的主题，从政治辞职和总统活动到金融市场更新和技术进步。娱乐业随着深夜节目的变化和选角决定而发生变化。全球健康问题和太空探索倡议也占据突出地位，反映了公众利益的不同领域。</p><div class="divider"></div><p class="insight-text">政治、经济和技术新闻的融合凸显了这些部门在塑造时事方面的相互关联性。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-05-23 06:45 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#特朗普政府法律问题</span><span class="cluster">#体育世界的发展</span><span class="cluster">#业务收购和市场趋势</span><span class="cluster">#个人悲剧和公众人物</span></div></div></div><div class="brief"><h2>今日简报</h2><p>这份新闻汇编涵盖了从政治和法律斗争到体育、商业和个人悲剧的一系列主题。关键主题包括围绕特朗普政府的法律和政治争议、体育和娱乐的发展以及重大商业收购。这些文章反映了严肃的新闻事件和人文故事的结合。</p><div class="divider"></div><p class="insight-text">主题的多样性凸显了时事的复杂性和相互关联性，反映了一个正在努力应对政治紧张、经济转变和个人挑战的世界。</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>图尔西·加巴德辞去美国国家情报总监职务</h3><p class="desc">图尔西·加巴德 (Tulsi Gabbard) 在最近的美国行动中基本淡出了公众视野，之后因丈夫生病而辞职。</p>
-            <div class="insight"><strong>深度见解:</strong> 加巴德的辞职影响了美国关键行动中的国家情报领导力。</div>
+            <h3>1 月 6 日 检察官、特朗普针对“武器化”基金提起诉讼</h3><p class="desc">1 月 6 日，检察官和特朗普政府的目标针对一项“武器化”基金提起诉讼。</p>
+            <div class="insight"><strong>深度见解:</strong> 法律挑战可能会影响未来的调查和政治问责。</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.nbcnews.com/politics/justice-department/jan-6-prosecutor-trump-administration-targets-sue-weaponization-fund-rcna346523" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>图尔西·加巴德 (Tulsi Gabbard) 的情报总监辞职信</h3><p class="desc">图尔西·加巴德的辞职信凸显了她担任国家情报总监期间受到的审查。</p>
+            <div class="insight"><strong>深度见解:</strong> 反映了美国情报领导层内部的挑战和争议。</div>
+            <div class="card-footer">
+                <span class="source">PBS</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.pbs.org/newshour/politics/read-tulsi-gabbards-full-resignation-letter-as-director-of-national-intelligence" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>纳斯卡伟大的凯尔·布希之死：911 电话详情</h3><p class="desc">NASCAR 传奇人物凯尔·布希 (Kyle Busch) 去世前拨打的 911 电话中透露了详细信息，显示他正在咳血。</p>
+            <div class="insight"><strong>深度见解:</strong> 一位体育偶像的意外去世震惊了车迷和赛车界。</div>
+            <div class="card-footer">
+                <span class="source">Abcnews.com</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://abcnews.com/US/nascar-great-kyle-busch-coughing-blood-day-died/story?id\\u003d133228671" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>乌西克 vs. 里科称重：Verhoeven Heavier</h3><p class="desc">亚历山大·乌西克 (Oleksandr Usyk) 和里科·范霍文 (Rico Verhoeven) 为吉萨荣耀主赛称重，其中范霍文的体重增加了 25 磅。</p>
+            <div class="insight"><strong>深度见解:</strong> 为格斗世界中的重大冲突奠定了基础。</div>
+            <div class="card-footer">
+                <span class="source">MMA Fighting</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.mmafighting.com/boxing/489975/usyk-vs-rico-weigh-in-results-rico-verhoeven-25-pounds-heaver-than-oleksandr-usyk" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
+            <h3>F1 加拿大大奖赛：实时练习更新</h3><p class="desc">加拿大大奖赛一级方程式练习赛的现场评论和最新动态。</p>
+            <div class="insight"><strong>深度见解:</strong> 为赛车运动爱好者提供实时报道。</div>
+            <div class="card-footer">
+                <span class="source">Motorsport.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.motorsport.com/f1/live-text/f1-miami-gp-live-commentary-and-updates-free-practice-1126839/1126840/" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>特朗普将缺席儿子小唐纳德的婚礼</h3><p class="desc">唐纳德·特朗普将不会参加他的儿子小唐纳德与贝蒂娜·安德森的婚礼。</p>
+            <div class="insight"><strong>深度见解:</strong> 引起人们对著名政治人物个人生活的关注。</div>
+            <div class="card-footer">
+                <span class="source">CNBC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.cnbc.com/2026/05/22/trump-wedding-donald-bettina-anderson-bahamas.html" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>特朗普政府：签证持有者必须回国领取绿卡</h3><p class="desc">特朗普政府要求非移民签证持有者返回本国申请绿卡。</p>
+            <div class="insight"><strong>深度见解:</strong> 移民政策的重大变化影响到许多人。</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
+                <a href="https://www.nbcnews.com/news/us-news/visa-holders-green-cards-return-home-country-trump-rcna346546" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>马奎尔“不幸”入选英格兰小姐阵容：鲁尼</h3><p class="desc">韦恩·鲁尼表示，哈里·马奎尔“非常不幸”地错过了英格兰世界杯的阵容。</p>
+            <div class="insight"><strong>深度见解:</strong> 关于国际足球球队选拔的争论。</div>
             <div class="card-footer">
                 <span class="source">BBC News</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.bbc.com/news/articles/cvgj2gkv1x1o" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
-            <h3>特朗普总统缺席儿子的婚礼，称华盛顿有责任</h3><p class="desc">特朗普总统不会参加小唐纳德·特朗普的婚礼，并表示他在华盛顿特区的责任至关重要。</p>
-            <div class="insight"><strong>深度见解:</strong> 总统的决定反映了他在重要事件中对当前职责的关注。</div>
-            <div class="card-footer">
-                <span class="source">CBS News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.cbsnews.com/news/trump-wont-attend-son-wedding-citing-responsibilities-in-washington/" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.bbc.com/sport/football/articles/c4g02kdwp4go" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>凯文·沃什宣誓就任美联储主席；标准普尔 500 指数连胜</h3><p class="desc">随着标普 500 指数继续连涨，凯文·沃什 (Kevin Warsh) 宣誓就任美联储主席。</p>
-            <div class="insight"><strong>深度见解:</strong> 沃什的任命和标准普尔 500 指数的表现标志着经济的转变。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>沃什在政策困境中接掌美联储</h3><p class="desc">凯文·沃什宣誓就任美联储主席，面临迫在眉睫的政策挑战。</p>
+            <div class="insight"><strong>深度见解:</strong> 美联储领导层的变动会影响经济政策。</div>
             <div class="card-footer">
-                <span class="source">The Wall Street Journal</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-22-2026" class="btn-link" target="_blank">阅读全文 →</a>
+                <span class="source">Yahoo Entertainment</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://finance.yahoo.com/economy/policy/articles/warsh-takes-over-fed-policy-100952678.html" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
-            <h3>“蟑螂简塔党”抗议运动令印度领导人心惊胆战</h3><p class="desc">讽刺性的“蟑螂简塔党”是一个由年轻人领导的政治阵线，获得了关注，可能会面临印度政府的镇压。</p>
-            <div class="insight"><strong>深度见解:</strong> 该运动凸显了年轻人的不满和政府可能的反应。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>“蟑螂简塔党”令印度领导人惶恐不安</h3><p class="desc">讽刺性的“蟑螂简塔党”在线抗议运动获得关注，可能会让印度政府感到担忧。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调在线行动主义和政府反应的力量。</div>
             <div class="card-footer">
                 <span class="source">CBS News</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
@@ -41,28 +101,28 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>911 电话显示赛车模拟器设施出现医疗紧急情况</h3><p class="desc">据报道，凯尔·布施 (Kyle Busch) 在测试赛车模拟器时生病的同一天，911 电话报告了某设施出现医疗紧急情况。</p>
-            <div class="insight"><strong>深度见解:</strong> 该事件引发了人们对赛车模拟器设施安全协议的质疑。</div>
+            <h3>波兰助手：特朗普承诺在欧洲驻军</h3><p class="desc">尽管沟通混乱，一名波兰助手表示，特朗普致力于将军队留在欧洲。</p>
+            <div class="insight"><strong>深度见解:</strong> 澄清美国在沟通问题中对欧洲防务的承诺。</div>
             <div class="card-footer">
-                <span class="source">WCNC.com</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/911-call-from-gm-charlotte-technical-center/275-ed9cd9cd-b24d-4955-8844-c3151c640a73" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>在 Kevin Warsh 美联储接管之前，比特币价格维持在 77,000 美元附近</h3><p class="desc">随着凯文·沃什 (Kevin Warsh) 准备担任美联储主席，比特币维持在 77,000 美元附近的位置。</p>
-            <div class="insight"><strong>深度见解:</strong> 比特币的稳定性反映了市场对沃什对货币政策影响力的预期。</div>
-            <div class="card-footer">
-                <span class="source">CoinDesk</span>
+                <span class="source">POLITICO.eu</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.coindesk.com/tech/2026/05/22/live-markets-bitcoin-continues-holding-pattern-near-usd77-000-ahead-of-holiday-weekend" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.politico.eu/article/despite-chaotic-communication-polish-aide-says-trump-committed-troops-europe/" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
-            <h3>AI 更新后搜索“无视”时 Google 搜索中断</h3><p class="desc">谷歌搜索的AI更新导致“忽视”一词有效打破了搜索界面。</p>
-            <div class="insight"><strong>深度见解:</strong> 这一故障揭示了谷歌在搜索功能中人工智能集成的潜在问题。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>华尔街关注 IMAX 拍卖：潜在买家</h3><p class="desc">华尔街分析师认为 IMAX 是一个潜在的收购目标，据报道初步谈判正在进行中。</p>
+            <div class="insight"><strong>深度见解:</strong> 表明娱乐业格局的潜在变化。</div>
+            <div class="card-footer">
+                <span class="source">CNBC</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
+                <a href="https://www.cnbc.com/2026/05/22/imax-sale-talks-potential-buyers-wall-street-analysts.html" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>谷歌搜索因“忽略”查询而中断</h3><p class="desc">谷歌搜索的AI更新导致“忽视”一词有效打破了搜索界面。</p>
+            <div class="insight"><strong>深度见解:</strong> 强调搜索技术中人工智能集成的潜在问题。</div>
             <div class="card-footer">
                 <span class="source">TechCrunch</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
@@ -70,82 +130,22 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
-            <h3>谷歌的人工智能眼镜在 Gemini 驱动的演示中展现了前景</h3><p class="desc">谷歌演示了 Android XR 眼镜原型，该眼镜具有由 Gemini 驱动的翻译和导航功能，可以覆盖到用户的视野中。</p>
-            <div class="insight"><strong>深度见解:</strong> 该眼镜展示了人工智能增强现实应用的潜力。</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>“丹尼走吧！”明星丹尼尔科尔曼宣布儿子去世</h3><p class="desc">《丹尼加油》的主演丹尼尔·科尔曼宣布他 14 岁的儿子艾萨克在与癌症作斗争后去世。</p>
+            <div class="insight"><strong>深度见解:</strong> 影响公众人物的个人悲剧引起了许多人的共鸣。</div>
             <div class="card-footer">
-                <span class="source">TechCrunch</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="https://techcrunch.com/2026/05/22/we-tried-googles-ai-glasses-and-theyre-almost-there/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>直播：2026 F1 加拿大大奖赛 - 自由练习</h3><p class="desc">现场直播 2026 年 F1 加拿大大奖赛唯一练习赛。</p>
-            <div class="insight"><strong>深度见解:</strong> 提供 F1 加拿大大奖赛练习赛的实时更新。</div>
-            <div class="card-footer">
-                <span class="source">Racingnews365.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://racingnews365.com/live-2026-f1-canadian-grand-prix-free-practice" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>阅读特朗普未签署的人工智能行政命令</h3><p class="desc">《政治》杂志获得了特朗普总统未签署的关于人工智能监管的行政命令的副本。</p>
-            <div class="insight"><strong>深度见解:</strong> 该命令揭示了政府对人工智能监管的预期方法。</div>
-            <div class="card-footer">
-                <span class="source">Politico</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.politico.com/news/2026/05/22/heres-a-draft-of-trumps-unsigned-ai-executive-order-00933411" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
-            <h3>埃博拉疫情死亡人数上升至177人：世卫组织表示担忧</h3><p class="desc">埃博拉疫情死亡人数已达177人，世界卫生组织对此表示深切关注。一名美国人正在德国接受治疗。</p>
-            <div class="insight"><strong>深度见解:</strong> 此次疫情对全球健康构成重大威胁，需要国际社会的关注。</div>
-            <div class="card-footer">
-                <span class="source">Forbes</span>
+                <span class="source">USA Today</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://www.forbes.com/sites/maryroeloffs/2026/05/22/ebola-outbreak-death-toll-reaches-177-as-uganda-now-stable-who-says-live-updates/" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.usatoday.com/story/entertainment/celebrities/2026/05/22/daniel-coleman-danny-go-14-year-old-son-dies/90215484007/" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>《星球大战：曼达洛人和格罗古》周四预告收入 1200 万美元</h3><p class="desc">《星球大战：曼达洛人和格罗古》在周四晚的预映中获得了约 1200 万美元的国内票房。</p>
-            <div class="insight"><strong>深度见解:</strong> 强劲的开场表明观众对最新一期《星球大战》的高度兴趣。</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Shein 收购 Everlane：道德奢华？</h3><p class="desc">Shein 收购了 Everlane，引发了人们对道德和经济实惠奢侈品的未来的质疑。</p>
+            <div class="insight"><strong>深度见解:</strong> 合并影响时尚业和消费者对道德品牌的看法。</div>
             <div class="card-footer">
-                <span class="source">Deadline</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="http://deadline.com/2026/05/box-office-mandalorian-and-grogu-1236918713/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
-            <h3>特朗普庆祝科尔伯特退出，并对其他深夜主持人表示不满</h3><p class="desc">特朗普总统庆祝科尔伯特离开哥伦比亚广播公司，并对其他深夜主持人发表了有争议的言论。</p>
-            <div class="insight"><strong>深度见解:</strong> 反映出特朗普与深夜电视名人的持续不和。</div>
-            <div class="card-footer">
-                <span class="source">Hollywood Reporter</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">情感倾向: Positive</span>
-                <a href="http://www.hollywoodreporter.com/tv/tv-news/trump-celebrates-colbert-cancelation-threatens-late-night-1236604262/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.0</span></div>
-            <h3>汤姆·哈迪 (Tom Hardy) 被《莫伯兰》第三季解雇</h3><p class="desc">在第二季制作完成后，汤姆·哈迪将不会出现在《魔宝乐园》第三季中。</p>
-            <div class="insight"><strong>深度见解:</strong> 演员阵容的变动影响了派拉蒙+犯罪剧的未来发展方向。</div>
-            <div class="card-footer">
-                <span class="source">Variety</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">情感倾向: Negative</span>
-                <a href="https://variety.com/2026/tv/news/tom-hardy-fired-mobland-season-3-1236757052/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.3</span></div>
-            <h3>NASA 宣布调整以加速任务交付</h3><p class="desc">美国宇航局宣布进行重组以加速任务交付，其中包括退役。</p>
-            <div class="insight"><strong>深度见解:</strong> 此次调整旨在提高美国宇航局任务运营的效率。</div>
-            <div class="card-footer">
-                <span class="source">NASA</span>
+                <span class="source">NPR</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.nasa.gov/news-release/nasa-announces-realignment-to-accelerate-mission-delivery/" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.npr.org/2026/05/22/nx-s1-5825872/shein-buys-everlane" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div></body></html>
