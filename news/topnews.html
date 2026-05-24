@@ -1,8 +1,98 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-24 10:22 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Ebola Outbreak and Pandemic Preparedness</span><span class="cluster">#Trump Administration Challenges and Policies</span><span class="cluster">#Industrial Accidents and Environmental Disasters</span><span class="cluster">#Sports News and Player Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>This news cycle is dominated by significant events across various domains, including public health crises, political tensions, and technological impacts. The Ebola outbreak and potential U.S. response failures are a major concern, alongside political challenges faced by the Trump administration. Environmental and industrial accidents, such as the China coal mine explosion and the Staten Island shipyard fire, also contribute to the somber tone.</p><div class="divider"></div><p class="insight-text">The convergence of health, political, and environmental crises highlights systemic vulnerabilities and potential cascading effects.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-24 12:55 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Ebola Outbreak and Pandemic Preparedness</span><span class="cluster">#US-Iran Tensions</span><span class="cluster">#Economic Impact of Rising Costs</span><span class="cluster">#Scientific Discoveries</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>This news compilation covers a range of global events, including a deadly coal mine explosion in China, an Ebola outbreak, and potential US-Iran conflict. Other key topics include rising fuel and electricity costs impacting travel and household budgets, and concerns about pandemic preparedness. The compilation also touches on scientific discoveries, political tensions, and social issues.</p><div class="divider"></div><p class="insight-text">The diverse range of topics highlights the interconnectedness of global events and their potential impact on various aspects of life.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.8</span></div>
-            <h3>Ebola Outbreak Tests U.S. Pandemic Preparedness</h3><p class="desc">Ebola outbreak raises concerns about U.S. ability to respond effectively due to diminished resources and personnel.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights potential weaknesses in public health infrastructure and emergency response capabilities.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Deadly Coal Mine Explosion in China</h3><p class="desc">A gas explosion at a coal mine in Shanxi province, China, killed at least 90 people. The accident occurred at Changzhi city's Liushenyu coal mine.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights safety concerns in the mining industry and the potential for devastating accidents in resource extraction.</div>
+            <div class="card-footer">
+                <span class="source">Associated Press</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://apnews.com/article/china-shanxi-coal-mine-explosion-6816642e300ae6a8aded7c8dcc3eba61" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>Ebola Outbreak: New Cases Reported in Uganda</h3><p class="desc">Three new Ebola cases reported in Uganda, with the outbreak claiming 177 lives. An American who contracted Ebola is receiving treatment in Germany.</p>
+            <div class="insight"><strong>Why this matters:</strong> The spread of Ebola raises global health concerns and underscores the need for rapid response and international cooperation.</div>
+            <div class="card-footer">
+                <span class="source">Forbes</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.forbes.com/sites/maryroeloffs/2026/05/23/ebola-outbreak-three-new-cases-reported-in-uganda-as-outbreak-kills-177/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>U.S. Preparing for Possible Strikes Against Iran</h3><p class="desc">Sources say the U.S. is preparing for possible strikes against Iran. Tensions rise over Iran's actions in the Strait of Hormuz.</p>
+            <div class="insight"><strong>Why this matters:</strong> Escalating tensions in the Middle East could lead to further instability and impact global oil supplies.</div>
+            <div class="card-footer">
+                <span class="source">CBS News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.cbsnews.com/live-updates/iran-war-trump-us-peace-talks-strait-of-hormuz-control/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>U.S. Reroutes Passengers from Ebola-Affected Countries</h3><p class="desc">U.S. restricts travel due to the Ebola outbreak. Passengers from affected countries must fly into Virginia, Texas, or Georgia.</p>
+            <div class="insight"><strong>Why this matters:</strong> Travel restrictions impact international travel and raise questions about balancing public health with individual freedoms.</div>
+            <div class="card-footer">
+                <span class="source">NPR</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.npr.org/2026/05/23/nx-s1-5831963/u-s-passengers-flying-from-ebola-affected-countries-rerouted" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>High Fuel Prices Impact Summer Travel</h3><p class="desc">High fuel prices are testing the limits of summer vacation spending as Memorial Day weekend approaches, impacting travel plans.</p>
+            <div class="insight"><strong>Why this matters:</strong> Rising fuel costs affect consumer spending and the tourism industry, potentially dampening economic activity.</div>
+            <div class="card-footer">
+                <span class="source">CNBC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.cnbc.com/2026/05/23/summer-travel-gas-airfare.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>New Browser Review and Tech Updates</h3><p class="desc">Review of a new browser, plus updates on The Mandalorian, Forza Horizon 6, and Steve Jobs in this week's Installer newsletter.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides insights into the latest trends and developments in technology and entertainment.</div>
+            <div class="card-footer">
+                <span class="source">The Verge</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.theverge.com/tech/936395/vivaldi-8-review-mandalorian-installer" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Milky Way's Galactic Cannibalism</h3><p class="desc">Scientists discover remnants suggesting the Milky Way galaxy consumed another galaxy called Loki billions of years ago.</p>
+            <div class="insight"><strong>Why this matters:</strong> Offers new insights into the formation and evolution of galaxies through galactic mergers.</div>
+            <div class="card-footer">
+                <span class="source">CNN</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.cnn.com/2026/05/23/science/milky-way-loki-galaxy" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>'La Bola Negra' Sells to Netflix</h3><p class="desc">Netflix is close to acquiring the Cannes Competition buzz title 'La Bola Negra' for distribution in the U.S.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the competitive landscape of film distribution and the growing influence of streaming services.</div>
+            <div class="card-footer">
+                <span class="source">Deadline</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="http://deadline.com/2026/05/bola-negra-sells-x-cannes-competition-penelope-cruz-1236919351/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>Islamic Center Shooting in San Diego</h3><p class="desc">Fears realized after a shooting at the Islamic Center of San Diego, raising concerns about safety and security in religious communities.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses the issue of hate crimes and the need for increased security measures at religious institutions.</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.nbcnews.com/news/us-news/deepest-fears-san-diegos-religious-communities-realized-islamic-center-rcna345993" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Ebola Outbreak Tests U.S. Pandemic Preparedness</h3><p class="desc">The Ebola crisis raises questions about the U.S.'s ability to implement a fast, coordinated response to pandemics.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the importance of maintaining strong public health infrastructure and preparedness for future outbreaks.</div>
             <div class="card-footer">
                 <span class="source">The Washington Post</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -10,9 +100,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
-            <h3>Trump Faces Republican Setbacks on Capitol Hill</h3><p class="desc">Republican lawmakers show independence from President Trump, leading to setbacks in his agenda.</p>
-            <div class="insight"><strong>Why this matters:</strong> Indicates growing internal divisions within the Republican party and potential legislative challenges.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Republican Setbacks for Trump on Capitol Hill</h3><p class="desc">Republican lawmakers began to flex their independence from the president during a chaotic week on Capitol Hill.</p>
+            <div class="insight"><strong>Why this matters:</strong> Indicates shifting political dynamics and potential challenges to the president's agenda.</div>
             <div class="card-footer">
                 <span class="source">The Washington Post</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -20,9 +110,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>Eating Disorder Patients Using GLP-1s Alarm Doctors</h3><p class="desc">Doctors are concerned about patients with eating disorders using GLP-1 drugs for weight loss.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises ethical and health concerns about off-label use of medications and potential harm to vulnerable populations.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Eating Disorder Patients Using GLP-1s</h3><p class="desc">Doctors are alarmed as patients with eating disorders are taking GLP-1 drugs, raising concerns about potential health risks.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the misuse of medications and the need for careful monitoring of patients with eating disorders.</div>
             <div class="card-footer">
                 <span class="source">The Washington Post</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -30,122 +120,32 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>Travel Restrictions Amid Ebola Outbreak May Have Unintended Consequences</h3><p class="desc">US travel restrictions due to the Ebola outbreak may lead to unforeseen negative outcomes.</p>
-            <div class="insight"><strong>Why this matters:</strong> Examines the complexities and potential drawbacks of travel restrictions in managing public health crises.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Chile's Hardline Border Control</h3><p class="desc">Chile implements stricter border control measures, including desert trenches, to crack down on migration.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects global trends in migration policies and the challenges of managing borders.</div>
             <div class="card-footer">
-                <span class="source">Abcnews.com</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://abcnews.com/Health/travel-restrictions-unintended-consequences-us-bars-visitors-amid/story?id\\u003d133181426" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>China Coal Mine Explosion Kills 90, Deadliest Since 2009</h3><p class="desc">A gas explosion in a China coal mine resulted in 90 fatalities, marking the deadliest incident since 2009.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights safety concerns in the mining industry and the human cost of industrial accidents.</div>
-            <div class="card-footer">
-                <span class="source">Bloomberg</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.bloomberg.com/news/articles/2026-05-23/xi-urges-chinese-authorities-to-curb-accidents-after-mine-blast" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">NPR</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Trump Considers New Strikes Against Iran</h3><p class="desc">President Trump is considering launching new strikes against Iran amid stalled negotiations.</p>
-            <div class="insight"><strong>Why this matters:</strong> Indicates potential escalation of tensions in the Middle East and renewed military conflict.</div>
-            <div class="card-footer">
-                <span class="source">Axios</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.axios.com/2026/05/22/trump-iran-meeting-resume-war-deal" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.5</span></div>
-            <h3>Evacuation Orders Issued in California City Over Chemical Tank</h3><p class="desc">Evacuation orders are in effect in a California city due to the risk of a chemical tank explosion.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses immediate safety concerns and potential environmental hazards in populated areas.</div>
-            <div class="card-footer">
-                <span class="source">Abcnews.com</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://abcnews.com/US/evacuation-orders-issued-california-city-chemical-tank-fails/story?id\\u003d133234846" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
-            <h3>Police Ordered Guns Removed From Mosque Shooter's Home in 2025</h3><p class="desc">Authorities were aware of the mosque shooter's past behavior, raising questions about prevention.</p>
-            <div class="insight"><strong>Why this matters:</strong> Examines potential failures in law enforcement and intelligence gathering that could have prevented the attack.</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.washingtonpost.com/nation/2026/05/22/police-ordered-guns-be-removed-mosque-shooters-home-2025/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.8</span></div>
-            <h3>Tulsi Gabbard Resigns as Director of National Intelligence</h3><p class="desc">Tulsi Gabbard resigns from her position as Director of National Intelligence due to a family issue.</p>
-            <div class="insight"><strong>Why this matters:</strong> Signals a change in leadership within the intelligence community, attributed to personal reasons.</div>
-            <div class="card-footer">
-                <span class="source">Axios</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.axios.com/2026/05/22/tulsi-gabbard-removed-trump-administration" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.7</span></div>
-            <h3>Trump Administration to Force Foreigners to Apply for Green Card Abroad</h3><p class="desc">Foreigners in the U.S. must apply for a green card in their home country, a policy change.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights changes in immigration policy and potential impacts on individuals seeking permanent residency.</div>
+            <h3>Rising Electricity Costs This Summer</h3><p class="desc">Summer electric bills are expected to increase due to rising electricity prices and hotter-than-usual weather.</p>
+            <div class="insight"><strong>Why this matters:</strong> Impacts household budgets and raises concerns about energy affordability during peak demand periods.</div>
             <div class="card-footer">
                 <span class="source">NPR</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.npr.org/2026/05/23/nx-s1-5832399/trump-administration-green-card-abroad" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.npr.org/2026/05/23/nx-s1-5823767/summer-heat-electric-bills-cost" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>De'Aaron Fox, Dylan Harper Cleared for Game 3, Jalen Williams Ruled Out</h3><p class="desc">De'Aaron Fox & Dylan Harper play in Game 3, Jalen Williams is out.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides updates on player availability for a significant NBA game.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Remains of Divers Repatriated from Maldives</h3><p class="desc">The remains of four Italian divers killed in a Maldives cave dive have been repatriated after going missing on May 14.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the dangers of underwater exploration and the importance of safety measures.</div>
             <div class="card-footer">
-                <span class="source">Heat.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.nba.com/news/spurs-guards-deaaron-fox-dylan-harper-cleared-to-play-in-game-3-but-thunders-jalen-williams-ruled-out" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
-            <h3>Nebraska Softball Crushes Oklahoma State in Supers</h3><p class="desc">Nebraska softball defeats Oklahoma State 8-1 in the Super Regionals.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on a significant victory in college softball, advancing Nebraska towards the WCWS.</div>
-            <div class="card-footer">
-                <span class="source">On3.com</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.on3.com/teams/nebraska-cornhuskers/news/no-4-nebraska-softball-crushes-no-13-oklahoma-state-8-1-in-supers/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.8</span></div>
-            <h3>Your Love Horoscope For Saturday, May 23: Be Willing To Put In The Work Today</h3><p class="desc">Daily love horoscope for Saturday, May 23, 2026, advises effort in relationships.</p>
-            <div class="insight"><strong>Why this matters:</strong> Offers astrological insights into love and relationships for a specific date.</div>
-            <div class="card-footer">
-                <span class="source">YourTango</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.yourtango.com/2026397626/love-horoscope-saturday-may-23-2026" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.9</span></div>
-            <h3>'T. rex of the sea': New Ancient Marine Species Identified</h3><p class="desc">Researchers identify a new species of mosasaur, a 'T. rex of the sea'.</p>
-            <div class="insight"><strong>Why this matters:</strong> Contributes to our understanding of prehistoric marine life and evolutionary history.</div>
-            <div class="card-footer">
-                <span class="source">The Dallas Morning News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.dallasnews.com/news/article/perot-museum-new-species-dinosaurs-trex-sea-22264761.php" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">7.7</span></div>
-            <h3>Staten Island Fire: Explosion in Shipyard Injures Dozens</h3><p class="desc">Explosion and fire at a Staten Island shipyard injures at least 31 people, including firefighters; one fatality.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on a major industrial accident with significant casualties and potential safety implications.</div>
-            <div class="card-footer">
-                <span class="source">WABC-TV</span>
+                <span class="source">Associated Press</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://abc7ny.com/post/staten-island-fire-least-31-people-injured-explosion-shipyard/19152007/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://apnews.com/article/italy-divers-maldives-died-underwater-cave-ae9cedf007cd3ca3b248899c92684d36" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
