@@ -1,8 +1,98 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-23 06:27 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime and Public Safety</span><span class="cluster">#Traffic and Accidents</span><span class="cluster">#NASCAR Driver Kyle Busch's Death</span><span class="cluster">#Health and Wellness</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in Charlotte and surrounding areas is dominated by crime, traffic incidents, and the unexpected death of NASCAR driver Kyle Busch. Several shooting incidents have resulted in fatalities and serious injuries, impacting the community. The passing of Kyle Busch has prompted widespread mourning and tributes, affecting the sports community and beyond.</p><div class="divider"></div><p class="insight-text">The local news landscape reflects a community grappling with both tragic events and everyday challenges.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-23 09:29 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Crime in Charlotte</span><span class="cluster">#Local Sports Tournaments</span><span class="cluster">#New Business Openings</span><span class="cluster">#Weather Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in Charlotte and surrounding areas covers a range of topics, including crime, sports, and community events. Several articles detail violent incidents, including a murder and a stabbing, highlighting public safety concerns. Other stories focus on positive developments, such as the opening of a new Wegmans store and local sports tournaments.</p><div class="divider"></div><p class="insight-text">The prevalence of crime-related news suggests a need for increased community safety initiatives and awareness.</p></div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Details Emerge in Kyle Busch Death Investigation</h3><p class="desc">New details are released regarding the death of NASCAR driver Kyle Busch during a visit to Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> The death of a prominent figure brings attention to safety and security in the Charlotte area.</div>
+            <div class="card-footer">
+                <span class="source">Asheville Citizen-Times</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.citizen-times.com/story/news/2026/05/22/what-happened-to-kyle-busch-911-call-illness-north-carolina/90218830007/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Wegmans Announces Charlotte Store Opening Date</h3><p class="desc">Wegmans grocery store chain reveals the opening date for its first location in Charlotte, NC.</p>
+            <div class="insight"><strong>Why this matters:</strong> New grocery store provides jobs and increases consumer choice in the Charlotte market.</div>
+            <div class="card-footer">
+                <span class="source">Rochester Democrat and Chronicle</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.democratandchronicle.com/story/grocery/stores/2026/05/21/wegmans-reveals-opening-date-for-charlotte-nc-store/90197565007/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.0</span></div>
+            <h3>Virginia Baseball Heads to ACC Tournament in Charlotte</h3><p class="desc">Virginia baseball team is the No. 8 seed in the ACC tournament, playing in Charlotte this week.</p>
+            <div class="insight"><strong>Why this matters:</strong> The ACC tournament brings regional sports fans and revenue to Charlotte.</div>
+            <div class="card-footer">
+                <span class="source">Charlottesville Progress</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://dailyprogress.com/sports/college/baseball/virginia-cavaliers/article_92d9ce36-bb0d-45f9-992b-e3c0b3d556e9.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
         <div class="card">
             <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Rock Hill Man Indicted for Threatening President</h3><p class="desc">A Rock Hill man was indicted for allegedly making threats against the president.</p>
-            <div class="insight"><strong>Why this matters:</strong> Threats against public officials are taken seriously and can result in legal consequences.</div>
+            <h3>ACC Tournament Game in Charlotte Featured on TV</h3><p class="desc">Duke vs. NC State game in the Atlantic Coast Tournament from Charlotte is broadcasted on ACCN.</p>
+            <div class="insight"><strong>Why this matters:</strong> Showcases Charlotte as a venue for major sporting events.</div>
+            <div class="card-footer">
+                <span class="source">WTOP</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://wtop.com/sports/2026/05/sports-on-tv-for-tuesday-may-19/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>NC NAACP Defends President on Interim Mayor Stance</h3><p class="desc">NC NAACP defends Corine Mack after her comments regarding White candidates for Charlotte's interim mayor.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights ongoing discussions about race and representation in local government.</div>
+            <div class="card-footer">
+                <span class="source">Fox News</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.foxnews.com/media/naacp-official-condemns-white-politicians-trying-replace-resigning-black-mayor" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Retirement Planning Film Features Charlotte Expert</h3><p class="desc">Keith Helmendach of HK Solutions featured in 'Retirement Everest,' a film about retirement decumulation risks.</p>
+            <div class="insight"><strong>Why this matters:</strong> Local expert contributes to national conversation on retirement planning.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.manilatimes.net/2026/05/12/tmt-newswire/globenewswire/keith-helmendach-of-hk-solutions-featured-inretirement-everestas-film-examines-decumulation-risks/2341285" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Mountains and Weather Patterns in Charlotte</h3><p class="desc">Meteorologist explains how mountains impact weather in the Charlotte area and Piedmont region.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides insight into local weather patterns and geographical influences.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/weather/weather-iq/can-mountains-actually-break-up-severe-weather-weather-iq/275-0aecb71b-e21e-46fa-aeeb-e3bc3870706e" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Scattered Showers Forecast for Memorial Day Weekend</h3><p class="desc">Charlotte area forecast predicts scattered showers and storms for the Memorial Day weekend.</p>
+            <div class="insight"><strong>Why this matters:</strong> Impacts outdoor activities and travel plans for the holiday weekend.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
+            <h3>Stabbing Reported in South Charlotte</h3><p class="desc">One person was injured in a stabbing incident on Seneca Place in south Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises concerns about public safety and violent crime in the area.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/one-hurt-in-south-charlotte-stabbing/275-7cb03ad7-d853-4809-81e1-56144533eae1" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.0</span></div>
+            <h3>SC Man Indicted for Threats Against President</h3><p class="desc">A Rock Hill, SC man was indicted for allegedly making threats against the president.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the issue of threats against public officials.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -10,9 +100,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.2</span></div>
-            <h3>Man Charged with Murder in Shooting Death of Teen</h3><p class="desc">Taquawn Lewis faces first-degree murder charges in the death of 16-year-old Joseph Samuel in Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the ongoing issue of gun violence and its impact on young people in the community.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
+            <h3>Felon Charged with Murder in Charlotte Shooting</h3><p class="desc">A convicted felon faces murder charges for the shooting death of a 16-year-old in northeast Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses serious concerns about gun violence and repeat offenders.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -20,19 +110,19 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
-            <h3>House Fire Prompts Emergency Response Near Uptown</h3><p class="desc">Fire crews responded to a house fire on Spruce Street near Uptown Charlotte on Saturday.</p>
-            <div class="insight"><strong>Why this matters:</strong> House fires can pose significant risks to residents and require prompt emergency response.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>House Fire Reported Near Uptown Charlotte</h3><p class="desc">Fire crews responded to a house fire on Spruce Street near Uptown Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights potential fire safety risks in residential areas.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
                 <a href="https://www.wcnc.com/article/news/local/charlotte-fire-responds-to-house-fire-near-uptown/275-0fca4639-abdf-4fa4-bb14-a4f4e54cad69" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">5.8</span></div>
-            <h3>Crash Closes Lanes on I-77 South Near Mooresville</h3><p class="desc">A traffic accident closed lanes on I-77 South near Exit 33 in Mooresville, causing delays.</p>
-            <div class="insight"><strong>Why this matters:</strong> Traffic incidents can disrupt commutes and pose safety hazards for drivers.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
+            <h3>Crash Closes Lanes on I-77 South</h3><p class="desc">A traffic accident closed lanes of I-77 South near Mooresville.</p>
+            <div class="insight"><strong>Why this matters:</strong> Impacts traffic and travel on a major highway.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -40,112 +130,22 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>NoDa Homicide Suspect Arrested in Alabama</h3><p class="desc">The suspect in a NoDa homicide case has been apprehended in Alabama and will be extradited.</p>
-            <div class="insight"><strong>Why this matters:</strong> The arrest brings a step towards justice for the victim and their family.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>NoDa Homicide Suspect Arrested in Alabama</h3><p class="desc">A suspect in a NoDa homicide was arrested in Alabama and will be extradited to Mecklenburg County.</p>
+            <div class="insight"><strong>Why this matters:</strong> Demonstrates law enforcement efforts to apprehend violent offenders.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
                 <a href="https://www.wcnc.com/article/news/crime/noda-homicide-suspect-arrested-in-alabama/275-acd54e00-4051-49ad-ab7d-5df06bd43855" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">3.2</span></div>
-            <h3>Scattered Storms and Showers Expected This Weekend</h3><p class="desc">The weather forecast predicts unsettled conditions with scattered storms and showers throughout the weekend.</p>
-            <div class="insight"><strong>Why this matters:</strong> Weather updates help residents plan their activities and prepare for potential disruptions.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Community Mourns Teen Killed Outside Her Home</h3><p class="desc">A community in Rock Hill held a balloon release for 19-year-old Camariya Tidwell, who was fatally shot.</p>
-            <div class="insight"><strong>Why this matters:</strong> The tragic loss of a young life highlights the impact of violence on families and communities.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Community Mourns Teen Killed in Rock Hill Shooting</h3><p class="desc">Family holds balloon release for 19-year-old Camariya Tidwell, fatally shot outside her home in Rock Hill.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the impact of gun violence on families and communities.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
                 <a href="https://www.wcnc.com/article/news/local/family-holds-balloon-release-for-19-year-old-shot-and-killed-outside-her-home/275-4305e31d-95f6-43ce-98d2-4d9289446454" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Flags Lowered to Half-Staff in Honor of Kyle Busch</h3><p class="desc">Gov. Stein ordered flags to be flown at half-staff to honor the late NASCAR driver Kyle Busch.</p>
-            <div class="insight"><strong>Why this matters:</strong> A mark of respect for a significant figure in the racing community.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/flags-ordered-at-half-staff-in-honor-of-late-nascar-driver-kyle-busch/275-fc16e0e9-efcd-4c37-8889-01b4b6a56763" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
-            <h3>Memorial Day Travel Expected Despite High Gas Prices</h3><p class="desc">Millions are expected to travel for Memorial Day weekend despite high gas prices; experts offer saving tips.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides practical advice for travelers during a peak travel period.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/memorial-day-weekend-travel/275-e5c9b5d8-3a54-418b-ad3f-e94521157e61" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>911 Call Reveals Medical Emergency at Simulator Facility</h3><p class="desc">A 911 call from a Concord facility reveals a medical emergency on the day Kyle Busch reportedly fell ill.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides more context surrounding the circumstances of Kyle Busch's death.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/911-call-from-gm-charlotte-technical-center/275-ed9cd9cd-b24d-4955-8844-c3151c640a73" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>Racing Community Mourns Kyle Busch's Death</h3><p class="desc">Greg Biffle's family pays tribute to Kyle Busch, reflecting on their deep friendship and his impact.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the personal connections and grief within the racing community.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/sports/motor/nascar/biffle-family-speaks-on-kyle-buschs-death/275-f2225f01-5496-4a95-b958-09ccbb21eed0" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Doctors Explore 'Ozempic Personality' Side Effects</h3><p class="desc">Doctors are investigating reports of patients experiencing emotional flatness while taking Ozempic.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises awareness of potential psychological side effects of popular medications.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/connect-the-dots/ozempic-personality-connect-the-dots/275-e2428e2e-7bf3-4f47-ae29-120fe077c0a6" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
-            <h3>Two People Seriously Injured in West Charlotte Shooting</h3><p class="desc">Two individuals sustained life-threatening injuries in a shooting in west Charlotte; investigation ongoing.</p>
-            <div class="insight"><strong>Why this matters:</strong> Contributes to the ongoing concern about gun violence in the city.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/pressley-road-double-shooting-charlotte/275-9d0cfdc9-8bb1-40b4-ad0b-66f529556c69" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>Woman Dies After Crash with Police Cruiser</h3><p class="desc">A woman died weeks after a crash involving a CMPD cruiser; the officer involved is on paid leave.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises questions about police conduct and accountability.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/woman-dies-weeks-after-cmpd-cruiser-crashes-into-vehicle/275-b2c901f0-5ec8-412f-8abf-522e22a973b1" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
-            <h3>Legendary NASCAR Driver Kyle Busch Dies at 41</h3><p class="desc">Kyle Busch, a two-time NASCAR Cup Series champion, passed away at the age of 41.</p>
-            <div class="insight"><strong>Why this matters:</strong> The death of a prominent sports figure has a significant impact on fans and the racing world.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/sports/motor/nascar/kyle-busch-dies-at-41/275-0bd71c1d-8e42-4113-8fc1-509022b631e3" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
