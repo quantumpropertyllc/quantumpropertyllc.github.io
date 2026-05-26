@@ -1,18 +1,118 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-25 09:26 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Weather and seasonal events (Memorial Day)</span><span class="cluster">#Legal and criminal justice system</span><span class="cluster">#Infrastructure and utilities (roads, power outages)</span><span class="cluster">#Local government and community issues</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news for May 26, 2026, covers a range of topics including weather disturbances, legal disputes, infrastructure concerns, and crime reports. The region is also observing Memorial Day with commemorative events. Several articles highlight ongoing challenges and developments within the community.</p><div class="divider"></div><p class="insight-text">The local news landscape reflects a mix of routine events and significant issues impacting residents' daily lives and long-term well-being.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-26 10:13 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Charlotte Interim Mayor Selection</span><span class="cluster">#Data Center Development Opposition</span><span class="cluster">#Local Sports Events and Updates</span><span class="cluster">#Community Safety and Legal Issues</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Local news in Charlotte, NC, covers a range of topics including politics, sports, business, and community concerns. Key issues include the selection of an interim mayor, tensions surrounding data center developments, and concerns over overcrowded jail conditions. The articles also highlight sports events, business openings, and legal proceedings.</p><div class="divider"></div><p class="insight-text">The local news landscape reflects a community grappling with growth, change, and the challenges of balancing progress with resident concerns.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
-            <h3>Memorial Day Weekend Weather Update</h3><p class="desc">Scattered showers and storms are expected to continue through the evening and into Tuesday.</p>
-            <div class="insight"><strong>Why this matters:</strong> Stay informed about potential weather disruptions during Memorial Day weekend activities.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Details Emerge in Kyle Busch Death Investigation</h3><p class="desc">New details are revealed from the 911 call related to Kyle Busch's death during a visit to Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> The death of a prominent NASCAR driver brings attention to safety and security in the Charlotte area.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">Asheville Citizen-Times</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.citizen-times.com/story/news/2026/05/22/what-happened-to-kyle-busch-911-call-illness-north-carolina/90218830007/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>Solar Plant Dispute Heads to Court</h3><p class="desc">Residents appeal BZA decision regarding Silfab Solar plant, citing health concerns and relocation plans.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights community concerns over industrial development and its impact on residential areas.</div>
+            <h3>Wegmans Announces Charlotte Store Opening Date</h3><p class="desc">Wegmans grocery store chain announces the opening date for its first store in Charlotte, NC.</p>
+            <div class="insight"><strong>Why this matters:</strong> The arrival of Wegmans signifies economic growth and increased competition in the grocery market.</div>
+            <div class="card-footer">
+                <span class="source">Rochester Democrat and Chronicle</span>
+                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
+                <a href="https://www.democratandchronicle.com/story/grocery/stores/2026/05/21/wegmans-reveals-opening-date-for-charlotte-nc-store/90197565007/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.0</span></div>
+            <h3>Virginia Baseball Heads to ACC Tournament in Charlotte</h3><p class="desc">Virginia baseball team is the No. 8 seed for the ACC tournament in Charlotte, facing NC State or Duke.</p>
+            <div class="insight"><strong>Why this matters:</strong> The ACC tournament brings regional sports competition and tourism to Charlotte.</div>
+            <div class="card-footer">
+                <span class="source">Charlottesville Progress</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://dailyprogress.com/sports/college/baseball/virginia-cavaliers/article_92d9ce36-bb0d-45f9-992b-e3c0b3d556e9.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
+            <h3>Sports on TV: ACC Tournament in Charlotte</h3><p class="desc">TV schedule includes the Atlantic Coast Tournament: Duke vs. NC State, First Round, Charlotte, N.C.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the broadcast schedule for sports events, including those held in Charlotte.</div>
+            <div class="card-footer">
+                <span class="source">WTOP</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://wtop.com/sports/2026/05/sports-on-tv-for-tuesday-may-19/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>NC NAACP Defends President on Interim Mayor Stance</h3><p class="desc">North Carolina NAACP defends Corine Mack's opposition to White interim mayor candidates in Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises questions about race and representation in local political leadership.</div>
+            <div class="card-footer">
+                <span class="source">Fox News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.foxnews.com/media/naacp-official-condemns-white-politicians-trying-replace-resigning-black-mayor" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
+            <h3>Retirement Planning Film Features Charlotte Expert</h3><p class="desc">Keith Helmendach of HK Solutions featured in 'Retirement Everest,' examining retirement decumulation risks.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights local expertise in financial planning and addresses retirement challenges.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.manilatimes.net/2026/05/12/tmt-newswire/globenewswire/keith-helmendach-of-hk-solutions-featured-inretirement-everestas-film-examines-decumulation-risks/2341285" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
+            <h3>Groups Urge Ban on ICE at Charlotte Soccer Match</h3><p class="desc">Charlotte advocacy groups call for a ban on ICE at a US soccer match, citing safety concerns.</p>
+            <div class="insight"><strong>Why this matters:</strong> Concerns about immigration enforcement and community safety at public events.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-advocacy-groups-call-for-ice-free-zone-at-us-soccer-sendoff-match-at-bank-of-america-stadium/275-93d88732-36b0-4392-b245-e3045048c122" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>East Charlotte Residents Oppose Data Center Moratorium</h3><p class="desc">Residents and activists oppose data center developments in Charlotte, pushing for a moratorium due to drought concerns.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights tensions between development and environmental concerns in Charlotte.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-city-council-discusses-data-centers-in-east-charlotte/275-601d94a7-e9f7-4a65-b535-6950af91374d" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>Charlotte City Council to Choose Interim Mayor</h3><p class="desc">Charlotte City Council prepares to appoint an interim mayor after Vi Lyles' resignation on June 30.</p>
+            <div class="insight"><strong>Why this matters:</strong> The selection of an interim mayor is a critical decision for Charlotte's leadership.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-city-council-prepares-to-discuss-process-to-fill-mayors-seat/275-8a2476b3-b224-4a2f-8d7b-5a0ae5511e94" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
+            <h3>Scattered Showers and Storms Expected</h3><p class="desc">Pockets of isolated flooding are possible as storms bring heavy downpours to the area.</p>
+            <div class="insight"><strong>Why this matters:</strong> Weather updates are important for local safety and preparedness.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
+            <h3>Arrest Made in 'Sun Drop Murders' Cold Case</h3><p class="desc">A suspect is arrested in connection with the 2008 double homicide at a Concord bottling company.</p>
+            <div class="insight"><strong>Why this matters:</strong> The resolution of a long-standing cold case brings closure and justice.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.wcnc.com/article/news/local/suspect-arrested-in-nearly-18-year-old-sun-drop-murders-cold-case/275-ef536a50-0863-45f6-a47d-62c3c16c1ce3" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
+            <h3>Solar Farm Dispute Heads to Court</h3><p class="desc">Residents express concerns about living near a solar farm, citing potential health risks and property value decline.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the challenges of balancing renewable energy development with community concerns.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -20,9 +120,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.2</span></div>
-            <h3>Jail Overcrowding Hinders Reentry Programs</h3><p class="desc">Overcrowding in Mecklenburg jail impacts reentry support, crucial for reducing recidivism.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses the challenges in providing rehabilitation services due to systemic issues.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.9</span></div>
+            <h3>Jail Overcrowding Hurts Reentry Programs</h3><p class="desc">Mecklenburg's overcrowded jail impacts reentry support classes, hindering rehabilitation efforts.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses the impact of jail overcrowding on inmates' access to crucial support services.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -30,9 +130,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>New Congressional Maps Impact Election</h3><p class="desc">South Carolina may hold a separate primary for U.S. House seats on Aug. 18 due to new maps.</p>
-            <div class="insight"><strong>Why this matters:</strong> Explains potential changes in election procedures due to redistricting.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.7</span></div>
+            <h3>SC Congressional Map Changes Mid-Election</h3><p class="desc">South Carolina may approve new congressional maps mid-election, potentially leading to a separate primary.</p>
+            <div class="insight"><strong>Why this matters:</strong> Explains the potential impact of redistricting on upcoming elections in South Carolina.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -40,112 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Rough Railroad Crossings Frustrate Drivers</h3><p class="desc">Residents complain about deteriorating railroad crossings in NoDa, causing navigation difficulties.</p>
-            <div class="insight"><strong>Why this matters:</strong> Addresses infrastructure issues affecting daily commutes and vehicle safety.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.4</span></div>
+            <h3>Rough Railroad Crossings Frustrate Drivers</h3><p class="desc">Drivers in NoDa are frustrated by rough railroad crossings with uneven tracks and loose gravel.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses local infrastructure issues and their impact on residents' daily lives.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
                 <a href="https://www.wcnc.com/article/news/local/drivers-frustrated-by-rough-railroad-crossings-in-charlottes-noda-neighborhood/275-f6938a3b-1061-41be-98a9-7ede05403ee0" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Lake Wylie Under No Swim Advisory</h3><p class="desc">Sewer spill leads to a No Swim Advisory for Island Cove on Lake Wylie.</p>
-            <div class="insight"><strong>Why this matters:</strong> Informs the public about potential health hazards in recreational waters.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/lake-wylie-island-cove-under-no-swim-advisory-for-sewer-spill/275-f913a9dc-a1a7-4b6a-8770-026d8df4e4f3" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Planned Power Outage in Newton</h3><p class="desc">Duke Energy maintenance will cause a power outage overnight Tuesday in Newton.</p>
-            <div class="insight"><strong>Why this matters:</strong> Alerts residents about a scheduled power interruption for maintenance work.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/power-outages-planned-for-newton-next-week/275-95800e4d-0375-47e3-b26d-96ac24c93672" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.8</span></div>
-            <h3>Memorial Day Ceremony in Charlotte</h3><p class="desc">Gethsemane Cemetery hosts a Memorial Day ceremony to honor fallen service members.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides information about a local event commemorating Memorial Day.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-memorial-day-service-may-25-2026/275-b5859b7f-8010-4a48-a7f8-1eb6a56c709b" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.5</span></div>
-            <h3>Teen Driver Hits Officers at Checkpoint</h3><p class="desc">Two Conover officers injured after being struck by a teen driver at a license checkpoint.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on a serious incident involving law enforcement and traffic safety.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/local/conover-officers-injured-at-checkpoint-chief-says/275-7628c959-71c1-4cd7-b1a0-29687eecfd0a" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.0</span></div>
-            <h3>Man Indicted for Threatening Trump</h3><p class="desc">Rock Hill man faces federal charges for allegedly making online threats against President Trump.</p>
-            <div class="insight"><strong>Why this matters:</strong> Covers a significant legal case involving threats against a public figure.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/south-carolina-man-indicted-after-threatening-to-kill-president-trump/275-3bb5141c-65e2-47d6-885a-2198ad10e5f1" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.2</span></div>
-            <h3>Murder Charge Filed in Richmond County</h3><p class="desc">A man is charged with murder after a deadly shooting in Richmond County.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on a violent crime and its legal consequences.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/deadly-windblow-richmond-county-shooting/275-b760bcf6-d30a-4a74-83a2-4f9e1ed3331b" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
-            <h3>Charlotte Airport Extends Lease Talks</h3><p class="desc">Charlotte Douglas and American Airlines extend lease negotiations for up to one year.</p>
-            <div class="insight"><strong>Why this matters:</strong> Ensures continued airport operations during lease negotiations.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-douglas-and-american-airlines-extends-lease-agreement/275-4a67dcb7-dace-48a3-8a6d-a9e8ab85af27" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.7</span></div>
-            <h3>School Employee Charged with Fraud</h3><p class="desc">Former Union County Schools employee charged with fraud for allegedly filing fake mileage claims.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on financial misconduct within the local school system.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/former-union-county-schools-employee-charged-with-submitting-false-mileage-reimbursement-claims/275-9905b32f-f580-4a13-88c0-0b4cd65487c2" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.8</span></div>
-            <h3>NoDa Homicide Suspect Arrested</h3><p class="desc">Suspect in NoDa homicide arrested in Alabama and will be extradited.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides updates on a major crime investigation and apprehension of the suspect.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.wcnc.com/article/news/crime/noda-homicide-suspect-arrested-in-alabama/275-acd54e00-4051-49ad-ab7d-5df06bd43855" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
-            <h3>Daniel Suárez Wins Coca-Cola 600</h3><p class="desc">Daniel Suárez wins rain-shortened Coca-Cola 600 with a strategic pit stop.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reports on a major sporting event and its outcome.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
-                <a href="https://www.wcnc.com/article/sports/motor/nascar/daniel-surez-wins-rain-shortened-coca-cola-600/275-b8e351d1-373c-4f23-aefb-152d75b60441" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
