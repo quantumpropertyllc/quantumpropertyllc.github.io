@@ -1,38 +1,78 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-31 04:03 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Donald Trump's political activities and influence</span><span class="cluster">#Sports news: Champions League final and UFC Macau</span><span class="cluster">#Entertainment industry updates: movie sequels and box office success</span><span class="cluster">#Health and safety concerns: hantavirus monitoring and deputy shooting</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>This news cycle covers a range of topics, from entertainment and sports to politics and international affairs. Several articles focus on Donald Trump's actions and influence, while others highlight events in sports and entertainment. The cycle also includes reports on health-related issues and technological advancements.</p><div class="divider"></div><p class="insight-text">The prominence of Donald Trump in various news items suggests his continued influence on American politics and global affairs.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-05-31 06:54 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Trump's activities and legal challenges</span><span class="cluster">#Public health concerns (Ebola, Hantavirus)</span><span class="cluster">#Entertainment industry news</span><span class="cluster">#Security and safety incidents</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>This news cycle covers a range of topics from political rallies and legal battles involving Trump to scientific phenomena and public health crises. There are also reports on entertainment industry news, security breaches, and economic trends related to AI. The articles highlight both domestic and international events, reflecting a diverse set of concerns and developments.</p><div class="divider"></div><p class="insight-text">The convergence of political, technological, and health-related news underscores the complex and interconnected challenges facing society.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.5</span></div>
-            <h3>Kelly Curtis, Actress and Sister of Jamie Lee Curtis, Dies at 69</h3><p class="desc">Kelly Curtis, actress and sister of Jamie Lee Curtis, passed away at 69.</p>
-            <div class="insight"><strong>Why this matters:</strong> A notable figure in the entertainment industry passes away, impacting family and fans.</div>
-            <div class="card-footer">
-                <span class="source">Variety</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://variety.com/2026/film/news/kelly-curtis-dead-the-sentinel-sister-of-jamie-lee-curtis-1236763114/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.2</span></div>
-            <h3>PSG and Arsenal Draw in Champions League Final</h3><p class="desc">PSG 1-1 Arsenal in the UEFA Champions League final.</p>
-            <div class="insight"><strong>Why this matters:</strong> A major sporting event draws global attention and impacts team standings.</div>
-            <div class="card-footer">
-                <span class="source">NBCSports.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.nbcsports.com/soccer/live/psg-vs-arsenal-live-updates-score-goals-highlights-stats-champions-league-final" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.8</span></div>
-            <h3>Dispute Over Home Monitoring of Hantavirus Passengers</h3><p class="desc">Disagreement over monitoring passengers returning from quarantine facility.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights tensions between public health safety and individual liberties.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Trump to Headline Great American State Fair After Music Acts Cancel</h3><p class="desc">Trump to hold rally after music acts drop out of Great American State Fair concert series on the National Mall.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights Trump's continued influence and ability to draw crowds despite controversies.</div>
             <div class="card-footer">
                 <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.washingtonpost.com/politics/2026/05/30/trump-headline-great-american-state-fair-after-music-acts-cancel/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">7.0</span></div>
+            <h3>Possible Meteor Causes Loud Boom in Boston</h3><p class="desc">A loud boom and shaking felt across Greater Boston may have been caused by a meteor, according to a meteorologist.</p>
+            <div class="insight"><strong>Why this matters:</strong> Illustrates the unpredictable nature of space events and their potential impact on populated areas.</div>
+            <div class="card-footer">
+                <span class="source">WBUR</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wbur.org/news/2026/05/30/boston-massachusetts-meteor-boom-explosive-sound" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>Dueling Protests at New Jersey ICE Detention Center</h3><p class="desc">Pro-ICE protesters clash with demonstrators supporting detainees at a Newark, NJ, immigration detention center.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reflects ongoing divisions and tensions surrounding immigration policies and detention conditions.</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.nbcnews.com/news/us-news/delaney-hall-protests-new-jersey-rcna347685" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.0</span></div>
+            <h3>Hannah Waddingham Denies 'Wicked' Audition Rumors</h3><p class="desc">Hannah Waddingham clarifies she never auditioned for Madame Morrible in the upcoming 'Wicked' adaptation.</p>
+            <div class="insight"><strong>Why this matters:</strong> Addresses speculation and provides clarity on casting rumors within the entertainment industry.</div>
+            <div class="card-footer">
+                <span class="source">IMDb</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.imdb.com/de/news/ni65862979/?ref_\\u003dnwc_art_perm" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Trump Lashes Out After Judge Blocks Kennedy Center Renaming</h3><p class="desc">A judge ruled that Trump's name must be removed from the Kennedy Center for the Performing Arts, leading to Trump's criticism.</p>
+            <div class="insight"><strong>Why this matters:</strong> Demonstrates ongoing legal and political battles surrounding Trump's legacy and influence.</div>
+            <div class="card-footer">
+                <span class="source">Forbes</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.forbes.com/sites/antoniopequenoiv/2026/05/30/trump-blasts-wife-of-judge-who-ruled-his-name-must-be-removed-from-kennedy-center/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
+            <h3>US Disables Ship Trying to Breach Blockade to Iran</h3><p class="desc">U.S. forces disabled a Gambia-flagged carrier attempting to breach a blockade and reach Iran after it ignored warnings.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights tensions and enforcement of sanctions related to Iran and maritime security.</div>
+            <div class="card-footer">
+                <span class="source">Politico</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.politico.com/news/2026/05/30/us-says-it-disabled-another-commercial-ship-trying-to-breach-blockade-and-reach-iran-00943643" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.5</span></div>
+            <h3>Dispute Over Home Monitoring of Hantavirus Passengers</h3><p class="desc">White House officials are negotiating with state officials over home monitoring for those returning from a hantavirus quarantine facility.</p>
+            <div class="insight"><strong>Why this matters:</strong> Illustrates the challenges and debates surrounding public health monitoring and individual liberties.</div>
+            <div class="card-footer">
+                <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
                 <a href="https://www.washingtonpost.com/health/2026/05/30/dispute-grows-over-monitoring-hantavirus-passengers-who-could-soon-return-home/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Deputy Fatally Shot, Another Injured in Carroll County</h3><p class="desc">A deputy was killed and another injured during a welfare check; suspect at large.</p>
-            <div class="insight"><strong>Why this matters:</strong> Illustrates the dangers faced by law enforcement officers.</div>
+            <h3>Deputy Fatally Shot, Another Injured; Suspect at Large</h3><p class="desc">A deputy was fatally shot, and another was injured during a welfare check in Carroll County. The suspect remains at large.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the dangers faced by law enforcement officers and the importance of community safety.</div>
             <div class="card-footer">
                 <span class="source">WSET</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -40,19 +80,19 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.2</span></div>
-            <h3>'A Minecraft Movie' Sequel Title Revealed</h3><p class="desc">Warner Bros. announces the title for the 'A Minecraft Movie' sequel: 'A Minecraft Movie Squared'.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides update on a popular movie franchise.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.5</span></div>
+            <h3>Kelly Curtis, Actress and Sister of Jamie Lee Curtis, Dies at 69</h3><p class="desc">Kelly Curtis, actress and sister of Jamie Lee Curtis, passed away at 69. Jamie Lee Curtis shares a heartfelt tribute.</p>
+            <div class="insight"><strong>Why this matters:</strong> Reports on the passing of a notable figure and the personal impact on her family.</div>
             <div class="card-footer">
-                <span class="source">Deadline</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="http://deadline.com/2026/05/minecraft-movie-sequel-title-1236931057/" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">TheWrap</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.thewrap.com/media-platforms/tv/kelly-curtis-trading-places-and-star-trek-actress-and-sister-of-jamie-lee-curtis-dies-at-69/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>'Backrooms' Shatters A24 Opening Weekend Record</h3><p class="desc">'Backrooms' earns $38 million on Friday, breaking A24's opening weekend record.</p>
-            <div class="insight"><strong>Why this matters:</strong> Demonstrates the film's popularity and financial success.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
+            <h3>'Backrooms' Shatters A24 Opening Weekend Record</h3><p class="desc">'Backrooms' earned $38 million on Friday, already surpassing A24's best opening weekend record.</p>
+            <div class="insight"><strong>Why this matters:</strong> Demonstrates the success and popularity of the film, indicating trends in the entertainment industry.</div>
             <div class="card-footer">
                 <span class="source">Variety</span>
                 <span class="sentiment-box" style="background: #2ecc7115; color: #2ecc71">Sentiment: Positive</span>
@@ -60,9 +100,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Cockpit Breach Attempt Forces Plane Diversion to Madison</h3><p class="desc">Attempted cockpit breach prompts emergency plane diversion to Madison.</p>
-            <div class="insight"><strong>Why this matters:</strong> Raises concerns about aviation security and passenger safety.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">8.0</span></div>
+            <h3>Cockpit Breach Attempt Forces Plane Diversion</h3><p class="desc">A cockpit breach attempt prompted a plane to divert to Madison, according to recordings.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights potential security risks in air travel and the measures taken to ensure passenger safety.</div>
             <div class="card-footer">
                 <span class="source">WISN Milwaukee</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
@@ -70,19 +110,19 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.0</span></div>
-            <h3>Judge Orders Trump's Name Removed from Kennedy Center</h3><p class="desc">Judge rules only Congress can change the Kennedy Center's name.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights legal challenges to Trump's legacy.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
+            <h3>Microsoft Threatens Legal Action for Disclosing Exploits</h3><p class="desc">Microsoft is threatening legal action against a security researcher for publicly posting vulnerabilities.</p>
+            <div class="insight"><strong>Why this matters:</strong> Raises questions about responsible disclosure and the balance between security and legal protection.</div>
             <div class="card-footer">
-                <span class="source">Axios</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.axios.com/2026/05/29/trump-kennedy-center-name-removed-closure" class="btn-link" target="_blank">Read More →</a>
+                <span class="source">The Verge</span>
+                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <a href="https://www.theverge.com/tech/940416/microsoft-nightmare-eclipse-zero-day-vulnerability" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.0</span></div>
-            <h3>Presidential Check-ups: Medical Necessity or PR?</h3><p class="desc">Examines the purpose of presidential annual physical exams.</p>
-            <div class="insight"><strong>Why this matters:</strong> Explores the intersection of health and public image for presidents.</div>
+            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.0</span></div>
+            <h3>The Purpose of Presidential Annual Check-Ups</h3><p class="desc">Examines whether presidential annual physical exams are more about medical necessity or public relations.</p>
+            <div class="insight"><strong>Why this matters:</strong> Analyzes the role of health disclosures in shaping public perception of political leaders.</div>
             <div class="card-footer">
                 <span class="source">BBC News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -90,9 +130,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.7</span></div>
-            <h3>VCs Discuss the AI Investment Frenzy</h3><p class="desc">Venture capitalists share insights on the current AI investment boom.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides perspective on the rapid growth and investment in AI startups.</div>
+            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.0</span></div>
+            <h3>VCs Discuss the AI Frenzy</h3><p class="desc">Top VCs discuss the current boom in AI investments and the rapid funding available for AI startups.</p>
+            <div class="insight"><strong>Why this matters:</strong> Provides insights into the economic trends and investment landscape surrounding artificial intelligence.</div>
             <div class="card-footer">
                 <span class="source">TechCrunch</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -100,52 +140,12 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.3</span></div>
-            <h3>Trump Enters Republican Primaries in South Carolina, Iowa, and Oklahoma</h3><p class="desc">Trump endorses candidates in Republican primaries, creating competition among allies.</p>
-            <div class="insight"><strong>Why this matters:</strong> Shows Trump's continued influence in Republican politics.</div>
+            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
+            <h3>WHO Chief Visits Ebola Outbreak Epicenter in Africa</h3><p class="desc">The WHO Chief visits Bunia, the epicenter of Africa’s Ebola outbreak, where there have been over 220 suspected deaths.</p>
+            <div class="insight"><strong>Why this matters:</strong> Highlights the severity of the Ebola outbreak and the international response to contain the crisis.</div>
             <div class="card-footer">
-                <span class="source">Politico</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.politico.com/news/2026/05/30/trump-jumps-into-republican-primaries-for-governor-in-south-carolina-iowa-and-oklahoma-00943600" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.9</span></div>
-            <h3>Paul Pierce: Spurs May Be Inside Thunder's Heads</h3><p class="desc">Paul Pierce suggests the Spurs have a psychological advantage over the Thunder.</p>
-            <div class="insight"><strong>Why this matters:</strong> Offers analysis of team dynamics in a sports context.</div>
-            <div class="card-footer">
-                <span class="source">Basketball Network</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.basketballnetwork.net/latest-news/paul-pierce-believes-the-spurs-may-have-gotten-inside-the-thunders-heads-after-another-blowout-win" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.0</span></div>
-            <h3>Americans Hurt in Kuwait as Trump Sends Mixed Signals on War</h3><p class="desc">Americans injured in Kuwait missile attack; ceasefire extension uncertain.</p>
-            <div class="insight"><strong>Why this matters:</strong> Indicates escalating tensions and potential conflict in the Middle East.</div>
-            <div class="card-footer">
-                <span class="source">Bloomberg</span>
+                <span class="source">Forbes</span>
                 <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://www.bloomberg.com/news/articles/2026-05-30/americans-hurt-in-kuwait-as-trump-sends-mixed-signals-on-war" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.1</span></div>
-            <h3>GOP Lawmakers Seek to Limit Trump's $1.8 Billion Payout Fund</h3><p class="desc">Republicans aim to control Trump's $1.8 billion payout fund.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights internal political conflicts over financial control.</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.washingtonpost.com/business/2026/05/30/gop-lawmakers-want-rein-trump-18-billion-payout-fund-can-they/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">6.3</span></div>
-            <h3>UFC Macau Results: Song vs. Figueiredo</h3><p class="desc">Results from the UFC Macau event featuring Song vs. Figueiredo.</p>
-            <div class="insight"><strong>Why this matters:</strong> Provides updates on a major UFC event.</div>
-            <div class="card-footer">
-                <span class="source">MMA Fighting</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.mmafighting.com/ufc/491164/ufc-macau-results-song-vs-figueiredo" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.forbes.com/sites/maryroeloffs/2026/05/30/who-chief-visits-bunia-epicenter-of-africas-ebola-outbreak-live-updates/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
