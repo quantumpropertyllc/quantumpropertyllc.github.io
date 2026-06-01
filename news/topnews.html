@@ -1,108 +1,118 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-06-01 11:51 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Iran-US Tensions</span><span class="cluster">#US Political Debates</span><span class="cluster">#Israel-Hezbollah Conflict</span><span class="cluster">#International Elections and Political Shifts</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Geopolitical tensions are escalating in the Middle East, particularly involving Iran and Israel, impacting global markets and international relations. Political dynamics in the US are focused on internal conflicts and debates over funding and weaponization. International political landscapes are shifting, as seen in Colombia's presidential vote and internal issues within European political parties.</p><div class="divider"></div><p class="insight-text">The convergence of geopolitical instability and domestic political strife creates a volatile and unpredictable global environment.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-06-01 04:12 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Headline News.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">8.5</span></div>
-            <h3>Iran Threatens Strait of Hormuz Closure Amid Peace Talk Suspension</h3><p class="desc">Iran suspends peace talks and threatens to close the Strait of Hormuz, escalating regional tensions.</p>
-            <div class="insight"><strong>Why this matters:</strong> Closure would disrupt global oil supply, impacting economies worldwide and potentially triggering military response.</div>
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Iran warns Israeli attacks in Lebanon threaten ceasefire with US - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFBoSFJuTDNIQXUzOFVWYjV3U1piUlRwamFOTHp4WnE3WXRGSFpfX0hvMnAyRFd0eXBJY0tuM3AwQnZWUW1tV281TmhYWDlLSGcwMkZnX1VSam5Edw?oc=5" target="_blank">Iran warns Israeli attacks in Lebanon threaten </p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMicEFVX3lxTFBPUjZDNS1CVXlxUkRsMFhvcEluaHUyUEFuUHRSR0ZQemgxYkI3b09VdDVfZ1UxUWNiQXJ0WjQ1YmQtWVZIMDdObk1RYzFKNl9yel9PaUxGVk9DREdDMk5tc0Z3enExLUl4QXJ5TXVOdEw?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFBoSFJuTDNIQXUzOFVWYjV3U1piUlRwamFOTHp4WnE3WXRGSFpfX0hvMnAyRFd0eXBJY0tuM3AwQnZWUW1tV281TmhYWDlLSGcwMkZnX1VSam5Edw?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.8</span></div>
-            <h3>U.S. Intercepts Iranian Missiles Targeting Forces in Kuwait</h3><p class="desc">U.S. intercepted Iranian missiles targeting American forces in Kuwait, Central Command reports.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights ongoing tensions and potential for direct conflict between Iran and the U.S. in the region.</div>
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Graham Platner tests Democrats' tolerance for scandal - Axios</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNLUtJUEphdTJfclVhWWp1QVE5aU54eVZqd0h3RlkxMkFVMnZnTFl5UlFrNmxlV01hZS05X3cxMGpHZzVQcUhOakx3SnVCeGlXVEVNRThBVGw0cDZ4cXpWc1NHMG9jMTFGTGdRWGdlQzE4MzIyT0JVVjlJU2Q0QWNOQ0VPWQ?oc=5" target=</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMickFVX3lxTFBINVFCTWZwTDVxN1hmRWU4b216WjJTUWZOSXhoWWRXRVRjV0N1S0Z4NG56a3p2b2FMU0lOWjIyWTRaVEk5VDZqUWREcHBKbGVOZU95WHJtWlpPQXpBYUp4TTEtbG1PbGJ2ZUgtbFIwc3ZJd9IBd0FVX3lxTFB0eDBYQ1RLbUNXWVpXNXNlZFhYcG5QcnRJdDdVOE5HSFA5b3NCekdHbVhFZWhQcTNpMG9pVjVEbWFCeGhELWJXb0pfUmdHeVlSQ3Z5U1VrY1JsenhidUtWR25XbEZXSWVFeEdZZ1RvVjBnWGF6dVVV?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.2</span></div>
-            <h3>Graham Platner Tests Democrats' Tolerance for Scandal</h3><p class="desc">Graham Platner's situation tests the Democrats' tolerance for scandal.</p>
-            <div class="insight"><strong>Why this matters:</strong> Internal party conflicts can weaken political standing and distract from broader policy goals.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
                 <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNLUtJUEphdTJfclVhWWp1QVE5aU54eVZqd0h3RlkxMkFVMnZnTFl5UlFrNmxlV01hZS05X3cxMGpHZzVQcUhOakx3SnVCeGlXVEVNRThBVGw0cDZ4cXpWc1NHMG9jMTFGTGdRWGdlQzE4MzIyT0JVVjlJU2Q0QWNOQ0VPWQ?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact high">High Impact</span><span class="score">9.1</span></div>
-            <h3>Israel Orders Strikes on Beirut Suburbs as Hezbollah Conflict Escalates</h3><p class="desc">Israeli PM orders strikes on Beirut suburbs amid escalating conflict with Hezbollah.</p>
-            <div class="insight"><strong>Why this matters:</strong> Escalation threatens regional stability and could draw in other actors, leading to wider conflict.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFBKVm1FZUJVREJqeUotclZ2UjhMRXNNa2UtQVZUZnQwZ3Y0UlRmSVIxeDRwa2F6Zzg5SjhXU3hRamJXZEtYcnZRQWhFdUNzcjkzQ05jdUNJNi13dw?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">5.6</span></div>
-            <h3>Schumer Outlines Democrats’ Plan to Fight Trump’s ‘Anti-Weaponization’ Fund</h3><p class="desc">Chuck Schumer details Democrats' strategy against Trump's 'anti-weaponization' fund in the Senate.</p>
-            <div class="insight"><strong>Why this matters:</strong> Illustrates ongoing political battles over government funding and potential misuse of power.</div>
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>US trades strikes with divided Iran regime as peace talks stall - Fox News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNNjdkREVZd21GTGQzRTVZWDNITzNGa0ZEN0xhZVN0NExHNEp4YTAxd1Fia3FiTjVyX2lHZUl0dzJQQmg4VFpjbzVaS3BNOEl5dkp4aEpHM2NTdmhwY0wxT3NQaHVEZWxEMmNwRTdLYmFQMnNwZU92MTk1WEl3czQwRWtn0gGHAUFVX3lxTFBf</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxOM01UeEdTUzF3WFdvb2Y3MTlaRWxIZGVCTlM1akU3bFFHVnprVmlraVZhU3dVQ25VWmEwNkR3dU1EbmVHblRhYVN5UWN6XzlkRTI3OVJpTWhHMTNXbEE3XzZYQ3JDVWt4UWlrZW02eVlVX0UxM0wzSmJnaWFfc2Jqd09mU3NYMDJpRmZBTDRLNjRnN3FHeEdQLTk3Z0pwNDIyT0VBUm1nbVc4VWxJOW1wMEo4RmtXWE9naFJyWFpsZ3Y?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNNjdkREVZd21GTGQzRTVZWDNITzNGa0ZEN0xhZVN0NExHNEp4YTAxd1Fia3FiTjVyX2lHZUl0dzJQQmg4VFpjbzVaS3BNOEl5dkp4aEpHM2NTdmhwY0wxT3NQaHVEZWxEMmNwRTdLYmFQMnNwZU92MTk1WEl3czQwRWtn0gGHAUFVX3lxTFBfbXc5dzhwVTBKbjNJOE1TOV9nVmhuX0VxcmxoTHQ5UWVvMHVhNjJ4Y1Rtci04Qm5UZGZOaDhyUVczZE10MElyOGpxUlBnQzJINDk4S1BvWUlEWlBNNmdrcGdDTEJuLTk5bVlmNlpfeXNYRmhUS3RiZWdhMGtZVmZ2VmZ5V0VBSQ?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.9</span></div>
-            <h3>Pentagon Seeks Killer Drones, Turns to Former Hobbyists</h3><p class="desc">Pentagon aims for a $54 billion drone arsenal, seeking expertise from former hobbyists.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the evolving nature of warfare and the increasing reliance on drone technology.</div>
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Trump says he spoke to Lebanon's Hezbollah through intermediaries - Reuters</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxONDZETGU3TFh2UFRaRjc2b3lGU3RSRDZwUzVpWU9YRXRwWlM5MDdoMS1JQ09NVXR5TUQ1SnRXQWl2S2sxNWg3eTNxR2RPNTdEY0RhSWxMQ1Jndm1SaHZMRklDZVNuZ1dQdGJCRkw5alY0ekpTNllfZFpfNkNob2lRaWJqWV8zR2d5eXFKNDdW</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxOOHc3cGIxc0dydTI3elFLdW81ODM5TmJLUkJvQm90OWFNUzJZVHcwQjVVZHNUckNxV0hkU2g4dEtMc3BZOG4wUm1uYVh3WkFuTFRJVDJmYmNXSk5ZdTRKejVsZk5UZ0tWRHhxdk41Tkx5QWM0Z3Y4QVRFZGRYNmdoSUdJUGtUS2RFTVNYWGhWZnFESFF5T0NYRTdqY1RkUjI4U0EwRkRLYk52S2Vwa1JOYy1WX0dEOFhJMGRn?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxONDZETGU3TFh2UFRaRjc2b3lGU3RSRDZwUzVpWU9YRXRwWlM5MDdoMS1JQ09NVXR5TUQ1SnRXQWl2S2sxNWg3eTNxR2RPNTdEY0RhSWxMQ1Jndm1SaHZMRklDZVNuZ1dQdGJCRkw5alY0ekpTNllfZFpfNkNob2lRaWJqWV8zR2d5eXFKNDdWOXl6UnNqa0pyc2kyeE5aejRQX2lyMnppcjdoeXR5RzZwckxNT0NpejdKNzdOTU1EbFo?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.1</span></div>
-            <h3>Tensions Persist Over ‘Anti-Weaponization’ Fund Between Republicans, White House</h3><p class="desc">Tensions linger between Republicans and the White House regarding the 'anti-weaponization' fund.</p>
-            <div class="insight"><strong>Why this matters:</strong> Reflects ongoing political gridlock and disagreements over government spending priorities.</div>
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Trump administration plans to drop DOJ's $1.8B 'lawfare' fund, reports say - CNBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFAxNzcwRm1RcXFZbFQtamZMN2V3Y3BDUHF4TW8taGVJbTEzaG9HS1lMV3lzazZYRjNFRzZndU1fUDNoa3lNUFpCQl9zeHpYdEZDM1JTY2ZxSjY5WlRnNGNkc1IwdmVUek1EcVE?oc=5" target="_blank">Trump administration plans</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxQaWRVOEN3a1JrNTk1dkpJQ0lhd0tFLTlob256VG41ZGk2b3hESXp5SmtWVVh0Vm55UVFKMlZPdE5Kby1LaGttNTBOd3RJbU14ZTZkbW5NZkVxVEl0aHRQU0pHRk04VmZDYU9SSm5zaGppY0N4cV9tZW9WZDFfb0cySHVMbG9LNDFGc000S2lTZGlnYWlnX2ItOXctSEhnbHFsQXlvVEpTVDUzSS1iald2ajEtNllzRG5VcERHOGl3?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFAxNzcwRm1RcXFZbFQtamZMN2V3Y3BDUHF4TW8taGVJbTEzaG9HS1lMV3lzazZYRjNFRzZndU1fUDNoa3lNUFpCQl9zeHpYdEZDM1JTY2ZxSjY5WlRnNGNkc1IwdmVUek1EcVE?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.8</span></div>
-            <h3>Iowa Democrat Tests Attacking Schumer</h3><p class="desc">A Democrat in Iowa tests whether attacking Schumer pays off politically.</p>
-            <div class="insight"><strong>Why this matters:</strong> Shows internal divisions within the Democratic party and potential challenges to leadership.</div>
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>The mystery behind Becerra leapfrogging over his rivals in California’s governor’s race - Los Angeles Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxQVzhLMVZwb180NW94UEpZbm9iSzZlYnNxQzFVQXhNTHhFMmFrUlhOZ2lXckY5T1JRZFp4WW96OGt4VHN5VGNvNmpOSllwajFaOWlZWFN5ZVpnbk5PQlozQ0JvQ3J0ZnhqakhNR2g4S1RPN0NZSU8xMGQ2M1VRMW9GdHVVY3h3SWR5elpLRzBV</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxQVzhLMVZwb180NW94UEpZbm9iSzZlYnNxQzFVQXhNTHhFMmFrUlhOZ2lXckY5T1JRZFp4WW96OGt4VHN5VGNvNmpOSllwajFaOWlZWFN5ZVpnbk5PQlozQ0JvQ3J0ZnhqakhNR2g4S1RPN0NZSU8xMGQ2M1VRMW9GdHVVY3h3SWR5elpLRzBVMWhKV0Y5ZE9EbHY3QTBya2ViRGtvTzNJMUFLWWJ3YmRMdDc3d3FoeDdyVGExSDRTWF9oaEtlODlVMmxrM1ZXdw?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Remains of Los Alamos National Laboratory employee missing for nearly a year found in New Mexico forest - CNN</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE1pbm1sUHpHTU9mR2lMTVhUZ1M3QTJ3dEh6VjJvWU9EQ25Ta29mSTZwR1AwazVRUTNKSV96MlVxWVkxQTZJWm0yU2JPQ1dLNjg4V1kzOVFGV3VoVEsxajFCaFNNbl9ucE5xNEF0OU1tM3NOUkpMRmdrV1Fn?oc=5" target="_blank">Remai</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE1pbm1sUHpHTU9mR2lMTVhUZ1M3QTJ3dEh6VjJvWU9EQ25Ta29mSTZwR1AwazVRUTNKSV96MlVxWVkxQTZJWm0yU2JPQ1dLNjg4V1kzOVFGV3VoVEsxajFCaFNNbl9ucE5xNEF0OU1tM3NOUkpMRmdrV1Fn?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Judge Rejects Defense’s Bid to Close Charlie Kirk Hearings - The New York Times</h3><p class="desc"><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxONi03VFNOX25wREVOZWZ6TjBuRjZiWEVmQ0ttQzhBZnhnb2pkdnBpc0Jucy1XWGEwZENwZ1R4WUowd01TYWxiaV9hWE9qMFdQZUJxb193MFh3YzJic2hPZDViS29kcDRWWGcwXzdFRVJ0eFRRU2Q0YVl2S0hGSFdqZXFtQUEzY2dxTC1pYzNDNXVETXZ6</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxONi03VFNOX25wREVOZWZ6TjBuRjZiWEVmQ0ttQzhBZnhnb2pkdnBpc0Jucy1XWGEwZENwZ1R4WUowd01TYWxiaV9hWE9qMFdQZUJxb193MFh3YzJic2hPZDViS29kcDRWWGcwXzdFRVJ0eFRRU2Q0YVl2S0hGSFdqZXFtQUEzY2dxTC1pYzNDNXVETXZ6cU9V?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>A Democrat in Iowa tests whether attacking Schumer pays off - The Washington Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSjY2V2RaLTRDZEtLRkFXajl0S3lpdjgyNGFfT0FMZTVmeG1BSGV2WEZ1S2ZkaFh4VEJuNnJ0Ui1qa3l6amhsZ016MFB0aHBrY2hQSFF5Nm5naGlrM3ptSEwzNXRJTlNzZUhWRElVZFd5ZW9hWXZzeWxpQlhMdTJHNFppV3gtSzRlWkpmRnlG</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
                 <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSjY2V2RaLTRDZEtLRkFXajl0S3lpdjgyNGFfT0FMZTVmeG1BSGV2WEZ1S2ZkaFh4VEJuNnJ0Ui1qa3l6amhsZ016MFB0aHBrY2hQSFF5Nm5naGlrM3ptSEwzNXRJTlNzZUhWRElVZFd5ZW9hWXZzeWxpQlhMdTJHNFppV3gtSzRlWkpmRnlGd21FQTh3V1RxUDFwXzV1dkkyWDJFNmdhNE9NQQ?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">3.9</span></div>
-            <h3>Xavier Becerra’s Polarizing Playbook</h3><p class="desc">An analysis of Xavier Becerra’s polarizing tactics and strategies.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the impact of individual leadership styles on political outcomes and policy implementation.</div>
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Thune says DOJ fund will need changes to unlock immigration bill - Politico</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOUEt6UW94WW1vc19qcFJtdlFqSnNoa2RrVnNXYVA3NWpNbExzRC1SMlU2dWZsU25jUmNYdlFjaVM4c0g3cE1jNEpWcF9wNWJUNmRuVWFRUmNTWFBoR0twSHc0YlhZaDFNcms1SVhMeG5VT0VKWTY4VzUyaTNEU2NmSUJ5NE1ocGxLMFdFbQ?o</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxPcUxEZ0s5UG1DQ2pfQTN2bmY2SFZoTFJkX3JacHM1RTBsMG1aVmxuQ2VJV1ZEX2NPcnJwMzIzTFYzcWRWR3diZFJnTmhJMHd3Qkc0RDlrTS16aHI3MEZ4MENVS2prYW9lV1Z3WEx0UmhxZmNOajhMcERpaXAwT2Y1VzAxMHZFb2llQWlZMDRYdTBsR0lqM0tUeXVGenZfczR5Zk1Z?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOUEt6UW94WW1vc19qcFJtdlFqSnNoa2RrVnNXYVA3NWpNbExzRC1SMlU2dWZsU25jUmNYdlFjaVM4c0g3cE1jNEpWcF9wNWJUNmRuVWFRUmNTWFBoR0twSHc0YlhZaDFNcms1SVhMeG5VT0VKWTY4VzUyaTNEU2NmSUJ5NE1ocGxLMFdFbQ?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">6.2</span></div>
-            <h3>Trump: Democrats, Republicans Hinder Iran Talks</h3><p class="desc">Trump claims Democrats and some Republicans are making Iran talks 'tougher'.</p>
-            <div class="insight"><strong>Why this matters:</strong> Accusations of hindering diplomatic efforts complicate international relations and potential agreements.</div>
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Israel PM orders strikes on Beirut suburbs as Hezbollah conflict escalates - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFBKVm1FZUJVREJqeUotclZ2UjhMRXNNa2UtQVZUZnQwZ3Y0UlRmSVIxeDRwa2F6Zzg5SjhXU3hRamJXZEtYcnZRQWhFdUNzcjkzQ05jdUNJNi13dw?oc=5" target="_blank">Israel PM orders strikes on Beirut suburbs as H</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMi3gFBVV95cUxObXNEb0lILUQ4blczMXkzZXBXUXVXa2pxX2ctR2hhZzlWQ25BbHZzd0xORlVVV0tva09CSmNxLXl2VVF5YXppdnJQOE9FTEFmaUY4ZXdqb3R6N3AtTlJxckJlSnVKN0lnQTN3aWZrdjdiZmdIbDdRT0pfS3hYSjJremNWNnV5Xzc4d3l4Q1RSaFdmUVV2SWx4YW9NZ29PaDhYblZ6aG5SZmRiZWFhRGlYNXdhSlZYaURlSVdjcnVCZ3U5eE5LbGxieUtKOWVzSHN2Zmp6cG1JcC0tYjZ6eWc?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFBKVm1FZUJVREJqeUotclZ2UjhMRXNNa2UtQVZUZnQwZ3Y0UlRmSVIxeDRwa2F6Zzg5SjhXU3hRamJXZEtYcnZRQWhFdUNzcjkzQ05jdUNJNi13dw?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.1</span></div>
-            <h3>Right-Wing Candidate Leads in Colombia's Vote</h3><p class="desc">Right-wing candidate pulls ahead in the first round of Colombia's presidential vote.</p>
-            <div class="insight"><strong>Why this matters:</strong> Indicates a potential shift in political alignment and policy direction in Colombia.</div>
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Right-wing candidate pulls ahead in first round of Colombia's presidential vote - NPR</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbFpRUHRsSGt5ZlBWS0E1ZTRoS1AxM2kySzdvNFJCeHdhcHdzUW5BSkltOW9rZUs2WXVIbTY3bjZ3VV9KcFlJcll5ZjBGQklIb3dicjZxLWl2ZDE1ak54MVBYNzY2bEEyLS04RHdPVldXYVBVY0lDSGd5S1E4czVrUkNTaXAwSEFVVG5N?oc=</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
@@ -110,42 +120,32 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">4.5</span></div>
-            <h3>New Mandelson Files Add to Starmer's Woes</h3><p class="desc">Keir Starmer faces more bad news with the upcoming publication of new Mandelson files.</p>
-            <div class="insight"><strong>Why this matters:</strong> Internal party issues and historical baggage can undermine current leadership and strategy.</div>
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>More Mandelson files released in UK bring bad news for Starmer, but many questions remain unanswered - AP News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVnZvdXRpV3ZWTEx0bGRUWUI4b21rVTdoUm5ZdHN3WnhpWmhKNTd6bS1FZnJ1ekJxMlZCMVlacjBKd29kUndjUHNzbTByOUJSRW5HR29FQWlKR3k0OXRkTWlKdVB3SS1yY2Z5WTZoR1BmSjNuejRmY0dlM3JWOU5uRDFxbzExamFDZ093VVJt</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
                 <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVnZvdXRpV3ZWTEx0bGRUWUI4b21rVTdoUm5ZdHN3WnhpWmhKNTd6bS1FZnJ1ekJxMlZCMVlacjBKd29kUndjUHNzbTByOUJSRW5HR29FQWlKR3k0OXRkTWlKdVB3SS1yY2Z5WTZoR1BmSjNuejRmY0dlM3JWOU5uRDFxbzExamFDZ093VVJtbVFfekN6Q0JTNjBaU1A1RXFxMUxtX1NTTWo?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">3.7</span></div>
-            <h3>Poland Revives ‘Highway to Hel’ Bus Route</h3><p class="desc">Poland revives its 'Highway to Hel' 666 bus route.</p>
-            <div class="insight"><strong>Why this matters:</strong> A quirky news item reflecting local culture and tourism initiatives.</div>
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Rescuers search for alternative route to reach 2 missing in a flooded Laos cave - AP News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxPTjRzdGZzRGdsUDJSejVtMHM5eFN0T2xxSXdLZmhvOEpfbmRSb3FUX2I1WlVDRGptNGZNb1lIS1paV3NYWF90eVJvY25Jd1FaempCOGxvcWJzbm90Zy1ucXhqd1dNeEFBWFVFc0JYQTllX05tOGR6SnJBazRDNUdfUzBkeGtjb1V5akNwSG4y</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE9fd0h5bTBaZl84cWpqTmxTVnNKbG43LTN2clBTZ2h2bzhiTXZDTWdhRTNGQWstczhmZGowU0JwMXhDTkwwSmdfZmoxcnZtNnBHSWg0QUhlbUJZOGVDTTQyWUFscV9IM3hPV205TDU3alA0aTFMWVhDQQ?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxPTjRzdGZzRGdsUDJSejVtMHM5eFN0T2xxSXdLZmhvOEpfbmRSb3FUX2I1WlVDRGptNGZNb1lIS1paV3NYWF90eVJvY25Jd1FaempCOGxvcWJzbm90Zy1ucXhqd1dNeEFBWFVFc0JYQTllX05tOGR6SnJBazRDNUdfUzBkeGtjb1V5akNwSG4ya21RVTBvVUJ3eUpQX0g0cXAxLUxv?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
-            <div class="card-meta"><span class="impact med">Med Impact</span><span class="score">7.5</span></div>
-            <h3>Lebanon’s Failed Attempt to Disarm Hezbollah</h3><p class="desc">Analysis of how Lebanon’s best chance to disarm Hezbollah failed.</p>
-            <div class="insight"><strong>Why this matters:</strong> Highlights the challenges in maintaining stability and security in Lebanon due to Hezbollah's influence.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #e74c3c15; color: #e74c3c">Sentiment: Negative</span>
-                <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPY1RKWURnX0gtdlFXcmwwM3lyWUN5Mm01eDlUS1dhbEs1QnZwU2VSelI5S2lGY1l2TXJFRnh1OGp1VmVCNUxua0F4bXNBeUVVTGJsSFpFUnBYUlZqY1lzTldCOExtb0xDZFF5cDMzdENkVDNkaERfTUZOQ1BhNDZTOHJ6cXZaSDBr?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact low">Low Impact</span><span class="score">5.9</span></div>
-            <h3>S&P 500 Little Changed as Oil Jumps</h3><p class="desc">S&P 500 remains stable as oil prices increase, overshadowing Nvidia's gains.</p>
-            <div class="insight"><strong>Why this matters:</strong> Indicates market resilience despite fluctuations in key sectors like oil and technology.</div>
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>AI giant Anthropic prepares to sell stock to the public; files preliminary IPO paperwork - NPR</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE4xSjA1OERrenh2U2ZHdDRlZUZxRkxDVXFQYkpaODU2WmxDaTB0bklTdW1CTk5uc3dIUXVJQVoyVm93cndTMGVFNElRaVdVbzlTLU12NU4xTWdtWFExR3FjTG9xU0JFOU1JRnFCNVE4Wm5uSllzUXV6d0JsQXFLbDA?oc=5" target="_blank</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE9xcTVySExtb2NYek9nMERwZGlpSlJYeUxjWjA1dl9RRFNCRXdacmFzNldUelo4bXY0SWtfTlRGeVpfNnNmNGpJUHA2YUpfVGU4ZWsyamlBcXdlU3BPSFdzTk13ZXJGck1fbUZodTc0eWYyLWRBVllV0gF8QVVfeXFMT1JMM3dRdXVwOHZoak15V3J3cEpRdHNQQ2FzRFBxTUxfM3pqYW5WdUNXVWtVSXFsQ0xFbXZlcWJ1SWFLcXNiUVdIUG5yWUdnREl2SDBFM09LU052cHU3R0E4R2NQY3BXTktudHlkYld6TlFNX19sTDFuOERoWQ?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE4xSjA1OERrenh2U2ZHdDRlZUZxRkxDVXFQYkpaODU2WmxDaTB0bklTdW1CTk5uc3dIUXVJQVoyVm93cndTMGVFNElRaVdVbzlTLU12NU4xTWdtWFExR3FjTG9xU0JFOU1JRnFCNVE4Wm5uSllzUXV6d0JsQXFLbDA?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
