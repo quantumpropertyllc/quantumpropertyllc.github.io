@@ -1,62 +1,102 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-06-01 09:58 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>本地生活的最新更新。</p><div class="divider"></div><p class="insight-text">AI 丰富功能暂时不可用。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-06-02 11:42 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>本地生活的最新更新。</p><div class="divider"></div><p class="insight-text">AI 丰富功能暂时不可用。</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>北卡罗来纳州凯尔·布希 (Kyle Busch) 死亡事件的 911 电话公布了新细节</h3><p class="desc">凯尔·布​​希 (Kyle Busch) 是 NASCAR 最多产的车手之一，在访问夏洛特期间去世。这是迄今为止我们所知道的。</p>
+            <h3>卡罗莱纳州供水服务客户获准加息</h3><p class="desc">该公用事业公司将加息归因于基础设施升级、永久化学品清理工作以及飓风海伦恢复成本。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">Asheville Citizen-Times</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.citizen-times.com/story/news/2026/05/22/what-happened-to-kyle-busch-911-call-illness-north-carolina/90218830007/" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.wcnc.com/article/money/rate-hikes-approved-carolina-water-service/275-6c145402-f967-46b4-a676-99732c48b0e3" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Wegmans 公布北卡罗来纳州夏洛特店开业日期</h3><p class="desc">这是该杂货连锁店在该市场的第一家。</p>
+            <h3>夏洛特开始申请临时市长职位。申请方法如下</h3><p class="desc">夏洛特寻求临时市长，申请开放一周。候选人必须来自民主党并符合特定的居住和投票标准。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">Rochester Democrat and Chronicle</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.democratandchronicle.com/story/grocery/stores/2026/05/21/wegmans-reveals-opening-date-for-charlotte-nc-store/90197565007/" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-opens-applications-for-interim-mayor/275-d914c2e2-d663-4dca-a58e-4a734aa8ccd5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>弗吉尼亚棒球队前往夏洛特参加 ACC 锦标赛</h3><p class="desc">弗吉尼亚棒球队是本周在夏洛特举行的 ACC 棒球锦标赛的 8 号种子，胡斯队将于周三上午 9 点迎战北卡罗来纳州立大学或杜克大学。</p>
+            <h3>Cherry 社区发生枪击事件，青少年受伤</h3><p class="desc">枪击事件发生在皇后大道附近的巴克斯特街。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">Charlottesville Progress</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://dailyprogress.com/sports/college/baseball/virginia-cavaliers/article_92d9ce36-bb0d-45f9-992b-e3c0b3d556e9.html" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.wcnc.com/article/news/local/south-charlotte-shooting/275-fa12b0ab-000d-4d8d-8888-716f44485bd3" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>5 月 19 日星期二电视体育赛事</h3><p class="desc">上午 9 点 ACCN — 大西洋海岸锦标赛：杜克大学对阵北卡罗来纳州立大学，第一轮，北卡罗来纳州夏洛特市 上午 10 点 BTN — 十大锦标赛：密歇根州立大学对阵内布拉斯加州奥马哈市普渡大学。</p>
+            <h3>体育界最具标志性的奖杯之一背后的历史</h3><p class="desc">斯坦利杯的历史可以追溯到1892年，当时加拿大总督普雷斯顿的斯坦利勋爵以大约50美元的价格购买了一个银碗。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">WTOP</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://wtop.com/sports/2026/05/sports-on-tv-for-tuesday-may-19/" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.wcnc.com/article/news/local/connect-the-dots/connect-the-dots-the-history-behind-the-stanley-cup/275-435b7b8c-3eef-4386-9aff-f392673ab112" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>北卡罗来纳州全国有色人种协进会为反对白人临时市长候选人的分会主席辩护</h3><p class="desc">北卡罗来纳州全国有色人种协进会为当地分会主席科琳·麦克辩护，她认为任何白人担任夏洛特临时市长都是“严重令人不安的”。</p>
+            <h3>薄荷山警方调查住宅内有针对性的枪击事件</h3><p class="desc">薄荷山警方正在调查周二凌晨玛格丽特华莱士路一处有人居住的房屋发生的有针对性的枪击事件，目前尚未有人员伤亡或嫌疑人报告。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">Fox News</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.foxnews.com/media/naacp-official-condemns-white-politicians-trying-replace-resigning-black-mayor" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.wcnc.com/article/news/local/road-closed-in-mint-hill-due-to-police-activity/275-d9133205-980f-4a46-b828-e66e9f7d6904" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>HK Solutions 的 Keith Helmendach 在《退休珠穆朗玛峰》中亮相，影片探讨了累积风险</h3><p class="desc">北卡罗来纳州夏洛特，2026 年 5 月 11 日（环球通讯社）——退休计划通常被描述为朝着一个主要目标进行漫长的攀登——存够足够的钱离开劳动力市场。但退休珠穆朗玛峰仔细研究了实现该目标后会发生什么</p>
+            <h3>梅克伦堡县预算即将进入最终投票，在稻草投票后几乎没有变化</h3><p class="desc">该计划将为学校、公共安全、住房计划和县雇员加薪提供资金，同时保持财产税率不变。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">The Manila Times</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.manilatimes.net/2026/05/12/tmt-newswire/globenewswire/keith-helmendach-of-hk-solutions-featured-inretirement-everestas-film-examines-decumulation-risks/2341285" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.wcnc.com/article/news/local/mecklenburg-county-budget-adoption-meeting-tuesday-june-2-2026/275-7f416e13-cc80-4ed5-b7a1-2e8faca348ca" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>医务人员称，85 号州际公路北侧夜间发生车祸，造成 1 人死亡</h3><p class="desc">据 Medic 称，山姆威尔逊路 (Sam Wilson Road) 附近的 I-85 North 公路上发生了一起致命事故，涉及一辆牵引拖车。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/deadly-i-85-crash-charlotte/275-f868e921-536d-4ed1-849a-501b6a6564bb" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>周一可能有零星阵雨和几场暴风雨</h3><p class="desc">周二早上后干燥，然后缓慢预热。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>夏洛特西北部一名男子被刺伤后住院</h3><p class="desc">刺伤事件发生在北林伍德大道。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/one-person-hospitalized-after-stabbing-in-northwest-charlotte/275-a76597ec-e4c1-4ce8-b081-870321b46362" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>夏洛特市议会希望打击非法街头贩卖和大声喧哗的车辆</h3><p class="desc">安全委员会投票建议在全市范围内禁止街头贩卖，并对屡犯者制定刑事处罚选项。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-city-council-illegal-street-vending-loud-vehicles/275-38cc529b-ec3a-4893-8dc2-3e5c910fbae9" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -67,6 +107,16 @@
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
                 <a href="https://www.wcnc.com/article/news/local/nc-sbi-to-investigate-shelby-pd-use-of-force/275-373fded6-42bb-4730-8910-f79078794cfd" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>卡巴勒斯县专员将决定是否终止 410 消防队</h3><p class="desc">卡巴勒斯县委员将投票决定解散 410 分队，该分队自 2017 年以来一直为当地志愿者提供援助。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/fire-squad-410-cabarrus-county/275-d7eafb03-e92f-4b30-8357-aacb48d4aad0" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -97,55 +147,5 @@
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
                 <a href="https://www.wcnc.com/article/news/local/clover-police-officer/275-5d5cce1c-50c7-4d9f-908b-efb946bc30dd" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>联邦和地方行动导致北夏洛特案件中多人被捕；当地企业、社区领袖做出反应</h3><p class="desc">其中四名被捕者周四上午在联邦法院出庭，罪名是一系列贩毒和枪支罪名。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/crime/charlotte-hotel-raid-business-neighbor-reaction-drug-gun-trafficking-allegations/275-cdc09f4b-0d54-484c-8cd1-b2a62a554476" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>卡巴勒斯县专员将决定是否终止 410 消防队</h3><p class="desc">卡巴勒斯县委员将投票决定解散 410 分队，该分队自 2017 年以来一直为当地志愿者提供援助。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/fire-squad-410-cabarrus-county/275-d7eafb03-e92f-4b30-8357-aacb48d4aad0" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>飓风季节开始时杜克能源公司夏洛特指挥中心内部</h3><p class="desc">尽管预报员预测飓风季节将低于正常水平，但杜克能源公司仍处于高度戒备状态，准备使用自我修复技术来迅速解决任何潜在的停电问题。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/inside-duke-energys-command-center-as-hurricane-season-begins/275-265e32eb-e843-446d-afe0-3315590e033b" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>周一可能有零星阵雨和几场暴风雨</h3><p class="desc">周二早上后干燥，然后缓慢预热。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>夏洛特市议会希望打击非法街头贩卖和大声喧哗的车辆</h3><p class="desc">安全委员会投票建议在全市范围内禁止街头贩卖，并对屡犯者制定刑事处罚方案。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-city-council-illegal-street-vending-loud-vehicles/275-38cc529b-ec3a-4893-8dc2-3e5c910fbae9" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div></body></html>

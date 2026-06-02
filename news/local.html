@@ -1,62 +1,102 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-06-01 09:58 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Local Life.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-06-02 11:42 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Local Life.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>New details emerge from 911 call in Kyle Busch death in NC</h3><p class="desc">Kyle Busch, who was one of NASCAR's most prolific drivers, died during a visit to Charlotte. Here's what we know so far.</p>
+            <h3>Rate hikes approved for Carolina Water Service customers</h3><p class="desc">The utility company attributed the rate hike to infrastructure upgrades, forever chemical cleanup efforts, and Hurricane Helene recovery costs.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">Asheville Citizen-Times</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.citizen-times.com/story/news/2026/05/22/what-happened-to-kyle-busch-911-call-illness-north-carolina/90218830007/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/money/rate-hikes-approved-carolina-water-service/275-6c145402-f967-46b4-a676-99732c48b0e3" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Wegmans reveals opening date for Charlotte, NC store</h3><p class="desc">It is the grocery store chain’s first in that market.</p>
+            <h3>Charlotte opens applications for interim mayor position. Here's how to apply</h3><p class="desc">Charlotte seeks an interim mayor as applications open for a week. Candidates must be from the Democratic Party and meet specific residency and voting criteria.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">Rochester Democrat and Chronicle</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.democratandchronicle.com/story/grocery/stores/2026/05/21/wegmans-reveals-opening-date-for-charlotte-nc-store/90197565007/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-opens-applications-for-interim-mayor/275-d914c2e2-d663-4dca-a58e-4a734aa8ccd5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Virginia baseball heads to Charlotte for ACC tournament</h3><p class="desc">Virginia baseball is the No. 8 seed for this week's ACC baseball tournament in Charlotte, and the Hoos will meet either NC State or Duke on Wednesday at 9 a.m.</p>
+            <h3>Teen hurt after shooting in Cherry neighborhood</h3><p class="desc">The shooting happened on Baxter Street just off Queens Road.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">Charlottesville Progress</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://dailyprogress.com/sports/college/baseball/virginia-cavaliers/article_92d9ce36-bb0d-45f9-992b-e3c0b3d556e9.html" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/south-charlotte-shooting/275-fa12b0ab-000d-4d8d-8888-716f44485bd3" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Sports on TV for Tuesday, May 19</h3><p class="desc">9 a.m. ACCN — Atlantic Coast Tournament: Duke vs. NC State, First Round, Charlotte, N.C. 10 a.m. BTN — Big Ten Tournament: Michigan St. vs. Purdue, Omaha, Neb.</p>
+            <h3>The history behind one of sports most iconic trophies</h3><p class="desc">The Stanley Cup dates back to 1892, when Canada's Governor General, Lord Stanley of Preston, bought a silver bowl for about $50.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">WTOP</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://wtop.com/sports/2026/05/sports-on-tv-for-tuesday-may-19/" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/connect-the-dots/connect-the-dots-the-history-behind-the-stanley-cup/275-435b7b8c-3eef-4386-9aff-f392673ab112" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>NC NAACP defends branch president who opposes White interim mayor candidates</h3><p class="desc">North Carolina NAACP defends local branch president Corine Mack after she argued it is "seriously disturbing" for any White person to serve as Charlotte's interim mayor.</p>
+            <h3>Mint Hill Police investigates targeted shooting into residence</h3><p class="desc">Mint Hill Police are investigating a targeted shooting into an occupied home on Margaret Wallace Road early Tuesday, with no injuries or suspects reported yet.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">Fox News</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.foxnews.com/media/naacp-official-condemns-white-politicians-trying-replace-resigning-black-mayor" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/road-closed-in-mint-hill-due-to-police-activity/275-d9133205-980f-4a46-b828-e66e9f7d6904" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Keith Helmendach of HK Solutions Featured in Retirement Everest as Film Examines Decumulation Risks</h3><p class="desc">Charlotte, NC, May 11, 2026 (GLOBE NEWSWIRE) -- Retirement planning is often presented as a long climb toward one major goal - saving enough to leave the workforce. But Retirement Everest takes a closer look at what happens after that goal is reached</p>
+            <h3>Mecklenburg County budget heads to final vote with few changes after straw votes</h3><p class="desc">The plan would fund schools, public safety, housing initiatives and county employee raises while keeping the property tax rate unchanged.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">The Manila Times</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.manilatimes.net/2026/05/12/tmt-newswire/globenewswire/keith-helmendach-of-hk-solutions-featured-inretirement-everestas-film-examines-decumulation-risks/2341285" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/mecklenburg-county-budget-adoption-meeting-tuesday-june-2-2026/275-7f416e13-cc80-4ed5-b7a1-2e8faca348ca" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>1 dead in overnight crash on I-85 North, Medic says</h3><p class="desc">A fatal crash on I-85 North near Sam Wilson Road involved a tractor-trailer, according to Medic.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/deadly-i-85-crash-charlotte/275-f868e921-536d-4ed1-849a-501b6a6564bb" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Scattered showers and a few storms are possible on Monday</h3><p class="desc">Dry after Tuesday morning and then a slow warm-up.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>One person hospitalized after stabbing in northwest Charlotte</h3><p class="desc">The stabbing happened on North Linwood Avenue.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/one-person-hospitalized-after-stabbing-in-northwest-charlotte/275-a76597ec-e4c1-4ce8-b081-870321b46362" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Charlotte City Council looks to crack down on illegal street vending, loud vehicles</h3><p class="desc">The Safety Committee voted to recommend a citywide ban on street vending and create criminal penalty options for repeat offenders.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-city-council-illegal-street-vending-loud-vehicles/275-38cc529b-ec3a-4893-8dc2-3e5c910fbae9" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
@@ -67,6 +107,16 @@
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
                 <a href="https://www.wcnc.com/article/news/local/nc-sbi-to-investigate-shelby-pd-use-of-force/275-373fded6-42bb-4730-8910-f79078794cfd" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Cabarrus County commissioners to decide whether to terminate Fire Squad 410</h3><p class="desc">Cabarrus County commissioners will vote on dissolving Squad 410, a firefighter unit that has aided local volunteers since 2017.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/fire-squad-410-cabarrus-county/275-d7eafb03-e92f-4b30-8357-aacb48d4aad0" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
@@ -97,55 +147,5 @@
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
                 <a href="https://www.wcnc.com/article/news/local/clover-police-officer/275-5d5cce1c-50c7-4d9f-908b-efb946bc30dd" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Federal, local operations leads to multiple arrests in north Charlotte case; local business, community leaders react</h3><p class="desc">Four of those arrested appeared in federal court Thursday morning on a range of drug trafficking and firearms charges.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/crime/charlotte-hotel-raid-business-neighbor-reaction-drug-gun-trafficking-allegations/275-cdc09f4b-0d54-484c-8cd1-b2a62a554476" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Cabarrus County commissioners to decide whether to terminate Fire Squad 410</h3><p class="desc">Cabarrus County commissioners will vote on dissolving Squad 410, a firefighter unit that has aided local volunteers since 2017.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/fire-squad-410-cabarrus-county/275-d7eafb03-e92f-4b30-8357-aacb48d4aad0" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Inside Duke Energy’s Charlotte command center as hurricane season begins</h3><p class="desc">Though forecasters predict a below-normal hurricane season, Duke Energy is on high alert, readying self-healing tech to swiftly tackle any potential power outages.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/inside-duke-energys-command-center-as-hurricane-season-begins/275-265e32eb-e843-446d-afe0-3315590e033b" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Scattered showers and a few storms are possible on Monday</h3><p class="desc">Dry after Tuesday morning and then a slow warm-up.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Charlotte City Council looks to crack down on illegal street vending, loud vehicles</h3><p class="desc">The Safety Committee voted to recommend a citywide ban on street vending and create criminal penalty options for repeat offenders.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-city-council-illegal-street-vending-loud-vehicles/275-38cc529b-ec3a-4893-8dc2-3e5c910fbae9" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
