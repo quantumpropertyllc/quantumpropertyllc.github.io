@@ -1,42 +1,112 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-06-02 10:09 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Local Life.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-06-03 12:01 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Local Life.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Mecklenburg County commissioners adopt $2.6B budget for 2026-27</h3><p class="desc">The budget includes funding for education, economic opportunity and more.</p>
+            <h3>Trump administration starts Title IX probe over trans student bathroom use at NC school district’s campuses</h3><p class="desc">CHARLOTTE, N.C. — The U.S. Department of Education has opened a Title IX investigation into Cabarrus County Schools following complaints about the district’s handling of transgender students’ access to bathrooms and locker rooms. The investigation, a</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">Hartford Courant</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/politics/north-carolina-politics/mecklenburg-county-commissioners-adopt-26b-budget-for-2026-27/275-dea398a9-ad86-4afd-99c6-b55e7f6d839b" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.courant.com/2026/06/02/trump-administration-starts-title-ix-probe-over-trans-student-bathroom-use-at-nc-school-districts-campuses/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>US Dept. of Education investigates Cabarrus County School District over Title IX violations</h3><p class="desc">Title IX prohibits sex-based discrimination in federally funded education programs.</p>
+            <h3>New details emerge from 911 call in Kyle Busch death in NC</h3><p class="desc">Kyle Busch, who was one of NASCAR's most prolific drivers, died during a visit to Charlotte. Here's what we know so far.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">Asheville Citizen-Times</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/education/us-dept-of-education-launches-investigation-into-cabarrus-county-school-district-title-ix-violations/275-734877e8-3ec7-4011-a714-73f228d3bce5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.citizen-times.com/story/news/2026/05/22/what-happened-to-kyle-busch-911-call-illness-north-carolina/90218830007/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Ben Crump takes Cherrie Moore case, vows push for more charges against fired Shelby officer</h3><p class="desc">Civil rights attorney called the May 29 arrest a failure of law enforcement training and policy; Moore's medical records headed to State Attorney's office.</p>
+            <h3>Wegmans reveals opening date for Charlotte, NC store</h3><p class="desc">It is the grocery store chain’s first in that market.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">Rochester Democrat and Chronicle</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/ben-crump-takes-cherrie-moore-case-vows-push-for-more-charges-against-fired-shelby-officer/275-6c28984d-52e6-434b-9836-b8f07cfcf19a" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.democratandchronicle.com/story/grocery/stores/2026/05/21/wegmans-reveals-opening-date-for-charlotte-nc-store/90197565007/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Police activity in west Charlotte neighborhood</h3><p class="desc">Medic and CMPD responded to a call on Markland Drive, off West Boulevard.</p>
+            <h3>Virginia baseball heads to Charlotte for ACC tournament</h3><p class="desc">Virginia baseball is the No. 8 seed for this week's ACC baseball tournament in Charlotte, and the Hoos will meet either NC State or Duke on Wednesday at 9 a.m.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Charlottesville Progress</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://dailyprogress.com/sports/college/baseball/virginia-cavaliers/article_92d9ce36-bb0d-45f9-992b-e3c0b3d556e9.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Sports on TV for Tuesday, May 19</h3><p class="desc">9 a.m. ACCN — Atlantic Coast Tournament: Duke vs. NC State, First Round, Charlotte, N.C. 10 a.m. BTN — Big Ten Tournament: Michigan St. vs. Purdue, Omaha, Neb.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WTOP</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://wtop.com/sports/2026/05/sports-on-tv-for-tuesday-may-19/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>NC NAACP defends branch president who opposes White interim mayor candidates</h3><p class="desc">North Carolina NAACP defends local branch president Corine Mack after she argued it is "seriously disturbing" for any White person to serve as Charlotte's interim mayor.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Fox News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.foxnews.com/media/naacp-official-condemns-white-politicians-trying-replace-resigning-black-mayor" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Keith Helmendach of HK Solutions Featured in Retirement Everest as Film Examines Decumulation Risks</h3><p class="desc">Charlotte, NC, May 11, 2026 (GLOBE NEWSWIRE) -- Retirement planning is often presented as a long climb toward one major goal - saving enough to leave the workforce. But Retirement Everest takes a closer look at what happens after that goal is reached</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">The Manila Times</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.manilatimes.net/2026/05/12/tmt-newswire/globenewswire/keith-helmendach-of-hk-solutions-featured-inretirement-everestas-film-examines-decumulation-risks/2341285" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>One killed in west Charlotte shooting, Medic says</h3><p class="desc">The shooting happened at Westerly Hills Neighborhood Park on Wednesday.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/police-in-west-charlotte-markland-drive/275-e0b18ac5-40c2-4f11-aa4c-ef7acc227dac" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/crime/west-charlotte-shooting-investigation-westerly-hills/275-cf358bb1-ad65-41dc-a7eb-37ac0dfd40d1" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Charlotte man charged with insurance fraud after lying about date of car wreck, prosecutors say</h3><p class="desc">The suspect is accused of trying to obtain nearly $20,000 from an insurance company, prosecutors say.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/crime/charlotte-man-insurance-fraud-charges-investigation/275-6aa3eb39-d496-4eb7-b911-3d60f916db7b" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Concord teen charged with killing girlfriend's father during argument denied bond</h3><p class="desc">A 47-year-old man attempting to intervene in a fight between Keshaun Degraffenreid, 17, and his girlfriend was shot and killed on Monday.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/17-year-old-arrested-deadly-concord-shooting/275-bc5b52c8-c940-4058-a262-48a00ac1698e" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Power 98's morning show to host 28-hour fundraising marathon for Charlotte homeless shelter</h3><p class="desc">Power 98's morning show begins its 19th annual 28-hour marathon to support The Salvation Army's Center of Hope, raising funds and awareness for Charlotte's homeless.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/power-98-fundraiser-charlotte-homeless-shelter-salvation-army-center-of-hope/275-a635f357-d744-436f-ac57-1320b4c9a636" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
@@ -51,101 +121,31 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>SLED investigates shooting involving officer during crimes against children search in Fort Mill</h3><p class="desc">SLED investigates a shooting involving a Fort Mill officer during an Internet Crimes Against Children warrant at Fort Mill's Sycamore Apartments.</p>
+            <h3>Suspect breaks into west Charlotte home, strangles woman in front of children</h3><p class="desc">A woman was assaulted twice, outside and inside her west Charlotte home, allegedly by a suspect who also broke in, according to the police report.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/crime/shooting-involving-officer-fort-mill-york-county-sled-investigation/275-6d7be939-4edb-458b-8f7c-f0f5e367ad48" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/police-in-west-charlotte-markland-drive/275-e0b18ac5-40c2-4f11-aa4c-ef7acc227dac" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Fort Mill schools facing $1M budget shortfall ahead of budget vote</h3><p class="desc">The Fort Mill School District is adjusting its budget after learning it will receive about $1 million less in state funding than expected.</p>
+            <h3>$3.75 million lawsuit against LaMelo Ball moves closer to trial</h3><p class="desc">Hornets star LaMelo Ball is accused of severely injuring a child after a group of fans swarmed his car in Uptown following an event at Spectrum Center.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/education/fort-mill-schools-facing-1m-budget-shortfall-ahead-of-budget-vote/275-89241da3-f90c-44ec-badf-4faaba3744fb" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/sports/nba/hornets/lamelo-ball-civil-lawsuit-child-injured-allegations-upcoming-trial-date/275-1db750e3-49b6-43b9-ac7f-10f7e1abaa02" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>NC lawmakers propose bill to require age verification on social media, ban minors under 14 from platforms, AI use in schools</h3><p class="desc">If House Bill 301 becomes law, this bill would prohibit children under 14 to create social media accounts in North Carolina.</p>
+            <h3>Mecklenburg County commissioners receive findings from investigations launched after death of 6-year-old Dominique Moody</h3><p class="desc">County leaders outline reforms after internal and state reviews of child welfare practices following a case that shocked Charlotte.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/education/nc-lawmakers-propose-bill-to-require-age-verification-on-social-media-ai-use-in-schools/275-d3a3aff3-568c-4224-8fcc-8408ab65c01e" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Arguments heard in developers' lawsuit against Catawba Nation over casino construction</h3><p class="desc">The North Carolina Court of Appeals will decide whether the Catawba Indian Nation has sovereign immunity, which would prevent the tribe from being sued.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/lawsuit-against-catawba-nation-casino-construction/275-c86ea2cc-6c47-41ad-a5ac-13b92f9add46" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Forget your printouts? North Carolina DMV's new phone upload tool has your back</h3><p class="desc">More than 6,000 documents have been uploaded through the tool in its first two weeks of operation.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/north-carolina-dmv-phone-upload-tool/275-7d549336-d998-44a8-ad6a-8919ccd7d54b" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Charlotte opens applications for interim mayor position. Here's how to apply</h3><p class="desc">Charlotte seeks an interim mayor as applications open for a week. Candidates must be from the Democratic Party and meet specific residency and voting criteria.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-opens-applications-for-interim-mayor/275-d914c2e2-d663-4dca-a58e-4a734aa8ccd5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>2 killed in Conover crash, police say</h3><p class="desc">Conover Police responded to the crash around 2:20 p.m. in the along Conover Boulevard West</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/conover-crash-police/275-beee6035-2515-4671-8efc-176266073d61" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Teen hurt after shooting in Cherry neighborhood</h3><p class="desc">The shooting happened on Baxter Street just off Queens Road.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/south-charlotte-shooting/275-fa12b0ab-000d-4d8d-8888-716f44485bd3" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Cornelius Police launches "Operation Safe Lake" to educate residents about water safety</h3><p class="desc">The department is encouraging Lake Norman users to prioritize safety and watch out for fellow lake-goers during summer activities.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/cornelius-police-operation-safe-lake-water-safety/275-7fdaa2f3-d450-439d-9a30-ccd1e50bfee9" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Rate hikes approved for Carolina Water Service customers</h3><p class="desc">The utility company attributed the rate hike to infrastructure upgrades, forever chemical cleanup efforts, and Hurricane Helene recovery costs.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/money/rate-hikes-approved-carolina-water-service/275-6c145402-f967-46b4-a676-99732c48b0e3" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/mecklenburg-county-commissioners-reviews-child-and-family-services-reports-dominique-moody/275-7d728227-7c90-4a6f-8d9d-19acc8e52a28" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
