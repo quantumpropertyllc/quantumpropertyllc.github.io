@@ -1,42 +1,92 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-06-05 01:49 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Headline News.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-06-05 04:46 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Headline News.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Senate OKs $70B immigration bill after rejecting efforts to permanently ban Trump's settlement fund - AP News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxQQUVWcHBFWFgzckRLTTEwMnZQc3doT3AwMlpqVXlWeDRxQnVINnpZLVhRMHBsOC1YcUlQRXVxaWZQMF8xaFo0bE5Bb0hWYm9VclJuYXNqZlNvNVNhQW5mZjR4NDRLaFI2ZjJnOEg1dWFyMTRHbl9aUnN4ZUNna0RObnZEYkRGYlZ5Uk9nQ3dk</p>
+            <h3>Putin says there is 'no point' meeting Zelensky over ending Ukraine war - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE45b1VaUEU3MjROUi12WVdOdkFLMWlFZFZfcDU5eVlCS20tOUhOLXdIZk1SMmpIM0toeW5oR2QtQTJrcWZXWlEyTHk1NE9mbm9HTUY2QmQwb2hhQQ?oc=5" target="_blank">Putin says there is 'no point' meeting Zelensky</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxQQUVWcHBFWFgzckRLTTEwMnZQc3doT3AwMlpqVXlWeDRxQnVINnpZLVhRMHBsOC1YcUlQRXVxaWZQMF8xaFo0bE5Bb0hWYm9VclJuYXNqZlNvNVNhQW5mZjR4NDRLaFI2ZjJnOEg1dWFyMTRHbl9aUnN4ZUNna0RObnZEYkRGYlZ5Uk9nQ3dkWlZnVEFRd2xWeXB2UnhpYkRON3ozaWQxZw?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE45b1VaUEU3MjROUi12WVdOdkFLMWlFZFZfcDU5eVlCS20tOUhOLXdIZk1SMmpIM0toeW5oR2QtQTJrcWZXWlEyTHk1NE9mbm9HTUY2QmQwb2hhQQ?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Graham Platner Faces Accusations Of 'Toxic' Relationships And Disturbing Behavior—Days After Sexting Scandal - Forbes</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxPc29xSldQTGtMaGpOUTliOUlFa0FBSEpUZWR2ako2blhmM1AtajBUbXV5UE1Xd1ZGbWdCN3dlTDVuR3VTYTE3YXJKMkgwTFUyUGV2WTZfVjJpZGU0dFRDT1lpOVl3d1E1dHBvck40YjJXZ1RCeENfclVkVDVFcHI5eDhFLTM1ZF9JaFUwbWRk</p>
+            <h3>Senate Passes $70 Billion G.O.P. Immigration Bill - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPME4yN3V1MFM3OFh6U1JLd0ZZelpzblUtb0EyYnhrbjdlVUx2eDRCS0oyLW95VnZGNE9fRWdza1BwdjJqU3U4b1c1SnhsWUdBRmdTd21YbUtMUmpXQ3QtcVZYOUtXczhwd2I0b2tfbWM2ODFMWWhSVnBscnJWWktrYzl4YXZENTBHMzRhTlVQ</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxPc29xSldQTGtMaGpOUTliOUlFa0FBSEpUZWR2ako2blhmM1AtajBUbXV5UE1Xd1ZGbWdCN3dlTDVuR3VTYTE3YXJKMkgwTFUyUGV2WTZfVjJpZGU0dFRDT1lpOVl3d1E1dHBvck40YjJXZ1RCeENfclVkVDVFcHI5eDhFLTM1ZF9JaFUwbWRkUTJwZTdXR1dWeVRSZlo3azd2OHN3QjN3dzYyeEE2eU1vUm8tMzZFSUl1dnJWV2pSNzl1QWxRUldKcDZhbEJ0YjdFalJyRzQ3YmVUcllaZ0pLQXhfMGlHQUFTS3Q3RUZFeVRLVVUzZEtZ?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPME4yN3V1MFM3OFh6U1JLd0ZZelpzblUtb0EyYnhrbjdlVUx2eDRCS0oyLW95VnZGNE9fRWdza1BwdjJqU3U4b1c1SnhsWUdBRmdTd21YbUtMUmpXQ3QtcVZYOUtXczhwd2I0b2tfbWM2ODFMWWhSVnBscnJWWktrYzl4YXZENTBHMzRhTlVQSllmc2JVajNqRl9YUE4?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Most K-12 teachers say AI's impact on education will eclipse the internet or computers - NPR</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxOUUlCbjhqUHZ0X29qd2pBY281WWpVX1Nwd3plaG80Y0VBbWRBZ0l1MklDUVh0bnRXcVFMdnpfaFp1YWVNU2p3ZFdhbU9Bd2N0MW1nUnZPc0ZZV2FtVG9WMTRUcTVta290S1VFclUyOTJESnNxeU9TczA1YkJtM1BhVVk0ZTVRTTZyd3pmUjJO</p>
+            <h3>Millions of ballots still need to be counted in California: What we know - Los Angeles Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaDlZMFVfQUlReDBoNWk4VHZqTW45VkFfMjBzcUlLZmQ0WGl2OUNDOFJqMnZ6dFFWWmZMUWlCVzk3V1pieFBqQTM0eDZfcWxwRDI0Nm8xTnRqTlB2ZVJrZTlFS1lMa0dqY0NEX3QzX0IwUWpLOEdoWEIxUlpUaFA3ckV1YU52bEpNX3FlQ0hI</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxOUUlCbjhqUHZ0X29qd2pBY281WWpVX1Nwd3plaG80Y0VBbWRBZ0l1MklDUVh0bnRXcVFMdnpfaFp1YWVNU2p3ZFdhbU9Bd2N0MW1nUnZPc0ZZV2FtVG9WMTRUcTVta290S1VFclUyOTJESnNxeU9TczA1YkJtM1BhVVk0ZTVRTTZyd3pmUjJOa3hMYU1rOGRUeU1FR1NBdGdaUmU1QkU5cWg?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaDlZMFVfQUlReDBoNWk4VHZqTW45VkFfMjBzcUlLZmQ0WGl2OUNDOFJqMnZ6dFFWWmZMUWlCVzk3V1pieFBqQTM0eDZfcWxwRDI0Nm8xTnRqTlB2ZVJrZTlFS1lMa0dqY0NEX3QzX0IwUWpLOEdoWEIxUlpUaFA3ckV1YU52bEpNX3FlQ0hIbEVOMVFIcFRVOEh5cjJVZW5nMzJpbjZSZXNqUjNoN3BsM0xGd1VGOHhCM3dVY3NpRFQ?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Ukraine strikes cargo ships and admits Romania drone blast - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5adFdXLTZpLUdPUWpwRTJBNGtNN3htRW9KRnFwYV9mMnRaZjE4aWdycmh3anNGVVdqajVUM1VzNG0tcWVDZUdBamdtWmFMbTQwY0lucVdKSTZuZw?oc=5" target="_blank">Ukraine strikes cargo ships and admits Romania </p>
+            <h3>Graham Platner accuser calls NYT article 'a gift' to his Senate campaign - WMTW</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNUEwxQ3IwMEhFc0NFSzhyVzNrd2VlV2R5eUJhZHByY1RKOWF1Z3BsanF2aGsyUG5qazBKWl9qUUZSMDFXU08xR0Y3ekZraHZLdzJyanNNZ2xKTXd2WThsaU5RNmE5UGlEUnR0T3hWZXd2QjVtV1lPZnA3QUVrRExoaGZhejlHYjFBbF9QaWFI</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5adFdXLTZpLUdPUWpwRTJBNGtNN3htRW9KRnFwYV9mMnRaZjE4aWdycmh3anNGVVdqajVUM1VzNG0tcWVDZUdBamdtWmFMbTQwY0lucVdKSTZuZw?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNUEwxQ3IwMEhFc0NFSzhyVzNrd2VlV2R5eUJhZHByY1RKOWF1Z3BsanF2aGsyUG5qazBKWl9qUUZSMDFXU08xR0Y3ekZraHZLdzJyanNNZ2xKTXd2WThsaU5RNmE5UGlEUnR0T3hWZXd2QjVtV1lPZnA3QUVrRExoaGZhejlHYjFBbF9QaWFIS0RFVlRkYjRQSlFrMWdodGR6WUpnV185ZVlFWng4?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>US judge strikes down Trump policies targeting immigrants from 39 countries - Reuters</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOMkstOFU0cXFkQ1dVbEZwNldfU3lLU2VHbzYwRE90Y2dOX0VYeTVPMWUxRUo1aVBqc3k2ZmFvNGFLMS1lNS1IMkk2MkhtZnNUS2xZNlhBM2w3ajZOWTZuTXYwNlZHbWRYbDIyRUo1ajRta3dCbFRCeDNDXzIyREVsTU0xTnQyUXdfQk9zMUtM</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOMkstOFU0cXFkQ1dVbEZwNldfU3lLU2VHbzYwRE90Y2dOX0VYeTVPMWUxRUo1aVBqc3k2ZmFvNGFLMS1lNS1IMkk2MkhtZnNUS2xZNlhBM2w3ajZOWTZuTXYwNlZHbWRYbDIyRUo1ajRta3dCbFRCeDNDXzIyREVsTU0xTnQyUXdfQk9zMUtMWkdXT1hVUzdGdEV1eEp0MnlUSnNlcWtoSXRwRnlzbUtKMQ?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Inside Trump’s suddenly softened new green card policy - The Washington Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPZF9UOHIwZGdjd1dxeEtYaTdRVEoyb3RySUt2MFo1MDdMT1AtNVBsYkNLTHpTeUZoOVZPRG1OSmlSS0RoTjdHU0xJdVhNVGZ3QVR0d0RlcTk2Mm5IekdlZTZYbUVlcFFWVl9mZE5lYjNGa1gtZjhZWmlScnQ4VE42X3ptOEVNUVE5Rm5OMTA3</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPZF9UOHIwZGdjd1dxeEtYaTdRVEoyb3RySUt2MFo1MDdMT1AtNVBsYkNLTHpTeUZoOVZPRG1OSmlSS0RoTjdHU0xJdVhNVGZ3QVR0d0RlcTk2Mm5IekdlZTZYbUVlcFFWVl9mZE5lYjNGa1gtZjhZWmlScnQ4VE42X3ptOEVNUVE5Rm5OMTA3bHhLMm1iUFFLOFJ1aEhUNDFpeUZXNzgyV2tlLURCcy0yR3NpUQ?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Trump says he asked Pulte to gut intelligence agency - Politico</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxNUWFEOTlCQmZFdDYxalYtSDFJbFNGWTVfMnZKVEI1cnU1YlZXdTh6RDhsNmxpLUJsNFFpczBNTUFmdUc3SmU5U192dHZOendnSG9mM2NjZ0lDOE92cllxZjJoTlpySGUyclkzdk14d0RlM3RHblA0c0V5em5raGY3c2FTeFdSQ18yUmhsR1JR</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxNUWFEOTlCQmZFdDYxalYtSDFJbFNGWTVfMnZKVEI1cnU1YlZXdTh6RDhsNmxpLUJsNFFpczBNTUFmdUc3SmU5U192dHZOendnSG9mM2NjZ0lDOE92cllxZjJoTlpySGUyclkzdk14d0RlM3RHblA0c0V5em5raGY3c2FTeFdSQ18yUmhsR1JR?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Virginia man sentenced to life in prison for double murder scheme in affair with au pair - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNUDl2d2pUZFg3R3J3OEZ2dURsNnM1Z1lOVDBrNk1VU2dGSkRBTTB3LWt2NUEyS1dMclA2WXB3dk56VUxrMDlwUXh4ZEhjN3RqbGswWEc5UUtKNmItZjF2eVdJbFFHdVQzdGxyZG83LWRuWkZHamk4bXNIQzZwN3RaMWZ5MVBCZ3FnMUNHSkpD</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNUDl2d2pUZFg3R3J3OEZ2dURsNnM1Z1lOVDBrNk1VU2dGSkRBTTB3LWt2NUEyS1dMclA2WXB3dk56VUxrMDlwUXh4ZEhjN3RqbGswWEc5UUtKNmItZjF2eVdJbFFHdVQzdGxyZG83LWRuWkZHamk4bXNIQzZwN3RaMWZ5MVBCZ3FnMUNHSkpDWGdWakFPVEE4SzZJVmN3bkNZY1E?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Illinois Gov. JB Pritzker to suspend tax breaks offered to data centers - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPcmR4M053Z1RzN0N6V3k2aWZHcVc2b0UyYWpOWG5oSGtvQ2w0TFdYeHN5QW93RDdCQWxsaEpOakZnUVczeVJyVmgxNnU0NVQzc0l5aHRDeE14VVNCUE9zd1lKOW9LbVRsNGN0SU81bVR0QWVLeDFtRWZjMlNRQU95bEE2X0lkNnZaT1VKcGQt</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPcmR4M053Z1RzN0N6V3k2aWZHcVc2b0UyYWpOWG5oSGtvQ2w0TFdYeHN5QW93RDdCQWxsaEpOakZnUVczeVJyVmgxNnU0NVQzc0l5aHRDeE14VVNCUE9zd1lKOW9LbVRsNGN0SU81bVR0QWVLeDFtRWZjMlNRQU95bEE2X0lkNnZaT1VKcGQtMmVSOUxrUk9iOG1EMjNMdjZyT2RyVUxUcXVjWFgwLWQtSjBkSnl5Ujh5VWNzbVV5UQ?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
@@ -51,72 +101,12 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Raman Gains on Pratt in L.A. Mayor Race, but Many Ballots Remain - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxQbm9jRnN2WnJ1WDBUcTUzZFNCNHViajlNcVB0QmMyLU16dFRpU3BXV2I1TGkyWXdaSVZtTlpaX25hMEs2RGplaU90TmxvbnQtSkl1LU1aVUdMUDNjcHpLZFo0MjB6ZkVxNVhjaVdxNUpVMzJDVUpGMlozbHhjMGl5MURNdEoxSU5UUUE?oc=5</p>
+            <h3>Israel-Hezbollah ceasefire remains elusive, leaving Lebanon in the crossfire - The Washington Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxNekI0dVYxYUJUa2xncjZmdUlpS0VGWXpwd2RLdk5CMThvVW9hQ1RBWW44aTJOenp6RlFPczctaTlPdi1FWUk3eDN1aVJXM2YtdDd3ekpDQ0NIanhiUFludllkR05TcVM2Z0loa3RiZXlMbEl2ck5QTV90aGxxSWtmTmk3aWFMZkUxaV90OERB</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxQbm9jRnN2WnJ1WDBUcTUzZFNCNHViajlNcVB0QmMyLU16dFRpU3BXV2I1TGkyWXdaSVZtTlpaX25hMEs2RGplaU90TmxvbnQtSkl1LU1aVUdMUDNjcHpLZFo0MjB6ZkVxNVhjaVdxNUpVMzJDVUpGMlozbHhjMGl5MURNdEoxSU5UUUE?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Judge Says Trump Officials Must Restart Asylum and Immigration Processing - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNZWljelpQVXQ2SE9RY01lcWdKV1pHRTNjXzdEbnhHUU5rX2d0R0NoZFJ3eG9xSHpTZU8tSV9Mek12cnpRYnNxeTZ2RURXR0VXS3cyeG1fTXNXRENVTmptbFR3VXYyMVdPMGhTbHY0OHF6N200d3dnMHlQdjYzMkJ3V0Vwcw?oc=5" target=</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNZWljelpQVXQ2SE9RY01lcWdKV1pHRTNjXzdEbnhHUU5rX2d0R0NoZFJ3eG9xSHpTZU8tSV9Mek12cnpRYnNxeTZ2RURXR0VXS3cyeG1fTXNXRENVTmptbFR3VXYyMVdPMGhTbHY0OHF6N200d3dnMHlQdjYzMkJ3V0Vwcw?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>DOJ could still pay Jan. 6 rioters even without ‘anti-weaponization’ fund - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxPOUhrall6cDY3LWx5UndPQmkzMEdyemJIVldmbVMyZkdmaEgzR1pjU1pscVR3R1RBUmhaekdweDRHU3VmaDdIb0xLLWk1MWsxUF9ocmMyNUpuNnFBLTdMV1hVMTBpWF9ZZ19RUHVpSlMzb3llZ0hvQUgyYmdPNkJ5Szd4VmpWcHNiWG5hZjl2</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxPOUhrall6cDY3LWx5UndPQmkzMEdyemJIVldmbVMyZkdmaEgzR1pjU1pscVR3R1RBUmhaekdweDRHU3VmaDdIb0xLLWk1MWsxUF9ocmMyNUpuNnFBLTdMV1hVMTBpWF9ZZ19RUHVpSlMzb3llZ0hvQUgyYmdPNkJ5Szd4VmpWcHNiWG5hZjl2UHgzX0NNbHIyTkNMQjVOcUdkclBMaFUySzFFWXZjWk5Ib0JjZWRuU3VZQjI0?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>US Senate blocks debate on FISA surveillance law days before program 'goes dark' - Reuters</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNeWwwbDZfWFVEdHlUazU5Zmx4c1hkSGxXSkxiejNaVWRSa24tVDM4bWhPVTU0MDVGOGgzZWxKd2NhS1pMd3VmZDBhR04wRGdSamJhcmd6QUxQdGlKWGFsb3YzaC1rY2hIRWhTR1dKRldfMXF1WndBWHA5dVcyM3ZQclI2dTViN0tCQWtzS2dq</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNeWwwbDZfWFVEdHlUazU5Zmx4c1hkSGxXSkxiejNaVWRSa24tVDM4bWhPVTU0MDVGOGgzZWxKd2NhS1pMd3VmZDBhR04wRGdSamJhcmd6QUxQdGlKWGFsb3YzaC1rY2hIRWhTR1dKRldfMXF1WndBWHA5dVcyM3ZQclI2dTViN0tCQWtzS2dqdHpDR3JUc09zaDNBcmF5NjVPT3pFXzRBcU4wUEptd0R2N0VkNDlUYWhhclk2a0RhU2JyS0k2c2ZB?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Confused Trump, 79, Melts Down in Bizarre Rage Post - The Daily Beast</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNM0pqVTI4d2JiZzhTUlVBVW1jdUI1ZGRyelduNnZsYk9hQzd3YmxwNVk4ZHJYdFBBVXlsYjFkbm1Eay1aMzBWbVUweU1IVTV3MjJqU0Z4dU1FNWNkRkpwZkNQZXFyMDJsMEZ5dmh3cUFyVFF6bDZpakQyTEdkU3oyU1ZIQy1yNEk?oc=5" ta</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNM0pqVTI4d2JiZzhTUlVBVW1jdUI1ZGRyelduNnZsYk9hQzd3YmxwNVk4ZHJYdFBBVXlsYjFkbm1Eay1aMzBWbVUweU1IVTV3MjJqU0Z4dU1FNWNkRkpwZkNQZXFyMDJsMEZ5dmh3cUFyVFF6bDZpakQyTEdkU3oyU1ZIQy1yNEk?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Hopes of Lebanon Cease-Fire Falter as Israel and Hezbollah Fight On - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNeTRLTk5POTl0c19rbUtPWEVrODNQQkY4QTY0SGFRa2o3TTNaaDVtYjBRODdXX0pJMkNERElBazRuQnhKTGMxMmZ5QjdTT1hCTTRxSFN5cXo2YUZYRE4xb1FscklhTXZIX05lWmpNV2VxSWl4WjRZUHNJTFBoTGY4bDFBQlhTdHlZbUFvczFF</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNeTRLTk5POTl0c19rbUtPWEVrODNQQkY4QTY0SGFRa2o3TTNaaDVtYjBRODdXX0pJMkNERElBazRuQnhKTGMxMmZ5QjdTT1hCTTRxSFN5cXo2YUZYRE4xb1FscklhTXZIX05lWmpNV2VxSWl4WjRZUHNJTFBoTGY4bDFBQlhTdHlZbUFvczFFYU9RdHRLMjZV?oc=5" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Ivanka Trump and Jared Kushner’s Albanian resort plan sets off days of protests - The Washington Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxONTJoTTdmcDZtelBwV1E3MmRmNEkxS2FvVDdqT2YtTjRWRDVuUkl5aUVFT1hMb1p6bjh5YS0zaEtPNkQtSXdBNl9adDNETGpNVkl3NnpEUy1ZTENzTHdJV1R4LUt0eVVsVjZ2RWxXeEtmekhmZXlrZlBVbjRFYmViN0ZXLWRsWWJIdmdtd3Jq</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxONTJoTTdmcDZtelBwV1E3MmRmNEkxS2FvVDdqT2YtTjRWRDVuUkl5aUVFT1hMb1p6bjh5YS0zaEtPNkQtSXdBNl9adDNETGpNVkl3NnpEUy1ZTENzTHdJV1R4LUt0eVVsVjZ2RWxXeEtmekhmZXlrZlBVbjRFYmViN0ZXLWRsWWJIdmdtd3JqSUVJbDlTVHQ3Q1RJRERPbFRHVzR5cTRYck9CcjJaVVRXa3lnd0hWZw?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxNekI0dVYxYUJUa2xncjZmdUlpS0VGWXpwd2RLdk5CMThvVW9hQ1RBWW44aTJOenp6RlFPczctaTlPdi1FWUk3eDN1aVJXM2YtdDd3ekpDQ0NIanhiUFludllkR05TcVM2Z0loa3RiZXlMbEl2ck5QTV90aGxxSWtmTmk3aWFMZkUxaV90OERBQnhUV2tjX3ZqTFZIVHM1b0lMQk9mUmRvUUVxZFpfLXFtQlBXY2hOazU2?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
@@ -131,12 +121,22 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Niger: Nearly 50 people die of thirst after lorry breaks down in Sahara desert - BBC</h3><p class="desc"><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE1QSWxRNkptY1BJYXNOeGgtb0M3cl9WM015aTd4S0ZWSXZ1UGRnRTZ0eVlId0ljQnNRTDhheDM5dnpmQjVudWc0aEhPVUNEeGx6VTZ6cmhnNlRWZw?oc=5" target="_blank">Niger: Nearly 50 people die of thirst after lorry break</p>
+            <h3>At least 49 die of thirst in Niger desert after truck breaks down - Euronews.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQMFJpWi1KUWQyRm1jd3plQ1ZaV1h0WUMtdjVEZm1rMXJDdkIyQ01wOTdUTmQ5ODA4SGw1a2VOUEdwMTMxaER5M1BsSVFoc2tyMUE0ZnB2aThManJGMVZxa21tRzR0NXE2dFJ0M0pLUllMQzNWWVRhZ1dOOERGWV9Yb2xRT0EyR21hZ0IxTDZQ</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE1QSWxRNkptY1BJYXNOeGgtb0M3cl9WM015aTd4S0ZWSXZ1UGRnRTZ0eVlId0ljQnNRTDhheDM5dnpmQjVudWc0aEhPVUNEeGx6VTZ6cmhnNlRWZw?oc=5" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQMFJpWi1KUWQyRm1jd3plQ1ZaV1h0WUMtdjVEZm1rMXJDdkIyQ01wOTdUTmQ5ODA4SGw1a2VOUEdwMTMxaER5M1BsSVFoc2tyMUE0ZnB2aThManJGMVZxa21tRzR0NXE2dFJ0M0pLUllMQzNWWVRhZ1dOOERGWV9Yb2xRT0EyR21hZ0IxTDZQZ0lyMS0zTlk2QXVSZnYwa1Nmbk9aTVRsUXZZb1NOQW1jbjN2Q3BYUQ?oc=5" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Israel reportedly deployed elite forces in Azerbaijan, operated Somaliland base, during Iran war - The Times of Israel</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNZXJ6bWFFMU9ydldQcXpQMWF5eHl0ZEV0NmlJTk5CczUyRS1FN0ZYdHp3Wmk2VFdkdElwUzJCdEtWUFhBQzJ4SlcyZnE5SnJUbGZQSjhVVXE4RXM5TG9aZW5wcFE5V1NRX28wYnJCZS1fRXlJeWRDSE93Ry1UZGI2WGlBTUdtWlh0ZU9FNXZo</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNZXJ6bWFFMU9ydldQcXpQMWF5eHl0ZEV0NmlJTk5CczUyRS1FN0ZYdHp3Wmk2VFdkdElwUzJCdEtWUFhBQzJ4SlcyZnE5SnJUbGZQSjhVVXE4RXM5TG9aZW5wcFE5V1NRX28wYnJCZS1fRXlJeWRDSE93Ry1UZGI2WGlBTUdtWlh0ZU9FNXZoS1dGZFpGZHRCbnlrcVp4WkptZVA2S1AzMW1PMGNVVkZzdnc2Y1pBNkHSAbwBQVVfeXFMUE1CYmxUdzUzOV9KWF80em95QzVub2RSREN3UVhuT3hQVUV2dW9FcVFnMTRMM3ZrMmsxbVRwZHZ5R0pUTTlrY2NiYmQwWXZnZkRERXhQa1RMTWJNN0NIS0wwVDRzMzM4SmM3dkJUOFlaSlJTTU93aENra0ZaaEdfWWRKRnZ4dG5iMTViUDJoZWNpQWt2bnpPaDJtMHJuTTBuVzEzODd5N3o4ZkFWQThEeFpaNE5hczlpcDN2OHE?oc=5" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
