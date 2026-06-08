@@ -1,57 +1,107 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-06-07 10:53 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-06-08 10:01 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Actualizaciones en vivo: Irán dispara misiles contra Israel por primera vez desde el alto el fuego de abril - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE4yaFRvZG5JOHJaV2ZsSllxcUx6WG9HSEdWVC1sQlVDZlRIU mxxb18xVWNmOEZCd0xKa3lraG80ZGw4NnVHcE5vODRwZzVNVkV4V3JscldjQUt0dU9zQ2swZjExcG9IR2E2dG5hb29HekFnYV8x?oc=5" target="_blank">Actualizaciones en vivo:</p>
+            <h3>Por qué deberías evitar el sol de invierno y dirigirte a esta fría ciudad australiana</h3><p class="desc">Trufas, masa madre, lana y vino: la guía invernal definitiva de Launceston.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">braidwoodtimes</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE4yaFRvZG5JOHJaV2ZsSllxcUx6WG9HSEdWVC1sQlVDZlRIUmxxb18xVWNmOEZCd0xKa3lraG80ZGw4NnVHcE5vODRwZzVNVkV4V3JscldjQUt0dU9zQ2swZjExcG9IR2E2dG5hb29HekFnYV8x?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.braidwoodtimes.com.au/story/9280093/the-ultimate-winter-guide-to-launceston-4-things-to-do-right-now/?src=rss" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Cinco heridos en apuñalamiento en Penn Station, informa el FDNY - ABC7 New York</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxQTzdwbnAycDREemtIcEw0Wm5sV0VIM0JkQnpEOFRMMFlraFd2bWw5Q2FrVnhu b0RCTmVSTlQzTlduQnVDMDVKREtYY0g1LWtaN0ZYOXUyYjVHSmN0ZGdDNGRqMmVMRnIzcW0yR2tURElJOWpIchHZKeTVWNGhQNUlmWWVR0gGHAUFVX3lxTE9q</p>
+            <h3>Rolin Jones de The Vampire Lestat revela a qué prestar especial atención en el estreno de la temporada, 'Detroit'</h3><p class="desc">"No espero que nadie comprenda todo lo que hay en el Episodio 1 en una primera visualización", dice el showrunner. A continuación aparecen spoilers del Episodio 1 de la Temporada 3 de The Vampire Lestat, "Detroit", que ya está disponible en AMC y AMC+.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">in_ign</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxQTzdwbnAycDREemtIcEw0Wm5sV0VIM0JkQnpEOFRMMFlraFd2bWw5Q2FrVnhub0RCTmVSTlQzTlduQnVDMDVKREtYY0g1LWtaN0ZYOXUyYjVHSmN0ZGdDNGRqMmVMRnIzcW0yR2tURElJOWpIcHZKeTVWNGhQNUlmWWVR0gGHAUFVX3lxTE9qM2tfZnZKQlFHZXpVVzVhcVRmRUpiSDFGOENzdW0wVDkyWmFfS3M5RU54NEc2X3Z3dWNOaFhxdm15SHBMVHNGUTZmbXgwZkppMlQtOUpKb0FkZ2hFTUhLclpOenJ2cHBMbGgxTXZGa0wxOFA3ekc1WEYxVVl1OVNWeWZfWmV3SQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://in.ign.com/anne-rices-interview-with-a-vampire/263219/the-vampire-lestats-rolin-jones-reveals-what-to-pay-special-attention-to-in-the-season-premiere-detr" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Trump abandona una entrevista con Meet the Press de NBC después de un enfrentamiento por afirmaciones electorales - The Guardian</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNbTRGRHpnMXduWlJRMEswTS1ZLUZTRDRRcGd4TmZZVXJicVZfZGZpeVZfYUFs NWhoZFRJakxocWptbV90RjZGVFcybU41NFZTVUxCR0liV2NYTGRYb2lxcDE5NHBnWUhkcmdHWVZpVkFOdVFQcUtxWEcwMmFNNWVzNFp3QmtOemdMX2c4Ui0w</p>
+            <h3>Las hermanas Labasa obtienen los máximos honores en un concurso de urdu</h3><p class="desc">Julfa y Azka Noor reclaman títulos de división primaria en nazam y oratoria.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">fijisun</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNbTRGRHpnMXduWlJRMEswTS1ZLUZTRDRRcGd4TmZZVXJicVZfZGZpeVZfYUFsNWhoZFRJakxocWptbV90RjZGVFcybU41NFZTVUxCR0liV2NYTGRYb2lxcDE5NHBnWUhkcmdHWVZpVkFOdVFQcUtxWEcwMmFNNWVzNFp3QmtOemdMX2c4Ui0wOFNsN1pHdzJB?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://fijisun.com.fj/news/education/labasa-sisters-claim-top-honours-in-urdu-competition" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Nithya Raman supera a Spencer Pratt en una reñida carrera para llegar a la segunda vuelta de la alcaldía de Los Ángeles - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPcWhuR1M3c3BiMnhSM3ZjajBMQjI0MzdaRVc3N2p4N01hTTVPNmVFY2NMVHZw ZlY1OHRkM2djM3ZpN1kwQ3Z4QmNGaDFud2daSU9PMEZGMUJVSUM1aEg3c2tiblRCN1cyODY1R3Z2d1YwWHJIREgtZmxVbWt5cUVMSHREUDlBSlJxRmxIa1V1</p>
+            <h3>Los concejales de Auckland decidirán quién se queda con las casas y quién se queda con el césped</h3><p class="desc">Un mapa publicado por el ayuntamiento muestra qué suburbios propone intensificar antes de una polémica votación el martes: vea lo que esto significa para su casa.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">thepost_nz</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPcWhuR1M3c3BiMnhSM3ZjajBMQjI0MzdaRVc3N2p4N01hTTVPNmVFY2NMVHZwZlY1OHRkM2djM3ZpN1kwQ3Z4QmNGaDFud2daSU9PMEZGMUJVSUM1aEg3c2tiblRCN1cyODY1R3Z2d1YwWHJIREgtZmxVbWt5cUVMSHREUDlBSlJxRmxIa1V1cVdReUVyQXUxMHAtTFQ5STIySWN5TFJjLXVMRXhGRENYYm9ib1Y0VjF2MkpoNHZ1N0wyb3o2SHc?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.thepost.co.nz/nz-news/361018776/auckland-councillors-decide-who-gets-townhouses-who-gets-keep-lawns" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Israel ataca los suburbios de Beirut en represalia contra Hezbolá - NPR</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPSjNMTVEzek5lTTczV2llM0NQN05fbzRJTFNlU3FOdDhSdUZqXzNIcnZPWERT SlVMZjd4bDZMRUp6S3A2bktDbjJZTmZCMnk4aG5mSnlrcHZzREN3Mmo0X2NZTkVNMFZKZENYeGlETklkQWtvSFBkTENCcTRMeEJDQklySVREZk1WaFFuNXBo</p>
+            <h3>Los concejales votarán un plan para dar acceso público a los jardines privados de Edimburgo - The Scotsman</h3><p class="desc">Los concejales votarán sobre el plan para dar acceso público a los jardines privados de Edimburgo El Consejo escocés de Edimburgo se niega a abrir jardines privados Los Verdes escoceses piden abrir al público los jardines privados de la ciudad en el modelo estilo St Andrew Square The He</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">google</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPSjNMTVEzek5lTTczV2llM0NQN05fbzRJTFNlU3FOdDhSdUZqXzNIcnZPWERTSlVMZjd4bDZMRUp6S3A2bktDbjJZTmZCMnk4aG5mSnlrcHZzREN3Mmo0X2NZTkVNMFZKZENYeGlETklkQWtvSFBkTENCcTRMeEJDQklySVREZk1WaFFuNXBoQQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxPNFRWcjlrMTZWMGlSWWdVNDlIY3lvaklobzFPV1Vkd28yemxwMk4yMllsTVkxd2h3ajF3ZDBnZTJxUE9BYTlvcy1ZVFQ4T0RKbGp6SXBobUVUSFFqOEp5d3R6SmpIbmdRWXIyWnd5VmRZQkZ1WFBHakk5SlU3Zk5GM0htYzl1RXl6bWUyWXRvWS1KQTdGSEJldzRJVjdNNC1Qbk9lWllfbDVzTGFPdDF3dU9hczhEQXNrWkNkV2JZU0I1eDcw?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Advertencias de tsunami emitidas después del poderoso terremoto frente a Filipinas - Al Jazeera</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQWWJRbmdPZHFyOC1DUFd6ZWpsWkVqcWg3d2dIN3VkMHdFbW4tOW1xaGVtU2pa bWpBV3JwdjUtOEM0a0Iyck9VdlNNM21FcGFCeWpEb0VYRVczcGg2b2I3c2E0VWJmUVB6cFY0bzdUWnlwelV5UEkwWTNSdTltZ0pSQjZNOXBmS0hEYllySlpC</p>
+            <h3>Mandalorian Body Double enseña a la audiencia de IGN cómo caminar como un vaquero espacial | IGN en vivo 2026</h3><p class="desc">El doble del cuerpo del Mandaloriano (y nieto de John Wayne), Brendan Wayne, pasó por IGN Live para hablar sobre sus momentos favoritos de su tiempo con la armadura y enseñó a algunos miembros afortunados de la audiencia cómo pavonearse como un verdadero vaquero espacial. mira el yo</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">in_ign</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://in.ign.com/star-wars-the-mandalorian/263221/mandalorian-body-double-teaches-ign-audience-how-to-walk-like-a-space-cowboy-ign-live-2026" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Documental de Carine Wallauer explora los rincones escondidos de Copán</h3><p class="desc">Proyección de película en Cine Belas revela el fascinante laberinto instalado en el corazón de São Paulo</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">estadodeminas</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.em.com.br/cultura/2026/06/7436160-documentario-de-carine-wallauer-percorre-os-reconditos-do-copan.html" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>No Kings: por qué Australia necesita su propio movimiento republicano</h3><p class="desc">Mientras millones de personas marchan bajo la bandera de No Reyes en Estados Unidos, es hora de que los australianos echen una nueva mirada a su propio jefe de Estado no electo, escribe GJ Burchall. HAY OTRA protesta contra los Reyes organizada para la República Americana el próximo fin de semana. Th</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">sydneysun</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="http://www.sydneysun.com/news/279108490/no-kings-why-australia-needs-its-own-republic-movement" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>¿Por qué el presidente chino Xi Jinping visita ahora Corea del Norte?</h3><p class="desc">El presidente chino, Xi Jinping, regresa a suelo norcoreano después de casi siete años. Visitará Pyongyang los días 8 y 9 de junio para una cumbre con el líder del país, Kim Jong Un, informó Al Jazeera, con sede en Qatar, citando medios estatales.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">tbsnews_net</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.tbsnews.net/videos/why-chinese-president-xi-jinping-visiting-north-korea-now-1456641" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Irán e Israel detienen los intercambios de disparos - WSJ</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQWi1qZHpOOXlndl9pb25lRldfN09RVjVYVU1OQWt5OUVLRWl0UXpxblFyTjlw cV9oRVhKdGxfTlA5QnZTcVVYdHlNLVNENm5CYXRNNlNQSXF6U2c0ZVhxd0tkbXBBY19jUm9DTG9zbGtlY3VrTEJWMVVfMXNBemxVQ180MXk5SVI3dlB6a3dm</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQWi1qZHpOOXlndl9pb25lRldfN09RVjVYVU1OQWt5OUVLRWl0UXpxblFyTjlwcV9oRVhKdGxfTlA5QnZTcVVYdHlNLVNENm5CYXRNNlNQSXF6U2c0ZVhxd0tkbXBBY19jUm9DTG9zbGtlY3VrTEJWMVVfMXNBemxVQ180MXk5SVI3dlB6a3dmN1dMQnpvUV9RaHFvd2lLZnJuUGoxUDJ5b09hSkUwcWhB?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Potente terremoto golpea Filipinas y mata al menos a 15 - Al Jazeera</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQWWJRbmdPZHFyOC1DUFd6ZWpsWkVqcWg3d2dIN3VkMHdFbW4tOW1xaGVtU2pa bWpBV3JwdjUtOEM0a0Iyck9VdlNNM21FcGFCeWpEb0VYRVczcGg2b2I3c2E0VWJmUVB6cFY0bzdUWnlwelV5UEkwWTNSdTltZ0pSQjZNOXBmS0hEYllySlpC</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
@@ -61,91 +111,41 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Continúa la búsqueda de sospechosos después de que 12 personas dispararan cerca de un festival en Toledo, Ohio - The Guardian</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNbmo0aUtISHhqOURURHB1UGliYkxqSjVhVFNuNDh3ZGN1OU1Cb2s3LTRw TTdxWk1GNnVkemRSV1Nnblg2WnpnUmpCbkpXT2o0dzhmTWtlRVA2Q1lPY0gwYmxEaGxPRVJ6aE1VZ1FTZmtrUEJuaWQ0V2hMRW9xaGpnS3Q5Yw?oc=5" objetivo =</p>
+            <h3>Amistad o influencia: ¿Por qué está Xi Jinping en Corea del Norte? - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE00Nzl3WGtpQk5zMVlQeUZaY29sMFlM OXcycEhiNVE2SHczaXRfY0t2VVh2WmtwZ242YVdWdkZzaFRLT21lME9VVzBJN2FrVnlzT2dSSHVNRHltQQ?oc=5" target="_blank">Amistad o influencia: ¿Por qué Xi Jinping está en el No?</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNbmo0aUtISHhqOURURHB1UGliYkxqSjVhVFNuNDh3ZGN1OU1Cb2s3LTRwTTdxWk1GNnVkemRSV1Nnblg2WnpnUmpCbkpXT2o0dzhmTWtlRVA2Q1lPY0gwYmxEaGxPRVJ6aE1VZ1FTZmtrUEJuaWQ0V2hMRW9xaGpnS3Q5Yw?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE00Nzl3WGtpQk5zMVlQeUZaY29sMFlMOXcycEhiNVE2SHczaXRfY0t2VVh2WmtwZ242YVdWdkZzaFRLT21lME9VVzBJN2FrVnlzT2dSSHVNRHltQQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los demócratas en el Congreso lidian con preocupaciones sobre las acusaciones de Platner - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNTDNNVTg0NDEtTEx0MW84a3luUUdSWTB5Ynl0WjBPcDF4RXR2SFVKQ05zRldt UzhFU21pVGE2LVhpa0dNRHBuN1d0czY2bHVOWk9VTGJYZUVwc0RRanhMNjVKWl9venlpbTRpYmY3cEoxRERPSTZZXzBTZFhENEJRdWxmeUxKOG9LbmQxZ2tv</p>
+            <h3>6 personas apuñaladas en Penn Station. Esto es lo que sabemos. - Noticias CBS</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPcjFQS29QZzZ4Q1VCVDRndW4tLXY0TGR0U0VVOGF0TGVBcjFmUHhrYkF EWEtjRHRpeFJkUU5CTUsyWjFVSzBCWHZYSFd6LTE3eW1WTURVR3dCY2ozUVpvTkJtanNuUTVDT3kzTHIxdTFMZDZTeldBbmVFdFBDbWF5eG53?oc=5" objetivo="_</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNTDNNVTg0NDEtTEx0MW84a3luUUdSWTB5Ynl0WjBPcDF4RXR2SFVKQ05zRldtUzhFU21pVGE2LVhpa0dNRHBuN1d0czY2bHVOWk9VTGJYZUVwc0RRanhMNjVKWl9venlpbTRpYmY3cEoxRERPSTZZXzBTZFhENEJRdWxmeUxKOG9LbmQxZ2tvWWk?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPcjFQS29QZzZ4Q1VCVDRndW4tLXY0TGR0U0VVOGF0TGVBcjFmUHhrYkFEWEtjRHRpeFJkUU5CTUsyWjFVSzBCWHZYSFd6LTE3eW1WTURVR3dCY2ozUVpvTkJtanNuUTVDT3kzTHIxdTFMZDZTeldBbmVFdFBDbWF5eG53?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Una plaga carnívora amenaza las esperanzas de Trump sobre el precio de la carne vacuna - Politico</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxNNTRycmRtdzlQbGltRkJNRWJnTWkwSnRTeGlyUzhaX2lSemh1dlR3WlhBMW1G eUpfSVFLbldDUnBVUm1MV1IxbUpsNUtPZHJDMmZXSUxXcGE2RkQ2UHNDcTYtMlo3U3p0dGpQcWEtTzVqVjI0eTJrLWdmU1hfelR5VlBXcU1LWkRISGFES01M</p>
+            <h3>La división entre el estado rojo y el estado azul es real. Pero está impulsado por algo más que política - NPR</h3><p class="desc"><un href="https://news.google.com/rss/articles/CBMixAFBVV95cUxNZF93cEpBMTRRNm5LcmtIeGhKMDBKQVdwSXlRb1VTdEp0bldsSi1NWkt2dXVlQ3VP SzR4akVhUnMtb0F0aVpwVmVYSE10elY4bUU4Yzd1NlNERFM4OHhMdjZ2Z1pfQ3ZwR0prRTh0ZzQ1MkxwMU5aejVxekdmZUtLTTTZOdXppNmdkaEhtM0hmcWxaYXpX</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxNNTRycmRtdzlQbGltRkJNRWJnTWkwSnRTeGlyUzhaX2lSemh1dlR3WlhBMW1GeUpfSVFLbldDUnBVUm1MV1IxbUpsNUtPZHJDMmZXSUxXcGE2RkQ2UHNDcTYtMlo3U3p0dGpQcWEtTzVqVjI0eTJrLWdmU1hfelR5VlBXcU1LWkRISGFES01MMnJvMjA?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxNZF93cEpBMTRRNm5LcmtIeGhKMDBKQVdwSXlRb1VTdEp0bldsSi1NWkt2dXVlQ3VPSzR4akVhUnMtb0F0aVpwVmVYSE10elY4bUU4Yzd1NlNERFM4OHhMdjZ2Z1pfQ3ZwR0prRTh0ZzQ1MkxwMU5aejVxekdmZUtLTTZOdXppNmdkaEhtM0hmcWxaYXpXX2dhZTdUTm1yRnl5a2hERFpVbUd5My1KT3RzeTk0UnRVa3B3VXRYSkhCRkstbndR?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Tres hombres estadounidenses arrestados acusados ​​de conspirar para apoyar a ISIS - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxOeFF2VVpWSkpuSXd4Qi1zN0xWWDRpQ2dRYlpiSnZwYmUtMmZ1VEtwoOUVaNzU5 OHpCNTlTbzlvcWlLU0l3LWt4T3FUbTJ4OExGZGFEQ0xRcVFHYnY0Z2NwVzN3amNtRkhiNHdrY05xelZNUWNYYkpoQUxMVkotaVc5MVdQd1hTVnBMR0NIdDln</p>
+            <h3>En discurso ante el parlamento español, el Papa exige respeto por la dignidad de todas las personas - NPR</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNeVZBVGV1M1lxajBuVXo5U0g4X3N2MjFZYTB3azBkVE9QcGFIcXVDeE lEbnYzWG5vbkxnVjJHM01xa1otWFhmTl84UHF3b3FscWRwOFNraG9ua3dBZUd1LWVNUzV0NE5HVk8tbDZOc3gzd2hFT1I4LUdjLTJhQVhHTA?oc=5" objetivo="_bl</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxOeFF2VVpWSkpuSXd4Qi1zN0xWWDRpQ2dRYlpiSnZwYmUtMmZ1VEtwOUVaNzU5OHpCNTlTbzlvcWlLU0l3LWt4T3FUbTJ4OExGZGFEQ0xRcVFHYnY0Z2NwVzN3amNtRkhiNHdrY05xelZNUWNYYkpoQUxMVkotaVc5MVdQd1hTVnBMR0NIdDlnU3pXUUstUVZuMF9WNUhmM1gz?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los iraníes se hunden en la desesperación ante las muertes en la guerra y una inflación vertiginosa - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPZEtxYWhCd1M3d0dURWRQSFVHYzdlMGZTVGxxSEROaXdtR3Z2dEZtSS1YbmY2 TFFYVjJ6ejRVc1ZuTkQ0aGhPQW1ObXJGbDhWZ0hUOVgwTU9CRGVQMG5BcERjMXhBa05HTFhfX05BbDVVQjZUWnE1bDY1dGtzNnVZUEpnY0ZtWXpjMW5yQjd3</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPZEtxYWhCd1M3d0dURWRQSFVHYzdlMGZTVGxxSEROaXdtR3Z2dEZtSS1YbmY2TFFYVjJ6ejRVc1ZuTkQ0aGhPQW1ObXJGbDhWZ0hUOVgwTU9CRGVQMG5BcERjMXhBa05HTFhfX05BbDVVQjZUWnE1bDY1dGtzNnVZUEpnY0ZtWXpjMW5yQjd3M0ZQWERBa3dnemZJNA?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Irán rechaza la idea de utilizar sus activos para pagar daños y perjuicios a los aliados de Estados Unidos - Reuters</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOWENyVGtVLV9tWVN5M3FuNkRxRFlGcmNoM3Q0Y0huOVZrUjdvYnplcDRqNU1H MS1OdkZSVHR5QlRQXzV1QllZZ3RscUpFQmhUWktKVnFaWndQRzd6R2hBRTZkbzJ2OVQ5UXVfT1V0WkhsQk5DZ3hQbUtib21NSlV6NElQTzZ3RWVpbXlTRE5x</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOWENyVGtVLV9tWVN5M3FuNkRxRFlGcmNoM3Q0Y0huOVZrUjdvYnplcDRqNU1HMS1OdkZSVHR5QlRQXzV1QllZZ3RscUpFQmhUWktKVnFaWndQRzd6R2hBRTZkbzJ2OVQ5UXVfT1V0WkhsQk5DZ3hQbUtib21NSlV6NElQTzZ3RWVpbXlTRE5xN3U5TUMxdkRUbzF4TnhHenhXVWJhbEQwR0FOQ3ZodGc?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Fotos de la segunda vuelta de las elecciones presidenciales de Perú - AP News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxOLVNnT041WDVfS2xzdTdoVU1LVjFGT0Utcjdrd2h2VENyak1JZlRoam1jNENW WkpSblFUZW9KaXUtNHAtaWxCY2tlRlpEVWdKbmFrUlliSldqcVRMazVzSXFpOWdpa2xYSmhuckoxcEdPRC0xaThZdmkwbURIWHc1aGx3TG9MYVhFMUR1Q09y</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxOLVNnT041WDVfS2xzdTdoVU1LVjFGT0Utcjdrd2h2VENyak1JZlRoam1jNENWWkpSblFUZW9KaXUtNHAtaWxCY2tlRlpEVWdKbmFrUlliSldqcVRMazVzSXFpOWdpa2xYSmhuckoxcEdPRC0xaThZdmkwbURIWHc1aGx3TG9MYVhFMUR1Q09yU3E3MXVvNnRmdDJRQTgtYVhkZ2c3Q29na3hTUnZR?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El partido gobernante pro UE lidera las elecciones parlamentarias en Armenia, según muestran las encuestas a pie de urna - politico.eu</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxPcjlWSElFSjVuNGNmOVdObzNXVGR3U3BJYlNNSnhQYWdkbWxtMlNOenh0U1dO Q2dFSmgteGdHLWZjdVZtVDRpVUFCV0N4cWJyNW5VYW1XbUlYaGhRMkozcWtuOXZjaThOdjhjbTdSbW9DVlBUZ1k0NWRld3lXV0kzNlBvckp6X3dPUTNiY0pB</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxPcjlWSElFSjVuNGNmOVdObzNXVGR3U3BJYlNNSnhQYWdkbWxtMlNOenh0U1dOQ2dFSmgteGdHLWZjdVZtVDRpVUFCV0N4cWJyNW5VYW1XbUlYaGhRMkozcWtuOXZjaThOdjhjbTdSbW9DVlBUZ1k0NWRld3lXV0kzNlBvckp6X3dPUTNiY0pBUkw?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los futuros de las acciones estadounidenses caen mientras Irán ataca a Israel; El Kospi de Corea del Sur se desploma un 7%: actualizaciones en vivo - CNBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE0yTzBaSmd1X1ZiSTF5amRwTE9pZk1jMndoZm5YMXIzSklnQ2E3dDJUUkZSM1JT T2Fsc1Vidk5vRFU1YUlMeWM0WFFLN200Z2ppeHhFV2xURExMVk8yS0s4QUNxeUx1S0FaeHAyTFlzX0JIRy1NVFRF0gF8QVVfeXFMTWxJR2t2ek9hOUJudHpl</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE0yTzBaSmd1X1ZiSTF5amRwTE9pZk1jMndoZm5YMXIzSklnQ2E3dDJUUkZSM1JTT2Fsc1Vidk5vRFU1YUlMeWM0WFFLN200Z2ppeHhFV2xURExMVk8yS0s4QUNxeUx1S0FaeHAyTFlzX0JIRy1NVFRF0gF8QVVfeXFMTWxJR2t2ek9hOUJudHplX2NSS2pZVnZFd21zcTEwTEc1QTlCdzRLSDNfam9NazZNNjRFT3J3eHNzazRRbFo1QmZVQmJSaHhoMmx1YWwzMjFhQWpZTGlZSUl2NHFZVDRBbGRaTmxlVmdHNWFiTVlGM2tEVl9Oeg?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNeVZBVGV1M1lxajBuVXo5U0g4X3N2MjFZYTB3azBkVE9QcGFIcXVDeElEbnYzWG5vbkxnVjJHM01xa1otWFhmTl84UHF3b3FscWRwOFNraG9ua3dBZUd1LWVNUzV0NE5HVk8tbDZOc3gzd2hFT1I4LUdjLTJhQVhHTA?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div></body></html>
