@@ -1,12 +1,122 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-06-15 10:08 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de la vida local.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-06-16 12:10 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de la vida local.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Más fresco y menos húmedo durante unos días.</h3><p class="desc">Las posibilidades de lluvia aumentan a finales de semana.</p>
+            <h3>Un día más fresco y nublado antes de que regrese el calor típico de junio</h3><p class="desc">Las posibilidades de lluvia aumentan a finales de la semana y se generalizarán el viernes</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
                 <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>El programa de prekínder del condado de Mecklenburg celebra un número récord de graduados con más de 1000</h3><p class="desc">MECK Pre-K celebra la promoción más grande de su historia con 1,913 niños preparándose para el jardín de infantes.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/education/meck-pre-k-graduates-record-number-of-children-2026/275-0f7a3ef2-6b1f-4a79-be2e-114898b51039" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>CMPD identifica a víctima en investigación de homicidio en el noroeste de Charlotte</h3><p class="desc">La policía comenzó su investigación después de responder a una llamada de asalto con arma mortal a lo largo de Holly Street la madrugada del lunes.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/crime/homicide-investigation-west-charlotte-cmpd/275-ed3f5395-413b-46c1-ab32-3853e034dab8" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Un hombre muere meses después de perder el control de un scooter motorizado en Steele Creek</h3><p class="desc">Un hombre murió el domingo después de pasar más de siete meses hospitalizado tras un accidente de scooter motorizado en el área de Steele Creek.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/man-injured-in-november-2025-crash-dies-june-2026/275-08c23bc7-7ff8-4b29-92d6-410ab4d05b45" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Encuentran sano y salvo a estudiante de secundaria desaparecido en Carolina del Sur</h3><p class="desc">El joven de 16 años está desaparecido desde el miércoles 3 de junio.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/missing-lancaster-south-carolina-teen-left-school-disappearance/275-b38b442d-b4d9-4968-90b8-c2ed03865254" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Los precios del petróleo y el gas caen tras la noticia del acuerdo de paz entre Estados Unidos e Irán</h3><p class="desc">Incluso con un acuerdo sobre la mesa, los expertos dijeron que podrían pasar meses hasta que los suministros se recuperen por completo.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/connect-the-dots/oil-and-gas-prices-connect-the-dots/275-e96b47af-49e5-48c1-9afc-db552938a26a" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>'Hacer del 277 un río' | La gran idea del candidato a la alcaldía de Charlotte hace hablar a Queen City</h3><p class="desc">La gente ha bromeado durante años acerca de convertir la I-277 en un río lento, pero un candidato a alcalde cree que Charlotte puede ser la "Venecia del Sur".</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/zach-claywell-make-277-a-river-charlotte-mayoral-pitch-social-media-reaction/275-c6111829-1de4-44a6-9149-44d2d66a1fbf" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Docenas de candidatos a la alcaldía presentan sus argumentos ante el Ayuntamiento de Charlotte</h3><p class="desc">El consejo se reunirá el jueves para entrevistar a los cinco candidatos principales. La votación final todavía está prevista para el 22 de junio.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/candidates-make-their-case-to-charlotte-city-council/275-9197444a-d6f3-43b5-acf7-90010b72568c" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>El entrenador del área de Lake Norman acusado de delitos sexuales contra niños lanza preguntas sobre la seguridad en los clubes deportivos locales</h3><p class="desc">Stephen Kerlew enfrenta media docena de cargos relacionados con el presunto abuso sexual de un niño. Se enfrentó a cargos en Florida hace más de 20 años.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/crime/lincoln-county-tennis-pro-stephen-kerlew-child-sex-crimes-investigation/275-67de8fa7-604f-47d7-a548-0260d3d3d6cb" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>El condado de York trabaja en una moratoria para los centros de datos, pero ¿se aplicará al centro de datos actual en construcción?</h3><p class="desc">Los líderes del condado de York aprobaron la primera lectura de una moratoria de nueve meses para los centros de datos, pero su impacto en el proyecto QTS en curso sigue siendo incierto.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.wcnc.com/article/money/economy/york-county-takes-first-step-towards-9-month-data-center-moratorium/275-9844db9f-bc5c-4acc-9605-919977d0d796" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Un socavón cierra una transitada carretera al sur de Charlotte</h3><p class="desc">Hay mucho tráfico en Selwyn Avenue entre Runnymede Lane y Colony Road.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/sinkhole-closes-busy-south-charlotte-road/275-cb8f0969-d312-489e-ac8d-fd7c6bc58377" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>La familia Gastonia comparte un viaje emocional después del trasplante de hígado que le salvó la vida a un bebé</h3><p class="desc">Un bebé del condado de Gaston se está recuperando de un trasplante de hígado que le salvó la vida tras un diagnóstico poco común de atresia biliar.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/infant-life-saving-liver-transplant/275-cf9cd620-baee-4c27-956d-241b92494c5f" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
@@ -37,115 +147,5 @@
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
                 <a href="https://www.wcnc.com/article/news/crime/2-shot-uptown-charlotte-romare-bearden/275-fc114a50-44d3-4bf2-b919-50148bca79d6" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Rescate de larga data en el área de Charlotte se vio obligado a vender su propia camioneta de transporte para ayudar a los animales</h3><p class="desc">Los tiempos se han vuelto tan desesperados para Carolina Waterfowl Rescue que la gerencia se ha visto obligada a poner a la venta su propia camioneta de transporte.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/carolina-waterfowl-critical-funding-need-selling-transport-van/275-03087040-0c04-4d68-ba11-7ae02c29e2bc" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>CMS paga $95,000 a una familia en una demanda por pintura rupestre espiritual</h3><p class="desc">El incidente de Spirit Rock provocó un cambio de política de CMS y un acuerdo judicial de cinco cifras.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/cms-spirit-rock-painting-lawsuit/275-60c48619-988b-465b-991d-fe7bbce8eb46" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Docenas de candidatos a la alcaldía presentan sus argumentos ante el Ayuntamiento de Charlotte</h3><p class="desc">El consejo se reunirá el jueves para entrevistar a los cinco candidatos principales. La votación final todavía está prevista para el 22 de junio.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/candidates-make-their-case-to-charlotte-city-council/275-9197444a-d6f3-43b5-acf7-90010b72568c" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La familia Gastonia comparte un viaje emocional después del trasplante de hígado que le salvó la vida a un bebé</h3><p class="desc">Un bebé del condado de Gaston se está recuperando de un trasplante de hígado que le salvó la vida tras un diagnóstico poco común de atresia biliar.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/infant-life-saving-liver-transplant/275-cf9cd620-baee-4c27-956d-241b92494c5f" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Un socavón cierra una transitada carretera al sur de Charlotte</h3><p class="desc">Hay mucho tráfico en Selwyn Avenue entre Runnymede Lane y Colony Road.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/sinkhole-closes-busy-south-charlotte-road/275-cb8f0969-d312-489e-ac8d-fd7c6bc58377" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Joven de 18 años se ahoga en el lago James</h3><p class="desc">EMS del condado de Burke dirigió una operación de rescate acuático cerca de la presa Linville.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/search-for-person-missing-in-lake-james-underway-burke-county-ems-says/275-efa2fbe9-1c14-4909-97f3-61abb4b60f80" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Un motociclista adolescente muere después de chocar por detrás con una camioneta en la US 70 en Hickory</h3><p class="desc">Según la policía, el joven de 19 años viajaba en dirección este cuando chocó contra un Hyundai Kona que iba en la misma dirección.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/fatal-motorcycle-crash-hickory/275-857678ec-5b18-4823-846d-e5732c9138fd" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La policía de Monroe emite un recordatorio de seguridad vial después de que un ciclista resultara gravemente herido en un accidente con un SUV</h3><p class="desc">El Departamento de Policía de Monroe insta a tener precaución después de que un accidente grave que involucró una bicicleta eléctrica y un vehículo dejó a una persona hospitalizada, lo que pone de relieve la seguridad vial en verano.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/monroe-police-urge-road-safety-e-bike-collision-summer-travel/275-01595e01-7feb-4be3-93b7-7e9a46db2291" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>¡La salchicha de Neese volverá a los estantes! Una empresa con sede en Raleigh adquirió el antiguo negocio de Greensboro.</h3><p class="desc">El fabricante de hot dogs con sede en Raleigh dice que la marca Neese's Country Sausage pasará a manos de la familia White, los propietarios y operadores de Jesse Jones.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/neeses-sausage-will-return-to-shelves-the-company-was-bought-by-jessie-jones/83-fa3ec56e-0bcb-4880-b85c-308886ab5e40" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Oficiales de CMPD impusieron el toque de queda juvenil cerca cuando se escucharon disparos cerca del parque Uptown Charlotte</h3><p class="desc">CMPD está investigando un tiroteo nocturno cerca del parque Romare Bearden que hirió a dos personas y resultó en múltiples arrestos, con oficiales patrullando el toque de queda cerca.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/crime/uptown-charlotte-shooting-june-13-2026/275-00a7db26-5d92-4112-bcff-86494e665121" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Investigación de homicidio en curso en el oeste de Charlotte, dice CMPD</h3><p class="desc">Los oficiales respondieron a una llamada a lo largo de Holly Street, justo al lado de Beatties Ford Road, poco después de la 1 a.m.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/crime/homicide-investigation-west-charlotte-cmpd/275-ed3f5395-413b-46c1-ab32-3853e034dab8" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div></body></html>
