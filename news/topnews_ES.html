@@ -1,4 +1,114 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-06-17 02:10 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-06-17 05:01 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Dow Jones salta 450 puntos mientras la caída del petróleo alimenta las apuestas económicas; La reinversión de chips golpea al Nasdaq: actualizaciones en vivo - CNBC</h3><p class="desc">El Promedio Industrial Dow Jones subió a un máximo récord el martes, impulsado por las acciones de la vieja economía a medida que los precios del petróleo bajaban.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">CNBC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.cnbc.com/2026/06/15/stock-market-today-live-updates.html" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Trump señala un rápido regreso de las sanciones al petróleo ruso mientras el G7 vuelve a centrarse en Ucrania - AP News</h3><p class="desc">El presidente Donald Trump y los líderes del G7 se están centrando en la guerra de Ucrania y Trump está considerando volver a imponer pronto sanciones a los envíos de petróleo ruso. El comentario del martes se produce después del anuncio de un acuerdo para poner fin al conflicto del Golfo, que se espera que</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Associated Press</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://apnews.com/article/g7-iran-ukraine-trump-macron-zelenskyy-e7fad4eabaae8181f70fa5a0b9e499b2" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Google lanza Android 17, disponible ahora en Pixel - 9to5Google</h3><p class="desc">Google está listo para lanzar Android 17 para dispositivos Pixel hoy. El lanzamiento de hoy también coincide con el lanzamiento de píxeles (funciones) de junio de 2026.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">9to5google.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="http://9to5google.com/2026/06/16/google-android-17-pixel-launch/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>El Departamento de Educación planea sacar la educación especial y los derechos civiles de la agencia - The Washington Post</h3><p class="desc">Las medidas, dicen tres personas informadas sobre el plan, son parte de un esfuerzo por cerrar el departamento trasladando sus funciones a otras partes del gobierno.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.washingtonpost.com/education/2026/06/16/education-dept-plans-move-special-ed-civil-rights-out-agency/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>SpaceX supera a Amazon y apunta a Microsoft en su carrera hacia los 3 billones de dólares - Yahoo Finanzas</h3><p class="desc">SpaceX es uno de los nuevos participantes más rápidos en el nivel superior del mercado estadounidense.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Yahoo Entertainment</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://finance.yahoo.com/markets/article/spacex-rockets-past-amazon-eyes-microsoft-in-sprint-toward-3-trillion-164918333.html" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Los federales revelan detalles del presunto complot para atacar el evento de UFC en la Casa Blanca con drones explosivos - CBS News</h3><p class="desc">El FBI dijo que interrumpió un intento de atacar el evento UFC America 250 del domingo en la Casa Blanca, con registros judiciales que detallan un presunto complot para utilizar pequeños drones que transportaban explosivos.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">CBS News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.cbsnews.com/news/fbi-disrupts-alleged-plot-targeting-ufc-event-white-house/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Se espera que el sistema arroje grandes cantidades de humedad en un tramo que incluye Houston, Atlanta y partes de Luisiana, Mississippi y Alabama.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.washingtonpost.com/weather/2026/06/16/potential-tropical-storm-could-bring-flooding-parts-south/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Los registros revelan una estimación de 600 millones de dólares para el proyecto del salón de baile de Trump, la mitad de los cuales proviene de los contribuyentes - The Washington Post</h3><p class="desc">Una estimación de costos internos realizada en marzo por el contratista del proyecto fue de $200 millones más de lo que Trump ha dicho públicamente y contradice sus afirmaciones de que no se gastará dinero de los contribuyentes.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.washingtonpost.com/investigations/2026/06/16/records-reveal-600m-estimate-trumps-ballroom-project-with-half-taxpayers/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Snap finalmente presenta sus tan esperadas gafas AR, Specs y, vaya, no son baratas - TechCrunch</h3><p class="desc">Desde hace más de una década, Snap ha estado trabajando en este dispositivo. Ahora las gafas finalmente están aquí. Entonces, ¿qué destaca en la primera impresión?</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">TechCrunch</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://techcrunch.com/2026/06/16/snap-finally-debuts-its-long-awaited-ar-glasses-specs-and-oof-they-arent-cheap/" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>El brote de ébola en la República Democrática del Congo puede ser el peor de todos los tiempos, dicen los CDC de África - CNN</h3><p class="desc">El director de los Centros para el Control y la Prevención de Enfermedades de África advirtió el martes que el brote de ébola en el Congo podría ser el peor de la historia, y dijo que actualmente no se había rastreado a decenas de miles de contactos de personas enfermas con la enfermedad.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">CNN</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.cnn.com/2026/06/16/africa/drc-ebola-cdc-intl-latam-afr" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Jelly Roll solicita el divorcio de su esposa, Bunnie XO, después de casi una década - NBC News</h3><p class="desc">El cantante de country Jelly Roll solicitó el divorcio de su esposa, Bunnie XO, según registros judiciales de Tennessee.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://www.nbcnews.com/pop-culture/celebrity/jelly-roll-files-divorce-wife-bunnie-xo-nearly-decade-rcna350249" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
             <h3>Actualizaciones en vivo: Irán dice que el acuerdo con Estados Unidos requiere que las fuerzas israelíes abandonen el Líbano - CBS News</h3><p class="desc">El ministro de Asuntos Exteriores de Irán dice que las tropas israelíes no pueden permanecer en el Líbano en virtud del acuerdo pendiente con Estados Unidos.</p>
@@ -11,141 +121,31 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Vegas Golden Knights proporciona información actualizada sobre el cuerpo técnico del equipo - NHL.com</h3><p class="desc">La gerente general Kelly McCrimmon anuncia que John Tortorella no regresará después de la temporada 2025-26</p>
+            <h3>Reseña de 'Toy Story 5': Jesse, la vaquera de Joan Cusack, toma la iniciativa - The Hollywood Reporter</h3><p class="desc">Tom Hanks y Tim Allen regresan al elenco de voces de la querida franquicia de Pixar sobre la vida secreta de los juguetes, junto con recién llegados como Conan O'Brien, Greta Lee y Bad Bunny.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">NHL News</span>
+                <span class="source">Hollywood Reporter</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.nhl.com/goldenknights/news/vegas-golden-knights-provide-update-on-team-s-coaching-staff" class="btn-link" target="_blank">Leer más →</a>
+                <a href="http://www.hollywoodreporter.com/movies/movie-reviews/toy-story-5-review-joan-cusack-tom-hanks-tim-allen-pixar-1236618848/" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Toy Story 5 es la película más traumática del año - para padres - BBC</h3><p class="desc">La última entrega de la exitosa franquicia de Pixar aborda los peligros de las redes sociales y los dispositivos digitales, y captura la soledad y la desesperación entre niños y adultos.</p>
+            <h3>'El sistema está críticamente estresado': las fallas de San Andrés y San Jacinto están terriblemente cerca de un gran terremoto, según un estudio - Live Science</h3><p class="desc">La falla de San Andrés y una falla vecina en el sur de California han alcanzado sus niveles más altos de estrés tectónico en 1.000 años, y una ruptura en una falla podría propagarse a la otra, encontraron los investigadores.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">BBC News</span>
+                <span class="source">Live Science</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.bbc.com/culture/article/20260616-toy-story-5-is-the-years-most-traumatic-film-for-parents" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://www.livescience.com/planet-earth/earthquakes/the-system-is-critically-stressed-san-andreas-and-san-jacinto-faults-scarily-close-to-major-earthquake-study-finds" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El FBI frustró un complot contra el evento de UFC en la Casa Blanca, dice Patel - BBC</h3><p class="desc">En documentos judiciales recientemente revelados, el gobierno alega que el plan habría utilizado drones.  El jefe del FBI dice que hay varios sospechosos bajo custodia.</p>
+            <h3>Taylor Swift construye un 'escenario enorme' para la boda de MSG mientras el alcalde de Nueva York aparentemente confirma la fecha - Yahoo</h3><p class="desc">Parece que hay más pistas que apuntan a que el gran día de Taylor Swift y Travis Kelce tendrá lugar en el icónico lugar de música de la ciudad de Nueva York, el Madison Square Garden, durante el fin de semana del 4 de julio. El martes 16 de junio, fuentes dijeron a TMZ que la estrella del pop, de 36 años, es ha</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">BBC News</span>
+                <span class="source">Starmagazine.com</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.bbc.com/news/articles/cqx10xlje1lo" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>En un “hermoso día para saltar”, un avión de paracaidistas cae al suelo - The Washington Post</h3><p class="desc">El accidente aéreo del domingo abrió un agujero en la unida comunidad de paracaidistas del Medio Oeste: buscadores de aventuras que se unieron por la adrenalina que obtienen con cada salto.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.washingtonpost.com/nation/2026/06/15/missouri-plane-crash-rips-hole-close-knit-skydiving-community/" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Trump dice que impulsará la paz en Ucrania después de reunirse con Zelenskyy en el G7 - Al Jazeera</h3><p class="desc">El presidente de Estados Unidos dice que hará todo lo posible para poner fin a la guerra entre Rusia y Ucrania después de una reunión "muy buena" en Francia.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Al Jazeera English</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.aljazeera.com/news/2026/6/16/g7-leaders-meet-in-france-with-iran-and-ukraine-high-on-agenda" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Invest 90-L traerá una amenaza de inundaciones tropicales de varios días a Luisiana. Lo que necesitas saber - WDSU</h3><p class="desc">El Centro Nacional de Huracanes continúa rastreando Invest 90-L, una perturbación tropical que se espera que traiga una amenaza de inundaciones de varios días a Luisiana.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">WDSU New Orleans</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wdsu.com/article/louisiana-flood-threat-invest-90-l-tropics-mississippi-gulf-june-tropics/71600701" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>SpaceX de Musk supera a Amazon en capitalización de mercado después de su histórico debut en IPO - Fox Business</h3><p class="desc">SpaceX superó la capitalización de mercado de 2,66 billones de dólares de Amazon el martes mientras continuaba su impulso tras su IPO récord en el Nasdaq la semana pasada.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Fox Business</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.foxbusiness.com/markets/spacex-market-cap-soars-past-amazon" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Las fuerzas del Reino Unido se enfrentan a recortes operativos sin más efectivo, advierte el jefe de defensa - BBC</h3><p class="desc">Se produce cuando el ex secretario de Defensa, John Healey, dice que los enemigos del Reino Unido "no siguen los calendarios establecidos por el Tesoro".</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">BBC News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.bbc.com/news/articles/c20ydx06ym2o" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Trump señala que podría enviar detalles del acuerdo con Irán al Congreso - CNBC</h3><p class="desc">El acuerdo de paz anunciado el domingo está provocando reacciones tibias por parte del Congreso, incluidos algunos aliados del presidente Donald Trump.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">CNBC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.cnbc.com/2026/06/16/trump-iran-deal-congress.html" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Sorsby no jugará para Texas Tech después de una pelea legal sin precedentes sobre su elegibilidad para jugar - AP News</h3><p class="desc">Después de todo, el mariscal de campo transferido Brendan Sorsby no jugará para Texas Tech este otoño. En cambio, planea ingresar al draft suplementario de la NFL. Eso pondrá fin a una lucha legal sin precedentes sobre la elegibilidad universitaria de un jugador que había reconocido ser</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Associated Press</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://apnews.com/article/sorsby-texas-tech-gambling-f8e823a3b4f322f079445d6f541d17b6" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los precios del petróleo caen por debajo de los 80 dólares por barril por primera vez desde marzo - Yahoo Finanzas</h3><p class="desc">El petróleo cayó brevemente por debajo de los 80 dólares por barril por primera vez desde el 3 de marzo, apenas unos días después del inicio de la guerra con Irán.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Yahoo Entertainment</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://finance.yahoo.com/markets/article/oil-prices-tumble-below-80-per-barrel-for-first-time-since-march-130219359.html" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Encuesta para lectores de Ars Technica 2026: ¡Deje que se escuche su voz! - Ars Técnica</h3><p class="desc">Cuéntanos cómo lees Ars y qué te gustaría ver más (¡o menos!) en la página principal.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Ars Technica</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://arstechnica.com/staff/2026/06/the-ars-technica-2026-reader-survey-let-your-voice-be-heard/" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>A la familia de Aldon Smith le revisan el cerebro para detectar CTE - ESPN</h3><p class="desc">La familia de Aldon Smith ha decidido enviar su cerebro a expertos médicos en Boston para ver si CTE jugó un papel en la muerte del ex liniero defensivo de la NFL.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">ESPN</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.espn.com/nfl/story/_/id/49081473/family-aldon-smith-having-brain-checked-cte" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Microsoft Surface Laptop 8 y Surface Pro 12 ahora vienen con chips Snapdragon X2 - The Verge</h3><p class="desc">﻿Nuevos colores y precios elevados.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">The Verge</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.theverge.com/tech/950146/microsoft-surface-laptop-8-surface-pro-12-snapdragon-x2-specs-price" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://starmagazine.com/taylor-swift-constructs-massive-stage-for-msg-wedding-as-nyc-mayor-seemingly-confirms-date/" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div></body></html>
