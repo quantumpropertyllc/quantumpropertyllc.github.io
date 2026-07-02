@@ -1,32 +1,112 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-07-02 09:17 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Local Life.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-07-02 11:41 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Local Life.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Woman accused of dousing someone with fuel at gas pump</h3><p class="desc">The alleged attack happened at a convenience store in Statesville.</p>
+            <h3>Prediction: South Carolina for another key recruit in the 2027 class</h3><p class="desc">Charlotte (NC) William Amos Hough Rivals300 safety Davion Jones is set to announce his college decision on July 2. LSU had looked like the favorite for much of the summer. Now it’s South Carolina trending ahead of his decision. With that I’ve logged </p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">Rivals</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/crime/woman-accused-of-dousing-someone-with-fuel-at-gas-pump/275-22cb14e3-a523-4507-a2d9-1def4b255f0d" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.on3.com/rivals/news/prediction-south-carolina-for-another-key-recruit-in-the-2027-class/" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>2 pilots suffer serious burns after a plane crashes in Lancaster County; NTSB investigates</h3><p class="desc">Two men were seriously injured and airlifted to hospitals after their twin-engine plane crashed and caught fire near Lancaster.</p>
+            <h3>iQor Launches Major US Hiring Initiative, Creating More</h3><p class="desc">iQor announces 1,300+ new jobs in Charlotte, NC and Meridian, MS to support growth for a leading financial services client....</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">WCNC</span>
+                <span class="source">GlobeNewswire</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/lancaster-county-sc-small-plane-crash/275-9cacfc30-c9eb-4ca3-a906-47de8fb119f1" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.globenewswire.com/news-release/2026/06/25/3317643/0/en/iqor-launches-major-us-hiring-initiative-creating-more-than-1-300-jobs-across-north-carolina-and-mississippi.html" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Charlotte-Mecklenburg Police search for missing 74-year-old man</h3><p class="desc">Police in Charlotte are seeking help to find Samuel Huggins, last seen in northeast Charlotte driving a white Hyundai Kona.</p>
+            <h3>Wirecutter Names Select High Density Topper Its Best Memory</h3><p class="desc">Charlotte, NC, June 23, 2026 (GLOBE NEWSWIRE) -- Viscosoft has earned the New York Times Wirecutter designation for best memory foam mattress topper for...</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">GlobeNewswire</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.globenewswire.com/news-release/2026/06/23/3316333/0/en/wirecutter-names-select-high-density-topper-its-best-memory-foam-mattress-topper-for-third-consecutive-year.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Winston-Salem NC looks to Charlotte as youth curfew model</h3><p class="desc">The gains cited by Winston-Salem police as justification for similar restrictions here weren’t the result of the curfew in Charlotte.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Winston-Salem Journal</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://journalnow.com/news/local/government-politics/article_91e1d538-fde7-4354-b2cb-a36ac2fc1d6a.html" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>HORROR: Homeless Man With Countless Arrests Charged for Attempting to Kill Pregnant Woman with a Knife in Charlotte, NC (VIDEO)</h3><p class="desc">A homeless man in Charlotte, North Carolina, with a long criminal history, has been arrested on charges of assault with a deadly weapon with the intent to kill…</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">The Gateway Pundit</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.thegatewaypundit.com/2026/06/horror-homeless-man-countless-arrests-attacks-pregnant-woman/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Charlotte train stabbing: Suspect ruled incompetent to stand trial, judge orders treatment</h3><p class="desc">Judge has ruled that the man charged in the fatal stabbing of a Ukrainian refugee on a NC train cannot currently stand trial due to mental illness.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">KABC-TV</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://abc7.com/post/charlotte-train-stabbing-suspect-ruled-incompetent-stand-trial-judge-orders-treatment/19268897/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Trump administration starts Title IX probe over trans student bathroom use at NC school district’s campuses</h3><p class="desc">CHARLOTTE, N.C. — The U.S. Department of Education has opened a Title IX investigation into Cabarrus County Schools following complaints about the district’s handling of transgender students’ access to bathrooms and locker rooms. The investigation, a</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Hartford Courant</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.courant.com/2026/06/02/trump-administration-starts-title-ix-probe-over-trans-student-bathroom-use-at-nc-school-districts-campuses/" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Day 2 of Dangerous heat wave across the Carolinas</h3><p class="desc">A strong ridge of high pressure (heat dome) builds highs up to 100°+ multiple days including for a record-breaking 4th of July.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/missing-74-year-old-charlotte/275-66c5c035-5a62-4534-a1dd-862e7b911b0c" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>$500K in CMS contracts reportedly at center of superintendent investigation</h3><p class="desc">More than $500,000 worth of school district contracts that are reportedly at the center of the Charlotte-Mecklenburg Schools BOE's investigation into Supt. Dr. Hill.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/500k-in-cms-contracts-at-center-of-superintendent-investigation/275-9dabdd1c-8c6c-4c98-9fc2-51f1ce542333" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>New 911 audio shows D.C. paramedics found 'unconscious' person at Mitch McConnell's home</h3><p class="desc">WHAS11 has reached out to McConnell's office twice this week for an update on the Kentucky senator's health.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/politics/mitch-mconnell-unconscious-hospitalization-update-audio/417-115e93a5-5fcb-46b2-bc28-d030f0e9ad1b" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Code Orange Air Quality Alert issued for Mecklenburg County; sensitive groups at risk</h3><p class="desc">Mecklenburg County faces a Code Orange Air Quality Alert, signaling potential health risks from ground-level ozone for sensitive groups.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/mecklenburg-county-code-orange-air-quality-alert-july-2-2026/275-7c347e7f-28ee-44e9-b4f9-12e6d5fa7361" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
@@ -41,111 +121,31 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Dangerous heat wave arrives across the Carolinas</h3><p class="desc">A strong ridge of high pressure builds in setting highs to chase 100°+ multiple days.</p>
+            <h3>Power outage disrupts services at Valerie C. Woodard Center in west Charlotte</h3><p class="desc">A power outage at the Valerie C. Woodard Center disrupts Mecklenburg County services, forcing closures and shifts to remote operations.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/local/power-outage-disrupts-services-at-valerie-c-woodard-center-mecklenburg-county/275-f57967ff-cf89-44ff-bee5-9e403d5759f6" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Homeless to homeowner: How one Charlotte woman achieved a dream with help from nonprofit</h3><p class="desc">After enduring homelessness for nearly a decade, Charlotte resident Ashley Stephens has become a homeowner, thanks to Freedom Fighting Missionaries.</p>
+            <h3>Truck driver charged in deadly Monroe crash, police say</h3><p class="desc">A Pennsylvania truck driver is charged with death by motor vehicle after allegedly falling asleep at the wheel, causing a fatal crash in Monroe.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-woman-goes-from-homeless-to-homeowner-with-help-from-nonprofit/275-255a0e6d-ab9b-43f0-8b4d-11a98b79b335" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/traffic/deadly-crash-monroe-north-carolina-tractor-trailer-driver-charged/275-b64b057e-c956-4df8-b53b-7d62cb9e5138" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>CMPD steps up patrols, home visits ahead of July 4th holiday</h3><p class="desc">The Juvenile Priority Offender Strategy Team says early intervention, not just enforcement, is the goal ahead of the holiday weekend.</p>
+            <h3>Woman accused of dousing someone with fuel at gas pump</h3><p class="desc">The alleged attack happened at a convenience store in Statesville.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/cmpd-steps-up-patrols-home-visits-ahead-of-july-4th-holiday/275-6974d355-61e2-4e8a-b7d5-34c34afa735b" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>$500K in CMS contracts at center of superintendent investigation</h3><p class="desc">More than $500,000 worth of school district contracts that are reportedly at the center of the Charlotte-Mecklenburg Schools BOE's investigation into Supt. Dr. Hill.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/500k-in-cms-contracts-at-center-of-superintendent-investigation/275-9dabdd1c-8c6c-4c98-9fc2-51f1ce542333" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Two arrested for deadly shooting of 13-year-old in Chesterfield County</h3><p class="desc">Caleb Garcia and Amber Moree were charged with the death of 13-year-old Jacob Duncan, who was killed in a drive-by shooting in January 2024.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/crime/two-arrested-for-deadly-shooting-of-13-year-old/275-92c28e45-f399-4bff-b04c-a498e86818df" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Robert Harrington sworn in as Charlotte's 60th mayor</h3><p class="desc">Harrington was appointed by the Charlotte City Council following the resignation of longtime Mayor Vi Lyles.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/robert-harrington-charlotte-mayor-swearing-in-ceremony/275-4d3623d6-4358-4e73-abd6-524dade9455e" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>NC bill to 'criminalize homelessness' advances, sparking concerns from local leaders</h3><p class="desc">A North Carolina bill aimed at changing how communities address homelessness is now one step away from becoming law.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/money/markets/real-estate/affordable-housing-crisis/nc-bill-to-criminalize-homelessness-advances-sparking-concerns-from-local-leaders/275-2435e569-e6aa-489e-9836-039a2a418426" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Mecklenburg County opens cooling centers ahead of scorching heat wave</h3><p class="desc">Multiple agencies are collaborating with homeless service providers to offer support and monitor community needs during the July Fourth weekend heat wave.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/weather-impact/mecklenburg-county-extreme-heat-resources-record-temperatures-july-fourth-weekend/275-c16eb991-517e-485b-9495-13b7f7dab0f7" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Raleigh airport reopens after small plane collides with truck</h3><p class="desc">Flights have been diverted to other airports, including the Charlotte Douglas International Airport.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/flights-stopped-at-raleigh-airport/275-3b05f218-24b7-4cfa-a879-32965d2fd04a" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Woman dies from Charlotte shooting injuries, suspect was out on bond for 2020 murder charge</h3><p class="desc">Marques Fleming was arrested in Georgia and is awaiting extradition to North Carolina.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/crime/man-out-on-bond-for-2020-murder-charge-arrested-for-charlotte-shooting/275-e86842f7-717d-45cc-9050-a71064da875b" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Gastonia police search for 16-year-old girl missing from hospital</h3><p class="desc">16-year-old Jada Bryant was last seen leaving a hospital on Cox Road while en route to her group home.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/gastonia-police-16-year-old-girl-missing-hospital/275-78e567e1-5ab5-4dfa-b0ba-f732c08d6c08" class="btn-link" target="_blank">Read More →</a>
+                <a href="https://www.wcnc.com/article/news/crime/woman-accused-of-dousing-someone-with-fuel-at-gas-pump/275-22cb14e3-a523-4507-a2d9-1def4b255f0d" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
