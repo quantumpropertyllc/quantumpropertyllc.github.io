@@ -1,92 +1,82 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-07-07 08:23 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-07-07 11:41 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Schumer se suma a los llamamientos para la retirada de Platner ante el colapso del apoyo demócrata - Axios</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE5oc3Aya0VHLWJOZzlNTXAtUUlxSnR0VEdLM1poSlBfaG5XYWZDe FRoUXF0RXpuaEJqWVU4MkdkeVJLV2lieFhDa1ZLS0ZpbVFtT1l6R0ZqZndveXd1ZjU2bUJ4ZHRCYkExV2NTTG5QUDdQV3JnTFpnamxR?oc=5" target="_blank">Schum</p>
+            <h3>Evacúan un edificio en el centro de Manhattan mientras las autoridades advierten sobre un colapso - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPalROUUlaazA0VnZNZGp6VW1JQTVndE1MSFlUTVB1dlhZekRfYWJzbU0yaFF 1NW56WmstS2xGRU1XMlNIY3htT2hJYnZtVWVsSDR1S3V5T2ZwRm11OXBjQndQeXFuM1R1dDM4QzYzVndBZDV0eDdJTGhEeUNCdF9zQnlzOUw3QXNh?oc=5" t</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE5oc3Aya0VHLWJOZzlNTXAtUUlxSnR0VEdLM1poSlBfaG5XYWZDeFRoUXF0RXpuaEJqWVU4MkdkeVJLV2lieFhDa1ZLS0ZpbVFtT1l6R0ZqZndveXd1ZjU2bUJ4ZHRCYkExV2NTTG5QUDdQV3JnTFpnamxR?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPalROUUlaazA0VnZNZGp6VW1JQTVndE1MSFlUTVB1dlhZekRfYWJzbU0yaFF1NW56WmstS2xGRU1XMlNIY3htT2hJYnZtVWVsSDR1S3V5T2ZwRm11OXBjQndQeXFuM1R1dDM4QzYzVndBZDV0eDdJTGhEeUNCdF9zQnlzOUw3QXNh?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La cumbre de la OTAN comienza en Turquía mientras Trump presiona para aumentar el gasto en defensa y reflexiona sobre Groenlandia - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxOWEdlTmJ6V1h4Wi1mR19lTk9tTHJRa2t1am4xZDFTdE1tYWhMVnA1dDJfTkhG MUxYYi1uMU5hTVA4YnJmVHNkTXpfWUUxenhnMHVBZHgyLWxxeUp0ZFNCTy1XdzJOV2RxZUhZTDVtLTdoNGwyX1h3elE2bXBUZE5tUHMyWXJPeFpral9NbVJL</p>
+            <h3>"Sólo quiero lealtad": el rencor de Trump con Irán se cierne sobre la cumbre de la OTAN - Axios</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMia0FVX3lxTFBORmwxWEVQQUVCcjRXUWRoaWQ1dFVUZ1F0OWVJVjQ 1TmY2eXhIaGVfa1JhNTEwNVg5T2pXUXlnU2JVaHlGN0Q1Wi1NZHkybWhBNWJBd3pjS0VzeWtHb2lKczFCSVR6T244Smg0?oc=5" target="_blank">"Solo quiero lealtad": Tr</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxOWEdlTmJ6V1h4Wi1mR19lTk9tTHJRa2t1am4xZDFTdE1tYWhMVnA1dDJfTkhGMUxYYi1uMU5hTVA4YnJmVHNkTXpfWUUxenhnMHVBZHgyLWxxeUp0ZFNCTy1XdzJOV2RxZUhZTDVtLTdoNGwyX1h3elE2bXBUZE5tUHMyWXJPeFpral9NbVJLaHBjNEdZQU14bGRmR3hWRkg2NlE?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTFBORmwxWEVQQUVCcjRXUWRoaWQ1dFVUZ1F0OWVJVjQ1TmY2eXhIaGVfa1JhNTEwNVg5T2pXUXlnU2JVaHlGN0Q1Wi1NZHkybWhBNWJBd3pjS0VzeWtHb2lKczFCSVR6T244Smg0?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Marine Le Pen de Francia, que llevó a la manifestación nacional de extrema derecha a la cúspide del éxito electoral - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFAtT19DWWh1amtiOHVMUUZIQk9lVXNW R1RGeDRlcjlXZnhoZi1IQmhjZEhxVUl5NWpBa1BwcEkxWUVMaTNQN1lFVTVrd1EydGttaUliVC1nZ1JfUQ?oc=5" target="_blank">La francesa Marine Le Pen, que llevó a la extrema derecha</p>
+            <h3>Un tribunal francés despeja el camino para que Marine Le Pen se presente como candidata a la presidencia, pero le ordena llevar una etiqueta electrónica - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE5idWVrVTkyM2ZhTkRiX2JPWnFo emx6VDB4NS1GUmpkVWZ2YklrYXBaU2xwWW9FQ2RTWUpaZXh0M25SYmh2Qi1pZVBDWGlZbm1TTS1BWA?oc=5" target="_blank">Tribunal francés despeja el camino para que Marine Le Pen se presente como candidata</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFAtT19DWWh1amtiOHVMUUZIQk9lVXNWR1RGeDRlcjlXZnhoZi1IQmhjZEhxVUl5NWpBa1BwcEkxWUVMaTNQN1lFVTVrd1EydGttaUliVC1nZ1JfUQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE5idWVrVTkyM2ZhTkRiX2JPWnFoemx6VDB4NS1GUmpkVWZ2YklrYXBaU2xwWW9FQ2RTWUpaZXh0M25SYmh2Qi1pZVBDWGlZbm1TTS1BWA?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La Guardia Revolucionaria de Irán dispara misiles contra barcos cerca de Ormuz - WSJ</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxQVXptTnNYdkpkaHlOVGEzOXRuYnVVVDRlQW1USXZCUlhVLXJSaTVLYmh5bk9Z c0Z1UXViMDlCcnhMU2NWM095RTRjN0xTRHRsLUNodmNZNl9GVFZPUEgxcTRic0pNOE4zVlNNRXp5dndscHZIWWVMV1JZVFRrbDBkMG5KZ2NveFpfYmNlZlVR</p>
+            <h3>El coste de la alianza Platner de Khanna - Politico</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxNZTllc2pzcE5VTmhEVEs5NmhwSzkxMVJjYi1wS2JSSnowN0NMaEUwVXZtYV94 VUhldTJxTDFGYTRKSFU0TkZJS0N3cXAtWG9vNmlmSGxvVm5ncmVLRWI2UzJfT1dwQ2lMeVl6QUxZMmI0U1NBdzFmbklNNkd2eGNfb2VmVnBldjNXMEFYMUR6</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxQVXptTnNYdkpkaHlOVGEzOXRuYnVVVDRlQW1USXZCUlhVLXJSaTVLYmh5bk9Zc0Z1UXViMDlCcnhMU2NWM095RTRjN0xTRHRsLUNodmNZNl9GVFZPUEgxcTRic0pNOE4zVlNNRXp5dndscHZIWWVMV1JZVFRrbDBkMG5KZ2NveFpfYmNlZlVRYVFwQnBURVJiNlROOA?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxNZTllc2pzcE5VTmhEVEs5NmhwSzkxMVJjYi1wS2JSSnowN0NMaEUwVXZtYV94VUhldTJxTDFGYTRKSFU0TkZJS0N3cXAtWG9vNmlmSGxvVm5ncmVLRWI2UzJfT1dwQ2lMeVl6QUxZMmI0U1NBdzFmbklNNkd2eGNfb2VmVnBldjNXMEFYMUR6RQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La familia de Charlie Kirk abandona la sala del tribunal antes de testificar sobre la filmación del video y el sonido del disparo fatal - The Salt Lake Tribune</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE9iYUNEblowQmZQRXRYQ1VPUkFuRG8waVNOd29KX2F1UUZFZkhO andzOFJ4dm1VM3R0VGM5WEpTeW9rcVROckxjZE0tX1diUGQzSV9MSHNLSmN1cDV1dVJIeDFEdmFuaFpjRHkyeXlUYXIxdVE3a2E1YQ?oc=5" objetivo="_blank">Charlie</p>
+            <h3>Nigel Farage, de Reform UK, dice que renunciará como legislador y buscará la reelección para limpiar su nombre - AP News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWXhvN0NNNHFpS0hKOWRJV05kLXVxWFh2MmhjMjFtUUZfUWp0anZ3MUpqaXZm REVMTkdTZG5oX1hRUEVRZXNsZVJyemF0ZEg3NW1GNTlSel8wX29ZYXM1dUpweGFWUnVhY2FLanRQOVpERkQyU2JFSk1qeUZfUHRYaUFSeUo2ZzdkaF9SMmRB</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE9iYUNEblowQmZQRXRYQ1VPUkFuRG8waVNOd29KX2F1UUZFZkhOandzOFJ4dm1VM3R0VGM5WEpTeW9rcVROckxjZE0tX1diUGQzSV9MSHNLSmN1cDV1dVJIeDFEdmFuaFpjRHkyeXlUYXIxdVE3a2E1YQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWXhvN0NNNHFpS0hKOWRJV05kLXVxWFh2MmhjMjFtUUZfUWp0anZ3MUpqaXZmREVMTkdTZG5oX1hRUEVRZXNsZVJyemF0ZEg3NW1GNTlSel8wX29ZYXM1dUpweGFWUnVhY2FLanRQOVpERkQyU2JFSk1qeUZfUHRYaUFSeUo2ZzdkaF9SMmRBQTZwZXlmV0g4UkJ0RXMwWTBTcGZvRHBfdTFKdE0?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Drones ucranianos atacan la refinería de petróleo más grande de Rusia mientras Zelenskyy dice que Siberia ahora está "al alcance" - CNBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPZDJUWG9HckVVQ3pGVVdiMS1JMlE1ZUNQMmlWRmZBcnpWYVdyMTFVLXI0eTlz YjFScTRnTHV6WTlwMWtfTzhURmdWT2g3LXM4eTNiWXZjZ19OWFVqU0pVVFRHWERWd2NkUmxVWU02S21CejJGRnRQcXh5RHQ2ZW5uRmtILUtNUE3SAYwBQVVf</p>
+            <h3>La emergencia de salud de McConnell genera dudas sobre si regresará al Senado - The Hill</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTFVPQUZSNjRzNmZWT0hPcGhPUFRma3dmaGxCWWUxNjNVU1pKM2lBRkp4Ujhj akxJXzNvZUItU2VIVENSc3RYVXlKTTdPN2IyZ2g5ZEo0anQ1NzEwY2ZKRUQ1ZTRqNE9ub0hfTnVTLS1jQndYdmhtbHQ3VnFkT05OMVFhLU5RTEpp0gGOAUFV</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPZDJUWG9HckVVQ3pGVVdiMS1JMlE1ZUNQMmlWRmZBcnpWYVdyMTFVLXI0eTlzYjFScTRnTHV6WTlwMWtfTzhURmdWT2g3LXM4eTNiWXZjZ19OWFVqU0pVVFRHWERWd2NkUmxVWU02S21CejJGRnRQcXh5RHQ2ZW5uRmtILUtNUE3SAYwBQVVfeXFMTXpDNVN6OHdUSlFsaERqcktVTm1nUE1lajRuNE05VnozTFZFTndUc3pWb0JHaC1fX0w1Y2FCVW16UzhKazRodG5RRDF4M0gxamNDQXNoZENQa2Y3UGFQdVdzejlqbHhWa3JxR0YtOG5teDZlVE8welFzRHRyRV9QUHB5N0YzV0ltbTVPLTg?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTFVPQUZSNjRzNmZWT0hPcGhPUFRma3dmaGxCWWUxNjNVU1pKM2lBRkp4UjhjakxJXzNvZUItU2VIVENSc3RYVXlKTTdPN2IyZ2g5ZEo0anQ1NzEwY2ZKRUQ1ZTRqNE9ub0hfTnVTLS1jQndYdmhtbHQ3VnFkT05OMVFhLU5RTEpp0gGOAUFVX3lxTE1keGhnRnl1RC1fbHI5VWl5YVU0aDUzaEVxanE3Ym5EclczZWNkNVpVRVEwSVpVVWlzWWFfR3B5ajBhamRNajVJTFJFdWV0ZnA5aC1taENUSVJYSHZyYWNHa1BYM0RwMmVVNlhTMFJiejNOOWE1WDlnY3pOMDFOUTV1dUFfamo0OTEzdmQycFE?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Folarin Balogun sabía que habría controversia sobre la tarjeta roja. La estrella del USMNT no tiene la culpa. - EE.UU. hoy</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNSDUwRjFLR3NlV3d4Z1B0ZGFQSE1tUV9SWTBEd0ZBYUo1bC00TzQzY25vMEhY YkNPd1EyU2VHa2xsVXRiMWJTMThva3FxdHc2bzVOYzdYa2dVdllZWDRRcFowbFRYT2hXQmRZOGhPM1FmQ2lMOW5lTm9CTGxKZUxPQU1mVjNQQW5wNEh4WV94</p>
+            <h3>"Diablos, no": el abogado defensor cree que Tyler Robinson no irá a juicio - The Hill</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMWp4b29fVW53SEdFZi1oT2ktVUJUMjhxOTF1YlA4bjlaTV83d1JNMXg0Q1lr anJHQVpBZjBlSTdZbjd6RnVwMXdpcFdpRFBJU3NHZkt3UzJxQ0JlLVZGUU0wMXlKc0JEajA2SlJIWkZBODkzbmYyUzlDazhXeFFTSETQUXZvSzVvZDR4cUY3</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNSDUwRjFLR3NlV3d4Z1B0ZGFQSE1tUV9SWTBEd0ZBYUo1bC00TzQzY25vMEhYYkNPd1EyU2VHa2xsVXRiMWJTMThva3FxdHc2bzVOYzdYa2dVdllZWDRRcFowbFRYT2hXQmRZOGhPM1FmQ2lMOW5lTm9CTGxKZUxPQU1mVjNQQW5wNEh4WV94WXM1TmN5bDM5LTUzaEhCM0M3NU16Z20tUW80UWFKV3Bkd0Q5Qk13TjA?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMWp4b29fVW53SEdFZi1oT2ktVUJUMjhxOTF1YlA4bjlaTV83d1JNMXg0Q1lranJHQVpBZjBlSTdZbjd6RnVwMXdpcFdpRFBJU3NHZkt3UzJxQ0JlLVZGUU0wMXlKc0JEajA2SlJIWkZBODkzbmYyUzlDazhXeFFTSEtQUXZvSzVvZDR4cUY3RC1DdVpWclpDSFpRS19BN1BTRHhFcHp4TmRVTGE4YnRCY2d6bjF4U2tUQ25VTThkWUtod9IBxwFBVV95cUxNSGtEaGV1UmFDRDM2Qlc3NjVsZ04xZXlFOGtNSnRaakhwWnFVVFZLV0JpdXZqN0hzMTVCLWpGODNxWVhpb0lBWHRuczFSSEZmUE1sa3hFREk5S0ZOQWdqQndQR0pWVlR0UXhpZzBobFV4U0hWSVVQRzBqWmdnWDRaVnFFcWVGU3Z5V3BlMW5kZEF6T0R4Znl4ektYTmNQUEwwZzY0YzVock5LNnFCVThBN0RRcGtaNUM2dk1HV3d0ZThicXhnMTBZ?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Principales demócratas del Senado presionan a las empresas afiliadas a Trump para que obtengan respuestas sobre el acuerdo del IRS - CBS News</h3><p class="desc"><un href="https://news.google.com/rss/articles/CBMimAFBVV95cUxQTm05N1hZQmtlaG9SNG5mVXJkSzl5am9ZZ0w2YU5CQmZHUjJLUW9SNG9SekQ2dUFj V3RGX1lQOHJwbW1OS2I0Tzloem5OemM1NF8tc1NzWUlKODR6aXNrdmlIUHpwRkVUNjdELTBxSlFjcWFOZDBfTmd1VFJwNURMR1ZiV0tzejJCSUxKdnV6TlZ6SnV0</p>
+            <h3>Caso sin resolver de asesinato de 1985 resuelto después de que se encontrara un sospechoso vinculado a pruebas detrás de Cracker Barrel a 400 millas de distancia - New York Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxOTEJQZ3RIUENuNzhwRlNrSlR3c0ZQUUxva0ZJeUg0Z2tqX3VXa0pQSFRHc1Ny S2NfMUtYbndXaVAzWURWUWdjNEdxTWgzemZldjc0YlJpbUtjMUVvOXJPaUM4dzlCQjE5QXNRSktnbjl4YXdnN1BsOFJTLVByQUNiWmxKTUZoT3NPWkhuS2ot</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxQTm05N1hZQmtlaG9SNG5mVXJkSzl5am9ZZ0w2YU5CQmZHUjJLUW9SNG9SekQ2dUFjV3RGX1lQOHJwbW1OS2I0Tzloem5OemM1NF8tc1NzWUlKODR6aXNrdmlIUHpwRkVUNjdELTBxSlFjcWFOZDBfTmd1VFJwNURMR1ZiV0tzejJCSUxKdnV6TlZ6SnV0ZHdTdQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Soldados de la Guardia Nacional matan a tiros a un hombre que tenía un arma en el centro de Memphis - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxORUQ3ZnZHRW5vQlM5ZGIwaGwxXzR5aktQNTd5ZFZBa1d4S0d6MzRoSkltbnBM WkRfZjR5ZURoT0drclVJU0hvTGR0SDRRRVpQSXJDdlRVYmNldlZFZlg0Zm1vODlZSUUzSGlZcTItekZpeE5sLWNDaDgtaEZiOFRlTXI4RnhHeWFSNFNSME5L</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxORUQ3ZnZHRW5vQlM5ZGIwaGwxXzR5aktQNTd5ZFZBa1d4S0d6MzRoSkltbnBMWkRfZjR5ZURoT0drclVJU0hvTGR0SDRRRVpQSXJDdlRVYmNldlZFZlg0Zm1vODlZSUUzSGlZcTItekZpeE5sLWNDaDgtaEZiOFRlTXI4RnhHeWFSNFNSME5LMVc1UW9BWTlmVFpSaU03Mjh6Z05iNU9PcVM4VmlGazR3?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxOTEJQZ3RIUENuNzhwRlNrSlR3c0ZQUUxva0ZJeUg0Z2tqX3VXa0pQSFRHc1NyS2NfMUtYbndXaVAzWURWUWdjNEdxTWgzemZldjc0YlJpbUtjMUVvOXJPaUM4dzlCQjE5QXNRSktnbjl4YXdnN1BsOFJTLVByQUNiWmxKTUZoT3NPWkhuS2otSURjMDA4NFZDU2xfakxMSTJ2d1d2V1lBcVo5dG9Vcm0ySWc5c20?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
@@ -101,12 +91,42 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>China prueba misil balístico lanzado desde un submarino e inicia ejercicio anual con Rusia - USNI News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRnlGLS1BV2xtYUhnNUdpX3lFVlFhRUZ3R051dzlIcHM0dEFSd09ZZzdOd044 Z0E5OGh5ak1xbXg4elZmNG9vQmkwOHhnSjZIc20tSmUyS29ObVItdF83Q1NmV1Z0YnhHRFRZR1UyeHhnM3RNaVJ2MTB6OHZWEhSY1Mwc1RIWW5tdWY5ckpO</p>
+            <h3>Anthea Hartig, directora del Museo Smithsonian, se enfrenta a la ira de la Casa Blanca - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxQSjNWZXJ3YlNobnBROENtQlVJemxvWXBmNmFnVzVXdlowaUV1SlFxSTNBSGtN OEszOWJHQ1VLLXdzc2txZTF0M29pTXJjQXZva3czNWZzZ3BPeHpLSzJxZDFhMFlaVktENDdfNzlWbVdzTnhFNDllSFVPaDFqRnROa3FFWlAtWFlsRi1mbEVL</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRnlGLS1BV2xtYUhnNUdpX3lFVlFhRUZ3R051dzlIcHM0dEFSd09ZZzdOd044Z0E5OGh5ak1xbXg4elZmNG9vQmkwOHhnSjZIc20tSmUyS29ObVItdF83Q1NmV1Z0YnhHRFRZR1UyeHhnM3RNaVJ2MTB6OHZzWEhSY1Mwc1RIWW5tdWY5ckpOZ1laV2lGY1d5OGFydWVKa1kwTjhWc04xN0Q5VDFENUFkTVpEam9icWpkY2dz?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxQSjNWZXJ3YlNobnBROENtQlVJemxvWXBmNmFnVzVXdlowaUV1SlFxSTNBSGtNOEszOWJHQ1VLLXdzc2txZTF0M29pTXJjQXZva3czNWZzZ3BPeHpLSzJxZDFhMFlaVktENDdfNzlWbVdzTnhFNDllSFVPaDFqRnROa3FFWlAtWFlsRi1mbEVLdmJuRDBBTEk2ZzJn?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Tres petroleros impactados en los últimos ataques en el Estrecho de Ormuz, dice el ejército británico - AP News</h3><p class="desc"><un href="https://news.google.com/rss/articles/CBMiigFBVV95cUxOT2tfRFIyMHM3Y3R0UHRSQ0xwNEdNX2pjVUV5QkFGZk4yLUpVeU9RN0RHLXpUY U5UMzVIZkNwOWV4Q2dKTnJYZVl6UzZadkxHYUVYNmUzYWxoUEo1S2pPRUkxWmFsMHhadUYyams3ME5TOTlVSHhuTmgtRVA4NGo1NlJIOF9ZOUU2dGc?oc=5" objetivo</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxOT2tfRFIyMHM3Y3R0UHRSQ0xwNEdNX2pjVUV5QkFGZk4yLUpVeU9RN0RHLXpUYU5UMzVIZkNwOWV4Q2dKTnJYZVl6UzZadkxHYUVYNmUzYWxoUEo1S2pPRUkxWmFsMHhadUYyams3ME5TOTlVSHhuTmgtRVA4NGo1NlJIOF9ZOUU2dGc?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Drones ucranianos atacan la refinería de petróleo más grande de Rusia mientras Zelenskyy dice que Siberia ahora está "al alcance" - CNBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPZDJUWG9HckVVQ3pGVVdiMS1JMlE1ZUNQMmlWRmZBcnpWYVdyMTFVLXI0eTlz YjFScTRnTHV6WTlwMWtfTzhURmdWT2g3LXM4eTNiWXZjZ19OWFVqU0pVVFRHWERWd2NkUmxVWU02S21CejJGRnRQcXh5RHQ2ZW5uRmtILUtNUE3SAYwBQVVf</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPZDJUWG9HckVVQ3pGVVdiMS1JMlE1ZUNQMmlWRmZBcnpWYVdyMTFVLXI0eTlzYjFScTRnTHV6WTlwMWtfTzhURmdWT2g3LXM4eTNiWXZjZ19OWFVqU0pVVFRHWERWd2NkUmxVWU02S21CejJGRnRQcXh5RHQ2ZW5uRmtILUtNUE3SAYwBQVVfeXFMTXpDNVN6OHdUSlFsaERqcktVTm1nUE1lajRuNE05VnozTFZFTndUc3pWb0JHaC1fX0w1Y2FCVW16UzhKazRodG5RRDF4M0gxamNDQXNoZENQa2Y3UGFQdVdzejlqbHhWa3JxR0YtOG5teDZlVE8welFzRHRyRV9QUHB5N0YzV0ltbTVPLTg?oc=5" class="btn-link" target="_blank">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>El príncipe Harry pierde un histórico caso de privacidad contra el editor del Daily Mail - Fecha límite</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQUVM2U2NsalBSUFdKRzBEa0VvcS16OEQwRW1UdTJlZHZDQTlITk1QU3B0a jdfRmJDTVhhRDRuMFdQVzJMOXNtQ2dNUGhIVkd4YXRWMTIzMHlTT3JwMWZsdmdWaVdIMkh3cjJkVVZZTlpQWFo1NUQ5MXhFX1drYl9yVVJZSEI?oc=5" objetivo</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQUVM2U2NsalBSUFdKRzBEa0VvcS16OEQwRW1UdTJlZHZDQTlITk1QU3B0ajdfRmJDTVhhRDRuMFdQVzJMOXNtQ2dNUGhIVkd4YXRWMTIzMHlTT3JwMWZsdmdWaVdIMkh3cjJkVVZZTlpQWFo1NUQ5MXhFX1drYl9yVVJZSEI?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div>
         <div class="card">
@@ -121,31 +141,11 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Indonesia comprará misiles BrahMos, dice un funcionario del gobierno indio - Reuters</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxQN0pQNW84emdCUFVLZUJqRVBheWI5bXE0S1UxNkRyX2pvaUVkb1JqODktSGhC OGZhM3RTWEQ4b2VCaHNTVzlIaTRJU0ZfT2V4WHdkdXNOSFRNUzVZT292M0NIaHhFOG02eFBESExhcUpoTW9ZV2U3OE04ckl3Sjh4ZERER2hod2JPdnlTdzJD</p>
+            <h3>Mercado de valores hoy: Nasdaq cae después de que Samsung provoque una venta masiva de tecnología - Actualizaciones en vivo - WSJ</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxQVk1jYVRUUlQ4RlJQZlRtb1VjQW8wUU84eC1JOF9WSUdhcThGSFZKOUhEZWY zanBCVEFSU2Rwa2J2UmlGMHBCX21sMXNycFRoXzl3LUVZdWpQY0R1LUV0eWZ2TTkyeVVuTHozS2RoNmJ0SVl1aHFoSFZXbkdmZ3NpaGpfMVc5Zzg?oc=5" dio</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxQN0pQNW84emdCUFVLZUJqRVBheWI5bXE0S1UxNkRyX2pvaUVkb1JqODktSGhCOGZhM3RTWEQ4b2VCaHNTVzlIaTRJU0ZfT2V4WHdkdXNOSFRNUzVZT292M0NIaHhFOG02eFBESExhcUpoTW9ZV2U3OE04ckl3Sjh4ZERER2hod2JPdnlTdzJDV1dEeDRQWHBmaXdVSElNdGpjb2hWYXVEVQ?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Mujer sospechosa de atentado con bomba en Mónaco encontrada muerta en Ucrania - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE9BcjRmRlEtODgzSXZqY2pJZE1FWEdR bzBrUmcwM2VkZG9BdXRXWWRhWmV1aE93dE1KemJqcFRjb0EzazZPX0tXb0Zwb2ZMRDJSc2xzb2ItTHE3Zw?oc=5" target="_blank">Mujer sospechosa de atentado con bomba en Mónaco encontrada muerta</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE9BcjRmRlEtODgzSXZqY2pJZE1FWEdRbzBrUmcwM2VkZG9BdXRXWWRhWmV1aE93dE1KemJqcFRjb0EzazZPX0tXb0Zwb2ZMRDJSc2xzb2ItTHE3Zw?oc=5" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Microsoft eliminará miles de puestos de trabajo y Xbox se verá muy afectada - DW.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNVVFMY1V1RkRCb1o5dlFwQWFRUzY5YjloNTRRUUxyZkhPdUdiZENKUm1qOGNs NWhyeWJJbFhWeTlnaUhLYWVjbDI3eE8xdkZLMUlwbW1BNGVtRjVwM0I2UXlwVlcyS1JNckV2YldrODlhWjN6VVJvWUFjZWRWM2o5Y3JBeXVDVnNUejgycklU</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNVVFMY1V1RkRCb1o5dlFwQWFRUzY5YjloNTRRUUxyZkhPdUdiZENKUm1qOGNsNWhyeWJJbFhWeTlnaUhLYWVjbDI3eE8xdkZLMUlwbW1BNGVtRjVwM0I2UXlwVlcyS1JNckV2YldrODlhWjN6VVJvWUFjZWRWM2o5Y3JBeXVDVnNUejgycklUa23SAZABQVVfeXFMT04tZkZrR0hmYm5zbDNmR05zS2FFNC1DSXBLeW5PQWZ2M0drUGdnRVJCLVo4QzVMS0dUWTBnWE1QRTRrXzVqMEJudkNES2NhQU43WnhYWVFzdlZDaEUtZXB4UmQ5aXlmLW92QTlMbjZINHpBd0R4RlEyZXdWMXFBdUl0VTNwQ0RYTEtuMGZZUXlW?oc=5" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxQVk1jYVRUUlQ4RlJQZlRtb1VjQW8wUU84eC1JOF9WSUdhcThGSFZKOUhEZWYzanBCVEFSU2Rwa2J2UmlGMHBCX21sMXNycFRoXzl3LUVZdWpQY0R1LUV0eWZ2TTkyeVVuTHozS2RoNmJ0SVl1aHFoSFZXbkdmZ3NpaGpfMVc5Zzg?oc=5" class="btn-link" target="_blank">Leer más →</a>
             </div>
         </div></body></html>
