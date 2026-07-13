@@ -1,72 +1,82 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-07-13 04:08 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>头条新闻的最新更新。</p><div class="divider"></div><p class="insight-text">AI 丰富功能暂时不可用。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-07-13 06:49 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>头条新闻的最新更新。</p><div class="divider"></div><p class="insight-text">AI 丰富功能暂时不可用。</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>实时更新：特朗普表示美国将恢复对霍尔木兹海峡伊朗船只的封锁，停火瓦解 - CNN</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTFBnVjhScnVheUNnYXhMcjVVRlZuS2RiMGgwQTNxRWxtU 1AxWlM1elZTRGxjU0xwVFNwb3A3YkluVzN4WGlsUlVrbmZtT0hwRlVsYnozb2Q1cXhHTXU2QlFyMlNzaHFQUzh1cVVmWW1n?oc=5" target="_blank">实时更新：Ceasefi</p>
+            <h3>南卡罗来纳州州长任命林赛·格雷厄姆的妹妹完成参议员任期 - NBC新闻</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOd1R4ZkptLW9PQm5WOVl5M21MTm0tVEYyZklEeXZndjEzTjhUWVE2cVhIanVQ elBtUFVxTFJxMTIyYU52aDA0QzRIZmRxWGc5d2w5VFE1OXAzdGEzaGV2VFBhbzJhbnZ0MGRKMXBZNTNWSzJ2NXJVMHFtcFVNWFkycW14TS1UUmktTTZqVDBw</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMibkFVX3lxTFBnVjhScnVheUNnYXhMcjVVRlZuS2RiMGgwQTNxRWxtU1AxWlM1elZTRGxjU0xwVFNwb3A3YkluVzN4WGlsUlVrbmZtT0hwRlVsYnozb2Q1cXhHTXU2QlFyMlNzaHFQUzh1cVVmWW1n?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOd1R4ZkptLW9PQm5WOVl5M21MTm0tVEYyZklEeXZndjEzTjhUWVE2cVhIanVQelBtUFVxTFJxMTIyYU52aDA0QzRIZmRxWGc5d2w5VFE1OXAzdGEzaGV2VFBhbzJhbnZ0MGRKMXBZNTNWSzJ2NXJVMHFtcFVNWFkycW14TS1UUmktTTZqVDBwVUVsSmE4MzBLUlRENzYya2hleEVBRHQ5YkV0NnNkaEhHaUZyMG90ZFZyanI4RGFEQQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>共和党人在中期选举前争先恐后地寻找参议员林赛·格雷厄姆的替代者 - NBC新闻</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQOFlkNDRCRlNYYkJMUF9ONHVIbmRibXpOYjBjU1l0cWtyMEtYdVk0QjFQN3Az azJiMU1ySEREU1hkNmpJeFcxclY2WGlibHFVUFF4S0N2Y2JtSm1vMXU1N2ZHRDYycmRBVFFia2ZXcXR4c3pKbjRqeDFWWWWl5azBnZ1oyeGo3aDV3d19YU3VL</p>
+            <h3>特朗普恢复伊朗港口封锁，并发誓对通过霍尔木兹的货物征收20%的费用 - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5rRGJKbHZwc1VhWjN2TUs2YlVGaDdw aUFudHZCNDZudlF4QmZJQWI0cVhxRE5qeDFyaTJjOGVjY3hSRklxeUZ0N2pFVXVQNXFJa3VjMDNDZVJqUQ?oc=5" target="_blank">特朗普恢复伊朗港口封锁并誓言20</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQOFlkNDRCRlNYYkJMUF9ONHVIbmRibXpOYjBjU1l0cWtyMEtYdVk0QjFQN3AzazJiMU1ySEREU1hkNmpJeFcxclY2WGlibHFVUFF4S0N2Y2JtSm1vMXU1N2ZHRDYycmRBVFFia2ZXcXR4c3pKbjRqeDFWWWl5azBnZ1oyeGo3aDV3d19YU3VLeTBjSHdpQ0ZYZUFQVFhKbUEtaFFoN09IM3l3ejROVWJPRlM5OVFZNnpKUzlBTDJZMA?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5rRGJKbHZwc1VhWjN2TUs2YlVGaDdwaUFudHZCNDZudlF4QmZJQWI0cVhxRE5qeDFyaTJjOGVjY3hSRklxeUZ0N2pFVXVQNXFJa3VjMDNDZVJqUQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>美国法官宣布唐纳德·特朗普与美国国税局 (IRS) 达成的 18 亿美元和解协议无效，该协议使他免受税务审计 - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5Fd3czT2ozM2diTmZYOEdjaHJiLVlw QkJxWkJBM0FNVnhMcUhsR1ZYNVM2TEh2TmlMVkVsR2NEc3g5emU0ZXFWQU5Nc3NzNjdJZm5CLTRSTUFrQQ?oc=5" target="_blank">美国法官宣布唐纳德·特朗普 18 亿美元的和解协议无效</p>
+            <h3>参议员林赛·格雷厄姆去世后，参议院带着不确定的议程返回华盛顿 - 美联社新闻</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOLU1DR3RvUDVuSGlGNHVMc2hQNGpLVllMb3V1clJiUXplcDdmaGZDVndkdGIw a2s5T05rYzY5Mk56dXE4TlhRSmV5Y21vLXFnTFBydHBsNkZleVVoYXh2ZjhKMVZJN041ek9kQmVoTF9YZE9kelJBcWpLb29tWEF1bE5jU1V1TFBzMGlhb1pF</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5Fd3czT2ozM2diTmZYOEdjaHJiLVlwQkJxWkJBM0FNVnhMcUhsR1ZYNVM2TEh2TmlMVkVsR2NEc3g5emU0ZXFWQU5Nc3NzNjdJZm5CLTRSTUFrQQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOLU1DR3RvUDVuSGlGNHVMc2hQNGpLVllMb3V1clJiUXplcDdmaGZDVndkdGIwa2s5T05rYzY5Mk56dXE4TlhRSmV5Y21vLXFnTFBydHBsNkZleVVoYXh2ZjhKMVZJN041ek9kQmVoTF9YZE9kelJBcWpLb29tWEF1bE5jU1V1TFBzMGlhb1pFdDU1NjhPVWI5LUs2Q1JaTzhPeGpxeWlTWk53ZEVNV0E?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>林赛·格雷厄姆的妹妹达琳·格雷厄姆·诺多内将被任命完成参议院任期 - 哥伦比亚广播公司新闻</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxORWsxMDA3M1hTNzJaNjd3UEpocngxWVlVUTMxTXhZVkZIWkRnM0cxaVNXNEFL NFk0aTNoWHVIakpaQ1pVLXRHeXgwckY3Ui1IMXJsclhrVzZwMndrUlBwTjVaNE1LTUM1MXNXdE9mX3VOOUpSVFRUYnBfR3d0b3J6dmlBRmFQYXoxeWhINGdW</p>
+            <h3>法官因美国国税局和解、反武器化基金而制裁特朗普律师 - Axios</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxNcGNGQlp2em1NRWozMGxNdkpEck1hOFJuR1pCTS1hVzJMcWRLY3ptWGFGWU03 LTI5OXdCVjF1aFY4WVBVb1kzNExLeXBGYTlqQzV5ZHVtdHN1Zld4VnJmckF4bTdWZFF5bndhUUxsVjBoeVUwaWxDd2pRNG9yMFNkWHZQZXdxVEViTE1z?oc=</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxORWsxMDA3M1hTNzJaNjd3UEpocngxWVlVUTMxTXhZVkZIWkRnM0cxaVNXNEFLNFk0aTNoWHVIakpaQ1pVLXRHeXgwckY3Ui1IMXJsclhrVzZwMndrUlBwTjVaNE1LTUM1MXNXdE9mX3VOOUpSVFRUYnBfR3d0b3J6dmlBRmFQYXoxeWhINGdWbXc?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxNcGNGQlp2em1NRWozMGxNdkpEck1hOFJuR1pCTS1hVzJMcWRLY3ptWGFGWU03LTI5OXdCVjF1aFY4WVBVb1kzNExLeXBGYTlqQzV5ZHVtdHN1Zld4VnJmckF4bTdWZFF5bndhUUxsVjBoeVUwaWxDd2pRNG9yMFNkWHZQZXdxVEViTE1z?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>官员：比迪福德 ICE 枪击事件造成人员死亡 - WMTW</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxQcTdqc2NZNVNmUS1iQ3R5c0xtcVZjMlRtcWNQWHNrQVFDangzZnRqNzd6X3lj NjVPbnV2MmMyUEp6Njc2UjEyNnNya1pWck9hTlk5VmRDTFBNeGxuVkZNMWhkUnZUWk82Njl1WDBkWnV0LVBPZlBDdmUxbk9OU1NxWlBneXVGb2IzY2p1SWdl</p>
+            <h3>实时更新：缅因州 ICE 枪击事件导致一人死亡 - CNN</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxQMDF1WGZPdXR0d2swdFdMcW1lTS1xVEZDd3djV2kwZmN2ZTZZamZMZVN3bUl uYjlDRD2X2ZTVlUwaHNlTW9YbmtSRUt5ZVFlZTJfaGVjTE5WbThzbHNlbml1VEFfM0VXRzUzdnhjelRMTnd0cVFGTDd0aWlhS3E5LXFBWWFlWk0?oc=5"塔</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxQcTdqc2NZNVNmUS1iQ3R5c0xtcVZjMlRtcWNQWHNrQVFDangzZnRqNzd6X3ljNjVPbnV2MmMyUEp6Njc2UjEyNnNya1pWck9hTlk5VmRDTFBNeGxuVkZNMWhkUnZUWk82Njl1WDBkWnV0LVBPZlBDdmUxbk9OU1NxWlBneXVGb2IzY2p1SWdlTnhhTHpDUlZxVg?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxQMDF1WGZPdXR0d2swdFdMcW1lTS1xVEZDd3djV2kwZmN2ZTZZamZMZVN3bUluYjlDRDd2X2ZTVlUwaHNlTW9YbmtSRUt5ZVFlZTJfaGVjTE5WbThzbHNlbml1VEFfM0VXRzUzdnhjelRMTnd0cVFGTDd0aWlhS3E5LXFBWWFlWk0?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>黄石国家公园野牛袭击游客并将其扔到空中 - 纽约时报中文网</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOcjN4UnNNQnp1SEtLU1Vzcmxyd2ozN0ZubkF5RzlRQ2szUGlDbXE5ZDB FOGM5ckI1Mk5pdFRjcE5LaTZyeVpLdks1eXVGdDk2a2RBUFNGNGVTNUJkaFVZY1JjZkVXOTA5LV9xNEJOR3dremJ1bGFMMTg0SW90cEdPdmVn?oc=5"目标=“_</p>
+            <h3>野牛在黄石公园撞倒老人，将他抛向天空 - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5IQ0RlOXJReW8yVGVkdlV3ZmV4OG1E ZE80ZG53NkNFWE1WYVQwaWVvLTgta2FVWC02czBCNmxuQ21Ic1pfTEJYbDJ4M1dfRkdvYWIzb3N5R3ZQQQ?oc=5" target="_blank">野牛在黄石公园猛烈撞击老人</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOcjN4UnNNQnp1SEtLU1Vzcmxyd2ozN0ZubkF5RzlRQ2szUGlDbXE5ZDBfOGM5ckI1Mk5pdFRjcE5LaTZyeVpLdks1eXVGdDk2a2RBUFNGNGVTNUJkaFVZY1JjZkVXOTA5LV9xNEJOR3dremJ1bGFMMTg0SW90cEdPdmVn?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5IQ0RlOXJReW8yVGVkdlV3ZmV4OG1EZE80ZG53NkNFWE1WYVQwaWVvLTgta2FVWC02czBCNmxuQ21Ic1pfTEJYbDJ4M1dfRkdvYWIzb3N5R3ZQQQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>司法部明尼苏达州国土安全部移交证据枪击事件 - 纽约时报</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPRW9XOUxDZnpTOWo3VEdRajBEOHlxWWtfbTQzZWFRbE1oWE9vOW5nUlV1WTVK ajM2Z1pvckdCTTAyYmdpMlRvclMwMVRyVWhrazJEEFBUM0VkcjR1N0FzdmR3Zkk3QjBhM3llM3pOYkV6cjBRWGh0NUVwUzBBbWlnVEc0eExpNTExMDRSQzh1</p>
+            <h3>35 年无证，追逐美国梦 - 纽约时报中文网</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE5TSWtDbXpLY0kwYW9oSVFyWFJZUW4zVmhOaXktU0p1d3RuWHB5OFFT LU9hcUpMbDczSm5rY2VRTHd1MlFlUkpBOTdZS1FaMUFPczJTanZJWEhnSUFBVTRSZUJ3VEdhUTRDcER5ZVNiSWxFajhXdWtyUjdQa3N4UQ?oc=5"目标=“_空白”</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPRW9XOUxDZnpTOWo3VEdRajBEOHlxWWtfbTQzZWFRbE1oWE9vOW5nUlV1WTVKajM2Z1pvckdCTTAyYmdpMlRvclMwMVRyVWhrazJEeFBUM0VkcjR1N0FzdmR3Zkk3QjBhM3llM3pOYkV6cjBRWGh0NUVwUzBBbWlnVEc0eExpNTExMDRSQzh1aU5jVnZVcDFCaw?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE5TSWtDbXpLY0kwYW9oSVFyWFJZUW4zVmhOaXktU0p1d3RuWHB5OFFTLU9hcUpMbDczSm5rY2VRTHd1MlFlUkpBOTdZS1FaMUFPczJTanZJWEhnSUFBVTRSZUJ3VEdhUTRDcER5ZVNiSWxFajhXdWtyUjdQa3N4UQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>明尼苏达州检察官在调查抗议枪击死亡事件时获得了长期隐瞒的证据 - 美联社新闻</h3><p class="desc"><一href="https://news.google.com/rss/articles/CBMitwFBVV95cUxQeEVPWE04c1JpNVl5NnhDOU94bDhXd09XUUdpNnoxcDNrQ0g5Tks0UTBqS19PZ0FF b1BfQlBTZnVKM0R3YXYyazJJNTN1cFcwT2V0bUpIS3RWbGJwSVIzNEt2SVFnb0xGRFF3TXNtZnRlVktwRk8wUjlQVW1MbEQ3QktFN3pvRnQ3MzBydDZqSU93S2lf</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxQeEVPWE04c1JpNVl5NnhDOU94bDhXd09XUUdpNnoxcDNrQ0g5Tks0UTBqS19PZ0FFb1BfQlBTZnVKM0R3YXYyazJJNTN1cFcwT2V0bUpIS3RWbGJwSVIzNEt2SVFnb0xGRFF3TXNtZnRlVktwRk8wUjlQVW1MbEQ3QktFN3pvRnQ3MzBydDZqSU93S2lfZmpGLU1lTHBCMkQwak5EQjdTcnFybE5yTm1NNGtVMzZoM2s?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -81,22 +91,12 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>诺兰·威尔斯 (Nolan Wells) 在泳池派对上的一张照片疯传。不是从 7 月 4 日开始 - 滚石杂志</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxQMmRNUjVGbjJaSG1JNFM2d29aWTAzdkg2SDJ4ZVlqbFp3YVlUNDZ1RDFnMk9X MXliQWlLQlY0U2V2Ym5rQ3BENGFOdkFSWEVqOFdGTjB2N0R1dHdoS1FMemRueXhiLTJnTULXdG1nczBwQVE0chHFCWVEwOURhdjZJWC13Wldpa2kzY0ltczNM</p>
+            <h3>消息人士称，FBI 解雇了 2 名对富尔顿县 2020 年选举调查表示担忧的分析师 - CBS 新闻</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxPZXhZcGRNc1E0aEt3cUlHNFJIUFZzVHJJVDI4WEd4bHJXMU5qTl8wclNDal9k N3ItOFZEbFNqWDAwYk5JbWUzeE9xd2pmVVdjTDhqY29yeFBIRUE2ZHZoOEczSjdfb0FZNlc2OEIzYzdNbmJENzlDS1Y3Um5jR2hYV3BNbUc3R3lfZ1BJMURB</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxQMmRNUjVGbjJaSG1JNFM2d29aWTAzdkg2SDJ4ZVlqbFp3YVlUNDZ1RDFnMk9XMXliQWlLQlY0U2V2Ym5rQ3BENGFOdkFSWEVqOFdGTjB2N0R1dHdoS1FMemRueXhiLTJnTUlXdG1nczBwQVE0cHFCWVEwOURhdjZJWC13Wldpa2kzY0ltczNMZ3RPMnlZ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>麦康奈尔说，他因摔倒而住院，打破了数周的沉默 - NPR</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxPSENVV2tYQWwtYkNKTTRnTUVhcmpqUy1rOVRMYkxyWTBCd2JjRlVnZ0 FyT1A5QnNpVm4tQmpWXzV5VEpiY2J6Yk9SS2pOUkUtSXZDd2lNX19vT3JuVnhpX0VoaTBOeUJTOWdQckhKMzFzQUlaa2ItVFJ2bXRFSUFSWg?oc=5"目标=“_bl</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxPSENVV2tYQWwtYkNKTTRnTUVhcmpqUy1rOVRMYkxyWTBCd2JjRlVnZ0FyT1A5QnNpVm4tQmpWXzV5VEpiY2J6Yk9SS2pOUkUtSXZDd2lNX19vT3JuVnhpX0VoaTBOeUJTOWdQckhKMzFzQUlaa2ItVFJ2bXRFSUFSWg?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxPZXhZcGRNc1E0aEt3cUlHNFJIUFZzVHJJVDI4WEd4bHJXMU5qTl8wclNDal9kN3ItOFZEbFNqWDAwYk5JbWUzeE9xd2pmVVdjTDhqY29yeFBIRUE2ZHZoOEczSjdfb0FZNlc2OEIzYzdNbmJENzlDS1Y3Um5jR2hYV3BNbUc3R3lfZ1BJMURBVVNudHJh?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -111,41 +111,41 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>冯德莱恩表示，欧盟计划限制儿童社交媒体 - 路透中文网</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOZWhSQXVjSldmQ1RPUFBPaE0wSVA5QmN3M2lxcU0xVU02amh3VWJFaFZnRVJV Vzh0aTVrWU4wd1BmdjZtdlVUMkJTNi04WkQ0SXh2OVJ0TnZ1dzNtd1czZDltelJNcE1WSDl1cEVfcUZIVXIzOGlHUXdaRjJzRldhNWVHZGtGSnBCVEdHbHY5</p>
+            <h3>欧盟希望社交媒体年龄限制在 13 岁以上 - politico.eu</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNWWdJSXFhTkFXQ29xaC14ek50dTdKRmxidDZZMmZqQWlLZDA1c05UakJsWnl4 clEzVEVBdE5ZZUNMaGRXZ0o1X1BwaE40QXpFcFRsR0LBN3h6UDJUQ1l0Z1c5TV9RRFJBUmhINGI5aEliQ1A5X2FBTER1TjhLRngtUUU5ZmMxRFN4UDJhT01T</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOZWhSQXVjSldmQ1RPUFBPaE0wSVA5QmN3M2lxcU0xVU02amh3VWJFaFZnRVJVVzh0aTVrWU4wd1BmdjZtdlVUMkJTNi04WkQ0SXh2OVJ0TnZ1dzNtd1czZDltelJNcE1WSDl1cEVfcUZIVXIzOGlHUXdaRjJzRldhNWVHZGtGSnBCVEdHbHY5UUZtaWN5WXhzZGtMYldtSldWM2cwQ1N6UDl1NXRZM2tycFY1UQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNWWdJSXFhTkFXQ29xaC14ek50dTdKRmxidDZZMmZqQWlLZDA1c05UakJsWnl4clEzVEVBdE5ZZUNMaGRXZ0o1X1BwaE40QXpFcFRsR0lBN3h6UDJUQ1l0Z1c5TV9RRFJBUmhINGI5aEliQ1A5X2FBTER1TjhLRngtUUU5ZmMxRFN4UDJhT01TRlVDQWxYRi1oLVRMX1h3bHc1aWc?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>美国针对伊朗的最新武器：海上无人机 - 华尔街日报</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPTFMtTnZVczlfeTRGZy1ndl9lenM4MU1LbUZuVFNySmdTUXJtRzVqNEdLNDdy REHIY1LDQ2DmLTNCUTVzTVFuSkFnaE8wNlVTMzBZck5wdi1mdWM4M1RzOU9KUUdMajFITm1Kd1JHdXFHRi1rblQ1R2s2NEdlRFdUTU4yeTNHSGYwb1h1Q1RR</p>
+            <h3>巴哈马飞机失事 10 名音乐家、DJ 遇难 - 今日美国</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPUTV5Z1Z5c3RmcEJTamhYc29hQkQyMkRudDR4c25yOWFLU0FjblFHTVdnS3FN ZkNMWEVjSzlja2lINENNcGk2RXVQR1M3QlR2WUL1UDUyekhGTGM3TEV0SVE5Zk82WXpQNmxXOGdYY0Rfa0cyZ0ZYUC1rYlBXUE1kSHVDNENxZFUzLTFmdUtl</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPTFMtTnZVczlfeTRGZy1ndl9lenM4MU1LbUZuVFNySmdTUXJtRzVqNEdLNDdyREhiY1lDQ2dmLTNCUTVzTVFuSkFnaE8wNlVTMzBZck5wdi1mdWM4M1RzOU9KUUdMajFITm1Kd1JHdXFHRi1rblQ1R2s2NEdlRFdUTU4yeTNHSGYwb1h1Q1RRTlJBWHE3Qlk1dw?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPUTV5Z1Z5c3RmcEJTamhYc29hQkQyMkRudDR4c25yOWFLU0FjblFHTVdnS3FNZkNMWEVjSzlja2lINENNcGk2RXVQR1M3QlR2WUl1UDUyekhGTGM3TEV0SVE5Zk82WXpQNmxXOGdYY0Rfa0cyZ0ZYUC1rYlBXUE1kSHVDNENxZFUzLTFmdUtlLTYzOFU0d2t6aQ?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>反恐警察接管对英国政客维德科姆死亡事件的调查 - 半岛电视台</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNYnl6NHpobHdOWDFUZzZUb2dWS3ZFRURxdTFRMDlFZnAtT2dhdDE1dWQ3R1BZ RUo1cTJ3NGJZOW95RkNhcnZqUUwyNkdxcGVWWFp2TjBBcnprMUIzYTJ4STNXNjEyQXdxbndzYUtnUkdGYWYtTDdCNWx6THBTWTFmVUpTUkJpdUl5R0h2bmhz</p>
+            <h3>英国反恐警察接管对资深政客“可怕谋杀”的调查 - 哥伦比亚广播公司新闻</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPS1duWEVVbk5naWxtcGxza1NfelhJY3Vad01YSlNoUkdJRE5helVjcXdiM Dg2VS1HazVMZmFGYnNKRTNqc1A5dUplY0dnZ2stNlVQVXJYbm5iZk9oaVNPSFVtRUlmTDJuekFwTktOTGhQUzVRTHE4enpCQjIwZl9GWXRnQW0?oc=5"目标</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNYnl6NHpobHdOWDFUZzZUb2dWS3ZFRURxdTFRMDlFZnAtT2dhdDE1dWQ3R1BZRUo1cTJ3NGJZOW95RkNhcnZqUUwyNkdxcGVWWFp2TjBBcnprMUIzYTJ4STNXNjEyQXdxbndzYUtnUkdGYWYtTDdCNWx6THBTWTFmVUpTUkJpdUl5R0h2bmhzSnFRQlBMUUgtelVBYS1wbTJUMzFyR1U2YVNRb1FwTElDUVBIdV_SAboBQVVfeXFMTS1LODdBbkp4blcycndYaU9GZTlDTHFvRDNHUzgxdTBfdkk5NXU5NTFoZEp5NGNHTEFaZEhvQTVPbkJYbXlWaFRGYVVuMWpGNUg0anlkQmdxZ1dDMzBkc2liVmNKbV9BRlF1c2dZSUhVOEx0ZHZDVnRMVDF5UmlJZE1RM2ktUVhseldfOFUwcWdxdmNIR0hKeDRGUk1RbTlQVmMzSHZCblFFUU5ldkpyNll4a0F0TlJuaFNB?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPS1duWEVVbk5naWxtcGxza1NfelhJY3Vad01YSlNoUkdJRE5helVjcXdiMDg2VS1HazVMZmFGYnNKRTNqc1A5dUplY0dnZ2stNlVQVXJYbm5iZk9oaVNPSFVtRUlmTDJuekFwTktOTGhQUzVRTHE4enpCQjIwZl9GWXRnQW0?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>派拉蒙被各州起诉，试图阻止华纳兄弟 1,110 亿美元的合并 - 好莱坞报道</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxQODRWcWlJSEV2STdPa0ZHTUFNRFhzd2FrQm41TGdMcDJiOU9TWlBod3BqM0xI cGxKZ1dTZmppc1ItUU1NRF9VM1RUbU0zTkdDVXZfSXJSOGswbV94amtCQkRwS19LbFdfd25QbWZ4cjA1M21ydkZlblNRNXpPYkRyWUpfbzhMbTMtWkZvMGNW</p>
+            <h3>苹果针对 OpenAI 的商业秘密诉讼中最疯狂的指控 - TechCrunch</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxNeFFTTWI5QkFmYzVQWnphOThvOWNCZDVPRTdvNmZFOGpseG9UXzRfNWRXNUx4 UHMtdzRFcWdCX3ZEQlRxNTVMY1dhZnVhdkRWZ0ZZelpNX25GWW1JWU8yWEhSZGpfSTFMVlRjSWYzUHVrUWtzU0FxQnl3S3RQQWFTMFY5R2R2Y3BxNzlWRjl6</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxQODRWcWlJSEV2STdPa0ZHTUFNRFhzd2FrQm41TGdMcDJiOU9TWlBod3BqM0xIcGxKZ1dTZmppc1ItUU1NRF9VM1RUbU0zTkdDVXZfSXJSOGswbV94amtCQkRwS19LbFdfd25QbWZ4cjA1M21ydkZlblNRNXpPYkRyWUpfbzhMbTMtWkZvMGNWQ3dTbDRoZTBwY09WcXhXQ1BjTTZveg?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxNeFFTTWI5QkFmYzVQWnphOThvOWNCZDVPRTdvNmZFOGpseG9UXzRfNWRXNUx4UHMtdzRFcWdCX3ZEQlRxNTVMY1dhZnVhdkRWZ0ZZelpNX25GWW1JWU8yWEhSZGpfSTFMVlRjSWYzUHVrUWtzU0FxQnl3S3RQQWFTMFY5R2R2Y3BxNzlWRjl6MTBQd3FBbmVZMUdOT2lndllVSmp6V3B1b1Q?oc=5" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div></body></html>
