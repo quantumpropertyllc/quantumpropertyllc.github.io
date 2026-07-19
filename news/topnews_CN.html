@@ -1,32 +1,62 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-07-19 07:06 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>头条新闻的最新更新。</p><div class="divider"></div><p class="insight-text">AI 丰富功能暂时不可用。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-07-19 10:21 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>头条新闻的最新更新。</p><div class="divider"></div><p class="insight-text">AI 丰富功能暂时不可用。</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>专栏 |说更多：我的姻亲选择枪支而不是探望孙子，我感到心碎 - 《华盛顿邮报》</h3><p class="desc">在孩子们拿到枪支保险柜之前不带孩子们去看祖父母是正确的选择，但这并不能减轻写信人的痛苦。</p>
+            <h3>Fever 的斯蒂芬妮·怀特 (Stephanie White) 对凯特琳·克拉克 (Caitlin Clark) 说：“天啊（脏话）。”绝对令人难以置信”——IndyStar</h3><p class="desc">凯特琳·克拉克 (Caitlin Clark) 在对阵西雅图风暴队的比赛中创造了宣泄表现纪录，她在 29 分钟内拿下 45 分和 10 次助攻</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">The Washington Post</span>
+                <span class="source">The Indianapolis Star</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.washingtonpost.com/advice/2026/07/18/say-more-heartbroken-in-laws-have-chosen-guns-over-grandkid-visits/" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.indystar.com/story/sports/basketball/wnba/fever/2026/07/18/caitlin-clarks-offensive-masterclass-45-points-10-assists-lifts-fever-past-storm/90919275007/" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>猫头鹰研究人员被诊断出患有第四期癌症，但仍坚持工作到最后 - 《华盛顿邮报》</h3><p class="desc">大卫·约翰逊 (David Johnson) 去世，享年 69 岁，他是一位顶尖的猫头鹰研究员和自然保护主义者。 “不是我选择了猫头鹰，”他说，“是它们选择了我。”</p>
+            <h3>索尼旗舰 RGB LED 电视令人难以置信 - The Verge</h3><p class="desc">Bravia 9 II 是最好的 RGB LED 电视，具有改变游戏规则的功能，但我仍然会购买 OLED。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">The Washington Post</span>
+                <span class="source">The Verge</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.washingtonpost.com/obituaries/2026/07/18/diagnosed-with-stage-4-cancer-an-owl-researcher-kept-working-till-end/" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.theverge.com/tech/966788/sony-bravia-9-ii-tv-review" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>直播：F1 比利时大奖赛最新动态 - 基米·安东内利 (Kimi Antonelli) 名列 FP3 名列前茅实时文本 - Motorsport.com</h3><p class="desc">随着 F1 第三次比利时大奖赛练习赛的展开，请关注斯帕赛道的最新动态</p>
+            <h3>在诺兰·威尔斯去世之前，密西西比岛充满了乐趣、朋友和不言而喻的危险 - NBC 新闻</h3><p class="desc">当当地人想到霍恩岛时，他们会想到原始海滩、夏季划船旅行和宁静的钓鱼。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">Motorsport.com</span>
+                <span class="source">NBC News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.motorsport.com/f1/live-text/f1-belgian-gp-live-commentary-and-updates-fp3/1127340/" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.nbcnews.com/news/us-news/nolan-wells-death-mississippi-horn-island-rcna587854" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>英国公开赛受罚后，高尔夫分析师布兰德尔·钱布利令人作呕地埋葬了布赖森·德尚博 - 福克斯新闻</h3><p class="desc">布兰德尔·钱布利在公开赛被罚两杆后埋葬了布赖森·德尚博，称他已经做了一切，就是没有把杂草铲到草地上。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">Fox News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.foxnews.com/outkick-sports/golf-analyst-brandel-chamblee-bryson-dechambeau-british-open-penalty" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Kimi K3震惊世界。这些其他人工智能模型可能是下一个 - Axios</h3><p class="desc">中国的知名车型（例如 Kimi K3）最近缩小了这一差距。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">Axios</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.axios.com/2026/07/18/kimi-k3-ai-models-china-us-japan" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>去年致命灾难后，德克萨斯州山区洪水测试了新的预警系统 - 美联社新闻</h3><p class="desc">去年丘陵地区发生致命洪水后，德克萨斯州官员实施了重大改革，以改善洪水预警。他们通过了法律以改善预警系统和改善基础设施。本周，缓慢移动的风暴引发了佛罗里达州</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">Associated Press</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://apnews.com/article/flash-flood-mystic-uvalde-texas-warning-alarms-d949081a5f152b93b9d458a9cc69b7af" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -41,16 +71,6 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>所以你认为你感染了环孢子虫，一种引起腹泻的寄生虫。这是下一步该做什么 - CNN</h3><p class="desc">环孢子虫的症状类似于其他更常见的胃病，许多人会尝试在家等待，而不是寻求治疗。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">CNN</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.cnn.com/2026/07/18/health/cyclospora-what-to-do-wellness" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
             <h3>伊朗战争最新消息：霍尔木兹海峡交通堵塞，美国完成连续第七晚的空袭 - 哥伦比亚广播公司新闻</h3><p class="desc">在战争进行 140 天后，美国和伊朗不断升级攻击，一位行业分析师表示，“没有人愿意”穿越霍尔木兹海峡。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
@@ -61,12 +81,22 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>抗议活动愈演愈烈，泽连斯基考虑解雇总司令 - 英国《金融时报》</h3><p class="desc">乌克兰总统解雇了受欢迎的国防部长后，危机席卷了军队</p>
+            <h3>《奥德赛》已有 2700 年历史，但克里斯托弗·诺兰仍然想办法用情节转折来结束它 - Slate Magazine</h3><p class="desc">这位编剧兼导演特有的狡猾的新结局改变了整个故事的意义。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">Financial Times</span>
+                <span class="source">Slate Magazine</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.ft.com/content/1b34caa6-d909-4df8-a90f-b928f2199261?syn-25a6b1a6\\u003d1" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://slate.com/culture/2026/07/the-odyssey-movie-ending-zendaya-troy-sea-people.html" class="btn-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>在遥远恒星的宜居带中发现类地行星上的第一个大气层 - 雅虎</h3><p class="desc">研究人员发现了一颗类似地球的岩石行星，在一颗具有大气层的遥远恒星的宜居带内运行。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">BBC News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://www.bbc.com/news/articles/cy4kdd1e0ejo" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -81,12 +111,12 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>2026 年世界杯：莱昂内尔·梅西和汤姆·布雷迪讨论“预言性”拉明·亚马尔照片 - BBC</h3><p class="desc">阿根廷球星莱昂内尔·梅西 (Lionel Messi) 表示，在世界杯决赛中与西班牙球星拉明·亚马尔 (Lamine Yamal) 的比赛是“疯狂的”，因为他小时候曾被拍到与西班牙球星拉明·亚马尔 (Lamine Yamal) 合影。</p>
+            <h3>美国休战面临压力，伊朗强硬派警告可能发生“政变” - CNN</h3><p class="desc">伊朗的强硬派认为，伊朗官员没有为已故最高领导人被杀报仇，而是通过与美国签署协议来投降。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">BBC News</span>
+                <span class="source">CNN</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.bbc.com/sport/football/articles/c5yejxqll3go" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.cnn.com/2026/07/18/middleeast/iran-hardliners-coup-warning-us-truce-intl-cmd" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -101,16 +131,6 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>公开赛第三轮实时更新，排行榜：在布莱森·德尚博混乱的罚球之后，有人能抵挡住他吗？ - 雅虎体育</h3><p class="desc">混乱的英国公开赛已经过半了。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">Yahoo Entertainment</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://sports.yahoo.com/golf/live/the-open-championship-third-round-live-updates-leaderboard-can-anyone-fend-off-bryson-dechambeau-after-his-chaotic-penalty-075805595.html" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
             <h3>《RHOA》演员金·佐尔西亚克 (Kim Zolciak) 在令人讨厌的离婚中吐出金钱后避免入狱 - TMZ</h3><p class="desc">《亚特兰大真正的主妇》演员 Kim Zolciak 不再面临入狱的风险……因为她在痛苦的离婚中交出了欠法院指定监护人的钱……TMZ 获悉。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
@@ -121,31 +141,11 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>本周末野火烟雾将持续蔓延。查看哪些城市受影响最严重。 - 华盛顿邮报</h3><p class="desc">截至周五早些时候，涌入美国的烟雾使底特律、芝加哥和华盛顿特区成为世界上污染最严重的主要城市。</p>
+            <h3>独家新闻：随着伊朗局势升级，美国向以色列派遣了数十架加油机 - Axios</h3><p class="desc">此举是在伊朗可能发动大规模轰炸攻势之前进行的。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">The Washington Post</span>
+                <span class="source">Axios</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.washingtonpost.com/weather/2026/07/17/wildfire-smoke-will-linger-spread-this-weekend-search-your-citys-forecast/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>特朗普欲对加拿大征收关税以报复野火烟雾 - 《华盛顿邮报》</h3><p class="desc">白宫没有回答有关他将使用什么法律机制征收关税或政府将如何计算关税税率的问题。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.washingtonpost.com/politics/2026/07/17/trump-wants-impose-tariffs-canada-retaliation-wildfire-smoke/" class="btn-link" target="_blank">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>卷心生菜与疫情有关，泰勒农场将启动召回 - 《华盛顿邮报》</h3><p class="desc">该公司早些时候宣布将从美国市场上撤下一些生菜，但现在必须通知客户并努力在环孢子虫病爆发期间回收受影响的产品。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://www.washingtonpost.com/health/2026/07/17/taylor-farms-pulls-all-iceberg-lettuce-sourced-central-mexico-us-market/" class="btn-link" target="_blank">阅读全文 →</a>
+                <a href="https://www.axios.com/2026/07/17/trump-iran-israel-refueling-planes" class="btn-link" target="_blank">阅读全文 →</a>
             </div>
         </div></body></html>
