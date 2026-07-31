@@ -1,12 +1,82 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-07-31 04:15 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-07-31 05:17 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Las acciones de Amazon saltan a medida que se aceleran las ventas en la nube - WSJ</h3><p class="desc"></p>
+            <h3>Mandela Barnes se retira de las primarias demócratas para gobernador de Wisconsin - AP News</h3><p class="desc">Mandela Barnes abandonó las primarias demócratas para gobernador de Wisconsin. El ex vicegobernador hizo el anuncio en un vídeo publicado en su página de Facebook. La socialista democrática Francesca Hong ha obtenido un fuerte apoyo de la liberalización.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">The Wall Street Journal</span>
+                <span class="source">Associated Press</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.wsj.com/tech/ai/amazon-earnings-q2-2026-amzn-stock-3daf95f7" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://apnews.com/article/wisconsin-governor-barnes-democrats-primary-8d5c0f75dcc364b80fa41c7ab7b32407" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Por qué las acciones de Amazon (AMZN) están subiendo un 10% a pesar de un aumento masivo del gasto de capital en IA - Barron's</h3><p class="desc">Los ingresos de Amazon para el trimestre alcanzaron los 201 mil millones de dólares, por encima de las expectativas de 197 mil millones de dólares, y un aumento del 20% interanual.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Barron's</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://www.barrons.com/articles/amazon-earnings-stock-price-bdf5ec40" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Los Bucs le ofrecieron a Baker Mayfield un contrato de dos años - NBC Sports</h3><p class="desc">Baker Mayfield dijo que los Bucs le ofrecieron un contrato de dos años.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">NBCSports.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://www.nbcsports.com/fantasy/football/player-news/2026-07-30/bucs-offered-baker-mayfield-a-two-year-deal" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Actualizaciones en vivo: Egipto atacó por primera vez mientras el conflicto entre Estados Unidos e Irán afecta a más países - CNN</h3><p class="desc">El Ministerio de Defensa saudita dijo que 14 países han respaldado la propuesta del reino de establecer una “Alianza de Defensa Marítima” para proteger las rutas marítimas internacionales y el comercio global. Siga para obtener actualizaciones de noticias en vivo.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">CNN</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://www.cnn.com/2026/07/30/world/live-news/iran-war-trump" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Estados Unidos e Irán intercambian bombardeos de misiles mientras se desvanecen las esperanzas de una rápida resolución del conflicto de cinco meses - AP News</h3><p class="desc">Estados Unidos e Irán han disparado ráfagas de misiles mientras el patrón de ataques de ida y vuelta se afianza nuevamente y la esperanza de un rápido final al conflicto de cinco meses se desvanece. Tras unos días de respiro, han aumentado los temores de una guerra más amplia, con</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Associated Press</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://apnews.com/article/iran-war-us-hormuz-strait-july-30-2026-8dc77ed6a65f389ea4af84635d2473bd" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Después de la audiencia de Fauci en el Senado, los expertos se preocupan por el 'efecto paralizador' en la salud pública - NPR</h3><p class="desc">Las acusaciones contra el Dr. Anthony Fauci, que alguna vez fue el principal experto en enfermedades infecciosas del país, hacen que algunos expertos se preocupen de que estos eventos puedan erosionar aún más el personal de salud pública en los EE. UU.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">NPR</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://www.npr.org/2026/07/30/nx-s1-5913384/anthony-fauci-fifth-rand-paul-covid-public-health-chilling" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>La familia de Nolan Wells publica información actualizada sobre la investigación - USA Today</h3><p class="desc">El abogado de la familia Ben Crump dijo que los expertos están revisando una llamada de socorro y los datos de las mareas. Últimas actualizaciones de la investigación sobre la muerte de Nolan Wells.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">USA Today</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://www.usatoday.com/story/news/crime/2026/07/30/nolan-wells-investigation-update/91105181007/" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Netflix recibe una demanda de 105 millones de dólares tras perder una copia de la película de Nicolas Cage sobre la Segunda Guerra Mundial - Variedad</h3><p class="desc">Un productor de cine demandó a Netflix después de que la compañía perdiera una copia sin cifrar de su película de la Segunda Guerra Mundial 'Fortitude'.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Variety</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://variety.com/2026/film/news/netflix-lawsuit-nicolas-cage-fortitude-1236824506/" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
@@ -16,136 +86,66 @@
             <div class="card-footer">
                 <span class="source">NBC News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.nbcnews.com/politics/donald-trump/trump-threatens-pull-todd-blanches-ag-nomination-gop-holdouts-leave-of-rcna590054" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://www.nbcnews.com/politics/donald-trump/trump-threatens-pull-todd-blanches-ag-nomination-gop-holdouts-leave-of-rcna590054" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Países europeos prometen boicotear la Copa Mundial de la FIFA por el plan de capital privado de Infantino mientras se extiende la oposición - AP News</h3><p class="desc">Las federaciones miembros de la UEFA boicotearán todas las competiciones de la FIFA en protesta por el plan de Gianni Infantino de vender participaciones en la Copa del Mundo a inversores de capital privado. El organismo del fútbol europeo dice que es una decisión unánime después de una reunión urgente en línea del</p>
+            <h3>Las acciones de Microsoft se disparan más del 15% en el mayor salto en un solo día de la historia - Yahoo Finanzas</h3><p class="desc">La capitalización de mercado de Microsoft se disparó a un nivel récord el jueves, apenas un día después de publicar sólidos resultados de ganancias impulsados ​​por el crecimiento de la IA.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Yahoo Entertainment</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://finance.yahoo.com/technology/article/microsofts-stock-rockets-more-than-15-for-largest-single-day-jump-in-history-120144134.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Conclusiones de los Diez Grandes Días de los Medios de 2026: Curt Cignetti incendia la SEC, la ciudad natal de Northwestern llega con arrogancia - CBS Sports</h3><p class="desc">El entrenador de los actuales campeones nacionales lanzó un golpe no tan sutil a sus vecinos del sur para cerrar los Big Ten Media Days desde Chicago.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">CBS Sports</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://www.cbssports.com/college-football/news/2026-big-ten-curt-cignetti-sec-northwestern/" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Las acciones de Apple caen casi un 2% antes de las ganancias a medida que se lanza el programa de actualización - Yahoo Finanzas</h3><p class="desc">Los inversores están sopesando el crecimiento esperado de ingresos de dos dígitos frente a los márgenes, los costos de los componentes y la nueva estrategia de arrendamiento de dispositivos de Apple.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Yahoo Entertainment</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://finance.yahoo.com/markets/stocks/articles/apple-stock-falls-nearly-2-195302646.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>'Wonder Man' no renovada en Disney+, no habrá segunda temporada - The Hollywood Reporter</h3><p class="desc">La serie Marvel obtuvo una recuperación ahora rescindida en marzo.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Hollywood Reporter</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=http://www.hollywoodreporter.com/tv/tv-news/wonder-man-canceled-disney-plus-no-season-2-1236660321/" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Los pasaportes conmemorativos con la marca Trump estarán disponibles en todo Estados Unidos - AP News</h3><p class="desc">Los estadounidenses fuera de la capital del país pronto podrán obtener pasaportes estadounidenses de edición limitada que presentan una fotografía del presidente Donald Trump y celebran el 250 cumpleaños de Estados Unidos. El Departamento de Estado dijo el jueves que sus 27 agencias de pasaportes n</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Associated Press</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://apnews.com/article/fifa-investors-infantino-kushner-uefa-afc-76169d3e9bb68f4d174b3c87f6b53e50" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://apnews.com/article/trump-passports-state-department-d149546cb15c8e6b67356168d248ccf4" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Prospectos que podrían ser canjeados antes de la fecha límite de cambios: uno para cada equipo - MLB.com</h3><p class="desc">Se acerca la fecha límite de cambios: lunes a las 6 p.m. hora del este. Se harán tratos y los prospectos cambiarán de dirección.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">MLB.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.mlb.com/news/prospects-who-could-be-traded-at-2026-trade-deadline" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Curt Cignetti de Indiana dice que Big Ten es la 'mejor liga de fútbol' - ESPN</h3><p class="desc">El entrenador de Indiana, Curt Cignetti, armado con evidencia estadística, dijo que el Big Ten no "maneja una máquina de publicidad" y es "la mejor liga del fútbol".</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">ESPN</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.espn.com/college-football/story/_/id/49490739/indiana-curt-cignetti-says-big-ten-best-league-football" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Chrome puede obtener actualizaciones más rápidas sin necesidad de reiniciar - arstechnica.com</h3><p class="desc">Las dos últimas versiones de Chrome han incluido más parches que las 23 anteriores combinadas.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Ars Technica</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://arstechnica.com/ai/2026/07/chrome-may-get-faster-updates-with-no-restart-required/" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Las fuerzas estadounidenses atacaron "docenas" de objetivos iraníes tras un intento de ataque a las tropas estadounidenses - Fox News</h3><p class="desc">El Comando Central de Estados Unidos dijo que lanzó una ola de ataques “destinados a disminuir aún más las amenazas planteadas por Irán y sus aliados a las fuerzas estadounidenses, el transporte marítimo comercial y los países vecinos del Golfo”.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Fox News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.foxnews.com/live-news/us-iran-war-donald-trump-strikes-july-30-2026" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los adultos mayores que toman 5 o más medicamentos recetados enfrentan un mayor riesgo de muerte, encuentra un estudio - Fox News</h3><p class="desc">Cada medicamento recetado adicional se relacionó con un aumento del 7% en el riesgo de muerte entre los adultos mayores, lo que plantea preguntas urgentes sobre la desprescripción.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Fox News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.foxnews.com/health/older-adults-taking-5-or-more-prescription-drugs-face-higher-risk-death-study-finds" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>'Wonder Man' no regresará para la temporada 2 en Disney+ (EXCLUSIVO) - variedad.com</h3><p class="desc">"Wonder Man" ha sido cancelada en Disney+, según se enteró Variety.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Variety</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://variety.com/2026/tv/news/wonder-man-canceled-disney-season-2-renewal-1236824259/" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Mandela Barnes considera abandonar la carrera por gobernador de Wisconsin - Politico</h3><p class="desc">Los funcionarios demócratas del estado se han estado preparando para la publicación de noticias perjudiciales sobre el ex vicegobernador.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Politico</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.politico.com/news/2026/07/30/mandela-barnes-wisconsin-governor-democrat-race-01017783" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Jared Leto reclama un "representante" para MeToo en Hollywood: productor de la BBC - Fecha límite</h3><p class="desc">El productor de la BBC dice que la respuesta de Hollywood a las acusaciones de conducta sexual criminal contra Jared Leto revelará la postura de la industria sobre MeToo.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Deadline</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="http://deadline.com/2026/07/jared-leto-allegations-bellwether-metoo-hollywood-bbc-1237013417/" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>LinkedIn agrega un botón para informar "descuidos" generados por IA - TechCrunch</h3><p class="desc">LinkedIn está introduciendo nuevas formas de reducir las publicaciones de baja calidad generadas por IA, incluida una opción de informes que "parece un desperdicio de IA". También está reemplazando su propia función de escritura de IA con una herramienta de revisión.</p>
+            <h3>Google dice que solucionó más errores de Chrome en junio que en los últimos dos años, gracias a la IA - TechCrunch</h3><p class="desc">Como han advertido los expertos durante los últimos dos años, algunas empresas, como Microsoft y ahora Google, están encontrando y corrigiendo una cantidad exponencial de errores en sus productos, gracias al uso de LLM y herramientas de inteligencia artificial.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">TechCrunch</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://techcrunch.com/2026/07/30/linkedin-adds-a-button-to-report-ai-generated-slop/" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El bronceado vuelve a estar de moda. Esto es lo que realmente le hace a tu piel - AP News</h3><p class="desc">Los expertos están preocupados por el resurgimiento del bronceado entre los adultos jóvenes, impulsado por las redes sociales. Algunas personas influyentes también fomentan el uso de camas solares. Los adultos de la Generación Z están menos informados sobre la protección solar y son más propensos a creer en conceptos erróneos sobre</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Associated Press</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://apnews.com/article/tanning-beds-sun-teens-skin-cancer-trends-4ae3015a66dd90817ce30b34e6556e5e" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La administración Trump quiere $10 millones más para cubrir las celebraciones del 4 de julio - NPR</h3><p class="desc">El Congreso asignó 150 millones de dólares para los eventos del 250 cumpleaños. El grupo respaldado por Trump que planeó la feria estatal y los fuegos artificiales del 4 de julio está solicitando $10 millones adicionales en reembolsos.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.npr.org/2026/07/30/nx-s1-5913172/freedom-250-july-fourth-10-million" class="btn-link" target="_blank">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El rover Curiosity de la NASA encontró un "mar de polígonos" en Marte - The Verge</h3><p class="desc">El rover Curiosity de la NASA en Marte encontró un campo de terreno en forma de panal en un valle marciano, una textura que anteriormente había señalado signos de agua.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">The Verge</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://www.theverge.com/science/973314/nasa-curiosity-rover-mars-polygons" class="btn-link" target="_blank">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https://techcrunch.com/2026/07/30/google-says-it-fixed-more-chrome-bugs-in-june-than-over-the-past-two-years-thanks-to-ai/" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div></body></html>

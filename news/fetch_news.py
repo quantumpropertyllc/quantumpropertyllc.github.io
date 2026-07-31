@@ -377,6 +377,14 @@ def generate_html(title, data, category_id, lang):
     articles_html = ""
     for a in data["articles"]:
         s_color = {"Positive": "#2ecc71", "Neutral": "#95a5a6", "Negative": "#e74c3c"}.get(a["sentiment"], "#95a5a6")
+        
+        # Wrap URL using Google Translate Web Proxy based on language
+        url = a["url"]
+        if lang == "zh":
+            url = f"https://translate.google.com/translate?sl=auto&tl=zh-CN&u={url}"
+        elif lang == "es":
+            url = f"https://translate.google.com/translate?sl=auto&tl=es&u={url}"
+
         articles_html += f"""
         <div class="card">
             <div class="card-meta"><span class="impact {a['impact'].lower()}">{a['impact']} Impact</span><span class="score">{a['score']}</span></div>
@@ -385,7 +393,7 @@ def generate_html(title, data, category_id, lang):
             <div class="card-footer">
                 <span class="source">{a['source']}</span>
                 <span class="sentiment-box" style="background: {s_color}15; color: {s_color}">{labels['sentiment']}: {a['sentiment']}</span>
-                <a href="{a['url']}" class="btn-link" target="_blank">{labels['read_more']} →</a>
+                <a href="{url}" class="btn-link" target="_blank" rel="noopener noreferrer">{labels['read_more']} →</a>
             </div>
         </div>"""
 
