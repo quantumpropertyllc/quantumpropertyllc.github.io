@@ -1,52 +1,92 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-07-30 09:05 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Local Life.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-07-31 09:14 AM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Local Life.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>CJ Bailey grows his game at NC State</h3><p class="desc">News and notes from the ACC football media days in Charlotte.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Greensboro News & Record</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://greensboro.com/sports/college/football/article_93329cc7-9ec2-58b5-8fee-50830f59543c.html" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Newspaper suggests race for MLB expansion franchise may tilt to NC capital city</h3><p class="desc">The Charlotte Observer says in an editorial that Raleigh has taken the lead in an effort to get a baseball team.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Winston-Salem Journal</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://journalnow.com/sports/professional/article_7297fb21-a702-4695-9c86-7090e819f55a.html" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Prediction: South Carolina for another key recruit in the 2027 class</h3><p class="desc">Charlotte (NC) William Amos Hough Rivals300 safety Davion Jones is set to announce his college decision on July 2. LSU had looked like the favorite for much of the summer. Now it’s South Carolina trending ahead of his decision. With that I’ve logged </p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Rivals</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.on3.com/rivals/news/prediction-south-carolina-for-another-key-recruit-in-the-2027-class/" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>East Charlotte shooting suspect killed man an hour after bonding out of jail, records show</h3><p class="desc">David Simpson, 29, is charged with murder in the July 29 shooting death of Gilberto Gomez Ruiz.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/charlotte-shooting-suspect-killed-man-an-hour-after-bonding-out-of-jail/275-948b5ffa-5ae5-4649-ad42-d2ee4a7cc99c" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Judge's ruling on Silfab Solar returns to York County Council as school year nears</h3><p class="desc">A judge ruled against Silfab’s zoning, but the company insists its York County facility is safe, compliant and will remain open.</p>
+            <h3>York County Council meets to receive legal advice on judge's order regarding Silfab Solar</h3><p class="desc">A judge ruled against Silfab’s zoning, but the company insists its York County facility is safe, compliant and will remain open.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
                 <a href="https://www.wcnc.com/article/news/local/silfab-solar-letter-wants-negative-consequences-fort-mill-manufacturing-plant-debate-political-standoff/275-dff1c615-a1c0-4473-8e2b-374ff4d8d641" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Rabies-positive fox found in Rhodhiss marks second case in Caldwell County this year</h3><p class="desc">The North Carolina State Laboratory notified Caldwell County Animal Care Enforcement of the finding on July 30.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/rabies-fox-rhodhiss-marks-caldwell-county/275-791544ce-8556-4c8f-811c-24e7a4c9e3eb" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Survey: Most Charlotte voters back immediate I-77 South expansion, want tolls to pay for it</h3><p class="desc">A survey by CLT Public Relations reveals that most Charlotte voters support immediate expansion of I-77 South, favoring tolls over tax hikes for funding.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/traffic/clt-public-relations-poll-shows-most-charlotteans-prefer-i-77-toll-lanes/275-cd5601de-346c-4392-b8e5-ed747cdabf37" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Stanly Community College trustee resigns amid alleged Facebook comment backlash</h3><p class="desc">Kelly Lowder resigned from the Stanly Community College Board of Trustees after facing backlash over alleged Facebook comments.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/stanly-county-community-college-board-member-resigns/275-95df4d97-0a2b-4dd0-8469-ee4b4a517674" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Reward offered as CMPD homicide investigation continues</h3><p class="desc">An autopsy confirmed foul play in the death of James Rodriguez, who was found unresponsive in the 900 block of North Poplar Street in late May.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/crime/reward-offered-in-cmpd-homicide-investigation/275-29552a37-3eeb-4a21-8016-335f81b7a0d0" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>An amazing morning with low dew points for late July.</h3><p class="desc">Rain moves back late this weekend and sticks around into next week...</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Kindergarten readiness: What pediatricians say kids need to know before first day of school</h3><p class="desc">A Cleveland pediatrician breaks down the academic, social and behavioral skills kids should have before starting kindergarten.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/outreach/back-to-school/kindergarten-readiness-back-to-school-tips/275-b650ec94-d6ab-4c2d-bbb1-b4ca73ca951f" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>SC teen charged in stabbing death of 13-year-old in foster care</h3><p class="desc">Laden Moore, 17, is accused of killing Daryl Lowry.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/crime/teen-charged-in-stabbing-death-of-13-year-old/275-6958b142-d03a-4d5b-8e0f-b88a2827de01" class="btn-link" target="_blank">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>East Charlotte shooting suspect killed man an hour after bonding out of jail, records show</h3><p class="desc">David Simpson, 29, is charged with murder in the July 29 shooting death.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wcnc.com/article/news/local/charlotte-shooting-suspect-killed-man-an-hour-after-bonding-out-of-jail/275-948b5ffa-5ae5-4649-ad42-d2ee4a7cc99c" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div>
         <div class="card">
@@ -107,45 +147,5 @@
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
                 <a href="https://www.wcnc.com/article/news/local/person-of-interest-named-in-womans-disappearance/275-ad7b552f-c72d-4215-9146-a03ed54a9175" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Rabies confirmed in Caldwell County, officials say</h3><p class="desc">Rabies was detected in a fox that was found at a home on Park Loop in Rhodhiss, state officials announced.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/local/rabies-detected-caldwell-county-north-carolina/275-3fde1ff7-027d-4397-af49-97717aa6a7f2" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Today is the Pick of the Week</h3><p class="desc">Humidity slowly cranks back up this weekend with higher rain continuing into next week.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/forecast/charlotte-weather-forecast-update/275-50501550" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Ralph Norman to hold rally in Rock Hill Thursday</h3><p class="desc">Norman has represented the Rock Hill area in the U.S. House since 2016. He's received several high-profile endorsements to replace Lindsey Graham.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/news/politics/south-carolina-politics/ralph-norman-us-senate-rally-rock-hill-south-carolina/275-7ebe16d3-23f2-4fb3-a723-1efded35fafe" class="btn-link" target="_blank">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>North Carolina sees best drought monitor update since winter</h3><p class="desc">Recent rain gave North Carolina the biggest jump in the state's drought conditions in several months.</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://www.wcnc.com/article/weather/drought-is-still-very-bad-just-not-quite-as-bad/275-b43f3442-05ca-4220-a9ba-4cadbada1949" class="btn-link" target="_blank">Read More →</a>
             </div>
         </div></body></html>
