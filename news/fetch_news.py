@@ -381,9 +381,11 @@ def generate_html(title, data, category_id, lang):
         # Wrap URL using Google Translate Web Proxy based on language
         url = a["url"]
         if lang == "zh":
-            url = f"https://translate.google.com/translate?sl=auto&tl=zh-CN&u={url}"
+            import urllib.parse
+            url = f"https://translate.google.com/translate?sl=auto&tl=zh-CN&u={urllib.parse.quote(url, safe='')}"
         elif lang == "es":
-            url = f"https://translate.google.com/translate?sl=auto&tl=es&u={url}"
+            import urllib.parse
+            url = f"https://translate.google.com/translate?sl=auto&tl=es&u={urllib.parse.quote(url, safe='')}"
 
         articles_html += f"""
         <div class="card">
