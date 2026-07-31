@@ -359,9 +359,16 @@ def translate_bundle(bundle, target_lang):
         logging.error(f"Translation failed for {target_lang}: {e}")
         return en_data # Fallback to English
 
-# =========================
-# HTML GENERATION
-# =========================
+def resolve_url(url):
+    if "news.google.com" in url:
+        try:
+            from googlenewsdecoder import gnewsdecoder
+            res = gnewsdecoder(url)
+            if res and res.get("status"):
+                return res["decoded_url"]
+        except Exception as e:
+            logging.error(f"Error decoding Google News URL: {e}")
+    return url
 
 def generate_html(title, data, category_id, lang):
     labels = {
@@ -382,9 +389,11 @@ def generate_html(title, data, category_id, lang):
         url = a["url"]
         if lang == "zh":
             import urllib.parse
+            url = resolve_url(url)
             url = f"https://translate.google.com/translate?sl=auto&tl=zh-CN&u={urllib.parse.quote(url, safe='')}"
         elif lang == "es":
             import urllib.parse
+            url = resolve_url(url)
             url = f"https://translate.google.com/translate?sl=auto&tl=es&u={urllib.parse.quote(url, safe='')}"
 
         articles_html += f"""
