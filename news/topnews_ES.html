@@ -1,77 +1,97 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-08-06 07:58 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-08-06 11:08 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Trump dice que El-Sayed está “lleno de m‑‑‑” y lo llama “hombre de odio” - The Hill</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNTloyMFcwSGxfS1g2TTV2TVpzbFR6cGU5dzQycW14SWV2X2NKMWlobUdJblFY SlNVbE5ma3NyaUhMTXJJUHhCZE9BLUV0M2VyQ1pUSFRXd3c3WWhRemdoNkJ2TkJiTnljSDNFNUowSWNLTVh0d0QwNmRWVnhkOWpENFpxd2VrNDI4ZC1TNmpn</p>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxOYXVXdjZCbTJZQTJBMFFqM2t0WkRPX1NSaUM2aTZlcDhEaHI0ZXkxZVZRYUZi bVpsMFZMVHRfOW9fMG1zYlprTzcxQlU5eHlZY0pScXBlSWhCSXBkb05tX20wVzJveWFnakZEY2dSV0EtN1hGSUNGZnQzb3B1YThheGZGUkNWRW5ETm5DMmw5</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fthehill.com%2Fhomenews%2Fcampaign%2F6012517-trump-abdul-el-sayed-michigan-senate-primary%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fpolitics%2Fcongress%2Fsenators-vote-holding-anthony-fauci-contempt-congress-pleading-fifth-t-rcna590985" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Actualizaciones en vivo: El acuerdo entre Irán y Omán sobre el Estrecho de Ormuz se acerca, dice Teherán - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOZ3luLUxvekFtWFdpQU9vSnJ2RzRwdndUZ205VmYwcEl2WDNPSmZ1YUNt eThESjB4LW5SdHlXX3pyZkdqNGtQd0JDQU5oeER4U21BY1AtMUpiSEdDWHZacnV5SGdQOXpzdllRU1lTLUtFZlFlU25JWGgtMnRSaE9sdVNOWQ?oc=5" objetivo =</p>
+            <h3>Los demócratas moderados se preparan para una “guerra” contra una izquierda en ascenso - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxQendtdDJQQTQ3TlRwM2JHME44VDltZ1Zac1BNUnFvOTdRSUZiLUR0NnpPRWs3 cGlCTzc2SE42bnRmd0Q1VUM0MExiNEtnQjlUbHFjdEpRRm5ocy1STmFuNUd3d256elRHN29nMTkzemdPc0Zvdy1ZNXd2UlN6S3dEUlByQWFmdm45eU14Tmll</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Flive-updates%2Firan-war-us-trump-strait-of-hormuz-deal%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nytimes.com%2F2026%2F08%2F06%2Fus%2Fpolitics%2Fdemocratic-party-socialists-moderates.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los bomberos están trabajando en turnos de 16 horas mientras luchan contra el incendio del complejo Spokane - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxNc29WdnRiUjA0cFRxSWlJdTNfc00xTEtIU0NUbWZ5aUlrM190cDE0Z0VENTBN U1VLaGVtajFBdnJ1ZS1JdEJOcWV3U21YTmN6eTVVMWp0dWJVQTcwTU9jZ1lDWWJta3lMc2JHWl9zdmczbld2WEtwWlI1MEJyUXdPeEE1cEl6RFdXWVRHemFx</p>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE9lbjJRUV9NcV9LdlpHdnVwSThzSGlOYWZjWW9SMU5KZ HB5MmI3OHQ2Z0JPaHh2alF3Ym9pTHFDUWV1OEVUUnZtS1FwQXZwVGpIZmlOUWcyTGx3ZU5FZWRaelJnY05lWm5XZ1YxS3hB?oc=5" target="_blank">Actualizaciones en vivo: Irán sa</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fnews%2Fus-news%2Ffirefighters-are-working-16-hour-shifts-battle-spokane-complex-fire-rcna591062" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F06%2Fworld%2Flive-news%2Firan-war-trump" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El comité del Senado votará sobre si se debe declarar a Fauci por desacato al Congreso - NPR</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxObllHTkttLTBZTFR6cXZNd3R3Tm9MZk5OMWl0bGtjODlLZFZuYmdCRXctMXp4 X3p3dGNFM1dlb011ZDJieHJWZkVBTmFHcW1CbDQ3U015blMxRVpEYVY3VmZVRG0tSHVrSHlMQVdDYjVNMEZTcUZaLXppR3dlb1RpdHpmZmxubDFlUHhGVA?o</p>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNSExCQ3NUNmxhRWVjcHVLcUp5RVZLbnBWR3pWY2RFcy1BdjdMTUVwVVFGc2xI SEN4dXpxeWloSDFXQ1hFQ2x4VFlsYk52QVlKV3NZLWZJNmliSElKRk5YU2FUVnBZbmlBSjFhQ3BNdmVEbm5QX0lqd2JJbVVBZm9ZYXR1N09ibWdPNEk0dlZ3</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.npr.org%2F2026%2F08%2F06%2Fnx-s1-5921383%2Fanthony-fauci-contempt-of-congress-vote" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Frussia-ukraine-war-ballistic-missiles-patriots-drones-30447169b0145caa2e48ebf22b235c7a" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Trump y Hegseth se enfrentaron en Camp David por preocupaciones sobre el agotamiento de los misiles de Irán - washingtonpost.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxQaUliZlNTQUp4dGdITlFNX19DTENuNkh5TkJaMlJvMXhKRDlOWFhmVXNTT2RM SnQyLVlOWExDNWlJN0Q3QUY0bDBJWVBHMnFOSjZEUEdidkhFaEI3YVVlM0Jxa0taV2RVcEFwWFNNb180YmZqU3VDY3VzdU9zQ183VXBYWk9tVFFyeVQ5WDFp</p>
+            <h3>Más de 846 estructuras destruidas por los incendios forestales de Spokane - KXLY.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNTkp4dE5aaEFGUlJadnJmSDNlel8xMXU1SlhYWFA5OTZSUTZ3Q19QQXBaS1ZH YWF6alBGaWQ3c2ZjYnFWSXc2Y1JDNTA1a3c0RS1qQWNUdFVLZXRlUmRtSktHRVh1TjhHaFI1U3lLTVowS3lBNnBaemthTXB6OUlTMUI4ZGp2b0M1MDMwSzFj</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.washingtonpost.com%2Fnational-security%2F2026%2F08%2F05%2Ftrump-hegseth-clashed-camp-david-over-iran-missile-depletion-concerns%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.kxly.com%2Fnews%2Fmore-than-846-structures-destroyed-by-spokane-wildfires%2Farticle_d36f94a1-45e9-4190-9c36-27dc87512292.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Ucrania ataca dos refinerías de petróleo rusas en el último ataque con drones profundos, dice Zelensky - The Kyiv Independent</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxPdm1MX1pRWU9WSTZ5V212UFdEcFlEeXJ1dlJnOUNranhfcF9zampEZDlGNFRB UHptb3ZRMTFISnZjN3BzbGM1aDhEMTgwTUpubkVjZXR2LVVyd0RyQzBjaG9HYzFLUlpYQ1pEaEVJZUdxT1ZuMDJJJODFtQ3l3T1BPMi1OWk91cEdKajhyM0Yy</p>
+            <h3>El personal del hospital dijo que estaba fingiendo y lo dieron de alta. Murió de una sobredosis poco después - NPR</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxOelRqUk1VRFhtR2QxTWRKc3Z1ci05ZnRrQzJsYmJIUklGWEhrbWVDN2kyZDV YakY5X1lFWDZVcGRWODg1VkJDQW40d1JKTkVBNmUyMGtQT1JLR19RSmxCWFJ1Q3BCUW9Wc1lqeFVWbWxLZ0lOQU5XM2sxblhQcFVLMVA3WlhBcG8?oc=5" dio</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fkyivindependent.com%2Fukraine-attacks-one-of-russias-largest-refineries-for-2nd-night-in-a-row-locals-report%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.npr.org%2F2026%2F08%2F06%2Fnx-s1-5845162%2Faddiction-treatment-overdose-deaths" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Una mujer trans blandió un arma de fuego. La devoción por el derecho a las armas desapareció. - Los New York Times</h3><p class="desc"><un href="https://news.google.com/rss/articles/CBMifkFVX3lxTFBlVHlLc25VYkZ2UVljSUg5a0hZNVBGcWxESlJ0eWpBVXBlcDFGWjdM T3VudG9TY3FkZWVZRXl4YjUxZ3FfcWIzcTZURTlJVWlhOUplbFNVdERsYVdWSWJKcTZZd0d3THlDTVlwbnlibV9mUTRNallqR29pZDVqQQ?oc=5" target="_blank">Una trans</p>
+            <h3>La disminución del río Colorado crea desafíos de agua y energía para el oeste de EE. UU. - The Hill</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxObFFzSVRicGlucE1LdW12aFRiVW1aNnU5TEoxQzdHcEZHMTI3cngzakRmOEJH UnctTHdXZU96WThSbTFBa0dTcEJBMXktaDdnWlZtTjV3eC1wc3pNRzR1RXR1blUxZi05RHI5T3hPcEVCRFFqNXdZWXZ5VGZ2UnFYZXlZSjFtZkJ1VFJ2eVlo</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nytimes.com%2F2026%2F08%2F06%2Fus%2Ftransgender-gun-rights-wyoming.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fthehill.com%2Fpolicy%2Fenergy-environment%2F6012492-colorado-river-plan-arizona-nevada-california%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>En la carrera por el Senado más elegible de Texas, es soltero versus futuro divorciado - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE9mTUFBczRXN1lsWXlOcmQ2UUZfNzhacTE2SVBrVWNSaDViOExNOEV DbmdaTXVCcGVEcjVxVnBDTGpDTzNPc2g3cFpGMllKbmo2TEkxd2N1N21rblhLM0lvc21qOWtRZURzLXNYME5vUm5wSDFJaFhlVmhzS0E?oc=5" objetivo="_blank">En</p>
+            <h3>Agenda del Capitolio: la salida de verano elude el Senado - Politico</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.politico.com%2Flive-updates%2F2026%2F08%2F06%2Fcongress%2Fsummer-exit-eludes-senate-01026760" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>“¿Se le permite siquiera hacer esto?”: Dentro del trabajo paralelo de un juez federal que dirige una empresa de relaciones públicas - Politico</h3><p class="desc"><un href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPVWIyZFlSZ3pQT181NlNOVkVRQ1hLZWRBTGR6S2dDZ3JwN2pRNTN2emloanpCbWR3 aDRxSlh6N1dOVWpEcHlKVzROUjVaSDBjMjMycGVvMWdtZVliNjJGZDRBV0lsYUZrSDZzc2NiY0tSbnhybG03YmpUNXNmaGxLRWpFeWhJTXBmaEZpdFJoVkZMbXRJ</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.politico.com%2Fnews%2F2026%2F08%2F06%2Fjennifer-mascott-federal-judge-adfero-pr-firm-01025871" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE9mTUFBczRXN1lsWXlOcmQ2UUZfNzhacTE2SVBrVWNSaDViOExNOEV DbmdaTXVCcGVEcjVxVnBDTGpDTzNPc2g3cFpGMllKbmo2TEkxd2N1N21rblhLM0lvc21qOWtRZURzLXNYME5vUm5wSDFJaFhlVmhzS0E?oc=5" objetivo="_blank">En</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
@@ -81,22 +101,12 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Mikie Sherrill de Nueva Jersey entra en la refriega política nacional con el primer conjunto de respaldos de mitad de período, dirigidos a los veteranos - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNdk1oQnM5WW5BNmZvQ24xMmlYZ2tnOGlCdXFaU2cxMTZmeC1UM1UxNmxpX3kz RjVUVnBoQVgzcGc0VXJubU5YbkV4MUxKcFY5UEVjeTVyVUpIRVRoejhzTmM3SFptTThhbzVqNm9pTVMydndXQko3azVOYzhReVpXbDVnVUs1Ync0WWU5emhn</p>
+            <h3>El profesor negro más joven de Cambridge dimite mientras la universidad investiga acusaciones de plagio - AP News</h3><p class="desc"><un href="https://news.google.com/rss/articles/CBMisgFBVV95cUxPYndMeHRTVXF3VjdzUnoyWHFQRXZNMGZvQW5weGFiRnN4X1dCcjgtTkFlNnhzemZr WUhCTk82bzJyZ1g1WmVENjdIS0lKcFFKM0JJUmo4bTBZXzJwajllU1Qzc2ZCVVZadHM0TDczOXg3cVR5MGVtNm9FRHFjNVBwM1VueXRCckZ4Ry16WGJONzNNb3VZ</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Fnews%2Fnew-jersey-mikie-sherrill-midterm-pac-endorsements-veterans-democrats%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La abrupta salida de Chuck Edwards deja a los republicanos en apuros - Axios</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxNV0Qtb1ltaE92cjZoTW55MUdwemRoZzVwS25QWGMycHJ1UU43Nk1nZkNUSlFm WVltYS1naUhOdWtFMVdPeFlIZTR3NnRCai1rTENieEY3OUZGcktBWFVVbG1CeW5NWGZ3UDRILUlTOXdpaHZ5NVc4LTBlYmVlRWVpNURXZEtHeHUza0k0MlpO</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.axios.com%2F2026%2F08%2F05%2Fhouse-republicans-mike-johnson-chuck-edwards-midterms-north-carolina" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fbritain-cambridge-professor-arday-culture-wars-black-dddb05e9ade901ec35f85b6b3e7d9056" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
@@ -111,7 +121,17 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los incendios arrasaron su pueblo en Francia. Ahora quieren respuestas. - Los New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPN2l4cTN3ZlFhZzg4d0tkaDd6dGo4Y2cxSVhoU0hYa3F5d0d0WTJaS0VoLTEw TVNCbWt3aVVLQlF2blRuSXhKUEFjdWhXeEU1U3NnS01IbHdpcDhZbXJtekl1Z1F5S29CWlByS0N3RHNVYmowSjNYYW5BaEtMVXdlbGwyNXpZeTNpS3c?oc=5</p>
+            <h3>Italia en alerta roja, Hungría apaga las luces mientras la ola de calor en Europa pasa factura - Reuters</h3><p class="desc"><un href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQc1N4aWlFU2FiTXZzZW5lUmNTUXpLQnYtTTBhSnFMWFBxd3huNFZ3SmRic2wwQldZ TlotUnJUdm0zaVgxMi0xcV81ckxVb3ltMFNYcXpWRXp5VW8zdVZjSkZHUnBRRXZfNlVKQXplem1pT3lnS2RCbV91bW9vWm1Sbjl2TWJHSl9fcHJ0WmUwX05PNk51</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.reuters.com%2Fbusiness%2Fenvironment%2Fitaly-red-alert-hungary-turns-off-lights-europes-heatwave-takes-toll-2026-08-06%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPN2l4cTN3ZlFhZzg4d0tkaDd6dGo4Y2cxSVhoU0hYa3F5d0d0WTJaS0VoLTEw TVNCbWt3aVVLQlF2blRuSXhKUEFjdWhXeEU1U3NnS01IbHdpcDhZbXJtekl1Z1F5S29CWlByS0N3RHNVYmowSjNYYW5BaEtMVXdlbGwyNXpZeTNpS3c?oc=5</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
@@ -121,31 +141,11 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Lo que sabemos sobre las fuerzas norcoreanas que se unen a la guerra de Rusia contra Ucrania - Reuters</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxPck5RYzRha0ZtTldodHlHZENRNDVadTRPNGoxblhlYmNsOG9iUzhlemNsSFZ2 RDZqLUVJWHRTQXluejluUW04Rks5M3l4ZDd1OXBWeVpwODFfRjJHeFlPN2d2S0RSbjFXZkVBWDNmTGZfRFpCWkF4ZTJ4ZlJoRDBVSkhTbHR0UmJEQTduQ3Jr</p>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNM1BMTVI3bVNYOHRmbjQxQUNadFYtZURTOFppYXRMQjVjcjltbnlwNVgxLWh uenR4dWNXb05ybHdEeGxQWnc5eVNZYzVROTRiVC01XzhpQ0N5LTlpVFNWRHo3dl9zNWw3UGR0SmtPOU5tcXhtTWRkVHN6SGJrUkQ3RS1NVm1YOWc?oc=5" ta</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.reuters.com%2Fbusiness%2Faerospace-defense%2Fwhat-we-know-about-north-korean-forces-joining-russias-war-against-ukraine-2026-08-06%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Jason Arday: renuncia el profesor de Cambridge acusado de plagio - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFA5czhLVFdZM2RyNm52SmM3VjZyTlN5 ODFHOE1Qd2RpclVVTVNHUXhnS3h4U01sbzh1dEJ1YWQzRGxTMmdEWUt5RkMtUG5IV0VUUWM2OTdrbUE3UQ?oc=5" target="_blank">Jason Arday: profesor de plagio en Cambridge</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.bbc.com%2Fnews%2Farticles%2Fc1e146jw618o" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Más de 900 millones de acciones de SpaceX se desbloquean hoy. Esto es lo que debe saber | CNN Negocios - CNN</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE5jZmhFSC1Kb09yMG5WbHpJUEpNdHhtT3RaN2l6N2F CNUkyVTJkNjlqbl9WdWlvSVUyZmZxZ1hJUDd3NEdhU05RVWlobHZuYlZzTG02OVpZX3RFN25vdVhhM0wwUHZaTkR6c2c?oc=5" target="_blank">Más de 900 millones de Spac</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F06%2Ftech%2Fspacex-stock-elon-musk" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.barrons.com%2Farticles%2Fspacex-stock-price-shares-unlock-today-94df2210" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div></body></html>
