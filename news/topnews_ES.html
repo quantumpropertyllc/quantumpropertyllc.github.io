@@ -1,12 +1,142 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-08-07 06:44 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-08-07 10:07 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Gann Fire: un hombre arrestado cerca del lugar donde se desató el incendio forestal, dice que no tenía intención de iniciarlo - KCRA</h3><p class="desc">Un hombre fue detenido cerca del lugar de un incendio forestal en el condado de Calaveras que quemó casas, obligó a evacuaciones y quemó miles de acres. Afirma que todo fue un accidente.</p>
+            <h3>Mercado de valores hoy: Los futuros del Nasdaq caen debido a la ansiedad por la IA - Actualizaciones en vivo - WSJ</h3><p class="desc"></p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">KCRA Sacramento</span>
+                <span class="source">The Wall Street Journal</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.kcra.com%2Farticle%2Fgann-fire-map-air-quality-calaveras-county-august-5%2F73355202" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.wsj.com%2Flivecoverage%2Fstock-market-today-dow-sp-500-nasdaq-08-06-2026" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Jonathan Taylor acuerda una extensión de dos años con los Colts - nbcsports.com</h3><p class="desc">Taylor ganará 44 millones de dólares según los términos de su nuevo acuerdo.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">NBCSports.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcsports.com%2Fnfl%2Fprofootballtalk%2Frumor-mill%2Fnews%2Fjonathan-taylor-agrees-to-two-year-extension-with-colts" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Italia en alerta roja, Hungría apaga las luces mientras la ola de calor en Europa pasa factura - Yahoo</h3><p class="desc">ROMA/BUDAPEST, 6 ago (Reuters) - Italia tomó la medida sin precedentes de colocar todas sus principales ciudades en el nivel más alto de alerta sanitaria debido a las altas temperaturas...</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Yahoo Entertainment</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.yahoo.com%2Fnews%2Fweather-news%2Farticles%2Fitaly-red-alert-hungary-turns-111919101.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Mikie Sherrill de Nueva Jersey entra en la refriega política nacional con el primer conjunto de respaldos de mitad de período, dirigidos a los veteranos - CBS News</h3><p class="desc">La gobernadora de Nueva Jersey, Mikie Sherrill, está dando su primer paso importante en el escenario nacional, respaldando a 13 demócratas, mientras los moderados señalan que ella podría saltar al debate sobre el futuro de su partido.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">CBS News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Fnews%2Fnew-jersey-mikie-sherrill-midterm-pac-endorsements-veterans-democrats%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>El camino de Abdul El-Sayed hacia la victoria y la FDA aprueba la primera vacuna contra la gripe de ARNm: resumen de la mañana - NBC News</h3><p class="desc">Un análisis muestra que una base más joven y con mayor educación fue fundamental para la victoria de Abdul El Sayed en las primarias del Senado.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fnews%2Fus-news%2Fabdul-el-sayed-salmonella-outbreak-morning-rundown-rcna591101" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>ENCUESTA: ¿Qué tan preocupado está usted por la retención de Jahmyr Gibbs? - orgullodedetroit.com</h3><p class="desc">¿Qué tan preocupados deberían estar los fanáticos de los Detroit Lions por la sentada contra el contrato de Jahmyr Gibbs?</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Prideofdetroit.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.prideofdetroit.com%2Fdetroit-lions-discussion%2F168496%2Fjahmyr-gibbs-concern-level-negotiations-detroit-lions" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>El profesor negro más joven de Cambridge dimite mientras la universidad investiga acusaciones de plagio - AP News</h3><p class="desc">El profesor Jason Arday, el profesor negro más joven de la Universidad de Cambridge, ha dimitido. La universidad anunció una investigación sobre nueva información sobre sus calificaciones académicas. Acusaciones de plagio y preguntas sobre su athl</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Associated Press</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fbritain-cambridge-professor-arday-culture-wars-black-dddb05e9ade901ec35f85b6b3e7d9056" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Más de 900 millones de acciones de SpaceX se desbloquean hoy. Esto es lo que debes saber - CNN</h3><p class="desc">Más de 900 millones de acciones de SpaceX se desbloquearán el jueves, más del doble de las acciones disponibles públicamente en la compañía espacial y de inteligencia artificial de Elon Musk, que ha tenido problemas desde su IPO récord hace apenas unas semanas.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">CNN</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F06%2Ftech%2Fspacex-stock-elon-musk" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>El ejército de Ucrania ataca una de las refinerías de petróleo más grandes de Rusia en un ataque con drones de largo alcance - CNBC</h3><p class="desc">La instalación de Slavneft-Yanos en Yaroslavl, situada a cientos de kilómetros de la frontera con Ucrania, es una de las refinerías de petróleo más grandes de Rusia.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">CNBC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnbc.com%2F2026%2F08%2F06%2Fukraine-war-russia-zelenskyy-oil-refinery.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Actualizaciones en vivo del eclipse solar total del 12 de agosto de 2026: 6 días para su totalidad - Espacio</h3><p class="desc">Siga nuestra cobertura en vivo del eclipse solar total de 2026 mientras contamos hasta el día del eclipse con las últimas noticias, información de expertos y actualizaciones antes de brindarle informes en vivo desde Groenlandia y España.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Space.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.space.com%2Fnews%2Flive%2Ftotal-solar-eclipse-aug-12-2026-live-updates-six-days-to-totality" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Minecraft finalmente tiene fecha de lanzamiento para Switch 2, pero puede haber malas noticias para los propietarios de Switch 1 - Eurogamer.net</h3><p class="desc">Mojang ya no se burla de nosotros sobre el inminente lanzamiento de Minecraft en Switch 2.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Eurogamer.net</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.eurogamer.net%2Fminecraft-switch-2-release-date-upgrade-path" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Nuevas imágenes del Sol muestran su superficie con el mayor detalle hasta el momento - AP News</h3><p class="desc">Los científicos han capturado imágenes de la superficie del sol con el mayor detalle hasta el momento. Los investigadores pudieron observar con la ayuda de un telescopio la isla de Maui en Hawaii. Vieron extraños patrones de plumas ondeando en la superficie, evidencia de una w</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Associated Press</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fsun-surface-solar-telescope-kelvin-heimholtz-instability-32eb28c17e8c4005dad9a5b51dd3eb2a" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>La FDA aprueba la primera vacuna contra la gripe de ARNm para adultos mayores - Forbes</h3><p class="desc">La aprobación de la nueva vacuna contra la gripe de Moderna se produce meses después de que la FDA enfrentara una reacción violenta por negarse a revisar la vacuna.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Forbes</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fsiladityaray%2F2026%2F08%2F06%2Ffda-approves-first-mrna-flu-vaccine-for-older-adults%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Otra gran filtración de Pixel Watch 5 muestra todo, desde el diseño hasta las funciones de salud - Android Authority</h3><p class="desc">La nueva filtración de Pixel Watch 5 muestra funciones de salud como el seguimiento de la variabilidad de la frecuencia cardíaca, "Pregunta al entrenador" y más junto con Gemini Intelligence.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Android Authority</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.androidauthority.com%2Fpixel-watch-5-leak-design-health-features-3695089%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
@@ -17,135 +147,5 @@
                 <span class="source">NPR</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
                 <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.npr.org%2F2026%2F08%2F06%2Fg-s1-137571%2Fgermany-drone-explosives-airport" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Horóscopo para el jueves 06 de agosto de 2026 - Chicago Sun-Times</h3><p class="desc"></p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Suntimes.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fchicago.suntimes.com%2Fhoroscopes%2F2026%2F08%2F06%2Fhoroscopes-today-thursday-august-06-2026" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los futuros del Dow suben poco después de que el índice de primera línea registrara un nuevo cierre récord: actualizaciones en vivo - CNBC</h3><p class="desc">Los mercados terminaron divididos el miércoles, ya que un cierre récord en el Dow Industrials contrastó con las pérdidas en el Nasdaq Composite y el S&P 500.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">CNBC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnbc.com%2F2026%2F08%2F05%2Fstock-market-today-live-updates.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>TikTok dice que un error del moderador retrasó la eliminación de la transmisión en vivo de Perez Hilton que muestra actos de autolesión - Fox Business</h3><p class="desc">TikTok dice que un error del moderador retrasó la eliminación de la transmisión en vivo de Perez Hilton que muestra autolesiones, lo que provocó una respuesta policial y la hospitalización del famoso bloguero.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Fox Business</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.foxbusiness.com%2Fentertainment%2Ftiktok-says-moderator-error-delayed-removal-perez-hiltons-livestream-showing-acts-self-harm" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los bomberos están trabajando en turnos de 16 horas mientras luchan contra el incendio del complejo Spokane - NBC News</h3><p class="desc">Los incendios de Old Trails y Autumn Lane estaban contenidos en un 13% cada uno el miércoles, y el incendio de Fairview estaba contenido en un 5%, según los bomberos.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">NBC News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fnews%2Fus-news%2Ffirefighters-are-working-16-hour-shifts-battle-spokane-complex-fire-rcna591062" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Tres fiscales generales estatales citan a Anthony Fauci por orientación sobre Covid - NBC News</h3><p class="desc">Fauci fue citado a comparecer mientras los republicanos en Washington buscan acusarlo de desacato por negarse a responder preguntas sobre el manejo de la pandemia de Covid.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">NBC News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fpolitics%2Fpolitics-news%2Fthree-state-attorneys-general-subpoena-anthony-fauci-covid-guidance-rcna591082" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Se revelan las imágenes más detalladas jamás tomadas de la superficie del Sol: "Un gran paso adelante" - CBS News</h3><p class="desc">Los investigadores pudieron echar un vistazo a la abrasadora superficie del sol con la ayuda del Telescopio Solar Daniel K. Inouye de la Fundación Nacional de Ciencias, ubicado en la isla de Maui en Hawaii.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">CBS News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Fnews%2Fsun-surface-images-inouye-solar-telescope%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El choque de verano del Senado amenaza con escapar rápidamente del receso - Politico</h3><p class="desc">Los republicanos están discutiendo varias opciones, incluida la celebración de nuevas votaciones relacionadas con la Ley SAVE America.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Politico</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.politico.com%2Fnews%2F2026%2F08%2F05%2Fsenate-summer-recess-escape-01026713" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Aaron Donald registra entrenamiento oficial con los Rams - NBC Sports</h3><p class="desc">Los Rams recibieron a Aaron Donald para hacer ejercicio.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">NBCSports.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcsports.com%2Ffantasy%2Ffootball%2Fplayer-news%2F2026-08-05%2Faaron-donald-logs-official-workout-with-the-rams" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El director ejecutivo de Regal Cinemas defiende la fusión de Paramount y WBD - fecha límite.com</h3><p class="desc">El director ejecutivo de Regal Cinemas, Eduardo Acuña, se pronuncia a favor de la fusión de Paramount-Warner Bros y dice que un juicio antimonopolio crearía incertidumbre y distracción.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Deadline</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=http%3A%2F%2Fdeadline.com%2F2026%2F08%2Fregal-cinemas-ceo-paramount-warner-bros-merger-1237027050%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Nigeria anuncia el rescate de 308 ciudadanos secuestrados - Al Jazeera</h3><p class="desc">Los secuestros para pedir rescate por parte de grupos armados y bandidos se han convertido en una crisis importante en Nigeria.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Al Jazeera English</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.aljazeera.com%2Fnews%2F2026%2F8%2F5%2Fnigeria-announces-rescue-of-308-kidnapped-citizens" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Trump y Hegseth se enfrentaron en Camp David por preocupaciones sobre el agotamiento de los misiles de Irán - The Washington Post</h3><p class="desc">En una cumbre de Camp David este fin de semana, el presidente Trump exigió respuestas del secretario de Defensa, Pete Hegseth, sobre la extrema escasez de municiones.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.washingtonpost.com%2Fnational-security%2F2026%2F08%2F05%2Ftrump-hegseth-clashed-camp-david-over-iran-missile-depletion-concerns%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La abrupta salida de Chuck Edwards deja a los republicanos en apuros - axios.com</h3><p class="desc">Un republicano de Carolina del Norte le dijo a Axios que Edwards ya había "estropeado" las posibilidades del partido de ocupar el escaño.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Axios</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.axios.com%2F2026%2F08%2F05%2Fhouse-republicans-mike-johnson-chuck-edwards-midterms-north-carolina" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La serie Samsung Galaxy Z está batiendo récords de pedidos anticipados - Mashable</h3><p class="desc">¿Veremos finalmente que los teléfonos plegables entren en la corriente principal?</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Mashable</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fmashable.com%2Ftech%2Fsamsung-galaxy-z-foldables-break-sales-records-korea-europe" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div></body></html>
