@@ -1,12 +1,102 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-08-07 10:07 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>头条新闻的最新更新。</p><div class="divider"></div><p class="insight-text">AI 丰富功能暂时不可用。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-08-07 12:44 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>头条新闻的最新更新。</p><div class="divider"></div><p class="insight-text">AI 丰富功能暂时不可用。</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>今日股市：纳斯达克期货因人工智能焦虑而下跌——实时更新 - 华尔街日报</h3><p class="desc"></p>
+            <h3>记录罕见癌症历程的 TikTok 创建者 Sydney Towle 去世，享年 26 岁 - 今日美国</h3><p class="desc">TikTok 创始人西德尼·托尔 (Sydney Towle) 在与一种罕见癌症抗争多年后去世。她26岁。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">The Wall Street Journal</span>
+                <span class="source">USA Today</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wsj.com%2Flivecoverage%2Fstock-market-today-dow-sp-500-nasdaq-08-06-2026" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.usatoday.com%2Fstory%2Fentertainment%2Fcelebrities%2F2026%2F08%2F06%2Fsydney-towle-dead-bile-duct-cancer-cholangiocarcinoma-tiktok%2F91194452007%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>我们对佩雷斯·希尔顿住院的了解：家人称他“能够沟通” - 福布斯</h3><p class="desc">周二晚间，名人博主佩雷斯·希尔顿 (Perez Hilton) 因粉丝在 TikTok 直播中报警而住院。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">Forbes</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fconormurray%2F2026%2F08%2F06%2Fperez-hilton-is-able-to-communicate-family-says-after-hospitalization%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>江恩火灾更新：卡拉维拉斯县野火中 7 座建筑被毁，1 名消防员受伤 - KCRA</h3><p class="desc">卡拉维拉斯县的消防人员正在更好地应对野火，这场野火摧毁了房屋，导致一名消防员受伤，并迫使数百人撤离。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">KCRA Sacramento</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.kcra.com%2Farticle%2Fgann-fire-updates-arrest-calaveras-county-august-6%2F73365645" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>SpaceX 股价上涨。今天释放了数百万股——为更大的波动做好准备。 - 巴伦周刊</h3><p class="desc">周四，多达 9.115 亿股 SpaceX 股票可供交易。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">Barron's</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.barrons.com%2Farticles%2Fspacex-stock-price-shares-unlock-today-94df2210" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>实时更新：伊朗表示霍尔木兹协议已接近，但美国必须在海峡重新开放之前履行承诺 - cnn.com</h3><p class="desc">德黑兰表示，伊朗和阿曼正在接近拟议的霍尔木兹框架，但该协议不会自动重新开放水路。关注实时新闻更新。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">CNN</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F06%2Fworld%2Flive-news%2Firan-war-trump" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>参议员投票判定安东尼·福奇藐视国会，因他在紧张的听证会上向第五届国会求情 - NBC新闻</h3><p class="desc">在上周的听证会上，福奇拒绝回答参议员的问题超过 100 次，这激怒了多年来针对他的共和党议员。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.nbcnews.com%2Fpolitics%2Fcongress%2Fsenators-vote-holding-anthony-fauci-contempt-congress-pleading-fifth-t-rcna590985" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>克拉克、布克斯入选美国女篮世界杯女篮名单 - espn.com</h3><p class="desc">美国男篮期待已久的青少年运动即将到来，凯特琳·克拉克、佩奇·比克斯、安吉尔·里斯和阿利亚·波士顿将首次代表美国队参加下个月在德国举行的国际篮联世界杯的重大国际比赛。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">ESPN</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.espn.com%2Folympics%2Fstory%2F_%2Fid%2F49544848%2Fclark-bueckers-team-usa-women-roster-fiba-world-cup" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>谷歌人工智能大变革背后的混乱政治 - 边缘</h3><p class="desc">谷歌人工智能领导层的变化——例如杰米斯·哈萨比斯(Demis Hassabis)的角色转变和杰夫·迪恩(Jeff Dean)的离开——可能归结于加快产品开发的压力和内部道德冲突。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">The Verge</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.theverge.com%2Ftech%2F976108%2Fgoogle-ai-leadership-shakeup-jeff-dean-demis-hassabis-deepmind" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>丹尼尔·科米尔 (Daniel Cormier) 讲述了所谓的固定 UFC 比赛：“这孩子到底怎么这么坏” - MMA Fighting</h3><p class="desc">丹尼尔·科米尔（Daniel Cormier）讲述了那天晚上，他因严重缺乏技能而叫一名拳击手出局，但后来他发现这是一场固定的战斗。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">MMA Fighting</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.mmafighting.com%2Fufc%2F503386%2Fdaniel-cormier-recounts-calling-alleged-fixed-ufc-fight-how-in-the-world-is-this-kid-so-bad" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>亚伦·唐纳德 (Aaron Donald) 与公羊队进行正式训练 - nbcsports.com</h3><p class="desc">公羊队招待亚伦·唐纳德进行训练。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">NBCSports.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.nbcsports.com%2Ffantasy%2Ffootball%2Fplayer-news%2F2026-08-05%2Faaron-donald-logs-official-workout-with-the-rams" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -21,131 +111,41 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>意大利进入红色警报，匈牙利因欧洲热浪造成影响而关灯 - 雅虎</h3><p class="desc">路透罗马/布达佩斯8月6日 - 由于高温，意大利采取了史无前例的措施，将所有主要城市置于最高级别的健康警戒状态。</p>
+            <h3>乌克兰称俄罗斯两家炼油厂遭到袭击，莫斯科瞄准能源基地 - BBC</h3><p class="desc">乌克兰总统表示，袭击的目的是限制俄罗斯“用于资助”其战争的收入。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">Yahoo Entertainment</span>
+                <span class="source">BBC News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.yahoo.com%2Fnews%2Fweather-news%2Farticles%2Fitaly-red-alert-hungary-turns-111919101.html" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.bbc.com%2Fnews%2Farticles%2Fcwymv212xrxo" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>新泽西州的米基·谢里尔 (Mikie Sherrill) 加入全国政治斗争，推出针对退伍军人的第一批中期背书 - 哥伦比亚广播公司 (CBS) 新闻</h3><p class="desc">新泽西州州长米基·谢里尔（Mikie Sherrill）在国家舞台上迈出了她的第一步，支持了 13 名民主党人——温和派信号表明她可能会加入有关民主党未来的辩论。</p>
+            <h3>英国批准派拉蒙与华纳兄弟合并 - Variety</h3><p class="desc">周四，英国以竞争为由批准了派拉蒙 Skydance 以 1,110 亿美元收购华纳兄弟的交易。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">CBS News</span>
+                <span class="source">Variety</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.cbsnews.com%2Fnews%2Fnew-jersey-mikie-sherrill-midterm-pac-endorsements-veterans-democrats%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fvariety.com%2F2026%2Ffilm%2Fglobal%2Fuk-paramount-warner-bros-merger-1236828958%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>阿卜杜勒·赛义德的胜利之路和 FDA 批准首个 mRNA 流感疫苗：晨间总结 - NBC 新闻</h3><p class="desc">分析显示，更年轻、受过高等教育的选民群体对于阿卜杜勒·赛义德在参议院初选中获胜至关重要。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">NBC News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.nbcnews.com%2Fnews%2Fus-news%2Fabdul-el-sayed-salmonella-outbreak-morning-rundown-rcna591101" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>民意调查：你对贾米尔·吉布斯的坚持有多担心？ - 底特律骄傲网</h3><p class="desc">底特律雄狮队的球迷应该对贾米尔·吉布斯的合同静坐有多担心？</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">Prideofdetroit.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.prideofdetroit.com%2Fdetroit-lions-discussion%2F168496%2Fjahmyr-gibbs-concern-level-negotiations-detroit-lions" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>剑桥大学最年轻的黑人教授因大学调查抄袭指控而辞职 - 美联社新闻</h3><p class="desc">剑桥大学最年轻的黑人教授杰森·阿尔戴教授已辞职。该大学宣布对有关他学历的新信息进行调查。剽窃指控和对其行为的质疑</p>
+            <h3>奥地利创下高温记录，欧洲热浪使意大利所有主要城市进入红色警报 - 美联社新闻</h3><p class="desc">由于欧洲面临严重热浪，意大利已将所有主要城市置于最高高温警报状态。这种极端天气在奥地利创下了全国气温记录，助长了法国的野火，并扰乱了整个国家的能源和运输系统。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Associated Press</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fapnews.com%2Farticle%2Fbritain-cambridge-professor-arday-culture-wars-black-dddb05e9ade901ec35f85b6b3e7d9056" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fapnews.com%2Farticle%2Fitaly-europe-heat-wave-temperatures-austria-france-57b6b4c67fd40b24fe578e71edaa519b" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>超过 9 亿股 SpaceX 股票今天解锁。以下是您需要了解的内容 - CNN</h3><p class="desc">超过 9 亿股 SpaceX 股票将于周四解锁，是埃隆·马斯克 (Elon Musk) 的太空和人工智能公司公开发行股票的两倍多，该公司自几周前破纪录的 IPO 以来一直处境艰难。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">CNN</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F06%2Ftech%2Fspacex-stock-elon-musk" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>乌克兰军方在远程无人机袭击中袭击了俄罗斯最大的炼油厂之一 - CNBC</h3><p class="desc">位于雅罗斯拉夫尔的斯拉夫石油公司-亚诺斯工厂距离乌克兰边境数百英里，是俄罗斯最大的炼油厂之一。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">CNBC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.cnbc.com%2F2026%2F08%2F06%2Fukraine-war-russia-zelenskyy-oil-refinery.html" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>日全食 2026 年 8 月 12 日实时更新 — 距离日全食还有 6 天 - 太空</h3><p class="desc">关注我们对 2026 年日全食的实时报道，我们将在为您带来来自格陵兰岛和西班牙的实时报道之前，为您提供最新消息、专家见解和更新，为日全食倒计时。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">Space.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.space.com%2Fnews%2Flive%2Ftotal-solar-eclipse-aug-12-2026-live-updates-six-days-to-totality" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>《我的世界》终于确定了 Switch 2 的发布日期，但对于 Switch 1 的用户来说可能有坏消息 - Eurogamer.net</h3><p class="desc">Mojang 已经不再嘲笑我们即将在 Switch 2 上发布《我的世界》了。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">Eurogamer.net</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.eurogamer.net%2Fminecraft-switch-2-release-date-upgrade-path" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>太阳的新图像以迄今为止最精细的细节显示了其表面 - 美联社新闻</h3><p class="desc">科学家们已经捕捉到了迄今为​​止最精细的太阳表面图像。研究人员借助望远镜在夏威夷毛伊岛进行了观测。他们看到奇怪的羽毛状图案在表面荡漾，这是W的证据</p>
+            <h3>约翰·卡彭特将地狱电梯的梦想变成了“大教堂”图画小说和专辑 - 美联社新闻</h3><p class="desc">约翰·卡彭特 (John Carpenter) 与家人合作开展了一个新项目“大教堂”(Cathedral)，这是一本带有原创专辑的图画小说。拍摄过《怪形》和《万圣节》等恐怖经典作品的著名导演表示，现在的电影业太企业化了，所以他更喜欢电影</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Associated Press</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fapnews.com%2Farticle%2Fsun-surface-solar-telescope-kelvin-heimholtz-instability-32eb28c17e8c4005dad9a5b51dd3eb2a" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>FDA 批准首个针对老年人的 mRNA 流感疫苗 - 福布斯</h3><p class="desc">几个月前，FDA 因拒绝审查该疫苗而遭到强烈反对，Moderna 的新型流感疫苗获得批准。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">Forbes</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fsiladityaray%2F2026%2F08%2F06%2Ffda-approves-first-mrna-flu-vaccine-for-older-adults%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Pixel Watch 5 的另一次重大泄露展示了从设计到健康功能的一切 - Android Authority</h3><p class="desc">新的 Pixel Watch 5 泄露展示了心率变异性跟踪、“询问教练”等健康功能以及 Gemini Intelligence 等功能。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">Android Authority</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.androidauthority.com%2Fpixel-watch-5-leak-design-health-features-3695089%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>德国机场发现携带爆炸物的无人机，官员称威胁“新质量” - npr.org</h3><p class="desc">地区警察和检察官表示，一名机场工作人员在机场南跑道附近发现一架无人机，里面装有“未知爆炸装置”，警方对该物体进行了检查</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.npr.org%2F2026%2F08%2F06%2Fg-s1-137571%2Fgermany-drone-explosives-airport" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fapnews.com%2Farticle%2Fjohn-carpenter-cathedral-novel-album-family-b209aeef95e9ec4b20089bb9e05201a0" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div></body></html>

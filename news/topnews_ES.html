@@ -1,12 +1,102 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-08-07 10:07 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-08-07 12:44 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Mercado de valores hoy: Los futuros del Nasdaq caen debido a la ansiedad por la IA - Actualizaciones en vivo - WSJ</h3><p class="desc"></p>
+            <h3>Sydney Towle, creadora de TikTok que documentó su raro viaje contra el cáncer, muere a los 26 años - USA Today</h3><p class="desc">El creador de TikTok, Sydney Towle, murió después de una batalla de años contra una forma rara de cáncer. Ella tenía 26 años.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">The Wall Street Journal</span>
+                <span class="source">USA Today</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.wsj.com%2Flivecoverage%2Fstock-market-today-dow-sp-500-nasdaq-08-06-2026" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.usatoday.com%2Fstory%2Fentertainment%2Fcelebrities%2F2026%2F08%2F06%2Fsydney-towle-dead-bile-duct-cancer-cholangiocarcinoma-tiktok%2F91194452007%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Lo que sabemos sobre la hospitalización de Perez Hilton: la familia dice que es "capaz de comunicarse" - Forbes</h3><p class="desc">El famoso bloguero Perez Hilton fue hospitalizado el martes por la noche después de que sus fanáticos llamaran a la policía durante una inquietante transmisión en vivo de TikTok.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Forbes</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fconormurray%2F2026%2F08%2F06%2Fperez-hilton-is-able-to-communicate-family-says-after-hospitalization%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Actualizaciones de Gann Fire: 7 estructuras destruidas y 1 bombero herido en un incendio forestal en el condado de Calaveras - KCRA</h3><p class="desc">Los equipos de bomberos del condado de Calaveras están controlando mejor un incendio forestal que destruyó casas, hirió a un bombero y obligó a cientos de personas a evacuar.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">KCRA Sacramento</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.kcra.com%2Farticle%2Fgann-fire-updates-arrest-calaveras-county-august-6%2F73365645" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Las acciones de SpaceX suben. Millones de acciones se desbloquean hoy: prepárese para una mayor volatilidad. - Barrón</h3><p class="desc">Hasta 911,5 millones de acciones de SpaceX estarán disponibles para negociarse el jueves.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Barron's</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.barrons.com%2Farticles%2Fspacex-stock-price-shares-unlock-today-94df2210" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Actualizaciones en vivo: Irán dice que el acuerdo de Ormuz está cerca, pero Estados Unidos debe cumplir sus compromisos antes de que se reabra el estrecho - cnn.com</h3><p class="desc">Irán y Omán se están acercando a una propuesta de marco para Ormuz, dice Teherán, pero el acuerdo no reabriría automáticamente la vía fluvial. Siga las actualizaciones de noticias en vivo.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">CNN</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F06%2Fworld%2Flive-news%2Firan-war-trump" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Fauci se negó a responder las preguntas de los senadores más de 100 veces durante la audiencia de la semana pasada, lo que enfureció a los legisladores republicanos que lo han atacado durante años.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fpolitics%2Fcongress%2Fsenators-vote-holding-anthony-fauci-contempt-congress-pleading-fifth-t-rcna590985" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Clark y Bueckers en la plantilla femenina del equipo de EE. UU. para la Copa Mundial FIBA ​​- espn.com</h3><p class="desc">El tan esperado movimiento juvenil de USA Basketball está aquí, ya que Caitlin Clark, Paige Bueckers, Angel Reese y Aliyah Boston harán sus primeras apariciones de EE. UU. en una competencia internacional importante el próximo mes en la Copa Mundial FIBA ​​en Alemania.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">ESPN</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.espn.com%2Folympics%2Fstory%2F_%2Fid%2F49544848%2Fclark-bueckers-team-usa-women-roster-fiba-world-cup" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>La política confusa detrás de la gran reestructuración de la IA de Google - The Verge</h3><p class="desc">Los cambios en el liderazgo de la IA de Google (como el cambio de rol de Demis Hassabis y la salida de Jeff Dean) pueden haberse reducido a presiones para acelerar los productos y a conflictos éticos internos.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">The Verge</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.theverge.com%2Ftech%2F976108%2Fgoogle-ai-leadership-shakeup-jeff-dean-demis-hassabis-deepmind" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Daniel Cormier relata haber llamado a una supuesta pelea arreglada en UFC: ‘¿Cómo es que este niño es tan malo?’ - MMA Fighting</h3><p class="desc">Daniel Cormier relata la noche en que llamó a un luchador por una grave falta de habilidades, pero luego descubrió que era una pelea arreglada.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">MMA Fighting</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.mmafighting.com%2Fufc%2F503386%2Fdaniel-cormier-recounts-calling-alleged-fixed-ufc-fight-how-in-the-world-is-this-kid-so-bad" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Aaron Donald registra entrenamiento oficial con los Rams - nbcsports.com</h3><p class="desc">Los Rams recibieron a Aaron Donald para hacer ejercicio.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">NBCSports.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcsports.com%2Ffantasy%2Ffootball%2Fplayer-news%2F2026-08-05%2Faaron-donald-logs-official-workout-with-the-rams" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
@@ -21,131 +111,41 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Italia en alerta roja, Hungría apaga las luces mientras la ola de calor en Europa pasa factura - Yahoo</h3><p class="desc">ROMA/BUDAPEST, 6 ago (Reuters) - Italia tomó la medida sin precedentes de colocar todas sus principales ciudades en el nivel más alto de alerta sanitaria debido a las altas temperaturas...</p>
+            <h3>Ucrania dice que dos refinerías de petróleo rusas fueron afectadas, mientras Moscú apunta a sitios energéticos - BBC</h3><p class="desc">El presidente de Ucrania dice que los ataques tienen como objetivo limitar los ingresos que Rusia "utilizó para financiar" su guerra.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">Yahoo Entertainment</span>
+                <span class="source">BBC News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.yahoo.com%2Fnews%2Fweather-news%2Farticles%2Fitaly-red-alert-hungary-turns-111919101.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.bbc.com%2Fnews%2Farticles%2Fcwymv212xrxo" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Mikie Sherrill de Nueva Jersey entra en la refriega política nacional con el primer conjunto de respaldos de mitad de período, dirigidos a los veteranos - CBS News</h3><p class="desc">La gobernadora de Nueva Jersey, Mikie Sherrill, está dando su primer paso importante en el escenario nacional, respaldando a 13 demócratas, mientras los moderados señalan que ella podría saltar al debate sobre el futuro de su partido.</p>
+            <h3>Reino Unido aprueba la fusión de Paramount y Warner Bros. - Variedad</h3><p class="desc">El Reino Unido autorizó el jueves la adquisición de Warner Bros. por parte de Paramount Skydance por 111 mil millones de dólares por motivos de competencia.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">CBS News</span>
+                <span class="source">Variety</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Fnews%2Fnew-jersey-mikie-sherrill-midterm-pac-endorsements-veterans-democrats%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fvariety.com%2F2026%2Ffilm%2Fglobal%2Fuk-paramount-warner-bros-merger-1236828958%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El camino de Abdul El-Sayed hacia la victoria y la FDA aprueba la primera vacuna contra la gripe de ARNm: resumen de la mañana - NBC News</h3><p class="desc">Un análisis muestra que una base más joven y con mayor educación fue fundamental para la victoria de Abdul El Sayed en las primarias del Senado.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">NBC News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fnews%2Fus-news%2Fabdul-el-sayed-salmonella-outbreak-morning-rundown-rcna591101" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>ENCUESTA: ¿Qué tan preocupado está usted por la retención de Jahmyr Gibbs? - orgullodedetroit.com</h3><p class="desc">¿Qué tan preocupados deberían estar los fanáticos de los Detroit Lions por la sentada contra el contrato de Jahmyr Gibbs?</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Prideofdetroit.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.prideofdetroit.com%2Fdetroit-lions-discussion%2F168496%2Fjahmyr-gibbs-concern-level-negotiations-detroit-lions" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El profesor negro más joven de Cambridge dimite mientras la universidad investiga acusaciones de plagio - AP News</h3><p class="desc">El profesor Jason Arday, el profesor negro más joven de la Universidad de Cambridge, ha dimitido. La universidad anunció una investigación sobre nueva información sobre sus calificaciones académicas. Acusaciones de plagio y preguntas sobre su athl</p>
+            <h3>Ola de calor en Europa pone a todas las principales ciudades italianas en alerta roja mientras Austria establece récord de calor - AP News</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Associated Press</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fbritain-cambridge-professor-arday-culture-wars-black-dddb05e9ade901ec35f85b6b3e7d9056" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fitaly-europe-heat-wave-temperatures-austria-france-57b6b4c67fd40b24fe578e71edaa519b" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Más de 900 millones de acciones de SpaceX se desbloquean hoy. Esto es lo que debes saber - CNN</h3><p class="desc">Más de 900 millones de acciones de SpaceX se desbloquearán el jueves, más del doble de las acciones disponibles públicamente en la compañía espacial y de inteligencia artificial de Elon Musk, que ha tenido problemas desde su IPO récord hace apenas unas semanas.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">CNN</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F06%2Ftech%2Fspacex-stock-elon-musk" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El ejército de Ucrania ataca una de las refinerías de petróleo más grandes de Rusia en un ataque con drones de largo alcance - CNBC</h3><p class="desc">La instalación de Slavneft-Yanos en Yaroslavl, situada a cientos de kilómetros de la frontera con Ucrania, es una de las refinerías de petróleo más grandes de Rusia.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">CNBC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnbc.com%2F2026%2F08%2F06%2Fukraine-war-russia-zelenskyy-oil-refinery.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Actualizaciones en vivo del eclipse solar total del 12 de agosto de 2026: 6 días para su totalidad - Espacio</h3><p class="desc">Siga nuestra cobertura en vivo del eclipse solar total de 2026 mientras contamos hasta el día del eclipse con las últimas noticias, información de expertos y actualizaciones antes de brindarle informes en vivo desde Groenlandia y España.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Space.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.space.com%2Fnews%2Flive%2Ftotal-solar-eclipse-aug-12-2026-live-updates-six-days-to-totality" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Minecraft finalmente tiene fecha de lanzamiento para Switch 2, pero puede haber malas noticias para los propietarios de Switch 1 - Eurogamer.net</h3><p class="desc">Mojang ya no se burla de nosotros sobre el inminente lanzamiento de Minecraft en Switch 2.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Eurogamer.net</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.eurogamer.net%2Fminecraft-switch-2-release-date-upgrade-path" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Nuevas imágenes del Sol muestran su superficie con el mayor detalle hasta el momento - AP News</h3><p class="desc">Los científicos han capturado imágenes de la superficie del sol con el mayor detalle hasta el momento. Los investigadores pudieron observar con la ayuda de un telescopio la isla de Maui en Hawaii. Vieron extraños patrones de plumas ondeando en la superficie, evidencia de una w</p>
+            <h3>John Carpenter convierte un sueño de un ascensor infernal en novela gráfica y álbum 'Cathedral' - AP News</h3><p class="desc">John Carpenter se ha asociado con su familia para un nuevo proyecto, “Cathedral”, una novela gráfica con un álbum original. El famoso director de clásicos del terror como “The Thing” y “Halloween” dice que la industria cinematográfica es demasiado corporativa ahora, por lo que prefiere más</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Associated Press</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fsun-surface-solar-telescope-kelvin-heimholtz-instability-32eb28c17e8c4005dad9a5b51dd3eb2a" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La FDA aprueba la primera vacuna contra la gripe de ARNm para adultos mayores - Forbes</h3><p class="desc">La aprobación de la nueva vacuna contra la gripe de Moderna se produce meses después de que la FDA enfrentara una reacción violenta por negarse a revisar la vacuna.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Forbes</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fsiladityaray%2F2026%2F08%2F06%2Ffda-approves-first-mrna-flu-vaccine-for-older-adults%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Otra gran filtración de Pixel Watch 5 muestra todo, desde el diseño hasta las funciones de salud - Android Authority</h3><p class="desc">La nueva filtración de Pixel Watch 5 muestra funciones de salud como el seguimiento de la variabilidad de la frecuencia cardíaca, "Pregunta al entrenador" y más junto con Gemini Intelligence.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Android Authority</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.androidauthority.com%2Fpixel-watch-5-leak-design-health-features-3695089%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Drone con explosivos encontrado en aeropuerto alemán: funcionario ve "nueva calidad" de amenaza - npr.org</h3><p class="desc">La policía regional y los fiscales dijeron que un empleado del aeropuerto descubrió un dron cerca de la pista sur del aeropuerto con "un artefacto explosivo desconocido" y el objeto fue examinado por la policía.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.npr.org%2F2026%2F08%2F06%2Fg-s1-137571%2Fgermany-drone-explosives-airport" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fjohn-carpenter-cathedral-novel-album-family-b209aeef95e9ec4b20089bb9e05201a0" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div></body></html>
