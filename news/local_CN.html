@@ -1,17 +1,87 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-08-10 04:08 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>本地生活的最新更新。</p><div class="divider"></div><p class="insight-text">AI 丰富功能暂时不可用。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-08-10 06:07 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>本地生活的最新更新。</p><div class="divider"></div><p class="insight-text">AI 丰富功能暂时不可用。</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>CJ 贝利 (CJ Bailey) 在北卡罗来纳州立大学提高了他的比赛水平</h3><p class="desc">夏洛特 ACC 足球媒体日的新闻和笔记。</p>
+            <h3>Sun Drop谋杀案嫌疑人在卡巴勒斯县引渡后没有获得保释</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">Greensboro News & Record</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fgreensboro.com%2Fsports%2Fcollege%2Ffootball%2Farticle_93329cc7-9ec2-58b5-8fee-50830f59543c.html" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fsun-drop-murder-suspect-receives-no-bond-in-cabarrus-county%2F275-9daf1f7d-e568-4875-ad0b-476686cbcf5b" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>68 岁男子称他在夏洛特东部被持枪绑架</h3><p class="desc">受害者告诉警察，他被枪指着被迫进入车内，然后嫌疑人将他遗弃在路边。</p>
+            <h3>父母起诉兰卡斯特日托所，指控其忽视 1 岁儿子骨折后的表现</h3><p class="desc">一名在托儿所摔断腿的男孩的父母提起诉讼，指控工作人员忽视他 14 分钟，其中一名前雇员面临虐待指控。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Fcrime%2Flancaster-county-childcare-worker-charged-with-cruelty-to-children%2F275-a961294b-7835-430b-9f50-ea7e532eb2ce" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>一年后，珍珠号对夏洛特的经济、医疗、学术影响</h3><p class="desc">珍珠医疗中心第一年就产生了 2.24 亿美元的经济影响。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fone-year-later-the-pearls-economic-medical-academic-impact-on-charlotte%2F275-ed328de0-7791-4d68-8bf1-c560779d6a7d" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>洛夫五月份卡车停靠站枪击案致人死亡，嫌疑人面临多项指控</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Fcrime%2Fdeadly-loves-travel-stop-shooting-suspect-charged%2F275-51d76b9e-8389-4a17-bea6-cd15be7e3db3" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>穆尔斯维尔警方在警察涉嫌滥用系统后收紧了 Flock 规则</h3><p class="desc">穆尔斯维尔警察局更新了 Flock 系统访问政策，并增加了新的保障措施，以防止未来滥用。</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Fcrime%2Fmooresville-police-update-policies-flock-camera-system-access%2F275-a0cf684c-3adc-403f-87e8-a77759760bcc" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>夏洛特东北部 I-485 公路坠毁造成一人死亡</h3><p class="desc">事故发生在 I-485 内环线 33 号出口附近。</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fi-485-crash-leaves-one-person-dead-in-northeast-charlotte%2F275-09e1da94-d9f3-4d02-bae4-4c91a7590985" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>夏洛特考虑晚上 9 点。由于担心青少年接管行为，对 18 岁以下青少年实施宵禁</h3><p class="desc">该提案将根据年龄确定不同的宵禁时间，改为晚上 9 点。 18 岁以下所有人的截止日期。</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fcharlotte-considers-9-pm-curfew-for-minors-amid-concerns-over-teen-takeovers%2F275-b6616071-5acd-44cd-9622-8e038c2bc280" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>兰卡斯特男子被发现安全</h3><p class="desc">兰开斯特警方称失踪男子已安全被发现。</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Flancaster-man-missing%2F275-b1614139-9df1-48b4-86c3-8fc8403ef33c" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>68 岁男子称他在夏洛特东部被持枪绑架</h3><p class="desc">受害者告诉警方，他被枪指着被迫进入车内，然后嫌疑人将他遗弃在路边。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
@@ -32,21 +102,11 @@
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
             <h3>东夏洛特餐厅枪击案嫌疑人被捕</h3><p class="desc">27 岁的何塞·洛佩兹 (Jose Lopez) 被指控于周六晚上 9:30 左右在 Mariscos Nayarit 发生枪击事件。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
                 <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fcharlotte-restaurant-shooting-suspect-arrested%2F275-09b3e181-f71e-4fa9-9a1e-b6e4739847c2" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Sun Drop谋杀案嫌疑人在卡巴勒斯县引渡后没有获得保释</h3><p class="desc">43 岁的约翰尼·塔尔伯特 (Johnny Talbert) 因 2008 年 5 月在华盛顿发生的康科德枪击案被捕。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fsun-drop-murder-suspect-receives-no-bond-in-cabarrus-county%2F275-9daf1f7d-e568-4875-ad0b-476686cbcf5b" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -61,17 +121,7 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>父母起诉兰卡斯特日托所，指控其忽视 1 岁儿子骨折后的表现</h3><p class="desc">一名在托儿所摔断腿的男孩的父母提起诉讼，指控工作人员忽视他 14 分钟，其中一名前雇员面临虐待指控。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Fcrime%2Flancaster-county-childcare-worker-charged-with-cruelty-to-children%2F275-a961294b-7835-430b-9f50-ea7e532eb2ce" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>“我绝对很幸运”：索尔兹伯里男子第二次中彩票</h3><p class="desc">罗文县一位幸运的彩票玩家遭遇了两次闪电。以下是他计划如何使用他的奖金。</p>
+            <h3>“我绝对是幸运的”：索尔兹伯里男子第二次中彩票</h3><p class="desc">罗文县一位幸运的彩票玩家遭遇了两次闪电。以下是他计划如何使用他的奖金。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
@@ -81,7 +131,7 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>卡车在 I-77 州际公路出口坡道翻倒后，Rock Hill 男子身亡</h3><p class="desc">这名 20 岁男子的卡车在 Rock Hill 的 I-77 出口坡道翻车后当场死亡。</p>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">这名 20 岁男子的卡车在 Rock Hill 的 I-77 出口坡道翻车后当场死亡。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
@@ -91,61 +141,11 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>斯泰茨维尔市议会将权衡 I-77 收费车道、提议暂停数据中心</h3><p class="desc">斯泰茨维尔市议会将在周一晚上考虑 I-77 收费车道，并提议暂停新数据中心申请 150 天。</p>
+            <h3>斯泰茨维尔市议会将权衡 I-77 收费车道、提议暂停数据中心</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
                 <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fstatesville-city-council-i-77-toll-lanes-proposed-data-center-moratorium%2F275-cc0aefdf-d3cc-456d-b895-88fc0c6a9d4a" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>验证：北卡罗来纳州学生返回学校之前需要接种什么疫苗</h3><p class="desc">当学生返回学校时，家长必须确保免疫记录完整，因为缺少这些记录可能会导致被排除在外，直到达标为止。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Fverify%2Fverify-nc-vaccines-for-school%2F275-79b2a659-00f5-4ca8-9990-895adb3a81c3" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>南卡罗来纳州选民权衡经验和特朗普的支持，格雷厄姆寻求参议院任期</h3><p class="desc">南卡罗来纳州选民正在权衡经验、家庭关系和特朗普总统的支持，达林·格雷厄姆 (Darline Graham) 在周二之前竞选参议员任期。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fgraham-seeks-full-senate-term-as-south-carolina-voters-weigh-experience-trump-endorsement%2F275-27699bfa-1ec2-428f-ae73-9d2f2084084d" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>流弹击中公交车后，CATS 司机受伤</h3><p class="desc">CATS 表示，司机报告称仅因玻璃碎裂而受轻伤。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fcats-driver-hurt-after-stray-bullet-hit-bus%2F275-20e22195-ff40-4b69-a7a2-350713fc0c0a" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>斯泰茨维尔路在天坑关闭后重新开放</h3><p class="desc">由于天坑，盖瑟路周日下午暂时关闭。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fstatesville-road-reopened-after-sinkhole-shut-it-down%2F275-66ca388a-1e65-4a6b-b235-5020c41f9f7a" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>罗克山枪击案男子被控谋杀，导致抢劫同谋死亡</h3><p class="desc">枪击事件于晚上 10 点 41 分左右发生在斯普林代尔路 (Springdale Road)。星期四。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">WCNC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Fcrime%2Fman-charged-with-murder-in-rock-hill-shooting%2F275-2b9fcd53-56a6-4f74-bff6-37583ca7eaf0" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div></body></html>
