@@ -1,42 +1,112 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-08-16 08:49 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-08-17 06:25 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Trump dice que EE.UU. reducirá los ejercicios militares con Corea del Sur después de que ésta se mantuviera al margen de la guerra con Irán - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE9mZjhLYWc5Uld6bFdvNHRRU3dsVTB6 N3FBUVo0SFIwZ0xpTjlfQ0s0QmJhWEpsdUVsTXlrOWlZRnlXZzJqUVBOa3FjS1RZNGxJTjRXRUN2SWhLUQ?oc=5" target="_blank">Trump dice que Estados Unidos reducirá los ejercicios militares con ingenio</p>
+            <h3>La Casa Blanca 'discute el uso de armas nucleares contra Irán', afirma excongresista</h3><p class="desc">Una excongresista afirma que la Casa Blanca está 'discutiendo el uso de armas nucleares' en una estrategia 'malvada'</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">expresscouk</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.bbc.com%2Fnews%2Farticles%2Fcx2lll7zvn0o" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.express.co.uk%2Fnews%2Fworld%2F2239689%2Fwhite-house-discussing-nuclear-weapons" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Actualizaciones en vivo: Jared Kushner se reúne con líderes regionales mientras múltiples conflictos agitan el Medio Oriente - CNN</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE40V2dqMUJIcWdndGVfSXlVeDRKbmkzU3hrTTRyeXBrS WR3NGtUNzNkSm54X19kcDNBNzJBaVV0NEJTNVdLVVRrUlNHLXZETnFwMEIyekJhOTduVWxZQWZyVW5WQ0xua1ByTDc0OG1B?oc=5" target="_blank">Actualizaciones en vivo: Jared K</p>
+            <h3>Datos de China disponibles para el lunes</h3><p class="desc">PEKÍN (dpa-AFX) – Está previsto que China publique una serie de datos el lunes, lo que pone de relieve un día ajetreado para la actividad económica de Asia y el Pacífico. Están disponibles las cifras de julio para la producción industrial, el comercio minorista...</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">finanznachrichten_de</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F16%2Fworld%2Flive-news%2Firan-war-trump" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.finanznachrichten.de%2Fnachrichten-2026-08%2F69324251-china-data-on-tap-for-monday-020.htm" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El comandante del Centcom aborda los problemas de salud mental de las tropas en el USS Abraham Lincoln - thehill.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxONWcwLVRpOGozZy03czk4c0I1N2RSY1RmZWJXQmY0dzJUS3dzM1E3WHVTYk pHODN4TkdPOFowXzhQaDZrQ3FNLWMwZTJnLW9YZzh5VGJhNnlzU0FCZUVGUzZWdnlhdGxYNGJOOTNWRlczNGQzVmJvWVZoOHRfT004eGlMdnFJUQ?oc=5" alquitrán</p>
+            <h3>La Isla Grande de Hawái comienza los esfuerzos de recuperación a medida que el huracán Lala degrada</h3><p class="desc">La tormenta alcanzó la categoría 1 el sábado, generando vientos de hasta 120 km/h antes de debilitarse y alejarse.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">freemalaysiatoday</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fthehill.com%2Fpolicy%2Fdefense%2F6032334-lincoln-crew-mental-health-concerns%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.freemalaysiatoday.com%2Fcategory%2Fworld%2F2026%2F08%2F17%2Fhawaii-s-big-island-begins-recovery-efforts-as-hurricane-lala-downgrades" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Lala vuelve a ser tormenta tropical y provoca lluvias torrenciales y fuertes vientos en las islas hawaianas - AP News</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <h3>Legislador de Benue contrarresta a la policía y dice que pastores mataron a más de 10 personas en ataques de Ukum</h3><p class="desc">El miembro que representa al distrito electoral del estado de Ukum en la Cámara de la Asamblea del estado de Benue, Ezra Nyiyongo, ha revelado que presuntos pastores armados que invadieron algunas comunidades en el área del gobierno local de Ukum mataron a más de 10 personas. La policía había anteriormente c</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">leadership</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fleadership.ng%2Fbenue-lawmaker-counters-police-says-herders-killed-over-10-in-ukum-attacks%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Teodoro aplaude en la embajada china</h3><p class="desc">El Departamento de Defensa Nacional (DND) criticó el domingo a la Embajada de China en Manila por sus recientes declaraciones contra el Secretario de Defensa, Gilberto Teodoro, quien alegó un “encubrimiento” de actividades ilegales que involucran a chinos en el país. en una estadística</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">manilatimes</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.manilatimes.net%2F2026%2F08%2F17%2Fnews%2Fteodoro-claps-back-at-chinese-embassy%2F2406450" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Flock intenta sofocar los temores de vigilancia mientras se acumulan las preguntas</h3><p class="desc">Flock Safety se enfrenta a una creciente reacción en todo el país por parte de comunidades y defensores de las libertades civiles preocupados por la red de lectores de matrículas impulsados ​​por inteligencia artificial de la empresa de tecnología de vigilancia.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">wsav</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.wsav.com%2Fnews%2Fnational-news%2Fflock-tries-to-quell-surveillance-fears-as-questions-pile-up%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Departamento de policía de Sandusky</h3><p class="desc">El Departamento de Policía de Sandusky está investigando un tiroteo que hospitalizó a dos personas el domingo.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">cleveland19</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cleveland19.com%2F2026%2F08%2F16%2Fsandusky-police-investigate-shooting-that-left-two-hospitalized%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>La policía de Sandusky investiga el tiroteo que dejó 2 hospitalizados</h3><p class="desc">El Departamento de Policía de Sandusky está investigando un tiroteo que hospitalizó a dos personas el domingo.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">thirteen_abc</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.13abc.com%2F2026%2F08%2F16%2Fsandusky-police-investigate-shooting-that-left-2-hospitalized%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Resumen deportivo AP Breve a las 6:23 p.m. hora del Este</h3><p class="desc">Tommy John, homónimo de una cirugía de codo pionera que salvó su carrera, muere a los 83 años</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">itemonline</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.itemonline.com%2Fap-sports-summarybrief-at-6-23-p-m-edt%2Farticle_89a0a21b-6ea7-55f7-9b80-7e75a5d18e39.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Los Azulejos tienen día libre después de una racha dura y exitosa que los devolvió a la búsqueda de los playoffs</h3><p class="desc"></p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">chroniclejournal</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.chroniclejournal.com%2Fsports%2Fnational_sports%2Fjays-get-day-off-after-tough-successful-run-that-put-them-back-in-the-playoff%2Farticle_31cecf59-1592-5af2-a93c-a815651b31b5.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Trump ordena al ejército "reducir sustancialmente" los ejercicios conjuntos con Corea del Sur - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxOd21KS2xQcXVlUjVJbkpxeFRiVlVXU1Jxd3FxekNfV1Vab01xd2luRHR3M0ZG d1UzMFNza2NpaElXRWt5NnJWX3J5YkpWMVZQZ2M3a1VxUzFnZEdKdVIyd0Y0Y0ZtMk53eklZRlRqMmpTN3hsSzRKZmR4U25xVWp5UjhCRE9DYU5velo0RkVm</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fhawaii-lala-hurricane-tropical-damage-a9fafe9ffc24572c671d1b43414c0ac2" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fpolitics%2Ftrump-administration%2Ftrump-orders-military-substantially-reduce-joint-exercises-south-korea-rcna592832" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
@@ -51,17 +121,7 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Trump dice que la Casa Blanca necesita un "complejo militar" mientras los tribunales bloquean su salón de baile - The Washington Post</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.washingtonpost.com%2Fpolitics%2F2026%2F08%2F16%2Ftrump-says-white-house-needs-military-complex-courts-block-his-ballroom%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Al menos siete personas han muerto a causa de días de fuertes lluvias e inundaciones sin precedentes en Indiana - AP News</h3><p class="desc"><un href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNQ2kwWjVwQkgtUEowdElQck1LekNsOEhfWXVJWUo1Szg3UFVudkV6U1RWYlRZM1lX dzloWFFBdmFpUkJ2RlQ5NnAwUmJZbkNkYTFJUEVjWWNIWmwxdDZaOVFKOWxTZ0dYLVJ6QXNmbUNOMzR2R0ltX1JSOHDhSFVmcFlGYncyWDhCeFJ0Rk96d1V3dktZ</p>
+            <h3>Al menos siete personas han muerto a causa de días de fuertes lluvias e inundaciones sin precedentes en Indiana - AP News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNQ2kwWjVwQkgtUEowdElQck1LekNsOEhfWXVJWUo1Szg3UFVudkV6U1RWYlRZ M1lXdzloWFFBdmFpUkJ2RlQ5NnAwUmJZbkNkYTFJUEVjWWNIWmwxdDZaOVFKOWxTZ0dYLVJ6QXNmbUNOMzR2R0ltX1JSOHDhSFVmcFlGYncyWDhCeFJ0Rk96</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
@@ -71,81 +131,21 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Años de apoyo a Trump se deshicieron en 15 minutos en un aeropuerto. - Los New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE00TjMtZ0FneTdkYTZSUnFaNmprTmNucC01NWRGWlVnZXJYNVVxV jVIaWtNSlhwLUZqMkh0enE0QWp6STBhZHhkNzNsQlgwNVJweXZ0MDZWWUg1bTNCMGlwN005N013WmtGWlNPZWVhX2U0amxkNjlpcTdR?oc=5" target="_blank">Años</p>
+            <h3>El huracán Lala deja sin electricidad a miles de personas en Hawái; los apagones rurales podrían durar meses - sfchronicle.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNc2toQ3FCZUlPcXc4NUlxMk9ZYnFGSVUxVmdRWUZBOWhIUUFXT19WeU9mN3FT X1RyLUdDTmdmVEtfZm5JQTB2MUIwRlUwX05uUlFndUpEU0VBZVlIbjFQaVl1WEprUURYdDlkNjZuZkQwV1lnd3dxc2k2SlA2NGJwRFc1Z3dtSDlhZVl6N1BC</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nytimes.com%2F2026%2F08%2F16%2Fus%2Ftrump-immigration-crackdown.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.sfchronicle.com%2Fweather%2Farticle%2Fhawaii-hurricane-lala-flooding-storm-22390237.php" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Transcripción: Representante Don Bacon en "Face the Nation with Margaret Brennan", 16 de agosto de 2026 - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPN2wySVRtVm8tZW9HTUZFV3hScmY1ZUJ1WktsRjB5aExZdFFNTk95Vjh2b1lm SmxCVVJoNkMwOERZQzc5UkdRTXg1U3pZTXptLXRrQ2dCQXU4SWRmSGR1bEhsRkM1SVpZb0pOQ19CNHpaWERXNmk5NXBzR0xiVE9uQ3o3bnZSMTBaUUNzdTRz</p>
+            <h3>Trump dice que la Casa Blanca necesita un "complejo militar" mientras los tribunales bloquean su salón de baile - The Washington Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdVAyWkp4bHp3dG43b091aHRldFRfcUpIN2hma212NDRWWFp0Nk5IVXRoQ3ZT RnktdlRUUG5WNUE4RGd4X0NvVW5SeWllUkRFSHo2bmxRNUxUaGlyYjlyd0wwMGdwSWNTTVlmOHZ2SGRWODZVc2lKRzQtRDVvU2JIMm82TmROTUx5d2x0akl3</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Fnews%2Fdon-bacon-nebraska-republican-face-the-nation-transcript-08-16-2026%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Niña de 13 años de Michigan que recibió cuatro disparos ayudó a la policía a identificar al pistolero que mató a su familia - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE0zeXhzNlY3VDZab2luSXlPVHc4UE1KdnI1R3dqd1lEaGd3X3FtNnVK Vm9PZjdIQ0pLUzVPakhmQ2c2ZWVoRW1sY3kzZlJ4azBHYllvR1hheTFpaTFRWVoxQWJSSEpObEdxVWxwVXZDZ3hEdldSSUNJRHZPRkptdw?oc=5" objetivo="_en blanco"</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fnews%2Fus-news%2Fmichigan-shooting-rampage-rcna592819" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Lula y Flávio Bolsonaro de Brasil regresan a sus bastiones para iniciar campañas presidenciales - AP News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxNTlBoRmhQRUp0V2J5aFNhVEhOSW9FY3pKQkVKdko0UE5vRjN6WjE4VUU3MEdG STU0UTZ1RVB6Uy02QjJ5eVN4bkx2bHo1UUZscGtWT21EQWhUb2lzWHlrTUctZU9OME5KMF9UMHh5cF9KaFYtZko2QV9GLVc1N0FaLUlsX1czTTNzbk5iOGxF</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fbrazil-lula-flavio-bolsonaro-campaign-opens-8f4ad67b107cb05736f450f67198b190" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Kyiv lanza un gran ataque contra instalaciones militares y energéticas rusas - Euronews.com</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.euronews.com%2Fmy-europe%2F2026%2F08%2F16%2F12-killed-in-russia-and-ukraine-after-an-overnight-exchange-of-drone-and-missile-strikes" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Casi 1.000 réplicas siguieron al terremoto de Indonesia que mató al menos a 53 personas, dicen las autoridades - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE83T1pObWFEcjlUbml5M01PQTU1SGRNOWlBc2tvcmtrQVFqT XdMcFEwZE00THltVGdrZVRJNHcwdFJ3MHFWdHVucGNXdjFHTEh6RTY1Vi1KMVBsaUxMRjQ2Qk5YVks4NFNmMkZJOFhtS1Z1Vmhl?oc=5" target="_blank">Casi 1.000</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Fnews%2Findonesia-earthquake-tsunami-warning%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>En Ceuta, España, cientos de inmigrantes protestan y exigen asilo - reuters.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNUjduYzlVZEN3NjI2YktjT0dyU3g2cVVudlhDLV95RERScG5tZ0RHb01Sdy0t TDZnMHQxdXRTa2c5dm5DY1dmTnN5WVJnVGQzemhsYjQwem9XVDNyQ1V0cHN4S2J2NzRkREd1ZWwtRWZ4RU90SDRZckpYaXo0ZEotTkx0eHI4anlfQzV4Y25V</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.reuters.com%2Fworld%2Fasia-pacific%2Fspains-ceuta-hundreds-migrants-stage-protest-demand-asylum-2026-08-16%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La mayoría de las bolsas del Golfo ganan a pesar del estancamiento de las conversaciones con Irán y la interrupción de Ormuz - reuters.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNYi10SGhJbU9xNklLZmFwR2ZoNkJtTW85b0hhbW05T3FMUzdiVDR1cXNqZ1l0 VlBNeUVOb1RjZzhKWGtEWFd2WnpXbTQxS2tNczg1eGlWUlR4Uy1VNmVtNFpoTkdTZ1JiQTVYby1mU0NMZE1hV2Nid21nR2x0VjRjY3ZFNHRSZnlDRlJxZEVY</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.reuters.com%2Fbusiness%2Fenergy%2Fmost-gulf-bourses-gain-despite-stalled-iran-talks-hormuz-disruption-2026-08-16%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.washingtonpost.com%2Fpolitics%2F2026%2F08%2F16%2Ftrump-says-white-house-needs-military-complex-courts-block-his-ballroom%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div></body></html>

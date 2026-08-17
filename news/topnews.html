@@ -1,42 +1,112 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-08-16 08:49 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Headline News.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Last Updated: 2026-08-17 06:25 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Today's Brief</h2><p>Latest updates for Headline News.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Trump says US to scale back military drills with South Korea after it stayed out of Iran war - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE9mZjhLYWc5Uld6bFdvNHRRU3dsVTB6N3FBUVo0SFIwZ0xpTjlfQ0s0QmJhWEpsdUVsTXlrOWlZRnlXZzJqUVBOa3FjS1RZNGxJTjRXRUN2SWhLUQ?oc=5" target="_blank">Trump says US to scale back military drills wit</p>
+            <h3>White House 'discussing using nuclear weapons on Iran,' claims former Congresswoman</h3><p class="desc">A former Congresswoman claims that the White House are 'discussing using nuclear weapons' in an 'evil' strategy</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">expresscouk</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE9mZjhLYWc5Uld6bFdvNHRRU3dsVTB6N3FBUVo0SFIwZ0xpTjlfQ0s0QmJhWEpsdUVsTXlrOWlZRnlXZzJqUVBOa3FjS1RZNGxJTjRXRUN2SWhLUQ?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+                <a href="https://www.express.co.uk/news/world/2239689/white-house-discussing-nuclear-weapons" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Live updates: Jared Kushner meets with regional leaders as multiple conflicts roil the Middle East - CNN</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE40V2dqMUJIcWdndGVfSXlVeDRKbmkzU3hrTTRyeXBrSWR3NGtUNzNkSm54X19kcDNBNzJBaVV0NEJTNVdLVVRrUlNHLXZETnFwMEIyekJhOTduVWxZQWZyVW5WQ0xua1ByTDc0OG1B?oc=5" target="_blank">Live updates: Jared K</p>
+            <h3>China Data On Tap For Monday</h3><p class="desc">BEIJING (dpa-AFX) - China is scheduled to release a batch of data on Monday, highlighting a busy day for Asia-Pacific economic activity. On tap are July figures for industrial production, retail s...</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">finanznachrichten_de</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE40V2dqMUJIcWdndGVfSXlVeDRKbmkzU3hrTTRyeXBrSWR3NGtUNzNkSm54X19kcDNBNzJBaVV0NEJTNVdLVVRrUlNHLXZETnFwMEIyekJhOTduVWxZQWZyVW5WQ0xua1ByTDc0OG1B?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+                <a href="https://www.finanznachrichten.de/nachrichten-2026-08/69324251-china-data-on-tap-for-monday-020.htm" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Centcom commander addresses mental health concerns for troops on USS Abraham Lincoln - thehill.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxONWcwLVRpOGozZy03czk4c0I1N2RSY1RmZWJXQmY0dzJUS3dzM1E3WHVTYkpHODN4TkdPOFowXzhQaDZrQ3FNLWMwZTJnLW9YZzh5VGJhNnlzU0FCZUVGUzZWdnlhdGxYNGJOOTNWRlczNGQzVmJvWVZoOHRfT004eGlMdnFJUQ?oc=5" tar</p>
+            <h3>Hawaii's Big Island begins recovery efforts as Hurricane Lala downgrades</h3><p class="desc">The storm reached Category 1 strength on Saturday, generating winds up to 120 km/h before weakening and moving away.</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">Google News (Global)</span>
+                <span class="source">freemalaysiatoday</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxONWcwLVRpOGozZy03czk4c0I1N2RSY1RmZWJXQmY0dzJUS3dzM1E3WHVTYkpHODN4TkdPOFowXzhQaDZrQ3FNLWMwZTJnLW9YZzh5VGJhNnlzU0FCZUVGUzZWdnlhdGxYNGJOOTNWRlczNGQzVmJvWVZoOHRfT004eGlMdnFJUQ?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+                <a href="https://www.freemalaysiatoday.com/category/world/2026/08/17/hawaii-s-big-island-begins-recovery-efforts-as-hurricane-lala-downgrades" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Lala is again a tropical storm, sending drenching rain and high winds across the Hawaiian islands - AP News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPaHJWdmptUWhHamR5OFQ2ckI0Qlk5YjRIcnBNa1dCdzNBaktSdnNtdHhLNHFZNlE3VHZWa1JMWVpMTWN2dkhuemhVT1VRSGxLNXRYZ2M3aHB2cnpvZW5nS2FqMHBsTXpHVGNqYWl5SXRfblFETEFTT3ExeTVYNEtBNlhrYnkzSi1tU3FKcGRS</p>
+            <h3>Benue Lawmaker Counters Police, Says Herders Killed Over 10 In Ukum Attacks</h3><p class="desc">The member representing Ukum State Constituency in the Benue State House of Assembly, Ezra Nyiyongo, has disclosed that suspected armed herders who invaded some communities in Ukum Local Government Area killed over 10 people. The police had earlier c</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">leadership</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://leadership.ng/benue-lawmaker-counters-police-says-herders-killed-over-10-in-ukum-attacks/" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Teodoro claps back at Chinese Embassy</h3><p class="desc">THE Department of National Defense (DND) on Sunday blasted the Chinese Embassy in Manila over its recent statements against Defense Secretary Gilberto Teodoro, who alleged a “cover-up” of illegal activities involving Chinese in the country. In a stat</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">manilatimes</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.manilatimes.net/2026/08/17/news/teodoro-claps-back-at-chinese-embassy/2406450" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Flock tries to quell surveillance fears as questions pile up</h3><p class="desc">Flock Safety is facing a growing backlash across the country from communities and civil liberties advocates concerned over the surveillance technology company’s network of AI-powered license plate readers.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">wsav</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.wsav.com/news/national-news/flock-tries-to-quell-surveillance-fears-as-questions-pile-up/" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Sandusky Police Department</h3><p class="desc">The Sandusky Police Department is investigating a shooting that hospitalized two people Sunday.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">cleveland19</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.cleveland19.com/2026/08/16/sandusky-police-investigate-shooting-that-left-two-hospitalized/" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Sandusky police investigate shooting that left 2 hospitalized</h3><p class="desc">The Sandusky Police Department is investigating a shooting that hospitalized two people Sunday.</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">thirteen_abc</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.13abc.com/2026/08/16/sandusky-police-investigate-shooting-that-left-2-hospitalized/" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>AP Sports SummaryBrief at 6:23 p.m. EDT</h3><p class="desc">Tommy John, namesake for a pioneering elbow surgery that saved his career, dead at 83</p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">itemonline</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.itemonline.com/ap-sports-summarybrief-at-6-23-p-m-edt/article_89a0a21b-6ea7-55f7-9b80-7e75a5d18e39.html" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Jays get day off after tough, successful run that put them back in the playoff hunt</h3><p class="desc"></p>
+            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">chroniclejournal</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
+                <a href="https://www.chroniclejournal.com/sports/national_sports/jays-get-day-off-after-tough-successful-run-that-put-them-back-in-the-playoff/article_31cecf59-1592-5af2-a93c-a815651b31b5.html" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Trump orders military to ‘substantially reduce’ joint exercises with South Korea - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxOd21KS2xQcXVlUjVJbkpxeFRiVlVXU1Jxd3FxekNfV1Vab01xd2luRHR3M0ZGd1UzMFNza2NpaElXRWt5NnJWX3J5YkpWMVZQZ2M3a1VxUzFnZEdKdVIyd0Y0Y0ZtMk53eklZRlRqMmpTN3hsSzRKZmR4U25xVWp5UjhCRE9DYU5velo0RkVm</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPaHJWdmptUWhHamR5OFQ2ckI0Qlk5YjRIcnBNa1dCdzNBaktSdnNtdHhLNHFZNlE3VHZWa1JMWVpMTWN2dkhuemhVT1VRSGxLNXRYZ2M3aHB2cnpvZW5nS2FqMHBsTXpHVGNqYWl5SXRfblFETEFTT3ExeTVYNEtBNlhrYnkzSi1tU3FKcGRSRmh5OHZvUFJ2LU9wZTJyUQ?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxOd21KS2xQcXVlUjVJbkpxeFRiVlVXU1Jxd3FxekNfV1Vab01xd2luRHR3M0ZGd1UzMFNza2NpaElXRWt5NnJWX3J5YkpWMVZQZ2M3a1VxUzFnZEdKdVIyd0Y0Y0ZtMk53eklZRlRqMmpTN3hsSzRKZmR4U25xVWp5UjhCRE9DYU5velo0RkVmN3VuczUzMnM3Y25wcG5HYU5jbDdHX0Y5aF9lbUJ6ZG01amVoazcyUlhkeEtaV1g4UTZkbzIwYktqNThZVGZTM0pS?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
             </div>
         </div>
         <div class="card">
@@ -51,17 +121,7 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Trump says White House needs ‘military complex’ as courts block his ballroom - The Washington Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdVAyWkp4bHp3dG43b091aHRldFRfcUpIN2hma212NDRWWFp0Nk5IVXRoQ3ZTRnktdlRUUG5WNUE4RGd4X0NvVW5SeWllUkRFSHo2bmxRNUxUaGlyYjlyd0wwMGdwSWNTTVlmOHZ2SGRWODZVc2lKRzQtRDVvU2JIMm82TmROTUx5d2x0akl3</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdVAyWkp4bHp3dG43b091aHRldFRfcUpIN2hma212NDRWWFp0Nk5IVXRoQ3ZTRnktdlRUUG5WNUE4RGd4X0NvVW5SeWllUkRFSHo2bmxRNUxUaGlyYjlyd0wwMGdwSWNTTVlmOHZ2SGRWODZVc2lKRzQtRDVvU2JIMm82TmROTUx5d2x0akl3WlM0LWNGVm92OG5vWWxrQVJ5aXBaWVRtTnBZajl0d0hIdUxla2NzM3QxNENIZy16aE8?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>At least 7 people have died from days of heavy rain and record-setting flooding in Indiana - AP News</h3><p class="desc"><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNQ2kwWjVwQkgtUEowdElQck1LekNsOEhfWXVJWUo1Szg3UFVudkV6U1RWYlRZM1lXdzloWFFBdmFpUkJ2RlQ5NnAwUmJZbkNkYTFJUEVjWWNIWmwxdDZaOVFKOWxTZ0dYLVJ6QXNmbUNOMzR2R0ltX1JSOHdhSFVmcFlGYncyWDhCeFJ0Rk96d1V3dktZ</p>
+            <h3>At least 7 people have died from days of heavy rain and record-setting flooding in Indiana - AP News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNQ2kwWjVwQkgtUEowdElQck1LekNsOEhfWXVJWUo1Szg3UFVudkV6U1RWYlRZM1lXdzloWFFBdmFpUkJ2RlQ5NnAwUmJZbkNkYTFJUEVjWWNIWmwxdDZaOVFKOWxTZ0dYLVJ6QXNmbUNOMzR2R0ltX1JSOHdhSFVmcFlGYncyWDhCeFJ0Rk96</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
@@ -71,81 +131,21 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Years of Trump Support Came Undone in 15 Minutes in an Airport. - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE00TjMtZ0FneTdkYTZSUnFaNmprTmNucC01NWRGWlVnZXJYNVVxVjVIaWtNSlhwLUZqMkh0enE0QWp6STBhZHhkNzNsQlgwNVJweXZ0MDZWWUg1bTNCMGlwN005N013WmtGWlNPZWVhX2U0amxkNjlpcTdR?oc=5" target="_blank">Years</p>
+            <h3>Hurricane Lala cuts power to thousands in Hawaii — rural outages could last months - sfchronicle.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNc2toQ3FCZUlPcXc4NUlxMk9ZYnFGSVUxVmdRWUZBOWhIUUFXT19WeU9mN3FTX1RyLUdDTmdmVEtfZm5JQTB2MUIwRlUwX05uUlFndUpEU0VBZVlIbjFQaVl1WEprUURYdDlkNjZuZkQwV1lnd3dxc2k2SlA2NGJwRFc1Z3dtSDlhZVl6N1BC</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE00TjMtZ0FneTdkYTZSUnFaNmprTmNucC01NWRGWlVnZXJYNVVxVjVIaWtNSlhwLUZqMkh0enE0QWp6STBhZHhkNzNsQlgwNVJweXZ0MDZWWUg1bTNCMGlwN005N013WmtGWlNPZWVhX2U0amxkNjlpcTdR?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNc2toQ3FCZUlPcXc4NUlxMk9ZYnFGSVUxVmdRWUZBOWhIUUFXT19WeU9mN3FTX1RyLUdDTmdmVEtfZm5JQTB2MUIwRlUwX05uUlFndUpEU0VBZVlIbjFQaVl1WEprUURYdDlkNjZuZkQwV1lnd3dxc2k2SlA2NGJwRFc1Z3dtSDlhZVl6N1BCWGhkS0QtVDBUTQ?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Transcript: Rep. Don Bacon on "Face the Nation with Margaret Brennan," Aug. 16, 2026 - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPN2wySVRtVm8tZW9HTUZFV3hScmY1ZUJ1WktsRjB5aExZdFFNTk95Vjh2b1lmSmxCVVJoNkMwOERZQzc5UkdRTXg1U3pZTXptLXRrQ2dCQXU4SWRmSGR1bEhsRkM1SVpZb0pOQ19CNHpaWERXNmk5NXBzR0xiVE9uQ3o3bnZSMTBaUUNzdTRz</p>
+            <h3>Trump says White House needs ‘military complex’ as courts block his ballroom - The Washington Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdVAyWkp4bHp3dG43b091aHRldFRfcUpIN2hma212NDRWWFp0Nk5IVXRoQ3ZTRnktdlRUUG5WNUE4RGd4X0NvVW5SeWllUkRFSHo2bmxRNUxUaGlyYjlyd0wwMGdwSWNTTVlmOHZ2SGRWODZVc2lKRzQtRDVvU2JIMm82TmROTUx5d2x0akl3</p>
             <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPN2wySVRtVm8tZW9HTUZFV3hScmY1ZUJ1WktsRjB5aExZdFFNTk95Vjh2b1lmSmxCVVJoNkMwOERZQzc5UkdRTXg1U3pZTXptLXRrQ2dCQXU4SWRmSGR1bEhsRkM1SVpZb0pOQ19CNHpaWERXNmk5NXBzR0xiVE9uQ3o3bnZSMTBaUUNzdTRzTC1zUzFJdVV1Y3d4S3l5dw?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>13-year-old Michigan girl who was shot 4 times helped police ID gunman who killed her family - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE0zeXhzNlY3VDZab2luSXlPVHc4UE1KdnI1R3dqd1lEaGd3X3FtNnVKVm9PZjdIQ0pLUzVPakhmQ2c2ZWVoRW1sY3kzZlJ4azBHYllvR1hheTFpaTFRWVoxQWJSSEpObEdxVWxwVXZDZ3hEdldSSUNJRHZPRkptdw?oc=5" target="_blank"</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE0zeXhzNlY3VDZab2luSXlPVHc4UE1KdnI1R3dqd1lEaGd3X3FtNnVKVm9PZjdIQ0pLUzVPakhmQ2c2ZWVoRW1sY3kzZlJ4azBHYllvR1hheTFpaTFRWVoxQWJSSEpObEdxVWxwVXZDZ3hEdldSSUNJRHZPRkptdw?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Brazil's Lula and Flávio Bolsonaro return to their strongholds to kick off presidential campaigns - AP News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxNTlBoRmhQRUp0V2J5aFNhVEhOSW9FY3pKQkVKdko0UE5vRjN6WjE4VUU3MEdGSTU0UTZ1RVB6Uy02QjJ5eVN4bkx2bHo1UUZscGtWT21EQWhUb2lzWHlrTUctZU9OME5KMF9UMHh5cF9KaFYtZko2QV9GLVc1N0FaLUlsX1czTTNzbk5iOGxF</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxNTlBoRmhQRUp0V2J5aFNhVEhOSW9FY3pKQkVKdko0UE5vRjN6WjE4VUU3MEdGSTU0UTZ1RVB6Uy02QjJ5eVN4bkx2bHo1UUZscGtWT21EQWhUb2lzWHlrTUctZU9OME5KMF9UMHh5cF9KaFYtZko2QV9GLVc1N0FaLUlsX1czTTNzbk5iOGxFaUpmTnByaEVlUy05UTlTbldORWIxVGhn?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Kyiv launches large attack on Russian military and energy facilities - Euronews.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxNQ2hhaUsxR3BDcm92cTJiclVLLVNIQ1kxZktzajNHSkRNN0t5LTdKVGVDS05XaTZZTldZOUdZWDR1dHFiWGZrYjV6di1qMmZydW5tbGd5eEFQLTA5THRuV1k4MGN4cUxjY3BXTTkxOVFyaUNBNUNqQnFHZzBYOWdqQlRBZTA0UWh1NTNXcW5X</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxNQ2hhaUsxR3BDcm92cTJiclVLLVNIQ1kxZktzajNHSkRNN0t5LTdKVGVDS05XaTZZTldZOUdZWDR1dHFiWGZrYjV6di1qMmZydW5tbGd5eEFQLTA5THRuV1k4MGN4cUxjY3BXTTkxOVFyaUNBNUNqQnFHZzBYOWdqQlRBZTA0UWh1NTNXcW5XaXliSXM0UlFMX3E1dkp1aGFkajdrb09DY2FJSHoydm1ESjRDdEJMSVh1YVBiM3FrTEc1LXhram56WmpkcmJxVlk?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Nearly 1,000 aftershocks followed Indonesia earthquake that killed at least 53, officials say - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE83T1pObWFEcjlUbml5M01PQTU1SGRNOWlBc2tvcmtrQVFqTXdMcFEwZE00THltVGdrZVRJNHcwdFJ3MHFWdHVucGNXdjFHTEh6RTY1Vi1KMVBsaUxMRjQ2Qk5YVks4NFNmMkZJOFhtS1Z1Vmhl?oc=5" target="_blank">Nearly 1,000 </p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE83T1pObWFEcjlUbml5M01PQTU1SGRNOWlBc2tvcmtrQVFqTXdMcFEwZE00THltVGdrZVRJNHcwdFJ3MHFWdHVucGNXdjFHTEh6RTY1Vi1KMVBsaUxMRjQ2Qk5YVks4NFNmMkZJOFhtS1Z1Vmhl?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>In Spain's Ceuta, hundreds of migrants stage protest and demand asylum - reuters.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNUjduYzlVZEN3NjI2YktjT0dyU3g2cVVudlhDLV95RERScG5tZ0RHb01Sdy0tTDZnMHQxdXRTa2c5dm5DY1dmTnN5WVJnVGQzemhsYjQwem9XVDNyQ1V0cHN4S2J2NzRkREd1ZWwtRWZ4RU90SDRZckpYaXo0ZEotTkx0eHI4anlfQzV4Y25V</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNUjduYzlVZEN3NjI2YktjT0dyU3g2cVVudlhDLV95RERScG5tZ0RHb01Sdy0tTDZnMHQxdXRTa2c5dm5DY1dmTnN5WVJnVGQzemhsYjQwem9XVDNyQ1V0cHN4S2J2NzRkREd1ZWwtRWZ4RU90SDRZckpYaXo0ZEotTkx0eHI4anlfQzV4Y25VODA0MnZySVhxUXNfekowTGtmb1NLZGE3UWVuVnRDTG1MaVRRZw?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Most Gulf bourses gain despite stalled Iran talks, Hormuz disruption - reuters.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNYi10SGhJbU9xNklLZmFwR2ZoNkJtTW85b0hhbW05T3FMUzdiVDR1cXNqZ1l0VlBNeUVOb1RjZzhKWGtEWFd2WnpXbTQxS2tNczg1eGlWUlR4Uy1VNmVtNFpoTkdTZ1JiQTVYby1mU0NMZE1hV2Nid21nR2x0VjRjY3ZFNHRSZnlDRlJxZEVY</p>
-            <div class="insight"><strong>Why this matters:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentiment: Neutral</span>
-                <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNYi10SGhJbU9xNklLZmFwR2ZoNkJtTW85b0hhbW05T3FMUzdiVDR1cXNqZ1l0VlBNeUVOb1RjZzhKWGtEWFd2WnpXbTQxS2tNczg1eGlWUlR4Uy1VNmVtNFpoTkdTZ1JiQTVYby1mU0NMZE1hV2Nid21nR2x0VjRjY3ZFNHRSZnlDRlJxZEVYMFFpZ0pOMGh1NG52RFpWTGsyZEd1VXVyczFkT1cwSkFZb0FTdV92dWt1R19V?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
+                <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdVAyWkp4bHp3dG43b091aHRldFRfcUpIN2hma212NDRWWFp0Nk5IVXRoQ3ZTRnktdlRUUG5WNUE4RGd4X0NvVW5SeWllUkRFSHo2bmxRNUxUaGlyYjlyd0wwMGdwSWNTTVlmOHZ2SGRWODZVc2lKRzQtRDVvU2JIMm82TmROTUx5d2x0akl3WlM0LWNGVm92OG5vWWxrQVJ5aXBaWVRtTnBZajl0d0hIdUxla2NzM3QxNENIZy16aE8?oc=5" class="btn-link" target="_blank" rel="noopener noreferrer">Read More →</a>
             </div>
         </div></body></html>
