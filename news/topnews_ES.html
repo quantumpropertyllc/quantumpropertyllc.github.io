@@ -1,32 +1,122 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-08-18 12:22 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-08-18 03:22 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>"La acusación se basa en el juicio por asesinato de Lindsay Clancy". La defensa ahora tiene el turno de llamar a testigos - AP News</h3><p class="desc">La defensa ha comenzado a llamar a testigos en el juicio cargado de emociones de Lindsay Clancy. La fiscalía suspendió su caso el lunes después de tres semanas de testimonio en el juicio de la madre de Massachusetts que admitió haber matado a sus tres hijos pequeños.</p>
+            <h3>Mercado de valores hoy: el Dow cae; Acciones de IA y tensiones en Irán en el foco: actualizaciones en vivo - WSJ</h3><p class="desc">Actualizaciones en vivo sobre los mercados y las principales historias de finanzas, economía y negocios. Además de lo último sobre los precios del petróleo, el Dow, el S&P 500 y el Nasdaq.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">The Wall Street Journal</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.wsj.com%2Flivecoverage%2Fstock-market-today-dow-sp-500-nasdaq-08-17-2026" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Ossoff apunta a un colaborador cercano de Trump, lanzando una disputa personal con la Casa Blanca mientras se avecinan las elecciones intermedias - CNN</h3><p class="desc">Un legislador demócrata clave y aspirante a 2028 está provocando una disputa personal que podría repercutir en una carrera de mitad de mandato crítica en un campo de batalla.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">CNN</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F17%2Fpolitics%2Fossoff-natalie-harp-trump" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Salvavidas adolescente que salvó a un niño en Seabright Beach para reunirse con el presidente Trump en la Casa Blanca - KSBW</h3><p class="desc">Un salvavidas de 16 años cuyo dramático rescate de un niño en Seabright State Beach captó la atención nacional se reunirá con el presidente Donald Trump en la Casa Blanca el lunes.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">KSBW The Central Coast</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.ksbw.com%2Farticle%2Flifeguard-saved-boy-seabright-beach-meet-president-trump%2F73448260" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Trump no logra revertir el veredicto de E. Jean Carroll en la Corte Suprema - axios.com</h3><p class="desc">La Corte Suprema ya se negó una vez a desestimarlo a principios de este año.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Axios</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.axios.com%2F2026%2F08%2F17%2Fsupreme-court-rejects-trump-e-jean-carroll-verdict" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Palestino-estadounidense regresa a Cisjordania para defender su hogar sitiado por colonos israelíes - apnews.com</h3><p class="desc">Un palestino estadounidense cuya casa en la ocupada Cisjordania ha sido asediada por colonos israelíes durante más de una semana llegó allí para ayudar a sus familiares a defender la propiedad. El enfrentamiento en Qusra tiene a los colonos rodeando las casas palestinas, impidiendo</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Associated Press</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Flindsay-clancy-postpartum-murder-trial-prosecution-5fa1e451f824009b35f8888702356aaa" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fisrael-west-bank-palestinian-american-israeli-settlers-515e39a03c3e7cb00528c466bf106270" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Roberts critica a Shohei Ohtani y los Dodgers de Tarik Skubal después de la derrota ante los Cerveceros en medio de la carrera por la clasificación de la Liga Nacional - blanqueadorreport.com</h3><p class="desc">Después de perder tres de cuatro juegos contra los Cerveceros de Milwaukee el fin de semana pasado, las esperanzas de los Dodgers de Los Ángeles de tener ventaja de local en los playoffs de 2026 sufrieron un gran golpe.</p>
+            <h3>Kushner y Netanyahu coinciden en que el general estadounidense debería supervisar la "desmilitarización" de Hamas, dice una fuente - NBC News</h3><p class="desc">El primer ministro israelí, Benjamín Netanyahu, y el yerno y enviado del presidente Donald Trump, Jared Kushner, acordaron el lunes que la “desmilitarización” de la Franja de Gaza debería comenzar con una entrega de armas a Hamás supervisada por un general militar estadounidense.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">Bleacher Report</span>
+                <span class="source">NBC News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fbleacherreport.com%2Farticles%2F25472944-roberts-calls-out-shohei-ohtani-tarik-skubals-dodgers-after-loss-brewers-amid-nl-standings-race" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fworld%2Fgaza%2Fkushner-netanyahu-hamas-talks-gaza-plan-peace-trump-rcna592871" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Mercado de valores hoy: índices mixtos en las primeras operaciones después del S&P 500 y Nasdaq Notch por tercera semana consecutiva de ganancias; Las acciones de memoria tienen un rendimiento superior - Investopedia</h3><p class="desc">Los principales índices bursátiles estadounidenses tuvieron resultados mixtos en las primeras operaciones del lunes, con las acciones de memoria liderando las ganancias, después de que el S&P 500 y el Nasdaq Composite subieran por tercera semana consecutiva.</p>
+            <h3>Calificaciones de novatos de la Semana 1 de pretemporada: El QB polarizador deslumbra - NFL.com</h3><p class="desc">¿Tiene Denver otra arma potente en el backfield? ¿Cómo se vio el polarizador seleccionado de primera ronda Ty Simpson en su debut? ¿OLB Malachi Lawrence está listo para ofrecer retornos instantáneos en Dallas? Chad Reuters califica una actuación de novato notable de cada uno</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">Investopedia</span>
+                <span class="source">NFL News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.investopedia.com%2Fstock-market-today-dow-jones-s-and-p-500-08172026-12061093" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nfl.com%2Fnews%2F2026-nfl-preseason-week-1-rookie-grades-rams-qb-ty-simpson-aces-first-test-broncos-rb-makes-impact" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Ohio State y Oregon encabezan la encuesta AP de pretemporada sobre fútbol universitario - espn.com</h3><p class="desc">Ohio State y Oregon tuvieron marca de 1-2 en el Top 25 de AP, lo que le dio a la Conferencia Big Ten los dos mejores equipos en la clasificación de pretemporada por primera vez en 65 años.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">ESPN</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.espn.com%2Fcollege-football%2Fstory%2F_%2Fid%2F49639557%2Fohio-state-oregon-headline-preseason-ap-college-football-poll" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Zuckerberg se enfrenta a un posible ajuste de cuentas en los tribunales por los efectos de Instagram en los adolescentes - The Washington Post</h3><p class="desc">Cuatro estados exigen a Meta 1,4 billones de dólares en daños y perjuicios por presuntos daños a usuarios jóvenes.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.washingtonpost.com%2Ftechnology%2F2026%2F08%2F17%2Fmeta-faces-federal-trial-demanding-14-trillion-alleged-teen-harms%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Sonos acaba de lanzar Live Activity en iPhone - 9to5Mac</h3><p class="desc">La aplicación Sonos en iPhone acaba de agregar una gran característica nueva: Actividades en vivo. Aquí están los detalles sobre cómo funcionan.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">9to5Mac</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2F9to5mac.com%2F2026%2F08%2F17%2Fsonos-just-launched-live-activities-on-iphone%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Imágenes muestran el alcance de las inundaciones generalizadas en Indiana - USA Today</h3><p class="desc">Al menos siete personas han muerto en Indiana después de que tormentas e inundaciones obligaran a muchos a evacuar sus hogares.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">USA Today</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.usatoday.com%2Fstory%2Fnews%2Fweather%2F2026%2F08%2F17%2Findiana-flooding-photos-videos%2F91333951007%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Amy Schumer protagonizará y producirá la comedia sobre rupturas 'Best Divorce Ever' (EXCLUSIVO) - variedad.com</h3><p class="desc">Best Divorce Ever proviene del escritor y director Sean Mullin, y Concourse Media lanza las ventas mundiales en Toronto.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Variety</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fvariety.com%2F2026%2Ffilm%2Fglobal%2Famy-schumer-star-in-produce-comedy-best-divorce-ever-1236836178%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
@@ -41,111 +131,21 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Actualizaciones en vivo: Trump amenaza con bombardear a Omán, aliado de Estados Unidos, cuando expira el acuerdo con Irán - CNN</h3><p class="desc">Mientras tanto, el yerno del presidente, Jared Kushner, se reunió con el primer ministro israelí, Benjamin Netanyahu, para conversar sobre el plan de alto el fuego en Gaza. Siga nuestras actualizaciones en vivo.</p>
+            <h3>Apple mantiene un claro liderazgo en el mercado de relojes inteligentes, pero está surgiendo un nuevo competidor en un segmento clave de dispositivos portátiles - PhoneArena</h3><p class="desc"></p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">CNN</span>
+                <span class="source">PhoneArena</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F17%2Fworld%2Flive-news%2Firan-war-trump" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.phonearena.com%2Fnews%2Fapple-retains-smartwatch-market-lead-new-contender-rising-wearable-segment-q2-2026-report_id182624" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El rápido brote de ébola en el Congo se convierte en el peor del país con más de 2.300 muertos - AP News</h3><p class="desc">El rápido brote de ébola en el Congo ha matado a más de 2.300 personas. Esa cifra publicada durante la noche lo convierte en el brote más mortífero de la enfermedad jamás registrado en la nación centroafricana. El brote ha registrado 4.945 casos, incluidas 2.325 muertes.</p>
+            <h3>Nick Reiner choca con el administrador por el dinero del fondo fiduciario para la defensa criminal: fecha límite</h3><p class="desc">Meses después de perder a su abogado de primer nivel por falta de dinero en efectivo, Nick Reiner, que enfrenta una posible pena de muerte, quiere que un juez le dé acceso al fondo fiduciario.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
-                <span class="source">Associated Press</span>
+                <span class="source">Deadline</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fcongo-ebola-disease-ituri-bundibugyo-outbreak-d4a5aac8a82a35144ebfe9de96bef7d2" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Lena Dunham y Carly Rae Jepsen debutan en Broadway en 2027 con el musical '10 Things I Hate About You' - Variety.com</h3><p class="desc">El musical "10 Things I Hate About You" de Lena Dunham y Carly Rae Jepsen llegará a Broadway el próximo año.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Variety</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fvariety.com%2F2026%2Flegit%2Fnews%2F10-things-i-hate-about-you-musical-broadway-date-lena-dunham-1236836227%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los precios del petróleo suben mientras Irán descarta una extensión del acuerdo provisional y amenaza con intensificar el conflicto - CNBC</h3><p class="desc">Se suponía que el acuerdo entre Estados Unidos e Irán abriría el Estrecho de Ormuz mientras negociaban un acuerdo final sobre el programa nuclear de Teherán dentro de 60 días.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">CNBC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnbc.com%2F2026%2F08%2F17%2Foil-prices-iran-war-strait-hormuz.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Muere el ex lanzador de la MLB Tommy John a los 83 años - NBC News</h3><p class="desc">Tommy John, el veterano lanzador de béisbol de las Grandes Ligas cuyo nombre estará vinculado para siempre a la innovadora cirugía de codo que salvó su carrera y la de muchos otros desde entonces, falleció, dijeron funcionarios el domingo.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">NBC News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fsports%2Fbaseball%2Fformer-mlb-pitcher-tommy-john-dies-age-83-rcna592800" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Muere Hayden Panettiere, protagonista de las series de televisión 'Heroes' y 'Nashville', a los 36 años - AP News</h3><p class="desc">Hayden Panettiere murió a los 36 años. Protagonizó series de televisión como “Heroes” y “Nashville”. La policía de Greenville, Carolina del Sur, dice que Panettiere fue encontrado inconsciente en un complejo de apartamentos el domingo. Dicen que no había señales de</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">Associated Press</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fhayden-panettiere-dies-1d660d3989916c3fa00421d05e4d78e7" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>La profesional de “DWTS”, Witney Carson, está embarazada y espera el tercer bebé con su esposo Carson McAllister (exclusivo) - Yahoo News Canadá</h3><p class="desc">Witney Carson está embarazada y esperando su tercer bebé con su esposo Carson McAllister, y compartió la noticia en 'Good Morning America'. La profesional de 'Dancing with the Stars' habló con PEOPLE exclusivamente sobre su embarazo en una entrevista reciente.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">PEOPLE</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fpeople.com%2Fdwts-pro-witney-carson-expecting-baby-no-3-with-husband-carson-mcallister-11872619" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los niños siempre están mirando. Lo que los padres que toman GLP-1 deberían considerar sobre los cambios en su cuerpo - CNN</h3><p class="desc">Dado que muchos padres toman medicamentos GLP-1, a algunos les preocupa cómo los cambios de su cuerpo podrían afectar a sus hijos. Los expertos destacan el valor de enseñar a los niños al respecto.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">CNN</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F17%2Fhealth%2Fglp1-parents-body-image-wellness" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Meta enfrenta consecuencias "astronómicas" mientras la lucha legal llega a un momento crítico en California - CNBC</h3><p class="desc">Meta enfrenta un juicio federal por afirmaciones de seguridad infantil que podrían acarrear importantes sanciones financieras y cambios en Facebook e Instagram.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">CNBC</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnbc.com%2F2026%2F08%2F17%2Fmeta-attorneys-general-california-federal-trial-astronomical-consequences.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Actualizaciones en vivo: Continúan las inundaciones en partes de Indiana mientras otras recurren a la limpieza - IndyStar</h3><p class="desc">Los reporteros de IndyStar continúan con la cobertura en vivo de las inundaciones históricas en todo el estado.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">The Indianapolis Star</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.indystar.com%2Fstory%2Fweather%2F2026%2F08%2F17%2Flive-updates-indiana-flooding-continues--live%2F91333854007%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>¿Qué tiene que ver el 'poliéster' con la Generación Z? Todo, aparentemente - USA Today</h3><p class="desc">La Generación Z ha convertido el “poliéster” en un insulto. Así es como el tejido familiar adquirió un significado nuevo y desfavorable.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">USA Today</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.usatoday.com%2Fstory%2Flife%2Fhealth-wellness%2F2026%2F08%2F17%2Fpolyester-gen-z-tiktok-insult-explained%2F91285172007%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=http%3A%2F%2Fdeadline.com%2F2026%2F08%2Fnick-reiner-trust-fund-murder-britney-spears-1237042202%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div></body></html>
