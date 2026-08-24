@@ -1,107 +1,37 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-08-24 06:30 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>头条新闻的最新更新。</p><div class="divider"></div><p class="insight-text">AI 丰富功能暂时不可用。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-08-24 09:43 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</span></div></div></div><div class="brief"><h2>今日简报</h2><p>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p><div class="divider"></div><p class="insight-text">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>《Johnny Angel》歌手、《Donna Reed Show》和《Coach》明星雪莱·法巴雷斯 (Shelley Fabares) 去世，享年 82 岁</h3><p class="desc">雪莱·法巴雷斯 (Shelley Fabares) 去世了，她是一名演员，从十几岁的时候就出演过《唐娜·里德秀》，一直到《一次的一天》和《教练》，数十年来一直是电视上的常客。她的家人在一份声明中称，她于周六在洛杉矶去世，享年 82 岁。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <h3>美国贸易代表格里尔指责加拿大关税谈判失败：“他们想要更多” - CNBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE5EekJabXFaenV0eXFYMWRIM0dxbzMyTzBRRMGN4Zzd1bUNQVlBiV3VMVTlfZkcx NEs2ZU95TTg5dEJzS3kxbTg1SnBNM1RKZWl2M18zRU5Ea0ljY0k5d0p6NnpJZ3NGNWVkZmRER3VWaE9EbXA1LXBvZdIBfkFVX3lxTE5NWEtlcWFWSVFxdEdX</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
-                <span class="source">cbnc</span>
+                <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fcbnc.com%2Fshelley-fabares-johnny-angel-singer-the-donna-reed-show-and-coach-star-dies-at-82%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.cnbc.com%2F2026%2F08%2F24%2Ftrump-canada-trade-tariffs-greer.html" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>怪物24小时雨弹浸泡该州大部分地区</h3><p class="desc"></p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">adelaidenow_au</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.adelaidenow.com.au%2Fnews%2Fsouth-australia%2Fadelaide-braces-for-deluge-as-heavy-rain-set-to-lash-south-australia%2Fnews-story%2F95e12942cbcdd75144030daf6d11e5c3" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>南卡罗来纳州杰克逊市发生致命单车车祸</h3><p class="desc">气象学家亚历克斯·卡特对周日和下周的天气有更多预测：</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">wfxg</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wfxg.com%2Fnews%2Ffatal-single-vehicle-crash-in-jackson-s-c%2Farticle_4b2a0768-abcf-4062-86ef-28de164477c5.html" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>卫报7-2横扫落基山脉：他们能永远留在库尔斯球场吗？</h3><p class="desc">卫报队自全明星赛前横扫马林鱼队以来，首次横扫落基山脉队。</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">cleveland</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.cleveland.com%2Fguardians%2F2026%2F08%2Fguardians-complete-sweep-of-rockies-with-7-2-win-can-they-stay-at-coors-field-forever.html" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>托雷斯在巴黎圣日耳曼首秀梅开二度，巴塞罗那大获全胜，萨拉赫进球</h3><p class="desc">费兰·托雷斯在巴黎圣日耳曼队首秀中梅开二度，帮助法国卫冕冠军在联赛揭幕战中2-2战平雷恩，而巴塞罗那则开始卫冕西班牙联赛冠军……</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">myplainview</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.myplainview.com%2Fsports%2Farticle%2Ftorres-scores-twice-in-debut-to-help-psg-salvage-22400287.php" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>温德姆克拉克击败麦克罗伊和坎特利夺得宝马锦标赛今年的第三场胜利</h3><p class="desc">英石。圣路易斯（美联社）——温德姆克拉克之前就经历过这种情况——在最后一轮中失去了巨大的领先优势，与画廊最喜欢的选手并肩作战。他周日在宝马锦标赛上表现强劲，就像他在美国公开赛上一样，并以平局结束</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">infonews_ca</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Finfonews.ca%2Fnews%2F7828446%2Fwyndham-clark-holds-off-mcilroy-and-cantlay-to-capture-bmw-championship-for-3rd-win-this-year%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>加拿大拒绝美国关税协议。现在经济成本来了 - Bloomberg.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNUVFBQ3R0WHZJV2xnd0I4RVIxUjdNS2hoVGRaZUpPaW5OcFdFVEloM0JoT1Rq MzZmMUXHT1RKCNA4LUxQTmgyMy1YR09zVHBGTDMzbEhjdjFpRENjYzFnOXp5N2VqMzFvclRDdl9MTTVqRnpFUnJ2c203NzUwUDBqUlY1djFqbzZucnpGZmg4</p>
+            <h3>美伊战争最新消息：随着美国即将推出“经济诺曼底登陆”，伊朗货币兑美元汇率跌至历史新低 - CNN</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.bloomberg.com%2Fnews%2Farticles%2F2026-08-23%2Fcanada-turned-down-a-us-tariff-deal-now-comes-the-economic-cost" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F24%2Fworld%2Flive-news%2Firan-war-trump" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>实时更新：特朗普警告德黑兰将迎来“经济诺曼底登陆”后，美国财政部将公布新的伊朗制裁措施 - 哥伦比亚广播公司新闻</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxOUEpzNDk2c1V6WnVlU0lpVnpZWlE4OC1YNl91RURET211TzluVGFCR0VYRm5q ZkxMU1ZVTU9Sc2xzMXBudzhwcVppb1YxNlpDc1EySjVNV0xkSlRIS2VJU1FPMmtXdm52OHJJQ2cwUzdDX2NBLTQ1Tk5NNXk1RWtsSExqeDVRTnM0b2c?oc=5</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.cbsnews.com%2Flive-updates%2Firan-war-us-trump-sanctions-strait-of-hormuz%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.nbcnews.com%2Fnews%2Fus-news%2Ffast-moving-wildfire-shifting-winds-threatens-reno-nevada-forcing-thou-rcna594079" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>风向变化中快速蔓延的野火威胁内华达州里诺，迫使数千人撤离 - 美联社新闻</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNVUpEM0MwOHJxRV9tR2NuUKV6NFFBSzFwRHM3dmp2Z2U1TlBaTVRWY1ZDNDg2 U0NTX0V0dlJVSkVNZF9FV1dDY2F4ZFBaMkhuVjl1MHRVYXZPZm1SUlRCOEZoa1lTZ0toek0wYVJIN2d0eTEtSXFYLVdOVFNOdHZYM0pzZXNKb2NscjNFLTho</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fapnews.com%2Farticle%2Fhawk-fire-reno-nevada-evacuations-aae2f4b77e2d4aa5678b365a2ee377e6" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>数据中心的“哦天哪”时刻 - Politico</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOclF4bTlPQkZtM0wyZmJKbmxZWkJicXZRM05ya1o2ZTZqWl9SVUxSWG5 kSWtacUNwQm05bkNtZk5TMl9CUHQzd2JHclVkOTg4X3lBUGNYZE1PUU95ZTJ2Z3ZTeS1ZZDFIU0VyY1lSUDFLNDdjcGlCMmhqNkRzQkZxMFF3?oc=5"目标=“_</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.politico.com%2Fnews%2F2026%2F08%2F24%2Fdata-centers-oh-s-t-moment-01046465" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>前官员称，白宫秘密掩体削弱了特朗普的舞厅诉讼 - 《华盛顿邮报》</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPRG0yU1RpS1pST0xTRjJxS0lqT1ZEbEhuVzlsb2xGOWVGVEJXTExGVzZXSDRE R0l4dW42VWMtY255Z1o4SG9ZNmo2ODlTRWNjR2pVWVAyVEx1eHhrSVpTWVpPUTFiMzJ5X2VPRS03RlZkMlVuNTNNN1V1d1VPaTczRWxpWUh2YUDKCFJaX1NO</p>
+            <h3>前官员称，白宫秘密掩体削弱了特朗普的舞厅诉讼 - 《华盛顿邮报》</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
@@ -111,41 +41,111 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>英国伯纳姆将访问乌克兰并计划支持远程导弹生产 - 路透中文网</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxNUlJiOHBHQVlWUC1FMFFFMUctRkpSVnZlOS1LTmVQQ3kxWkZTRU9FSVJzaC0t WTJyaTlUbWhYc0pnWTdBejhaemt6YllZbUx6MDV0QVlvMTVuQUx0LURPdm9qVEZ3eEtKQ01EeHMtY0pHVVJkyTVuVUFUCENEVm53cmFFQmE2QWU4SEVBVTVi</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <h3>数据中心的“哦天哪”时刻 - Politico</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.reuters.com%2Fworld%2Fuk%2Fuks-burnham-visit-ukraine-with-plan-support-long-range-missile-production-2026-08-23%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.politico.com%2Fnews%2F2026%2F08%2F24%2Fdata-centers-oh-s-t-moment-01046465" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>林赛·克兰西的三名儿童受害者在人群的支持中被遗忘：六个孩子的母亲 - 福克斯新闻</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPZE45N1lfZjhXcnFObWVBZUk4SF96UTVneENsbFg1dVJDZ0c2SVRoUG4zZUJu bW1KTzNEUTFpNWdmNXVBclNpM2ZtcGVVQmFwcmRMc25lTFJJaGJyOFdZRGNTYWVYbi1YNmV6eGIzM05GUmtoUGtOTFRVZER1MjZxMW9LdUZDenBYc21SVkVT</p>
-            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE9tWjNmNzVLell0UWQwMEJldEpBTFg4Vmo4ejQwSGVBdDUxbkhyRm1 kuWhVQmthWi01TXp2U0Y3dW9vZHdzQmVyTjh6WDkyRGFFbzNvNXhBblRUQzZZMkJGREVWQkQ3Z0RSVm02am10MjFVYl9OcVFCTlNqc1k?oc=5" target="_blank">Se</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.foxnews.com%2Fus%2Flindsay-clancy-three-child-victims-forgotten-amid-crowds-support-mother-six" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.npr.org%2F2026%2F08%2F24%2Fg-s1-139734%2Fsonya-massey-convicted-deputy" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>法庭文件称，前凤凰城警官承认参与暴力交通拦截 - AZ Family</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxOUmVPVUtXRURyeDJRUkhJQWtQVXhuTFlkT21pWmxUSHBZaUZyWkttWm1nd2Rv OU5rSWtHN0dPU2hUZ2FtZTcwOUdEZnBFZXB2RE1XWF9ubnNzV0xiMTHPYkVQTFZmM1ZqcmowVk50emxFUmlmQUotVEJtbml3WlpKWUJadmtmbjFEb045QjRX</p>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxPaW5Uei0tRXhxNWlPd3Y2XzlwZnJUeEZHODU5TUhSeDNzQ3FFYmRZbzVnMGRx AVFYT01IaXRXdDJTeUw0Q04yVkV0dnNMRmpCT0JhbW14djZHM1ViNmZ3ZWE4UFNBNndqVVJjYkJPaUthcmxzSUxqVjIzOXZOaVZVQkQ2N0V6NjFNczF1V1Nw</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.azfamily.com%2F2026%2F08%2F23%2Fformer-phoenix-officers-admit-involvement-violent-traffic-stop-court-docs-say%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.telegraph.co.uk%2Fus%2Fnews%2F2026%2F08%2F24%2Fsuperfans-rallying-behind-mother-who-killed-her-children%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>亚伯拉罕·林肯号航空母舰水手的父亲被美国移民拘留 - 路透中文网</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CMBiyaAFBVV95cUxNZHpyNnV2YVZvT29oWXgzZlZpalBjRnhaSHNWN1hxNVRXZ2tzenZqUmhFYUtJ CW51MjR6VExsMWtwenlWOXFRTHFUcVJJZEJNRnVZSjNxZ1VNWk55ODNNTGRLcUp6RDhXcXlYX2tHakNSVEZLYTFEc2ZoeFVyRVhEMWJ4djVxMUJuTnUyeFZ4</p>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxNNUFYNFBoODNBNnJxWTVld29GU2NrQlo4anBOV3FIejg0Ul9wTm5rdTNoQVBC TmFaNDNUZWI1R2thUU02dXlDdnotV1pTZElDcnV6eHJJajdvV0pTc0Y1a24xcDFmNEVla1FSWDAtU1ZfMF84NDdKX2o3UWJSSjQtekhGYUVGT1VYSVd6UVRS</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.pbs.org%2Fnewshour%2Fpolitics%2Fjared-kushner-and-democratic-leader-jeffries-meet-with-house-control-at-stake-in-november" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><一href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOcm1USHpKYVZoUUxhNWxfR3I2R25nUkFwS2RVdmFLNWZkaTVKczZRZk5XTUFOM3 AwLWl6cXQwbDY4N0U3YURVVjJkb1FDQ3VwTjF0aTMwY2tpNkZOOVJfZ1k2MXg2U0ctWnJoT1VpRHpGc1A5UkM1b09QYjhjRndaTW9KSlhwSkxSUWE5Rg?oc=5"焦油</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.nytimes.com%2F2026%2F08%2F24%2Fus%2Fconservative-women-manosphere-disapproval.html" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>共和党如何应对数据中心的强烈反对以及特朗普为何将重心转向朝鲜：晨间简报 - NBC 新闻</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.nbcnews.com%2Fnews%2Fus-news%2Fgop-data-center-backlash-trump-pivoting-north-korea-morning-rundown-rcna593964" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.reuters.com%2Flegal%2Fgovernment%2Ffather-sailor-aboard-uss-abraham-lincoln-taken-into-us-immigration-detention-2026-08-24%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.reuters.com%2Fworld%2Fasia-pacific%2Fus-cancels-joint-marine-drills-with-south-korea-over-iran-war-related-force-2026-08-24%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>泽连斯基寻求加强防空能力，乌克兰盟友齐聚基辅 - 半岛电视台</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.aljazeera.com%2Fnews%2F2026%2F8%2F24%2Fukraines-allies-convene-in-kyiv-as-zelenskyy-seeks-air-defence-boost" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Ftimesofindia.indiatimes.com%2Fworld%2Feurope%2Fuk-participating-in-ukraine-war-what-triggered-russias-outrageous-threat-to-britan%2Farticleshow%2F133467113.cms" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.nytimes.com%2F2026%2F08%2F24%2Fworld%2Feurope%2Fukraine-war-nvidia-ai-autonomous-drones.html" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fvariety.com%2F2026%2Ffilm%2Fglobal%2Fcalifornia-ag-bonta-cancels-paramount-settlement-talks-1236841379%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div></body></html>

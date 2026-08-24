@@ -1,97 +1,47 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-08-24 06:30 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Actualizaciones de noticias</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Últimas actualizaciones de titulares de noticias.</p><div class="divider"></div><p class="insight-text">El enriquecimiento de IA no está disponible temporalmente.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-08-24 09:43 AM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p><div class="divider"></div><p class="insight-text">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Shelley Fabares, cantante de 'Johnny Angel', 'The Donna Reed Show' y estrella de 'Coach', muere a los 82 años</h3><p class="desc">Shelley Fabares, una actriz que estuvo presente en la televisión durante décadas desde su época de adolescente en “The Donna Reed Show”, hasta “One Day at a Time” y “Coach”, falleció. Tenía 82 años. Murió el sábado en Los Ángeles, dijo su familia en un comunicado.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">cbnc</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fcbnc.com%2Fshelley-fabares-johnny-angel-singer-the-donna-reed-show-and-coach-star-dies-at-82%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Monstruosa bomba de lluvia de 24 horas empapará la mayor parte del estado</h3><p class="desc"></p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">adelaidenow_au</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.adelaidenow.com.au%2Fnews%2Fsouth-australia%2Fadelaide-braces-for-deluge-as-heavy-rain-set-to-lash-south-australia%2Fnews-story%2F95e12942cbcdd75144030daf6d11e5c3" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Accidente fatal de un solo vehículo en Jackson, S.C.</h3><p class="desc">El meteorólogo Alex Carter tiene más información sobre qué esperar el domingo y la próxima semana:</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">wfxg</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.wfxg.com%2Fnews%2Ffatal-single-vehicle-crash-in-jackson-s-c%2Farticle_4b2a0768-abcf-4062-86ef-28de164477c5.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los Guardianes completan la barrida sobre los Rockies con una victoria de 7-2: ¿Podrán quedarse en Coors Field para siempre?</h3><p class="desc">Los Guardianes barren a los Rockies en su primera barrida desde que barrieron a los Marlins justo antes del Juego de Estrellas.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">cleveland</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cleveland.com%2Fguardians%2F2026%2F08%2Fguardians-complete-sweep-of-rockies-with-7-2-win-can-they-stay-at-coors-field-forever.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Torres anota dos veces en su debut con el PSG, el Barcelona gana a lo grande y Salah anota</h3><p class="desc">Ferran Torres anotó dos goles en su debut con el Paris Saint-Germain para ayudar al campeón defensor francés a empatar 2-2 en Rennes en su primer partido de liga, mientras que el Barcelona comenzó la defensa del título de la liga española...</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">myplainview</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.myplainview.com%2Fsports%2Farticle%2Ftorres-scores-twice-in-debut-to-help-psg-salvage-22400287.php" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Wyndham Clark mantiene a raya a McIlroy y Cantlay para capturar el Campeonato BMW y lograr su tercera victoria este año</h3><p class="desc">CALLE. LOUIS (AP) — Wyndham Clark ha pasado por esto antes: perder una gran ventaja en la ronda final, jugando junto a un favorito de la galería. Terminó fuerte el domingo en el Campeonato BMW, al igual que lo hizo en el Abierto de Estados Unidos, y cerró con un pa</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
-            <div class="card-footer">
-                <span class="source">infonews_ca</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Finfonews.ca%2Fnews%2F7828446%2Fwyndham-clark-holds-off-mcilroy-and-cantlay-to-capture-bmw-championship-for-3rd-win-this-year%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Canadá rechazó el acuerdo arancelario de Estados Unidos. Ahora viene el costo económico - Bloomberg.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNUVFBQ3R0WHZJV2xnd0I4RVIxUjdNS2hoVGRaZUpPaW5OcFdFVEloM0JoT1Rq MzZmMUxHT1RKcnA4LUxQTmgyMy1YR09zVHBGTDMzbEhjdjFpRENjYzFnOXp5N2VqMzFvclRDdl9MTTVqRnpFUnJ2c203NzUwUDBqUlY1djFqbzZucnpGZmg4</p>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.bloomberg.com%2Fnews%2Farticles%2F2026-08-23%2Fcanada-turned-down-a-us-tariff-deal-now-comes-the-economic-cost" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnbc.com%2F2026%2F08%2F24%2Ftrump-canada-trade-tariffs-greer.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Actualizaciones en vivo: El Tesoro de Estados Unidos dará a conocer nuevas sanciones a Irán después de que Trump advirtiera sobre el "Día D económico" para Teherán - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxOUEpzNDk2c1V6WnVlU0lpVnpZWlE4OC1YNl91RURET211TzluVGFCR0VYRm5q ZkxMU1ZVTU9Sc2xzMXBudzhwcVppb1YxNlpDc1EySjVNV0xkSlRIS2VJU1FPMmtXdm52OHJJQ2cwUzdDX2NBLTQ1Tk5NNXk1RWtsSExqeDVRTnM0b2c?oc=5</p>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F08%2F24%2Fworld%2Flive-news%2Firan-war-trump" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQT1RLeVZWWUZDVlZaV2RpOG5UNmgwSkEyNFV6VGtxaHRTZTBZSjdfdUhrc3Jl czJ6QXZkaXJiY2d6bjRlaF91Y0tGaVZQZm5YdV9qTTBxUW5nTzlWUEdlejVTMklrcGlmbW5sLXpNS2RfblFzZnFzd1hNQjd6ZUdXaEV0U3JkYmlzZklNVWxE</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Flive-updates%2Firan-war-us-trump-sanctions-strait-of-hormuz%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fnews%2Fus-news%2Ffast-moving-wildfire-shifting-winds-threatens-reno-nevada-forcing-thou-rcna594079" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Un incendio forestal que avanza rápidamente en medio de vientos cambiantes amenaza a Reno, Nevada, y obliga a miles de personas a evacuar - AP News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNVUpEM0MwOHJxRV9tR2NuUkV6NFFBSzFwRHM3dmp2Z2U1TlBaTVRWY1ZDNDg2 U0NTX0V0dlJVSkVNZF9FV1dDY2F4ZFBaMkhuVjl1MHRVYXZPZm1SUlRCOEZoa1lTZ0toek0wYVJIN2d0eTEtSXFYLVdOVFNOdHZYM0pzZXNKb2NscjNFLTho</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <h3>El búnker secreto de la Casa Blanca socava la demanda de Trump en el salón de baile, dicen exfuncionarios - The Washington Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPRG0yU1RpS1pST0xTRjJxS0lqT1ZEbEhuVzlsb2xGOWVGVEJXTExGVzZXSDRE R0l4dW42VWMtY255Z1o4SG9ZNmo2ODlTRWNjR2pVWVAyVEx1eHhrSVpTWVpPUTFiMzJ5X2VPRS03RlZkMlVuNTNNN1V1d1VPaTczRWxpWUh2YUdKcFJaX1NO</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fhawk-fire-reno-nevada-evacuations-aae2f4b77e2d4aa5678b365a2ee377e6" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.washingtonpost.com%2Fpolitics%2F2026%2F08%2F23%2Fsecret-white-house-bunker-undercuts-trumps-ballroom-lawsuit-ex-officials-say%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El momento 'oh m--t' de los centros de datos - Politico</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOclF4bTlPQkZtM0wyZmJKbmxZWkJicXZRM05ya1o2ZTZqWl9SVUxSWG5 kSWtacUNwQm05bkNtZk5TMl9CUHQzd2JHclVkOTg4X3lBUGNYZE1PUU95ZTJ2Z3ZTeS1ZZDFIU0VyY1lSUDFLNDdjcGlCMmhqNkRzQkZxMFF3?oc=5" objetivo="_</p>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
@@ -101,51 +51,101 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>El búnker secreto de la Casa Blanca socava la demanda de Trump en el salón de baile, dicen exfuncionarios - The Washington Post</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPRG0yU1RpS1pST0xTRjJxS0lqT1ZEbEhuVzlsb2xGOWVGVEJXTExGVzZXSDRE R0l4dW42VWMtY255Z1o4SG9ZNmo2ODlTRWNjR2pVWVAyVEx1eHhrSVpTWVpPUTFiMzJ5X2VPRS03RlZkMlVuNTNNN1V1d1VPaTczRWxpWUh2YUdKcFJaX1NO</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.washingtonpost.com%2Fpolitics%2F2026%2F08%2F23%2Fsecret-white-house-bunker-undercuts-trumps-ballroom-lawsuit-ex-officials-say%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.npr.org%2F2026%2F08%2F24%2Fg-s1-139734%2Fsonya-massey-convicted-deputy" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Burnham del Reino Unido visitará Ucrania con un plan para apoyar la producción de misiles de largo alcance - Reuters</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxNUlJiOHBHQVlWUC1FMFFRMUctRkpSVnZlOS1LTmVQQ3kxWkZTRU9FSVJzaC0t WTJyaTlUbWhYc0pnWTdBejhaemt6YllZbUx6MDV0QVlvMTVuQUx0LURPdm9qVEZ3eEtKQ01EeHMtY0pHVVJkYTVuVUFUcENEVm53cmFFQmE2QWU4SEVBVTVi</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.reuters.com%2Fworld%2Fuk%2Fuks-burnham-visit-ukraine-with-plan-support-long-range-missile-production-2026-08-23%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.telegraph.co.uk%2Fus%2Fnews%2F2026%2F08%2F24%2Fsuperfans-rallying-behind-mother-who-killed-her-children%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Los tres niños víctimas de Lindsay Clancy olvidados en medio de multitudes de apoyo: madre de seis hijos - Fox News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPZE45N1lfZjhXcnFObWVBZUk4SF96UTVneENsbFg1dVJDZ0c2SVRoUG4zZUJu bW1KTzNEUTFpNWdmNXVBclNpM2ZtcGVVQmFwcmRMc25lTFJJaGJyOFdZRGNTYWVYbi1YNmV6eGIzM05GUmtoUGtOTFRVZER1MjZxMW9LdUZDenBYc21SVkVT</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxNNUFYNFBoODNBNnJxWTVld29GU2NrQlo4anBOV3FIejg0Ul9wTm5rdTNoQVBC TmFaNDNUZWI1R2thUU02dXlDdnotV1pTZElDcnV6eHJJajdvV0pTc0Y1a24xcDFmNEVla1FSWDAtU1ZfMF84NDdKX2o3UWJSSjQtekhGYUVGT1VYSVd6UVRS</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.foxnews.com%2Fus%2Flindsay-clancy-three-child-victims-forgotten-amid-crowds-support-mother-six" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.pbs.org%2Fnewshour%2Fpolitics%2Fjared-kushner-and-democratic-leader-jeffries-meet-with-house-control-at-stake-in-november" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Ex oficiales de Phoenix admiten su participación en una parada de tráfico violenta, dicen documentos judiciales - AZ Family</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxOUmVPVUtXRURyeDJRUkhJQWtQVXhuTFlkT21pWmxUSHBZaUZyWkttWm1nd2Rv OU5rSWtHN0dPU2hUZ2FtZTcwOUdEZnBFZXB2RE1XWF9ubnNzV0xiMthPYkVQTFZmM1ZqcmowVk50emxFUmlmQUotVEJtbml3WlpKWUJadmtmbjFEb045QjRX</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><un href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOcm1USHpKYVZoUUxhNWxfR3I2R25nUkFwS2RVdmFLNWZkaTVKczZRZk5XTUFOM3 AwLWl6cXQwbDY4N0U3YURVVjJkb1FDQ3VwTjF0aTMwY2tpNkZOOVJfZ1k2MXg2U0ctWnJoT1VpRHpGc1A5UkM1b09QYjhjRndaTW9KSlhwSkxSUWE5Rg?oc=5" alquitrán</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.azfamily.com%2F2026%2F08%2F23%2Fformer-phoenix-officers-admit-involvement-violent-traffic-stop-court-docs-say%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nytimes.com%2F2026%2F08%2F24%2Fus%2Fconservative-women-manosphere-disapproval.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Padre del marinero a bordo del USS Abraham Lincoln detenido en un centro de detención de inmigrantes en EE.UU. - Reuters</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxNZHpyNnV2YVZvT29oWXgzZlZpalBjRnhaSHNWN1hxNVRXZ2tzenZqUmhFYUtJ cW51MjR6VExsMWtwenlWOXFRTHFUcVJJZEJNRnVZSjNxZ1VNWk55ODNNTGRLcUp6RDhXcXlYX2tHakNSVEZLYTFEc2ZoeFVyRVhEMWJ4djVxMUJuTnUyeFZ4</p>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxPVExaN01FUDFhSEp0azZBTEM0dzFFdy1tMDIzUzg5OC1INE85REJVMmxtQ3BD QVRHbnlKV0NSTG9UNmJ1ZjRqeGQ0SVc4LTFkQ21CSE1hc1lNdVBkMEJHaUpVVHA2eHQtRzQ4VEVIdWUwWkw0R0NTcmRUWFJod0c4SDNoYm01azNIc1dNdnFm</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fnews%2Fus-news%2Fgop-data-center-backlash-trump-pivoting-north-korea-morning-rundown-rcna593964" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Estados Unidos cancela ejercicios marinos conjuntos con Corea del Sur por limitaciones de fuerzas relacionadas con la guerra de Irán - Reuters</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.reuters.com%2Fworld%2Fasia-pacific%2Fus-cancels-joint-marine-drills-with-south-korea-over-iran-war-related-force-2026-08-24%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Los aliados de Ucrania se reúnen en Kiev mientras Zelenskyy busca impulsar la defensa aérea - Al Jazeera</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.aljazeera.com%2Fnews%2F2026%2F8%2F24%2Fukraines-allies-convene-in-kyiv-as-zelenskyy-seeks-air-defence-boost" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.reuters.com%2Flegal%2Fgovernment%2Ffather-sailor-aboard-uss-abraham-lincoln-taken-into-us-immigration-detention-2026-08-24%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Ftimesofindia.indiatimes.com%2Fworld%2Feurope%2Fuk-participating-in-ukraine-war-what-triggered-russias-outrageous-threat-to-britan%2Farticleshow%2F133467113.cms" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Detalles disponibles en el artículo fuente.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nytimes.com%2F2026%2F08%2F24%2Fworld%2Feurope%2Fukraine-war-nvidia-ai-autonomous-drones.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>El fiscal general de California cancela las conversaciones para llegar a un acuerdo de Paramount sobre el acuerdo Discovery de Warner Bros. por valor de 111 mil millones de dólares y dice que se reunirá cuando 'dejen de jugar' - Variedad</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fvariety.com%2F2026%2Ffilm%2Fglobal%2Fcalifornia-ag-bonta-cancels-paramount-settlement-talks-1236841379%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div></body></html>
