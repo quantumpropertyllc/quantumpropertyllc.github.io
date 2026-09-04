@@ -1,102 +1,72 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-09-03 05:50 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>本地生活的最新更新。</p><div class="divider"></div><p class="insight-text">AI 丰富功能暂时不可用。</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-09-03 09:11 PM ET</div><h1>Local Life</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#新闻动态</span></div></div></div><div class="brief"><h2>今日简报</h2><p>本地生活的最新更新。</p><div class="divider"></div><p class="insight-text">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>伊琳娜·扎鲁茨卡 (Iryna Zarutska) 的家人在火车刺伤事件后对夏洛特提起非正常死亡诉讼</h3><p class="desc">伊琳娜·扎鲁茨卡 (Iryna Zarutska) 的家人正在起诉北卡罗来纳州夏洛特市及其安全承包商，声称她被刺死时火车上没有警卫。</p>
+            <h3>联合县的奶奶在看小猫时把8个月大的孙女留在热车里，治安官说</h3><p class="desc">警员们说，她看到他们靠近后就跑向自己的车辆，然后抱着婴儿回来了。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">New York Post</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnypost.com%2F2026%2F08%2F22%2Fus-news%2Firyna-zarutskas-family-files-wrongful-death-lawsuit-against-charlotte-after-train-stabbing%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Fcrime%2Fgrandmother-left-baby-in-hot-car-union-county-north-carolina%2F275-d3b5f4a3-6b88-409e-9a01-66e38f29e862" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>观点：Jennifer Balkcom 现在必须在 NC-11 中证明什么</h3><p class="desc">来自夏洛特的北卡罗来纳州政治战略家讨论了 Jennifer Balkcom 作为新候选人在 NC-11 众议院竞选中必须证明的事情。</p>
+            <h3>创纪录的热浪从九月开始</h3><p class="desc">周二至周五，高温指数接近或超过 103 度。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">Asheville Citizen-Times</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.citizen-times.com%2Fstory%2Fopinion%2F2026%2F08%2F18%2Fnc-political-strategist-on-what-jennifer-balkcom-now-has-to-prove-in-nc-11-house-race%2F91272608007%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fweather%2Fforecast%2Fcharlotte-weather-forecast-update%2F275-50501550" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>傍晚炎热且天气晴朗，周末暴风雨将是所有人关注的焦点</h3><p class="desc">今晚：今晚天气温暖闷热，天空大部分晴朗，气温缓慢降至 70 多度。高温警告对于沙丘的部分地区仍然有效，所以如果你在那里，傍晚时分高温仍然是一个问题</p>
+            <h3>你见过他吗？ 70岁老人在夏洛特东南部失踪</h3><p class="desc">警方称，蒂莫西·让-诺埃尔最后一次出现是在周四下午，地点是 Thermal Road 地区。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">WCCB</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2Fhot-and-mostly-clear-evening-with-all-eyes-on-weekend-storms%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2F70-year-old-reported-missing-southeast-charlotte%2F275-cfa11f85-d822-422a-a6cd-0dd090eb8cd2" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>迪尔沃斯袭击嫌疑人被大陪审团起诉</h3><p class="desc">一名被指控在迪尔沃斯殴打一名女子并将她打倒在地的男子已被大陪审团起诉。</p>
+            <h3>夏洛特西南部致命肇事逃逸案嫌疑人被捕</h3><p class="desc">距离不到一英里后不久发生了第二次事故，但调查人员不确定它们是否有关联。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">WCCB</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2Fdilworth-assault-suspect-indicted-by-grand-jury%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fone-person-killed-in-hit-and-run-in-southwest-charlotte%2F275-65d63dc6-6728-4e47-a88b-108b4db47704" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>CMPD 调查人员参与枪击事件</h3><p class="desc">夏洛特-梅克伦堡警察局正在调查一名参与秋霜步道枪击事件的警官。</p>
+            <h3>夏洛特营地北端 (Charlotte's Camp North End) 即将推出 141 套经济适用公寓</h3><p class="desc">这些公寓将预留给收入在该地区收入中位数 30% 至 80% 之间的家庭。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">WCCB</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2Fcmpd-investigating-officer-involved-shooting-4%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fmoney%2Fmarkets%2Freal-estate%2Faffordable-housing-crisis%2Fcamp-north-end-affordable-housing-development%2F275-19a5b087-9df6-492f-af83-19502b313a61" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>本周夏洛特周边的热门体育赛事 | 9月3日-9月9日</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
-            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
-            <div class="card-footer">
-                <span class="source">WCCB</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2Ftop-sporting-events-around-charlotte-this-week-september-3rd-september-9th%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>EPA 提案可能会让公众对数据中心计划一无所知</h3><p class="desc">美国环境保护局的一项计划可能会让公众更难了解和评论拟议的人工智能数据中心，这些数据中心引发了全国各地社区的强烈反对，并成为一个关键的选举问题。</p>
-            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
-            <div class="card-footer">
-                <span class="source">WCCB</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2Fepa-proposal-could-leave-the-public-in-the-dark-on-data-center-plans%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>撒玛利亚救援会货机载有40吨救灾物资抵达尼泊尔</h3><p class="desc">位于北卡罗来纳州的救灾组织撒玛利亚救助会在发生毁灭性冰川滑坡后，已向加德满都部署了一支应急小组和 40 吨重要物资。</p>
-            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
-            <div class="card-footer">
-                <span class="source">WCCB</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2Fsamaritans-purse-cargo-plane-arrives-in-nepal-with-40-tons-of-disaster-relief-supplies%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <h3>调查人员称，米尔堡男子面临儿童性虐待指控</h3><p class="desc">如果罪名成立，约翰·克里斯托弗·马塞利可能面临 10 年监禁。</p>
             <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">WCCB</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2Finvestigators-scour-scene-of-minneapolis-shooting-that-left-3-dead-including-suspect%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Fcrime%2Ffor-mill-man-child-sex-abuse-material-arrest-attorney-general-prosecuting%2F275-dd69d8b7-e8ae-4375-98db-e0b931cd2a21" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">这位著名作家和活动家周三在纽约市的家中去世，她成为美国妇女运动最引人注目的象征和最有力的声音之一。她92岁了。</p>
-            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <h3>CMS 在夏洛特两所中学提醒家庭注意结核病和百日咳病例</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> 详细信息可参见源文章。</div>
             <div class="card-footer">
-                <span class="source">WCCB</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2Fhillary-clinton-jill-biden-and-others-honor-gloria-steinem-who-has-died-at-92%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Fhealth%2Fcms-reports-tuberculosis-and-whooping-cough-cases%2F275-861063dd-47ee-4f99-a952-2b4cdd8e129e" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -104,29 +74,9 @@
             <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
             <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
-                <span class="source">WCCB</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2Fcms-celebrates-historic-academic-gains-on-heels-of-turbulent-summer-for-district-leadership%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">查看 9 月 2 日星期三起的梅克伦堡县照片。</p>
-            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
-            <div class="card-footer">
-                <span class="source">WCCB</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2Fmecklenburg-county-mugshots-september-2nd-6%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">查看 9 月 2 日星期三的加斯顿县照片。</p>
-            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
-            <div class="card-footer">
-                <span class="source">WCCB</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2Fgaston-county-mugshots-september-2nd-7%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fmissing-man-caldwell-county-sept-3-2026%2F275-d88f29f3-2e80-4e2c-b3ca-8fd8bbeb8358" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -134,9 +84,9 @@
             <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
             <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
-                <span class="source">WCCB</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2F100-temperatures-to-know%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fbeatties-ford-road-crash-seven-injured-medic%2F275-585405e0-897b-4583-b7e3-e6f7c8a3c324" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -144,8 +94,58 @@
             <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
             <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
             <div class="card-footer">
-                <span class="source">WCCB</span>
+                <span class="source">WCNC</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wccbcharlotte.com%2F2026%2F09%2F03%2Fthe-heartest-yard-new-billboards-on-display-around-clt%2F" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Fhealth%2Fthird-positive-rabies-case-in-gaston-county-mount-holly%2F275-7af7facc-97a7-4415-b7c8-aed42d240b8a" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">一个家庭在西罗文火灾中失去了家园，多个消防部门迅速做出反应。</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fthree-rowan-county-firefighters-hurt-while-responding-to-house-fire%2F275-65134f3f-1e73-447b-a0d5-de61a763f3db" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Feducation%2Fcms-students-make-academic-gains-in-literacy-math-science-report-said%2F275-a98f02bf-667d-4ea3-b97c-ba69eca5aecd" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fcharlotte-ice-protest-arrest-convictions%2F275-f688ad82-18be-4dec-b455-cd4166914cd4" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fprevious-state-violations-at-concord-daycare-raise-questions-on-safety-after-3-year-old-came-home-with-swollen-face%2F275-e986c197-0da2-41a9-aafa-616046c99bc2" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</h3><p class="desc">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</p>
+            <div class="insight"><strong>深度见解:</strong> Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</div>
+            <div class="card-footer">
+                <span class="source">WCNC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwww.wcnc.com%2Farticle%2Fnews%2Flocal%2Fsuspect-in-deadly-east-charlotte-shooting-found-in-texas%2F275-03d88164-68a3-455f-b7ac-a52caf9e1255" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div></body></html>
