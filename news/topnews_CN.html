@@ -1,42 +1,92 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-10-24 02:29 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>今日简报</h2><p>Latest updates for Headline News.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">最后更新: 2026-10-24 05:21 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>今日简报</h2><p>Latest updates for Headline News.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Sporadic violence flares as hundreds of thousands protest in France - Reuters</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOMDZFRzVKWWJMOFp4eGNjbVdnZ1pCd3hVNTdMSWdiaU9uSGxZTi1zZW1DR3JvbjBfZTJIMnF3LVBMMXpWQjI0V1BfTWtFYUZkVWtXc0VmZEZyVWRHU3c3aHFwRm9fN0ZFMTRIaC16ZmhOeTFrRXBsdmpwWXVtRVVCd09ONkp3bFB5QWVRWjlB</p>
+            <h3>More than 400,000 protest across France, challenging Macron as Paris clashes erupt - AP News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxPWFhXb1VmdWxKRzJmZnRpSGpJTk40b3JoTldmR0FjTW9nWWxibmNBOTJCN1NNa1IyenIycmtueTVnVHhaR19YOUU3TkE2ODBHRFFlRWdDYVZzVWY0MVlqV0dTOHlkaTdEbmxkdnFNMnJicVFjSkhYUVdOaGFYYU5jVEQ5VEhRUU5tWlJjZ1pz</p>
             <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMisAFBVV95cUxOMDZFRzVKWWJMOFp4eGNjbVdnZ1pCd3hVNTdMSWdiaU9uSGxZTi1zZW1DR3JvbjBfZTJIMnF3LVBMMXpWQjI0V1BfTWtFYUZkVWtXc0VmZEZyVWRHU3c3aHFwRm9fN0ZFMTRIaC16ZmhOeTFrRXBsdmpwWXVtRVVCd09ONkp3bFB5QWVRWjlBSmJqbHphYnBiLS0yaVZfRWpxdVAxSGRqYUI4YTBEX2pZeA%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMikgFBVV95cUxPWFhXb1VmdWxKRzJmZnRpSGpJTk40b3JoTldmR0FjTW9nWWxibmNBOTJCN1NNa1IyenIycmtueTVnVHhaR19YOUU3TkE2ODBHRFFlRWdDYVZzVWY0MVlqV0dTOHlkaTdEbmxkdnFNMnJicVFjSkhYUVdOaGFYYU5jVEQ5VEhRUU5tWlJjZ1pzOE5GQQ%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Ukraine says Starlink connection 'now stable' after network limits - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE5oMlotN1JyTm9MdGFZZlNrRU10SVhRbFFzb0l4S0F4NmJtV2lLcUhnclpWMWRhUjYwanp4elZSTl9TQmhUSnhpYjIzeXVyZ3hFZnd4bXRQVzBXNVk?oc=5" target="_blank">Ukraine says Starlink connection 'now stable' </p>
+            <h3>Alaska Election Gambit Shows Justice Dept. Has Bowed to Trump’s Demands - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPUWlCNTFFZkhUUjVyeEFkY0o2b0RMZnphZzdCSG5WWUNZQ18wTGNpNW10RzJBTkhqeGE5cnFydi0xWHpLOTYtNkJWaFJfcFRybHhIRVZxZkFzcktkUzllMWFoUURsYVRMeWp4aGU2Si12aFp3M012dW9OdFpWQ0FUbWhFMjk5eFpoczQ1WlFf</p>
             <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiW0FVX3lxTE5oMlotN1JyTm9MdGFZZlNrRU10SVhRbFFzb0l4S0F4NmJtV2lLcUhnclpWMWRhUjYwanp4elZSTl9TQmhUSnhpYjIzeXVyZ3hFZnd4bXRQVzBXNVk%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMioAFBVV95cUxPUWlCNTFFZkhUUjVyeEFkY0o2b0RMZnphZzdCSG5WWUNZQ18wTGNpNW10RzJBTkhqeGE5cnFydi0xWHpLOTYtNkJWaFJfcFRybHhIRVZxZkFzcktkUzllMWFoUURsYVRMeWp4aGU2Si12aFp3M012dW9OdFpWQ0FUbWhFMjk5eFpoczQ1WlFfZFhzcmpVYllkZGRpcS1jcTRT%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Interactive graphic: Explore how the battle for the House could play out - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxObU9kLUhuNkd5ZmNGb1AyR1BETkNzelc3SURhdl9aQUJ2SHRobnRsM1FSQlZrQ3JRd25ORVVZcTZHWTJWZnpkN0hCNGRBRlVvSWUtMEM0dWNlaTV1a3RXbjYtR1BqVTh6LWxnS2tCOV9Mc2pEUk1Pelkta24xdFBlS1VBX2d2TXotSlpJem1l</p>
+            <h3>Man arrested after fire at Hitler's mountaintop Eagle's Nest retreat - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE5FNXFxbmNzSXJlaTFvNzVrZUs4WGNVemRBY2pYVlAyOXc2RWFuYnJJb2JWdWJNUVE3Zmk1QjFydE10bzB2SmpMUzNJYmc1VUEtN1E2Q0owWkdKSFU?oc=5" target="_blank">Man arrested after fire at Hitler's mountainto</p>
             <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMipgFBVV95cUxObU9kLUhuNkd5ZmNGb1AyR1BETkNzelc3SURhdl9aQUJ2SHRobnRsM1FSQlZrQ3JRd25ORVVZcTZHWTJWZnpkN0hCNGRBRlVvSWUtMEM0dWNlaTV1a3RXbjYtR1BqVTh6LWxnS2tCOV9Mc2pEUk1Pelkta24xdFBlS1VBX2d2TXotSlpJem1lclk2bzc0bXZwX3p1T0hrUFJrcjlLbjZ3%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiW0FVX3lxTE5FNXFxbmNzSXJlaTFvNzVrZUs4WGNVemRBY2pYVlAyOXc2RWFuYnJJb2JWdWJNUVE3Zmk1QjFydE10bzB2SmpMUzNJYmc1VUEtN1E2Q0owWkdKSFU%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Facing an electoral wipeout, Trump goes after the system - Politico</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxNWXprRF9jNDJqVkVZVV8wTkF6YW56NU9xMnNUTXJ6WlBKV3BaTURCWF9pMTQ4WVlNUldiem1mY3JLV3ZDejgwZDJGeXllQ0dacGNNQ25XMURXd0JJSUdhS1RsUDJfUGlNVUFxcXVtZGlJRGZlSDMwY0hkeE1fNWE2T3cwazNmeVBTbktpX3JY</p>
+            <h3>Ukraine says Starlink and Starshield high speed restrictions have been lifted - CNBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPY2F6T3p0ZGRIQ3hKcVJ0dk5mb0NXUUU4cWZfYzZ0ZVR4RmZzcnN5QzBnVTA0c2FjX2hJTnVMTFFOVFp5S0hGalhnQjZ5bEtXeTNDRzVuazNMWmRybE81bXNpLTduVXM3UmVRVTlTbVRlSEk4YndSYnpIX0JaZFcwQzR4dzloYnJ40gGOAUFV</p>
             <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMilAFBVV95cUxNWXprRF9jNDJqVkVZVV8wTkF6YW56NU9xMnNUTXJ6WlBKV3BaTURCWF9pMTQ4WVlNUldiem1mY3JLV3ZDejgwZDJGeXllQ0dacGNNQ25XMURXd0JJSUdhS1RsUDJfUGlNVUFxcXVtZGlJRGZlSDMwY0hkeE1fNWE2T3cwazNmeVBTbktpX3JYN2E5TWVE%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiiAFBVV95cUxPY2F6T3p0ZGRIQ3hKcVJ0dk5mb0NXUUU4cWZfYzZ0ZVR4RmZzcnN5QzBnVTA0c2FjX2hJTnVMTFFOVFp5S0hGalhnQjZ5bEtXeTNDRzVuazNMWmRybE81bXNpLTduVXM3UmVRVTlTbVRlSEk4YndSYnpIX0JaZFcwQzR4dzloYnJ40gGOAUFVX3lxTE1rNVZldHJwd3lsUTdsYVV6cExWc1JUMHhZd3JaQTlGdldyS3QxZi0ySFBMRzh3MFg2M3pYSHhQeUl0Tm81Zl9PcjF5S05xVFdiZTVtMHBRdFFFamlfR0pHcFNKV3IxbjJPNXYtLVB3SWtmSUpjODlrUTdfV2hPOUpOMUt5UV8zLWEydUlZclE%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Vivek Ramaswamy campaign switches to shorter version of attack ad featuring Amy Acton’s estranged mother - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxQN2NDenk4LVVpYmtBWnNEX0pIMEs2cWViejlVSlBkZnc4SkVhSUpPV1hkLVNNaUlCY3hvcThXbEpTOUhXelpkUUpuVmVHTXljZHRnZVo5dW9nZTBKc3BnMnJPcFgtWUh4S3BlR0ktcWh2cEp0dENkWWtZaG1qSnRnMF9OS0IxblpodEpKZGpE</p>
+            <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMixgFBVV95cUxQN2NDenk4LVVpYmtBWnNEX0pIMEs2cWViejlVSlBkZnc4SkVhSUpPV1hkLVNNaUlCY3hvcThXbEpTOUhXelpkUUpuVmVHTXljZHRnZVo5dW9nZTBKc3BnMnJPcFgtWUh4S3BlR0ktcWh2cEp0dENkWWtZaG1qSnRnMF9OS0IxblpodEpKZGpEa3l4Tl9NYXNiRjQ3Mnh5WEgyZ1doNmpaUXZKVy1qamRTVmcxQlJJdWNndjloZnkxaTRXaTR6N1E%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Obama Issues Searing Attacks on Trump, Ramaswamy in Return to Campaign Trail - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxQeUdkajdVaE81UXowdEROTVA0NFNwX0JJTUw1RHdaMmtHQURmRzZmNVN6dmplOGQtZ1BrQXNrb0JPZXdPZXQ3Qi1mNG9zb1RONC1DeDV0eXNzRmdDd2lpNkhjSHJLWDFrcFk5S0JLNHpKWVB5UnoyT2E3U2NPSHpKVXE5REdYdzlR?oc=5" t</p>
+            <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiiAFBVV95cUxQeUdkajdVaE81UXowdEROTVA0NFNwX0JJTUw1RHdaMmtHQURmRzZmNVN6dmplOGQtZ1BrQXNrb0JPZXdPZXQ3Qi1mNG9zb1RONC1DeDV0eXNzRmdDd2lpNkhjSHJLWDFrcFk5S0JLNHpKWVB5UnoyT2E3U2NPSHpKVXE5REdYdzlR%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Records offer a picture of the Oregon school shooter’s tumultuous home life - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNVlYzM0NoSkxJT3ZpdHBiZDVicGRjalMwY0dKV1NkcURJUFpHOEpPYllqU29MdmhDdDBRMmxIZEc0d0dadE1NZldhWEt1bHRmSi1SRThaTjYzb0pyZTAwWUtxMTdCZzVhLXplSEUycXFPVUl1UTkxYTVQamV2UVhReW1NRVlPc3NfMjZoVEhm</p>
+            <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMinAFBVV95cUxNVlYzM0NoSkxJT3ZpdHBiZDVicGRjalMwY0dKV1NkcURJUFpHOEpPYllqU29MdmhDdDBRMmxIZEc0d0dadE1NZldhWEt1bHRmSi1SRThaTjYzb0pyZTAwWUtxMTdCZzVhLXplSEUycXFPVUl1UTkxYTVQamV2UVhReW1NRVlPc3NfMjZoVEhmSXFVOEgzdU5kb3ZTZU0%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>German man arrested for allegedly driving American teen girl to die by suicide, prosecutors say - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE8xSWtuV0txemF6bDlxbTllcnVVYmZqWWFLVjN1OE4yRWdUTDM5VWxSSTdOZHpvU3RwNF9FS2hucjVSRm5YQnZVS2tFeDJKbnBkcHc3N1QtYzZrbmhSZVlwZnJ2TXRZZFFON3FSV2RoaFNQMjhf?oc=5" target="_blank">German man ar</p>
+            <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMidEFVX3lxTE8xSWtuV0txemF6bDlxbTllcnVVYmZqWWFLVjN1OE4yRWdUTDM5VWxSSTdOZHpvU3RwNF9FS2hucjVSRm5YQnZVS2tFeDJKbnBkcHc3N1QtYzZrbmhSZVlwZnJ2TXRZZFFON3FSV2RoaFNQMjhf%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>She Planned to Protest Trump. She Didn’t Plan on Getting Punched. - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPS09lTVgxMGZDUy1IZ1NGa1JPNUc3emJfcTJhU0xLNG9wNzRZTDhTc3ZnUjJGRklDWWk1eWtrU01VTGRPMzNCcjRyai1tQ0lKTUN5RlZwbUlaeFg4UnI1OTlWMVBKcVlxNTVPeEI5SnVEb1hpZW9wRVRfeHgtOThyN2hVR2h2U191V0E?oc=5</p>
+            <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Google News (Global)</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiigFBVV95cUxPS09lTVgxMGZDUy1IZ1NGa1JPNUc3emJfcTJhU0xLNG9wNzRZTDhTc3ZnUjJGRklDWWk1eWtrU01VTGRPMzNCcjRyai1tQ0lKTUN5RlZwbUlaeFg4UnI1OTlWMVBKcVlxNTVPeEI5SnVEb1hpZW9wRVRfeHgtOThyN2hVR2h2U191V0E%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
@@ -61,47 +111,7 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Records offer a picture of the Oregon school shooter’s tumultuous home life - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNVlYzM0NoSkxJT3ZpdHBiZDVicGRjalMwY0dKV1NkcURJUFpHOEpPYllqU29MdmhDdDBRMmxIZEc0d0dadE1NZldhWEt1bHRmSi1SRThaTjYzb0pyZTAwWUtxMTdCZzVhLXplSEUycXFPVUl1UTkxYTVQamV2UVhReW1NRVlPc3NfMjZoVEhm</p>
-            <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMinAFBVV95cUxNVlYzM0NoSkxJT3ZpdHBiZDVicGRjalMwY0dKV1NkcURJUFpHOEpPYllqU29MdmhDdDBRMmxIZEc0d0dadE1NZldhWEt1bHRmSi1SRThaTjYzb0pyZTAwWUtxMTdCZzVhLXplSEUycXFPVUl1UTkxYTVQamV2UVhReW1NRVlPc3NfMjZoVEhmSXFVOEgzdU5kb3ZTZU0%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>DOJ demands that some California counties set aside and verify alleged noncitizen ballots within 48 hours - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxOUGtPRWg2aEFDT1ptTk56VEdzOTd2UmdQcFJENV9CbWdQNGtYU0RTZHA1a0RNVlJEQjhBSGtKa1c5eVpFNmd6YUl1SnNVakNmTnQ1TS1vMlBoZVlENG90ZHFUZTVIc20wSnA1Yi1tOTJmdEdUaGo3emFxSmlRdjVuWGNhb1gzVkVpS3BCQzdo</p>
-            <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMinwFBVV95cUxOUGtPRWg2aEFDT1ptTk56VEdzOTd2UmdQcFJENV9CbWdQNGtYU0RTZHA1a0RNVlJEQjhBSGtKa1c5eVpFNmd6YUl1SnNVakNmTnQ1TS1vMlBoZVlENG90ZHFUZTVIc20wSnA1Yi1tOTJmdEdUaGo3emFxSmlRdjVuWGNhb1gzVkVpS3BCQzdoQ0djdU5vM2lIU1drZ2tkSFk%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Jennings: Ramaswamy’s campaign tactics ‘worst politics you could imagine’ - The Hill</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOWFhmcjJNcU1EV2tiNFNxaG9LMGtsdzgzSnNyVUdBdHl1Ym9xSFRabmFvQW5yQ2x1UHRTN2RTdnVHVG0tLTlmcGI1UTVrWHBGVEptZ3hsVUM0OVJ4VDFTREVSR2pZNF9UWlJnTWlZQ1lxZWFnYzZkaGJMbWcyZnZuYUUxONIBiAFBVV95cUxQ</p>
-            <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMigwFBVV95cUxOWFhmcjJNcU1EV2tiNFNxaG9LMGtsdzgzSnNyVUdBdHl1Ym9xSFRabmFvQW5yQ2x1UHRTN2RTdnVHVG0tLTlmcGI1UTVrWHBGVEptZ3hsVUM0OVJ4VDFTREVSR2pZNF9UWlJnTWlZQ1lxZWFnYzZkaGJMbWcyZnZuYUUxONIBiAFBVV95cUxQN3p5YUFRc3cyTk04SDBoU3dRX0xQbzFlTVNidjQ0bHlZSFBEWWphQ2pWc0cweTItdVoyNlRFRTFkeU1TN2dxeW1WWkl3MGhKVVdpcGxScy1PVDlhVTBpYU0wWUhjOUZ0cWZ1cHl0NS1aRk5yOVJIWGZwOXBpSjcwXzMwT0VkWU1M%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>She Was Punched After Heckling Trump. No One Has Been Charged. - The New York Times</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPS09lTVgxMGZDUy1IZ1NGa1JPNUc3emJfcTJhU0xLNG9wNzRZTDhTc3ZnUjJGRklDWWk1eWtrU01VTGRPMzNCcjRyai1tQ0lKTUN5RlZwbUlaeFg4UnI1OTlWMVBKcVlxNTVPeEI5SnVEb1hpZW9wRVRfeHgtOThyN2hVR2h2U191V0E?oc=5</p>
-            <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiigFBVV95cUxPS09lTVgxMGZDUy1IZ1NGa1JPNUc3emJfcTJhU0xLNG9wNzRZTDhTc3ZnUjJGRklDWWk1eWtrU01VTGRPMzNCcjRyai1tQ0lKTUN5RlZwbUlaeFg4UnI1OTlWMVBKcVlxNTVPeEI5SnVEb1hpZW9wRVRfeHgtOThyN2hVR2h2U191V0E%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Palestinian families displaced as Israeli forces demolish Hebron homes, local officials say - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE5LMEdmMlZaSzhHcFgtaEdjZlNkQ29JdlE3VEVRaGxyd3J2ZktQeHF0NC1RRTlnaVJKTHNBdlZwNmRVM2JSZ3ljbzY5cmdDWVRBbXJZZXRZYzEweWs?oc=5" target="_blank">Palestinian families displaced as Israeli forc</p>
+            <h3>Palestinian families displaced as Israeli forces demolish Hebron homes - BBC</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE5LMEdmMlZaSzhHcFgtaEdjZlNkQ29JdlE3VEVRaGxyd3J2ZktQeHF0NC1RRTlnaVJKTHNBdlZwNmRVM2JSZ3ljbzY5cmdDWVRBbXJZZXRZYzEweWs?oc=5" target="_blank">Palestinian families displaced as Israeli forc</p>
             <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
@@ -121,31 +131,21 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>British police received allegations about Meghan’s father in 2019 but didn’t tell other forces - NBC News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxQeXluRV9ObUN2YkpaajJhaUx5WlBOYV9COUlERlhkcXNOdzJKTXlUYndZWklZYzRfc2U0NWF2M24yQVJZVDVheVZlenp4TGVpNlAwUTMxbEl6aUY3bzRhWXB0aWwzN2YzTEFGNl9nejhrOXMyZmp3WThpOTlJM0tRZEsyQ2tzMHNyUVY4RU5D</p>
+            <h3>Rubio calls on Cubans seeking "positive change" to work with CIA: "Now is the time" - CBS News</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE9LbUJ2ek1uS2tBbzBrbUpTaG1nZTZzbnJVZDlTRHZoVGpRUFZ3Z01ka2dJZWUwLXFnNmtZdnVLbzFqMHpZRjdnSTRrYVJRWnZGS19YLVUzamN2cVk4Qk9UQ2V1LWQ4Zw?oc=5" target="_blank">Rubio calls on Cubans seeking "</p>
             <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMixAFBVV95cUxQeXluRV9ObUN2YkpaajJhaUx5WlBOYV9COUlERlhkcXNOdzJKTXlUYndZWklZYzRfc2U0NWF2M24yQVJZVDVheVZlenp4TGVpNlAwUTMxbEl6aUY3bzRhWXB0aWwzN2YzTEFGNl9nejhrOXMyZmp3WThpOTlJM0tRZEsyQ2tzMHNyUVY4RU5DSVZ4UHBPS05tOTB4TmxrRHBCcVdzVXhwVGFHZnV5Y1pUMUxkZTZqZFdLTkxUTW1ndHYyQXBC%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiZkFVX3lxTE9LbUJ2ek1uS2tBbzBrbUpTaG1nZTZzbnJVZDlTRHZoVGpRUFZ3Z01ka2dJZWUwLXFnNmtZdnVLbzFqMHpZRjdnSTRrYVJRWnZGS19YLVUzamN2cVk4Qk9UQ2V1LWQ4Zw%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Rubio calls on Cubans seeking change to partner with CIA - Euronews.com</h3><p class="desc"><ol><li><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxOMktLT0IzeXlzdGF3LUNLQlBBekRmT1VNYmpTUVlHVEhILVZDWnY3ckY4dlNMSmRRTE5WMzQ4WDZkUnkxRHR5cm92djRUWlVlV3MzQVZJWTktOXlEaVg0anpSX0dmN0Fma296YWlRRjhGQlJTREJ6S2N6Ul9Qd3NYZ0dsRVZQdTA0TVNvbW9s</p>
+            <h3>Halloween candy sales are off to a slow start amid high chocolate prices and affordability concerns - NBC News</h3><p class="desc"><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQblVPaDQtRVlhWHR4M1RIcHhGbkMwWU5LcmxOajktWHFMZlBiRUFuZUJEbHpPa3QydHJpWGsyRnNqZ21IMldEZUZuZk54WkNGVnd4c2w0V2cycU5nZkdxbGFlakdaekc5N0VIN0w5S2NNQ1AzUFBjbU15clh4SUJKT3BHWHZQVnJpdWlMbzFXREZsbjlq</p>
             <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">Google News (Global)</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMirwFBVV95cUxOMktLT0IzeXlzdGF3LUNLQlBBekRmT1VNYmpTUVlHVEhILVZDWnY3ckY4dlNMSmRRTE5WMzQ4WDZkUnkxRHR5cm92djRUWlVlV3MzQVZJWTktOXlEaVg0anpSX0dmN0Fma296YWlRRjhGQlJTREJ6S2N6Ul9Qd3NYZ0dsRVZQdTA0TVNvbW9sTGpiWnM2Zy00ZGI1eE5iYzRadlRSNVdWU1dDWXdHM2Ew%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Halloween candy sales are off to a slow start amid high chocolate prices and affordability concerns - AP News</h3><p class="desc"><a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWGZZMWlraVgxOHBmWkI0dEFfSFRnOEM3aFYwX2xxQU5hUHYzNlRnT29zTkYxVjFrMFVmamtrZUhBRElRcGo2aFdYSGhwb3cxdU5ZcDhnWk5HVXJoaGl5VE05X3VRQkR6M09nWGlicXZBdFpHcXdTZkZXQURsOFg0cjVsUHg3cndFV1IwWjFZVnJaa0RT</p>
-            <div class="insight"><strong>深度见解:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Google News (Global)</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">情感倾向: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiqAFBVV95cUxQWGZZMWlraVgxOHBmWkI0dEFfSFRnOEM3aFYwX2xxQU5hUHYzNlRnT29zTkYxVjFrMFVmamtrZUhBRElRcGo2aFdYSGhwb3cxdU5ZcDhnWk5HVXJoaGl5VE05X3VRQkR6M09nWGlicXZBdFpHcXdTZkZXQURsOFg0cjVsUHg3cndFV1IwWjFZVnJaa0RTRWkyU2ZTN2NFZk90TDN4eU9oeE0%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMipgFBVV95cUxQblVPaDQtRVlhWHR4M1RIcHhGbkMwWU5LcmxOajktWHFMZlBiRUFuZUJEbHpPa3QydHJpWGsyRnNqZ21IMldEZUZuZk54WkNGVnd4c2w0V2cycU5nZkdxbGFlakdaekc5N0VIN0w5S2NNQ1AzUFBjbU15clh4SUJKT3BHWHZQVnJpdWlMbzFXREZsbjlqVVFxMlQ2SEVPUXR3UTZYTFJ3%3Foc%3D5" class="btn-link" target="_blank" rel="noopener noreferrer">阅读全文 →</a>
             </div>
         </div></body></html>
