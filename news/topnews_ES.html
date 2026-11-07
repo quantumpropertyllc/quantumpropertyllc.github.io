@@ -1,42 +1,132 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-11-06 06:35 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Latest updates for Headline News.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-11-06 10:57 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Latest updates for Headline News.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>8th measles-related death reported in Wisconsin: Health officials - ABC News - Breaking News, Latest News and Videos</h3><p class="desc"></p>
+            <h3>Trump signs order to prevent future presidents from changing Oval Office - BBC</h3><p class="desc">The order comes after Trump made a series of big changes the Oval Office  decor and launched landmark construction projects across Washington.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">Abcnews.com</span>
+                <span class="source">BBC News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fabcnews.com%2FHealth%2Fwisconsin-infant-dies-measles-health-officials%2Fstory%3Fid%5C%5Cu003d137886629" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.bbc.com%2Fnews%2Farticles%2Fcmy0eeg101djo" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>'Chicago Fire' Joe Cruz's heartbreaking final goodbye to his 'brother' explained - USA Today</h3><p class="desc">Joe Miñoso reveals why he insisted on Joe Cruz's heartbreaking farewell to fallen best friend Otis in his final episode of NBC's "Chicago Fire."</p>
+            <h3>Are you an evening snacker? What you need to know - BBC</h3><p class="desc">There are biological reasons why you may reach for sweet treats before bed, but you can change the habit.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">USA Today</span>
+                <span class="source">BBC News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.usatoday.com%2Fstory%2Fentertainment%2Ftv-streaming%2F2026%2F11%2F05%2Fchicago-fire-joe-cruz-otis%2F92621762007%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.bbc.com%2Fnews%2Farticles%2Fcq2e9v3030gyo" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Elon Musk's Tesla and SpaceX lose over $420 billion in combined market cap after midterms - CNBC</h3><p class="desc">Elon Musk's Tesla and SpaceX lose $420 billion in combined market cap after midterms</p>
+            <h3>What Trump's final 2 years in office will look like with Democrats in charge - CBS News</h3><p class="desc">Investigations, a struggle to confirm nominees and maybe some bipartisanship lie ahead for President Trump.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">CNBC</span>
+                <span class="source">CBS News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnbc.com%2F2026%2F11%2F05%2Ftesla-spacex-stocks-fall-after-2026-midterms.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Fnews%2Fdemocratic-congress-trump-final-2-years%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>U.S. taxpayers can shield an extra $500 from taxation next year - The Washington Post</h3><p class="desc">The IRS announced next year’s standard deduction and tax brackets.</p>
+            <h3>Jaguars vs. Ravens prediction, odds, time: NFL Week 9 'Thursday Night Football' picks via advanced model - CBS Sports</h3><p class="desc">SportsLine's model has revealed its Jacksonville Jaguars vs. Baltimore Ravens picks for 'Thursday Night Football' with the Ravens down to third-string quarterback Joe Fagnano</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">CBS Sports</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbssports.com%2Fbetting%2Fnews%2Fjaguars-ravens-prediction-odds-time-spread-nfl-week-9-thursday-night-football-picks-best-bets%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>How the Texas blue wave came crashing down on Republicans - The Washington Post</h3><p class="desc">For decades, victory was out of reach. This time, Democrats benefited from strong candidates, years of organizing and a little help from President Donald Trump.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">The Washington Post</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.washingtonpost.com%2Fbusiness%2F2026%2F11%2F05%2Fus-taxpayers-can-shield-an-extra-500-taxation-next-year%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.washingtonpost.com%2Fpolitics%2F2026%2F11%2F05%2Fhow-democrats-turned-texas-blue%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>How Abdul El-Sayed actually did with Jewish voters - Politico</h3><p class="desc">Yes, he ran behind. In an interview, the senator-elect acknowledged Israel was a source of disagreement, but said he’s not changing his position.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Politico</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.politico.com%2Fnews%2F2026%2F11%2F05%2Fabdul-el-sayed-jewish-voters-interview-01152872" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>2026 midterm election live updates as Democrats prepare to take Congress, GOP grapples with stunning losses - CBS News</h3><p class="desc">After Democrats' sweeping House and Senate victories, the party is laying out how it plans to wield power, while President Trump and Republicans react to their midterm losses.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">CBS News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Flive-updates%2Fmidterm-election-results-2026-democrats-house-senate-trump%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Mississippi Senate election: Democrat Scott Colom narrowly leads Republican Cindy Hyde-Smith - CNBC</h3><p class="desc">The Mississippi Senate election could be determined by the mail-in ballots received after Election Day, whose legality was upheld by the Supreme Court.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">CNBC</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnbc.com%2F2026%2F11%2F05%2Fmississippi-senate-election-scott-colom-hyde-smith.html" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>‘ER’ and ‘The Pitt’ are similar enough for lawsuit to move forward, appeals court finds - AP News</h3><p class="desc">A California appeals court has found enough similarity between “ER” and “The Pitt” for a lawsuit by Michael Crichton's widow to proceed. The court ruled that the trial judge was correct to reject Warner Bros. Television's motion to dismiss. Both show</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Associated Press</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fapnews.com%2Farticle%2Fpitt-er-lawsuit-crichton-9a6ad0b8bf685b7ac435aacf22cb5a71" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Investors have dumped Tesla and SpaceX stock since the blue wave election - Business Insider</h3><p class="desc">Shares of Musk's companies have cratered since Democrats swept the midterms, with concerns that a Tesla-SpaceX merger could now be more difficult.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Business Insider</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.businessinsider.com%2Ftesla-spacex-elon-musk-democrats-tsla-spcx-stock-2026-11%23article" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>France strikes: largest day of protests in years as economy fuels unrest - CNN</h3><p class="desc">Hundreds of thousands marched in largely peaceful protests across the country on Thursday.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">CNN</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F11%2F05%2Fworld%2Flive-news%2Ffrance-strikes-protests-action-schools-intl" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Infant's death from measles is first in Wisconsin since 1990 - Milwaukee Journal Sentinel</h3><p class="desc">Wisconsin's outbreak continues to spread, a particularly frustrating development because vaccines had all but ended transmission of the disease.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Milwaukee Journal Sentinel</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.jsonline.com%2Fstory%2Fnews%2Fhealth%2F2026%2F11%2F05%2Fa-wisconsin-infant-has-died-of-measles-state-health-department-says%2F92627482007%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Blue Origin announces 3rd stage for its powerful New Glenn rocket — and a new engine - Space</h3><p class="desc">Jeff Bezos' company has been busy.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Space.com</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.space.com%2Fspace-exploration%2Flaunches-spacecraft%2Fblue-origin-announces-3rd-stage-for-its-powerful-new-glenn-rocket-and-a-new-engine" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
@@ -51,101 +141,11 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Infant bleeding surged last year as parents refuse vitamin K shot for newborns - The Washington Post</h3><p class="desc">Experts say some of the growing skepticism around public health is fueled partly by the Trump administration.</p>
+            <h3>Brooklyn fire kills 6 people, injures 9 others in Sunset Park, officials said - Gothamist</h3><p class="desc">A lithium-ion battery was found at the scene but the exact cause is unknown, officials said.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">The Washington Post</span>
+                <span class="source">Gothamist</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.washingtonpost.com%2Fhealth%2F2026%2F11%2F05%2Finfant-bleeding-surged-last-year-parents-refuse-vitamin-k-shot-newborns%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Getting software to help block out a star so we can see exoplanets - Ars Technica</h3><p class="desc">Software optimizes a physical model of the telescope to reduce noise.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Ars Technica</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Farstechnica.com%2Fscience%2F2026%2F11%2Fgetting-software-to-help-block-out-a-star-so-we-can-see-exoplanets%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Live updates: Democrats will win at least 250 House seats, CNN projects | CNN Politics - CNN</h3><p class="desc">In the Senate, two contests have yet to be called: Mississippi and Alaska. Follow for live updates.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">CNN</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cnn.com%2F2026%2F11%2F05%2Fpolitics%2Flive-news%2Fmidterm-election-congress" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Thousands of affidavit ballots outstanding in Mississippi Senate election. Campaigns prepare for legal fight - Mississippi Today</h3><p class="desc">Thousands of affidavit ballots still to be counted. Election lawyers descend on Mississippi to scrutinize the final count in the 2026 midterm Senate race.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Mississippitoday.org</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fmississippitoday.org%2F2026%2F11%2F05%2Fthousands-of-affidavit-ballots-outstanding-in-mississippi-senate-election-campaigns-prepare-for-legal-fight%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Paraguay's president is impeached minutes after resigning following a bank collapse - NPR</h3><p class="desc">Paraguayan lawmakers voted to impeach President Santiago Peña minutes after his resignation, as the collapse of a digital bank tied to his government froze millions of people's savings.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.npr.org%2F2026%2F11%2F05%2Fnx-s1-6030842%2Fparaguay-president-impeached-bank-collapse" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Schultz: Colts waiting until after Week 9 to trade - NBC Sports</h3><p class="desc">NFL insider Jordan Schultz reports the Colts plan to wait until after Week 9 against the Cowboys "before revisiting the offers on the table and making the trades that make sense on Monday and Tuesday."</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">NBCSports.com</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcsports.com%2Ffantasy%2Ffootball%2Fplayer-news%2F2026-11-05%2Fschultz-colts-waiting-until-after-week-9-to-trade" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>‘Jimmy’ Review: KJ Apa Tries, in Vain, to Save Ploddingly Dutiful James Stewart Biopic - The Hollywood Reporter</h3><p class="desc">The 'Riverdale' actor plays the title role in this drama revolving around the iconic movie star's distinguished military service.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Hollywood Reporter</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=http%3A%2F%2Fwww.hollywoodreporter.com%2Fmovies%2Fmovie-reviews%2Fjimmy-review-kj-apa-james-stewart-biopic-1236746965%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Peanut allergy study finds babies should be retested. Here's what parents should know. - CBS News</h3><p class="desc">About one in 50 kids in the United States has a peanut allergy​. But a new study from Australia shows parents should consider having their kids retested.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">CBS News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Fnews%2Fpeanut-allergy-infants-diagnosis-study%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Xbox overhauls its PC, web, and cloud apps with a faster design - The Verge</h3><p class="desc">Microsoft is overhauling its Xbox PC app and Xbox Cloud Gaming design. A new, faster UI is rolling out to testers.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">The Verge</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.theverge.com%2Fnews%2F1027353%2Fmicrosoft-new-xbox-pc-app-redesign" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Sony revives its classic 1979 Walkman headphones for modern listeners – with a surprisingly affordable price - What Hi-Fi?</h3><p class="desc">The new MDR-3R wired on-ears have the same design as the originals, now with a USB-C connection</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">What Hi-Fi? US</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.whathifi.com%2Fheadphones%2Fwired-headphones%2Fsony-revives-its-classic-1979-walkman-headphones-for-modern-listeners-with-a-surprisingly-affordable-price" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fgothamist.com%2Fnews%2Fbrooklyn-fire-kills-6-people-injures-7-others-in-sunset-park" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div></body></html>
