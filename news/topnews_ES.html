@@ -1,22 +1,132 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-11-15 06:17 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Latest updates for Headline News.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><style>:root { --ios-bg: #F2F2F7; --ios-card: #FFFFFF; --ios-blue: #007AFF; --ios-text: #1C1C1E; --ios-sub: #8E8E93; } body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--ios-bg); color: var(--ios-text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; } .header { padding: 10px 0 20px 0; } .updated { font-size: 11px; color: var(--ios-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; } h1 { font-size: 34px; font-weight: 800; margin: 0; letter-spacing: -1px; } .trending-container { margin-top: 15px; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 14px; } .trending-title { font-size: 11px; font-weight: 800; color: var(--ios-sub); text-transform: uppercase; display: block; margin-bottom: 8px; } .clusters { display: flex; flex-wrap: wrap; gap: 6px; } .cluster { background: white; color: var(--ios-blue); padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 700; border: 1px solid rgba(0,122,255,0.1); } .brief { background: linear-gradient(145deg, #007AFF, #5856D6); color: white; padding: 24px; border-radius: 24px; margin: 24px 0; box-shadow: 0 12px 24px rgba(0,122,255,0.25); position: relative; overflow: hidden; } .brief::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; } .brief h2 { font-size: 20px; margin-top: 0; margin-bottom: 10px; font-weight: 800; } .brief p { font-size: 15px; margin: 0; opacity: 0.95; line-height: 1.5; } .brief .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 16px 0; } .brief .insight-text { font-size: 14px; font-weight: 500; opacity: 0.9; } .card { background: var(--ios-card); border-radius: 20px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02); } .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .impact { font-size: 10px; font-weight: 900; padding: 3px 10px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; } .impact.high { background: #FF3B3015; color: #FF3B30; } .impact.medium { background: #FF950015; color: #FF9500; } .impact.low { background: #34C75915; color: #34C759; } .score { font-weight: 900; color: var(--ios-blue); font-size: 20px; font-variant-numeric: tabular-nums; } h3 { font-size: 19px; margin: 0 0 12px 0; line-height: 1.3; font-weight: 700; color: #000; } .desc { font-size: 15px; color: #3A3A3C; line-height: 1.5; margin-bottom: 16px; opacity: 0.9; } .insight { background: #F2F2F7; padding: 14px; border-radius: 14px; font-size: 14px; border-left: 4px solid var(--ios-blue); line-height: 1.5; font-weight: 500; } .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; } .source { font-size: 12px; color: var(--ios-sub); font-weight: 700; } .sentiment-box { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; } .btn-link { background: var(--ios-blue); color: white; text-decoration: none; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,122,255,0.2); } </style></head><body><div class="header"><div class="updated">Última actualización: 2026-11-15 11:07 PM ET</div><h1>Headline News</h1><div class="trending-container"><span class="trending-title">Trending Themes:</span><div class="clusters"><span class="cluster">#News Updates</span></div></div></div><div class="brief"><h2>Resumen de hoy</h2><p>Latest updates for Headline News.</p><div class="divider"></div><p class="insight-text">AI enrichment temporarily unavailable.</p></div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>'Now everything changes': SpaceX catches Starship upper stage for 1st time ever - Space</h3><p class="desc">"That was the holy grail of spaceflight."</p>
+            <h3>College football Week 11: Live updates, schedule, scores, CFP rankings - NCAA.com</h3><p class="desc">Follow along for complete coverage of Week 11 of the college football season, including upsets, highlights, rankings and more.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
             <div class="card-footer">
-                <span class="source">Space.com</span>
+                <span class="source">NCAA.com</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.space.com%2Fspace-exploration%2Flaunches-spacecraft%2Fspacex-chopsticks-catch-starship-upper-stage-flight-14" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.ncaa.com%2Flive-updates%2Ffootball%2Ffbs%2Fcollege-football-week-11-live-updates-schedule-scores-cfp-rankings" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Trump, Putin and Xi Jinping expected to meet in first-ever trilateral of its kind, officials say - CBS News</h3><p class="desc">President Trump is looking to talk about reducing nuclear arsenals in the first formal trilateral between the leaders of the U.S., China and Russia.</p>
+            <h3>With Starship catch, SpaceX still shows it can dazzle the world - Ars Technica</h3><p class="desc">It felt like stepping into the future.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Ars Technica</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Farstechnica.com%2Fspace%2F2026%2F11%2Fwith-starship-catch-spacex-still-shows-it-can-dazzle-the-world%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Indiana takes down USC: No. 9 Hoosiers take big step toward Big Ten title game with win over No. 18 Trojans - CBS Sports</h3><p class="desc">Indiana earned a big win for its College Football Playoff resume after taking a tumble in the rankings during its bye week</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">CBS Sports</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbssports.com%2Fcollege-football%2Fnews%2Findiana-usc-live-updates-score-college-football-week-11-2026%2Flive%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>UFC 334: Live results, analysis for Gane-Hokit, Harrison-Nunes - ESPN</h3><p class="desc">ESPN provides live results and analysis of all the action from UFC 334 at Madison Square Garden.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">ESPN</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.espn.com%2Fmma%2Fstory%2F_%2Fid%2F50444358%2Fufc-334-live-results-analysis-ciryl-gane-josh-hokit" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>5th Canadian soldier dies weeks after fire on grenade launcher range - CBS News</h3><p class="desc">Pvt. William Douglas Dal Bianco died Friday at a hospital in Ontario, where he had been receiving treatment since the Oct. 17 fire at Canadian Forces Base Wainwright in Alberta, the military said.</p>
             <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">CBS News</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Fnews%2Ftrump-putin-xi-jinping-meeting-china-us-russia-talks%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Fnews%2F5th-canadian-soldier-dies-wainwright-base-fire%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Alleged Russell Brand rape victim wants age of consent law changed - BBC</h3><p class="desc">Mia Latter, who says she was 16 when she met the convicted rapist, wants a staggered age of consent.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">BBC News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.bbc.com%2Fnews%2Farticles%2Fcm3rgx9p583zo" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Duffy’s briefing on ground stop disrupted by tech difficulties: ‘This is not operational?’ - The Washington Post</h3><p class="desc">A Transportation Department news briefing Saturday morning about the nationwide ground stop a day earlier was derailed by tech issues. “This is our kind of, um, day,” Sean Duffy said.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">The Washington Post</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.washingtonpost.com%2Fnation%2F2026%2F11%2F15%2Fsean-duffys-news-briefing-ground-stop-disrupted-by-tech-difficulties%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>New Orleans port sues tanker owners over cruise ship collision for $1m - BBC</h3><p class="desc">All cruise ship passengers and crew were accounted for, though 32 people were left with non-serious injuries from Friday's collision.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">BBC News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.bbc.com%2Fnews%2Farticles%2Fcwe89y2r5j20o" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>US has lost measles elimination status, global health authorities say - NPR</h3><p class="desc">The U.S. has lost its status as a country where measles is eliminated, according to researchers with direct knowledge of the deliberations at the Pan American Health Organization.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">NPR</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.npr.org%2F2026%2F11%2F14%2Fnx-s1-6041119%2Fus-measles-elimination-status-vaccines-cdc-paho" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang - TechCrunch</h3><p class="desc">The petition had attracted more than 115,000 signatures as of Saturday afternoon.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">TechCrunch</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Ftechcrunch.com%2F2026%2F11%2F14%2Felon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>US blames system upgrade for longest nationwide FAA ground stop since 9/11 - Al Jazeera</h3><p class="desc">Sean Duffy, the country’s transportation secretary, said his agency is ‘going to hold people accountable’.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Al Jazeera English</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.aljazeera.com%2Fnews%2F2026%2F11%2F14%2Fus-blames-system-upgrade-for-longest-nationwide-faa-ground-stop-since-9" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>Why Mary Peltola is on track to win in Alaska, even if ranked choice ballots come into play - NBC News</h3><p class="desc">As Alaska continues to count and report votes weeks after Election Day, it is increasingly unlikely that Republican Sen.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">NBC News</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fpolitics%2F2026-election%2Fmary-peltola-track-win-alaska-even-ranked-choice-ballots-come-play-rcna609299" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
+            <h3>‘Grand Theft Auto VI’ Soundtrack: See the Full 34-Song Tracklist - Billboard</h3><p class="desc">"Grand Theft Auto VI: The Album" features 34 songs from Travis Scott, Cardi B, Dua Lipa and more. See the full "GTA 6" soundtrack tracklist here.</p>
+            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
+            <div class="card-footer">
+                <span class="source">Billboard</span>
+                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
+                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=http%3A%2F%2Fwww.billboard.com%2Fmusic%2Fmusic-news%2Fgta-6-album-tracklist-grand-theft-auto-vi-soundtrack-1236382244%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div>
         <div class="card">
@@ -31,121 +141,11 @@
         </div>
         <div class="card">
             <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Johnny Depp’s ‘Ebenezer’ Conjuring Up Box Office Victory in Star’s Return to Studio Fare - The Hollywood Reporter</h3><p class="desc">Fellow newcomers 'Ghost Soldier' and 'How to Rob a Bank' are getting quieter starts over the weekend.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Hollywood Reporter</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=http%3A%2F%2Fwww.hollywoodreporter.com%2Fmovies%2Fmovie-news%2Fjohnny-depp-ebenezer-box-office-opening-how-to-rob-bank-1236755417%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Democrat Mary Peltola is likely to win Alaska’s Senate race, as vote counting continues - NBC News</h3><p class="desc">Former Democratic Rep. Mary Peltola is likely to win Alaska’s Senate race, according to an NBC News Decision Desk analysis, as vote-counting continues in the state.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">NBC News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.nbcnews.com%2Fpolitics%2F2026-election%2Fdemocrat-mary-peltola-likely-win-alaska-senate-race-rcna608673" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Are Trump Officials Living in an Alternate Reality? - Yahoo</h3><p class="desc">Sean Duffy and Markwayne Mullin’s deflection on the air traffic control debacle is a worrisome sign of the final two years of Trump’s presidency.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Politico</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.politico.com%2Fnews%2Fmagazine%2F2026%2F11%2F14%2Fair-traffic-control-debacle-trump-column-01166616" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
             <h3>Blumenthal says Lutnick ‘must go’ following Nvidia scandal - The Hill</h3><p class="desc">Democratic Sen. Richard Blumenthal (Conn.) called on Howard Lutnick, President Trump’s Commerce secretary, to step down over reports the cabinet member shielded Nvidia from federal oversight — accusations which emerged after the tech giant’s CEO resi</p>
             <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
             <div class="card-footer">
                 <span class="source">The Hill</span>
                 <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
                 <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fthehill.com%2Fhomenews%2Fsenate%2F6220891-blumenthal-calls-lutnick-resign-nvidia-scandal%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>UFC 334 fight predictions, expert picks for Josh Hokit vs. Ciryl Gane card tonight - CBS Sports</h3><p class="desc">Check out who the experts at CBS Sports are taking in the pair of title fights on Saturday</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">CBS Sports</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbssports.com%2Fufc%2Fnews%2Fufc-334-predictions-picks-odds%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Ex ‘Secret Lives of Mormon Wives’ Star Dakota Mortensen Sues Producers, Hulu for Defamation - TheWrap</h3><p class="desc">Dakota Mortensen, the ex-boyfriend and co-star of “The Secret Lives of Mormon Wives” star Taylor Frankie Paul, sued the reality show's producers and Hulu for defamation</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">TheWrap</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.thewrap.com%2Findustry-news%2Fpublic-policy-legal%2Fsecret-lives-of-mormon-wives-star-dakota-mortensen-sues-hulu-producers%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>California’s battered beaches are getting giant waves - The Washington Post</h3><p class="desc">Mavericks Beach, a famed big-wave surf spot, may get up to 50-foot waves.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">The Washington Post</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.washingtonpost.com%2Fnation%2F2026%2F11%2F14%2Fsurfers-wax-up-coastal-cities-brace-giant-waves-hit-california%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>'Miracle on Mississippi' - All passengers rescued after New Orleans cruise ship collision - BBC</h3><p class="desc">The collision leaves 32 people in hospital with non-critical injuries, but no-one unaccounted for.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">BBC News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.bbc.com%2Fnews%2Farticles%2Fcw20xmy0m5yyo" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Bomb found near ethanol plant in central Illinois forces evacuations - NPR</h3><p class="desc">The bomb was discovered Friday afternoon at the BioUrja Renewables plant in Peoria. Officials say the bomb has been "rendered safe," but called it a "credible threat." The FBI is investigating.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">NPR</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.npr.org%2F2026%2F11%2F14%2Fg-s1-153781%2Fbomb-ethanol-plant-peoria-illinois-evacuations" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Khamzat Chimaev blanks Chris Weidman with tech fall victory in RAF Abu Dhabi main event - MMA Fighting</h3><p class="desc">Khamzat Chimaev racked up 10 points to shutout Chris Weidman in the RAF Abu Dhabi main event.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">MMA Fighting</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.mmafighting.com%2Fufc%2F521171%2Fkhamzat-chimaev-blanks-chris-weidman-with-tech-fall-victory-in-raf-abu-dhabi-main-event" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>Live Updates: Netanyahu says it's time to remove Iran threat "once and for all" - CBS News</h3><p class="desc">Fires had broken out on a total of three oil tankers that struck mines in the Strait of Hormuz overnight and into the morning, Iran's military said Saturday.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">CBS News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.cbsnews.com%2Flive-updates%2Fus-iran-war-trump-nuclear-material-no-deal%2F" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-meta"><span class="impact medium">Medium Impact</span><span class="score">5.0</span></div>
-            <h3>New prostate cancer guidelines urge men to start screening at specific age - Fox News</h3><p class="desc">The American Cancer Society's new guidelines now recommend PSA blood tests every two years for men 50-69, with Black men urged to start annual screening at 45.</p>
-            <div class="insight"><strong>Por qué es importante:</strong> Details available in the source article.</div>
-            <div class="card-footer">
-                <span class="source">Fox News</span>
-                <span class="sentiment-box" style="background: #95a5a615; color: #95a5a6">Sentimiento: Neutral</span>
-                <a href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.foxnews.com%2Fhealth%2Fnew-prostate-cancer-guidelines-urge-men-start-screening-specific-age" class="btn-link" target="_blank" rel="noopener noreferrer">Leer más →</a>
             </div>
         </div></body></html>
